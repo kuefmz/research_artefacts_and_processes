@@ -1,0 +1,17 @@
+{
+  "id": "47c3f2186fbc9040d25e",
+  "repo_url": "https://github.com/AstroHerring/UoAManuscript",
+  "full_name": "AstroHerring/UoAManuscript",
+  "ref": "master",
+  "file_count": 2,
+  "files_per_step": {
+    "collection": 0,
+    "processing": 0,
+    "implementation": 0,
+    "experimentation": 0,
+    "evaluation": 0,
+    "dissemination": 0
+  },
+  "unclassified_files": 2,
+  "executed_at": "2026-09-21T10:57:59.240444+00:00"
+}

@@ -1,0 +1,17 @@
+{
+  "id": "b6398976a24b9204c0c0",
+  "repo_url": "https://github.com/GiulioRossetti/hit-savvy",
+  "full_name": "GiulioRossetti/hit-savvy",
+  "ref": "master",
+  "file_count": 11,
+  "files_per_step": {
+    "collection": 0,
+    "processing": 0,
+    "implementation": 0,
+    "experimentation": 0,
+    "evaluation": 0,
+    "dissemination": 1
+  },
+  "unclassified_files": 10,
+  "executed_at": "2026-09-21T10:57:55.822651+00:00"
+}

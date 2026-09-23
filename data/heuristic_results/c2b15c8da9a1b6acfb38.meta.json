@@ -1,0 +1,17 @@
+{
+  "id": "c2b15c8da9a1b6acfb38",
+  "repo_url": "https://github.com/luxiaoxun/KMeans-GMM-HMM",
+  "full_name": "luxiaoxun/KMeans-GMM-HMM",
+  "ref": "master",
+  "file_count": 10,
+  "files_per_step": {
+    "collection": 0,
+    "processing": 0,
+    "implementation": 0,
+    "experimentation": 0,
+    "evaluation": 0,
+    "dissemination": 1
+  },
+  "unclassified_files": 9,
+  "executed_at": "2026-09-21T10:58:20.268230+00:00"
+}

@@ -1,0 +1,17 @@
+{
+  "id": "b30d4a8ee9d563b44c48",
+  "repo_url": "https://github.com/HEATlab/Prob-in-Ctrl",
+  "full_name": "HEATlab/Prob-in-Ctrl",
+  "ref": "master",
+  "file_count": 591,
+  "files_per_step": {
+    "collection": 0,
+    "processing": 0,
+    "implementation": 0,
+    "experimentation": 0,
+    "evaluation": 0,
+    "dissemination": 1
+  },
+  "unclassified_files": 590,
+  "executed_at": "2026-09-21T10:57:54.993636+00:00"
+}

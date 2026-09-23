@@ -1,0 +1,3967 @@
+{
+  "repository": {
+    "url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver",
+    "full_name": "UniversalRobots/Universal_Robots_ROS_Driver",
+    "ref": "master",
+    "commit_tree_sha": "64f3f1a8aa4f84d550fbccdc2415644f64bd1119",
+    "file_count": 146
+  },
+  "method": {
+    "name": "deterministic_research_process_step_heuristics",
+    "version": "0.1.0",
+    "uses_ai": false,
+    "multi_label": true,
+    "detection_threshold": 2,
+    "max_content_bytes": 250000
+  },
+  "summary": {
+    "files_per_step": {
+      "collection": 0,
+      "processing": 0,
+      "implementation": 15,
+      "experimentation": 1,
+      "evaluation": 0,
+      "dissemination": 36
+    },
+    "unclassified_files": 94
+  },
+  "files": [
+    {
+      "path": ".clang-format",
+      "artifact_kind": "other",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": ".clang-format",
+      "directory": "",
+      "extension": "",
+      "size_bytes": 1913,
+      "content_scanned": false,
+      "blob_sha": "ce2768af23fa5b9d31243bf8e43f14b4d2a26f93",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/.clang-format",
+      "ref": "master"
+    },
+    {
+      "path": ".clang-tidy",
+      "artifact_kind": "other",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": ".clang-tidy",
+      "directory": "",
+      "extension": "",
+      "size_bytes": 711,
+      "content_scanned": false,
+      "blob_sha": "d935e37ea722c985afe90db6b8a8aab7338be230",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/.clang-tidy",
+      "ref": "master"
+    },
+    {
+      "path": ".github/dependabot.yml",
+      "artifact_kind": "configuration",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "dependabot.yml",
+      "directory": ".github",
+      "extension": ".yml",
+      "size_bytes": 157,
+      "content_scanned": true,
+      "blob_sha": "aa53db50b3660fd9210573f928a42f29bd5d6759",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/.github/dependabot.yml",
+      "ref": "master"
+    },
+    {
+      "path": ".github/dockerursim/.vol/default.installation",
+      "artifact_kind": "other",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "default.installation",
+      "directory": ".github/dockerursim/.vol",
+      "extension": ".installation",
+      "size_bytes": 2044,
+      "content_scanned": false,
+      "blob_sha": "0f85fab8898d0fa7ca7af0fc5ff06085a077d2ef",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/.github/dockerursim/.vol/default.installation",
+      "ref": "master"
+    },
+    {
+      "path": ".github/dockerursim/.vol/default.variables",
+      "artifact_kind": "other",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "default.variables",
+      "directory": ".github/dockerursim/.vol",
+      "extension": ".variables",
+      "size_bytes": 32,
+      "content_scanned": false,
+      "blob_sha": "86a46f30215557e9b65e7b77d552263ad0377a8a",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/.github/dockerursim/.vol/default.variables",
+      "ref": "master"
+    },
+    {
+      "path": ".github/dockerursim/.vol/programs.UR5",
+      "artifact_kind": "other",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "programs.UR5",
+      "directory": ".github/dockerursim/.vol",
+      "extension": ".ur5",
+      "size_bytes": 19,
+      "content_scanned": false,
+      "blob_sha": "ebd12373d52fd48f498cce81fcc5b91a9989b99d",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/.github/dockerursim/.vol/programs.UR5",
+      "ref": "master"
+    },
+    {
+      "path": ".github/dockerursim/build_and_run_docker_ursim.sh",
+      "artifact_kind": "source_code",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "build_and_run_docker_ursim.sh",
+      "directory": ".github/dockerursim",
+      "extension": ".sh",
+      "size_bytes": 505,
+      "content_scanned": true,
+      "blob_sha": "9c3cf61bca46fd13d1dacdb14568ac119846dac9",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/.github/dockerursim/build_and_run_docker_ursim.sh",
+      "ref": "master"
+    },
+    {
+      "path": ".github/dockerursim/Dockerfile",
+      "artifact_kind": "configuration",
+      "steps": [
+        "implementation"
+      ],
+      "unclassified": false,
+      "scores": {
+        "collection": 1,
+        "processing": 1,
+        "implementation": 3
+      },
+      "evidence": [
+        {
+          "rule_id": "COL_CONTENT_ACQUIRE",
+          "step": "collection",
+          "source": "content",
+          "weight": 1,
+          "matched_text": "curl",
+          "matched_texts": [
+            "curl"
+          ],
+          "matches": [
+            {
+              "text": "curl",
+              "line": 63,
+              "url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/.github/dockerursim/Dockerfile#L63"
+            }
+          ],
+          "description": "File contains deterministic indicators of external data acquisition."
+        },
+        {
+          "rule_id": "PRO_CONTENT_PROCESS",
+          "step": "processing",
+          "source": "content",
+          "weight": 1,
+          "matched_text": "Extract ",
+          "matched_texts": [
+            "Extract "
+          ],
+          "matches": [
+            {
+              "text": "Extract ",
+              "line": 65,
+              "url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/.github/dockerursim/Dockerfile#L65"
+            }
+          ],
+          "description": "File contains deterministic indicators of data preparation or transformation."
+        },
+        {
+          "rule_id": "IMP_PACKAGE_FILE",
+          "step": "implementation",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "/Dockerfile",
+          "matched_texts": [
+            "/Dockerfile"
+          ],
+          "matches": [
+            {
+              "text": "/Dockerfile",
+              "line": null,
+              "url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/.github/dockerursim/Dockerfile"
+            }
+          ],
+          "description": "File configures packaging, dependencies, build, runtime, or deployment."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "Dockerfile",
+      "directory": ".github/dockerursim",
+      "extension": "",
+      "size_bytes": 4136,
+      "content_scanned": true,
+      "blob_sha": "9d4b2a54c1db10d4941b7e5849fbb95b31e8e1fb",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/.github/dockerursim/Dockerfile",
+      "ref": "master"
+    },
+    {
+      "path": ".github/dockerursim/safety.conf.UR5",
+      "artifact_kind": "other",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "safety.conf.UR5",
+      "directory": ".github/dockerursim",
+      "extension": ".ur5",
+      "size_bytes": 3141,
+      "content_scanned": false,
+      "blob_sha": "908b382f4959336a0c017e3052c174c347898123",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/.github/dockerursim/safety.conf.UR5",
+      "ref": "master"
+    },
+    {
+      "path": ".github/dockerursim/ursim/run",
+      "artifact_kind": "other",
+      "steps": [
+        "experimentation"
+      ],
+      "unclassified": false,
+      "scores": {
+        "experimentation": 3
+      },
+      "evidence": [
+        {
+          "rule_id": "EXP_PATH_EXPERIMENT_DIR",
+          "step": "experimentation",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "/run",
+          "matched_texts": [
+            "/run"
+          ],
+          "matches": [
+            {
+              "text": "/run",
+              "line": null,
+              "url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/.github/dockerursim/ursim/run"
+            }
+          ],
+          "description": "File belongs to an explicitly named experimental directory."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "run",
+      "directory": ".github/dockerursim/ursim",
+      "extension": "",
+      "size_bytes": 326,
+      "content_scanned": false,
+      "blob_sha": "4021c48fc4b372be21c0aa727b28f70bf4cf756a",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/.github/dockerursim/ursim/run",
+      "ref": "master"
+    },
+    {
+      "path": ".github/issue_template.md",
+      "artifact_kind": "documentation",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "issue_template.md",
+      "directory": ".github",
+      "extension": ".md",
+      "size_bytes": 1190,
+      "content_scanned": true,
+      "blob_sha": "fd4b030e9bb0915b871be770075c55e266a5bd33",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/.github/issue_template.md",
+      "ref": "master"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/new_feature.yaml",
+      "artifact_kind": "configuration",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "new_feature.yaml",
+      "directory": ".github/ISSUE_TEMPLATE",
+      "extension": ".yaml",
+      "size_bytes": 691,
+      "content_scanned": true,
+      "blob_sha": "8286d359a68d09087afd9d470d79c2bb8109193e",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/.github/ISSUE_TEMPLATE/new_feature.yaml",
+      "ref": "master"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/ros_bug.yaml",
+      "artifact_kind": "configuration",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "ros_bug.yaml",
+      "directory": ".github/ISSUE_TEMPLATE",
+      "extension": ".yaml",
+      "size_bytes": 3933,
+      "content_scanned": true,
+      "blob_sha": "36feaa11412b3fad8dcdfa270c43dd2c3e7e07fb",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/.github/ISSUE_TEMPLATE/ros_bug.yaml",
+      "ref": "master"
+    },
+    {
+      "path": ".github/workflows/ci_format.yml",
+      "artifact_kind": "configuration",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "ci_format.yml",
+      "directory": ".github/workflows",
+      "extension": ".yml",
+      "size_bytes": 372,
+      "content_scanned": true,
+      "blob_sha": "a07e87fcefc030986797a8d9c20472732501c512",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/.github/workflows/ci_format.yml",
+      "ref": "master"
+    },
+    {
+      "path": ".github/workflows/noetic-binary-main.yml",
+      "artifact_kind": "configuration",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "noetic-binary-main.yml",
+      "directory": ".github/workflows",
+      "extension": ".yml",
+      "size_bytes": 430,
+      "content_scanned": true,
+      "blob_sha": "e2303d0cdddfa416c29f547a01bf4453c65b3828",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/.github/workflows/noetic-binary-main.yml",
+      "ref": "master"
+    },
+    {
+      "path": ".github/workflows/noetic-binary-testing.yml",
+      "artifact_kind": "configuration",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "noetic-binary-testing.yml",
+      "directory": ".github/workflows",
+      "extension": ".yml",
+      "size_bytes": 436,
+      "content_scanned": true,
+      "blob_sha": "033cc814e561f36c5d9a434a4c6319b74224666d",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/.github/workflows/noetic-binary-testing.yml",
+      "ref": "master"
+    },
+    {
+      "path": ".github/workflows/noetic-semi-binary-main.yml",
+      "artifact_kind": "configuration",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "noetic-semi-binary-main.yml",
+      "directory": ".github/workflows",
+      "extension": ".yml",
+      "size_bytes": 480,
+      "content_scanned": true,
+      "blob_sha": "96f506889a390a262c3c37a84ed1f9c08a0211ed",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/.github/workflows/noetic-semi-binary-main.yml",
+      "ref": "master"
+    },
+    {
+      "path": ".github/workflows/noetic-semi-binary-testing.yml",
+      "artifact_kind": "configuration",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "noetic-semi-binary-testing.yml",
+      "directory": ".github/workflows",
+      "extension": ".yml",
+      "size_bytes": 486,
+      "content_scanned": true,
+      "blob_sha": "f4b1f45cb11892bdca2ea637a317d4278daa6522",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/.github/workflows/noetic-semi-binary-testing.yml",
+      "ref": "master"
+    },
+    {
+      "path": ".github/workflows/reusable_ici.yml",
+      "artifact_kind": "configuration",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "reusable_ici.yml",
+      "directory": ".github/workflows",
+      "extension": ".yml",
+      "size_bytes": 1859,
+      "content_scanned": true,
+      "blob_sha": "23de02011a648fc6ad5110c82aaa47ffe9dc4c1d",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/.github/workflows/reusable_ici.yml",
+      "ref": "master"
+    },
+    {
+      "path": ".github/workflows/stale.yml",
+      "artifact_kind": "configuration",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "stale.yml",
+      "directory": ".github/workflows",
+      "extension": ".yml",
+      "size_bytes": 1334,
+      "content_scanned": true,
+      "blob_sha": "b0994fc5b49f21a22c915ba661d684c0b28adf36",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/.github/workflows/stale.yml",
+      "ref": "master"
+    },
+    {
+      "path": ".gitignore",
+      "artifact_kind": "other",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": ".gitignore",
+      "directory": "",
+      "extension": "",
+      "size_bytes": 103,
+      "content_scanned": false,
+      "blob_sha": "820cab7723f3be48e5a4d45f22da2efeba97f95c",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/.gitignore",
+      "ref": "master"
+    },
+    {
+      "path": ".gitlab-ci.yml",
+      "artifact_kind": "configuration",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": ".gitlab-ci.yml",
+      "directory": "",
+      "extension": ".yml",
+      "size_bytes": 534,
+      "content_scanned": true,
+      "blob_sha": "333855ef68c2ee7a7040ba5d0004568893ff5b62",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/.gitlab-ci.yml",
+      "ref": "master"
+    },
+    {
+      "path": ".gitlab/issue_templates/default.md",
+      "artifact_kind": "documentation",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "default.md",
+      "directory": ".gitlab/issue_templates",
+      "extension": ".md",
+      "size_bytes": 1091,
+      "content_scanned": true,
+      "blob_sha": "a534953698ab2d52fb59ef0e4c041810b1510400",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/.gitlab/issue_templates/default.md",
+      "ref": "master"
+    },
+    {
+      "path": ".melodic.rosinstall",
+      "artifact_kind": "other",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": ".melodic.rosinstall",
+      "directory": "",
+      "extension": ".rosinstall",
+      "size_bytes": 129,
+      "content_scanned": false,
+      "blob_sha": "14f25484ce511a67df43dc718363297a572b6dcf",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/.melodic.rosinstall",
+      "ref": "master"
+    },
+    {
+      "path": ".noetic.rosinstall",
+      "artifact_kind": "other",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": ".noetic.rosinstall",
+      "directory": "",
+      "extension": ".rosinstall",
+      "size_bytes": 240,
+      "content_scanned": false,
+      "blob_sha": "b51c5fc104c4d19f902b551513b600f3db91e540",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/.noetic.rosinstall",
+      "ref": "master"
+    },
+    {
+      "path": "LICENSE",
+      "artifact_kind": "other",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "LICENSE",
+      "directory": "",
+      "extension": "",
+      "size_bytes": 10177,
+      "content_scanned": false,
+      "blob_sha": "6b4e9741b0eb302cc195ebe0b737408b552f2565",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/LICENSE",
+      "ref": "master"
+    },
+    {
+      "path": "README.md",
+      "artifact_kind": "documentation",
+      "steps": [
+        "dissemination"
+      ],
+      "unclassified": false,
+      "scores": {
+        "processing": 1,
+        "dissemination": 2
+      },
+      "evidence": [
+        {
+          "rule_id": "PRO_CONTENT_PROCESS",
+          "step": "processing",
+          "source": "content",
+          "weight": 1,
+          "matched_text": "Extract ",
+          "matched_texts": [
+            "Extract "
+          ],
+          "matches": [
+            {
+              "text": "Extract ",
+              "line": 191,
+              "url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/README.md#L191"
+            }
+          ],
+          "description": "File contains deterministic indicators of data preparation or transformation."
+        },
+        {
+          "rule_id": "DIS_README",
+          "step": "dissemination",
+          "source": "path",
+          "weight": 2,
+          "matched_text": "README.md",
+          "matched_texts": [
+            "README.md"
+          ],
+          "matches": [
+            {
+              "text": "README.md",
+              "line": null,
+              "url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/README.md"
+            }
+          ],
+          "description": "Project-facing documentation supports dissemination."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "README.md",
+      "directory": "",
+      "extension": ".md",
+      "size_bytes": 22080,
+      "content_scanned": true,
+      "blob_sha": "6987db044ef348a2dbb9cabdc2e9b451865ffbf2",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/README.md",
+      "ref": "master"
+    },
+    {
+      "path": "ur_calibration/CHANGELOG.rst",
+      "artifact_kind": "documentation",
+      "steps": [
+        "dissemination"
+      ],
+      "unclassified": false,
+      "scores": {
+        "dissemination": 2
+      },
+      "evidence": [
+        {
+          "rule_id": "DIS_README",
+          "step": "dissemination",
+          "source": "path",
+          "weight": 2,
+          "matched_text": "/CHANGELOG.rst",
+          "matched_texts": [
+            "/CHANGELOG.rst"
+          ],
+          "matches": [
+            {
+              "text": "/CHANGELOG.rst",
+              "line": null,
+              "url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_calibration/CHANGELOG.rst"
+            }
+          ],
+          "description": "Project-facing documentation supports dissemination."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "CHANGELOG.rst",
+      "directory": "ur_calibration",
+      "extension": ".rst",
+      "size_bytes": 4289,
+      "content_scanned": true,
+      "blob_sha": "557f842517c984705512b32fa16708b70fa4b907",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_calibration/CHANGELOG.rst",
+      "ref": "master"
+    },
+    {
+      "path": "ur_calibration/CMakeLists.txt",
+      "artifact_kind": "other",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "CMakeLists.txt",
+      "directory": "ur_calibration",
+      "extension": ".txt",
+      "size_bytes": 1645,
+      "content_scanned": true,
+      "blob_sha": "3662b8b685f2cb73a4ffd005dbfbdbfb59de48fd",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_calibration/CMakeLists.txt",
+      "ref": "master"
+    },
+    {
+      "path": "ur_calibration/include/ur_calibration/calibration.h",
+      "artifact_kind": "source_code",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "calibration.h",
+      "directory": "ur_calibration/include/ur_calibration",
+      "extension": ".h",
+      "size_bytes": 6415,
+      "content_scanned": true,
+      "blob_sha": "3786206d9fb97e87571c30780f5d87ef8bea4255",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_calibration/include/ur_calibration/calibration.h",
+      "ref": "master"
+    },
+    {
+      "path": "ur_calibration/include/ur_calibration/calibration_consumer.h",
+      "artifact_kind": "source_code",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "calibration_consumer.h",
+      "directory": "ur_calibration/include/ur_calibration",
+      "extension": ".h",
+      "size_bytes": 1940,
+      "content_scanned": true,
+      "blob_sha": "8f8dbe515c5688f6146e5f4ffb66a5370f1d9fb4",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_calibration/include/ur_calibration/calibration_consumer.h",
+      "ref": "master"
+    },
+    {
+      "path": "ur_calibration/launch/calibration_correction.launch",
+      "artifact_kind": "other",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "calibration_correction.launch",
+      "directory": "ur_calibration/launch",
+      "extension": ".launch",
+      "size_bytes": 519,
+      "content_scanned": false,
+      "blob_sha": "54315d415333ff3105e237076d7024089fef9dcf",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_calibration/launch/calibration_correction.launch",
+      "ref": "master"
+    },
+    {
+      "path": "ur_calibration/LICENSE",
+      "artifact_kind": "other",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "LICENSE",
+      "directory": "ur_calibration",
+      "extension": "",
+      "size_bytes": 10177,
+      "content_scanned": false,
+      "blob_sha": "6b4e9741b0eb302cc195ebe0b737408b552f2565",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_calibration/LICENSE",
+      "ref": "master"
+    },
+    {
+      "path": "ur_calibration/package.xml",
+      "artifact_kind": "other",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "package.xml",
+      "directory": "ur_calibration",
+      "extension": ".xml",
+      "size_bytes": 786,
+      "content_scanned": false,
+      "blob_sha": "9869fb6a3e0c83f665282511d4bc88c10cd30ca3",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_calibration/package.xml",
+      "ref": "master"
+    },
+    {
+      "path": "ur_calibration/README.md",
+      "artifact_kind": "documentation",
+      "steps": [
+        "dissemination"
+      ],
+      "unclassified": false,
+      "scores": {
+        "processing": 1,
+        "dissemination": 2
+      },
+      "evidence": [
+        {
+          "rule_id": "PRO_CONTENT_PROCESS",
+          "step": "processing",
+          "source": "content",
+          "weight": 1,
+          "matched_text": "extract ",
+          "matched_texts": [
+            "extract "
+          ],
+          "matches": [
+            {
+              "text": "extract ",
+              "line": 6,
+              "url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_calibration/README.md#L6"
+            }
+          ],
+          "description": "File contains deterministic indicators of data preparation or transformation."
+        },
+        {
+          "rule_id": "DIS_README",
+          "step": "dissemination",
+          "source": "path",
+          "weight": 2,
+          "matched_text": "/README.md",
+          "matched_texts": [
+            "/README.md"
+          ],
+          "matches": [
+            {
+              "text": "/README.md",
+              "line": null,
+              "url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_calibration/README.md"
+            }
+          ],
+          "description": "Project-facing documentation supports dissemination."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "README.md",
+      "directory": "ur_calibration",
+      "extension": ".md",
+      "size_bytes": 2876,
+      "content_scanned": true,
+      "blob_sha": "1684a6a45605fc804c88c09030fe6c8b3226379d",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_calibration/README.md",
+      "ref": "master"
+    },
+    {
+      "path": "ur_calibration/src/calibration.cpp",
+      "artifact_kind": "source_code",
+      "steps": [
+        "implementation"
+      ],
+      "unclassified": false,
+      "scores": {
+        "implementation": 3
+      },
+      "evidence": [
+        {
+          "rule_id": "IMP_PATH_SOURCE_DIR",
+          "step": "implementation",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "/src/",
+          "matched_texts": [
+            "/src/"
+          ],
+          "matches": [
+            {
+              "text": "/src/",
+              "line": null,
+              "url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_calibration/src/calibration.cpp"
+            }
+          ],
+          "description": "File is part of an implementation source tree."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "calibration.cpp",
+      "directory": "ur_calibration/src",
+      "extension": ".cpp",
+      "size_bytes": 8418,
+      "content_scanned": true,
+      "blob_sha": "41930c99a2cb81c6fc95daf4057644c648b18d0e",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_calibration/src/calibration.cpp",
+      "ref": "master"
+    },
+    {
+      "path": "ur_calibration/src/calibration_consumer.cpp",
+      "artifact_kind": "source_code",
+      "steps": [
+        "implementation"
+      ],
+      "unclassified": false,
+      "scores": {
+        "implementation": 3
+      },
+      "evidence": [
+        {
+          "rule_id": "IMP_PATH_SOURCE_DIR",
+          "step": "implementation",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "/src/",
+          "matched_texts": [
+            "/src/"
+          ],
+          "matches": [
+            {
+              "text": "/src/",
+              "line": null,
+              "url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_calibration/src/calibration_consumer.cpp"
+            }
+          ],
+          "description": "File is part of an implementation source tree."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "calibration_consumer.cpp",
+      "directory": "ur_calibration/src",
+      "extension": ".cpp",
+      "size_bytes": 2261,
+      "content_scanned": true,
+      "blob_sha": "4fb6dc499fa3c20e8544a3bc8d3db42403bc79d7",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_calibration/src/calibration_consumer.cpp",
+      "ref": "master"
+    },
+    {
+      "path": "ur_calibration/src/calibration_correction.cpp",
+      "artifact_kind": "source_code",
+      "steps": [
+        "implementation"
+      ],
+      "unclassified": false,
+      "scores": {
+        "implementation": 3
+      },
+      "evidence": [
+        {
+          "rule_id": "IMP_PATH_SOURCE_DIR",
+          "step": "implementation",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "/src/",
+          "matched_texts": [
+            "/src/"
+          ],
+          "matches": [
+            {
+              "text": "/src/",
+              "line": null,
+              "url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_calibration/src/calibration_correction.cpp"
+            }
+          ],
+          "description": "File is part of an implementation source tree."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "calibration_correction.cpp",
+      "directory": "ur_calibration/src",
+      "extension": ".cpp",
+      "size_bytes": 5079,
+      "content_scanned": true,
+      "blob_sha": "1818dc35ee69d5230018b96abdb30460e21e8256",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_calibration/src/calibration_correction.cpp",
+      "ref": "master"
+    },
+    {
+      "path": "ur_calibration/test/calibration_test.cpp",
+      "artifact_kind": "source_code",
+      "steps": [
+        "implementation"
+      ],
+      "unclassified": false,
+      "scores": {
+        "implementation": 2,
+        "evaluation": 1
+      },
+      "evidence": [
+        {
+          "rule_id": "IMP_PATH_TESTS",
+          "step": "implementation",
+          "source": "path",
+          "weight": 2,
+          "matched_text": "/test/",
+          "matched_texts": [
+            "/test/"
+          ],
+          "matches": [
+            {
+              "text": "/test/",
+              "line": null,
+              "url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_calibration/test/calibration_test.cpp"
+            }
+          ],
+          "description": "Software tests are treated as implementation/verification, not scientific evaluation."
+        },
+        {
+          "rule_id": "EVA_CONTENT_METRIC",
+          "step": "evaluation",
+          "source": "content",
+          "weight": 1,
+          "matched_text": "precision",
+          "matched_texts": [
+            "precision"
+          ],
+          "matches": [
+            {
+              "text": "precision",
+              "line": 39,
+              "url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_calibration/test/calibration_test.cpp#L39"
+            }
+          ],
+          "description": "File contains explicit scientific performance metrics or comparison terminology."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "calibration_test.cpp",
+      "directory": "ur_calibration/test",
+      "extension": ".cpp",
+      "size_bytes": 10546,
+      "content_scanned": true,
+      "blob_sha": "2c185fa91dfe6601633184278283b23e369a620b",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_calibration/test/calibration_test.cpp",
+      "ref": "master"
+    },
+    {
+      "path": "ur_dashboard_msgs/action/SetMode.action",
+      "artifact_kind": "other",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "SetMode.action",
+      "directory": "ur_dashboard_msgs/action",
+      "extension": ".action",
+      "size_bytes": 969,
+      "content_scanned": false,
+      "blob_sha": "4eac29152fd3c0292a6b2e1355b4b132edcd72fb",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_dashboard_msgs/action/SetMode.action",
+      "ref": "master"
+    },
+    {
+      "path": "ur_dashboard_msgs/CHANGELOG.rst",
+      "artifact_kind": "documentation",
+      "steps": [
+        "dissemination"
+      ],
+      "unclassified": false,
+      "scores": {
+        "dissemination": 2
+      },
+      "evidence": [
+        {
+          "rule_id": "DIS_README",
+          "step": "dissemination",
+          "source": "path",
+          "weight": 2,
+          "matched_text": "/CHANGELOG.rst",
+          "matched_texts": [
+            "/CHANGELOG.rst"
+          ],
+          "matches": [
+            {
+              "text": "/CHANGELOG.rst",
+              "line": null,
+              "url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_dashboard_msgs/CHANGELOG.rst"
+            }
+          ],
+          "description": "Project-facing documentation supports dissemination."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "CHANGELOG.rst",
+      "directory": "ur_dashboard_msgs",
+      "extension": ".rst",
+      "size_bytes": 3034,
+      "content_scanned": true,
+      "blob_sha": "1b963ce20cc5a7727be2899da020bad839f6a324",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_dashboard_msgs/CHANGELOG.rst",
+      "ref": "master"
+    },
+    {
+      "path": "ur_dashboard_msgs/CMakeLists.txt",
+      "artifact_kind": "other",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "CMakeLists.txt",
+      "directory": "ur_dashboard_msgs",
+      "extension": ".txt",
+      "size_bytes": 6851,
+      "content_scanned": true,
+      "blob_sha": "702a1fceec196db286ee2fa6800e4630b57e01d9",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_dashboard_msgs/CMakeLists.txt",
+      "ref": "master"
+    },
+    {
+      "path": "ur_dashboard_msgs/LICENSE",
+      "artifact_kind": "other",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "LICENSE",
+      "directory": "ur_dashboard_msgs",
+      "extension": "",
+      "size_bytes": 10177,
+      "content_scanned": false,
+      "blob_sha": "6b4e9741b0eb302cc195ebe0b737408b552f2565",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_dashboard_msgs/LICENSE",
+      "ref": "master"
+    },
+    {
+      "path": "ur_dashboard_msgs/msg/ProgramState.msg",
+      "artifact_kind": "other",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "ProgramState.msg",
+      "directory": "ur_dashboard_msgs/msg",
+      "extension": ".msg",
+      "size_bytes": 82,
+      "content_scanned": false,
+      "blob_sha": "cd597bd30b3227db0c22b8e27490eb3d90ad38d0",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_dashboard_msgs/msg/ProgramState.msg",
+      "ref": "master"
+    },
+    {
+      "path": "ur_dashboard_msgs/msg/RobotMode.msg",
+      "artifact_kind": "other",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "RobotMode.msg",
+      "directory": "ur_dashboard_msgs/msg",
+      "extension": ".msg",
+      "size_bytes": 193,
+      "content_scanned": false,
+      "blob_sha": "3acec31d491c53789d9a24bfb3564ed52f557b03",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_dashboard_msgs/msg/RobotMode.msg",
+      "ref": "master"
+    },
+    {
+      "path": "ur_dashboard_msgs/msg/SafetyMode.msg",
+      "artifact_kind": "other",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "SafetyMode.msg",
+      "directory": "ur_dashboard_msgs/msg",
+      "extension": ".msg",
+      "size_bytes": 340,
+      "content_scanned": false,
+      "blob_sha": "7db0851e928e7067f291335abf544f02d0034b4a",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_dashboard_msgs/msg/SafetyMode.msg",
+      "ref": "master"
+    },
+    {
+      "path": "ur_dashboard_msgs/package.xml",
+      "artifact_kind": "other",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "package.xml",
+      "directory": "ur_dashboard_msgs",
+      "extension": ".xml",
+      "size_bytes": 717,
+      "content_scanned": false,
+      "blob_sha": "e7f5419fe9bca8327805136e8cf75ce83fcd4cbf",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_dashboard_msgs/package.xml",
+      "ref": "master"
+    },
+    {
+      "path": "ur_dashboard_msgs/srv/AddToLog.srv",
+      "artifact_kind": "other",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "AddToLog.srv",
+      "directory": "ur_dashboard_msgs/srv",
+      "extension": ".srv",
+      "size_bytes": 46,
+      "content_scanned": false,
+      "blob_sha": "230cee461cdd8bb27a884f20c394cd2e19d89ea1",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_dashboard_msgs/srv/AddToLog.srv",
+      "ref": "master"
+    },
+    {
+      "path": "ur_dashboard_msgs/srv/GetLoadedProgram.srv",
+      "artifact_kind": "other",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "GetLoadedProgram.srv",
+      "directory": "ur_dashboard_msgs/srv",
+      "extension": ".srv",
+      "size_bytes": 51,
+      "content_scanned": false,
+      "blob_sha": "c564420c70ecc8e0d71da4b22e919939e1787de2",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_dashboard_msgs/srv/GetLoadedProgram.srv",
+      "ref": "master"
+    },
+    {
+      "path": "ur_dashboard_msgs/srv/GetProgramState.srv",
+      "artifact_kind": "other",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "GetProgramState.srv",
+      "directory": "ur_dashboard_msgs/srv",
+      "extension": ".srv",
+      "size_bytes": 70,
+      "content_scanned": false,
+      "blob_sha": "68a4b0862cabee345f8f7e9510309b117a9b444d",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_dashboard_msgs/srv/GetProgramState.srv",
+      "ref": "master"
+    },
+    {
+      "path": "ur_dashboard_msgs/srv/GetRobotMode.srv",
+      "artifact_kind": "other",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "GetRobotMode.srv",
+      "directory": "ur_dashboard_msgs/srv",
+      "extension": ".srv",
+      "size_bytes": 52,
+      "content_scanned": false,
+      "blob_sha": "7b419508b701b638ff08b107518290c7a9e40dfe",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_dashboard_msgs/srv/GetRobotMode.srv",
+      "ref": "master"
+    },
+    {
+      "path": "ur_dashboard_msgs/srv/GetSafetyMode.srv",
+      "artifact_kind": "other",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "GetSafetyMode.srv",
+      "directory": "ur_dashboard_msgs/srv",
+      "extension": ".srv",
+      "size_bytes": 54,
+      "content_scanned": false,
+      "blob_sha": "5b3874fba66eecffece1648483a5111c6650a046",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_dashboard_msgs/srv/GetSafetyMode.srv",
+      "ref": "master"
+    },
+    {
+      "path": "ur_dashboard_msgs/srv/IsInRemoteControl.srv",
+      "artifact_kind": "other",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "IsInRemoteControl.srv",
+      "directory": "ur_dashboard_msgs/srv",
+      "extension": ".srv",
+      "size_bytes": 144,
+      "content_scanned": false,
+      "blob_sha": "3e44b4d395398e7e705dadeec0273d42371a1147",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_dashboard_msgs/srv/IsInRemoteControl.srv",
+      "ref": "master"
+    },
+    {
+      "path": "ur_dashboard_msgs/srv/IsProgramRunning.srv",
+      "artifact_kind": "other",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "IsProgramRunning.srv",
+      "directory": "ur_dashboard_msgs/srv",
+      "extension": ".srv",
+      "size_bytes": 117,
+      "content_scanned": false,
+      "blob_sha": "61d6067bc95242ba4d8c9a789ea5272b835202ba",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_dashboard_msgs/srv/IsProgramRunning.srv",
+      "ref": "master"
+    },
+    {
+      "path": "ur_dashboard_msgs/srv/IsProgramSaved.srv",
+      "artifact_kind": "other",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "IsProgramSaved.srv",
+      "directory": "ur_dashboard_msgs/srv",
+      "extension": ".srv",
+      "size_bytes": 143,
+      "content_scanned": false,
+      "blob_sha": "065bbf6df083ce1dc7efe3de363ad06761e9db91",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_dashboard_msgs/srv/IsProgramSaved.srv",
+      "ref": "master"
+    },
+    {
+      "path": "ur_dashboard_msgs/srv/Load.srv",
+      "artifact_kind": "other",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "Load.srv",
+      "directory": "ur_dashboard_msgs/srv",
+      "extension": ".srv",
+      "size_bytes": 91,
+      "content_scanned": false,
+      "blob_sha": "6883ab6531e67eca71f8fabeec5997769884be1d",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_dashboard_msgs/srv/Load.srv",
+      "ref": "master"
+    },
+    {
+      "path": "ur_dashboard_msgs/srv/Popup.srv",
+      "artifact_kind": "other",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "Popup.srv",
+      "directory": "ur_dashboard_msgs/srv",
+      "extension": ".srv",
+      "size_bytes": 46,
+      "content_scanned": false,
+      "blob_sha": "230cee461cdd8bb27a884f20c394cd2e19d89ea1",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_dashboard_msgs/srv/Popup.srv",
+      "ref": "master"
+    },
+    {
+      "path": "ur_dashboard_msgs/srv/RawRequest.srv",
+      "artifact_kind": "other",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "RawRequest.srv",
+      "directory": "ur_dashboard_msgs/srv",
+      "extension": ".srv",
+      "size_bytes": 111,
+      "content_scanned": false,
+      "blob_sha": "92712adcdd359a35113e4748a2a4496641f01c6c",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_dashboard_msgs/srv/RawRequest.srv",
+      "ref": "master"
+    },
+    {
+      "path": "ur_robot_driver/CHANGELOG.rst",
+      "artifact_kind": "documentation",
+      "steps": [
+        "dissemination"
+      ],
+      "unclassified": false,
+      "scores": {
+        "processing": 1,
+        "dissemination": 2
+      },
+      "evidence": [
+        {
+          "rule_id": "PRO_CONTENT_PROCESS",
+          "step": "processing",
+          "source": "content",
+          "weight": 1,
+          "matched_text": "Parse ",
+          "matched_texts": [
+            "Parse "
+          ],
+          "matches": [
+            {
+              "text": "Parse ",
+              "line": 24,
+              "url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/CHANGELOG.rst#L24"
+            }
+          ],
+          "description": "File contains deterministic indicators of data preparation or transformation."
+        },
+        {
+          "rule_id": "DIS_README",
+          "step": "dissemination",
+          "source": "path",
+          "weight": 2,
+          "matched_text": "/CHANGELOG.rst",
+          "matched_texts": [
+            "/CHANGELOG.rst"
+          ],
+          "matches": [
+            {
+              "text": "/CHANGELOG.rst",
+              "line": null,
+              "url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/CHANGELOG.rst"
+            }
+          ],
+          "description": "Project-facing documentation supports dissemination."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "CHANGELOG.rst",
+      "directory": "ur_robot_driver",
+      "extension": ".rst",
+      "size_bytes": 41396,
+      "content_scanned": true,
+      "blob_sha": "92ac7e7690083eca29c9feecf327e9b9440a5c22",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/CHANGELOG.rst",
+      "ref": "master"
+    },
+    {
+      "path": "ur_robot_driver/CMakeLists.txt",
+      "artifact_kind": "other",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "CMakeLists.txt",
+      "directory": "ur_robot_driver",
+      "extension": ".txt",
+      "size_bytes": 4501,
+      "content_scanned": true,
+      "blob_sha": "a4d0d93a95228e6ae6c6e26d87fbee56888eb041",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/CMakeLists.txt",
+      "ref": "master"
+    },
+    {
+      "path": "ur_robot_driver/config/ur10_controllers.yaml",
+      "artifact_kind": "configuration",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "ur10_controllers.yaml",
+      "directory": "ur_robot_driver/config",
+      "extension": ".yaml",
+      "size_bytes": 5871,
+      "content_scanned": true,
+      "blob_sha": "e65bec8981212bf24f07a4630c3aaa7109e8aa4a",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/config/ur10_controllers.yaml",
+      "ref": "master"
+    },
+    {
+      "path": "ur_robot_driver/config/ur10e_controllers.yaml",
+      "artifact_kind": "configuration",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "ur10e_controllers.yaml",
+      "directory": "ur_robot_driver/config",
+      "extension": ".yaml",
+      "size_bytes": 5871,
+      "content_scanned": true,
+      "blob_sha": "6033cbd9ec22c415ece20a2240d97eec34289d19",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/config/ur10e_controllers.yaml",
+      "ref": "master"
+    },
+    {
+      "path": "ur_robot_driver/config/ur12e_controllers.yaml",
+      "artifact_kind": "configuration",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "ur12e_controllers.yaml",
+      "directory": "ur_robot_driver/config",
+      "extension": ".yaml",
+      "size_bytes": 22,
+      "content_scanned": true,
+      "blob_sha": "41cc9f097c726e2a14140a56758c9afd59117e57",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/config/ur12e_controllers.yaml",
+      "ref": "master"
+    },
+    {
+      "path": "ur_robot_driver/config/ur15_controllers.yaml",
+      "artifact_kind": "configuration",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "ur15_controllers.yaml",
+      "directory": "ur_robot_driver/config",
+      "extension": ".yaml",
+      "size_bytes": 5871,
+      "content_scanned": true,
+      "blob_sha": "6033cbd9ec22c415ece20a2240d97eec34289d19",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/config/ur15_controllers.yaml",
+      "ref": "master"
+    },
+    {
+      "path": "ur_robot_driver/config/ur16e_controllers.yaml",
+      "artifact_kind": "configuration",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "ur16e_controllers.yaml",
+      "directory": "ur_robot_driver/config",
+      "extension": ".yaml",
+      "size_bytes": 5871,
+      "content_scanned": true,
+      "blob_sha": "6033cbd9ec22c415ece20a2240d97eec34289d19",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/config/ur16e_controllers.yaml",
+      "ref": "master"
+    },
+    {
+      "path": "ur_robot_driver/config/ur18_controllers.yaml",
+      "artifact_kind": "configuration",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "ur18_controllers.yaml",
+      "directory": "ur_robot_driver/config",
+      "extension": ".yaml",
+      "size_bytes": 5871,
+      "content_scanned": true,
+      "blob_sha": "6033cbd9ec22c415ece20a2240d97eec34289d19",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/config/ur18_controllers.yaml",
+      "ref": "master"
+    },
+    {
+      "path": "ur_robot_driver/config/ur20_controllers.yaml",
+      "artifact_kind": "configuration",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "ur20_controllers.yaml",
+      "directory": "ur_robot_driver/config",
+      "extension": ".yaml",
+      "size_bytes": 5871,
+      "content_scanned": true,
+      "blob_sha": "6033cbd9ec22c415ece20a2240d97eec34289d19",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/config/ur20_controllers.yaml",
+      "ref": "master"
+    },
+    {
+      "path": "ur_robot_driver/config/ur30_controllers.yaml",
+      "artifact_kind": "configuration",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "ur30_controllers.yaml",
+      "directory": "ur_robot_driver/config",
+      "extension": ".yaml",
+      "size_bytes": 5871,
+      "content_scanned": true,
+      "blob_sha": "6033cbd9ec22c415ece20a2240d97eec34289d19",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/config/ur30_controllers.yaml",
+      "ref": "master"
+    },
+    {
+      "path": "ur_robot_driver/config/ur3_controllers.yaml",
+      "artifact_kind": "configuration",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "ur3_controllers.yaml",
+      "directory": "ur_robot_driver/config",
+      "extension": ".yaml",
+      "size_bytes": 5871,
+      "content_scanned": true,
+      "blob_sha": "e65bec8981212bf24f07a4630c3aaa7109e8aa4a",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/config/ur3_controllers.yaml",
+      "ref": "master"
+    },
+    {
+      "path": "ur_robot_driver/config/ur3e_controllers.yaml",
+      "artifact_kind": "configuration",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "ur3e_controllers.yaml",
+      "directory": "ur_robot_driver/config",
+      "extension": ".yaml",
+      "size_bytes": 5871,
+      "content_scanned": true,
+      "blob_sha": "6033cbd9ec22c415ece20a2240d97eec34289d19",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/config/ur3e_controllers.yaml",
+      "ref": "master"
+    },
+    {
+      "path": "ur_robot_driver/config/ur5_controllers.yaml",
+      "artifact_kind": "configuration",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "ur5_controllers.yaml",
+      "directory": "ur_robot_driver/config",
+      "extension": ".yaml",
+      "size_bytes": 5871,
+      "content_scanned": true,
+      "blob_sha": "e65bec8981212bf24f07a4630c3aaa7109e8aa4a",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/config/ur5_controllers.yaml",
+      "ref": "master"
+    },
+    {
+      "path": "ur_robot_driver/config/ur5e_controllers.yaml",
+      "artifact_kind": "configuration",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "ur5e_controllers.yaml",
+      "directory": "ur_robot_driver/config",
+      "extension": ".yaml",
+      "size_bytes": 5871,
+      "content_scanned": true,
+      "blob_sha": "6033cbd9ec22c415ece20a2240d97eec34289d19",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/config/ur5e_controllers.yaml",
+      "ref": "master"
+    },
+    {
+      "path": "ur_robot_driver/config/ur7e_controllers.yaml",
+      "artifact_kind": "configuration",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "ur7e_controllers.yaml",
+      "directory": "ur_robot_driver/config",
+      "extension": ".yaml",
+      "size_bytes": 21,
+      "content_scanned": true,
+      "blob_sha": "c881eba80c46f7d99d97e692c31ab92c28c02296",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/config/ur7e_controllers.yaml",
+      "ref": "master"
+    },
+    {
+      "path": "ur_robot_driver/config/ur8long_controllers.yaml",
+      "artifact_kind": "configuration",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "ur8long_controllers.yaml",
+      "directory": "ur_robot_driver/config",
+      "extension": ".yaml",
+      "size_bytes": 5871,
+      "content_scanned": true,
+      "blob_sha": "6033cbd9ec22c415ece20a2240d97eec34289d19",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/config/ur8long_controllers.yaml",
+      "ref": "master"
+    },
+    {
+      "path": "ur_robot_driver/doc/architecture_coarse.svg",
+      "artifact_kind": "image",
+      "steps": [
+        "dissemination"
+      ],
+      "unclassified": false,
+      "scores": {
+        "dissemination": 3
+      },
+      "evidence": [
+        {
+          "rule_id": "DIS_PATH_DOC_DIR",
+          "step": "dissemination",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "/doc/",
+          "matched_texts": [
+            "/doc/"
+          ],
+          "matches": [
+            {
+              "text": "/doc/",
+              "line": null,
+              "url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/doc/architecture_coarse.svg"
+            }
+          ],
+          "description": "File belongs to documentation, publication, or website material."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "architecture_coarse.svg",
+      "directory": "ur_robot_driver/doc",
+      "extension": ".svg",
+      "size_bytes": 145803,
+      "content_scanned": false,
+      "blob_sha": "8e85f273582ae23e97dd2a6e19a3336802cf8db7",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/doc/architecture_coarse.svg",
+      "ref": "master"
+    },
+    {
+      "path": "ur_robot_driver/doc/controllers.md",
+      "artifact_kind": "documentation",
+      "steps": [
+        "dissemination"
+      ],
+      "unclassified": false,
+      "scores": {
+        "dissemination": 3
+      },
+      "evidence": [
+        {
+          "rule_id": "DIS_PATH_DOC_DIR",
+          "step": "dissemination",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "/doc/",
+          "matched_texts": [
+            "/doc/"
+          ],
+          "matches": [
+            {
+              "text": "/doc/",
+              "line": null,
+              "url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/doc/controllers.md"
+            }
+          ],
+          "description": "File belongs to documentation, publication, or website material."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "controllers.md",
+      "directory": "ur_robot_driver/doc",
+      "extension": ".md",
+      "size_bytes": 11543,
+      "content_scanned": true,
+      "blob_sha": "1035ef6f46b27519ad60ab1299e033e055e550ce",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/doc/controllers.md",
+      "ref": "master"
+    },
+    {
+      "path": "ur_robot_driver/doc/features.md",
+      "artifact_kind": "documentation",
+      "steps": [
+        "dissemination"
+      ],
+      "unclassified": false,
+      "scores": {
+        "processing": 1,
+        "dissemination": 3
+      },
+      "evidence": [
+        {
+          "rule_id": "PRO_CONTENT_PROCESS",
+          "step": "processing",
+          "source": "content",
+          "weight": 1,
+          "matched_text": "extract ",
+          "matched_texts": [
+            "extract "
+          ],
+          "matches": [
+            {
+              "text": "extract ",
+              "line": 23,
+              "url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/doc/features.md#L23"
+            }
+          ],
+          "description": "File contains deterministic indicators of data preparation or transformation."
+        },
+        {
+          "rule_id": "DIS_PATH_DOC_DIR",
+          "step": "dissemination",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "/doc/",
+          "matched_texts": [
+            "/doc/"
+          ],
+          "matches": [
+            {
+              "text": "/doc/",
+              "line": null,
+              "url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/doc/features.md"
+            }
+          ],
+          "description": "File belongs to documentation, publication, or website material."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "features.md",
+      "directory": "ur_robot_driver/doc",
+      "extension": ".md",
+      "size_bytes": 2791,
+      "content_scanned": true,
+      "blob_sha": "ed1de33a6f7814936459932b68b0eb5e6393baaf",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/doc/features.md",
+      "ref": "master"
+    },
+    {
+      "path": "ur_robot_driver/doc/initial_setup_images/cb3_01_welcome.png",
+      "artifact_kind": "image",
+      "steps": [
+        "dissemination"
+      ],
+      "unclassified": false,
+      "scores": {
+        "dissemination": 3
+      },
+      "evidence": [
+        {
+          "rule_id": "DIS_PATH_DOC_DIR",
+          "step": "dissemination",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "/doc/",
+          "matched_texts": [
+            "/doc/"
+          ],
+          "matches": [
+            {
+              "text": "/doc/",
+              "line": null,
+              "url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/doc/initial_setup_images/cb3_01_welcome.png"
+            }
+          ],
+          "description": "File belongs to documentation, publication, or website material."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "cb3_01_welcome.png",
+      "directory": "ur_robot_driver/doc/initial_setup_images",
+      "extension": ".png",
+      "size_bytes": 29787,
+      "content_scanned": false,
+      "blob_sha": "1e0af1e9012dcd908cecc546421323976f7b0761",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/doc/initial_setup_images/cb3_01_welcome.png",
+      "ref": "master"
+    },
+    {
+      "path": "ur_robot_driver/doc/initial_setup_images/cb3_05_urcaps_installed.png",
+      "artifact_kind": "image",
+      "steps": [
+        "dissemination"
+      ],
+      "unclassified": false,
+      "scores": {
+        "dissemination": 3
+      },
+      "evidence": [
+        {
+          "rule_id": "DIS_PATH_DOC_DIR",
+          "step": "dissemination",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "/doc/",
+          "matched_texts": [
+            "/doc/"
+          ],
+          "matches": [
+            {
+              "text": "/doc/",
+              "line": null,
+              "url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/doc/initial_setup_images/cb3_05_urcaps_installed.png"
+            }
+          ],
+          "description": "File belongs to documentation, publication, or website material."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "cb3_05_urcaps_installed.png",
+      "directory": "ur_robot_driver/doc/initial_setup_images",
+      "extension": ".png",
+      "size_bytes": 62078,
+      "content_scanned": false,
+      "blob_sha": "0f111cb067182871ad67ade0d45624559092fdc1",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/doc/initial_setup_images/cb3_05_urcaps_installed.png",
+      "ref": "master"
+    },
+    {
+      "path": "ur_robot_driver/doc/initial_setup_images/cb3_07_installation_excontrol.png",
+      "artifact_kind": "image",
+      "steps": [
+        "dissemination"
+      ],
+      "unclassified": false,
+      "scores": {
+        "dissemination": 3
+      },
+      "evidence": [
+        {
+          "rule_id": "DIS_PATH_DOC_DIR",
+          "step": "dissemination",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "/doc/",
+          "matched_texts": [
+            "/doc/"
+          ],
+          "matches": [
+            {
+              "text": "/doc/",
+              "line": null,
+              "url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/doc/initial_setup_images/cb3_07_installation_excontrol.png"
+            }
+          ],
+          "description": "File belongs to documentation, publication, or website material."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "cb3_07_installation_excontrol.png",
+      "directory": "ur_robot_driver/doc/initial_setup_images",
+      "extension": ".png",
+      "size_bytes": 36278,
+      "content_scanned": false,
+      "blob_sha": "133e9b6c3358683dd3e2b8083f6e49ec1d1c1b84",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/doc/initial_setup_images/cb3_07_installation_excontrol.png",
+      "ref": "master"
+    },
+    {
+      "path": "ur_robot_driver/doc/initial_setup_images/cb3_10_prog_structure_urcaps.png",
+      "artifact_kind": "image",
+      "steps": [
+        "dissemination"
+      ],
+      "unclassified": false,
+      "scores": {
+        "dissemination": 3
+      },
+      "evidence": [
+        {
+          "rule_id": "DIS_PATH_DOC_DIR",
+          "step": "dissemination",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "/doc/",
+          "matched_texts": [
+            "/doc/"
+          ],
+          "matches": [
+            {
+              "text": "/doc/",
+              "line": null,
+              "url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/doc/initial_setup_images/cb3_10_prog_structure_urcaps.png"
+            }
+          ],
+          "description": "File belongs to documentation, publication, or website material."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "cb3_10_prog_structure_urcaps.png",
+      "directory": "ur_robot_driver/doc/initial_setup_images",
+      "extension": ".png",
+      "size_bytes": 47396,
+      "content_scanned": false,
+      "blob_sha": "9a001031b2e914fa3dff5707c119be85657a1bd9",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/doc/initial_setup_images/cb3_10_prog_structure_urcaps.png",
+      "ref": "master"
+    },
+    {
+      "path": "ur_robot_driver/doc/initial_setup_images/cb3_11_program_view_excontrol.png",
+      "artifact_kind": "image",
+      "steps": [
+        "dissemination"
+      ],
+      "unclassified": false,
+      "scores": {
+        "dissemination": 3
+      },
+      "evidence": [
+        {
+          "rule_id": "DIS_PATH_DOC_DIR",
+          "step": "dissemination",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "/doc/",
+          "matched_texts": [
+            "/doc/"
+          ],
+          "matches": [
+            {
+              "text": "/doc/",
+              "line": null,
+              "url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/doc/initial_setup_images/cb3_11_program_view_excontrol.png"
+            }
+          ],
+          "description": "File belongs to documentation, publication, or website material."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "cb3_11_program_view_excontrol.png",
+      "directory": "ur_robot_driver/doc/initial_setup_images",
+      "extension": ".png",
+      "size_bytes": 40580,
+      "content_scanned": false,
+      "blob_sha": "dd1ba4a979b8125498b47375f25f8fe0cd078641",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/doc/initial_setup_images/cb3_11_program_view_excontrol.png",
+      "ref": "master"
+    },
+    {
+      "path": "ur_robot_driver/doc/initial_setup_images/es_01_welcome.png",
+      "artifact_kind": "image",
+      "steps": [
+        "dissemination"
+      ],
+      "unclassified": false,
+      "scores": {
+        "dissemination": 3
+      },
+      "evidence": [
+        {
+          "rule_id": "DIS_PATH_DOC_DIR",
+          "step": "dissemination",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "/doc/",
+          "matched_texts": [
+            "/doc/"
+          ],
+          "matches": [
+            {
+              "text": "/doc/",
+              "line": null,
+              "url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/doc/initial_setup_images/es_01_welcome.png"
+            }
+          ],
+          "description": "File belongs to documentation, publication, or website material."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "es_01_welcome.png",
+      "directory": "ur_robot_driver/doc/initial_setup_images",
+      "extension": ".png",
+      "size_bytes": 45119,
+      "content_scanned": false,
+      "blob_sha": "fba14a582726f25882f6defbd04d63a22ff43ff2",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/doc/initial_setup_images/es_01_welcome.png",
+      "ref": "master"
+    },
+    {
+      "path": "ur_robot_driver/doc/initial_setup_images/es_05_urcaps_installed.png",
+      "artifact_kind": "image",
+      "steps": [
+        "dissemination"
+      ],
+      "unclassified": false,
+      "scores": {
+        "dissemination": 3
+      },
+      "evidence": [
+        {
+          "rule_id": "DIS_PATH_DOC_DIR",
+          "step": "dissemination",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "/doc/",
+          "matched_texts": [
+            "/doc/"
+          ],
+          "matches": [
+            {
+              "text": "/doc/",
+              "line": null,
+              "url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/doc/initial_setup_images/es_05_urcaps_installed.png"
+            }
+          ],
+          "description": "File belongs to documentation, publication, or website material."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "es_05_urcaps_installed.png",
+      "directory": "ur_robot_driver/doc/initial_setup_images",
+      "extension": ".png",
+      "size_bytes": 76678,
+      "content_scanned": false,
+      "blob_sha": "8a02bc54ebd220a858cdad41a22a1762ec049fe0",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/doc/initial_setup_images/es_05_urcaps_installed.png",
+      "ref": "master"
+    },
+    {
+      "path": "ur_robot_driver/doc/initial_setup_images/es_07_installation_excontrol.png",
+      "artifact_kind": "image",
+      "steps": [
+        "dissemination"
+      ],
+      "unclassified": false,
+      "scores": {
+        "dissemination": 3
+      },
+      "evidence": [
+        {
+          "rule_id": "DIS_PATH_DOC_DIR",
+          "step": "dissemination",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "/doc/",
+          "matched_texts": [
+            "/doc/"
+          ],
+          "matches": [
+            {
+              "text": "/doc/",
+              "line": null,
+              "url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/doc/initial_setup_images/es_07_installation_excontrol.png"
+            }
+          ],
+          "description": "File belongs to documentation, publication, or website material."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "es_07_installation_excontrol.png",
+      "directory": "ur_robot_driver/doc/initial_setup_images",
+      "extension": ".png",
+      "size_bytes": 44926,
+      "content_scanned": false,
+      "blob_sha": "3b1a9361a00336e81936f681317f93d0161c7801",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/doc/initial_setup_images/es_07_installation_excontrol.png",
+      "ref": "master"
+    },
+    {
+      "path": "ur_robot_driver/doc/initial_setup_images/es_10_prog_structure_urcaps.png",
+      "artifact_kind": "image",
+      "steps": [
+        "dissemination"
+      ],
+      "unclassified": false,
+      "scores": {
+        "dissemination": 3
+      },
+      "evidence": [
+        {
+          "rule_id": "DIS_PATH_DOC_DIR",
+          "step": "dissemination",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "/doc/",
+          "matched_texts": [
+            "/doc/"
+          ],
+          "matches": [
+            {
+              "text": "/doc/",
+              "line": null,
+              "url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/doc/initial_setup_images/es_10_prog_structure_urcaps.png"
+            }
+          ],
+          "description": "File belongs to documentation, publication, or website material."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "es_10_prog_structure_urcaps.png",
+      "directory": "ur_robot_driver/doc/initial_setup_images",
+      "extension": ".png",
+      "size_bytes": 78097,
+      "content_scanned": false,
+      "blob_sha": "6d1e2fffc2e7bcc8bc4b3dcc5402d213ee5a3ece",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/doc/initial_setup_images/es_10_prog_structure_urcaps.png",
+      "ref": "master"
+    },
+    {
+      "path": "ur_robot_driver/doc/initial_setup_images/es_11_program_view_excontrol.png",
+      "artifact_kind": "image",
+      "steps": [
+        "dissemination"
+      ],
+      "unclassified": false,
+      "scores": {
+        "dissemination": 3
+      },
+      "evidence": [
+        {
+          "rule_id": "DIS_PATH_DOC_DIR",
+          "step": "dissemination",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "/doc/",
+          "matched_texts": [
+            "/doc/"
+          ],
+          "matches": [
+            {
+              "text": "/doc/",
+              "line": null,
+              "url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/doc/initial_setup_images/es_11_program_view_excontrol.png"
+            }
+          ],
+          "description": "File belongs to documentation, publication, or website material."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "es_11_program_view_excontrol.png",
+      "directory": "ur_robot_driver/doc/initial_setup_images",
+      "extension": ".png",
+      "size_bytes": 65314,
+      "content_scanned": false,
+      "blob_sha": "9b2c50d4974a2e159c01e3dda02cb2590bd08ec8",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/doc/initial_setup_images/es_11_program_view_excontrol.png",
+      "ref": "master"
+    },
+    {
+      "path": "ur_robot_driver/doc/initial_setup_images/family_photo.png",
+      "artifact_kind": "image",
+      "steps": [
+        "dissemination"
+      ],
+      "unclassified": false,
+      "scores": {
+        "dissemination": 3
+      },
+      "evidence": [
+        {
+          "rule_id": "DIS_PATH_DOC_DIR",
+          "step": "dissemination",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "/doc/",
+          "matched_texts": [
+            "/doc/"
+          ],
+          "matches": [
+            {
+              "text": "/doc/",
+              "line": null,
+              "url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/doc/initial_setup_images/family_photo.png"
+            }
+          ],
+          "description": "File belongs to documentation, publication, or website material."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "family_photo.png",
+      "directory": "ur_robot_driver/doc/initial_setup_images",
+      "extension": ".png",
+      "size_bytes": 199316,
+      "content_scanned": false,
+      "blob_sha": "678d312d90de1a8891237bd3c3ff090d6833887c",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/doc/initial_setup_images/family_photo.png",
+      "ref": "master"
+    },
+    {
+      "path": "ur_robot_driver/doc/install_urcap_cb3.md",
+      "artifact_kind": "documentation",
+      "steps": [
+        "dissemination"
+      ],
+      "unclassified": false,
+      "scores": {
+        "dissemination": 3
+      },
+      "evidence": [
+        {
+          "rule_id": "DIS_PATH_DOC_DIR",
+          "step": "dissemination",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "/doc/",
+          "matched_texts": [
+            "/doc/"
+          ],
+          "matches": [
+            {
+              "text": "/doc/",
+              "line": null,
+              "url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/doc/install_urcap_cb3.md"
+            }
+          ],
+          "description": "File belongs to documentation, publication, or website material."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "install_urcap_cb3.md",
+      "directory": "ur_robot_driver/doc",
+      "extension": ".md",
+      "size_bytes": 2281,
+      "content_scanned": true,
+      "blob_sha": "17e82b986ed54db2ced81b0997f09aef97f09937",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/doc/install_urcap_cb3.md",
+      "ref": "master"
+    },
+    {
+      "path": "ur_robot_driver/doc/install_urcap_e_series.md",
+      "artifact_kind": "documentation",
+      "steps": [
+        "dissemination"
+      ],
+      "unclassified": false,
+      "scores": {
+        "dissemination": 3
+      },
+      "evidence": [
+        {
+          "rule_id": "DIS_PATH_DOC_DIR",
+          "step": "dissemination",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "/doc/",
+          "matched_texts": [
+            "/doc/"
+          ],
+          "matches": [
+            {
+              "text": "/doc/",
+              "line": null,
+              "url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/doc/install_urcap_e_series.md"
+            }
+          ],
+          "description": "File belongs to documentation, publication, or website material."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "install_urcap_e_series.md",
+      "directory": "ur_robot_driver/doc",
+      "extension": ".md",
+      "size_bytes": 2398,
+      "content_scanned": true,
+      "blob_sha": "f84db716b63c26c854a8d62ecbebe2c240822c61",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/doc/install_urcap_e_series.md",
+      "ref": "master"
+    },
+    {
+      "path": "ur_robot_driver/doc/real_time.md",
+      "artifact_kind": "documentation",
+      "steps": [
+        "dissemination"
+      ],
+      "unclassified": false,
+      "scores": {
+        "collection": 1,
+        "processing": 1,
+        "evaluation": 1,
+        "dissemination": 3
+      },
+      "evidence": [
+        {
+          "rule_id": "COL_CONTENT_ACQUIRE",
+          "step": "collection",
+          "source": "content",
+          "weight": 1,
+          "matched_text": "wget",
+          "matched_texts": [
+            "wget"
+          ],
+          "matches": [
+            {
+              "text": "wget",
+              "line": 20,
+              "url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/doc/real_time.md#L20"
+            }
+          ],
+          "description": "File contains deterministic indicators of external data acquisition."
+        },
+        {
+          "rule_id": "PRO_CONTENT_PROCESS",
+          "step": "processing",
+          "source": "content",
+          "weight": 1,
+          "matched_text": "extract ",
+          "matched_texts": [
+            "extract "
+          ],
+          "matches": [
+            {
+              "text": "extract ",
+              "line": 137,
+              "url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/doc/real_time.md#L137"
+            }
+          ],
+          "description": "File contains deterministic indicators of data preparation or transformation."
+        },
+        {
+          "rule_id": "EVA_CONTENT_METRIC",
+          "step": "evaluation",
+          "source": "content",
+          "weight": 1,
+          "matched_text": "f1",
+          "matched_texts": [
+            "f1"
+          ],
+          "matches": [
+            {
+              "text": "f1",
+              "line": 252,
+              "url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/doc/real_time.md#L252"
+            }
+          ],
+          "description": "File contains explicit scientific performance metrics or comparison terminology."
+        },
+        {
+          "rule_id": "DIS_PATH_DOC_DIR",
+          "step": "dissemination",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "/doc/",
+          "matched_texts": [
+            "/doc/"
+          ],
+          "matches": [
+            {
+              "text": "/doc/",
+              "line": null,
+              "url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/doc/real_time.md"
+            }
+          ],
+          "description": "File belongs to documentation, publication, or website material."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "real_time.md",
+      "directory": "ur_robot_driver/doc",
+      "extension": ".md",
+      "size_bytes": 11569,
+      "content_scanned": true,
+      "blob_sha": "c7d02207fda3a1267c707bb07f8d036d19e9a506",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/doc/real_time.md",
+      "ref": "master"
+    },
+    {
+      "path": "ur_robot_driver/doc/resources/fzi-logo_transparenz.png",
+      "artifact_kind": "image",
+      "steps": [
+        "dissemination"
+      ],
+      "unclassified": false,
+      "scores": {
+        "dissemination": 3
+      },
+      "evidence": [
+        {
+          "rule_id": "DIS_PATH_DOC_DIR",
+          "step": "dissemination",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "/doc/",
+          "matched_texts": [
+            "/doc/"
+          ],
+          "matches": [
+            {
+              "text": "/doc/",
+              "line": null,
+              "url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/doc/resources/fzi-logo_transparenz.png"
+            }
+          ],
+          "description": "File belongs to documentation, publication, or website material."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "fzi-logo_transparenz.png",
+      "directory": "ur_robot_driver/doc/resources",
+      "extension": ".png",
+      "size_bytes": 61094,
+      "content_scanned": false,
+      "blob_sha": "a7b2b384b1b5e44c43ae6be2c80c3007aa6bde4b",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/doc/resources/fzi-logo_transparenz.png",
+      "ref": "master"
+    },
+    {
+      "path": "ur_robot_driver/doc/resources/ur_logo.jpg",
+      "artifact_kind": "image",
+      "steps": [
+        "dissemination"
+      ],
+      "unclassified": false,
+      "scores": {
+        "dissemination": 3
+      },
+      "evidence": [
+        {
+          "rule_id": "DIS_PATH_DOC_DIR",
+          "step": "dissemination",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "/doc/",
+          "matched_texts": [
+            "/doc/"
+          ],
+          "matches": [
+            {
+              "text": "/doc/",
+              "line": null,
+              "url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/doc/resources/ur_logo.jpg"
+            }
+          ],
+          "description": "File belongs to documentation, publication, or website material."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "ur_logo.jpg",
+      "directory": "ur_robot_driver/doc/resources",
+      "extension": ".jpg",
+      "size_bytes": 59846,
+      "content_scanned": false,
+      "blob_sha": "5716600c06a23d55d45a35f8b08db4bb3d0cf1ca",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/doc/resources/ur_logo.jpg",
+      "ref": "master"
+    },
+    {
+      "path": "ur_robot_driver/doc/resources/usage_example/cartesian_motion.png",
+      "artifact_kind": "image",
+      "steps": [
+        "dissemination"
+      ],
+      "unclassified": false,
+      "scores": {
+        "dissemination": 3
+      },
+      "evidence": [
+        {
+          "rule_id": "DIS_PATH_DOC_DIR",
+          "step": "dissemination",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "/doc/",
+          "matched_texts": [
+            "/doc/"
+          ],
+          "matches": [
+            {
+              "text": "/doc/",
+              "line": null,
+              "url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/doc/resources/usage_example/cartesian_motion.png"
+            }
+          ],
+          "description": "File belongs to documentation, publication, or website material."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "cartesian_motion.png",
+      "directory": "ur_robot_driver/doc/resources/usage_example",
+      "extension": ".png",
+      "size_bytes": 60921,
+      "content_scanned": false,
+      "blob_sha": "07128f351d9c22222eef8d775188bc5d8da0b570",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/doc/resources/usage_example/cartesian_motion.png",
+      "ref": "master"
+    },
+    {
+      "path": "ur_robot_driver/doc/resources/usage_example/joint_based_motion.png",
+      "artifact_kind": "image",
+      "steps": [
+        "dissemination"
+      ],
+      "unclassified": false,
+      "scores": {
+        "dissemination": 3
+      },
+      "evidence": [
+        {
+          "rule_id": "DIS_PATH_DOC_DIR",
+          "step": "dissemination",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "/doc/",
+          "matched_texts": [
+            "/doc/"
+          ],
+          "matches": [
+            {
+              "text": "/doc/",
+              "line": null,
+              "url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/doc/resources/usage_example/joint_based_motion.png"
+            }
+          ],
+          "description": "File belongs to documentation, publication, or website material."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "joint_based_motion.png",
+      "directory": "ur_robot_driver/doc/resources/usage_example",
+      "extension": ".png",
+      "size_bytes": 53775,
+      "content_scanned": false,
+      "blob_sha": "b3ff7cd95f7aa1d1fe87dc38b0b5ed033d61a4ba",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/doc/resources/usage_example/joint_based_motion.png",
+      "ref": "master"
+    },
+    {
+      "path": "ur_robot_driver/doc/resources/usage_example/moveit_1.png",
+      "artifact_kind": "image",
+      "steps": [
+        "dissemination"
+      ],
+      "unclassified": false,
+      "scores": {
+        "dissemination": 3
+      },
+      "evidence": [
+        {
+          "rule_id": "DIS_PATH_DOC_DIR",
+          "step": "dissemination",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "/doc/",
+          "matched_texts": [
+            "/doc/"
+          ],
+          "matches": [
+            {
+              "text": "/doc/",
+              "line": null,
+              "url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/doc/resources/usage_example/moveit_1.png"
+            }
+          ],
+          "description": "File belongs to documentation, publication, or website material."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "moveit_1.png",
+      "directory": "ur_robot_driver/doc/resources/usage_example",
+      "extension": ".png",
+      "size_bytes": 219972,
+      "content_scanned": false,
+      "blob_sha": "0bd810f47595052007586ecb9d934d2bdcd05bbe",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/doc/resources/usage_example/moveit_1.png",
+      "ref": "master"
+    },
+    {
+      "path": "ur_robot_driver/doc/resources/usage_example/moveit_2.png",
+      "artifact_kind": "image",
+      "steps": [
+        "dissemination"
+      ],
+      "unclassified": false,
+      "scores": {
+        "dissemination": 3
+      },
+      "evidence": [
+        {
+          "rule_id": "DIS_PATH_DOC_DIR",
+          "step": "dissemination",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "/doc/",
+          "matched_texts": [
+            "/doc/"
+          ],
+          "matches": [
+            {
+              "text": "/doc/",
+              "line": null,
+              "url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/doc/resources/usage_example/moveit_2.png"
+            }
+          ],
+          "description": "File belongs to documentation, publication, or website material."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "moveit_2.png",
+      "directory": "ur_robot_driver/doc/resources/usage_example",
+      "extension": ".png",
+      "size_bytes": 231058,
+      "content_scanned": false,
+      "blob_sha": "16ddc3b741649b959ac1a7693cdd54f65b5e8d00",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/doc/resources/usage_example/moveit_2.png",
+      "ref": "master"
+    },
+    {
+      "path": "ur_robot_driver/doc/resources/usage_example/moveit_3.png",
+      "artifact_kind": "image",
+      "steps": [
+        "dissemination"
+      ],
+      "unclassified": false,
+      "scores": {
+        "dissemination": 3
+      },
+      "evidence": [
+        {
+          "rule_id": "DIS_PATH_DOC_DIR",
+          "step": "dissemination",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "/doc/",
+          "matched_texts": [
+            "/doc/"
+          ],
+          "matches": [
+            {
+              "text": "/doc/",
+              "line": null,
+              "url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/doc/resources/usage_example/moveit_3.png"
+            }
+          ],
+          "description": "File belongs to documentation, publication, or website material."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "moveit_3.png",
+      "directory": "ur_robot_driver/doc/resources/usage_example",
+      "extension": ".png",
+      "size_bytes": 254066,
+      "content_scanned": false,
+      "blob_sha": "ed61cd36eb41726d173d4ffb20b7f98b80ab15bf",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/doc/resources/usage_example/moveit_3.png",
+      "ref": "master"
+    },
+    {
+      "path": "ur_robot_driver/doc/resources/usage_example/moveit_4.png",
+      "artifact_kind": "image",
+      "steps": [
+        "dissemination"
+      ],
+      "unclassified": false,
+      "scores": {
+        "dissemination": 3
+      },
+      "evidence": [
+        {
+          "rule_id": "DIS_PATH_DOC_DIR",
+          "step": "dissemination",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "/doc/",
+          "matched_texts": [
+            "/doc/"
+          ],
+          "matches": [
+            {
+              "text": "/doc/",
+              "line": null,
+              "url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/doc/resources/usage_example/moveit_4.png"
+            }
+          ],
+          "description": "File belongs to documentation, publication, or website material."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "moveit_4.png",
+      "directory": "ur_robot_driver/doc/resources/usage_example",
+      "extension": ".png",
+      "size_bytes": 255573,
+      "content_scanned": false,
+      "blob_sha": "7835c1c4c62b7a7848bd0d44c3b95f6ea57d0b33",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/doc/resources/usage_example/moveit_4.png",
+      "ref": "master"
+    },
+    {
+      "path": "ur_robot_driver/doc/resources/usage_example/rviz.png",
+      "artifact_kind": "image",
+      "steps": [
+        "dissemination"
+      ],
+      "unclassified": false,
+      "scores": {
+        "dissemination": 3
+      },
+      "evidence": [
+        {
+          "rule_id": "DIS_PATH_DOC_DIR",
+          "step": "dissemination",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "/doc/",
+          "matched_texts": [
+            "/doc/"
+          ],
+          "matches": [
+            {
+              "text": "/doc/",
+              "line": null,
+              "url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/doc/resources/usage_example/rviz.png"
+            }
+          ],
+          "description": "File belongs to documentation, publication, or website material."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "rviz.png",
+      "directory": "ur_robot_driver/doc/resources/usage_example",
+      "extension": ".png",
+      "size_bytes": 146867,
+      "content_scanned": false,
+      "blob_sha": "fa95a319a7f808b57451abd73733d9d5d086b526",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/doc/resources/usage_example/rviz.png",
+      "ref": "master"
+    },
+    {
+      "path": "ur_robot_driver/doc/ROS_INTERFACE.md",
+      "artifact_kind": "documentation",
+      "steps": [
+        "dissemination"
+      ],
+      "unclassified": false,
+      "scores": {
+        "dissemination": 3
+      },
+      "evidence": [
+        {
+          "rule_id": "DIS_PATH_DOC_DIR",
+          "step": "dissemination",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "/doc/",
+          "matched_texts": [
+            "/doc/"
+          ],
+          "matches": [
+            {
+              "text": "/doc/",
+              "line": null,
+              "url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/doc/ROS_INTERFACE.md"
+            }
+          ],
+          "description": "File belongs to documentation, publication, or website material."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "ROS_INTERFACE.md",
+      "directory": "ur_robot_driver/doc",
+      "extension": ".md",
+      "size_bytes": 44572,
+      "content_scanned": true,
+      "blob_sha": "aee071aa75365e4bfd0e6e0f2d8eb6cdde7cba4d",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/doc/ROS_INTERFACE.md",
+      "ref": "master"
+    },
+    {
+      "path": "ur_robot_driver/doc/rosdoc.yaml",
+      "artifact_kind": "configuration",
+      "steps": [
+        "dissemination"
+      ],
+      "unclassified": false,
+      "scores": {
+        "dissemination": 3
+      },
+      "evidence": [
+        {
+          "rule_id": "DIS_PATH_DOC_DIR",
+          "step": "dissemination",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "/doc/",
+          "matched_texts": [
+            "/doc/"
+          ],
+          "matches": [
+            {
+              "text": "/doc/",
+              "line": null,
+              "url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/doc/rosdoc.yaml"
+            }
+          ],
+          "description": "File belongs to documentation, publication, or website material."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "rosdoc.yaml",
+      "directory": "ur_robot_driver/doc",
+      "extension": ".yaml",
+      "size_bytes": 102,
+      "content_scanned": true,
+      "blob_sha": "d27dced12ea02f73fa198d6909dd54e2a9f67a88",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/doc/rosdoc.yaml",
+      "ref": "master"
+    },
+    {
+      "path": "ur_robot_driver/doc/setup_tool_communication.md",
+      "artifact_kind": "documentation",
+      "steps": [
+        "dissemination"
+      ],
+      "unclassified": false,
+      "scores": {
+        "dissemination": 3
+      },
+      "evidence": [
+        {
+          "rule_id": "DIS_PATH_DOC_DIR",
+          "step": "dissemination",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "/doc/",
+          "matched_texts": [
+            "/doc/"
+          ],
+          "matches": [
+            {
+              "text": "/doc/",
+              "line": null,
+              "url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/doc/setup_tool_communication.md"
+            }
+          ],
+          "description": "File belongs to documentation, publication, or website material."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "setup_tool_communication.md",
+      "directory": "ur_robot_driver/doc",
+      "extension": ".md",
+      "size_bytes": 2290,
+      "content_scanned": true,
+      "blob_sha": "f05d3106e7eac026d774c1c09313eecd4a874f00",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/doc/setup_tool_communication.md",
+      "ref": "master"
+    },
+    {
+      "path": "ur_robot_driver/doc/usage_example.md",
+      "artifact_kind": "documentation",
+      "steps": [
+        "dissemination"
+      ],
+      "unclassified": false,
+      "scores": {
+        "processing": 1,
+        "dissemination": 3
+      },
+      "evidence": [
+        {
+          "rule_id": "PRO_CONTENT_PROCESS",
+          "step": "processing",
+          "source": "content",
+          "weight": 1,
+          "matched_text": "extract ",
+          "matched_texts": [
+            "extract "
+          ],
+          "matches": [
+            {
+              "text": "extract ",
+              "line": 45,
+              "url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/doc/usage_example.md#L45"
+            }
+          ],
+          "description": "File contains deterministic indicators of data preparation or transformation."
+        },
+        {
+          "rule_id": "DIS_PATH_DOC_DIR",
+          "step": "dissemination",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "/doc/",
+          "matched_texts": [
+            "/doc/"
+          ],
+          "matches": [
+            {
+              "text": "/doc/",
+              "line": null,
+              "url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/doc/usage_example.md"
+            }
+          ],
+          "description": "File belongs to documentation, publication, or website material."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "usage_example.md",
+      "directory": "ur_robot_driver/doc",
+      "extension": ".md",
+      "size_bytes": 9883,
+      "content_scanned": true,
+      "blob_sha": "52c1cdd603ed07241db90fcf70383b606d73674c",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/doc/usage_example.md",
+      "ref": "master"
+    },
+    {
+      "path": "ur_robot_driver/hardware_interface_plugin.xml",
+      "artifact_kind": "other",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "hardware_interface_plugin.xml",
+      "directory": "ur_robot_driver",
+      "extension": ".xml",
+      "size_bytes": 276,
+      "content_scanned": false,
+      "blob_sha": "4b83a21bd8d1bee6e57c1b61850529f457120314",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/hardware_interface_plugin.xml",
+      "ref": "master"
+    },
+    {
+      "path": "ur_robot_driver/include/ur_robot_driver/controller_stopper.h",
+      "artifact_kind": "source_code",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "controller_stopper.h",
+      "directory": "ur_robot_driver/include/ur_robot_driver",
+      "extension": ".h",
+      "size_bytes": 2168,
+      "content_scanned": true,
+      "blob_sha": "425003a71769d84dd140b71b74e20cc064ee6f86",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/include/ur_robot_driver/controller_stopper.h",
+      "ref": "master"
+    },
+    {
+      "path": "ur_robot_driver/include/ur_robot_driver/dashboard_client_ros.h",
+      "artifact_kind": "source_code",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "dashboard_client_ros.h",
+      "directory": "ur_robot_driver/include/ur_robot_driver",
+      "extension": ".h",
+      "size_bytes": 5271,
+      "content_scanned": true,
+      "blob_sha": "b8d9cb4f289061ec19c71e6c8a8a5b95a98c515f",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/include/ur_robot_driver/dashboard_client_ros.h",
+      "ref": "master"
+    },
+    {
+      "path": "ur_robot_driver/include/ur_robot_driver/hardware_interface.h",
+      "artifact_kind": "source_code",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "hardware_interface.h",
+      "directory": "ur_robot_driver/include/ur_robot_driver",
+      "extension": ".h",
+      "size_bytes": 13528,
+      "content_scanned": true,
+      "blob_sha": "aa209dc2238d2b4f8008b786ac31f5c79a329e4f",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/include/ur_robot_driver/hardware_interface.h",
+      "ref": "master"
+    },
+    {
+      "path": "ur_robot_driver/include/ur_robot_driver/robot_state_helper.h",
+      "artifact_kind": "source_code",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "robot_state_helper.h",
+      "directory": "ur_robot_driver/include/ur_robot_driver",
+      "extension": ".h",
+      "size_bytes": 3891,
+      "content_scanned": true,
+      "blob_sha": "103c15233f05500f5486a3cc32d8c7bfdbe4fc9f",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/include/ur_robot_driver/robot_state_helper.h",
+      "ref": "master"
+    },
+    {
+      "path": "ur_robot_driver/include/ur_robot_driver/urcl_log_handler.h",
+      "artifact_kind": "source_code",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "urcl_log_handler.h",
+      "directory": "ur_robot_driver/include/ur_robot_driver",
+      "extension": ".h",
+      "size_bytes": 3704,
+      "content_scanned": true,
+      "blob_sha": "e8f28f9f17e5191ff7ad52a1a5321d2f9fa515c1",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/include/ur_robot_driver/urcl_log_handler.h",
+      "ref": "master"
+    },
+    {
+      "path": "ur_robot_driver/launch/example_rviz.launch",
+      "artifact_kind": "other",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "example_rviz.launch",
+      "directory": "ur_robot_driver/launch",
+      "extension": ".launch",
+      "size_bytes": 165,
+      "content_scanned": false,
+      "blob_sha": "1cf314f4129d8549700c38710174557fb9104518",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/launch/example_rviz.launch",
+      "ref": "master"
+    },
+    {
+      "path": "ur_robot_driver/launch/ur10_bringup.launch",
+      "artifact_kind": "other",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "ur10_bringup.launch",
+      "directory": "ur_robot_driver/launch",
+      "extension": ".launch",
+      "size_bytes": 2493,
+      "content_scanned": false,
+      "blob_sha": "8686e418c01bf8b6c72a7b56d55ae87dbed62d2b",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/launch/ur10_bringup.launch",
+      "ref": "master"
+    },
+    {
+      "path": "ur_robot_driver/launch/ur10e_bringup.launch",
+      "artifact_kind": "other",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "ur10e_bringup.launch",
+      "directory": "ur_robot_driver/launch",
+      "extension": ".launch",
+      "size_bytes": 3873,
+      "content_scanned": false,
+      "blob_sha": "2b98f640797d102bf85136ef078e126c3479499f",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/launch/ur10e_bringup.launch",
+      "ref": "master"
+    },
+    {
+      "path": "ur_robot_driver/launch/ur12e_bringup.launch",
+      "artifact_kind": "other",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "ur12e_bringup.launch",
+      "directory": "ur_robot_driver/launch",
+      "extension": ".launch",
+      "size_bytes": 3873,
+      "content_scanned": false,
+      "blob_sha": "24bf4ee309b035458a7f1c75f8561fb2e78a344d",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/launch/ur12e_bringup.launch",
+      "ref": "master"
+    },
+    {
+      "path": "ur_robot_driver/launch/ur15_bringup.launch",
+      "artifact_kind": "other",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "ur15_bringup.launch",
+      "directory": "ur_robot_driver/launch",
+      "extension": ".launch",
+      "size_bytes": 3870,
+      "content_scanned": false,
+      "blob_sha": "bfd615da097a7512406f4a5448e0236ad23c0713",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/launch/ur15_bringup.launch",
+      "ref": "master"
+    },
+    {
+      "path": "ur_robot_driver/launch/ur16e_bringup.launch",
+      "artifact_kind": "other",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "ur16e_bringup.launch",
+      "directory": "ur_robot_driver/launch",
+      "extension": ".launch",
+      "size_bytes": 3873,
+      "content_scanned": false,
+      "blob_sha": "40b6a7bf80c3e0c3227535306eab51728d9da78b",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/launch/ur16e_bringup.launch",
+      "ref": "master"
+    },
+    {
+      "path": "ur_robot_driver/launch/ur18_bringup.launch",
+      "artifact_kind": "other",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "ur18_bringup.launch",
+      "directory": "ur_robot_driver/launch",
+      "extension": ".launch",
+      "size_bytes": 3870,
+      "content_scanned": false,
+      "blob_sha": "2967a0a8144b2a59827d66cf1d407ea2d0b29290",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/launch/ur18_bringup.launch",
+      "ref": "master"
+    },
+    {
+      "path": "ur_robot_driver/launch/ur20_bringup.launch",
+      "artifact_kind": "other",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "ur20_bringup.launch",
+      "directory": "ur_robot_driver/launch",
+      "extension": ".launch",
+      "size_bytes": 3870,
+      "content_scanned": false,
+      "blob_sha": "a5a9a99942379e68a63f9a054fe42f4fa193fa1a",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/launch/ur20_bringup.launch",
+      "ref": "master"
+    },
+    {
+      "path": "ur_robot_driver/launch/ur30_bringup.launch",
+      "artifact_kind": "other",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "ur30_bringup.launch",
+      "directory": "ur_robot_driver/launch",
+      "extension": ".launch",
+      "size_bytes": 3870,
+      "content_scanned": false,
+      "blob_sha": "3f20d67a9e78b6d8c9a9e7afc1569f6b19283de0",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/launch/ur30_bringup.launch",
+      "ref": "master"
+    },
+    {
+      "path": "ur_robot_driver/launch/ur3_bringup.launch",
+      "artifact_kind": "other",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "ur3_bringup.launch",
+      "directory": "ur_robot_driver/launch",
+      "extension": ".launch",
+      "size_bytes": 2490,
+      "content_scanned": false,
+      "blob_sha": "764b36634e24477fc54effc1f1849cb3e5188558",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/launch/ur3_bringup.launch",
+      "ref": "master"
+    },
+    {
+      "path": "ur_robot_driver/launch/ur3e_bringup.launch",
+      "artifact_kind": "other",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "ur3e_bringup.launch",
+      "directory": "ur_robot_driver/launch",
+      "extension": ".launch",
+      "size_bytes": 3869,
+      "content_scanned": false,
+      "blob_sha": "bbf4ff69664e8d448ab2abf9fdadf7ee62d0f90f",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/launch/ur3e_bringup.launch",
+      "ref": "master"
+    },
+    {
+      "path": "ur_robot_driver/launch/ur5_bringup.launch",
+      "artifact_kind": "other",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "ur5_bringup.launch",
+      "directory": "ur_robot_driver/launch",
+      "extension": ".launch",
+      "size_bytes": 2490,
+      "content_scanned": false,
+      "blob_sha": "619118c2a1894536a23d5ff15057b096560657ca",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/launch/ur5_bringup.launch",
+      "ref": "master"
+    },
+    {
+      "path": "ur_robot_driver/launch/ur5e_bringup.launch",
+      "artifact_kind": "other",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "ur5e_bringup.launch",
+      "directory": "ur_robot_driver/launch",
+      "extension": ".launch",
+      "size_bytes": 3870,
+      "content_scanned": false,
+      "blob_sha": "10a03b253e11356f3f9b317a64ae20f610e0c230",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/launch/ur5e_bringup.launch",
+      "ref": "master"
+    },
+    {
+      "path": "ur_robot_driver/launch/ur7e_bringup.launch",
+      "artifact_kind": "other",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "ur7e_bringup.launch",
+      "directory": "ur_robot_driver/launch",
+      "extension": ".launch",
+      "size_bytes": 3870,
+      "content_scanned": false,
+      "blob_sha": "9b0a0b8c89f81407485097eb2522e530ba5aa48d",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/launch/ur7e_bringup.launch",
+      "ref": "master"
+    },
+    {
+      "path": "ur_robot_driver/launch/ur8long_bringup.launch",
+      "artifact_kind": "other",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "ur8long_bringup.launch",
+      "directory": "ur_robot_driver/launch",
+      "extension": ".launch",
+      "size_bytes": 3879,
+      "content_scanned": false,
+      "blob_sha": "b4f7169c53dda8ca4fb99934c080727475480622",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/launch/ur8long_bringup.launch",
+      "ref": "master"
+    },
+    {
+      "path": "ur_robot_driver/launch/ur_common.launch",
+      "artifact_kind": "other",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "ur_common.launch",
+      "directory": "ur_robot_driver/launch",
+      "extension": ".launch",
+      "size_bytes": 6070,
+      "content_scanned": false,
+      "blob_sha": "2efb1a39b97b7badc6b20e55562fca67a02e50f4",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/launch/ur_common.launch",
+      "ref": "master"
+    },
+    {
+      "path": "ur_robot_driver/launch/ur_control.launch",
+      "artifact_kind": "other",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "ur_control.launch",
+      "directory": "ur_robot_driver/launch",
+      "extension": ".launch",
+      "size_bytes": 8793,
+      "content_scanned": false,
+      "blob_sha": "1e0250447a98f1b896bb813a7c1f42178a3c7673",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/launch/ur_control.launch",
+      "ref": "master"
+    },
+    {
+      "path": "ur_robot_driver/LICENSE",
+      "artifact_kind": "other",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "LICENSE",
+      "directory": "ur_robot_driver",
+      "extension": "",
+      "size_bytes": 10177,
+      "content_scanned": false,
+      "blob_sha": "6b4e9741b0eb302cc195ebe0b737408b552f2565",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/LICENSE",
+      "ref": "master"
+    },
+    {
+      "path": "ur_robot_driver/package.xml",
+      "artifact_kind": "other",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "package.xml",
+      "directory": "ur_robot_driver",
+      "extension": ".xml",
+      "size_bytes": 2741,
+      "content_scanned": false,
+      "blob_sha": "ec3b0cae3416a82d12c8b3b0d04210bffa2ea940",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/package.xml",
+      "ref": "master"
+    },
+    {
+      "path": "ur_robot_driver/README.md",
+      "artifact_kind": "documentation",
+      "steps": [
+        "dissemination"
+      ],
+      "unclassified": false,
+      "scores": {
+        "dissemination": 2
+      },
+      "evidence": [
+        {
+          "rule_id": "DIS_README",
+          "step": "dissemination",
+          "source": "path",
+          "weight": 2,
+          "matched_text": "/README.md",
+          "matched_texts": [
+            "/README.md"
+          ],
+          "matches": [
+            {
+              "text": "/README.md",
+              "line": null,
+              "url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/README.md"
+            }
+          ],
+          "description": "Project-facing documentation supports dissemination."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "README.md",
+      "directory": "ur_robot_driver",
+      "extension": ".md",
+      "size_bytes": 5999,
+      "content_scanned": true,
+      "blob_sha": "3b8b9674e29e25244d973848d911864eda052be8",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/README.md",
+      "ref": "master"
+    },
+    {
+      "path": "ur_robot_driver/resources/example_rviz_config.rviz",
+      "artifact_kind": "other",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "example_rviz_config.rviz",
+      "directory": "ur_robot_driver/resources",
+      "extension": ".rviz",
+      "size_bytes": 7059,
+      "content_scanned": false,
+      "blob_sha": "983e525cc182adeed463a0623d7d6cee21eb4ec8",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/resources/example_rviz_config.rviz",
+      "ref": "master"
+    },
+    {
+      "path": "ur_robot_driver/resources/rtde_input_recipe.txt",
+      "artifact_kind": "other",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "rtde_input_recipe.txt",
+      "directory": "ur_robot_driver/resources",
+      "extension": ".txt",
+      "size_bytes": 305,
+      "content_scanned": true,
+      "blob_sha": "c00dc059dfebdf13f1bb5f2edb90ad033854d9b3",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/resources/rtde_input_recipe.txt",
+      "ref": "master"
+    },
+    {
+      "path": "ur_robot_driver/resources/rtde_output_recipe.txt",
+      "artifact_kind": "other",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "rtde_output_recipe.txt",
+      "directory": "ur_robot_driver/resources",
+      "extension": ".txt",
+      "size_bytes": 559,
+      "content_scanned": true,
+      "blob_sha": "d285706b36b2c50ffe0cd93c5619e62f366ce76c",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/resources/rtde_output_recipe.txt",
+      "ref": "master"
+    },
+    {
+      "path": "ur_robot_driver/scripts/test_move",
+      "artifact_kind": "other",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "test_move",
+      "directory": "ur_robot_driver/scripts",
+      "extension": "",
+      "size_bytes": 12916,
+      "content_scanned": false,
+      "blob_sha": "eeb41246967a4a388a48d65a96de8941ef24cb01",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/scripts/test_move",
+      "ref": "master"
+    },
+    {
+      "path": "ur_robot_driver/scripts/tool_communication",
+      "artifact_kind": "other",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "tool_communication",
+      "directory": "ur_robot_driver/scripts",
+      "extension": "",
+      "size_bytes": 1772,
+      "content_scanned": false,
+      "blob_sha": "31a49710164fbc3fc715d153819f92dc5f6ef661",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/scripts/tool_communication",
+      "ref": "master"
+    },
+    {
+      "path": "ur_robot_driver/src/controller_stopper.cpp",
+      "artifact_kind": "source_code",
+      "steps": [
+        "implementation"
+      ],
+      "unclassified": false,
+      "scores": {
+        "implementation": 3
+      },
+      "evidence": [
+        {
+          "rule_id": "IMP_PATH_SOURCE_DIR",
+          "step": "implementation",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "/src/",
+          "matched_texts": [
+            "/src/"
+          ],
+          "matches": [
+            {
+              "text": "/src/",
+              "line": null,
+              "url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/src/controller_stopper.cpp"
+            }
+          ],
+          "description": "File is part of an implementation source tree."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "controller_stopper.cpp",
+      "directory": "ur_robot_driver/src",
+      "extension": ".cpp",
+      "size_bytes": 5093,
+      "content_scanned": true,
+      "blob_sha": "d05c09091f7f7d41e0d6beaaea1f1a94d78bace7",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/src/controller_stopper.cpp",
+      "ref": "master"
+    },
+    {
+      "path": "ur_robot_driver/src/controller_stopper_node.cpp",
+      "artifact_kind": "source_code",
+      "steps": [
+        "implementation"
+      ],
+      "unclassified": false,
+      "scores": {
+        "implementation": 3
+      },
+      "evidence": [
+        {
+          "rule_id": "IMP_PATH_SOURCE_DIR",
+          "step": "implementation",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "/src/",
+          "matched_texts": [
+            "/src/"
+          ],
+          "matches": [
+            {
+              "text": "/src/",
+              "line": null,
+              "url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/src/controller_stopper_node.cpp"
+            }
+          ],
+          "description": "File is part of an implementation source tree."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "controller_stopper_node.cpp",
+      "directory": "ur_robot_driver/src",
+      "extension": ".cpp",
+      "size_bytes": 1395,
+      "content_scanned": true,
+      "blob_sha": "f5faf1785e81f56d7e4da0d58032813b6a50871b",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/src/controller_stopper_node.cpp",
+      "ref": "master"
+    },
+    {
+      "path": "ur_robot_driver/src/dashboard_client_node.cpp",
+      "artifact_kind": "source_code",
+      "steps": [
+        "implementation"
+      ],
+      "unclassified": false,
+      "scores": {
+        "implementation": 3
+      },
+      "evidence": [
+        {
+          "rule_id": "IMP_PATH_SOURCE_DIR",
+          "step": "implementation",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "/src/",
+          "matched_texts": [
+            "/src/"
+          ],
+          "matches": [
+            {
+              "text": "/src/",
+              "line": null,
+              "url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/src/dashboard_client_node.cpp"
+            }
+          ],
+          "description": "File is part of an implementation source tree."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "dashboard_client_node.cpp",
+      "directory": "ur_robot_driver/src",
+      "extension": ".cpp",
+      "size_bytes": 1621,
+      "content_scanned": true,
+      "blob_sha": "d5b3d5acb7b056cc2370831d034443702b3423ee",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/src/dashboard_client_node.cpp",
+      "ref": "master"
+    },
+    {
+      "path": "ur_robot_driver/src/dashboard_client_ros.cpp",
+      "artifact_kind": "source_code",
+      "steps": [
+        "implementation"
+      ],
+      "unclassified": false,
+      "scores": {
+        "implementation": 3
+      },
+      "evidence": [
+        {
+          "rule_id": "IMP_PATH_SOURCE_DIR",
+          "step": "implementation",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "/src/",
+          "matched_texts": [
+            "/src/"
+          ],
+          "matches": [
+            {
+              "text": "/src/",
+              "line": null,
+              "url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/src/dashboard_client_ros.cpp"
+            }
+          ],
+          "description": "File is part of an implementation source tree."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "dashboard_client_ros.cpp",
+      "directory": "ur_robot_driver/src",
+      "extension": ".cpp",
+      "size_bytes": 15173,
+      "content_scanned": true,
+      "blob_sha": "7cc9c657b7cda4635deba0a4d29c9b8ae338636a",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/src/dashboard_client_ros.cpp",
+      "ref": "master"
+    },
+    {
+      "path": "ur_robot_driver/src/hardware_interface.cpp",
+      "artifact_kind": "source_code",
+      "steps": [
+        "implementation"
+      ],
+      "unclassified": false,
+      "scores": {
+        "processing": 1,
+        "implementation": 3
+      },
+      "evidence": [
+        {
+          "rule_id": "PRO_CONTENT_PROCESS",
+          "step": "processing",
+          "source": "content",
+          "weight": 1,
+          "matched_text": "extract ",
+          "matched_texts": [
+            "extract ",
+            "Normalize",
+            "Transform "
+          ],
+          "matches": [
+            {
+              "text": "extract ",
+              "line": 322,
+              "url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/src/hardware_interface.cpp#L322"
+            },
+            {
+              "text": "Normalize",
+              "line": 567,
+              "url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/src/hardware_interface.cpp#L567"
+            },
+            {
+              "text": "Transform ",
+              "line": 585,
+              "url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/src/hardware_interface.cpp#L585"
+            }
+          ],
+          "description": "File contains deterministic indicators of data preparation or transformation."
+        },
+        {
+          "rule_id": "IMP_PATH_SOURCE_DIR",
+          "step": "implementation",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "/src/",
+          "matched_texts": [
+            "/src/"
+          ],
+          "matches": [
+            {
+              "text": "/src/",
+              "line": null,
+              "url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/src/hardware_interface.cpp"
+            }
+          ],
+          "description": "File is part of an implementation source tree."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "hardware_interface.cpp",
+      "directory": "ur_robot_driver/src",
+      "extension": ".cpp",
+      "size_bytes": 59437,
+      "content_scanned": true,
+      "blob_sha": "493221dc367f0196600e7b6ca7c629559da673f5",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/src/hardware_interface.cpp",
+      "ref": "master"
+    },
+    {
+      "path": "ur_robot_driver/src/hardware_interface_node.cpp",
+      "artifact_kind": "source_code",
+      "steps": [
+        "implementation"
+      ],
+      "unclassified": false,
+      "scores": {
+        "implementation": 3
+      },
+      "evidence": [
+        {
+          "rule_id": "IMP_PATH_SOURCE_DIR",
+          "step": "implementation",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "/src/",
+          "matched_texts": [
+            "/src/"
+          ],
+          "matches": [
+            {
+              "text": "/src/",
+              "line": null,
+              "url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/src/hardware_interface_node.cpp"
+            }
+          ],
+          "description": "File is part of an implementation source tree."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "hardware_interface_node.cpp",
+      "directory": "ur_robot_driver/src",
+      "extension": ".cpp",
+      "size_bytes": 5230,
+      "content_scanned": true,
+      "blob_sha": "9e9110d7aa94f1585c1ca83f2526726c4e74767d",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/src/hardware_interface_node.cpp",
+      "ref": "master"
+    },
+    {
+      "path": "ur_robot_driver/src/robot_state_helper.cpp",
+      "artifact_kind": "source_code",
+      "steps": [
+        "implementation"
+      ],
+      "unclassified": false,
+      "scores": {
+        "implementation": 3
+      },
+      "evidence": [
+        {
+          "rule_id": "IMP_PATH_SOURCE_DIR",
+          "step": "implementation",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "/src/",
+          "matched_texts": [
+            "/src/"
+          ],
+          "matches": [
+            {
+              "text": "/src/",
+              "line": null,
+              "url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/src/robot_state_helper.cpp"
+            }
+          ],
+          "description": "File is part of an implementation source tree."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "robot_state_helper.cpp",
+      "directory": "ur_robot_driver/src",
+      "extension": ".cpp",
+      "size_bytes": 10924,
+      "content_scanned": true,
+      "blob_sha": "13dd6d314afd7a58dd0b5acc8e86c0502ce66945",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/src/robot_state_helper.cpp",
+      "ref": "master"
+    },
+    {
+      "path": "ur_robot_driver/src/robot_state_helper_node.cpp",
+      "artifact_kind": "source_code",
+      "steps": [
+        "implementation"
+      ],
+      "unclassified": false,
+      "scores": {
+        "implementation": 3
+      },
+      "evidence": [
+        {
+          "rule_id": "IMP_PATH_SOURCE_DIR",
+          "step": "implementation",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "/src/",
+          "matched_texts": [
+            "/src/"
+          ],
+          "matches": [
+            {
+              "text": "/src/",
+              "line": null,
+              "url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/src/robot_state_helper_node.cpp"
+            }
+          ],
+          "description": "File is part of an implementation source tree."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "robot_state_helper_node.cpp",
+      "directory": "ur_robot_driver/src",
+      "extension": ".cpp",
+      "size_bytes": 1372,
+      "content_scanned": true,
+      "blob_sha": "ba7a483dfb776a74d5122a6b44717d7f8184d640",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/src/robot_state_helper_node.cpp",
+      "ref": "master"
+    },
+    {
+      "path": "ur_robot_driver/src/urcl_log_handler.cpp",
+      "artifact_kind": "source_code",
+      "steps": [
+        "implementation"
+      ],
+      "unclassified": false,
+      "scores": {
+        "implementation": 3
+      },
+      "evidence": [
+        {
+          "rule_id": "IMP_PATH_SOURCE_DIR",
+          "step": "implementation",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "/src/",
+          "matched_texts": [
+            "/src/"
+          ],
+          "matches": [
+            {
+              "text": "/src/",
+              "line": null,
+              "url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/src/urcl_log_handler.cpp"
+            }
+          ],
+          "description": "File is part of an implementation source tree."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "urcl_log_handler.cpp",
+      "directory": "ur_robot_driver/src",
+      "extension": ".cpp",
+      "size_bytes": 3987,
+      "content_scanned": true,
+      "blob_sha": "fcd7969102db87de20867b912e309fdfd0c053e7",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/src/urcl_log_handler.cpp",
+      "ref": "master"
+    },
+    {
+      "path": "ur_robot_driver/test/driver.test",
+      "artifact_kind": "other",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [
+        {
+          "rule_id": "IMP_PATH_TESTS",
+          "step": "implementation",
+          "source": "path",
+          "artifact_kind": "other",
+          "reason": "Suppressed because 'other' files are not compatible with this generic implementation rule."
+        }
+      ],
+      "file_name": "driver.test",
+      "directory": "ur_robot_driver/test",
+      "extension": ".test",
+      "size_bytes": 1561,
+      "content_scanned": false,
+      "blob_sha": "891075e0bdec6c745b4f33ea6efa8f00832feb63",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/test/driver.test",
+      "ref": "master"
+    },
+    {
+      "path": "ur_robot_driver/test/integration_test.py",
+      "artifact_kind": "source_code",
+      "steps": [
+        "implementation"
+      ],
+      "unclassified": false,
+      "scores": {
+        "implementation": 2
+      },
+      "evidence": [
+        {
+          "rule_id": "IMP_PATH_TESTS",
+          "step": "implementation",
+          "source": "path",
+          "weight": 2,
+          "matched_text": "/test/",
+          "matched_texts": [
+            "/test/"
+          ],
+          "matches": [
+            {
+              "text": "/test/",
+              "line": null,
+              "url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/test/integration_test.py"
+            }
+          ],
+          "description": "Software tests are treated as implementation/verification, not scientific evaluation."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "integration_test.py",
+      "directory": "ur_robot_driver/test",
+      "extension": ".py",
+      "size_bytes": 19209,
+      "content_scanned": true,
+      "blob_sha": "34ef1516d0663152b2947d652739eefb7128289c",
+      "file_url": "https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/test/integration_test.py",
+      "ref": "master"
+    }
+  ],
+  "execution": {
+    "id": "99a1c3500420202cd2db",
+    "repo_key": "https://github.com/universalrobots/universal_robots_ros_driver",
+    "executed_at": "2026-09-21T10:57:58.129044+00:00"
+  },
+  "cache": {
+    "hit": false,
+    "persistent": true,
+    "path": "data/heuristic_results/99a1c3500420202cd2db.json",
+    "scope": "repository"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "158110fdaae447b5a473",
+  "repo_url": "https://github.com/akiss/akiss",
+  "full_name": "akiss/akiss",
+  "ref": "master",
+  "file_count": 150,
+  "files_per_step": {
+    "collection": 0,
+    "processing": 0,
+    "implementation": 1,
+    "experimentation": 0,
+    "evaluation": 0,
+    "dissemination": 1
+  },
+  "unclassified_files": 148,
+  "executed_at": "2026-09-21T10:58:03.845821+00:00"
+}

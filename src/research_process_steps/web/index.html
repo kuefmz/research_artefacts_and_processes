@@ -1,0 +1,509 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Research Process Steps Explorer</title>
+  <style>
+    :root {
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: #18202b;
+      background: #f5f7fa;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; }
+    .page { max-width: 1220px; margin: 0 auto; padding: 34px 22px 60px; }
+    h1 { margin: 0 0 8px; font-size: 30px; }
+    h2 { margin: 0 0 10px; font-size: 19px; }
+    .subtitle { margin: 0 0 26px; color: #5b6573; max-width: 900px; line-height: 1.5; }
+    .panel {
+      background: white;
+      border: 1px solid #dfe4ea;
+      border-radius: 14px;
+      padding: 18px;
+      box-shadow: 0 4px 18px rgba(20,30,45,.04);
+      margin-bottom: 16px;
+    }
+    .panel-copy { margin: 0 0 12px; color: #687382; font-size: 13px; line-height: 1.45; }
+    .form-row { display: grid; grid-template-columns: 1fr 160px; gap: 10px; }
+    input, select, button {
+      font: inherit;
+      border-radius: 9px;
+      border: 1px solid #cfd6de;
+      padding: 11px 12px;
+    }
+    button {
+      border: 0;
+      background: #18202b;
+      color: white;
+      font-weight: 650;
+      cursor: pointer;
+    }
+    button.secondary { background: #eef2f6; color: #263445; border: 1px solid #d7dee7; }
+    button.small { padding: 6px 9px; font-size: 12px; }
+    button:disabled { opacity: .55; cursor: wait; }
+    .batch-buttons { display: flex; flex-wrap: wrap; gap: 8px; }
+    .examples { margin-top: 10px; color: #687382; font-size: 13px; }
+    .examples button {
+      padding: 0;
+      background: none;
+      color: #315f9a;
+      font-weight: 500;
+      text-decoration: underline;
+      border: 0;
+    }
+    .status { margin-top: 12px; min-height: 22px; color: #5c6673; }
+    .error { color: #a52a2a; }
+    .success { color: #28613b; }
+    .hidden { display: none; }
+    .summary {
+      display: grid;
+      grid-template-columns: repeat(7, minmax(0, 1fr));
+      gap: 10px;
+      margin: 18px 0;
+    }
+    .metric {
+      background: white;
+      border: 1px solid #dfe4ea;
+      border-radius: 10px;
+      padding: 12px;
+    }
+    .metric .value { font-size: 23px; font-weight: 700; }
+    .metric .label { color: #6a7480; font-size: 12px; margin-top: 3px; text-transform: capitalize; }
+    .controls {
+      display: grid;
+      grid-template-columns: minmax(240px,1fr) 190px;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .table-wrap {
+      overflow: auto;
+      max-height: 68vh;
+      border: 1px solid #dfe4ea;
+      border-radius: 12px;
+      background: white;
+    }
+    .history-wrap { max-height: 390px; }
+    table { width: 100%; border-collapse: collapse; min-width: 900px; }
+    th, td { text-align: left; vertical-align: top; padding: 11px 12px; border-bottom: 1px solid #edf0f3; }
+    th {
+      position: sticky;
+      top: 0;
+      background: #fafbfc;
+      z-index: 1;
+      font-size: 12px;
+      color: #5d6875;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+    td { font-size: 13px; }
+    .path { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; word-break: break-word; }
+    .path a, .match-link, .repo-link { color: #245ea6; text-decoration: none; }
+    .path a:hover, .match-link:hover, .repo-link:hover { text-decoration: underline; }
+    .cache-badge { display: inline-block; margin-left: 8px; padding: 2px 7px; border-radius: 999px; background: #e8f4ec; color: #28613b; font-size: 11px; font-weight: 650; }
+    .kind-badge { display: inline-block; margin-top: 5px; padding: 2px 7px; border-radius: 999px; background: #eef3f8; color: #40556d; font-size: 11px; }
+    .suppressed { margin-top: 7px; border-left: 3px solid #d6a85f; padding-left: 8px; color: #6f5630; }
+    .chips { display: flex; gap: 5px; flex-wrap: wrap; }
+    .chip {
+      display: inline-block;
+      border: 1px solid #ccd5df;
+      border-radius: 999px;
+      padding: 3px 7px;
+      background: #f7f9fb;
+      font-size: 11px;
+      white-space: nowrap;
+    }
+    .none { color: #8a939d; }
+    details { max-width: 470px; }
+    summary { cursor: pointer; color: #315f9a; }
+    .evidence { margin-top: 7px; display: grid; gap: 7px; }
+    .evidence-item { border-left: 3px solid #cad2dc; padding-left: 8px; line-height: 1.35; }
+    .match {
+      display: inline-block;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      background: #fff3c4;
+      border-radius: 4px;
+      padding: 1px 4px;
+      margin-top: 2px;
+      word-break: break-word;
+    }
+    .meta { color: #737e8a; font-size: 11px; }
+    .file-details { margin-top: 7px; font-family: Inter, ui-sans-serif, system-ui, sans-serif; }
+    .file-details-grid { display: grid; grid-template-columns: 110px 1fr; gap: 3px 10px; margin-top: 6px; }
+    .file-details-grid dt { color: #737e8a; }
+    .file-details-grid dd { margin: 0; word-break: break-word; }
+    .section-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 10px; }
+    @media (max-width: 850px) {
+      .form-row, .controls { grid-template-columns: 1fr; }
+      .summary { grid-template-columns: repeat(2, 1fr); }
+      .section-head { align-items: flex-start; flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <h1>Research Process Steps Explorer</h1>
+    <p class="subtitle">
+      Deterministic heuristics only. Every repository is persisted after its first execution and reused forever after,
+      so the same GitHub repository is never analyzed twice.
+    </p>
+
+    <section class="panel">
+      <h2>Analyze one repository</h2>
+      <div class="form-row">
+        <input id="repo" type="url" placeholder="https://github.com/owner/repository"
+               value="https://github.com/KnowledgeCaptureAndDiscovery/somef" />
+        <button id="analyze">Analyze repository</button>
+      </div>
+      <div class="examples">
+        Example:
+        <button data-url="https://github.com/KnowledgeCaptureAndDiscovery/somef">SoMEF</button>
+        ·
+        <button data-url="https://github.com/dgarijo/Widoco">WIDOCO</button>
+      </div>
+      <div id="status" class="status"></div>
+    </section>
+
+    <section class="panel">
+      <h2>Run random unseen repositories</h2>
+      <p class="panel-copy">
+        Repositories are sampled from the compiled OpenAIRE GitHub corpus. Repositories with stored results are excluded
+        before sampling, and each completed repository is saved immediately.
+      </p>
+      <div id="batchButtons" class="batch-buttons">
+        <button data-count="10">Run 10 random</button>
+        <button data-count="20">Run 20 random</button>
+        <button data-count="25">Run 25 random</button>
+        <button data-count="50">Run 50 random</button>
+        <button data-count="100">Run 100 random</button>
+      </div>
+      <div id="batchStatus" class="status"></div>
+    </section>
+
+    <section class="panel">
+      <div class="section-head">
+        <div>
+          <h2>Executed repositories</h2>
+          <p id="historyCount" class="panel-copy">Loading stored results…</p>
+        </div>
+        <button id="refreshHistory" class="secondary small">Refresh</button>
+      </div>
+      <div class="table-wrap history-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Repository</th>
+              <th>Executed</th>
+              <th>Files</th>
+              <th>Step counts</th>
+              <th>Result</th>
+            </tr>
+          </thead>
+          <tbody id="historyRows"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="results" class="hidden">
+      <div id="summary" class="summary"></div>
+
+      <div class="controls">
+        <input id="search" placeholder="Filter by file path, matched keyword, or rule..." />
+        <select id="stepFilter">
+          <option value="">All steps</option>
+          <option value="collection">Collection</option>
+          <option value="processing">Processing</option>
+          <option value="implementation">Implementation</option>
+          <option value="experimentation">Experimentation</option>
+          <option value="evaluation">Evaluation</option>
+          <option value="dissemination">Dissemination</option>
+          <option value="__unclassified__">Unclassified</option>
+        </select>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>File</th>
+              <th>Research process step</th>
+              <th>Score</th>
+              <th>Why / matched keyword</th>
+            </tr>
+          </thead>
+          <tbody id="rows"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const repoInput = document.getElementById("repo");
+    const analyzeButton = document.getElementById("analyze");
+    const status = document.getElementById("status");
+    const batchStatus = document.getElementById("batchStatus");
+    const batchButtons = [...document.querySelectorAll("[data-count]")];
+    const historyRows = document.getElementById("historyRows");
+    const historyCount = document.getElementById("historyCount");
+    const refreshHistory = document.getElementById("refreshHistory");
+    const results = document.getElementById("results");
+    const rows = document.getElementById("rows");
+    const summary = document.getElementById("summary");
+    const searchInput = document.getElementById("search");
+    const stepFilter = document.getElementById("stepFilter");
+    let data = null;
+
+    document.querySelectorAll("[data-url]").forEach(button => {
+      button.addEventListener("click", () => {
+        repoInput.value = button.dataset.url;
+      });
+    });
+
+    function escapeHtml(value) {
+      return String(value ?? "").replace(/[&<>"']/g, char => ({
+        "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#039;"
+      })[char]);
+    }
+
+    function renderSummary(payload) {
+      const counts = payload.summary.files_per_step;
+      const metrics = [
+        ["Files", payload.repository.file_count],
+        ...Object.entries(counts).map(([step, count]) => [step, count])
+      ];
+      summary.innerHTML = metrics.map(([label, value]) =>
+        `<div class="metric"><div class="value">${value}</div><div class="label">${escapeHtml(label)}</div></div>`
+      ).join("");
+    }
+
+    function searchableText(file) {
+      return [
+        file.path,
+        file.artifact_kind || "",
+        ...file.steps,
+        ...file.evidence.flatMap(e => [e.rule_id, ...(e.matches || []).map(m => m.text), ...(e.matched_texts || [e.matched_text]), e.description, e.step])
+      ].join(" ").toLowerCase();
+    }
+
+    function renderRows() {
+      if (!data) return;
+      const query = searchInput.value.trim().toLowerCase();
+      const filter = stepFilter.value;
+
+      const filtered = data.files.filter(file => {
+        const searchOk = !query || searchableText(file).includes(query);
+        const stepOk = !filter ||
+          (filter === "__unclassified__" ? file.unclassified : file.steps.includes(filter));
+        return searchOk && stepOk;
+      });
+
+      rows.innerHTML = filtered.map(file => {
+        const chips = file.steps.length
+          ? `<div class="chips">${file.steps.map(step => `<span class="chip">${escapeHtml(step)}</span>`).join("")}</div>`
+          : '<span class="none">unclassified</span>';
+
+        const scores = Object.entries(file.scores || {})
+          .map(([step, score]) => `${escapeHtml(step)}: ${score}`).join("<br>") || "—";
+
+        const suppressed = (file.suppressed_evidence || []).length
+          ? `<div class="suppressed"><strong>Suppressed:</strong> ${file.suppressed_evidence.map(item =>
+               `${escapeHtml(item.rule_id)} — ${escapeHtml(item.reason)}`
+             ).join("<br>")}</div>`
+          : "";
+
+        const evidence = file.evidence.length
+          ? `<details><summary>${file.evidence.length} matched rule${file.evidence.length === 1 ? "" : "s"}</summary>
+               <div class="evidence">
+                 ${file.evidence.map(e => {
+                   const matches = e.matches && e.matches.length
+                     ? e.matches
+                     : (e.matched_texts || [e.matched_text]).map(text => ({ text, line: null, url: file.file_url }));
+                   return `
+                   <div class="evidence-item">
+                     <strong>${escapeHtml(e.step)}</strong> — ${escapeHtml(e.description)}<br>
+                     ${matches.map(match => {
+                       const label = match.line ? `${match.text} · line ${match.line}` : match.text;
+                       return match.url
+                         ? `<a class="match-link" href="${escapeHtml(match.url)}" target="_blank" rel="noopener"><span class="match">${escapeHtml(label)}</span></a>`
+                         : `<span class="match">${escapeHtml(label)}</span>`;
+                     }).join(" ")}
+                     <div class="meta">${escapeHtml(e.rule_id)} · source: ${escapeHtml(e.source)} · weight: ${e.weight}</div>
+                   </div>`;
+                 }).join("")}
+               </div>
+             </details>${suppressed}`
+          : `<span class="none">No heuristic matched</span>${suppressed}`;
+
+        const fileCell = file.file_url
+          ? `<a href="${escapeHtml(file.file_url)}" target="_blank" rel="noopener">${escapeHtml(file.path)}</a>`
+          : escapeHtml(file.path);
+
+        const inferredName = file.file_name || file.path.split("/").pop();
+        const inferredDirectory = file.directory ?? file.path.split("/").slice(0, -1).join("/");
+        const inferredExtension = file.extension || (inferredName.includes(".") ? "." + inferredName.split(".").pop() : "");
+        const fileDetails = `
+          <div class="kind-badge">artifact: ${escapeHtml(file.artifact_kind || "other")}</div>
+          <details class="file-details">
+            <summary>File details</summary>
+            <dl class="file-details-grid">
+              <dt>Name</dt><dd>${escapeHtml(inferredName)}</dd>
+              <dt>Directory</dt><dd>${escapeHtml(inferredDirectory || "(repository root)")}</dd>
+              <dt>Type</dt><dd>${escapeHtml(inferredExtension || "(no extension)")}</dd>
+              <dt>Size</dt><dd>${Number(file.size_bytes || 0).toLocaleString()} bytes</dd>
+              <dt>Content scanned</dt><dd>${file.content_scanned ? "yes" : "no"}</dd>
+              <dt>Ref</dt><dd>${escapeHtml(file.ref || data.repository.ref)}</dd>
+              <dt>Blob SHA</dt><dd>${escapeHtml(file.blob_sha || "—")}</dd>
+              <dt>GitHub</dt><dd>${file.file_url ? `<a href="${escapeHtml(file.file_url)}" target="_blank" rel="noopener">Open file</a>` : "—"}</dd>
+            </dl>
+          </details>`;
+
+        return `<tr>
+          <td class="path">${fileCell}${fileDetails}</td>
+          <td>${chips}</td>
+          <td>${scores}</td>
+          <td>${evidence}</td>
+        </tr>`;
+      }).join("");
+
+      const cacheBadge = data.cache?.hit ? '<span class="cache-badge">stored result</span>' : '<span class="cache-badge">newly stored</span>';
+      status.innerHTML = `Showing ${filtered.length} of ${data.files.length} files from ${escapeHtml(data.repository.full_name)} @ ${escapeHtml(data.repository.ref)} ${cacheBadge}`;
+    }
+
+    function showPayload(payload) {
+      data = payload;
+      renderSummary(data);
+      searchInput.value = "";
+      stepFilter.value = "";
+      results.classList.remove("hidden");
+      renderRows();
+      results.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+
+    async function loadHistory() {
+      refreshHistory.disabled = true;
+      try {
+        const response = await fetch("/api/executed");
+        const payload = await response.json();
+        if (!response.ok) throw new Error(payload.detail || "Could not load stored results.");
+
+        historyCount.textContent = `${payload.count} repositories have persistent results.`;
+        historyRows.innerHTML = payload.repositories.map(item => {
+          const stepCounts = Object.entries(item.files_per_step || {})
+            .filter(([, count]) => count)
+            .map(([step, count]) => `${escapeHtml(step)}: ${count}`)
+            .join("<br>") || "—";
+          const executed = item.executed_at ? new Date(item.executed_at).toLocaleString() : "—";
+          return `<tr>
+            <td><a class="repo-link" href="${escapeHtml(item.repo_url)}" target="_blank" rel="noopener">${escapeHtml(item.full_name)}</a></td>
+            <td>${escapeHtml(executed)}</td>
+            <td>${Number(item.file_count || 0).toLocaleString()}</td>
+            <td>${stepCounts}</td>
+            <td><button class="secondary small view-result" data-result-id="${escapeHtml(item.id)}">View output</button></td>
+          </tr>`;
+        }).join("");
+
+        document.querySelectorAll(".view-result").forEach(button => {
+          button.addEventListener("click", () => loadStoredResult(button.dataset.resultId));
+        });
+      } catch (error) {
+        historyCount.textContent = error.message;
+      } finally {
+        refreshHistory.disabled = false;
+      }
+    }
+
+    async function loadStoredResult(id) {
+      status.className = "status";
+      status.textContent = "Loading stored repository output…";
+      try {
+        const response = await fetch(`/api/executed/${encodeURIComponent(id)}`);
+        const payload = await response.json();
+        if (!response.ok) throw new Error(payload.detail || "Could not load stored result.");
+        showPayload(payload);
+      } catch (error) {
+        status.className = "status error";
+        status.textContent = error.message;
+      }
+    }
+
+    async function analyze() {
+      const repoUrl = repoInput.value.trim();
+      if (!repoUrl) return;
+
+      analyzeButton.disabled = true;
+      status.className = "status";
+      const startedAt = Date.now();
+      status.textContent = "Checking stored results / analyzing repository… 0s";
+      const timer = setInterval(() => {
+        const seconds = Math.floor((Date.now() - startedAt) / 1000);
+        status.textContent = `Checking stored results / analyzing repository… ${seconds}s`;
+      }, 1000);
+
+      try {
+        const response = await fetch("/api/analyze", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ repo_url: repoUrl })
+        });
+        const payload = await response.json();
+        if (!response.ok) throw new Error(payload.detail || "Analysis failed.");
+        showPayload(payload);
+        await loadHistory();
+      } catch (error) {
+        data = null;
+        status.className = "status error";
+        status.textContent = error.message;
+      } finally {
+        clearInterval(timer);
+        analyzeButton.disabled = false;
+      }
+    }
+
+    async function runBatch(count) {
+      batchButtons.forEach(button => button.disabled = true);
+      batchStatus.className = "status";
+      const startedAt = Date.now();
+      batchStatus.textContent = `Running ${count} random never-before-executed repositories… 0s. Each repository is stored as soon as it finishes.`;
+      const timer = setInterval(() => {
+        const seconds = Math.floor((Date.now() - startedAt) / 1000);
+        batchStatus.textContent = `Running ${count} random never-before-executed repositories… ${seconds}s. Each repository is stored as soon as it finishes.`;
+      }, 1000);
+
+      try {
+        const response = await fetch("/api/random", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ count })
+        });
+        const payload = await response.json();
+        if (!response.ok) throw new Error(payload.detail || "Random batch failed.");
+
+        const completed = payload.completed?.length || 0;
+        const errors = payload.errors?.length || 0;
+        batchStatus.className = errors ? "status error" : "status success";
+        batchStatus.textContent = `Batch finished: ${completed} repositories stored, ${errors} errors. No previously executed repository was rerun.`;
+        await loadHistory();
+      } catch (error) {
+        batchStatus.className = "status error";
+        batchStatus.textContent = error.message;
+      } finally {
+        clearInterval(timer);
+        batchButtons.forEach(button => button.disabled = false);
+      }
+    }
+
+    analyzeButton.addEventListener("click", analyze);
+    repoInput.addEventListener("keydown", event => {
+      if (event.key === "Enter") analyze();
+    });
+    batchButtons.forEach(button => {
+      button.addEventListener("click", () => runBatch(Number(button.dataset.count)));
+    });
+    refreshHistory.addEventListener("click", loadHistory);
+    searchInput.addEventListener("input", renderRows);
+    stepFilter.addEventListener("change", renderRows);
+
+    loadHistory();
+  </script>
+</body>
+</html>

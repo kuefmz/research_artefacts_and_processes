@@ -1,0 +1,17 @@
+{
+  "id": "e1e47be19f6695ec8965",
+  "repo_url": "https://github.com/yiminghu/AnnoPred",
+  "full_name": "yiminghu/AnnoPred",
+  "ref": "master",
+  "file_count": 20,
+  "files_per_step": {
+    "collection": 0,
+    "processing": 0,
+    "implementation": 0,
+    "experimentation": 0,
+    "evaluation": 0,
+    "dissemination": 3
+  },
+  "unclassified_files": 17,
+  "executed_at": "2026-09-21T10:58:13.682789+00:00"
+}

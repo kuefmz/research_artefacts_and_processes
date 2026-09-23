@@ -1,0 +1,17 @@
+{
+  "id": "df319a9004f126c24104",
+  "repo_url": "https://github.com/ty4tw/MQTT-SN",
+  "full_name": "ty4tw/MQTT-SN",
+  "ref": "master",
+  "file_count": 66,
+  "files_per_step": {
+    "collection": 0,
+    "processing": 0,
+    "implementation": 58,
+    "experimentation": 0,
+    "evaluation": 0,
+    "dissemination": 3
+  },
+  "unclassified_files": 5,
+  "executed_at": "2026-09-21T10:57:35.521537+00:00"
+}

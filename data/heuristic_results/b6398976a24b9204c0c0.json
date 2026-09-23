@@ -1,0 +1,290 @@
+{
+  "repository": {
+    "url": "https://github.com/GiulioRossetti/hit-savvy",
+    "full_name": "GiulioRossetti/hit-savvy",
+    "ref": "master",
+    "commit_tree_sha": "a911809778ffac370cad6ace254f50bd6b3ba7b3",
+    "file_count": 11
+  },
+  "method": {
+    "name": "deterministic_research_process_step_heuristics",
+    "version": "0.1.0",
+    "uses_ai": false,
+    "multi_label": true,
+    "detection_threshold": 2,
+    "max_content_bytes": 250000
+  },
+  "summary": {
+    "files_per_step": {
+      "collection": 0,
+      "processing": 0,
+      "implementation": 0,
+      "experimentation": 0,
+      "evaluation": 0,
+      "dissemination": 1
+    },
+    "unclassified_files": 10
+  },
+  "files": [
+    {
+      "path": ".gitignore",
+      "artifact_kind": "other",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": ".gitignore",
+      "directory": "",
+      "extension": "",
+      "size_bytes": 1045,
+      "content_scanned": false,
+      "blob_sha": "72364f99fe4bf8d5262df3b19b33102aeaa791e5",
+      "file_url": "https://github.com/GiulioRossetti/hit-savvy/blob/master/.gitignore",
+      "ref": "master"
+    },
+    {
+      "path": "data/coop_anonymized.csv",
+      "artifact_kind": "data",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "coop_anonymized.csv",
+      "directory": "data",
+      "extension": ".csv",
+      "size_bytes": 37104328,
+      "content_scanned": false,
+      "blob_sha": "e8601556e5c4753455dae6186d96fb7284a49784",
+      "file_url": "https://github.com/GiulioRossetti/hit-savvy/blob/master/data/coop_anonymized.csv",
+      "ref": "master"
+    },
+    {
+      "path": "data/lastfm_anonymized.csv",
+      "artifact_kind": "data",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "lastfm_anonymized.csv",
+      "directory": "data",
+      "extension": ".csv",
+      "size_bytes": 11292626,
+      "content_scanned": false,
+      "blob_sha": "1c9f8ef10f365c6010836bbae7a41e8a90cf2592",
+      "file_url": "https://github.com/GiulioRossetti/hit-savvy/blob/master/data/lastfm_anonymized.csv",
+      "ref": "master"
+    },
+    {
+      "path": "data/yelp_anonymized.csv",
+      "artifact_kind": "data",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "yelp_anonymized.csv",
+      "directory": "data",
+      "extension": ".csv",
+      "size_bytes": 4054816,
+      "content_scanned": false,
+      "blob_sha": "071b4ef91f955cb1c46cec74875a0cd7fa698c86",
+      "file_url": "https://github.com/GiulioRossetti/hit-savvy/blob/master/data/yelp_anonymized.csv",
+      "ref": "master"
+    },
+    {
+      "path": "HitFlop/__init__.py",
+      "artifact_kind": "source_code",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "__init__.py",
+      "directory": "HitFlop",
+      "extension": ".py",
+      "size_bytes": 84,
+      "content_scanned": true,
+      "blob_sha": "6c3794f7d23f63df7ddcad69958465fef07da2da",
+      "file_url": "https://github.com/GiulioRossetti/hit-savvy/blob/master/HitFlop/__init__.py",
+      "ref": "master"
+    },
+    {
+      "path": "HitFlop/sf_model_builder.py",
+      "artifact_kind": "source_code",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "sf_model_builder.py",
+      "directory": "HitFlop",
+      "extension": ".py",
+      "size_bytes": 31413,
+      "content_scanned": true,
+      "blob_sha": "bbec9e5f6d7dc1b653b24239f0ece9f3d56ca651",
+      "file_url": "https://github.com/GiulioRossetti/hit-savvy/blob/master/HitFlop/sf_model_builder.py",
+      "ref": "master"
+    },
+    {
+      "path": "HitFlop/sf_predict.py",
+      "artifact_kind": "source_code",
+      "steps": [],
+      "unclassified": true,
+      "scores": {
+        "evaluation": 1
+      },
+      "evidence": [
+        {
+          "rule_id": "EVA_CONTENT_METRIC",
+          "step": "evaluation",
+          "source": "content",
+          "weight": 1,
+          "matched_text": "precision",
+          "matched_texts": [
+            "precision",
+            "accuracy",
+            "recall",
+            "F1"
+          ],
+          "matches": [
+            {
+              "text": "precision",
+              "line": 205,
+              "url": "https://github.com/GiulioRossetti/hit-savvy/blob/master/HitFlop/sf_predict.py#L205"
+            },
+            {
+              "text": "accuracy",
+              "line": 215,
+              "url": "https://github.com/GiulioRossetti/hit-savvy/blob/master/HitFlop/sf_predict.py#L215"
+            },
+            {
+              "text": "recall",
+              "line": 225,
+              "url": "https://github.com/GiulioRossetti/hit-savvy/blob/master/HitFlop/sf_predict.py#L225"
+            },
+            {
+              "text": "F1",
+              "line": 240,
+              "url": "https://github.com/GiulioRossetti/hit-savvy/blob/master/HitFlop/sf_predict.py#L240"
+            }
+          ],
+          "description": "File contains explicit scientific performance metrics or comparison terminology."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "sf_predict.py",
+      "directory": "HitFlop",
+      "extension": ".py",
+      "size_bytes": 12507,
+      "content_scanned": true,
+      "blob_sha": "06d5b3980283da0601eb47b1a6d77783f22fc6ca",
+      "file_url": "https://github.com/GiulioRossetti/hit-savvy/blob/master/HitFlop/sf_predict.py",
+      "ref": "master"
+    },
+    {
+      "path": "LICENSE",
+      "artifact_kind": "other",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "LICENSE",
+      "directory": "",
+      "extension": "",
+      "size_bytes": 35141,
+      "content_scanned": false,
+      "blob_sha": "9cecc1d4669ee8af2ca727a5d8cde10cd8b2d7cc",
+      "file_url": "https://github.com/GiulioRossetti/hit-savvy/blob/master/LICENSE",
+      "ref": "master"
+    },
+    {
+      "path": "miscellanea/__init__.py",
+      "artifact_kind": "source_code",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "__init__.py",
+      "directory": "miscellanea",
+      "extension": ".py",
+      "size_bytes": 84,
+      "content_scanned": true,
+      "blob_sha": "6c3794f7d23f63df7ddcad69958465fef07da2da",
+      "file_url": "https://github.com/GiulioRossetti/hit-savvy/blob/master/miscellanea/__init__.py",
+      "ref": "master"
+    },
+    {
+      "path": "miscellanea/NullModelGen.py",
+      "artifact_kind": "source_code",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "NullModelGen.py",
+      "directory": "miscellanea",
+      "extension": ".py",
+      "size_bytes": 2706,
+      "content_scanned": true,
+      "blob_sha": "2df4681557139525985516dfd4145792d2ef5ebc",
+      "file_url": "https://github.com/GiulioRossetti/hit-savvy/blob/master/miscellanea/NullModelGen.py",
+      "ref": "master"
+    },
+    {
+      "path": "README.md",
+      "artifact_kind": "documentation",
+      "steps": [
+        "dissemination"
+      ],
+      "unclassified": false,
+      "scores": {
+        "dissemination": 2
+      },
+      "evidence": [
+        {
+          "rule_id": "DIS_README",
+          "step": "dissemination",
+          "source": "path",
+          "weight": 2,
+          "matched_text": "README.md",
+          "matched_texts": [
+            "README.md"
+          ],
+          "matches": [
+            {
+              "text": "README.md",
+              "line": null,
+              "url": "https://github.com/GiulioRossetti/hit-savvy/blob/master/README.md"
+            }
+          ],
+          "description": "Project-facing documentation supports dissemination."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "README.md",
+      "directory": "",
+      "extension": ".md",
+      "size_bytes": 55,
+      "content_scanned": true,
+      "blob_sha": "23e24a2814042e1f69c6449090c6ebb4f6446cd4",
+      "file_url": "https://github.com/GiulioRossetti/hit-savvy/blob/master/README.md",
+      "ref": "master"
+    }
+  ],
+  "execution": {
+    "id": "b6398976a24b9204c0c0",
+    "repo_key": "https://github.com/giuliorossetti/hit-savvy",
+    "executed_at": "2026-09-21T10:57:55.822651+00:00"
+  },
+  "cache": {
+    "hit": false,
+    "persistent": true,
+    "path": "data/heuristic_results/b6398976a24b9204c0c0.json",
+    "scope": "repository"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "8717898b99d974bff8ad",
+  "repo_url": "https://github.com/s-falke/llvm2kittel",
+  "full_name": "s-falke/llvm2kittel",
+  "ref": "master",
+  "file_count": 81,
+  "files_per_step": {
+    "collection": 0,
+    "processing": 19,
+    "implementation": 30,
+    "experimentation": 0,
+    "evaluation": 0,
+    "dissemination": 0
+  },
+  "unclassified_files": 41,
+  "executed_at": "2026-09-21T10:58:12.528234+00:00"
+}

@@ -1,0 +1,589 @@
+{
+  "repository": {
+    "url": "https://github.com/yiminghu/AnnoPred",
+    "full_name": "yiminghu/AnnoPred",
+    "ref": "master",
+    "commit_tree_sha": "40d0ef7fb2c8319829c26280df152dc2a36415d1",
+    "file_count": 20
+  },
+  "method": {
+    "name": "deterministic_research_process_step_heuristics",
+    "version": "0.1.0",
+    "uses_ai": false,
+    "multi_label": true,
+    "detection_threshold": 2,
+    "max_content_bytes": 250000
+  },
+  "summary": {
+    "files_per_step": {
+      "collection": 0,
+      "processing": 0,
+      "implementation": 0,
+      "experimentation": 0,
+      "evaluation": 0,
+      "dissemination": 3
+    },
+    "unclassified_files": 17
+  },
+  "files": [
+    {
+      "path": ".gitignore",
+      "artifact_kind": "other",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": ".gitignore",
+      "directory": "",
+      "extension": "",
+      "size_bytes": 6,
+      "content_scanned": false,
+      "blob_sha": "0d20b6487c61e7d1bde93acf4a14b7a89083a16d",
+      "file_url": "https://github.com/yiminghu/AnnoPred/blob/master/.gitignore",
+      "ref": "master"
+    },
+    {
+      "path": "AnnoPred.py",
+      "artifact_kind": "source_code",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "AnnoPred.py",
+      "directory": "",
+      "extension": ".py",
+      "size_bytes": 7647,
+      "content_scanned": true,
+      "blob_sha": "738060d978e65f806b7fe1d2ecfbb3e60a82998c",
+      "file_url": "https://github.com/yiminghu/AnnoPred/blob/master/AnnoPred.py",
+      "ref": "master"
+    },
+    {
+      "path": "annopred/__init__.py",
+      "artifact_kind": "source_code",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "__init__.py",
+      "directory": "annopred",
+      "extension": ".py",
+      "size_bytes": 0,
+      "content_scanned": true,
+      "blob_sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "file_url": "https://github.com/yiminghu/AnnoPred/blob/master/annopred/__init__.py",
+      "ref": "master"
+    },
+    {
+      "path": "annopred/coord_trimmed.py",
+      "artifact_kind": "source_code",
+      "steps": [],
+      "unclassified": true,
+      "scores": {
+        "processing": 1,
+        "evaluation": 1
+      },
+      "evidence": [
+        {
+          "rule_id": "PRO_CONTENT_PROCESS",
+          "step": "processing",
+          "source": "content",
+          "weight": 1,
+          "matched_text": "parse ",
+          "matched_texts": [
+            "parse "
+          ],
+          "matches": [
+            {
+              "text": "parse ",
+              "line": 73,
+              "url": "https://github.com/yiminghu/AnnoPred/blob/master/annopred/coord_trimmed.py#L73"
+            }
+          ],
+          "description": "File contains deterministic indicators of data preparation or transformation."
+        },
+        {
+          "rule_id": "EVA_CONTENT_METRIC",
+          "step": "evaluation",
+          "source": "content",
+          "weight": 1,
+          "matched_text": "accuracy",
+          "matched_texts": [
+            "accuracy"
+          ],
+          "matches": [
+            {
+              "text": "accuracy",
+              "line": 610,
+              "url": "https://github.com/yiminghu/AnnoPred/blob/master/annopred/coord_trimmed.py#L610"
+            }
+          ],
+          "description": "File contains explicit scientific performance metrics or comparison terminology."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "coord_trimmed.py",
+      "directory": "annopred",
+      "extension": ".py",
+      "size_bytes": 42336,
+      "content_scanned": true,
+      "blob_sha": "0c4f5e38d2000acbc966ade8c790044e785e26fc",
+      "file_url": "https://github.com/yiminghu/AnnoPred/blob/master/annopred/coord_trimmed.py",
+      "ref": "master"
+    },
+    {
+      "path": "annopred/LD_PyWrapper.py",
+      "artifact_kind": "source_code",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "LD_PyWrapper.py",
+      "directory": "annopred",
+      "extension": ".py",
+      "size_bytes": 3395,
+      "content_scanned": true,
+      "blob_sha": "58cde91f51ff353d29410b9e068f18688dccba7d",
+      "file_url": "https://github.com/yiminghu/AnnoPred/blob/master/annopred/LD_PyWrapper.py",
+      "ref": "master"
+    },
+    {
+      "path": "annopred/pre_sumstats.py",
+      "artifact_kind": "source_code",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "pre_sumstats.py",
+      "directory": "annopred",
+      "extension": ".py",
+      "size_bytes": 918,
+      "content_scanned": true,
+      "blob_sha": "4896b69ac666f6ad5d2d289b2d767dc0bd2b171b",
+      "file_url": "https://github.com/yiminghu/AnnoPred/blob/master/annopred/pre_sumstats.py",
+      "ref": "master"
+    },
+    {
+      "path": "annopred/pred_main.py",
+      "artifact_kind": "source_code",
+      "steps": [],
+      "unclassified": true,
+      "scores": {
+        "processing": 1,
+        "evaluation": 1
+      },
+      "evidence": [
+        {
+          "rule_id": "PRO_CONTENT_PROCESS",
+          "step": "processing",
+          "source": "content",
+          "weight": 1,
+          "matched_text": "Normalize",
+          "matched_texts": [
+            "Normalize"
+          ],
+          "matches": [
+            {
+              "text": "Normalize",
+              "line": 505,
+              "url": "https://github.com/yiminghu/AnnoPred/blob/master/annopred/pred_main.py#L505"
+            }
+          ],
+          "description": "File contains deterministic indicators of data preparation or transformation."
+        },
+        {
+          "rule_id": "EVA_CONTENT_METRIC",
+          "step": "evaluation",
+          "source": "content",
+          "weight": 1,
+          "matched_text": "accuracy",
+          "matched_texts": [
+            "accuracy"
+          ],
+          "matches": [
+            {
+              "text": "accuracy",
+              "line": 307,
+              "url": "https://github.com/yiminghu/AnnoPred/blob/master/annopred/pred_main.py#L307"
+            }
+          ],
+          "description": "File contains explicit scientific performance metrics or comparison terminology."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "pred_main.py",
+      "directory": "annopred",
+      "extension": ".py",
+      "size_bytes": 27139,
+      "content_scanned": true,
+      "blob_sha": "25ab702b8c0f397f531635d117648e5d843f759e",
+      "file_url": "https://github.com/yiminghu/AnnoPred/blob/master/annopred/pred_main.py",
+      "ref": "master"
+    },
+    {
+      "path": "annopred/prior_generating.py",
+      "artifact_kind": "source_code",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "prior_generating.py",
+      "directory": "annopred",
+      "extension": ".py",
+      "size_bytes": 6837,
+      "content_scanned": true,
+      "blob_sha": "a713f1ec23723a00674c914cda282fc37fc3905f",
+      "file_url": "https://github.com/yiminghu/AnnoPred/blob/master/annopred/prior_generating.py",
+      "ref": "master"
+    },
+    {
+      "path": "doc/Manual.txt",
+      "artifact_kind": "other",
+      "steps": [
+        "dissemination"
+      ],
+      "unclassified": false,
+      "scores": {
+        "dissemination": 3
+      },
+      "evidence": [
+        {
+          "rule_id": "DIS_PATH_DOC_DIR",
+          "step": "dissemination",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "doc/",
+          "matched_texts": [
+            "doc/"
+          ],
+          "matches": [
+            {
+              "text": "doc/",
+              "line": null,
+              "url": "https://github.com/yiminghu/AnnoPred/blob/master/doc/Manual.txt"
+            }
+          ],
+          "description": "File belongs to documentation, publication, or website material."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "Manual.txt",
+      "directory": "doc",
+      "extension": ".txt",
+      "size_bytes": 3556,
+      "content_scanned": true,
+      "blob_sha": "84599797fb166835d9351b733c0073dbb3247ed9",
+      "file_url": "https://github.com/yiminghu/AnnoPred/blob/master/doc/Manual.txt",
+      "ref": "master"
+    },
+    {
+      "path": "LICENSE",
+      "artifact_kind": "other",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "LICENSE",
+      "directory": "",
+      "extension": "",
+      "size_bytes": 1097,
+      "content_scanned": false,
+      "blob_sha": "d326ee97eaa113ae161418ef7cd5428b8b5e477a",
+      "file_url": "https://github.com/yiminghu/AnnoPred/blob/master/LICENSE",
+      "ref": "master"
+    },
+    {
+      "path": "pipeline.sh",
+      "artifact_kind": "source_code",
+      "steps": [],
+      "unclassified": true,
+      "scores": {
+        "collection": 1
+      },
+      "evidence": [
+        {
+          "rule_id": "COL_CONTENT_ACQUIRE",
+          "step": "collection",
+          "source": "content",
+          "weight": 1,
+          "matched_text": "wget",
+          "matched_texts": [
+            "wget"
+          ],
+          "matches": [
+            {
+              "text": "wget",
+              "line": 10,
+              "url": "https://github.com/yiminghu/AnnoPred/blob/master/pipeline.sh#L10"
+            }
+          ],
+          "description": "File contains deterministic indicators of external data acquisition."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "pipeline.sh",
+      "directory": "",
+      "extension": ".sh",
+      "size_bytes": 2475,
+      "content_scanned": true,
+      "blob_sha": "6b54948622513942fa46851c393fc7035657d8b0",
+      "file_url": "https://github.com/yiminghu/AnnoPred/blob/master/pipeline.sh",
+      "ref": "master"
+    },
+    {
+      "path": "README.md",
+      "artifact_kind": "documentation",
+      "steps": [
+        "dissemination"
+      ],
+      "unclassified": false,
+      "scores": {
+        "collection": 1,
+        "evaluation": 1,
+        "dissemination": 2
+      },
+      "evidence": [
+        {
+          "rule_id": "COL_CONTENT_ACQUIRE",
+          "step": "collection",
+          "source": "content",
+          "weight": 1,
+          "matched_text": "wget",
+          "matched_texts": [
+            "wget"
+          ],
+          "matches": [
+            {
+              "text": "wget",
+              "line": 43,
+              "url": "https://github.com/yiminghu/AnnoPred/blob/master/README.md#L43"
+            }
+          ],
+          "description": "File contains deterministic indicators of external data acquisition."
+        },
+        {
+          "rule_id": "EVA_CONTENT_METRIC",
+          "step": "evaluation",
+          "source": "content",
+          "weight": 1,
+          "matched_text": "accuracy",
+          "matched_texts": [
+            "accuracy"
+          ],
+          "matches": [
+            {
+              "text": "accuracy",
+              "line": 107,
+              "url": "https://github.com/yiminghu/AnnoPred/blob/master/README.md#L107"
+            }
+          ],
+          "description": "File contains explicit scientific performance metrics or comparison terminology."
+        },
+        {
+          "rule_id": "DIS_README",
+          "step": "dissemination",
+          "source": "path",
+          "weight": 2,
+          "matched_text": "README.md",
+          "matched_texts": [
+            "README.md"
+          ],
+          "matches": [
+            {
+              "text": "README.md",
+              "line": null,
+              "url": "https://github.com/yiminghu/AnnoPred/blob/master/README.md"
+            }
+          ],
+          "description": "Project-facing documentation supports dissemination."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "README.md",
+      "directory": "",
+      "extension": ".md",
+      "size_bytes": 9920,
+      "content_scanned": true,
+      "blob_sha": "d3226b47893e143f6d1e72993edfac7191d363b2",
+      "file_url": "https://github.com/yiminghu/AnnoPred/blob/master/README.md",
+      "ref": "master"
+    },
+    {
+      "path": "results_cv.R",
+      "artifact_kind": "source_code",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "results_cv.R",
+      "directory": "",
+      "extension": ".r",
+      "size_bytes": 1056,
+      "content_scanned": true,
+      "blob_sha": "7aa3a8c0c87a0bccf568df29481d4ee2476fea48",
+      "file_url": "https://github.com/yiminghu/AnnoPred/blob/master/results_cv.R",
+      "ref": "master"
+    },
+    {
+      "path": "split_cv.R",
+      "artifact_kind": "source_code",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "split_cv.R",
+      "directory": "",
+      "extension": ".r",
+      "size_bytes": 566,
+      "content_scanned": true,
+      "blob_sha": "93d10ecf891ee145e2381f7630972a83abbca980",
+      "file_url": "https://github.com/yiminghu/AnnoPred/blob/master/split_cv.R",
+      "ref": "master"
+    },
+    {
+      "path": "test_data/GWAS_sumstats.txt",
+      "artifact_kind": "other",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "GWAS_sumstats.txt",
+      "directory": "test_data",
+      "extension": ".txt",
+      "size_bytes": 370657,
+      "content_scanned": false,
+      "blob_sha": "c7f3b32bf0888d65d3d3f032378614f945a5af6b",
+      "file_url": "https://github.com/yiminghu/AnnoPred/blob/master/test_data/GWAS_sumstats.txt",
+      "ref": "master"
+    },
+    {
+      "path": "test_data/readme.txt",
+      "artifact_kind": "other",
+      "steps": [
+        "dissemination"
+      ],
+      "unclassified": false,
+      "scores": {
+        "dissemination": 2
+      },
+      "evidence": [
+        {
+          "rule_id": "DIS_README",
+          "step": "dissemination",
+          "source": "path",
+          "weight": 2,
+          "matched_text": "/readme.txt",
+          "matched_texts": [
+            "/readme.txt"
+          ],
+          "matches": [
+            {
+              "text": "/readme.txt",
+              "line": null,
+              "url": "https://github.com/yiminghu/AnnoPred/blob/master/test_data/readme.txt"
+            }
+          ],
+          "description": "Project-facing documentation supports dissemination."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "readme.txt",
+      "directory": "test_data",
+      "extension": ".txt",
+      "size_bytes": 96,
+      "content_scanned": true,
+      "blob_sha": "f61f5c5e12e21b4703cbc804f1dbe3fd1ab0e3ca",
+      "file_url": "https://github.com/yiminghu/AnnoPred/blob/master/test_data/readme.txt",
+      "ref": "master"
+    },
+    {
+      "path": "test_data/test.bed",
+      "artifact_kind": "other",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "test.bed",
+      "directory": "test_data",
+      "extension": ".bed",
+      "size_bytes": 498853,
+      "content_scanned": false,
+      "blob_sha": "25d52dec6b6a4ee1e411e78a6835dbd8b562bb76",
+      "file_url": "https://github.com/yiminghu/AnnoPred/blob/master/test_data/test.bed",
+      "ref": "master"
+    },
+    {
+      "path": "test_data/test.bim",
+      "artifact_kind": "other",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "test.bim",
+      "directory": "test_data",
+      "extension": ".bim",
+      "size_bytes": 343279,
+      "content_scanned": false,
+      "blob_sha": "c82e27e611cda0faa2db241fe6bbf620b1c13fb9",
+      "file_url": "https://github.com/yiminghu/AnnoPred/blob/master/test_data/test.bim",
+      "ref": "master"
+    },
+    {
+      "path": "test_data/test.fam",
+      "artifact_kind": "other",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "test.fam",
+      "directory": "test_data",
+      "extension": ".fam",
+      "size_bytes": 5459,
+      "content_scanned": false,
+      "blob_sha": "5dcfade0d1a1c829aa09d2ed2bcdf637d91e8802",
+      "file_url": "https://github.com/yiminghu/AnnoPred/blob/master/test_data/test.fam",
+      "ref": "master"
+    },
+    {
+      "path": "test_data/user_h2_est.txt",
+      "artifact_kind": "other",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "user_h2_est.txt",
+      "directory": "test_data",
+      "extension": ".txt",
+      "size_bytes": 330902,
+      "content_scanned": false,
+      "blob_sha": "0a345809f585df2f0938f47436bc8c5a4059a22a",
+      "file_url": "https://github.com/yiminghu/AnnoPred/blob/master/test_data/user_h2_est.txt",
+      "ref": "master"
+    }
+  ],
+  "execution": {
+    "id": "e1e47be19f6695ec8965",
+    "repo_key": "https://github.com/yiminghu/annopred",
+    "executed_at": "2026-09-21T10:58:13.682789+00:00"
+  },
+  "cache": {
+    "hit": false,
+    "persistent": true,
+    "path": "data/heuristic_results/e1e47be19f6695ec8965.json",
+    "scope": "repository"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "1de52a489a63d090e9dc",
+  "repo_url": "https://github.com/sistm/CoDa-PCA",
+  "full_name": "sistm/CoDa-PCA",
+  "ref": "master",
+  "file_count": 11,
+  "files_per_step": {
+    "collection": 0,
+    "processing": 0,
+    "implementation": 0,
+    "experimentation": 0,
+    "evaluation": 0,
+    "dissemination": 1
+  },
+  "unclassified_files": 10,
+  "executed_at": "2026-09-21T10:58:00.185029+00:00"
+}

@@ -1,0 +1,98 @@
+{
+  "repository": {
+    "url": "https://github.com/LaurenceHowe/Between-spouse",
+    "full_name": "LaurenceHowe/Between-spouse",
+    "ref": "master",
+    "commit_tree_sha": "cc5737e14f92d9d3a29a3cebf818400d25cb6f2e",
+    "file_count": 2
+  },
+  "method": {
+    "name": "deterministic_research_process_step_heuristics",
+    "version": "0.1.0",
+    "uses_ai": false,
+    "multi_label": true,
+    "detection_threshold": 2,
+    "max_content_bytes": 250000
+  },
+  "summary": {
+    "files_per_step": {
+      "collection": 0,
+      "processing": 0,
+      "implementation": 0,
+      "experimentation": 0,
+      "evaluation": 0,
+      "dissemination": 1
+    },
+    "unclassified_files": 1
+  },
+  "files": [
+    {
+      "path": "README.md",
+      "artifact_kind": "documentation",
+      "steps": [
+        "dissemination"
+      ],
+      "unclassified": false,
+      "scores": {
+        "dissemination": 2
+      },
+      "evidence": [
+        {
+          "rule_id": "DIS_README",
+          "step": "dissemination",
+          "source": "path",
+          "weight": 2,
+          "matched_text": "README.md",
+          "matched_texts": [
+            "README.md"
+          ],
+          "matches": [
+            {
+              "text": "README.md",
+              "line": null,
+              "url": "https://github.com/LaurenceHowe/Between-spouse/blob/master/README.md"
+            }
+          ],
+          "description": "Project-facing documentation supports dissemination."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "README.md",
+      "directory": "",
+      "extension": ".md",
+      "size_bytes": 111,
+      "content_scanned": true,
+      "blob_sha": "fbcf77c909a01a13d3e39961ce7a97cd8798da0b",
+      "file_url": "https://github.com/LaurenceHowe/Between-spouse/blob/master/README.md",
+      "ref": "master"
+    },
+    {
+      "path": "simulations.R",
+      "artifact_kind": "source_code",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "simulations.R",
+      "directory": "",
+      "extension": ".r",
+      "size_bytes": 2941,
+      "content_scanned": true,
+      "blob_sha": "930899377333b87b9a76efee408f28d1b1186886",
+      "file_url": "https://github.com/LaurenceHowe/Between-spouse/blob/master/simulations.R",
+      "ref": "master"
+    }
+  ],
+  "execution": {
+    "id": "ecd24a0dd4485069897b",
+    "repo_key": "https://github.com/laurencehowe/between-spouse",
+    "executed_at": "2026-09-21T10:58:01.105529+00:00"
+  },
+  "cache": {
+    "hit": false,
+    "persistent": true,
+    "path": "data/heuristic_results/ecd24a0dd4485069897b.json",
+    "scope": "repository"
+  }
+}

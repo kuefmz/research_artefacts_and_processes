@@ -1,0 +1,17 @@
+{
+  "id": "63d409ee1186d093b0cc",
+  "repo_url": "https://github.com/pimoroni/pms5003-python",
+  "full_name": "pimoroni/pms5003-python",
+  "ref": "main",
+  "file_count": 20,
+  "files_per_step": {
+    "collection": 0,
+    "processing": 0,
+    "implementation": 4,
+    "experimentation": 0,
+    "evaluation": 0,
+    "dissemination": 2
+  },
+  "unclassified_files": 14,
+  "executed_at": "2026-09-21T10:57:40.993124+00:00"
+}

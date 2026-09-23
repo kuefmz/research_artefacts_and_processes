@@ -1,0 +1,17 @@
+{
+  "id": "4fb0c6bdb64fdabc7f2c",
+  "repo_url": "https://github.com/caboche/MICRA",
+  "full_name": "caboche/MICRA",
+  "ref": "master",
+  "file_count": 121,
+  "files_per_step": {
+    "collection": 0,
+    "processing": 7,
+    "implementation": 0,
+    "experimentation": 0,
+    "evaluation": 0,
+    "dissemination": 7
+  },
+  "unclassified_files": 108,
+  "executed_at": "2026-09-21T10:58:19.399435+00:00"
+}

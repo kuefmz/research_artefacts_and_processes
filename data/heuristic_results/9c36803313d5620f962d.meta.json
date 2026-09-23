@@ -1,0 +1,17 @@
+{
+  "id": "9c36803313d5620f962d",
+  "repo_url": "https://github.com/GTSL-UC/T-Blade3",
+  "full_name": "GTSL-UC/T-Blade3",
+  "ref": "master",
+  "file_count": 205,
+  "files_per_step": {
+    "collection": 0,
+    "processing": 0,
+    "implementation": 0,
+    "experimentation": 0,
+    "evaluation": 0,
+    "dissemination": 20
+  },
+  "unclassified_files": 185,
+  "executed_at": "2026-09-21T10:58:16.421896+00:00"
+}

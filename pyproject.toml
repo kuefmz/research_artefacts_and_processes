@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "research-process-steps"
+version = "0.1.0"
+description = "Deterministic heuristics for identifying research process steps from GitHub repository files"
+requires-python = ">=3.10"
+dependencies = [
+  "fastapi>=0.115,<1",
+  "uvicorn>=0.30,<1",
+]
+
+[project.scripts]
+research-process-steps = "research_process_steps.analyzer:main"
+research-process-steps-web = "research_process_steps.api:run"
+research-process-steps-precache = "research_process_steps.api:precache_demo"
+research-process-steps-random = "research_process_steps.batch:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+research_process_steps = ["web/*.html", "demo_cache/*.json"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

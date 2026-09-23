@@ -1,0 +1,17 @@
+{
+  "id": "ecd24a0dd4485069897b",
+  "repo_url": "https://github.com/LaurenceHowe/Between-spouse",
+  "full_name": "LaurenceHowe/Between-spouse",
+  "ref": "master",
+  "file_count": 2,
+  "files_per_step": {
+    "collection": 0,
+    "processing": 0,
+    "implementation": 0,
+    "experimentation": 0,
+    "evaluation": 0,
+    "dissemination": 1
+  },
+  "unclassified_files": 1,
+  "executed_at": "2026-09-21T10:58:01.105529+00:00"
+}

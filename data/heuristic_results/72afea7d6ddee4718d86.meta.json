@@ -1,0 +1,17 @@
+{
+  "id": "72afea7d6ddee4718d86",
+  "repo_url": "https://github.com/NLeSC/spot",
+  "full_name": "NLeSC/spot",
+  "ref": "master",
+  "file_count": 411,
+  "files_per_step": {
+    "collection": 0,
+    "processing": 0,
+    "implementation": 62,
+    "experimentation": 0,
+    "evaluation": 0,
+    "dissemination": 117
+  },
+  "unclassified_files": 232,
+  "executed_at": "2026-09-21T10:58:25.485531+00:00"
+}

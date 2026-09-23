@@ -1,0 +1,244 @@
+{
+  "repository": {
+    "url": "https://github.com/tseemann/bioinfo-scripts",
+    "full_name": "tseemann/bioinfo-scripts",
+    "ref": "master",
+    "commit_tree_sha": "0329814a0d43300f2b8af9dedcc59e00890d5d8c",
+    "file_count": 9
+  },
+  "method": {
+    "name": "deterministic_research_process_step_heuristics",
+    "version": "0.1.0",
+    "uses_ai": false,
+    "multi_label": true,
+    "detection_threshold": 2,
+    "max_content_bytes": 250000
+  },
+  "summary": {
+    "files_per_step": {
+      "collection": 0,
+      "processing": 0,
+      "implementation": 0,
+      "experimentation": 0,
+      "evaluation": 0,
+      "dissemination": 1
+    },
+    "unclassified_files": 8
+  },
+  "files": [
+    {
+      "path": ".gitignore",
+      "artifact_kind": "other",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": ".gitignore",
+      "directory": "",
+      "extension": "",
+      "size_bytes": 191,
+      "content_scanned": false,
+      "blob_sha": "ae2ad536abbc81c49dad4aca4f308277032a7ad0",
+      "file_url": "https://github.com/tseemann/bioinfo-scripts/blob/master/.gitignore",
+      "ref": "master"
+    },
+    {
+      "path": "bin/blast-test-set.pl",
+      "artifact_kind": "source_code",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "blast-test-set.pl",
+      "directory": "bin",
+      "extension": ".pl",
+      "size_bytes": 3023,
+      "content_scanned": false,
+      "blob_sha": "d0a86ea41ba5c0d324bbca1639c83f170b5bf87c",
+      "file_url": "https://github.com/tseemann/bioinfo-scripts/blob/master/bin/blast-test-set.pl",
+      "ref": "master"
+    },
+    {
+      "path": "bin/gb-split.pl",
+      "artifact_kind": "source_code",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "gb-split.pl",
+      "directory": "bin",
+      "extension": ".pl",
+      "size_bytes": 1506,
+      "content_scanned": false,
+      "blob_sha": "aa603bb881db9aba235128f14eb7ffd588792fda",
+      "file_url": "https://github.com/tseemann/bioinfo-scripts/blob/master/bin/gb-split.pl",
+      "ref": "master"
+    },
+    {
+      "path": "bin/genbank2krakenlib.pl",
+      "artifact_kind": "source_code",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "genbank2krakenlib.pl",
+      "directory": "bin",
+      "extension": ".pl",
+      "size_bytes": 1763,
+      "content_scanned": false,
+      "blob_sha": "6f0768df528b08cb4d3d977f2afd392f301c84cb",
+      "file_url": "https://github.com/tseemann/bioinfo-scripts/blob/master/bin/genbank2krakenlib.pl",
+      "ref": "master"
+    },
+    {
+      "path": "bin/gene-puller.pl",
+      "artifact_kind": "source_code",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "gene-puller.pl",
+      "directory": "bin",
+      "extension": ".pl",
+      "size_bytes": 6958,
+      "content_scanned": false,
+      "blob_sha": "96157b7933c8b638fc33001295bd38bd913765e0",
+      "file_url": "https://github.com/tseemann/bioinfo-scripts/blob/master/bin/gene-puller.pl",
+      "ref": "master"
+    },
+    {
+      "path": "bin/prokka-suggest_pseudogenes.pl",
+      "artifact_kind": "source_code",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "prokka-suggest_pseudogenes.pl",
+      "directory": "bin",
+      "extension": ".pl",
+      "size_bytes": 1124,
+      "content_scanned": false,
+      "blob_sha": "9e2ef7c9414c1ea86b326e5a4addd811cfcedb2d",
+      "file_url": "https://github.com/tseemann/bioinfo-scripts/blob/master/bin/prokka-suggest_pseudogenes.pl",
+      "ref": "master"
+    },
+    {
+      "path": "LICENSE",
+      "artifact_kind": "other",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "LICENSE",
+      "directory": "",
+      "extension": "",
+      "size_bytes": 35141,
+      "content_scanned": false,
+      "blob_sha": "9cecc1d4669ee8af2ca727a5d8cde10cd8b2d7cc",
+      "file_url": "https://github.com/tseemann/bioinfo-scripts/blob/master/LICENSE",
+      "ref": "master"
+    },
+    {
+      "path": "README.md",
+      "artifact_kind": "documentation",
+      "steps": [
+        "dissemination"
+      ],
+      "unclassified": false,
+      "scores": {
+        "processing": 1,
+        "dissemination": 2
+      },
+      "evidence": [
+        {
+          "rule_id": "PRO_CONTENT_PROCESS",
+          "step": "processing",
+          "source": "content",
+          "weight": 1,
+          "matched_text": "extract ",
+          "matched_texts": [
+            "extract "
+          ],
+          "matches": [
+            {
+              "text": "extract ",
+              "line": 14,
+              "url": "https://github.com/tseemann/bioinfo-scripts/blob/master/README.md#L14"
+            }
+          ],
+          "description": "File contains deterministic indicators of data preparation or transformation."
+        },
+        {
+          "rule_id": "DIS_README",
+          "step": "dissemination",
+          "source": "path",
+          "weight": 2,
+          "matched_text": "README.md",
+          "matched_texts": [
+            "README.md"
+          ],
+          "matches": [
+            {
+              "text": "README.md",
+              "line": null,
+              "url": "https://github.com/tseemann/bioinfo-scripts/blob/master/README.md"
+            }
+          ],
+          "description": "Project-facing documentation supports dissemination."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "README.md",
+      "directory": "",
+      "extension": ".md",
+      "size_bytes": 862,
+      "content_scanned": true,
+      "blob_sha": "03a058ead115c390fea1c4d756149936fc4b013e",
+      "file_url": "https://github.com/tseemann/bioinfo-scripts/blob/master/README.md",
+      "ref": "master"
+    },
+    {
+      "path": "test/Ef_aus0085.gbk",
+      "artifact_kind": "other",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [
+        {
+          "rule_id": "IMP_PATH_TESTS",
+          "step": "implementation",
+          "source": "path",
+          "artifact_kind": "other",
+          "reason": "Suppressed because 'other' files are not compatible with this generic implementation rule."
+        }
+      ],
+      "file_name": "Ef_aus0085.gbk",
+      "directory": "test",
+      "extension": ".gbk",
+      "size_bytes": 10337241,
+      "content_scanned": false,
+      "blob_sha": "92e5c97dec714837a73a77f332eaea66c8591fc0",
+      "file_url": "https://github.com/tseemann/bioinfo-scripts/blob/master/test/Ef_aus0085.gbk",
+      "ref": "master"
+    }
+  ],
+  "execution": {
+    "id": "98db42168d9b09672e9a",
+    "repo_key": "https://github.com/tseemann/bioinfo-scripts",
+    "executed_at": "2026-09-21T10:58:26.331973+00:00"
+  },
+  "cache": {
+    "hit": false,
+    "persistent": true,
+    "path": "data/heuristic_results/98db42168d9b09672e9a.json",
+    "scope": "repository"
+  }
+}

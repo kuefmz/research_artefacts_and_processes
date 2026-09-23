@@ -1,0 +1,2598 @@
+{
+  "repository": {
+    "url": "https://github.com/s-falke/llvm2kittel",
+    "full_name": "s-falke/llvm2kittel",
+    "ref": "master",
+    "commit_tree_sha": "ec8e9d58621551af39ca0426c8d3b57f44f71775",
+    "file_count": 81
+  },
+  "method": {
+    "name": "deterministic_research_process_step_heuristics",
+    "version": "0.1.0",
+    "uses_ai": false,
+    "multi_label": true,
+    "detection_threshold": 2,
+    "max_content_bytes": 250000
+  },
+  "summary": {
+    "files_per_step": {
+      "collection": 0,
+      "processing": 19,
+      "implementation": 30,
+      "experimentation": 0,
+      "evaluation": 0,
+      "dissemination": 0
+    },
+    "unclassified_files": 41
+  },
+  "files": [
+    {
+      "path": ".gitignore",
+      "artifact_kind": "other",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": ".gitignore",
+      "directory": "",
+      "extension": "",
+      "size_bytes": 3,
+      "content_scanned": false,
+      "blob_sha": "b25c15b81fae06e1c55946ac6270bfdb293870e8",
+      "file_url": "https://github.com/s-falke/llvm2kittel/blob/master/.gitignore",
+      "ref": "master"
+    },
+    {
+      "path": "cmake/modules/FindGMP.cmake",
+      "artifact_kind": "other",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "FindGMP.cmake",
+      "directory": "cmake/modules",
+      "extension": ".cmake",
+      "size_bytes": 1097,
+      "content_scanned": false,
+      "blob_sha": "4ebe4dbe9e576f8eb1304773d007d03feebf2514",
+      "file_url": "https://github.com/s-falke/llvm2kittel/blob/master/cmake/modules/FindGMP.cmake",
+      "ref": "master"
+    },
+    {
+      "path": "CMakeLists.txt",
+      "artifact_kind": "other",
+      "steps": [],
+      "unclassified": true,
+      "scores": {
+        "processing": 1
+      },
+      "evidence": [
+        {
+          "rule_id": "PRO_CONTENT_PROCESS",
+          "step": "processing",
+          "source": "content",
+          "weight": 1,
+          "matched_text": "parse ",
+          "matched_texts": [
+            "parse "
+          ],
+          "matches": [
+            {
+              "text": "parse ",
+              "line": 35,
+              "url": "https://github.com/s-falke/llvm2kittel/blob/master/CMakeLists.txt#L35"
+            }
+          ],
+          "description": "File contains deterministic indicators of data preparation or transformation."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "CMakeLists.txt",
+      "directory": "",
+      "extension": ".txt",
+      "size_bytes": 6720,
+      "content_scanned": true,
+      "blob_sha": "48688ff4ad092cb920ce3af3db4312d2f9d5b2bb",
+      "file_url": "https://github.com/s-falke/llvm2kittel/blob/master/CMakeLists.txt",
+      "ref": "master"
+    },
+    {
+      "path": "include/klee/util/Ref.h",
+      "artifact_kind": "source_code",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "Ref.h",
+      "directory": "include/klee/util",
+      "extension": ".h",
+      "size_bytes": 3100,
+      "content_scanned": true,
+      "blob_sha": "d14de471c8c47ef8c54974aff116e0ebd461b041",
+      "file_url": "https://github.com/s-falke/llvm2kittel/blob/master/include/klee/util/Ref.h",
+      "ref": "master"
+    },
+    {
+      "path": "include/llvm2kittel/Analysis/ConditionPropagator.h",
+      "artifact_kind": "source_code",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "ConditionPropagator.h",
+      "directory": "include/llvm2kittel/Analysis",
+      "extension": ".h",
+      "size_bytes": 1975,
+      "content_scanned": true,
+      "blob_sha": "c566c5b21d94269994f91c0826c6259ec824e81f",
+      "file_url": "https://github.com/s-falke/llvm2kittel/blob/master/include/llvm2kittel/Analysis/ConditionPropagator.h",
+      "ref": "master"
+    },
+    {
+      "path": "include/llvm2kittel/Analysis/HierarchyBuilder.h",
+      "artifact_kind": "source_code",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "HierarchyBuilder.h",
+      "directory": "include/llvm2kittel/Analysis",
+      "extension": ".h",
+      "size_bytes": 1877,
+      "content_scanned": true,
+      "blob_sha": "595c69d4656fdaade2fb6fd9e2bc98cdfbb7e808",
+      "file_url": "https://github.com/s-falke/llvm2kittel/blob/master/include/llvm2kittel/Analysis/HierarchyBuilder.h",
+      "ref": "master"
+    },
+    {
+      "path": "include/llvm2kittel/Analysis/InstChecker.h",
+      "artifact_kind": "source_code",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "InstChecker.h",
+      "directory": "include/llvm2kittel/Analysis",
+      "extension": ".h",
+      "size_bytes": 2643,
+      "content_scanned": true,
+      "blob_sha": "b07e45ecebefad74657b1fbb327cb4b8ebe958dc",
+      "file_url": "https://github.com/s-falke/llvm2kittel/blob/master/include/llvm2kittel/Analysis/InstChecker.h",
+      "ref": "master"
+    },
+    {
+      "path": "include/llvm2kittel/Analysis/LoopConditionBlocksCollector.h",
+      "artifact_kind": "source_code",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "LoopConditionBlocksCollector.h",
+      "directory": "include/llvm2kittel/Analysis",
+      "extension": ".h",
+      "size_bytes": 1640,
+      "content_scanned": true,
+      "blob_sha": "66d29205e150b0cfe07b5812f427216ad7977c30",
+      "file_url": "https://github.com/s-falke/llvm2kittel/blob/master/include/llvm2kittel/Analysis/LoopConditionBlocksCollector.h",
+      "ref": "master"
+    },
+    {
+      "path": "include/llvm2kittel/Analysis/LoopConditionExplicitizer.h",
+      "artifact_kind": "source_code",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "LoopConditionExplicitizer.h",
+      "directory": "include/llvm2kittel/Analysis",
+      "extension": ".h",
+      "size_bytes": 2121,
+      "content_scanned": true,
+      "blob_sha": "d48cd8589489c56a258887f07bee468a7204b1c4",
+      "file_url": "https://github.com/s-falke/llvm2kittel/blob/master/include/llvm2kittel/Analysis/LoopConditionExplicitizer.h",
+      "ref": "master"
+    },
+    {
+      "path": "include/llvm2kittel/Analysis/MemoryAnalyzer.h",
+      "artifact_kind": "source_code",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "MemoryAnalyzer.h",
+      "directory": "include/llvm2kittel/Analysis",
+      "extension": ".h",
+      "size_bytes": 2246,
+      "content_scanned": true,
+      "blob_sha": "51bec1eaacbd02d5aa0b97bf05324969c51d5764",
+      "file_url": "https://github.com/s-falke/llvm2kittel/blob/master/include/llvm2kittel/Analysis/MemoryAnalyzer.h",
+      "ref": "master"
+    },
+    {
+      "path": "include/llvm2kittel/BoundConstrainer.h",
+      "artifact_kind": "source_code",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "BoundConstrainer.h",
+      "directory": "include/llvm2kittel",
+      "extension": ".h",
+      "size_bytes": 525,
+      "content_scanned": true,
+      "blob_sha": "105b43c67c0259b0e894820d49ad99c760e0cda6",
+      "file_url": "https://github.com/s-falke/llvm2kittel/blob/master/include/llvm2kittel/BoundConstrainer.h",
+      "ref": "master"
+    },
+    {
+      "path": "include/llvm2kittel/ConstraintEliminator.h",
+      "artifact_kind": "source_code",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "ConstraintEliminator.h",
+      "directory": "include/llvm2kittel",
+      "extension": ".h",
+      "size_bytes": 1016,
+      "content_scanned": true,
+      "blob_sha": "fcfa6c9324a0d4627ea75603a5b3a79f8d7b7f7c",
+      "file_url": "https://github.com/s-falke/llvm2kittel/blob/master/include/llvm2kittel/ConstraintEliminator.h",
+      "ref": "master"
+    },
+    {
+      "path": "include/llvm2kittel/ConstraintSimplifier.h",
+      "artifact_kind": "source_code",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "ConstraintSimplifier.h",
+      "directory": "include/llvm2kittel",
+      "extension": ".h",
+      "size_bytes": 432,
+      "content_scanned": true,
+      "blob_sha": "497d21f199d4452291e9c63fdb7d08419304cb88",
+      "file_url": "https://github.com/s-falke/llvm2kittel/blob/master/include/llvm2kittel/ConstraintSimplifier.h",
+      "ref": "master"
+    },
+    {
+      "path": "include/llvm2kittel/Converter.h",
+      "artifact_kind": "source_code",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "Converter.h",
+      "directory": "include/llvm2kittel",
+      "extension": ".h",
+      "size_bytes": 8883,
+      "content_scanned": true,
+      "blob_sha": "05a83ddb1fd3ee3278a06543baf1c3bf2be9da3a",
+      "file_url": "https://github.com/s-falke/llvm2kittel/blob/master/include/llvm2kittel/Converter.h",
+      "ref": "master"
+    },
+    {
+      "path": "include/llvm2kittel/DivConstraintStore.h",
+      "artifact_kind": "source_code",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "DivConstraintStore.h",
+      "directory": "include/llvm2kittel",
+      "extension": ".h",
+      "size_bytes": 822,
+      "content_scanned": true,
+      "blob_sha": "e24d4ac1598cc900e8169d37ba490a75f7b4c3d2",
+      "file_url": "https://github.com/s-falke/llvm2kittel/blob/master/include/llvm2kittel/DivConstraintStore.h",
+      "ref": "master"
+    },
+    {
+      "path": "include/llvm2kittel/DivRemConstraintType.h",
+      "artifact_kind": "source_code",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "DivRemConstraintType.h",
+      "directory": "include/llvm2kittel",
+      "extension": ".h",
+      "size_bytes": 348,
+      "content_scanned": true,
+      "blob_sha": "5479d6fe5e32a280edb194876d0891d1109eb66b",
+      "file_url": "https://github.com/s-falke/llvm2kittel/blob/master/include/llvm2kittel/DivRemConstraintType.h",
+      "ref": "master"
+    },
+    {
+      "path": "include/llvm2kittel/Export/ComplexityTuplePrinter.h",
+      "artifact_kind": "source_code",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "ComplexityTuplePrinter.h",
+      "directory": "include/llvm2kittel/Export",
+      "extension": ".h",
+      "size_bytes": 541,
+      "content_scanned": true,
+      "blob_sha": "172b7d218039721ced28d2e262e408f4db567488",
+      "file_url": "https://github.com/s-falke/llvm2kittel/blob/master/include/llvm2kittel/Export/ComplexityTuplePrinter.h",
+      "ref": "master"
+    },
+    {
+      "path": "include/llvm2kittel/Export/T2Export.h",
+      "artifact_kind": "source_code",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "T2Export.h",
+      "directory": "include/llvm2kittel/Export",
+      "extension": ".h",
+      "size_bytes": 495,
+      "content_scanned": true,
+      "blob_sha": "68a4e8fcfb82807ab59c5e25656074e83396f1bb",
+      "file_url": "https://github.com/s-falke/llvm2kittel/blob/master/include/llvm2kittel/Export/T2Export.h",
+      "ref": "master"
+    },
+    {
+      "path": "include/llvm2kittel/Export/UniformComplexityTuplePrinter.h",
+      "artifact_kind": "source_code",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "UniformComplexityTuplePrinter.h",
+      "directory": "include/llvm2kittel/Export",
+      "extension": ".h",
+      "size_bytes": 595,
+      "content_scanned": true,
+      "blob_sha": "70cc781088fb8244b54b1f2f1b6739ae44dedd8b",
+      "file_url": "https://github.com/s-falke/llvm2kittel/blob/master/include/llvm2kittel/Export/UniformComplexityTuplePrinter.h",
+      "ref": "master"
+    },
+    {
+      "path": "include/llvm2kittel/IntTRS/Constraint.h",
+      "artifact_kind": "source_code",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "Constraint.h",
+      "directory": "include/llvm2kittel/IntTRS",
+      "extension": ".h",
+      "size_bytes": 8344,
+      "content_scanned": true,
+      "blob_sha": "45563c64aaf4c602efc4133d4a897113e31a3d19",
+      "file_url": "https://github.com/s-falke/llvm2kittel/blob/master/include/llvm2kittel/IntTRS/Constraint.h",
+      "ref": "master"
+    },
+    {
+      "path": "include/llvm2kittel/IntTRS/Polynomial.h",
+      "artifact_kind": "source_code",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "Polynomial.h",
+      "directory": "include/llvm2kittel/IntTRS",
+      "extension": ".h",
+      "size_bytes": 3160,
+      "content_scanned": true,
+      "blob_sha": "49b2797f891a42eb8d1bc4e665bc1aeb58d2178a",
+      "file_url": "https://github.com/s-falke/llvm2kittel/blob/master/include/llvm2kittel/IntTRS/Polynomial.h",
+      "ref": "master"
+    },
+    {
+      "path": "include/llvm2kittel/IntTRS/Rule.h",
+      "artifact_kind": "source_code",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "Rule.h",
+      "directory": "include/llvm2kittel/IntTRS",
+      "extension": ".h",
+      "size_bytes": 1105,
+      "content_scanned": true,
+      "blob_sha": "1b51e02f84eb9ef5a0936de39afda1df5a46d9cc",
+      "file_url": "https://github.com/s-falke/llvm2kittel/blob/master/include/llvm2kittel/IntTRS/Rule.h",
+      "ref": "master"
+    },
+    {
+      "path": "include/llvm2kittel/IntTRS/Term.h",
+      "artifact_kind": "source_code",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "Term.h",
+      "directory": "include/llvm2kittel/IntTRS",
+      "extension": ".h",
+      "size_bytes": 1269,
+      "content_scanned": true,
+      "blob_sha": "48755b48ec2b9352aa1ba64b7a33b8bd983ffd71",
+      "file_url": "https://github.com/s-falke/llvm2kittel/blob/master/include/llvm2kittel/IntTRS/Term.h",
+      "ref": "master"
+    },
+    {
+      "path": "include/llvm2kittel/Kittelizer.h",
+      "artifact_kind": "source_code",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "Kittelizer.h",
+      "directory": "include/llvm2kittel",
+      "extension": ".h",
+      "size_bytes": 453,
+      "content_scanned": true,
+      "blob_sha": "a72945aca4ba35c4ccc3a1a2d8d8018f1d0275fa",
+      "file_url": "https://github.com/s-falke/llvm2kittel/blob/master/include/llvm2kittel/Kittelizer.h",
+      "ref": "master"
+    },
+    {
+      "path": "include/llvm2kittel/RemConstraintStore.h",
+      "artifact_kind": "source_code",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "RemConstraintStore.h",
+      "directory": "include/llvm2kittel",
+      "extension": ".h",
+      "size_bytes": 767,
+      "content_scanned": true,
+      "blob_sha": "1375283d00e5247b940db20e944cecb8dc51fc3a",
+      "file_url": "https://github.com/s-falke/llvm2kittel/blob/master/include/llvm2kittel/RemConstraintStore.h",
+      "ref": "master"
+    },
+    {
+      "path": "include/llvm2kittel/Slicer.h",
+      "artifact_kind": "source_code",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "Slicer.h",
+      "directory": "include/llvm2kittel",
+      "extension": ".h",
+      "size_bytes": 2697,
+      "content_scanned": true,
+      "blob_sha": "22a85c6935c10778b5d60562cd30843da17417d2",
+      "file_url": "https://github.com/s-falke/llvm2kittel/blob/master/include/llvm2kittel/Slicer.h",
+      "ref": "master"
+    },
+    {
+      "path": "include/llvm2kittel/Transform/BasicBlockSorter.h",
+      "artifact_kind": "source_code",
+      "steps": [
+        "processing"
+      ],
+      "unclassified": false,
+      "scores": {
+        "processing": 3
+      },
+      "evidence": [
+        {
+          "rule_id": "PRO_PATH_PROCESS_DIR",
+          "step": "processing",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "/Transform/",
+          "matched_texts": [
+            "/Transform/"
+          ],
+          "matches": [
+            {
+              "text": "/Transform/",
+              "line": null,
+              "url": "https://github.com/s-falke/llvm2kittel/blob/master/include/llvm2kittel/Transform/BasicBlockSorter.h"
+            }
+          ],
+          "description": "File is located in a directory explicitly associated with data transformation."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "BasicBlockSorter.h",
+      "directory": "include/llvm2kittel/Transform",
+      "extension": ".h",
+      "size_bytes": 1292,
+      "content_scanned": true,
+      "blob_sha": "d6a41bdaf1c6cbf32c2e9107f183cceebeb861e4",
+      "file_url": "https://github.com/s-falke/llvm2kittel/blob/master/include/llvm2kittel/Transform/BasicBlockSorter.h",
+      "ref": "master"
+    },
+    {
+      "path": "include/llvm2kittel/Transform/BitcastCallEliminator.h",
+      "artifact_kind": "source_code",
+      "steps": [
+        "processing"
+      ],
+      "unclassified": false,
+      "scores": {
+        "processing": 3
+      },
+      "evidence": [
+        {
+          "rule_id": "PRO_PATH_PROCESS_DIR",
+          "step": "processing",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "/Transform/",
+          "matched_texts": [
+            "/Transform/"
+          ],
+          "matches": [
+            {
+              "text": "/Transform/",
+              "line": null,
+              "url": "https://github.com/s-falke/llvm2kittel/blob/master/include/llvm2kittel/Transform/BitcastCallEliminator.h"
+            }
+          ],
+          "description": "File is located in a directory explicitly associated with data transformation."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "BitcastCallEliminator.h",
+      "directory": "include/llvm2kittel/Transform",
+      "extension": ".h",
+      "size_bytes": 1100,
+      "content_scanned": true,
+      "blob_sha": "e2daf86901fd6af475c444bf70822eefe8c66ae9",
+      "file_url": "https://github.com/s-falke/llvm2kittel/blob/master/include/llvm2kittel/Transform/BitcastCallEliminator.h",
+      "ref": "master"
+    },
+    {
+      "path": "include/llvm2kittel/Transform/ConstantExprEliminator.h",
+      "artifact_kind": "source_code",
+      "steps": [
+        "processing"
+      ],
+      "unclassified": false,
+      "scores": {
+        "processing": 3
+      },
+      "evidence": [
+        {
+          "rule_id": "PRO_PATH_PROCESS_DIR",
+          "step": "processing",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "/Transform/",
+          "matched_texts": [
+            "/Transform/"
+          ],
+          "matches": [
+            {
+              "text": "/Transform/",
+              "line": null,
+              "url": "https://github.com/s-falke/llvm2kittel/blob/master/include/llvm2kittel/Transform/ConstantExprEliminator.h"
+            }
+          ],
+          "description": "File is located in a directory explicitly associated with data transformation."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "ConstantExprEliminator.h",
+      "directory": "include/llvm2kittel/Transform",
+      "extension": ".h",
+      "size_bytes": 1274,
+      "content_scanned": true,
+      "blob_sha": "7fa823a8446ef11c075dad0b107a017c21787453",
+      "file_url": "https://github.com/s-falke/llvm2kittel/blob/master/include/llvm2kittel/Transform/ConstantExprEliminator.h",
+      "ref": "master"
+    },
+    {
+      "path": "include/llvm2kittel/Transform/EagerInliner.h",
+      "artifact_kind": "source_code",
+      "steps": [
+        "processing"
+      ],
+      "unclassified": false,
+      "scores": {
+        "processing": 3
+      },
+      "evidence": [
+        {
+          "rule_id": "PRO_PATH_PROCESS_DIR",
+          "step": "processing",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "/Transform/",
+          "matched_texts": [
+            "/Transform/"
+          ],
+          "matches": [
+            {
+              "text": "/Transform/",
+              "line": null,
+              "url": "https://github.com/s-falke/llvm2kittel/blob/master/include/llvm2kittel/Transform/EagerInliner.h"
+            }
+          ],
+          "description": "File is located in a directory explicitly associated with data transformation."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "EagerInliner.h",
+      "directory": "include/llvm2kittel/Transform",
+      "extension": ".h",
+      "size_bytes": 1435,
+      "content_scanned": true,
+      "blob_sha": "c2ffce3c42c1840af04ea5c8269d823c42c52c27",
+      "file_url": "https://github.com/s-falke/llvm2kittel/blob/master/include/llvm2kittel/Transform/EagerInliner.h",
+      "ref": "master"
+    },
+    {
+      "path": "include/llvm2kittel/Transform/ExtremeInliner.h",
+      "artifact_kind": "source_code",
+      "steps": [
+        "processing"
+      ],
+      "unclassified": false,
+      "scores": {
+        "processing": 3
+      },
+      "evidence": [
+        {
+          "rule_id": "PRO_PATH_PROCESS_DIR",
+          "step": "processing",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "/Transform/",
+          "matched_texts": [
+            "/Transform/"
+          ],
+          "matches": [
+            {
+              "text": "/Transform/",
+              "line": null,
+              "url": "https://github.com/s-falke/llvm2kittel/blob/master/include/llvm2kittel/Transform/ExtremeInliner.h"
+            }
+          ],
+          "description": "File is located in a directory explicitly associated with data transformation."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "ExtremeInliner.h",
+      "directory": "include/llvm2kittel/Transform",
+      "extension": ".h",
+      "size_bytes": 1620,
+      "content_scanned": true,
+      "blob_sha": "a619a6c78c381935d85d8caa11d0d3c5ebb8d7a9",
+      "file_url": "https://github.com/s-falke/llvm2kittel/blob/master/include/llvm2kittel/Transform/ExtremeInliner.h",
+      "ref": "master"
+    },
+    {
+      "path": "include/llvm2kittel/Transform/Hoister.h",
+      "artifact_kind": "source_code",
+      "steps": [
+        "processing"
+      ],
+      "unclassified": false,
+      "scores": {
+        "processing": 3
+      },
+      "evidence": [
+        {
+          "rule_id": "PRO_PATH_PROCESS_DIR",
+          "step": "processing",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "/Transform/",
+          "matched_texts": [
+            "/Transform/"
+          ],
+          "matches": [
+            {
+              "text": "/Transform/",
+              "line": null,
+              "url": "https://github.com/s-falke/llvm2kittel/blob/master/include/llvm2kittel/Transform/Hoister.h"
+            }
+          ],
+          "description": "File is located in a directory explicitly associated with data transformation."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "Hoister.h",
+      "directory": "include/llvm2kittel/Transform",
+      "extension": ".h",
+      "size_bytes": 1973,
+      "content_scanned": true,
+      "blob_sha": "c772cbcb7241a43c12f7fd1f6537028c42e3f55f",
+      "file_url": "https://github.com/s-falke/llvm2kittel/blob/master/include/llvm2kittel/Transform/Hoister.h",
+      "ref": "master"
+    },
+    {
+      "path": "include/llvm2kittel/Transform/InstNamer.h",
+      "artifact_kind": "source_code",
+      "steps": [
+        "processing"
+      ],
+      "unclassified": false,
+      "scores": {
+        "processing": 3
+      },
+      "evidence": [
+        {
+          "rule_id": "PRO_PATH_PROCESS_DIR",
+          "step": "processing",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "/Transform/",
+          "matched_texts": [
+            "/Transform/"
+          ],
+          "matches": [
+            {
+              "text": "/Transform/",
+              "line": null,
+              "url": "https://github.com/s-falke/llvm2kittel/blob/master/include/llvm2kittel/Transform/InstNamer.h"
+            }
+          ],
+          "description": "File is located in a directory explicitly associated with data transformation."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "InstNamer.h",
+      "directory": "include/llvm2kittel/Transform",
+      "extension": ".h",
+      "size_bytes": 1187,
+      "content_scanned": true,
+      "blob_sha": "c5c6d27954dcee9a25c19b6bf635c18be2b832cc",
+      "file_url": "https://github.com/s-falke/llvm2kittel/blob/master/include/llvm2kittel/Transform/InstNamer.h",
+      "ref": "master"
+    },
+    {
+      "path": "include/llvm2kittel/Transform/Mem2Reg.h",
+      "artifact_kind": "source_code",
+      "steps": [
+        "processing"
+      ],
+      "unclassified": false,
+      "scores": {
+        "processing": 3
+      },
+      "evidence": [
+        {
+          "rule_id": "PRO_PATH_PROCESS_DIR",
+          "step": "processing",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "/Transform/",
+          "matched_texts": [
+            "/Transform/"
+          ],
+          "matches": [
+            {
+              "text": "/Transform/",
+              "line": null,
+              "url": "https://github.com/s-falke/llvm2kittel/blob/master/include/llvm2kittel/Transform/Mem2Reg.h"
+            }
+          ],
+          "description": "File is located in a directory explicitly associated with data transformation."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "Mem2Reg.h",
+      "directory": "include/llvm2kittel/Transform",
+      "extension": ".h",
+      "size_bytes": 1416,
+      "content_scanned": true,
+      "blob_sha": "e964259fa0e56773f784a8d13cb8475dc831e540",
+      "file_url": "https://github.com/s-falke/llvm2kittel/blob/master/include/llvm2kittel/Transform/Mem2Reg.h",
+      "ref": "master"
+    },
+    {
+      "path": "include/llvm2kittel/Transform/NondefFactory.h",
+      "artifact_kind": "source_code",
+      "steps": [
+        "processing"
+      ],
+      "unclassified": false,
+      "scores": {
+        "processing": 3
+      },
+      "evidence": [
+        {
+          "rule_id": "PRO_PATH_PROCESS_DIR",
+          "step": "processing",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "/Transform/",
+          "matched_texts": [
+            "/Transform/"
+          ],
+          "matches": [
+            {
+              "text": "/Transform/",
+              "line": null,
+              "url": "https://github.com/s-falke/llvm2kittel/blob/master/include/llvm2kittel/Transform/NondefFactory.h"
+            }
+          ],
+          "description": "File is located in a directory explicitly associated with data transformation."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "NondefFactory.h",
+      "directory": "include/llvm2kittel/Transform",
+      "extension": ".h",
+      "size_bytes": 1599,
+      "content_scanned": true,
+      "blob_sha": "61fec1e01f2552d96bb118dfcdf73a8deda05dd5",
+      "file_url": "https://github.com/s-falke/llvm2kittel/blob/master/include/llvm2kittel/Transform/NondefFactory.h",
+      "ref": "master"
+    },
+    {
+      "path": "include/llvm2kittel/Transform/StrengthIncreaser.h",
+      "artifact_kind": "source_code",
+      "steps": [
+        "processing"
+      ],
+      "unclassified": false,
+      "scores": {
+        "processing": 3
+      },
+      "evidence": [
+        {
+          "rule_id": "PRO_PATH_PROCESS_DIR",
+          "step": "processing",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "/Transform/",
+          "matched_texts": [
+            "/Transform/"
+          ],
+          "matches": [
+            {
+              "text": "/Transform/",
+              "line": null,
+              "url": "https://github.com/s-falke/llvm2kittel/blob/master/include/llvm2kittel/Transform/StrengthIncreaser.h"
+            }
+          ],
+          "description": "File is located in a directory explicitly associated with data transformation."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "StrengthIncreaser.h",
+      "directory": "include/llvm2kittel/Transform",
+      "extension": ".h",
+      "size_bytes": 918,
+      "content_scanned": true,
+      "blob_sha": "56c080a539b94afce9a71f5147c8783db9dad74b",
+      "file_url": "https://github.com/s-falke/llvm2kittel/blob/master/include/llvm2kittel/Transform/StrengthIncreaser.h",
+      "ref": "master"
+    },
+    {
+      "path": "include/llvm2kittel/Util/CommandLine.h",
+      "artifact_kind": "source_code",
+      "steps": [],
+      "unclassified": true,
+      "scores": {
+        "processing": 1
+      },
+      "evidence": [
+        {
+          "rule_id": "PRO_CONTENT_PROCESS",
+          "step": "processing",
+          "source": "content",
+          "weight": 1,
+          "matched_text": "parse ",
+          "matched_texts": [
+            "parse "
+          ],
+          "matches": [
+            {
+              "text": "parse ",
+              "line": 991,
+              "url": "https://github.com/s-falke/llvm2kittel/blob/master/include/llvm2kittel/Util/CommandLine.h#L991"
+            }
+          ],
+          "description": "File contains deterministic indicators of data preparation or transformation."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "CommandLine.h",
+      "directory": "include/llvm2kittel/Util",
+      "extension": ".h",
+      "size_bytes": 57553,
+      "content_scanned": true,
+      "blob_sha": "5cec4cb6fd17f424de1a4c99510f17c8d8eb4700",
+      "file_url": "https://github.com/s-falke/llvm2kittel/blob/master/include/llvm2kittel/Util/CommandLine.h",
+      "ref": "master"
+    },
+    {
+      "path": "include/llvm2kittel/Util/gmp_kittel.h",
+      "artifact_kind": "source_code",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "gmp_kittel.h",
+      "directory": "include/llvm2kittel/Util",
+      "extension": ".h",
+      "size_bytes": 585,
+      "content_scanned": true,
+      "blob_sha": "96b9fd43f57340d504af4f1983ceb115e9ee7d57",
+      "file_url": "https://github.com/s-falke/llvm2kittel/blob/master/include/llvm2kittel/Util/gmp_kittel.h",
+      "ref": "master"
+    },
+    {
+      "path": "include/llvm2kittel/Util/quadruple.h",
+      "artifact_kind": "source_code",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "quadruple.h",
+      "directory": "include/llvm2kittel/Util",
+      "extension": ".h",
+      "size_bytes": 2828,
+      "content_scanned": true,
+      "blob_sha": "4a48fa4ec9ae8387fb6b8291e4c65756f2540ce1",
+      "file_url": "https://github.com/s-falke/llvm2kittel/blob/master/include/llvm2kittel/Util/quadruple.h",
+      "ref": "master"
+    },
+    {
+      "path": "include/llvm2kittel/Util/Ref.h",
+      "artifact_kind": "source_code",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "Ref.h",
+      "directory": "include/llvm2kittel/Util",
+      "extension": ".h",
+      "size_bytes": 106,
+      "content_scanned": true,
+      "blob_sha": "61eb46d373348ef9dbc31e6b3dc43b8f410a3096",
+      "file_url": "https://github.com/s-falke/llvm2kittel/blob/master/include/llvm2kittel/Util/Ref.h",
+      "ref": "master"
+    },
+    {
+      "path": "include/llvm2kittel/Util/Version.h",
+      "artifact_kind": "source_code",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "Version.h",
+      "directory": "include/llvm2kittel/Util",
+      "extension": ".h",
+      "size_bytes": 335,
+      "content_scanned": true,
+      "blob_sha": "f5d18ba96d768dfb7357d3689e9828e6355aa15e",
+      "file_url": "https://github.com/s-falke/llvm2kittel/blob/master/include/llvm2kittel/Util/Version.h",
+      "ref": "master"
+    },
+    {
+      "path": "include/WARN_OFF.h",
+      "artifact_kind": "source_code",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "WARN_OFF.h",
+      "directory": "include",
+      "extension": ".h",
+      "size_bytes": 893,
+      "content_scanned": true,
+      "blob_sha": "30da2f20d76acc4b772ee8c353e7bb7a243b003e",
+      "file_url": "https://github.com/s-falke/llvm2kittel/blob/master/include/WARN_OFF.h",
+      "ref": "master"
+    },
+    {
+      "path": "include/WARN_ON.h",
+      "artifact_kind": "source_code",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "WARN_ON.h",
+      "directory": "include",
+      "extension": ".h",
+      "size_bytes": 206,
+      "content_scanned": true,
+      "blob_sha": "ec31aa6ae162a35ac9e00b0f8c41c4c6dd420c5d",
+      "file_url": "https://github.com/s-falke/llvm2kittel/blob/master/include/WARN_ON.h",
+      "ref": "master"
+    },
+    {
+      "path": "INSTALL",
+      "artifact_kind": "other",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "INSTALL",
+      "directory": "",
+      "extension": "",
+      "size_bytes": 498,
+      "content_scanned": false,
+      "blob_sha": "5049d9340aecec289cee4e6ed7cbcb9f6bd6576f",
+      "file_url": "https://github.com/s-falke/llvm2kittel/blob/master/INSTALL",
+      "ref": "master"
+    },
+    {
+      "path": "kittel-llvm-bounded.in",
+      "artifact_kind": "other",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "kittel-llvm-bounded.in",
+      "directory": "",
+      "extension": ".in",
+      "size_bytes": 524,
+      "content_scanned": false,
+      "blob_sha": "5372ce8c4200d402f64424bb2f5fb8e368740453",
+      "file_url": "https://github.com/s-falke/llvm2kittel/blob/master/kittel-llvm-bounded.in",
+      "ref": "master"
+    },
+    {
+      "path": "kittel-llvm.in",
+      "artifact_kind": "other",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "kittel-llvm.in",
+      "directory": "",
+      "extension": ".in",
+      "size_bytes": 472,
+      "content_scanned": false,
+      "blob_sha": "844c909be939eb44b127056f0552ffb68aabc2a5",
+      "file_url": "https://github.com/s-falke/llvm2kittel/blob/master/kittel-llvm.in",
+      "ref": "master"
+    },
+    {
+      "path": "lib/Analysis/ConditionPropagator.cpp",
+      "artifact_kind": "source_code",
+      "steps": [
+        "implementation"
+      ],
+      "unclassified": false,
+      "scores": {
+        "implementation": 3
+      },
+      "evidence": [
+        {
+          "rule_id": "IMP_PATH_SOURCE_DIR",
+          "step": "implementation",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "lib/",
+          "matched_texts": [
+            "lib/"
+          ],
+          "matches": [
+            {
+              "text": "lib/",
+              "line": null,
+              "url": "https://github.com/s-falke/llvm2kittel/blob/master/lib/Analysis/ConditionPropagator.cpp"
+            }
+          ],
+          "description": "File is part of an implementation source tree."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "ConditionPropagator.cpp",
+      "directory": "lib/Analysis",
+      "extension": ".cpp",
+      "size_bytes": 6666,
+      "content_scanned": true,
+      "blob_sha": "bc81bae6eb12df4b7a5ea2f019e70569f4fe4302",
+      "file_url": "https://github.com/s-falke/llvm2kittel/blob/master/lib/Analysis/ConditionPropagator.cpp",
+      "ref": "master"
+    },
+    {
+      "path": "lib/Analysis/HierarchyBuilder.cpp",
+      "artifact_kind": "source_code",
+      "steps": [
+        "implementation"
+      ],
+      "unclassified": false,
+      "scores": {
+        "implementation": 3
+      },
+      "evidence": [
+        {
+          "rule_id": "IMP_PATH_SOURCE_DIR",
+          "step": "implementation",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "lib/",
+          "matched_texts": [
+            "lib/"
+          ],
+          "matches": [
+            {
+              "text": "lib/",
+              "line": null,
+              "url": "https://github.com/s-falke/llvm2kittel/blob/master/lib/Analysis/HierarchyBuilder.cpp"
+            }
+          ],
+          "description": "File is part of an implementation source tree."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "HierarchyBuilder.cpp",
+      "directory": "lib/Analysis",
+      "extension": ".cpp",
+      "size_bytes": 7505,
+      "content_scanned": true,
+      "blob_sha": "686d4d7cf9e67e2e03c0f5dda47b0e5d0091f072",
+      "file_url": "https://github.com/s-falke/llvm2kittel/blob/master/lib/Analysis/HierarchyBuilder.cpp",
+      "ref": "master"
+    },
+    {
+      "path": "lib/Analysis/InstChecker.cpp",
+      "artifact_kind": "source_code",
+      "steps": [
+        "implementation"
+      ],
+      "unclassified": false,
+      "scores": {
+        "implementation": 3
+      },
+      "evidence": [
+        {
+          "rule_id": "IMP_PATH_SOURCE_DIR",
+          "step": "implementation",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "lib/",
+          "matched_texts": [
+            "lib/"
+          ],
+          "matches": [
+            {
+              "text": "lib/",
+              "line": null,
+              "url": "https://github.com/s-falke/llvm2kittel/blob/master/lib/Analysis/InstChecker.cpp"
+            }
+          ],
+          "description": "File is part of an implementation source tree."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "InstChecker.cpp",
+      "directory": "lib/Analysis",
+      "extension": ".cpp",
+      "size_bytes": 6001,
+      "content_scanned": true,
+      "blob_sha": "d2a639a9ed1140c6570b483577a1ceb65d260ccd",
+      "file_url": "https://github.com/s-falke/llvm2kittel/blob/master/lib/Analysis/InstChecker.cpp",
+      "ref": "master"
+    },
+    {
+      "path": "lib/Analysis/LoopConditionBlocksCollector.cpp",
+      "artifact_kind": "source_code",
+      "steps": [
+        "implementation"
+      ],
+      "unclassified": false,
+      "scores": {
+        "implementation": 3
+      },
+      "evidence": [
+        {
+          "rule_id": "IMP_PATH_SOURCE_DIR",
+          "step": "implementation",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "lib/",
+          "matched_texts": [
+            "lib/"
+          ],
+          "matches": [
+            {
+              "text": "lib/",
+              "line": null,
+              "url": "https://github.com/s-falke/llvm2kittel/blob/master/lib/Analysis/LoopConditionBlocksCollector.cpp"
+            }
+          ],
+          "description": "File is part of an implementation source tree."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "LoopConditionBlocksCollector.cpp",
+      "directory": "lib/Analysis",
+      "extension": ".cpp",
+      "size_bytes": 1248,
+      "content_scanned": true,
+      "blob_sha": "90a25390e68a76f746619d9ad14889daa19610ff",
+      "file_url": "https://github.com/s-falke/llvm2kittel/blob/master/lib/Analysis/LoopConditionBlocksCollector.cpp",
+      "ref": "master"
+    },
+    {
+      "path": "lib/Analysis/LoopConditionExplicitizer.cpp",
+      "artifact_kind": "source_code",
+      "steps": [
+        "implementation"
+      ],
+      "unclassified": false,
+      "scores": {
+        "implementation": 3
+      },
+      "evidence": [
+        {
+          "rule_id": "IMP_PATH_SOURCE_DIR",
+          "step": "implementation",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "lib/",
+          "matched_texts": [
+            "lib/"
+          ],
+          "matches": [
+            {
+              "text": "lib/",
+              "line": null,
+              "url": "https://github.com/s-falke/llvm2kittel/blob/master/lib/Analysis/LoopConditionExplicitizer.cpp"
+            }
+          ],
+          "description": "File is part of an implementation source tree."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "LoopConditionExplicitizer.cpp",
+      "directory": "lib/Analysis",
+      "extension": ".cpp",
+      "size_bytes": 8075,
+      "content_scanned": true,
+      "blob_sha": "64715acb61b4023864e6e0d06445c07276e099a7",
+      "file_url": "https://github.com/s-falke/llvm2kittel/blob/master/lib/Analysis/LoopConditionExplicitizer.cpp",
+      "ref": "master"
+    },
+    {
+      "path": "lib/Analysis/MemoryAnalyzer.cpp",
+      "artifact_kind": "source_code",
+      "steps": [
+        "implementation"
+      ],
+      "unclassified": false,
+      "scores": {
+        "implementation": 3
+      },
+      "evidence": [
+        {
+          "rule_id": "IMP_PATH_SOURCE_DIR",
+          "step": "implementation",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "lib/",
+          "matched_texts": [
+            "lib/"
+          ],
+          "matches": [
+            {
+              "text": "lib/",
+              "line": null,
+              "url": "https://github.com/s-falke/llvm2kittel/blob/master/lib/Analysis/MemoryAnalyzer.cpp"
+            }
+          ],
+          "description": "File is part of an implementation source tree."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "MemoryAnalyzer.cpp",
+      "directory": "lib/Analysis",
+      "extension": ".cpp",
+      "size_bytes": 5796,
+      "content_scanned": true,
+      "blob_sha": "070921374686073b9ff04ce300d74572eb91a357",
+      "file_url": "https://github.com/s-falke/llvm2kittel/blob/master/lib/Analysis/MemoryAnalyzer.cpp",
+      "ref": "master"
+    },
+    {
+      "path": "lib/Core/BoundConstrainer.cpp",
+      "artifact_kind": "source_code",
+      "steps": [
+        "implementation"
+      ],
+      "unclassified": false,
+      "scores": {
+        "processing": 1,
+        "implementation": 3
+      },
+      "evidence": [
+        {
+          "rule_id": "PRO_CONTENT_PROCESS",
+          "step": "processing",
+          "source": "content",
+          "weight": 1,
+          "matched_text": "normalize",
+          "matched_texts": [
+            "normalize"
+          ],
+          "matches": [
+            {
+              "text": "normalize",
+              "line": 584,
+              "url": "https://github.com/s-falke/llvm2kittel/blob/master/lib/Core/BoundConstrainer.cpp#L584"
+            }
+          ],
+          "description": "File contains deterministic indicators of data preparation or transformation."
+        },
+        {
+          "rule_id": "IMP_PATH_SOURCE_DIR",
+          "step": "implementation",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "lib/",
+          "matched_texts": [
+            "lib/"
+          ],
+          "matches": [
+            {
+              "text": "lib/",
+              "line": null,
+              "url": "https://github.com/s-falke/llvm2kittel/blob/master/lib/Core/BoundConstrainer.cpp"
+            }
+          ],
+          "description": "File is part of an implementation source tree."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "BoundConstrainer.cpp",
+      "directory": "lib/Core",
+      "extension": ".cpp",
+      "size_bytes": 23454,
+      "content_scanned": true,
+      "blob_sha": "c2ce08da76329c8d8dc984020f762ccbe8f3db9f",
+      "file_url": "https://github.com/s-falke/llvm2kittel/blob/master/lib/Core/BoundConstrainer.cpp",
+      "ref": "master"
+    },
+    {
+      "path": "lib/Core/ConstraintEliminator.cpp",
+      "artifact_kind": "source_code",
+      "steps": [
+        "implementation"
+      ],
+      "unclassified": false,
+      "scores": {
+        "implementation": 3
+      },
+      "evidence": [
+        {
+          "rule_id": "IMP_PATH_SOURCE_DIR",
+          "step": "implementation",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "lib/",
+          "matched_texts": [
+            "lib/"
+          ],
+          "matches": [
+            {
+              "text": "lib/",
+              "line": null,
+              "url": "https://github.com/s-falke/llvm2kittel/blob/master/lib/Core/ConstraintEliminator.cpp"
+            }
+          ],
+          "description": "File is part of an implementation source tree."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "ConstraintEliminator.cpp",
+      "directory": "lib/Core",
+      "extension": ".cpp",
+      "size_bytes": 5901,
+      "content_scanned": true,
+      "blob_sha": "b359ff66b6eb04d898da69f5d1fb7c6c3bdbdbda",
+      "file_url": "https://github.com/s-falke/llvm2kittel/blob/master/lib/Core/ConstraintEliminator.cpp",
+      "ref": "master"
+    },
+    {
+      "path": "lib/Core/ConstraintSimplifier.cpp",
+      "artifact_kind": "source_code",
+      "steps": [
+        "implementation"
+      ],
+      "unclassified": false,
+      "scores": {
+        "implementation": 3
+      },
+      "evidence": [
+        {
+          "rule_id": "IMP_PATH_SOURCE_DIR",
+          "step": "implementation",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "lib/",
+          "matched_texts": [
+            "lib/"
+          ],
+          "matches": [
+            {
+              "text": "lib/",
+              "line": null,
+              "url": "https://github.com/s-falke/llvm2kittel/blob/master/lib/Core/ConstraintSimplifier.cpp"
+            }
+          ],
+          "description": "File is part of an implementation source tree."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "ConstraintSimplifier.cpp",
+      "directory": "lib/Core",
+      "extension": ".cpp",
+      "size_bytes": 3768,
+      "content_scanned": true,
+      "blob_sha": "5bfe9bc6943e707158cfd8058c720ec003948ac0",
+      "file_url": "https://github.com/s-falke/llvm2kittel/blob/master/lib/Core/ConstraintSimplifier.cpp",
+      "ref": "master"
+    },
+    {
+      "path": "lib/Core/Converter.cpp",
+      "artifact_kind": "source_code",
+      "steps": [
+        "implementation"
+      ],
+      "unclassified": false,
+      "scores": {
+        "implementation": 3
+      },
+      "evidence": [
+        {
+          "rule_id": "IMP_PATH_SOURCE_DIR",
+          "step": "implementation",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "lib/",
+          "matched_texts": [
+            "lib/"
+          ],
+          "matches": [
+            {
+              "text": "lib/",
+              "line": null,
+              "url": "https://github.com/s-falke/llvm2kittel/blob/master/lib/Core/Converter.cpp"
+            }
+          ],
+          "description": "File is part of an implementation source tree."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "Converter.cpp",
+      "directory": "lib/Core",
+      "extension": ".cpp",
+      "size_bytes": 81454,
+      "content_scanned": true,
+      "blob_sha": "9df1c7779106909840d873e490b2285544404e05",
+      "file_url": "https://github.com/s-falke/llvm2kittel/blob/master/lib/Core/Converter.cpp",
+      "ref": "master"
+    },
+    {
+      "path": "lib/Core/Kittelizer.cpp",
+      "artifact_kind": "source_code",
+      "steps": [
+        "implementation"
+      ],
+      "unclassified": false,
+      "scores": {
+        "implementation": 3
+      },
+      "evidence": [
+        {
+          "rule_id": "IMP_PATH_SOURCE_DIR",
+          "step": "implementation",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "lib/",
+          "matched_texts": [
+            "lib/"
+          ],
+          "matches": [
+            {
+              "text": "lib/",
+              "line": null,
+              "url": "https://github.com/s-falke/llvm2kittel/blob/master/lib/Core/Kittelizer.cpp"
+            }
+          ],
+          "description": "File is part of an implementation source tree."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "Kittelizer.cpp",
+      "directory": "lib/Core",
+      "extension": ".cpp",
+      "size_bytes": 3123,
+      "content_scanned": true,
+      "blob_sha": "e1a8cbfbd81413bdeef2dd267278d26184fa350e",
+      "file_url": "https://github.com/s-falke/llvm2kittel/blob/master/lib/Core/Kittelizer.cpp",
+      "ref": "master"
+    },
+    {
+      "path": "lib/Core/Slicer.cpp",
+      "artifact_kind": "source_code",
+      "steps": [
+        "implementation"
+      ],
+      "unclassified": false,
+      "scores": {
+        "implementation": 3
+      },
+      "evidence": [
+        {
+          "rule_id": "IMP_PATH_SOURCE_DIR",
+          "step": "implementation",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "lib/",
+          "matched_texts": [
+            "lib/"
+          ],
+          "matches": [
+            {
+              "text": "lib/",
+              "line": null,
+              "url": "https://github.com/s-falke/llvm2kittel/blob/master/lib/Core/Slicer.cpp"
+            }
+          ],
+          "description": "File is part of an implementation source tree."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "Slicer.cpp",
+      "directory": "lib/Core",
+      "extension": ".cpp",
+      "size_bytes": 38579,
+      "content_scanned": true,
+      "blob_sha": "f51b6d6b4f1ba703e27854815965a441d81d2bb6",
+      "file_url": "https://github.com/s-falke/llvm2kittel/blob/master/lib/Core/Slicer.cpp",
+      "ref": "master"
+    },
+    {
+      "path": "lib/Export/ComplexityTuplePrinter.cpp",
+      "artifact_kind": "source_code",
+      "steps": [
+        "implementation"
+      ],
+      "unclassified": false,
+      "scores": {
+        "implementation": 3
+      },
+      "evidence": [
+        {
+          "rule_id": "IMP_PATH_SOURCE_DIR",
+          "step": "implementation",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "lib/",
+          "matched_texts": [
+            "lib/"
+          ],
+          "matches": [
+            {
+              "text": "lib/",
+              "line": null,
+              "url": "https://github.com/s-falke/llvm2kittel/blob/master/lib/Export/ComplexityTuplePrinter.cpp"
+            }
+          ],
+          "description": "File is part of an implementation source tree."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "ComplexityTuplePrinter.cpp",
+      "directory": "lib/Export",
+      "extension": ".cpp",
+      "size_bytes": 3697,
+      "content_scanned": true,
+      "blob_sha": "ad2c896a8e6b2e7c08ec3ea5a2e1ad7335c64116",
+      "file_url": "https://github.com/s-falke/llvm2kittel/blob/master/lib/Export/ComplexityTuplePrinter.cpp",
+      "ref": "master"
+    },
+    {
+      "path": "lib/Export/T2Export.cpp",
+      "artifact_kind": "source_code",
+      "steps": [
+        "implementation"
+      ],
+      "unclassified": false,
+      "scores": {
+        "implementation": 3
+      },
+      "evidence": [
+        {
+          "rule_id": "IMP_PATH_SOURCE_DIR",
+          "step": "implementation",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "lib/",
+          "matched_texts": [
+            "lib/"
+          ],
+          "matches": [
+            {
+              "text": "lib/",
+              "line": null,
+              "url": "https://github.com/s-falke/llvm2kittel/blob/master/lib/Export/T2Export.cpp"
+            }
+          ],
+          "description": "File is part of an implementation source tree."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "T2Export.cpp",
+      "directory": "lib/Export",
+      "extension": ".cpp",
+      "size_bytes": 6229,
+      "content_scanned": true,
+      "blob_sha": "82b7efbd8b263739a75eb15e0aaaf77d31960ef2",
+      "file_url": "https://github.com/s-falke/llvm2kittel/blob/master/lib/Export/T2Export.cpp",
+      "ref": "master"
+    },
+    {
+      "path": "lib/Export/UniformComplexityTuplePrinter.cpp",
+      "artifact_kind": "source_code",
+      "steps": [
+        "implementation"
+      ],
+      "unclassified": false,
+      "scores": {
+        "implementation": 3
+      },
+      "evidence": [
+        {
+          "rule_id": "IMP_PATH_SOURCE_DIR",
+          "step": "implementation",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "lib/",
+          "matched_texts": [
+            "lib/"
+          ],
+          "matches": [
+            {
+              "text": "lib/",
+              "line": null,
+              "url": "https://github.com/s-falke/llvm2kittel/blob/master/lib/Export/UniformComplexityTuplePrinter.cpp"
+            }
+          ],
+          "description": "File is part of an implementation source tree."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "UniformComplexityTuplePrinter.cpp",
+      "directory": "lib/Export",
+      "extension": ".cpp",
+      "size_bytes": 8133,
+      "content_scanned": true,
+      "blob_sha": "6e0715eeecb034c2b4b5a3b97d99196273da8167",
+      "file_url": "https://github.com/s-falke/llvm2kittel/blob/master/lib/Export/UniformComplexityTuplePrinter.cpp",
+      "ref": "master"
+    },
+    {
+      "path": "lib/IntTRS/Constraint.cpp",
+      "artifact_kind": "source_code",
+      "steps": [
+        "implementation"
+      ],
+      "unclassified": false,
+      "scores": {
+        "implementation": 3
+      },
+      "evidence": [
+        {
+          "rule_id": "IMP_PATH_SOURCE_DIR",
+          "step": "implementation",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "lib/",
+          "matched_texts": [
+            "lib/"
+          ],
+          "matches": [
+            {
+              "text": "lib/",
+              "line": null,
+              "url": "https://github.com/s-falke/llvm2kittel/blob/master/lib/IntTRS/Constraint.cpp"
+            }
+          ],
+          "description": "File is part of an implementation source tree."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "Constraint.cpp",
+      "directory": "lib/IntTRS",
+      "extension": ".cpp",
+      "size_bytes": 20185,
+      "content_scanned": true,
+      "blob_sha": "d1821845dddc687cf09e5ebea342c3e8d025f7df",
+      "file_url": "https://github.com/s-falke/llvm2kittel/blob/master/lib/IntTRS/Constraint.cpp",
+      "ref": "master"
+    },
+    {
+      "path": "lib/IntTRS/Polynomial.cpp",
+      "artifact_kind": "source_code",
+      "steps": [
+        "implementation"
+      ],
+      "unclassified": false,
+      "scores": {
+        "implementation": 3
+      },
+      "evidence": [
+        {
+          "rule_id": "IMP_PATH_SOURCE_DIR",
+          "step": "implementation",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "lib/",
+          "matched_texts": [
+            "lib/"
+          ],
+          "matches": [
+            {
+              "text": "lib/",
+              "line": null,
+              "url": "https://github.com/s-falke/llvm2kittel/blob/master/lib/IntTRS/Polynomial.cpp"
+            }
+          ],
+          "description": "File is part of an implementation source tree."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "Polynomial.cpp",
+      "directory": "lib/IntTRS",
+      "extension": ".cpp",
+      "size_bytes": 19211,
+      "content_scanned": true,
+      "blob_sha": "6ea660f6384529e0bafd603b499aae998f78c928",
+      "file_url": "https://github.com/s-falke/llvm2kittel/blob/master/lib/IntTRS/Polynomial.cpp",
+      "ref": "master"
+    },
+    {
+      "path": "lib/IntTRS/Rule.cpp",
+      "artifact_kind": "source_code",
+      "steps": [
+        "implementation"
+      ],
+      "unclassified": false,
+      "scores": {
+        "implementation": 3
+      },
+      "evidence": [
+        {
+          "rule_id": "IMP_PATH_SOURCE_DIR",
+          "step": "implementation",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "lib/",
+          "matched_texts": [
+            "lib/"
+          ],
+          "matches": [
+            {
+              "text": "lib/",
+              "line": null,
+              "url": "https://github.com/s-falke/llvm2kittel/blob/master/lib/IntTRS/Rule.cpp"
+            }
+          ],
+          "description": "File is part of an implementation source tree."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "Rule.cpp",
+      "directory": "lib/IntTRS",
+      "extension": ".cpp",
+      "size_bytes": 1821,
+      "content_scanned": true,
+      "blob_sha": "7093ea24a4203b444a52ccb375814c9386867c89",
+      "file_url": "https://github.com/s-falke/llvm2kittel/blob/master/lib/IntTRS/Rule.cpp",
+      "ref": "master"
+    },
+    {
+      "path": "lib/IntTRS/Term.cpp",
+      "artifact_kind": "source_code",
+      "steps": [
+        "implementation"
+      ],
+      "unclassified": false,
+      "scores": {
+        "implementation": 3
+      },
+      "evidence": [
+        {
+          "rule_id": "IMP_PATH_SOURCE_DIR",
+          "step": "implementation",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "lib/",
+          "matched_texts": [
+            "lib/"
+          ],
+          "matches": [
+            {
+              "text": "lib/",
+              "line": null,
+              "url": "https://github.com/s-falke/llvm2kittel/blob/master/lib/IntTRS/Term.cpp"
+            }
+          ],
+          "description": "File is part of an implementation source tree."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "Term.cpp",
+      "directory": "lib/IntTRS",
+      "extension": ".cpp",
+      "size_bytes": 3260,
+      "content_scanned": true,
+      "blob_sha": "a22fb7397bccae6dbb8fe5a2adc83200a230df1d",
+      "file_url": "https://github.com/s-falke/llvm2kittel/blob/master/lib/IntTRS/Term.cpp",
+      "ref": "master"
+    },
+    {
+      "path": "lib/Transform/BasicBlockSorter.cpp",
+      "artifact_kind": "source_code",
+      "steps": [
+        "processing",
+        "implementation"
+      ],
+      "unclassified": false,
+      "scores": {
+        "processing": 3,
+        "implementation": 3
+      },
+      "evidence": [
+        {
+          "rule_id": "PRO_PATH_PROCESS_DIR",
+          "step": "processing",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "/Transform/",
+          "matched_texts": [
+            "/Transform/"
+          ],
+          "matches": [
+            {
+              "text": "/Transform/",
+              "line": null,
+              "url": "https://github.com/s-falke/llvm2kittel/blob/master/lib/Transform/BasicBlockSorter.cpp"
+            }
+          ],
+          "description": "File is located in a directory explicitly associated with data transformation."
+        },
+        {
+          "rule_id": "IMP_PATH_SOURCE_DIR",
+          "step": "implementation",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "lib/",
+          "matched_texts": [
+            "lib/"
+          ],
+          "matches": [
+            {
+              "text": "lib/",
+              "line": null,
+              "url": "https://github.com/s-falke/llvm2kittel/blob/master/lib/Transform/BasicBlockSorter.cpp"
+            }
+          ],
+          "description": "File is part of an implementation source tree."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "BasicBlockSorter.cpp",
+      "directory": "lib/Transform",
+      "extension": ".cpp",
+      "size_bytes": 1901,
+      "content_scanned": true,
+      "blob_sha": "4295472bacc06e33bd888c08b07726db03c6fb3c",
+      "file_url": "https://github.com/s-falke/llvm2kittel/blob/master/lib/Transform/BasicBlockSorter.cpp",
+      "ref": "master"
+    },
+    {
+      "path": "lib/Transform/BitcastCallEliminator.cpp",
+      "artifact_kind": "source_code",
+      "steps": [
+        "processing",
+        "implementation"
+      ],
+      "unclassified": false,
+      "scores": {
+        "processing": 3,
+        "implementation": 3
+      },
+      "evidence": [
+        {
+          "rule_id": "PRO_PATH_PROCESS_DIR",
+          "step": "processing",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "/Transform/",
+          "matched_texts": [
+            "/Transform/"
+          ],
+          "matches": [
+            {
+              "text": "/Transform/",
+              "line": null,
+              "url": "https://github.com/s-falke/llvm2kittel/blob/master/lib/Transform/BitcastCallEliminator.cpp"
+            }
+          ],
+          "description": "File is located in a directory explicitly associated with data transformation."
+        },
+        {
+          "rule_id": "IMP_PATH_SOURCE_DIR",
+          "step": "implementation",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "lib/",
+          "matched_texts": [
+            "lib/"
+          ],
+          "matches": [
+            {
+              "text": "lib/",
+              "line": null,
+              "url": "https://github.com/s-falke/llvm2kittel/blob/master/lib/Transform/BitcastCallEliminator.cpp"
+            }
+          ],
+          "description": "File is part of an implementation source tree."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "BitcastCallEliminator.cpp",
+      "directory": "lib/Transform",
+      "extension": ".cpp",
+      "size_bytes": 3576,
+      "content_scanned": true,
+      "blob_sha": "7509c1b76d895672a9a8734ca2b3f26a4657a360",
+      "file_url": "https://github.com/s-falke/llvm2kittel/blob/master/lib/Transform/BitcastCallEliminator.cpp",
+      "ref": "master"
+    },
+    {
+      "path": "lib/Transform/ConstantExprEliminator.cpp",
+      "artifact_kind": "source_code",
+      "steps": [
+        "processing",
+        "implementation"
+      ],
+      "unclassified": false,
+      "scores": {
+        "processing": 3,
+        "implementation": 3
+      },
+      "evidence": [
+        {
+          "rule_id": "PRO_PATH_PROCESS_DIR",
+          "step": "processing",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "/Transform/",
+          "matched_texts": [
+            "/Transform/"
+          ],
+          "matches": [
+            {
+              "text": "/Transform/",
+              "line": null,
+              "url": "https://github.com/s-falke/llvm2kittel/blob/master/lib/Transform/ConstantExprEliminator.cpp"
+            }
+          ],
+          "description": "File is located in a directory explicitly associated with data transformation."
+        },
+        {
+          "rule_id": "IMP_PATH_SOURCE_DIR",
+          "step": "implementation",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "lib/",
+          "matched_texts": [
+            "lib/"
+          ],
+          "matches": [
+            {
+              "text": "lib/",
+              "line": null,
+              "url": "https://github.com/s-falke/llvm2kittel/blob/master/lib/Transform/ConstantExprEliminator.cpp"
+            }
+          ],
+          "description": "File is part of an implementation source tree."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "ConstantExprEliminator.cpp",
+      "directory": "lib/Transform",
+      "extension": ".cpp",
+      "size_bytes": 8081,
+      "content_scanned": true,
+      "blob_sha": "99c7822c73298b60dc3879cc838291ee02d98451",
+      "file_url": "https://github.com/s-falke/llvm2kittel/blob/master/lib/Transform/ConstantExprEliminator.cpp",
+      "ref": "master"
+    },
+    {
+      "path": "lib/Transform/EagerInliner.cpp",
+      "artifact_kind": "source_code",
+      "steps": [
+        "processing",
+        "implementation"
+      ],
+      "unclassified": false,
+      "scores": {
+        "processing": 3,
+        "implementation": 3
+      },
+      "evidence": [
+        {
+          "rule_id": "PRO_PATH_PROCESS_DIR",
+          "step": "processing",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "/Transform/",
+          "matched_texts": [
+            "/Transform/"
+          ],
+          "matches": [
+            {
+              "text": "/Transform/",
+              "line": null,
+              "url": "https://github.com/s-falke/llvm2kittel/blob/master/lib/Transform/EagerInliner.cpp"
+            }
+          ],
+          "description": "File is located in a directory explicitly associated with data transformation."
+        },
+        {
+          "rule_id": "IMP_PATH_SOURCE_DIR",
+          "step": "implementation",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "lib/",
+          "matched_texts": [
+            "lib/"
+          ],
+          "matches": [
+            {
+              "text": "lib/",
+              "line": null,
+              "url": "https://github.com/s-falke/llvm2kittel/blob/master/lib/Transform/EagerInliner.cpp"
+            }
+          ],
+          "description": "File is part of an implementation source tree."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "EagerInliner.cpp",
+      "directory": "lib/Transform",
+      "extension": ".cpp",
+      "size_bytes": 1826,
+      "content_scanned": true,
+      "blob_sha": "de11ed16d9d493182bb408172d499b3c8aa789dc",
+      "file_url": "https://github.com/s-falke/llvm2kittel/blob/master/lib/Transform/EagerInliner.cpp",
+      "ref": "master"
+    },
+    {
+      "path": "lib/Transform/ExtremeInliner.cpp",
+      "artifact_kind": "source_code",
+      "steps": [
+        "processing",
+        "implementation"
+      ],
+      "unclassified": false,
+      "scores": {
+        "processing": 3,
+        "implementation": 3
+      },
+      "evidence": [
+        {
+          "rule_id": "PRO_PATH_PROCESS_DIR",
+          "step": "processing",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "/Transform/",
+          "matched_texts": [
+            "/Transform/"
+          ],
+          "matches": [
+            {
+              "text": "/Transform/",
+              "line": null,
+              "url": "https://github.com/s-falke/llvm2kittel/blob/master/lib/Transform/ExtremeInliner.cpp"
+            }
+          ],
+          "description": "File is located in a directory explicitly associated with data transformation."
+        },
+        {
+          "rule_id": "IMP_PATH_SOURCE_DIR",
+          "step": "implementation",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "lib/",
+          "matched_texts": [
+            "lib/"
+          ],
+          "matches": [
+            {
+              "text": "lib/",
+              "line": null,
+              "url": "https://github.com/s-falke/llvm2kittel/blob/master/lib/Transform/ExtremeInliner.cpp"
+            }
+          ],
+          "description": "File is part of an implementation source tree."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "ExtremeInliner.cpp",
+      "directory": "lib/Transform",
+      "extension": ".cpp",
+      "size_bytes": 2432,
+      "content_scanned": true,
+      "blob_sha": "dcbf9d2ad36d74994d92c12f595d8adadfdffe8e",
+      "file_url": "https://github.com/s-falke/llvm2kittel/blob/master/lib/Transform/ExtremeInliner.cpp",
+      "ref": "master"
+    },
+    {
+      "path": "lib/Transform/Hoister.cpp",
+      "artifact_kind": "source_code",
+      "steps": [
+        "processing",
+        "implementation"
+      ],
+      "unclassified": false,
+      "scores": {
+        "processing": 3,
+        "implementation": 3
+      },
+      "evidence": [
+        {
+          "rule_id": "PRO_PATH_PROCESS_DIR",
+          "step": "processing",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "/Transform/",
+          "matched_texts": [
+            "/Transform/"
+          ],
+          "matches": [
+            {
+              "text": "/Transform/",
+              "line": null,
+              "url": "https://github.com/s-falke/llvm2kittel/blob/master/lib/Transform/Hoister.cpp"
+            }
+          ],
+          "description": "File is located in a directory explicitly associated with data transformation."
+        },
+        {
+          "rule_id": "IMP_PATH_SOURCE_DIR",
+          "step": "implementation",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "lib/",
+          "matched_texts": [
+            "lib/"
+          ],
+          "matches": [
+            {
+              "text": "lib/",
+              "line": null,
+              "url": "https://github.com/s-falke/llvm2kittel/blob/master/lib/Transform/Hoister.cpp"
+            }
+          ],
+          "description": "File is part of an implementation source tree."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "Hoister.cpp",
+      "directory": "lib/Transform",
+      "extension": ".cpp",
+      "size_bytes": 12720,
+      "content_scanned": true,
+      "blob_sha": "135a99a5ffd47a3c7b6622c08ce488c0238d1ef7",
+      "file_url": "https://github.com/s-falke/llvm2kittel/blob/master/lib/Transform/Hoister.cpp",
+      "ref": "master"
+    },
+    {
+      "path": "lib/Transform/InstNamer.cpp",
+      "artifact_kind": "source_code",
+      "steps": [
+        "processing",
+        "implementation"
+      ],
+      "unclassified": false,
+      "scores": {
+        "processing": 3,
+        "implementation": 3
+      },
+      "evidence": [
+        {
+          "rule_id": "PRO_PATH_PROCESS_DIR",
+          "step": "processing",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "/Transform/",
+          "matched_texts": [
+            "/Transform/"
+          ],
+          "matches": [
+            {
+              "text": "/Transform/",
+              "line": null,
+              "url": "https://github.com/s-falke/llvm2kittel/blob/master/lib/Transform/InstNamer.cpp"
+            }
+          ],
+          "description": "File is located in a directory explicitly associated with data transformation."
+        },
+        {
+          "rule_id": "IMP_PATH_SOURCE_DIR",
+          "step": "implementation",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "lib/",
+          "matched_texts": [
+            "lib/"
+          ],
+          "matches": [
+            {
+              "text": "lib/",
+              "line": null,
+              "url": "https://github.com/s-falke/llvm2kittel/blob/master/lib/Transform/InstNamer.cpp"
+            }
+          ],
+          "description": "File is part of an implementation source tree."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "InstNamer.cpp",
+      "directory": "lib/Transform",
+      "extension": ".cpp",
+      "size_bytes": 2697,
+      "content_scanned": true,
+      "blob_sha": "41ef3a79fe9b02500d93bd69ebb506884c531267",
+      "file_url": "https://github.com/s-falke/llvm2kittel/blob/master/lib/Transform/InstNamer.cpp",
+      "ref": "master"
+    },
+    {
+      "path": "lib/Transform/Mem2Reg.cpp",
+      "artifact_kind": "source_code",
+      "steps": [
+        "processing",
+        "implementation"
+      ],
+      "unclassified": false,
+      "scores": {
+        "processing": 3,
+        "implementation": 3
+      },
+      "evidence": [
+        {
+          "rule_id": "PRO_PATH_PROCESS_DIR",
+          "step": "processing",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "/Transform/",
+          "matched_texts": [
+            "/Transform/"
+          ],
+          "matches": [
+            {
+              "text": "/Transform/",
+              "line": null,
+              "url": "https://github.com/s-falke/llvm2kittel/blob/master/lib/Transform/Mem2Reg.cpp"
+            }
+          ],
+          "description": "File is located in a directory explicitly associated with data transformation."
+        },
+        {
+          "rule_id": "IMP_PATH_SOURCE_DIR",
+          "step": "implementation",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "lib/",
+          "matched_texts": [
+            "lib/"
+          ],
+          "matches": [
+            {
+              "text": "lib/",
+              "line": null,
+              "url": "https://github.com/s-falke/llvm2kittel/blob/master/lib/Transform/Mem2Reg.cpp"
+            }
+          ],
+          "description": "File is part of an implementation source tree."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "Mem2Reg.cpp",
+      "directory": "lib/Transform",
+      "extension": ".cpp",
+      "size_bytes": 3065,
+      "content_scanned": true,
+      "blob_sha": "f7fa852979288f3585864b1940599300987e511a",
+      "file_url": "https://github.com/s-falke/llvm2kittel/blob/master/lib/Transform/Mem2Reg.cpp",
+      "ref": "master"
+    },
+    {
+      "path": "lib/Transform/StrengthIncreaser.cpp",
+      "artifact_kind": "source_code",
+      "steps": [
+        "processing",
+        "implementation"
+      ],
+      "unclassified": false,
+      "scores": {
+        "processing": 3,
+        "implementation": 3
+      },
+      "evidence": [
+        {
+          "rule_id": "PRO_PATH_PROCESS_DIR",
+          "step": "processing",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "/Transform/",
+          "matched_texts": [
+            "/Transform/"
+          ],
+          "matches": [
+            {
+              "text": "/Transform/",
+              "line": null,
+              "url": "https://github.com/s-falke/llvm2kittel/blob/master/lib/Transform/StrengthIncreaser.cpp"
+            }
+          ],
+          "description": "File is located in a directory explicitly associated with data transformation."
+        },
+        {
+          "rule_id": "IMP_PATH_SOURCE_DIR",
+          "step": "implementation",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "lib/",
+          "matched_texts": [
+            "lib/"
+          ],
+          "matches": [
+            {
+              "text": "lib/",
+              "line": null,
+              "url": "https://github.com/s-falke/llvm2kittel/blob/master/lib/Transform/StrengthIncreaser.cpp"
+            }
+          ],
+          "description": "File is part of an implementation source tree."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "StrengthIncreaser.cpp",
+      "directory": "lib/Transform",
+      "extension": ".cpp",
+      "size_bytes": 2756,
+      "content_scanned": true,
+      "blob_sha": "726f06bef7e95193e22eb7f98b3f95b07635994f",
+      "file_url": "https://github.com/s-falke/llvm2kittel/blob/master/lib/Transform/StrengthIncreaser.cpp",
+      "ref": "master"
+    },
+    {
+      "path": "lib/Util/CommandLine.cpp",
+      "artifact_kind": "source_code",
+      "steps": [
+        "implementation"
+      ],
+      "unclassified": false,
+      "scores": {
+        "processing": 1,
+        "implementation": 3
+      },
+      "evidence": [
+        {
+          "rule_id": "PRO_CONTENT_PROCESS",
+          "step": "processing",
+          "source": "content",
+          "weight": 1,
+          "matched_text": "parse ",
+          "matched_texts": [
+            "parse "
+          ],
+          "matches": [
+            {
+              "text": "parse ",
+              "line": 389,
+              "url": "https://github.com/s-falke/llvm2kittel/blob/master/lib/Util/CommandLine.cpp#L389"
+            }
+          ],
+          "description": "File contains deterministic indicators of data preparation or transformation."
+        },
+        {
+          "rule_id": "IMP_PATH_SOURCE_DIR",
+          "step": "implementation",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "lib/",
+          "matched_texts": [
+            "lib/"
+          ],
+          "matches": [
+            {
+              "text": "lib/",
+              "line": null,
+              "url": "https://github.com/s-falke/llvm2kittel/blob/master/lib/Util/CommandLine.cpp"
+            }
+          ],
+          "description": "File is part of an implementation source tree."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "CommandLine.cpp",
+      "directory": "lib/Util",
+      "extension": ".cpp",
+      "size_bytes": 50723,
+      "content_scanned": true,
+      "blob_sha": "ef5ef05d5f2455101c789a86a3d160aec59703ad",
+      "file_url": "https://github.com/s-falke/llvm2kittel/blob/master/lib/Util/CommandLine.cpp",
+      "ref": "master"
+    },
+    {
+      "path": "lib/Util/gmp_kittel.cpp",
+      "artifact_kind": "source_code",
+      "steps": [
+        "implementation"
+      ],
+      "unclassified": false,
+      "scores": {
+        "implementation": 3
+      },
+      "evidence": [
+        {
+          "rule_id": "IMP_PATH_SOURCE_DIR",
+          "step": "implementation",
+          "source": "path",
+          "weight": 3,
+          "matched_text": "lib/",
+          "matched_texts": [
+            "lib/"
+          ],
+          "matches": [
+            {
+              "text": "lib/",
+              "line": null,
+              "url": "https://github.com/s-falke/llvm2kittel/blob/master/lib/Util/gmp_kittel.cpp"
+            }
+          ],
+          "description": "File is part of an implementation source tree."
+        }
+      ],
+      "suppressed_evidence": [],
+      "file_name": "gmp_kittel.cpp",
+      "directory": "lib/Util",
+      "extension": ".cpp",
+      "size_bytes": 1051,
+      "content_scanned": true,
+      "blob_sha": "60d10ee3b184d8414e7c1dd24f291afd8bbee7bb",
+      "file_url": "https://github.com/s-falke/llvm2kittel/blob/master/lib/Util/gmp_kittel.cpp",
+      "ref": "master"
+    },
+    {
+      "path": "LICENSE",
+      "artifact_kind": "other",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "LICENSE",
+      "directory": "",
+      "extension": "",
+      "size_bytes": 1610,
+      "content_scanned": false,
+      "blob_sha": "f7d65d7116e5be37a854adb44e8709387fdddc0c",
+      "file_url": "https://github.com/s-falke/llvm2kittel/blob/master/LICENSE",
+      "ref": "master"
+    },
+    {
+      "path": "make_git_sha1.sh",
+      "artifact_kind": "source_code",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "make_git_sha1.sh",
+      "directory": "",
+      "extension": ".sh",
+      "size_bytes": 501,
+      "content_scanned": true,
+      "blob_sha": "d4450c5e990053392530aff85359b88d4dae5d18",
+      "file_url": "https://github.com/s-falke/llvm2kittel/blob/master/make_git_sha1.sh",
+      "ref": "master"
+    },
+    {
+      "path": "README.markdown",
+      "artifact_kind": "other",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "README.markdown",
+      "directory": "",
+      "extension": ".markdown",
+      "size_bytes": 641,
+      "content_scanned": false,
+      "blob_sha": "6d8f049bb91174e45c230bdaecd09a46d743b7d7",
+      "file_url": "https://github.com/s-falke/llvm2kittel/blob/master/README.markdown",
+      "ref": "master"
+    },
+    {
+      "path": "tools/GitSHA1.h",
+      "artifact_kind": "source_code",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "GitSHA1.h",
+      "directory": "tools",
+      "extension": ".h",
+      "size_bytes": 28,
+      "content_scanned": true,
+      "blob_sha": "c5f21fdff9d476a2921457abb08edf243e1907f7",
+      "file_url": "https://github.com/s-falke/llvm2kittel/blob/master/tools/GitSHA1.h",
+      "ref": "master"
+    },
+    {
+      "path": "tools/llvm2kittel.cpp",
+      "artifact_kind": "source_code",
+      "steps": [],
+      "unclassified": true,
+      "scores": {},
+      "evidence": [],
+      "suppressed_evidence": [],
+      "file_name": "llvm2kittel.cpp",
+      "directory": "tools",
+      "extension": ".cpp",
+      "size_bytes": 32011,
+      "content_scanned": true,
+      "blob_sha": "dabfa6cded1c4134440f9127f2f03c19f17c9ecd",
+      "file_url": "https://github.com/s-falke/llvm2kittel/blob/master/tools/llvm2kittel.cpp",
+      "ref": "master"
+    }
+  ],
+  "execution": {
+    "id": "8717898b99d974bff8ad",
+    "repo_key": "https://github.com/s-falke/llvm2kittel",
+    "executed_at": "2026-09-21T10:58:12.528234+00:00"
+  },
+  "cache": {
+    "hit": false,
+    "persistent": true,
+    "path": "data/heuristic_results/8717898b99d974bff8ad.json",
+    "scope": "repository"
+  }
+}

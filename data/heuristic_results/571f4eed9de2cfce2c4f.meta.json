@@ -1,0 +1,17 @@
+{
+  "id": "571f4eed9de2cfce2c4f",
+  "repo_url": "https://github.com/FanSmale/ESLI",
+  "full_name": "FanSmale/ESLI",
+  "ref": "master",
+  "file_count": 3,
+  "files_per_step": {
+    "collection": 0,
+    "processing": 0,
+    "implementation": 0,
+    "experimentation": 0,
+    "evaluation": 0,
+    "dissemination": 1
+  },
+  "unclassified_files": 2,
+  "executed_at": "2026-09-21T10:58:10.142480+00:00"
+}
