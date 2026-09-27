@@ -14,6 +14,7 @@ from urllib.request import Request, urlopen
 
 from .heuristics import (
     CONTENT_EXTENSIONS,
+    EXCLUDED_PROCESS_STEP_EXTENSIONS,
     IMPLEMENTATION_COMPATIBLE_ARTIFACT_KINDS,
     IMPLEMENTATION_GENERIC_RULES,
     RESEARCH_PROCESS_STEPS,
@@ -75,9 +76,12 @@ def _request_text(url: str, token: str | None = None) -> str:
 
 def _content_is_scannable(path: str) -> bool:
     name = Path(path).name.lower()
+    suffix = Path(name).suffix.lower()
+    if suffix in EXCLUDED_PROCESS_STEP_EXTENSIONS:
+        return False
     if name in {"dockerfile", "makefile"}:
         return True
-    return Path(name).suffix.lower() in CONTENT_EXTENSIONS
+    return suffix in CONTENT_EXTENSIONS
 
 
 def _unique_matches(rule, haystack: str) -> list[dict[str, Any]]:
@@ -107,6 +111,31 @@ def analyze_file(path: str, content: str = "") -> dict[str, Any]:
     """
 
     artifact_kind = infer_artifact_kind(path)
+    suffix = Path(path).suffix.lower()
+
+    if suffix in EXCLUDED_PROCESS_STEP_EXTENSIONS:
+        return {
+            "path": path,
+            "artifact_kind": artifact_kind,
+            "steps": [],
+            "unclassified": True,
+            "scores": {},
+            "evidence": [],
+            "suppressed_evidence": [
+                {
+                    "rule_id": "GLOBAL_STRUCTURED_DATA_EXCLUSION",
+                    "step": None,
+                    "source": "file_type",
+                    "artifact_kind": artifact_kind,
+                    "reason": (
+                        f"Excluded {suffix!r} file from all research-process-step "
+                        "classification because it is structured data, metadata, "
+                        "or configuration."
+                    ),
+                }
+            ],
+        }
+
     scores = {step: 0 for step in RESEARCH_PROCESS_STEPS}
     evidence: list[dict[str, Any]] = []
     suppressed_evidence: list[dict[str, Any]] = []
