@@ -63,3 +63,9 @@ def test_wait_for_safe_quota_returns_without_sleep(monkeypatch, tmp_path: Path):
     )
 
     assert status["remaining"] == 4500
+
+
+def test_run_all_signature_accepts_workers():
+    import inspect
+    signature = inspect.signature(all_repositories.run_all)
+    assert "workers" in signature.parameters
