@@ -421,3 +421,24 @@ research-process-steps-all --workers 6
 
 Avoid very high worker counts. Each repository is still persisted independently,
 so stopping and restarting remains safe.
+
+
+### Fast pass: skip slow repositories
+
+The full-corpus runner has a per-repository timeout. By default, any repository
+that takes longer than 60 seconds is aborted, logged, and left without a final
+result so it can be revisited later:
+
+```bash
+research-process-steps-all --workers 16 --repo-timeout-seconds 60
+```
+
+Timed-out repositories emit a `repository_timeout` event in
+`data/batch_runs/run_all.jsonl` and are also recorded as failed for the run.
+Any raw metadata/tree/content already cached before the timeout remains reusable.
+
+Disable the timeout for a later slow-repository pass with:
+
+```bash
+research-process-steps-all --workers 4 --repo-timeout-seconds 0
+```
