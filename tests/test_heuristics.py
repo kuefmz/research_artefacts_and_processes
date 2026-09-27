@@ -35,8 +35,8 @@ def test_documentation():
     assert "dissemination" in steps("docs/index.md")
 
 
-def test_citation_file():
-    assert "dissemination" in steps("CITATION.cff")
+def test_citation_file_is_excluded_structured_metadata():
+    assert steps("CITATION.cff") == set()
 
 
 def test_generic_file_can_remain_unclassified():
@@ -104,3 +104,32 @@ def test_markdown_under_src_is_documentation_not_implementation():
     result = analyze_file("src/README.md")
     assert result["artifact_kind"] == "documentation"
     assert "implementation" not in result["steps"]
+
+
+def test_structured_data_and_config_files_are_never_classified():
+    cases = {
+        "experiments/sweep.yml": "random_seed: 42",
+        "experiments/run.json": '{"accuracy": 0.99}',
+        "evaluation/metrics.csv": "precision,recall,f1_score",
+        "processing/records.ttl": "@prefix ex: <https://example.org/> .",
+        "collection/source.xml": "<download_dataset>true</download_dataset>",
+        "docs/codemeta.json": '{"citation": "doi:10.1234/example"}',
+        "src/settings.toml": 'mode = "experiment"',
+        "tests/fixture.rdf": "<rdf:RDF></rdf:RDF>",
+    }
+
+    for path, content in cases.items():
+        result = analyze_file(path, content)
+        assert result["steps"] == []
+        assert result["unclassified"] is True
+        assert result["scores"] == {}
+        assert result["evidence"] == []
+        assert result["suppressed_evidence"][0]["rule_id"] == (
+            "GLOBAL_STRUCTURED_DATA_EXCLUSION"
+        )
+
+
+def test_json_is_recognized_as_data():
+    result = analyze_file("evaluation/results.json", '{"f1_score": 0.95}')
+    assert result["artifact_kind"] == "data"
+    assert result["steps"] == []
