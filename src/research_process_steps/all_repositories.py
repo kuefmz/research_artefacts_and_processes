@@ -7,7 +7,7 @@ import csv
 import json
 import os
 import time
-from concurrent.futures import ThreadPoolExecutor, as_completed
+from concurrent.futures import ThreadPoolExecutor, as_completed, wait, FIRST_COMPLETED
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
@@ -265,67 +265,101 @@ def run_all(
             executor.submit(execute_one, index, repo_url): (index, repo_url)
             for index, repo_url in pending
         }
-        for future in as_completed(futures):
-            index, repo_url = futures[future]
-            stats["last_repository"] = repo_url
-            try:
-                _, _, stored, error = future.result()
-            except KeyboardInterrupt:
-                stats["updated_at"] = utc_now()
-                write_progress(progress_path, stats)
+        pending_futures = set(futures)
+        while pending_futures:
+            done, pending_futures = wait(
+                pending_futures,
+                timeout=120,
+                return_when=FIRST_COMPLETED,
+            )
+
+            if not done:
+                stuck = [
+                    {
+                        "index": futures[future][0],
+                        "repo_url": futures[future][1],
+                    }
+                    for future in list(pending_futures)[:20]
+                ]
                 append_jsonl(
                     log_path,
                     {
                         "timestamp": utc_now(),
-                        "event": "batch_interrupted",
-                        "index": index,
-                        "repo_url": repo_url,
+                        "event": "batch_stall_warning",
+                        "pending_workers": len(pending_futures),
+                        "sample_pending": stuck,
                     },
                 )
-                raise
-
-            if stored is not None:
-                stats["completed_now"] += 1
-                stats["processed"] += 1
                 stats["updated_at"] = utc_now()
-                append_jsonl(
-                    log_path,
-                    {
+                write_progress(progress_path, stats)
+                print(
+                    f"WARNING: no repository completed for 120s; "
+                    f"{len(pending_futures)} futures still pending.",
+                    flush=True,
+                )
+                continue
+
+            for future in done:
+                index, repo_url = futures[future]
+                stats["last_repository"] = repo_url
+                try:
+                    _, _, stored, error = future.result()
+                except KeyboardInterrupt:
+                    stats["updated_at"] = utc_now()
+                    write_progress(progress_path, stats)
+                    append_jsonl(
+                        log_path,
+                        {
+                            "timestamp": utc_now(),
+                            "event": "batch_interrupted",
+                            "index": index,
+                            "repo_url": repo_url,
+                        },
+                    )
+                    raise
+
+                if stored is not None:
+                    stats["completed_now"] += 1
+                    stats["processed"] += 1
+                    stats["updated_at"] = utc_now()
+                    append_jsonl(
+                        log_path,
+                        {
+                            "timestamp": utc_now(),
+                            "event": "repository_complete",
+                            "index": index,
+                            "total": len(repositories),
+                            "repo_url": repo_url,
+                            "execution_id": stored.get("execution", {}).get("id"),
+                            "full_name": stored.get("repository", {}).get("full_name"),
+                            "file_count": stored.get("repository", {}).get("file_count", 0),
+                            "raw_cache_path": stored.get("repository", {}).get("raw_cache_path"),
+                        },
+                    )
+                    print(
+                        f"[{index}/{len(repositories)}] stored "
+                        f"{stored.get('repository', {}).get('full_name', repo_url)} "
+                        f"({stored.get('repository', {}).get('file_count', 0)} files)",
+                        flush=True,
+                    )
+                else:
+                    stats["errors"] += 1
+                    stats["processed"] += 1
+                    stats["updated_at"] = utc_now()
+                    error_event = {
                         "timestamp": utc_now(),
-                        "event": "repository_complete",
+                        "event": "repository_error",
                         "index": index,
                         "total": len(repositories),
                         "repo_url": repo_url,
-                        "execution_id": stored.get("execution", {}).get("id"),
-                        "full_name": stored.get("repository", {}).get("full_name"),
-                        "file_count": stored.get("repository", {}).get("file_count", 0),
-                        "raw_cache_path": stored.get("repository", {}).get("raw_cache_path"),
-                    },
-                )
-                print(
-                    f"[{index}/{len(repositories)}] stored "
-                    f"{stored.get('repository', {}).get('full_name', repo_url)} "
-                    f"({stored.get('repository', {}).get('file_count', 0)} files)",
-                    flush=True,
-                )
-            else:
-                stats["errors"] += 1
-                stats["processed"] += 1
-                stats["updated_at"] = utc_now()
-                error_event = {
-                    "timestamp": utc_now(),
-                    "event": "repository_error",
-                    "index": index,
-                    "total": len(repositories),
-                    "repo_url": repo_url,
-                    "attempts": max_retries,
-                    "error": error,
-                }
-                append_jsonl(log_path, error_event)
-                append_jsonl(error_path, error_event)
-                print(f"[{index}/{len(repositories)}] ERROR {repo_url}: {error}", flush=True)
+                        "attempts": max_retries,
+                        "error": error,
+                    }
+                    append_jsonl(log_path, error_event)
+                    append_jsonl(error_path, error_event)
+                    print(f"[{index}/{len(repositories)}] ERROR {repo_url}: {error}", flush=True)
 
-            write_progress(progress_path, stats)
+                write_progress(progress_path, stats)
 
     stats["finished_at"] = utc_now()
     stats["updated_at"] = stats["finished_at"]
