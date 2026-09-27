@@ -279,3 +279,116 @@ Example random request:
 ```
 
 The single-repository `POST /api/analyze` endpoint uses the same permanent result store, so a repository analyzed manually cannot later be selected by a random batch and vice versa.
+
+
+## Run the complete CSV safely and resumably
+
+The `research-process-steps-all` command executes every unique
+`github_repository_url` in the repository-level CSV. It is designed for long
+runs:
+
+- requires authenticated GitHub access;
+- checks the authenticated core API quota before each unseen repository;
+- keeps a configurable reserve (100 requests by default);
+- sleeps until the reset window instead of intentionally exhausting the quota;
+- retries transient and secondary rate-limit failures with backoff;
+- processes repositories sequentially to avoid aggressive API concurrency;
+- saves every completed heuristic result immediately;
+- skips completed repositories on future runs;
+- stores GitHub repository metadata, recursive tree data, and every fetched
+  text/source file in a reusable raw cache;
+- stores persistent JSONL logs, errors, and a progress checkpoint.
+
+Default local output locations:
+
+```text
+data/heuristic_results/   # complete per-repository heuristic outputs
+data/github_cache/        # reusable GitHub metadata/tree/fetched source cache
+data/batch_runs/
+  run_all.jsonl           # append-only execution log
+  errors.jsonl            # repositories that still failed after retries
+  progress.json           # current/resumable batch status
+```
+
+### GitHub authentication
+
+Authenticated REST API requests normally have a core limit of 5,000 requests
+per hour, compared with 60 requests per hour for unauthenticated requests.
+
+A convenient local setup is GitHub CLI:
+
+```bash
+gh auth login
+export GITHUB_TOKEN="$(gh auth token)"
+```
+
+Verify that the environment variable is available without printing the token:
+
+```bash
+python -c "import os; print('GITHUB_TOKEN set:', bool(os.getenv('GITHUB_TOKEN')))"
+```
+
+You can also create a personal access token in GitHub and export it directly:
+
+```bash
+export GITHUB_TOKEN="YOUR_TOKEN"
+```
+
+Do not commit the token to this repository and do not put it in a tracked
+`.env` file.
+
+### Recommended first run
+
+After checking out `dev`, install the project in editable mode:
+
+```bash
+git checkout dev
+git pull origin dev
+python -m venv .venv
+source .venv/bin/activate
+python -m pip install --upgrade pip
+python -m pip install -e .
+python -m pip install pytest
+pytest
+```
+
+Then test only three CSV repositories:
+
+```bash
+research-process-steps-all --limit 3
+```
+
+Inspect:
+
+```bash
+cat data/batch_runs/progress.json
+tail -n 20 data/batch_runs/run_all.jsonl
+```
+
+If that looks correct, run the complete repository CSV:
+
+```bash
+research-process-steps-all
+```
+
+The default CSV is:
+
+```text
+data/openaire_zenodo_12819872/github_repositories.csv
+```
+
+To use another CSV:
+
+```bash
+research-process-steps-all --dataset /path/to/github_repositories.csv
+```
+
+If the process is stopped, run the same command again. Repositories with a
+stored result are skipped, and cached raw GitHub inputs remain available.
+
+The runner intentionally leaves the final 100 core API requests unused. Change
+the reserve only if needed:
+
+```bash
+research-process-steps-all --rate-limit-reserve 200
+```
