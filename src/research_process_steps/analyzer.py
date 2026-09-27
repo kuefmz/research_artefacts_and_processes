@@ -116,6 +116,38 @@ def _request_text(url: str, token: str | None = None) -> str:
     raise RuntimeError("GitHub content request failed after retries.")
 
 
+
+def _walk_git_tree(
+    api_base: str,
+    root_tree_sha: str,
+    token: str | None,
+) -> dict[str, Any]:
+    """Fetch a complete Git tree without GitHub's recursive-tree truncation."""
+    collected: list[dict[str, Any]] = []
+    stack: list[tuple[str, str]] = [("", root_tree_sha)]
+
+    while stack:
+        prefix, tree_sha = stack.pop()
+        tree = _request_json(f"{api_base}/git/trees/{quote(tree_sha, safe='')}", token)
+        for item in tree.get("tree", []):
+            name = item.get("path", "")
+            full_path = f"{prefix}/{name}" if prefix else name
+            normalized = dict(item)
+            normalized["path"] = full_path
+            collected.append(normalized)
+
+            if item.get("type") == "tree" and item.get("sha"):
+                stack.append((full_path, item["sha"]))
+
+    return {
+        "sha": root_tree_sha,
+        "url": f"{api_base}/git/trees/{root_tree_sha}",
+        "tree": collected,
+        "truncated": False,
+        "walked_non_recursive": True,
+    }
+
+
 def _cache_repo_dir(owner: str, repo: str, cache_root: Path) -> Path:
     safe_owner = owner.replace("/", "_")
     safe_repo = repo.replace("/", "_")
@@ -309,9 +341,19 @@ def analyze_github_repository(
             },
         )
     if tree.get("truncated"):
-        raise RuntimeError(
-            "GitHub returned a truncated recursive tree. "
-            "Use a smaller repository/ref or extend the tree traversal implementation."
+        # GitHub caps very large recursive tree responses. Fall back to walking
+        # each tree object so every file is still represented.
+        tree = _walk_git_tree(api_base, tree.get("sha") or chosen_ref, token)
+        _write_json_cache(tree_path, tree)
+        _write_json_cache(
+            manifest_path,
+            {
+                "repository_url": repository_url,
+                "full_name": f"{owner}/{repo}",
+                "ref": chosen_ref,
+                "tree_sha": tree.get("sha"),
+                "tree_traversal": "non_recursive_fallback",
+            },
         )
 
     files = [item for item in tree.get("tree", []) if item.get("type") == "blob"]
