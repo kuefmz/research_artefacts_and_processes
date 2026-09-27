@@ -14,7 +14,12 @@ from typing import Any
 from urllib.error import HTTPError
 from urllib.request import Request, urlopen
 
-from .analyzer import DEFAULT_CONTENT_LIMIT, DEFAULT_RAW_CACHE_DIR, analyze_github_repository
+from .analyzer import (
+    DEFAULT_CONTENT_LIMIT,
+    DEFAULT_RAW_CACHE_DIR,
+    RepositoryTimeoutError,
+    analyze_github_repository,
+)
 from .storage import load_result, normalize_repo_url, save_result
 
 
@@ -134,6 +139,7 @@ def run_all(
     max_content_bytes: int,
     max_retries: int,
     workers: int,
+    repo_timeout_seconds: float,
     limit: int | None = None,
 ) -> dict[str, Any]:
     repositories = load_repositories(dataset_path)
@@ -169,6 +175,7 @@ def run_all(
         "error_file": str(error_path),
         "authenticated_rate_limit": auth_status,
         "workers": workers,
+        "repo_timeout_seconds": repo_timeout_seconds,
     }
     write_progress(progress_path, stats)
 
@@ -236,17 +243,19 @@ def run_all(
                     token=token,
                     max_content_bytes=max_content_bytes,
                     raw_cache_dir=raw_cache_dir,
+                    timeout_seconds=repo_timeout_seconds,
                 )
                 stored = save_result(repo_url, result)
                 return index, repo_url, stored, None
             except Exception as exc:
                 last_error = f"{type(exc).__name__}: {exc}"
-                permanent = "GitHub request failed (404)" in last_error
+                timed_out = isinstance(exc, RepositoryTimeoutError)
+                permanent = "GitHub request failed (404)" in last_error or timed_out
                 append_jsonl(
                     log_path,
                     {
                         "timestamp": utc_now(),
-                        "event": "repository_retry",
+                        "event": "repository_timeout" if timed_out else "repository_retry",
                         "index": index,
                         "total": len(repositories),
                         "repo_url": repo_url,
@@ -424,6 +433,15 @@ def main() -> None:
         help="Concurrent repository workers (default: 4). Use 2-6 conservatively.",
     )
     parser.add_argument(
+        "--repo-timeout-seconds",
+        type=float,
+        default=60.0,
+        help=(
+            "Skip a repository if processing exceeds this many seconds "
+            "(default: 60). Use 0 to disable the timeout."
+        ),
+    )
+    parser.add_argument(
         "--limit",
         type=int,
         help="Optional first-N repository limit for a small test run.",
@@ -446,6 +464,7 @@ def main() -> None:
         max_content_bytes=args.max_content_bytes,
         max_retries=args.max_retries,
         workers=max(1, args.workers),
+        repo_timeout_seconds=max(0.0, args.repo_timeout_seconds),
         limit=args.limit,
     )
     print(json.dumps(result, indent=2), flush=True)
