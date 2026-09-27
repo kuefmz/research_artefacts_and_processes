@@ -241,6 +241,7 @@ def run_all(
                 return index, repo_url, stored, None
             except Exception as exc:
                 last_error = f"{type(exc).__name__}: {exc}"
+                permanent = "GitHub request failed (404)" in last_error
                 append_jsonl(
                     log_path,
                     {
@@ -253,6 +254,8 @@ def run_all(
                         "error": last_error,
                     },
                 )
+                if permanent:
+                    break
                 if attempt < max_retries:
                     time.sleep(min(30 * (2 ** (attempt - 1)), 5 * 60))
         return index, repo_url, None, last_error
