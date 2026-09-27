@@ -392,3 +392,32 @@ the reserve only if needed:
 ```bash
 research-process-steps-all --rate-limit-reserve 200
 ```
+
+
+### Parallel full-corpus execution
+
+The full CSV runner now processes repositories concurrently. The default is four
+repository workers:
+
+```bash
+research-process-steps-all --workers 4
+```
+
+For this workload, a conservative range is 2-6 workers. More workers can increase
+throughput, but GitHub secondary rate limits and local disk/network contention can
+reduce the benefit of aggressive concurrency.
+
+Recommended overnight command:
+
+```bash
+research-process-steps-all --workers 4
+```
+
+If the run remains stable and you want to push harder:
+
+```bash
+research-process-steps-all --workers 6
+```
+
+Avoid very high worker counts. Each repository is still persisted independently,
+so stopping and restarting remains safe.
