@@ -74,23 +74,21 @@ def test_preserves_multiple_unique_content_matches():
     ]
 
 
-def test_ttl_test_fixture_is_data_not_implementation():
+def test_ttl_test_fixture_is_globally_excluded():
     result = analyze_file("test/business.ttl")
     assert result["artifact_kind"] == "data"
-    assert "implementation" not in result["steps"]
-    assert any(
-        item["rule_id"] == "IMP_PATH_TESTS"
-        for item in result["suppressed_evidence"]
+    assert result["steps"] == []
+    assert result["suppressed_evidence"][0]["rule_id"] == (
+        "GLOBAL_STRUCTURED_DATA_EXCLUSION"
     )
 
 
-def test_data_file_under_src_is_not_implementation():
+def test_data_file_under_src_is_globally_excluded():
     result = analyze_file("src/resources/example.csv")
     assert result["artifact_kind"] == "data"
-    assert "implementation" not in result["steps"]
-    assert any(
-        item["rule_id"] == "IMP_PATH_SOURCE_DIR"
-        for item in result["suppressed_evidence"]
+    assert result["steps"] == []
+    assert result["suppressed_evidence"][0]["rule_id"] == (
+        "GLOBAL_STRUCTURED_DATA_EXCLUSION"
     )
 
 
