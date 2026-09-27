@@ -7,6 +7,7 @@ import csv
 import json
 import os
 import time
+import threading
 from concurrent.futures import ThreadPoolExecutor, as_completed, wait, FIRST_COMPLETED
 from datetime import datetime, timezone
 from pathlib import Path
@@ -17,6 +18,7 @@ from urllib.request import Request, urlopen
 from .analyzer import (
     DEFAULT_CONTENT_LIMIT,
     DEFAULT_RAW_CACHE_DIR,
+    GitHubRateLimitError,
     RepositoryTimeoutError,
     analyze_github_repository,
 )
@@ -216,57 +218,107 @@ def run_all(
 
     write_progress(progress_path, stats)
 
+    rate_limit_lock = threading.Lock()
+    rate_limit_pause_until = 0.0
+
+    def wait_for_global_rate_limit() -> None:
+        while True:
+            with rate_limit_lock:
+                pause_until = rate_limit_pause_until
+            remaining = pause_until - time.time()
+            if remaining <= 0:
+                return
+            time.sleep(min(remaining, 5.0))
+
+    def register_global_rate_limit(exc: GitHubRateLimitError, repo_url: str) -> None:
+        nonlocal rate_limit_pause_until
+        now = time.time()
+        requested_until = now + exc.wait_seconds
+        should_log = False
+        with rate_limit_lock:
+            if requested_until > rate_limit_pause_until:
+                rate_limit_pause_until = requested_until
+                should_log = True
+            effective_until = rate_limit_pause_until
+
+        if should_log:
+            append_jsonl(
+                log_path,
+                {
+                    "timestamp": utc_now(),
+                    "event": "rate_limit_pause",
+                    "repo_url": repo_url,
+                    "status_code": exc.status_code,
+                    "wait_seconds": int(max(1, effective_until - now)),
+                    "resume_after_epoch": int(effective_until),
+                    "remaining_header": exc.remaining,
+                    "reset_header": exc.reset,
+                    "retry_after_header": exc.retry_after,
+                    "url": exc.url,
+                },
+            )
+            print(
+                f"GitHub rate limit hit ({exc.status_code}). "
+                f"Pausing all workers for ~{int(max(1, effective_until - now))}s, then resuming.",
+                flush=True,
+            )
+
     def execute_one(index: int, repo_url: str) -> tuple[int, str, dict[str, Any] | None, str | None]:
         last_error = ""
         for attempt in range(1, max_retries + 1):
-            try:
-                # Stagger quota checks slightly across workers and keep a shared reserve.
-                quota = wait_for_safe_quota(
-                    token,
-                    reserve=rate_limit_reserve + (workers * API_REQUESTS_PER_UNCACHED_REPOSITORY),
-                    log_path=log_path,
-                )
-                append_jsonl(
-                    log_path,
-                    {
-                        "timestamp": utc_now(),
-                        "event": "repository_start",
-                        "index": index,
-                        "total": len(repositories),
-                        "repo_url": repo_url,
-                        "attempt": attempt,
-                        "rate_limit_before": quota,
-                    },
-                )
-                result = analyze_github_repository(
-                    repo_url,
-                    token=token,
-                    max_content_bytes=max_content_bytes,
-                    raw_cache_dir=raw_cache_dir,
-                    timeout_seconds=repo_timeout_seconds,
-                )
-                stored = save_result(repo_url, result)
-                return index, repo_url, stored, None
-            except Exception as exc:
-                last_error = f"{type(exc).__name__}: {exc}"
-                timed_out = isinstance(exc, RepositoryTimeoutError)
-                permanent = "GitHub request failed (404)" in last_error or timed_out
-                append_jsonl(
-                    log_path,
-                    {
-                        "timestamp": utc_now(),
-                        "event": "repository_timeout" if timed_out else "repository_retry",
-                        "index": index,
-                        "total": len(repositories),
-                        "repo_url": repo_url,
-                        "attempt": attempt,
-                        "error": last_error,
-                    },
-                )
-                if permanent:
-                    break
-                if attempt < max_retries:
-                    time.sleep(min(30 * (2 ** (attempt - 1)), 5 * 60))
+            while True:
+                try:
+                    wait_for_global_rate_limit()
+                    quota = wait_for_safe_quota(
+                        token,
+                        reserve=rate_limit_reserve + (workers * API_REQUESTS_PER_UNCACHED_REPOSITORY),
+                        log_path=log_path,
+                    )
+                    append_jsonl(
+                        log_path,
+                        {
+                            "timestamp": utc_now(),
+                            "event": "repository_start",
+                            "index": index,
+                            "total": len(repositories),
+                            "repo_url": repo_url,
+                            "attempt": attempt,
+                            "rate_limit_before": quota,
+                        },
+                    )
+                    result = analyze_github_repository(
+                        repo_url,
+                        token=token,
+                        max_content_bytes=max_content_bytes,
+                        raw_cache_dir=raw_cache_dir,
+                        timeout_seconds=repo_timeout_seconds,
+                    )
+                    stored = save_result(repo_url, result)
+                    return index, repo_url, stored, None
+                except GitHubRateLimitError as exc:
+                    register_global_rate_limit(exc, repo_url)
+                    wait_for_global_rate_limit()
+                    continue
+                except Exception as exc:
+                    last_error = f"{type(exc).__name__}: {exc}"
+                    timed_out = isinstance(exc, RepositoryTimeoutError)
+                    permanent = "GitHub request failed (404)" in last_error or timed_out
+                    append_jsonl(
+                        log_path,
+                        {
+                            "timestamp": utc_now(),
+                            "event": "repository_timeout" if timed_out else "repository_retry",
+                            "index": index,
+                            "total": len(repositories),
+                            "repo_url": repo_url,
+                            "attempt": attempt,
+                            "error": last_error,
+                        },
+                    )
+                    if permanent:
+                        break
+                    if attempt < max_retries:
+                        time.sleep(min(30 * (2 ** (attempt - 1)), 5 * 60))
         return index, repo_url, None, last_error
 
     with ThreadPoolExecutor(max_workers=workers) as executor:
