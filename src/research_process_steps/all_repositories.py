@@ -269,11 +269,6 @@ def run_all(
             while True:
                 try:
                     wait_for_global_rate_limit()
-                    quota = wait_for_safe_quota(
-                        token,
-                        reserve=rate_limit_reserve + (workers * API_REQUESTS_PER_UNCACHED_REPOSITORY),
-                        log_path=log_path,
-                    )
                     append_jsonl(
                         log_path,
                         {
@@ -283,7 +278,7 @@ def run_all(
                             "total": len(repositories),
                             "repo_url": repo_url,
                             "attempt": attempt,
-                            "rate_limit_before": quota,
+                            "rate_limit_before": "managed_from_response_headers",
                         },
                     )
                     result = analyze_github_repository(
@@ -335,6 +330,29 @@ def run_all(
             )
 
             if not done:
+                with rate_limit_lock:
+                    pause_until = rate_limit_pause_until
+                if pause_until > time.time():
+                    remaining = int(max(1, pause_until - time.time()))
+                    append_jsonl(
+                        log_path,
+                        {
+                            "timestamp": utc_now(),
+                            "event": "rate_limit_waiting",
+                            "pending_workers": len(pending_futures),
+                            "remaining_wait_seconds": remaining,
+                            "resume_after_epoch": int(pause_until),
+                        },
+                    )
+                    stats["updated_at"] = utc_now()
+                    write_progress(progress_path, stats)
+                    print(
+                        f"GitHub rate-limit pause active; ~{remaining}s remaining. "
+                        f"{len(pending_futures)} workers will resume automatically.",
+                        flush=True,
+                    )
+                    continue
+
                 stuck = [
                     {
                         "index": futures[future][0],
