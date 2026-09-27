@@ -69,3 +69,4 @@ def test_run_all_signature_accepts_workers():
     import inspect
     signature = inspect.signature(all_repositories.run_all)
     assert "workers" in signature.parameters
+    assert "repo_timeout_seconds" in signature.parameters
