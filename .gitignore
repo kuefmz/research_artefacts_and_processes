@@ -1,0 +1,12 @@
+# Local Python/runtime files
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Large local source archive
+data/raw/software.tar
+
+# Generated/reusable experiment outputs
+data/github_cache/
+data/batch_runs/
