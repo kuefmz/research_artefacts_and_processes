@@ -3,8 +3,10 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import os
+import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 from typing import Any
@@ -24,6 +26,7 @@ from .heuristics import (
 
 
 DEFAULT_CONTENT_LIMIT = 250_000
+DEFAULT_RAW_CACHE_DIR = Path("data/github_cache")
 DETECTION_THRESHOLD = 2
 USER_AGENT = "research-process-steps/0.1"
 MAX_MATCHES_PER_RULE = 20
@@ -47,6 +50,30 @@ def _parse_github_url(repository_url: str) -> tuple[str, str]:
     return owner, repo
 
 
+def _rate_limit_wait_seconds(exc: HTTPError, attempt: int) -> int | None:
+    """Return a safe retry delay for GitHub primary/secondary rate limits."""
+    if exc.code not in {403, 429}:
+        return None
+
+    retry_after = exc.headers.get("Retry-After")
+    if retry_after:
+        try:
+            return max(1, int(retry_after))
+        except ValueError:
+            pass
+
+    remaining = exc.headers.get("X-RateLimit-Remaining")
+    reset = exc.headers.get("X-RateLimit-Reset")
+    if remaining == "0" and reset:
+        try:
+            return max(1, int(reset) - int(time.time()) + 5)
+        except ValueError:
+            pass
+
+    # Secondary limits do not always include a reset header.
+    return min(60 * (2 ** attempt), 15 * 60)
+
+
 def _request_json(url: str, token: str | None = None) -> Any:
     headers = {
         "Accept": "application/vnd.github+json",
@@ -57,12 +84,18 @@ def _request_json(url: str, token: str | None = None) -> Any:
         headers["Authorization"] = f"Bearer {token}"
 
     request = Request(url, headers=headers)
-    try:
-        with urlopen(request, timeout=30) as response:
-            return json.loads(response.read().decode("utf-8"))
-    except HTTPError as exc:
-        detail = exc.read().decode("utf-8", errors="replace")
-        raise RuntimeError(f"GitHub request failed ({exc.code}): {detail}") from exc
+    for attempt in range(5):
+        try:
+            with urlopen(request, timeout=30) as response:
+                return json.loads(response.read().decode("utf-8"))
+        except HTTPError as exc:
+            wait_seconds = _rate_limit_wait_seconds(exc, attempt)
+            if wait_seconds is not None and attempt < 4:
+                time.sleep(wait_seconds)
+                continue
+            detail = exc.read().decode("utf-8", errors="replace")
+            raise RuntimeError(f"GitHub request failed ({exc.code}): {detail}") from exc
+    raise RuntimeError("GitHub request failed after retries.")
 
 
 def _request_text(url: str, token: str | None = None) -> str:
@@ -70,8 +103,44 @@ def _request_text(url: str, token: str | None = None) -> str:
     if token:
         headers["Authorization"] = f"Bearer {token}"
     request = Request(url, headers=headers)
-    with urlopen(request, timeout=30) as response:
-        return response.read().decode("utf-8", errors="replace")
+    for attempt in range(5):
+        try:
+            with urlopen(request, timeout=30) as response:
+                return response.read().decode("utf-8", errors="replace")
+        except HTTPError as exc:
+            wait_seconds = _rate_limit_wait_seconds(exc, attempt)
+            if wait_seconds is not None and attempt < 4:
+                time.sleep(wait_seconds)
+                continue
+            raise
+    raise RuntimeError("GitHub content request failed after retries.")
+
+
+def _cache_repo_dir(owner: str, repo: str, cache_root: Path) -> Path:
+    safe_owner = owner.replace("/", "_")
+    safe_repo = repo.replace("/", "_")
+    return cache_root / f"{safe_owner}__{safe_repo}"
+
+
+def _cache_snapshot_dir(repo_dir: Path, ref: str) -> Path:
+    ref_key = hashlib.sha256(ref.encode("utf-8")).hexdigest()[:12]
+    return repo_dir / ref_key
+
+
+def _read_json_cache(path: Path) -> Any | None:
+    if not path.exists():
+        return None
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return None
+
+
+def _write_json_cache(path: Path, payload: Any) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    tmp = path.with_suffix(path.suffix + ".tmp")
+    tmp.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    tmp.replace(path)
 
 
 def _content_is_scannable(path: str) -> bool:
@@ -202,16 +271,43 @@ def analyze_github_repository(
     token: str | None = None,
     ref: str | None = None,
     max_content_bytes: int = DEFAULT_CONTENT_LIMIT,
+    raw_cache_dir: Path | str | None = None,
 ) -> dict[str, Any]:
-    """Analyze every file in a GitHub repository and return per-file evidence."""
+    """Analyze a GitHub repository and persist reusable raw inputs locally."""
 
     owner, repo = _parse_github_url(repository_url)
     api_base = f"https://api.github.com/repos/{quote(owner)}/{quote(repo)}"
-    metadata = _request_json(api_base, token)
-    chosen_ref = ref or metadata["default_branch"]
+    cache_root = Path(
+        raw_cache_dir
+        or os.getenv("RPS_RAW_CACHE_DIR", str(DEFAULT_RAW_CACHE_DIR))
+    )
+    repo_cache = _cache_repo_dir(owner, repo, cache_root)
 
-    tree_url = f"{api_base}/git/trees/{quote(chosen_ref, safe='')}?recursive=1"
-    tree = _request_json(tree_url, token)
+    metadata_path = repo_cache / "metadata.json"
+    metadata = _read_json_cache(metadata_path)
+    if metadata is None:
+        metadata = _request_json(api_base, token)
+        _write_json_cache(metadata_path, metadata)
+
+    chosen_ref = ref or metadata["default_branch"]
+    snapshot_cache = _cache_snapshot_dir(repo_cache, chosen_ref)
+    manifest_path = snapshot_cache / "manifest.json"
+    tree_path = snapshot_cache / "tree.json"
+
+    tree = _read_json_cache(tree_path)
+    if tree is None:
+        tree_url = f"{api_base}/git/trees/{quote(chosen_ref, safe='')}?recursive=1"
+        tree = _request_json(tree_url, token)
+        _write_json_cache(tree_path, tree)
+        _write_json_cache(
+            manifest_path,
+            {
+                "repository_url": repository_url,
+                "full_name": f"{owner}/{repo}",
+                "ref": chosen_ref,
+                "tree_sha": tree.get("sha"),
+            },
+        )
     if tree.get("truncated"):
         raise RuntimeError(
             "GitHub returned a truncated recursive tree. "
@@ -227,13 +323,23 @@ def analyze_github_repository(
         if not (_content_is_scannable(path) and size <= max_content_bytes):
             return path, "", False
 
+        cached_content_path = snapshot_cache / "content" / Path(path)
+        if cached_content_path.exists():
+            try:
+                return path, cached_content_path.read_text(encoding="utf-8"), True
+            except OSError:
+                pass
+
         encoded_path = "/".join(quote(part, safe="") for part in path.split("/"))
         raw_url = (
             "https://raw.githubusercontent.com/"
             f"{quote(owner)}/{quote(repo)}/{quote(chosen_ref, safe='')}/{encoded_path}"
         )
         try:
-            return path, _request_text(raw_url, token), True
+            file_content = _request_text(raw_url, token)
+            cached_content_path.parent.mkdir(parents=True, exist_ok=True)
+            cached_content_path.write_text(file_content, encoding="utf-8")
+            return path, file_content, True
         except Exception:
             return path, "", False
 
@@ -297,6 +403,7 @@ def analyze_github_repository(
             "ref": chosen_ref,
             "commit_tree_sha": tree.get("sha"),
             "file_count": len(output_files),
+            "raw_cache_path": str(snapshot_cache),
         },
         "method": {
             "name": "deterministic_research_process_step_heuristics",
