@@ -32,6 +32,25 @@ USER_AGENT = "research-process-steps/0.1"
 MAX_MATCHES_PER_RULE = 20
 MAX_CONTENT_WORKERS = max(1, int(os.getenv("RPS_CONTENT_WORKERS", "1")))
 
+class RepositoryTimeoutError(RuntimeError):
+    """Raised when a repository exceeds its allowed processing time."""
+
+
+def _check_deadline(deadline: float | None, repository_url: str = "") -> None:
+    if deadline is not None and time.monotonic() >= deadline:
+        suffix = f" for {repository_url}" if repository_url else ""
+        raise RepositoryTimeoutError(f"Repository processing exceeded its time limit{suffix}.")
+
+
+def _remaining_timeout(deadline: float | None, default: int = 30) -> float:
+    if deadline is None:
+        return float(default)
+    remaining = deadline - time.monotonic()
+    if remaining <= 0:
+        raise RepositoryTimeoutError("Repository processing exceeded its time limit.")
+    return max(0.1, min(float(default), remaining))
+
+
 
 def _parse_github_url(repository_url: str) -> tuple[str, str]:
     parsed = urlparse(repository_url)
@@ -74,7 +93,7 @@ def _rate_limit_wait_seconds(exc: HTTPError, attempt: int) -> int | None:
     return min(60 * (2 ** attempt), 15 * 60)
 
 
-def _request_json(url: str, token: str | None = None) -> Any:
+def _request_json(url: str, token: str | None = None, *, deadline: float | None = None) -> Any:
     headers = {
         "Accept": "application/vnd.github+json",
         "User-Agent": USER_AGENT,
@@ -85,12 +104,17 @@ def _request_json(url: str, token: str | None = None) -> Any:
 
     request = Request(url, headers=headers)
     for attempt in range(5):
+        _check_deadline(deadline)
         try:
-            with urlopen(request, timeout=30) as response:
+            with urlopen(request, timeout=_remaining_timeout(deadline, 30)) as response:
                 return json.loads(response.read().decode("utf-8"))
         except HTTPError as exc:
             wait_seconds = _rate_limit_wait_seconds(exc, attempt)
             if wait_seconds is not None and attempt < 4:
+                if deadline is not None and time.monotonic() + wait_seconds >= deadline:
+                    raise RepositoryTimeoutError(
+                        "Repository timed out while waiting for GitHub rate-limit backoff."
+                    ) from exc
                 time.sleep(wait_seconds)
                 continue
             detail = exc.read().decode("utf-8", errors="replace")
@@ -98,18 +122,23 @@ def _request_json(url: str, token: str | None = None) -> Any:
     raise RuntimeError("GitHub request failed after retries.")
 
 
-def _request_text(url: str, token: str | None = None) -> str:
+def _request_text(url: str, token: str | None = None, *, deadline: float | None = None) -> str:
     headers = {"User-Agent": USER_AGENT}
     if token:
         headers["Authorization"] = f"Bearer {token}"
     request = Request(url, headers=headers)
     for attempt in range(5):
+        _check_deadline(deadline)
         try:
-            with urlopen(request, timeout=30) as response:
+            with urlopen(request, timeout=_remaining_timeout(deadline, 30)) as response:
                 return response.read().decode("utf-8", errors="replace")
         except HTTPError as exc:
             wait_seconds = _rate_limit_wait_seconds(exc, attempt)
             if wait_seconds is not None and attempt < 4:
+                if deadline is not None and time.monotonic() + wait_seconds >= deadline:
+                    raise RepositoryTimeoutError(
+                        "Repository timed out while waiting for GitHub rate-limit backoff."
+                    ) from exc
                 time.sleep(wait_seconds)
                 continue
             raise
@@ -121,14 +150,21 @@ def _walk_git_tree(
     api_base: str,
     root_tree_sha: str,
     token: str | None,
+    *,
+    deadline: float | None = None,
 ) -> dict[str, Any]:
     """Fetch a complete Git tree without GitHub's recursive-tree truncation."""
     collected: list[dict[str, Any]] = []
     stack: list[tuple[str, str]] = [("", root_tree_sha)]
 
     while stack:
+        _check_deadline(deadline)
         prefix, tree_sha = stack.pop()
-        tree = _request_json(f"{api_base}/git/trees/{quote(tree_sha, safe='')}", token)
+        tree = _request_json(
+            f"{api_base}/git/trees/{quote(tree_sha, safe='')}",
+            token,
+            deadline=deadline,
+        )
         for item in tree.get("tree", []):
             name = item.get("path", "")
             full_path = f"{prefix}/{name}" if prefix else name
@@ -304,9 +340,16 @@ def analyze_github_repository(
     ref: str | None = None,
     max_content_bytes: int = DEFAULT_CONTENT_LIMIT,
     raw_cache_dir: Path | str | None = None,
+    timeout_seconds: float | None = None,
 ) -> dict[str, Any]:
     """Analyze a GitHub repository and persist reusable raw inputs locally."""
 
+    deadline = (
+        time.monotonic() + timeout_seconds
+        if timeout_seconds is not None and timeout_seconds > 0
+        else None
+    )
+    _check_deadline(deadline, repository_url)
     owner, repo = _parse_github_url(repository_url)
     api_base = f"https://api.github.com/repos/{quote(owner)}/{quote(repo)}"
     cache_root = Path(
@@ -318,7 +361,7 @@ def analyze_github_repository(
     metadata_path = repo_cache / "metadata.json"
     metadata = _read_json_cache(metadata_path)
     if metadata is None:
-        metadata = _request_json(api_base, token)
+        metadata = _request_json(api_base, token, deadline=deadline)
         _write_json_cache(metadata_path, metadata)
 
     chosen_ref = ref or metadata["default_branch"]
@@ -329,7 +372,7 @@ def analyze_github_repository(
     tree = _read_json_cache(tree_path)
     if tree is None:
         tree_url = f"{api_base}/git/trees/{quote(chosen_ref, safe='')}?recursive=1"
-        tree = _request_json(tree_url, token)
+        tree = _request_json(tree_url, token, deadline=deadline)
         _write_json_cache(tree_path, tree)
         _write_json_cache(
             manifest_path,
@@ -343,7 +386,7 @@ def analyze_github_repository(
     if tree.get("truncated"):
         # GitHub caps very large recursive tree responses. Fall back to walking
         # each tree object so every file is still represented.
-        tree = _walk_git_tree(api_base, tree.get("sha") or chosen_ref, token)
+        tree = _walk_git_tree(api_base, tree.get("sha") or chosen_ref, token, deadline=deadline)
         _write_json_cache(tree_path, tree)
         _write_json_cache(
             manifest_path,
@@ -360,6 +403,7 @@ def analyze_github_repository(
     sorted_files = sorted(files, key=lambda value: value["path"].lower())
 
     def fetch_content(item: dict[str, Any]) -> tuple[str, str, bool]:
+        _check_deadline(deadline, repository_url)
         path = item["path"]
         size = int(item.get("size") or 0)
         if not (_content_is_scannable(path) and size <= max_content_bytes):
@@ -378,10 +422,12 @@ def analyze_github_repository(
             f"{quote(owner)}/{quote(repo)}/{quote(chosen_ref, safe='')}/{encoded_path}"
         )
         try:
-            file_content = _request_text(raw_url, token)
+            file_content = _request_text(raw_url, token, deadline=deadline)
             cached_content_path.parent.mkdir(parents=True, exist_ok=True)
             cached_content_path.write_text(file_content, encoding="utf-8")
             return path, file_content, True
+        except RepositoryTimeoutError:
+            raise
         except Exception:
             return path, "", False
 
@@ -395,14 +441,22 @@ def analyze_github_repository(
         and int(item.get("size") or 0) <= max_content_bytes
     ]
 
-    with ThreadPoolExecutor(max_workers=MAX_CONTENT_WORKERS) as executor:
-        futures = [executor.submit(fetch_content, item) for item in scannable]
-        for future in as_completed(futures):
-            path, file_content, content_scanned = future.result()
+    if MAX_CONTENT_WORKERS == 1:
+        for item in scannable:
+            _check_deadline(deadline, repository_url)
+            path, file_content, content_scanned = fetch_content(item)
             content_by_path[path] = (file_content, content_scanned)
+    else:
+        with ThreadPoolExecutor(max_workers=MAX_CONTENT_WORKERS) as executor:
+            futures = [executor.submit(fetch_content, item) for item in scannable]
+            for future in as_completed(futures):
+                _check_deadline(deadline, repository_url)
+                path, file_content, content_scanned = future.result()
+                content_by_path[path] = (file_content, content_scanned)
 
     output_files: list[dict[str, Any]] = []
     for item in sorted_files:
+        _check_deadline(deadline, repository_url)
         path = item["path"]
         size = int(item.get("size") or 0)
         file_content, content_scanned = content_by_path[path]
