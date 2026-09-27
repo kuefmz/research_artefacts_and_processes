@@ -36,6 +36,30 @@ class RepositoryTimeoutError(RuntimeError):
     """Raised when a repository exceeds its allowed processing time."""
 
 
+class GitHubRateLimitError(RuntimeError):
+    """Signal a GitHub primary/secondary rate limit to the batch coordinator."""
+
+    def __init__(
+        self,
+        *,
+        wait_seconds: int,
+        status_code: int,
+        url: str,
+        remaining: str | None = None,
+        reset: str | None = None,
+        retry_after: str | None = None,
+    ) -> None:
+        self.wait_seconds = max(1, int(wait_seconds))
+        self.status_code = status_code
+        self.url = url
+        self.remaining = remaining
+        self.reset = reset
+        self.retry_after = retry_after
+        super().__init__(
+            f"GitHub rate limit ({status_code}); wait {self.wait_seconds}s before retrying."
+        )
+
+
 def _check_deadline(deadline: float | None, repository_url: str = "") -> None:
     if deadline is not None and time.monotonic() >= deadline:
         suffix = f" for {repository_url}" if repository_url else ""
@@ -110,13 +134,15 @@ def _request_json(url: str, token: str | None = None, *, deadline: float | None 
                 return json.loads(response.read().decode("utf-8"))
         except HTTPError as exc:
             wait_seconds = _rate_limit_wait_seconds(exc, attempt)
-            if wait_seconds is not None and attempt < 4:
-                if deadline is not None and time.monotonic() + wait_seconds >= deadline:
-                    raise RepositoryTimeoutError(
-                        "Repository timed out while waiting for GitHub rate-limit backoff."
-                    ) from exc
-                time.sleep(wait_seconds)
-                continue
+            if wait_seconds is not None:
+                raise GitHubRateLimitError(
+                    wait_seconds=wait_seconds,
+                    status_code=exc.code,
+                    url=url,
+                    remaining=exc.headers.get("X-RateLimit-Remaining"),
+                    reset=exc.headers.get("X-RateLimit-Reset"),
+                    retry_after=exc.headers.get("Retry-After"),
+                ) from exc
             detail = exc.read().decode("utf-8", errors="replace")
             raise RuntimeError(f"GitHub request failed ({exc.code}): {detail}") from exc
     raise RuntimeError("GitHub request failed after retries.")
@@ -134,13 +160,15 @@ def _request_text(url: str, token: str | None = None, *, deadline: float | None 
                 return response.read().decode("utf-8", errors="replace")
         except HTTPError as exc:
             wait_seconds = _rate_limit_wait_seconds(exc, attempt)
-            if wait_seconds is not None and attempt < 4:
-                if deadline is not None and time.monotonic() + wait_seconds >= deadline:
-                    raise RepositoryTimeoutError(
-                        "Repository timed out while waiting for GitHub rate-limit backoff."
-                    ) from exc
-                time.sleep(wait_seconds)
-                continue
+            if wait_seconds is not None:
+                raise GitHubRateLimitError(
+                    wait_seconds=wait_seconds,
+                    status_code=exc.code,
+                    url=url,
+                    remaining=exc.headers.get("X-RateLimit-Remaining"),
+                    reset=exc.headers.get("X-RateLimit-Reset"),
+                    retry_after=exc.headers.get("Retry-After"),
+                ) from exc
             raise
     raise RuntimeError("GitHub content request failed after retries.")
 
