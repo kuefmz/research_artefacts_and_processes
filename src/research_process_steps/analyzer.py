@@ -30,7 +30,7 @@ DEFAULT_RAW_CACHE_DIR = Path("data/github_cache")
 DETECTION_THRESHOLD = 2
 USER_AGENT = "research-process-steps/0.1"
 MAX_MATCHES_PER_RULE = 20
-MAX_CONTENT_WORKERS = max(1, int(os.getenv("RPS_CONTENT_WORKERS", "4")))
+MAX_CONTENT_WORKERS = max(1, int(os.getenv("RPS_CONTENT_WORKERS", "1")))
 
 
 def _parse_github_url(repository_url: str) -> tuple[str, str]:
