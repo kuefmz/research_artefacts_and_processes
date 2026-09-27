@@ -26,9 +26,10 @@ RESEARCH_PROCESS_STEPS = (
 # heuristics. It is not itself a research-process-step prediction.
 DATA_EXTENSIONS = {
     ".ttl", ".rdf", ".owl", ".nt", ".nq", ".trig",
-    ".csv", ".tsv", ".jsonl", ".ndjson",
+    ".csv", ".tsv", ".json", ".jsonl", ".ndjson", ".xml",
     ".parquet", ".feather", ".arrow",
     ".h5", ".hdf5", ".npy", ".npz", ".arff",
+    ".pkl", ".pickle", ".joblib", ".db", ".sqlite", ".sqlite3",
 }
 SOURCE_CODE_EXTENSIONS = {
     ".py", ".r", ".jl", ".js", ".ts", ".java", ".go", ".rs",
@@ -37,7 +38,12 @@ SOURCE_CODE_EXTENSIONS = {
 }
 NOTEBOOK_EXTENSIONS = {".ipynb", ".rmd", ".qmd"}
 DOCUMENTATION_EXTENSIONS = {".md", ".rst", ".adoc"}
-CONFIGURATION_EXTENSIONS = {".yaml", ".yml", ".toml", ".ini", ".cfg"}
+CONFIGURATION_EXTENSIONS = {".yaml", ".yml", ".toml", ".ini", ".cfg", ".cff"}
+
+# These file types represent structured data, metadata, or configuration rather
+# than executable/research-process artefacts. They are globally excluded from
+# process-step classification, regardless of path or matching content.
+EXCLUDED_PROCESS_STEP_EXTENSIONS = DATA_EXTENSIONS | CONFIGURATION_EXTENSIONS
 IMAGE_EXTENSIONS = {".png", ".jpg", ".jpeg", ".gif", ".svg", ".webp", ".tif", ".tiff"}
 ARCHIVE_EXTENSIONS = {".zip", ".tar", ".gz", ".tgz", ".bz2", ".xz", ".7z"}
 
