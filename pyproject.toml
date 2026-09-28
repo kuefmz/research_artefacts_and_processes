@@ -20,6 +20,12 @@ research-process-steps-random = "research_process_steps.batch:main"
 research-process-steps-all = "research_process_steps.all_repositories:main"
 research-process-steps-analyze = "research_process_steps.analyze_results:main"
 
+research-process-steps-coverage = "research_process_steps.analyze_coverage:main"
+
+research-process-steps-profile = "research_process_steps.analyze_repository_profile:main"
+
+research-process-steps-unclassified = "research_process_steps.analyze_unclassified:main"
+
 [tool.setuptools.packages.find]
 where = ["src"]
 
