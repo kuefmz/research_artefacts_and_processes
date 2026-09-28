@@ -509,3 +509,30 @@ The command writes aggregate outputs to `data/analysis/`:
 
 The analysis is safe to rerun at any time. It only reads completed result JSON files
 and overwrites the aggregate analysis outputs with a fresh snapshot.
+
+
+### Failed repository handling
+
+The full-corpus runner does **not** retry repositories that previously ended in
+`repository_error`. On restart it reads `data/batch_runs/errors.jsonl` and
+skips those repository URLs, just as it skips repositories that already have a
+successful stored result.
+
+This prevents inaccessible, forbidden, missing, or otherwise failing
+repositories from repeatedly consuming GitHub requests.
+
+The default is also one repository attempt per run:
+
+```bash
+research-process-steps-all --workers 16 --repo-timeout-seconds 60
+```
+
+If you intentionally want to revisit the historical failures later, use:
+
+```bash
+research-process-steps-all --retry-failed --max-retries 1
+```
+
+A non-rate-limit HTTP 403 is recorded as a repository failure and skipped on
+subsequent runs. Only 403/429 responses that actually indicate a GitHub rate
+limit trigger the global rate-limit pause.
