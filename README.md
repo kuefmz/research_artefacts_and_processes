@@ -442,3 +442,25 @@ Disable the timeout for a later slow-repository pass with:
 ```bash
 research-process-steps-all --workers 4 --repo-timeout-seconds 0
 ```
+
+
+### Analyze the completed subset while the crawl is still running
+
+You do not need to wait for the full repository corpus. Analyze every successfully
+stored result currently present in `data/heuristic_results/` with:
+
+```bash
+research-process-steps-analyze
+```
+
+The command writes aggregate outputs to `data/analysis/`:
+
+- `overall_summary.json` — corpus-level counts and repository-size statistics
+- `repository_summary.csv` — one row per completed repository
+- `step_summary.csv` — file- and repository-level frequencies for each research-process step
+- `artifact_kind_summary.csv` — artifact-kind distribution
+- `extension_summary.csv` — file-extension distribution
+- `evidence_rule_summary.csv` — frequency of heuristic evidence rules
+
+The analysis is safe to rerun at any time. It only reads completed result JSON files
+and overwrites the aggregate analysis outputs with a fresh snapshot.
