@@ -4,8 +4,10 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import io
 import json
 import os
+import tarfile
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
@@ -167,6 +169,36 @@ def _request_json(url: str, token: str | None = None, *, deadline: float | None 
     raise RuntimeError("GitHub request failed after retries.")
 
 
+def _request_bytes(
+    url: str,
+    token: str | None = None,
+    *,
+    deadline: float | None = None,
+) -> bytes:
+    """Fetch non-API bytes without consuming GitHub REST-core quota."""
+    headers = {"User-Agent": USER_AGENT}
+    if token:
+        headers["Authorization"] = f"Bearer {token}"
+    request = Request(url, headers=headers)
+    _check_deadline(deadline)
+    try:
+        with urlopen(request, timeout=_remaining_timeout(deadline, 60)) as response:
+            return response.read()
+    except HTTPError as exc:
+        detail = exc.read().decode("utf-8", errors="replace")
+        wait_seconds = _rate_limit_wait_seconds(exc, 0, detail)
+        if wait_seconds is not None:
+            raise GitHubRateLimitError(
+                wait_seconds=wait_seconds,
+                status_code=exc.code,
+                url=url,
+                remaining=exc.headers.get("X-RateLimit-Remaining"),
+                reset=exc.headers.get("X-RateLimit-Reset"),
+                retry_after=exc.headers.get("Retry-After"),
+            ) from exc
+        raise RuntimeError(f"GitHub archive request failed ({exc.code}): {detail}") from exc
+
+
 def _request_text(url: str, token: str | None = None, *, deadline: float | None = None) -> str:
     headers = {"User-Agent": USER_AGENT}
     if token:
@@ -192,6 +224,172 @@ def _request_text(url: str, token: str | None = None, *, deadline: float | None 
             raise RuntimeError(f"GitHub content request failed ({exc.code}): {detail}") from exc
     raise RuntimeError("GitHub content request failed after retries.")
 
+
+
+def _git_blob_sha(data: bytes) -> str:
+    digest = hashlib.sha1()
+    digest.update(f"blob {len(data)}\0".encode("ascii"))
+    digest.update(data)
+    return digest.hexdigest()
+
+
+def _archive_tree_snapshot(
+    *,
+    owner: str,
+    repo: str,
+    ref: str,
+    expected_root_tree_sha: str,
+    snapshot_cache: Path,
+    max_content_bytes: int,
+    token: str | None,
+    deadline: float | None,
+) -> tuple[dict[str, Any], dict[str, tuple[str, bool]]]:
+    """Reconstruct an exact Git tree from one codeload archive.
+
+    The reconstructed root tree SHA must equal GitHub's already-returned root
+    tree SHA. If it does not, the caller must fall back to the API tree walk.
+    This makes the optimization result-preserving rather than approximate.
+    """
+    archive_url = (
+        "https://codeload.github.com/"
+        f"{quote(owner)}/{quote(repo)}/tar.gz/{quote(ref, safe='')}"
+    )
+    archive_bytes = _request_bytes(archive_url, token, deadline=deadline)
+
+    blobs: dict[str, dict[str, Any]] = {}
+    content_by_path: dict[str, tuple[str, bool]] = {}
+
+    with tarfile.open(fileobj=io.BytesIO(archive_bytes), mode="r:gz") as tar:
+        members = tar.getmembers()
+        roots = {
+            member.name.split("/", 1)[0]
+            for member in members
+            if member.name and "/" in member.name
+        }
+        if len(roots) != 1:
+            raise RuntimeError("Could not identify a unique GitHub archive root.")
+        root_prefix = next(iter(roots)) + "/"
+
+        for member in members:
+            _check_deadline(deadline)
+            if not member.name.startswith(root_prefix):
+                continue
+            path = member.name[len(root_prefix):].rstrip("/")
+            if not path or member.isdir():
+                continue
+            if not (member.isfile() or member.issym() or member.islnk()):
+                continue
+
+            if member.issym():
+                data = member.linkname.encode("utf-8")
+                mode = "120000"
+            else:
+                extracted = tar.extractfile(member)
+                if extracted is None:
+                    raise RuntimeError(f"Could not read archive member: {path}")
+                data = extracted.read()
+                mode = "100755" if (member.mode & 0o111) else "100644"
+
+            blob_sha = _git_blob_sha(data)
+            blobs[path] = {
+                "path": path,
+                "mode": mode,
+                "type": "blob",
+                "sha": blob_sha,
+                "size": len(data),
+            }
+
+            if _content_is_scannable(path) and len(data) <= max_content_bytes:
+                decoded = data.decode("utf-8", errors="replace")
+                content_by_path[path] = (decoded, True)
+                cached_content_path = snapshot_cache / "content" / Path(path)
+                cached_content_path.parent.mkdir(parents=True, exist_ok=True)
+                cached_content_path.write_text(decoded, encoding="utf-8")
+
+    # Build a nested directory structure and compute Git tree object SHAs
+    # bottom-up. Matching the expected root SHA proves path/content/mode
+    # equivalence with the Git tree returned by GitHub.
+    root: dict[str, Any] = {"files": {}, "dirs": {}}
+    for path, blob in blobs.items():
+        parts = path.split("/")
+        node = root
+        for part in parts[:-1]:
+            node = node["dirs"].setdefault(part, {"files": {}, "dirs": {}})
+        node["files"][parts[-1]] = blob
+
+    collected: list[dict[str, Any]] = []
+
+    def build_tree(node: dict[str, Any], prefix: str = "") -> str:
+        entries: list[tuple[bytes, str, str, str, int | None]] = []
+
+        for name, child in node["dirs"].items():
+            child_prefix = f"{prefix}/{name}" if prefix else name
+            sha = build_tree(child, child_prefix)
+            entries.append(
+                ((name + "/").encode("utf-8"), name, "40000", sha, None)
+            )
+
+        for name, blob in node["files"].items():
+            entries.append(
+                (
+                    name.encode("utf-8"),
+                    name,
+                    blob["mode"],
+                    blob["sha"],
+                    blob["size"],
+                )
+            )
+
+        entries.sort(key=lambda item: item[0])
+        body = bytearray()
+        for _, name, mode, sha, _size in entries:
+            body.extend(f"{mode} {name}\0".encode("utf-8"))
+            body.extend(bytes.fromhex(sha))
+
+        digest = hashlib.sha1()
+        digest.update(f"tree {len(body)}\0".encode("ascii"))
+        digest.update(body)
+        tree_sha = digest.hexdigest()
+
+        for _, name, mode, sha, size in entries:
+            full_path = f"{prefix}/{name}" if prefix else name
+            if mode == "40000":
+                collected.append(
+                    {
+                        "path": full_path,
+                        "mode": mode,
+                        "type": "tree",
+                        "sha": sha,
+                    }
+                )
+            else:
+                collected.append(
+                    {
+                        "path": full_path,
+                        "mode": mode,
+                        "type": "blob",
+                        "sha": sha,
+                        "size": size,
+                    }
+                )
+        return tree_sha
+
+    reconstructed_root_sha = build_tree(root)
+    if reconstructed_root_sha != expected_root_tree_sha:
+        raise RuntimeError(
+            "Archive snapshot did not reconstruct the exact Git tree "
+            f"(expected {expected_root_tree_sha}, got {reconstructed_root_sha})."
+        )
+
+    return (
+        {
+            "sha": reconstructed_root_sha,
+            "tree": collected,
+            "truncated": False,
+            "archive_reconstructed": True,
+        },
+        content_by_path,
+    )
 
 
 def _walk_git_tree(
@@ -417,6 +615,8 @@ def analyze_github_repository(
     manifest_path = snapshot_cache / "manifest.json"
     tree_path = snapshot_cache / "tree.json"
 
+    archive_content_by_path: dict[str, tuple[str, bool]] = {}
+
     tree = _read_json_cache(tree_path)
     if tree is None:
         tree_url = f"{api_base}/git/trees/{quote(chosen_ref, safe='')}?recursive=1"
@@ -432,9 +632,37 @@ def analyze_github_repository(
             },
         )
     if tree.get("truncated"):
-        # GitHub caps very large recursive tree responses. Fall back to walking
-        # each tree object so every file is still represented.
-        tree = _walk_git_tree(api_base, tree.get("sha") or chosen_ref, token, deadline=deadline)
+        # A recursive GitHub tree can truncate for large repositories. First try
+        # one codeload archive (non-REST) and reconstruct the exact Git tree
+        # locally. We only accept it if the reconstructed root SHA is identical
+        # to GitHub's root tree SHA. Otherwise we retain the original API walk.
+        expected_tree_sha = tree.get("sha")
+        try:
+            if not expected_tree_sha:
+                raise RuntimeError("Truncated tree did not include a root SHA.")
+            tree, archive_content_by_path = _archive_tree_snapshot(
+                owner=owner,
+                repo=repo,
+                ref=chosen_ref,
+                expected_root_tree_sha=expected_tree_sha,
+                snapshot_cache=snapshot_cache,
+                max_content_bytes=max_content_bytes,
+                token=token,
+                deadline=deadline,
+            )
+            tree_traversal = "verified_archive_fallback"
+        except (RepositoryTimeoutError, GitHubRateLimitError):
+            raise
+        except Exception:
+            tree = _walk_git_tree(
+                api_base,
+                expected_tree_sha or chosen_ref,
+                token,
+                deadline=deadline,
+            )
+            archive_content_by_path = {}
+            tree_traversal = "non_recursive_api_fallback"
+
         _write_json_cache(tree_path, tree)
         _write_json_cache(
             manifest_path,
@@ -443,7 +671,7 @@ def analyze_github_repository(
                 "full_name": f"{owner}/{repo}",
                 "ref": chosen_ref,
                 "tree_sha": tree.get("sha"),
-                "tree_traversal": "non_recursive_fallback",
+                "tree_traversal": tree_traversal,
             },
         )
 
@@ -480,7 +708,8 @@ def analyze_github_repository(
             return path, "", False
 
     content_by_path: dict[str, tuple[str, bool]] = {
-        item["path"]: ("", False) for item in sorted_files
+        item["path"]: archive_content_by_path.get(item["path"], ("", False))
+        for item in sorted_files
     }
     scannable = [
         item
@@ -489,14 +718,20 @@ def analyze_github_repository(
         and int(item.get("size") or 0) <= max_content_bytes
     ]
 
+    scannable_to_fetch = [
+        item
+        for item in scannable
+        if not content_by_path.get(item["path"], ("", False))[1]
+    ]
+
     if MAX_CONTENT_WORKERS == 1:
-        for item in scannable:
+        for item in scannable_to_fetch:
             _check_deadline(deadline, repository_url)
             path, file_content, content_scanned = fetch_content(item)
             content_by_path[path] = (file_content, content_scanned)
     else:
         with ThreadPoolExecutor(max_workers=MAX_CONTENT_WORKERS) as executor:
-            futures = [executor.submit(fetch_content, item) for item in scannable]
+            futures = [executor.submit(fetch_content, item) for item in scannable_to_fetch]
             for future in as_completed(futures):
                 _check_deadline(deadline, repository_url)
                 path, file_content, content_scanned = future.result()
