@@ -69,6 +69,7 @@ def analyze_results(
     step_repo_counts: Counter[str] = Counter()
     artifact_counts: Counter[str] = Counter()
     extension_counts: Counter[str] = Counter()
+    unclassified_extension_counts: Counter[str] = Counter()
     evidence_rule_counts: Counter[str] = Counter()
 
     total_files = 0
@@ -110,6 +111,7 @@ def analyze_results(
             if record.get("unclassified", not steps):
                 total_unclassified += 1
                 repo_unclassified += 1
+                unclassified_extension_counts[record.get("extension") or "(none)"] += 1
 
             if len(steps) > 1:
                 total_multilabel_files += 1
@@ -154,6 +156,14 @@ def analyze_results(
                 "multi_label_files": repo_multilabel,
                 **{
                     f"{step}_files": repo_step_counts.get(step, 0)
+                    for step in RESEARCH_PROCESS_STEPS
+                },
+                **{
+                    f"{step}_pct": round(
+                        repo_step_counts.get(step, 0) / file_count * 100, 4
+                    )
+                    if file_count
+                    else 0.0
                     for step in RESEARCH_PROCESS_STEPS
                 },
             }
@@ -210,6 +220,95 @@ def analyze_results(
         {"rule_id": rule_id, "files_with_rule_evidence": count}
         for rule_id, count in evidence_rule_counts.most_common()
     ]
+    unclassified_extension_rows = [
+        {
+            "extension": name,
+            "unclassified_file_count": count,
+            "pct_of_unclassified_files": round(
+                count / total_unclassified * 100, 4
+            )
+            if total_unclassified
+            else 0.0,
+        }
+        for name, count in unclassified_extension_counts.most_common()
+    ]
+
+    typical_repository = {
+        "file_count": {
+            "mean": round(
+                statistics.mean([row["file_count"] for row in repository_rows]), 3
+            )
+            if repository_rows
+            else 0.0,
+            "median": round(
+                statistics.median([row["file_count"] for row in repository_rows]), 3
+            )
+            if repository_rows
+            else 0.0,
+        },
+        "unclassified_files": {
+            "mean": round(
+                statistics.mean([row["unclassified_files"] for row in repository_rows]), 3
+            )
+            if repository_rows
+            else 0.0,
+            "median": round(
+                statistics.median([row["unclassified_files"] for row in repository_rows]), 3
+            )
+            if repository_rows
+            else 0.0,
+        },
+        "unclassified_pct": {
+            "mean": round(
+                statistics.mean([row["unclassified_pct"] for row in repository_rows]), 3
+            )
+            if repository_rows
+            else 0.0,
+            "median": round(
+                statistics.median([row["unclassified_pct"] for row in repository_rows]), 3
+            )
+            if repository_rows
+            else 0.0,
+        },
+        "content_scanned_files": {
+            "mean": round(
+                statistics.mean([row["content_scanned_files"] for row in repository_rows]), 3
+            )
+            if repository_rows
+            else 0.0,
+            "median": round(
+                statistics.median([row["content_scanned_files"] for row in repository_rows]), 3
+            )
+            if repository_rows
+            else 0.0,
+        },
+        "steps": {},
+    }
+
+    for step in RESEARCH_PROCESS_STEPS:
+        file_values = [row[f"{step}_files"] for row in repository_rows]
+        pct_values = [row[f"{step}_pct"] for row in repository_rows]
+        repos_with_step = sum(value > 0 for value in file_values)
+        typical_repository["steps"][step] = {
+            "mean_files_per_repo": round(statistics.mean(file_values), 3)
+            if file_values
+            else 0.0,
+            "median_files_per_repo": round(statistics.median(file_values), 3)
+            if file_values
+            else 0.0,
+            "mean_pct_of_repo_files": round(statistics.mean(pct_values), 3)
+            if pct_values
+            else 0.0,
+            "median_pct_of_repo_files": round(statistics.median(pct_values), 3)
+            if pct_values
+            else 0.0,
+            "repositories_with_step": repos_with_step,
+            "pct_of_repositories_with_step": round(
+                repos_with_step / repository_count * 100, 4
+            )
+            if repository_count
+            else 0.0,
+        }
 
     summary = {
         "results_dir": str(results_dir),
@@ -242,6 +341,8 @@ def analyze_results(
         },
         "files_per_step": dict(step_file_counts),
         "repositories_per_step": dict(step_repo_counts),
+        "typical_repository": typical_repository,
+        "top_unclassified_extensions": unclassified_extension_rows[:50],
         "invalid_paths": invalid_result_files,
     }
 
@@ -256,6 +357,7 @@ def analyze_results(
         "content_scanned_files",
         "multi_label_files",
         *[f"{step}_files" for step in RESEARCH_PROCESS_STEPS],
+        *[f"{step}_pct" for step in RESEARCH_PROCESS_STEPS],
     ]
     _write_csv(output_dir / "repository_summary.csv", repository_rows, repo_fields)
     _write_csv(
@@ -278,6 +380,11 @@ def analyze_results(
         output_dir / "extension_summary.csv",
         extension_rows,
         ["extension", "file_count", "pct_of_all_files"],
+    )
+    _write_csv(
+        output_dir / "unclassified_extension_summary.csv",
+        unclassified_extension_rows,
+        ["extension", "unclassified_file_count", "pct_of_unclassified_files"],
     )
     _write_csv(
         output_dir / "evidence_rule_summary.csv",
@@ -320,6 +427,42 @@ def _print_summary(summary: dict[str, Any], output_dir: Path) -> None:
     print("Files per research-process step")
     for step in RESEARCH_PROCESS_STEPS:
         print(f"  {step:16} {summary['files_per_step'].get(step, 0):,}")
+
+    print()
+    print("Typical repository")
+    typical = summary["typical_repository"]
+    print(
+        f"  files: mean={typical['file_count']['mean']}, "
+        f"median={typical['file_count']['median']}"
+    )
+    print(
+        f"  unclassified %: mean={typical['unclassified_pct']['mean']:.2f}%, "
+        f"median={typical['unclassified_pct']['median']:.2f}%"
+    )
+    print(
+        f"  content-scanned files: mean={typical['content_scanned_files']['mean']}, "
+        f"median={typical['content_scanned_files']['median']}"
+    )
+    print("  process-step presence:")
+    for step in RESEARCH_PROCESS_STEPS:
+        step_stats = typical["steps"][step]
+        print(
+            f"    {step:16} "
+            f"{step_stats['repositories_with_step']:,} repos "
+            f"({step_stats['pct_of_repositories_with_step']:.2f}%), "
+            f"median files={step_stats['median_files_per_repo']}, "
+            f"median repo share={step_stats['median_pct_of_repo_files']:.2f}%"
+        )
+
+    print()
+    print("Top unclassified extensions")
+    for row in summary["top_unclassified_extensions"][:20]:
+        print(
+            f"  {row['extension']:12} "
+            f"{row['unclassified_file_count']:>10,} "
+            f"({row['pct_of_unclassified_files']:.2f}%)"
+        )
+
     print()
     print(f"Analysis written to: {output_dir}")
 
