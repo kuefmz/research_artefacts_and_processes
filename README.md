@@ -67,6 +67,51 @@ Example shape:
 }
 ```
 
+## Available command-line scripts
+
+After installing the project in editable mode:
+
+```bash
+python -m pip install -e .
+```
+
+the following commands are available.
+
+### Repository execution and inspection
+
+| Command | Purpose |
+| --- | --- |
+| `research-process-steps <repo-url>` | Analyze one GitHub repository with the deterministic heuristics. |
+| `research-process-steps-web` | Start the FastAPI/web interface. |
+| `research-process-steps-precache` | Pre-cache the configured demo repositories. |
+| `research-process-steps-random [N]` | Analyze a random batch of unseen repositories. |
+| `research-process-steps-all` | Process the complete repository CSV with caching, resumability, parallel workers, timeouts, and rate-limit handling. |
+
+### Independent analysis scripts
+
+Each analysis command can be run independently against whatever completed results
+currently exist in `data/heuristic_results/`.
+
+| Command | Purpose | Default output |
+| --- | --- | --- |
+| `research-process-steps-analyze` | Overall partial-corpus summary: repositories, files, classification counts, process-step counts, artifact kinds, extensions, and evidence rules. | `data/analysis/` |
+| `research-process-steps-profile` | Analyze what a typical repository looks like: mean/median size, unclassified share, content-scanned files, and per-step repository prevalence/composition. | `data/analysis_repository_profile/` |
+| `research-process-steps-unclassified` | Analyze only unclassified files: extensions, artifact kinds, source-code extensions, excluded-by-design files, and still-eligible unclassified files. | `data/analysis_unclassified/` |
+| `research-process-steps-coverage` | Analyze classification coverage and heuristic behavior: extension-level classification rates, eligible vs excluded coverage, source-like coverage, and heuristic rule drivers. | `data/analysis_coverage/` |
+
+Typical usage:
+
+```bash
+research-process-steps-analyze
+research-process-steps-profile
+research-process-steps-unclassified
+research-process-steps-coverage
+```
+
+All four analysis commands are read-only with respect to the stored repository
+results. They can be rerun while the crawler is running; each command regenerates
+only its own aggregate analysis output directory.
+
 ## CLI
 
 Install locally:
