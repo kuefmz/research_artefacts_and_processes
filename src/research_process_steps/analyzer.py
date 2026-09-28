@@ -93,9 +93,22 @@ def _parse_github_url(repository_url: str) -> tuple[str, str]:
     return owner, repo
 
 
-def _rate_limit_wait_seconds(exc: HTTPError, attempt: int) -> int | None:
-    """Return a safe retry delay for GitHub primary/secondary rate limits."""
-    if exc.code not in {403, 429}:
+def _rate_limit_wait_seconds(
+    exc: HTTPError,
+    attempt: int,
+    detail: str = "",
+) -> int | None:
+    """Return a retry delay only when a 403/429 is actually rate limiting."""
+    if exc.code == 429:
+        retry_after = exc.headers.get("Retry-After")
+        if retry_after:
+            try:
+                return max(1, int(retry_after))
+            except ValueError:
+                pass
+        return min(60 * (2 ** attempt), 15 * 60)
+
+    if exc.code != 403:
         return None
 
     retry_after = exc.headers.get("Retry-After")
@@ -107,14 +120,20 @@ def _rate_limit_wait_seconds(exc: HTTPError, attempt: int) -> int | None:
 
     remaining = exc.headers.get("X-RateLimit-Remaining")
     reset = exc.headers.get("X-RateLimit-Reset")
-    if remaining == "0" and reset:
-        try:
-            return max(1, int(reset) - int(time.time()) + 5)
-        except ValueError:
-            pass
+    if remaining == "0":
+        if reset:
+            try:
+                return max(1, int(reset) - int(time.time()) + 5)
+            except ValueError:
+                pass
+        return min(60 * (2 ** attempt), 15 * 60)
 
-    # Secondary limits do not always include a reset header.
-    return min(60 * (2 ** attempt), 15 * 60)
+    lowered = detail.lower()
+    if "secondary rate limit" in lowered or "rate limit exceeded" in lowered:
+        return min(60 * (2 ** attempt), 15 * 60)
+
+    # A plain 403 can mean repository/access permissions. Do not globally pause.
+    return None
 
 
 def _request_json(url: str, token: str | None = None, *, deadline: float | None = None) -> Any:
@@ -133,7 +152,8 @@ def _request_json(url: str, token: str | None = None, *, deadline: float | None 
             with urlopen(request, timeout=_remaining_timeout(deadline, 30)) as response:
                 return json.loads(response.read().decode("utf-8"))
         except HTTPError as exc:
-            wait_seconds = _rate_limit_wait_seconds(exc, attempt)
+            detail = exc.read().decode("utf-8", errors="replace")
+            wait_seconds = _rate_limit_wait_seconds(exc, attempt, detail)
             if wait_seconds is not None:
                 raise GitHubRateLimitError(
                     wait_seconds=wait_seconds,
@@ -143,7 +163,6 @@ def _request_json(url: str, token: str | None = None, *, deadline: float | None 
                     reset=exc.headers.get("X-RateLimit-Reset"),
                     retry_after=exc.headers.get("Retry-After"),
                 ) from exc
-            detail = exc.read().decode("utf-8", errors="replace")
             raise RuntimeError(f"GitHub request failed ({exc.code}): {detail}") from exc
     raise RuntimeError("GitHub request failed after retries.")
 
@@ -159,7 +178,8 @@ def _request_text(url: str, token: str | None = None, *, deadline: float | None 
             with urlopen(request, timeout=_remaining_timeout(deadline, 30)) as response:
                 return response.read().decode("utf-8", errors="replace")
         except HTTPError as exc:
-            wait_seconds = _rate_limit_wait_seconds(exc, attempt)
+            detail = exc.read().decode("utf-8", errors="replace")
+            wait_seconds = _rate_limit_wait_seconds(exc, attempt, detail)
             if wait_seconds is not None:
                 raise GitHubRateLimitError(
                     wait_seconds=wait_seconds,
@@ -169,7 +189,7 @@ def _request_text(url: str, token: str | None = None, *, deadline: float | None 
                     reset=exc.headers.get("X-RateLimit-Reset"),
                     retry_after=exc.headers.get("Retry-After"),
                 ) from exc
-            raise
+            raise RuntimeError(f"GitHub content request failed ({exc.code}): {detail}") from exc
     raise RuntimeError("GitHub content request failed after retries.")
 
 
