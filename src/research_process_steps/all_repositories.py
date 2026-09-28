@@ -91,6 +91,25 @@ def append_jsonl(path: Path, payload: dict[str, Any]) -> None:
         stream.write(json.dumps(payload, ensure_ascii=False) + "\n")
 
 
+def load_failed_repositories(error_path: Path) -> set[str]:
+    """Return normalized repository URLs that previously ended in repository_error."""
+    failed: set[str] = set()
+    if not error_path.exists():
+        return failed
+
+    for line in error_path.read_text(encoding="utf-8").splitlines():
+        try:
+            event = json.loads(line)
+        except json.JSONDecodeError:
+            continue
+        if event.get("event") != "repository_error":
+            continue
+        repo_url = (event.get("repo_url") or "").strip()
+        if repo_url:
+            failed.add(normalize_repo_url(repo_url))
+    return failed
+
+
 def write_progress(path: Path, payload: dict[str, Any]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     tmp_path = path.with_suffix(path.suffix + ".tmp")
@@ -142,6 +161,7 @@ def run_all(
     max_retries: int,
     workers: int,
     repo_timeout_seconds: float,
+    retry_failed: bool,
     limit: int | None = None,
 ) -> dict[str, Any]:
     repositories = load_repositories(dataset_path)
@@ -169,6 +189,7 @@ def run_all(
         "completed_now": 0,
         "already_completed": 0,
         "errors": 0,
+        "previously_failed_skipped": 0,
         "processed": 0,
         "last_repository": None,
         "results_dir": os.getenv("RPS_RESULTS_DIR", "data/heuristic_results"),
@@ -193,6 +214,8 @@ def run_all(
         },
     )
 
+    previously_failed = set() if retry_failed else load_failed_repositories(error_path)
+
     pending: list[tuple[int, str]] = []
     for index, repo_url in enumerate(repositories, start=1):
         stats["last_repository"] = repo_url
@@ -213,6 +236,24 @@ def run_all(
                 },
             )
             print(f"[{index}/{len(repositories)}] already stored: {repo_url}", flush=True)
+        elif normalize_repo_url(repo_url) in previously_failed:
+            stats["previously_failed_skipped"] += 1
+            stats["processed"] += 1
+            stats["updated_at"] = utc_now()
+            append_jsonl(
+                log_path,
+                {
+                    "timestamp": utc_now(),
+                    "event": "skip_previous_failure",
+                    "index": index,
+                    "total": len(repositories),
+                    "repo_url": repo_url,
+                },
+            )
+            print(
+                f"[{index}/{len(repositories)}] previously failed; skipping: {repo_url}",
+                flush=True,
+            )
         else:
             pending.append((index, repo_url))
 
@@ -297,7 +338,16 @@ def run_all(
                 except Exception as exc:
                     last_error = f"{type(exc).__name__}: {exc}"
                     timed_out = isinstance(exc, RepositoryTimeoutError)
-                    permanent = "GitHub request failed (404)" in last_error or timed_out
+                    forbidden = (
+                        "GitHub request failed (403)" in last_error
+                        or "GitHub content request failed (403)" in last_error
+                    )
+                    permanent = (
+                        "GitHub request failed (404)" in last_error
+                        or "GitHub content request failed (404)" in last_error
+                        or forbidden
+                        or timed_out
+                    )
                     append_jsonl(
                         log_path,
                         {
@@ -451,6 +501,7 @@ def run_all(
             "completed_now": stats["completed_now"],
             "already_completed": stats["already_completed"],
             "errors": stats["errors"],
+            "previously_failed_skipped": stats["previously_failed_skipped"],
             "processed": stats["processed"],
         },
     )
@@ -493,8 +544,19 @@ def main() -> None:
     parser.add_argument(
         "--max-retries",
         type=int,
-        default=3,
-        help="Repository-level retries for transient failures (default: 3).",
+        default=1,
+        help=(
+            "Repository-level attempts for transient failures (default: 1). "
+            "Increase only when you explicitly want same-run retries."
+        ),
+    )
+    parser.add_argument(
+        "--retry-failed",
+        action="store_true",
+        help=(
+            "Explicitly retry repositories already recorded in errors.jsonl. "
+            "By default previous failures are skipped on every restart."
+        ),
     )
     parser.add_argument(
         "--workers",
@@ -535,6 +597,7 @@ def main() -> None:
         max_retries=args.max_retries,
         workers=max(1, args.workers),
         repo_timeout_seconds=max(0.0, args.repo_timeout_seconds),
+        retry_failed=args.retry_failed,
         limit=args.limit,
     )
     print(json.dumps(result, indent=2), flush=True)
