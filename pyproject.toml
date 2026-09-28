@@ -28,6 +28,8 @@ research-process-steps-unclassified = "research_process_steps.analyze_unclassifi
 
 research-process-steps-unclassified-content = "research_process_steps.analyze_unclassified_content:main"
 
+research-process-steps-analyze-all = "research_process_steps.analyze_all:main"
+
 [tool.setuptools.packages.find]
 where = ["src"]
 
