@@ -110,3 +110,49 @@ def test_archive_snapshot_rejected_if_tree_sha_differs(monkeypatch, tmp_path: Pa
         assert "did not reconstruct the exact Git tree" in str(exc)
     else:
         raise AssertionError("mismatched archive must not be accepted")
+
+
+def test_archive_content_produces_identical_heuristic_result(monkeypatch, tmp_path: Path):
+    path = "src/preprocess_data.py"
+    raw_content = (
+        b"import pandas as pd\n"
+        b"def preprocess(df):\n"
+        b"    return df.dropna()\n"
+    )
+
+    archive = io.BytesIO()
+    with tarfile.open(fileobj=archive, mode="w:gz") as tar:
+        info = tarfile.TarInfo(f"demo-main/{path}")
+        info.size = len(raw_content)
+        info.mode = 0o644
+        tar.addfile(info, io.BytesIO(raw_content))
+
+    blob_sha = analyzer._git_blob_sha(raw_content)
+    src_tree_sha = _tree_sha([
+        (b"preprocess_data.py", "100644", "preprocess_data.py", blob_sha),
+    ])
+    root_sha = _tree_sha([
+        (b"src/", "40000", "src", src_tree_sha),
+    ])
+
+    monkeypatch.setattr(
+        analyzer,
+        "_request_bytes",
+        lambda *args, **kwargs: archive.getvalue(),
+    )
+
+    _, content = analyzer._archive_tree_snapshot(
+        owner="example",
+        repo="demo",
+        ref="main",
+        expected_root_tree_sha=root_sha,
+        snapshot_cache=tmp_path / "cache",
+        max_content_bytes=250_000,
+        token="token",
+        deadline=None,
+    )
+
+    old_path_result = analyzer.analyze_file(path, raw_content.decode("utf-8"))
+    optimized_path_result = analyzer.analyze_file(path, content[path][0])
+
+    assert optimized_path_result == old_path_result
