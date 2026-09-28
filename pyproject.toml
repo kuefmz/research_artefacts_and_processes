@@ -26,6 +26,8 @@ research-process-steps-profile = "research_process_steps.analyze_repository_prof
 
 research-process-steps-unclassified = "research_process_steps.analyze_unclassified:main"
 
+research-process-steps-unclassified-content = "research_process_steps.analyze_unclassified_content:main"
+
 [tool.setuptools.packages.find]
 where = ["src"]
 
