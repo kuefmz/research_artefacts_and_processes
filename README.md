@@ -558,3 +558,33 @@ content-size limit, same content decoding, same heuristic rules, same rule
 weights, same threshold, same evidence construction, and same result schema are
 used. Unit tests also compare heuristic output from archive-derived content with
 the original content path.
+
+
+### REST-free Git acquisition for the full corpus
+
+The full-corpus runner now defaults to an exact shallow Git snapshot instead of
+GitHub REST repository/tree requests:
+
+```bash
+research-process-steps-all --workers 8 --repo-timeout-seconds 60
+```
+
+This default `git` acquisition mode uses Git's smart HTTP transport to resolve
+the default branch and exact HEAD commit, shallow-clones that snapshot, reads the
+Git tree/blob metadata locally, and feeds the unchanged heuristic analyzer the
+same path/content inputs. It does not consume the GitHub REST core 5,000/hour
+quota.
+
+The result stores both the resolved commit SHA and tree SHA for reproducibility.
+
+The historical API acquisition path remains available explicitly:
+
+```bash
+research-process-steps-all --acquisition-mode api
+```
+
+Existing successful result JSON files are still skipped and are never overwritten
+by the full-corpus runner.
+
+The Git acquisition tests construct local Git repositories and verify that blob
+contents and heuristic outputs are identical to direct analyzer inputs.
