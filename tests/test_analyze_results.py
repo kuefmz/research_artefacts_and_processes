@@ -51,4 +51,14 @@ def test_analyze_partial_results(tmp_path: Path):
     assert (output / "step_summary.csv").exists()
     assert (output / "artifact_kind_summary.csv").exists()
     assert (output / "extension_summary.csv").exists()
+    assert (output / "unclassified_extension_summary.csv").exists()
     assert (output / "evidence_rule_summary.csv").exists()
+    assert summary["top_unclassified_extensions"][0]["extension"] == ".json"
+    assert "typical_repository" in summary
+    assert summary["typical_repository"]["file_count"]["median"] == 2
+    assert (
+        summary["typical_repository"]["steps"]["implementation"][
+            "pct_of_repositories_with_step"
+        ]
+        == 100.0
+    )
