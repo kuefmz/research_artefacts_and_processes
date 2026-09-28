@@ -23,6 +23,7 @@ from .analyzer import (
     analyze_github_repository,
 )
 from .storage import load_result, normalize_repo_url, save_result
+from .git_acquisition import analyze_github_repository_git
 
 
 DEFAULT_DATASET = Path("data/openaire_zenodo_12819872/github_repositories.csv")
@@ -162,6 +163,7 @@ def run_all(
     workers: int,
     repo_timeout_seconds: float,
     retry_failed: bool,
+    acquisition_mode: str,
     limit: int | None = None,
 ) -> dict[str, Any]:
     repositories = load_repositories(dataset_path)
@@ -173,13 +175,22 @@ def run_all(
     error_path = log_dir / "errors.jsonl"
     progress_path = log_dir / "progress.json"
 
-    auth_status = get_rate_limit(token)
-    if auth_status["limit"] < 5000:
-        raise RuntimeError(
-            "GitHub authentication does not appear active: expected an authenticated "
-            f"core limit of at least 5000/hour, got {auth_status['limit']}. "
-            "Check GITHUB_TOKEN and rerun."
-        )
+    if acquisition_mode == "api":
+        auth_status = get_rate_limit(token)
+        if auth_status["limit"] < 5000:
+            raise RuntimeError(
+                "GitHub authentication does not appear active: expected an authenticated "
+                f"core limit of at least 5000/hour, got {auth_status['limit']}. "
+                "Check GITHUB_TOKEN and rerun."
+            )
+    else:
+        auth_status = {
+            "limit": 0,
+            "remaining": 0,
+            "used": 0,
+            "reset": 0,
+            "mode": "git_no_rest_quota",
+        }
 
     stats: dict[str, Any] = {
         "started_at": utc_now(),
@@ -199,6 +210,7 @@ def run_all(
         "authenticated_rate_limit": auth_status,
         "workers": workers,
         "repo_timeout_seconds": repo_timeout_seconds,
+        "acquisition_mode": acquisition_mode,
     }
     write_progress(progress_path, stats)
 
@@ -322,13 +334,21 @@ def run_all(
                             "rate_limit_before": "managed_from_response_headers",
                         },
                     )
-                    result = analyze_github_repository(
-                        repo_url,
-                        token=token,
-                        max_content_bytes=max_content_bytes,
-                        raw_cache_dir=raw_cache_dir,
-                        timeout_seconds=repo_timeout_seconds,
-                    )
+                    if acquisition_mode == "git":
+                        result = analyze_github_repository_git(
+                            repo_url,
+                            max_content_bytes=max_content_bytes,
+                            raw_cache_dir=raw_cache_dir,
+                            timeout_seconds=repo_timeout_seconds,
+                        )
+                    else:
+                        result = analyze_github_repository(
+                            repo_url,
+                            token=token,
+                            max_content_bytes=max_content_bytes,
+                            raw_cache_dir=raw_cache_dir,
+                            timeout_seconds=repo_timeout_seconds,
+                        )
                     stored = save_result(repo_url, result)
                     return index, repo_url, stored, None
                 except GitHubRateLimitError as exc:
@@ -559,6 +579,16 @@ def main() -> None:
         ),
     )
     parser.add_argument(
+        "--acquisition-mode",
+        choices=["git", "api"],
+        default="git",
+        help=(
+            "Repository acquisition method. 'git' (default) uses an exact shallow "
+            "Git snapshot and does not consume GitHub REST core quota. 'api' keeps "
+            "the historical REST/tree/raw acquisition path."
+        ),
+    )
+    parser.add_argument(
         "--workers",
         type=int,
         default=4,
@@ -580,11 +610,11 @@ def main() -> None:
     )
     args = parser.parse_args()
 
-    token = os.getenv("GITHUB_TOKEN")
-    if not token:
+    token = os.getenv("GITHUB_TOKEN", "")
+    if args.acquisition_mode == "api" and not token:
         raise SystemExit(
-            "GITHUB_TOKEN is not set. Create a GitHub personal access token and export "
-            "it before running this command."
+            "GITHUB_TOKEN is required for --acquisition-mode api. "
+            "The default git acquisition mode does not require the REST API token."
         )
 
     result = run_all(
@@ -598,6 +628,7 @@ def main() -> None:
         workers=max(1, args.workers),
         repo_timeout_seconds=max(0.0, args.repo_timeout_seconds),
         retry_failed=args.retry_failed,
+        acquisition_mode=args.acquisition_mode,
         limit=args.limit,
     )
     print(json.dumps(result, indent=2), flush=True)
