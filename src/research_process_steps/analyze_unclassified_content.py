@@ -14,6 +14,7 @@ import csv
 import hashlib
 import json
 import re
+import warnings
 from collections import Counter
 from pathlib import Path
 from typing import Any, Iterable
@@ -66,7 +67,9 @@ def _python_symbols_and_imports(text: str) -> tuple[list[str], list[str]]:
     imports: list[str] = []
     symbols: list[str] = []
     try:
-        tree = ast.parse(text)
+        with warnings.catch_warnings():
+            warnings.simplefilter("ignore", SyntaxWarning)
+            tree = ast.parse(text)
     except (SyntaxError, ValueError):
         return imports, symbols
 
