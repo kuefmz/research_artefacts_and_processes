@@ -536,3 +536,25 @@ research-process-steps-all --retry-failed --max-retries 1
 A non-rate-limit HTTP 403 is recorded as a repository failure and skipped on
 subsequent runs. Only 403/429 responses that actually indicate a GitHub rate
 limit trigger the global rate-limit pause.
+
+
+### Result-preserving large-repository optimization
+
+Large repositories can cause GitHub's recursive tree endpoint to return
+`truncated: true`. Previously the runner then walked every sub-tree through the
+REST API, which could consume many API requests for a single repository.
+
+The optimized runner now first uses a single non-REST GitHub codeload archive for
+those truncated repositories. It reconstructs Git blob SHAs and Git tree SHAs
+locally and accepts the optimized snapshot **only if the reconstructed root tree
+SHA exactly matches the root tree SHA returned by GitHub**.
+
+If that SHA validation fails for any reason (for example, an unusual repository
+layout such as submodules), the runner automatically falls back to the original
+non-recursive REST tree walk.
+
+The scientific classification path is unchanged: the same file paths, same
+content-size limit, same content decoding, same heuristic rules, same rule
+weights, same threshold, same evidence construction, and same result schema are
+used. Unit tests also compare heuristic output from archive-derived content with
+the original content path.
