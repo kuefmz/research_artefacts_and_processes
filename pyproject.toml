@@ -18,6 +18,7 @@ research-process-steps-web = "research_process_steps.api:run"
 research-process-steps-precache = "research_process_steps.api:precache_demo"
 research-process-steps-random = "research_process_steps.batch:main"
 research-process-steps-all = "research_process_steps.all_repositories:main"
+research-process-steps-analyze = "research_process_steps.analyze_results:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
