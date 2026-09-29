@@ -10,7 +10,6 @@ from __future__ import annotations
 import hashlib
 import json
 import os
-import shutil
 import subprocess
 import tempfile
 import time
@@ -64,6 +63,7 @@ def _run_git(
     cwd: Path | None = None,
     timeout: float = 60.0,
     text: bool = True,
+    input_data: bytes | str | None = None,
 ) -> subprocess.CompletedProcess:
     """Run Git with both process and low-speed network timeouts."""
     env = dict(os.environ)
@@ -87,6 +87,7 @@ def _run_git(
             capture_output=True,
             text=text,
             timeout=timeout,
+            input=input_data,
         )
     except subprocess.TimeoutExpired as exc:
         raise RepositoryTimeoutError(
@@ -94,25 +95,44 @@ def _run_git(
         ) from exc
 
 
-def _resolve_head(repository_url: str, deadline: float | None) -> tuple[str, str]:
-    result = _run_git(
-        ["ls-remote", "--symref", repository_url, "HEAD"],
-        timeout=_remaining(deadline, 30),
-    )
-    branch = ""
-    commit = ""
-    for line in result.stdout.splitlines():
-        if line.startswith("ref: ") and line.endswith("\tHEAD"):
-            ref = line.split("\t", 1)[0][5:]
-            prefix = "refs/heads/"
-            if ref.startswith(prefix):
-                branch = ref[len(prefix):]
-        elif line.endswith("\tHEAD"):
-            commit = line.split("\t", 1)[0].strip()
-    if not branch or not commit:
-        raise RuntimeError("Could not resolve repository default branch/HEAD with git.")
-    return branch, commit
+def _read_blobs_batch(
+    repo_dir: Path,
+    items: list[dict[str, Any]],
+    deadline: float | None,
+) -> dict[str, bytes]:
+    """Read many Git blobs with one git cat-file process."""
+    if not items:
+        return {}
 
+    payload = "".join(f"{item['sha']}\n" for item in items)
+    result = _run_git(
+        ["cat-file", "--batch"],
+        cwd=repo_dir,
+        timeout=_remaining(deadline, 60),
+        text=False,
+        input_data=payload.encode("ascii"),
+    )
+
+    stream = memoryview(result.stdout)
+    offset = 0
+    blobs: dict[str, bytes] = {}
+    for item in items:
+        newline = result.stdout.find(b"\n", offset)
+        if newline < 0:
+            raise RuntimeError("Malformed git cat-file --batch output.")
+        header = bytes(stream[offset:newline]).decode("ascii", errors="replace")
+        offset = newline + 1
+        parts = header.split()
+        if len(parts) != 3 or parts[1] != "blob":
+            raise RuntimeError(f"Unexpected git cat-file header: {header}")
+        size = int(parts[2])
+        data = bytes(stream[offset:offset + size])
+        offset += size
+        if offset >= len(result.stdout) or result.stdout[offset:offset + 1] != b"\n":
+            raise RuntimeError("Malformed git cat-file blob delimiter.")
+        offset += 1
+        blobs[item["sha"]] = data
+    return blobs
 
 def _snapshot_dir(cache_root: Path, owner: str, repo: str, ref: str) -> Path:
     repo_dir = cache_root / f"{owner.replace('/', '_')}__{repo.replace('/', '_')}"
@@ -142,14 +162,8 @@ def _parse_ls_tree(data: bytes) -> list[dict[str, Any]]:
 
 
 def _read_blob(repo_dir: Path, sha: str, deadline: float | None) -> bytes:
-    result = _run_git(
-        ["cat-file", "blob", sha],
-        cwd=repo_dir,
-        timeout=_remaining(deadline, 30),
-        text=False,
-    )
-    return result.stdout
-
+    """Compatibility helper used by tests and small callers."""
+    return _read_blobs_batch(repo_dir, [{"sha": sha}], deadline)[sha]
 
 def analyze_github_repository_git(
     repository_url: str,
@@ -169,9 +183,6 @@ def analyze_github_repository_git(
     cache_root = Path(raw_cache_dir or DEFAULT_RAW_CACHE_DIR)
 
     _check_deadline(deadline, repository_url)
-    branch, resolved_head = _resolve_head(repository_url, deadline)
-    snapshot_cache = _snapshot_dir(cache_root, owner, repo, branch)
-    snapshot_cache.mkdir(parents=True, exist_ok=True)
 
     with tempfile.TemporaryDirectory(prefix="rps-git-") as temp:
         checkout = Path(temp) / "repo"
@@ -181,21 +192,23 @@ def analyze_github_repository_git(
                 "--depth", "1",
                 "--no-tags",
                 "--single-branch",
-                "--branch", branch,
                 repository_url,
                 str(checkout),
             ],
-            timeout=_remaining(deadline, 120),
+            timeout=_remaining(deadline, 60),
         )
 
-        commit_sha = _run_git(
-            ["rev-parse", "HEAD"], cwd=checkout, timeout=_remaining(deadline, 10)
+        branch = _run_git(
+            ["symbolic-ref", "--short", "HEAD"],
+            cwd=checkout,
+            timeout=_remaining(deadline, 5),
         ).stdout.strip()
-        if commit_sha != resolved_head:
-            raise RuntimeError(
-                "Repository HEAD changed between resolution and clone; "
-                "discarding snapshot to avoid inconsistent results."
-            )
+        commit_sha = _run_git(
+            ["rev-parse", "HEAD"], cwd=checkout, timeout=_remaining(deadline, 5)
+        ).stdout.strip()
+
+        snapshot_cache = _snapshot_dir(cache_root, owner, repo, branch)
+        snapshot_cache.mkdir(parents=True, exist_ok=True)
 
         tree_sha = _run_git(
             ["rev-parse", "HEAD^{tree}"], cwd=checkout, timeout=_remaining(deadline, 10)
@@ -238,6 +251,14 @@ def analyze_github_repository_git(
             encoding="utf-8",
         )
 
+        scannable_items = [
+            item
+            for item in blobs
+            if _content_is_scannable(item["path"])
+            and int(item.get("size") or 0) <= max_content_bytes
+        ]
+        raw_content_by_sha = _read_blobs_batch(checkout, scannable_items, deadline)
+
         output_files: list[dict[str, Any]] = []
         for item in blobs:
             _check_deadline(deadline, repository_url)
@@ -247,7 +268,7 @@ def analyze_github_repository_git(
             content_scanned = False
 
             if _content_is_scannable(path) and size <= max_content_bytes:
-                raw = _read_blob(checkout, item["sha"], deadline)
+                raw = raw_content_by_sha[item["sha"]]
                 content = raw.decode("utf-8", errors="replace")
                 content_scanned = True
                 cached = snapshot_cache / "content" / Path(path)
