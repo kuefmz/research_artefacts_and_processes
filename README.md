@@ -588,3 +588,38 @@ by the full-corpus runner.
 
 The Git acquisition tests construct local Git repositories and verify that blob
 contents and heuristic outputs are identical to direct analyzer inputs.
+
+
+### Hardened full-corpus runner
+
+For long production runs, use the default Git acquisition mode. It preserves the
+same heuristic rules and result schema while avoiding the GitHub REST core quota.
+
+The runner now includes the following safeguards:
+
+- one shallow clone per unseen repository (no separate `git ls-remote` request);
+- batched `git cat-file --batch` reads instead of one subprocess per source file;
+- bounded blob batches to avoid large-repository memory spikes;
+- Git HTTP low-speed timeouts so stalled transfers fail instead of occupying a worker indefinitely;
+- a bounded future queue (at most roughly twice the active worker count), rather
+  than submitting the remaining ~100k repositories at once;
+- a Git-mode concurrency safety cap of 16 workers, even if a larger value is requested;
+- metadata-only resume checks, so completed result JSONs are not reparsed just to
+  determine whether a repository is already finished;
+- successful repositories are saved immediately;
+- previously failed repositories remain skipped unless `--retry-failed` is explicitly used.
+
+Before a long run, a useful production smoke test is:
+
+```bash
+research-process-steps-all --workers 16 --repo-timeout-seconds 60 --max-new 200
+```
+
+If that completes normally, resume the full corpus with:
+
+```bash
+research-process-steps-all --workers 16 --repo-timeout-seconds 60
+```
+
+Passing `--workers 32` in Git mode is accepted but intentionally capped to 16
+concurrent workers for stability.
