@@ -77,3 +77,36 @@ def test_git_tree_metadata_matches_git_objects(tmp_path: Path):
     assert readme["type"] == "blob"
     assert readme["size"] == len(b"# Demo\n")
     assert git_acquisition._read_blob(repo, readme["sha"], None) == b"# Demo\n"
+
+
+def test_batch_blob_reader_reads_multiple_blobs(tmp_path: Path):
+    repo = tmp_path / "repo"
+    repo.mkdir()
+    _git(repo, "init")
+    _git(repo, "config", "user.email", "test@example.com")
+    _git(repo, "config", "user.name", "Test User")
+
+    first = repo / "a.py"
+    second = repo / "b.py"
+    first.write_text("print('a')\n", encoding="utf-8")
+    second.write_text("print('b')\n", encoding="utf-8")
+    _git(repo, "add", ".")
+    _git(repo, "commit", "-m", "initial")
+
+    tree_raw = subprocess.run(
+        ["git", "ls-tree", "-r", "-l", "-z", "HEAD"],
+        cwd=repo,
+        check=True,
+        capture_output=True,
+    ).stdout
+    items = [
+        item
+        for item in git_acquisition._parse_ls_tree(tree_raw)
+        if item.get("type") == "blob"
+    ]
+
+    blobs = git_acquisition._read_blobs_batch(repo, items, None)
+
+    assert blobs[items[0]["sha"]] in {b"print('a')\n", b"print('b')\n"}
+    assert blobs[items[1]["sha"]] in {b"print('a')\n", b"print('b')\n"}
+    assert set(blobs.values()) == {b"print('a')\n", b"print('b')\n"}
