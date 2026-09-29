@@ -82,3 +82,18 @@ def test_result_path_check_is_available_for_fast_resume():
     from research_process_steps.storage import result_path
     path = result_path("https://github.com/example/repo")
     assert path.name.endswith(".json")
+
+
+def test_api_quota_available_respects_reserve():
+    assert all_repositories.api_quota_available(
+        {"remaining": 5000, "limit": 5000, "used": 0, "reset": 0},
+        reserve=100,
+    )
+    assert not all_repositories.api_quota_available(
+        {"remaining": 102, "limit": 5000, "used": 4898, "reset": 0},
+        reserve=100,
+    )
+    assert not all_repositories.api_quota_available(
+        {"remaining": 0, "limit": 5000, "used": 5000, "reset": 0},
+        reserve=100,
+    )
