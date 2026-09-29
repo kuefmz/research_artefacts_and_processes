@@ -409,7 +409,8 @@ def run_all(
                         {
                             "timestamp": utc_now(),
                             "event": "rate_limit_waiting",
-                            "pending_workers": len(pending_futures),
+                            "pending_tasks": len(pending_futures),
+                            "configured_workers": workers,
                             "remaining_wait_seconds": remaining,
                             "resume_after_epoch": int(pause_until),
                         },
