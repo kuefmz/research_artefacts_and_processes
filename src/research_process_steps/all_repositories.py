@@ -235,7 +235,6 @@ def run_all(
     }
     write_progress(progress_path, stats)
     write_progress(latest_progress_path, stats)
-    write_progress(latest_progress_path, stats)
 
     append_jsonl(
         log_path,
@@ -556,7 +555,7 @@ def run_all(
         except KeyboardInterrupt:
             stats["updated_at"] = utc_now()
             write_progress(progress_path, stats)
-        write_progress(latest_progress_path, stats)
+            write_progress(latest_progress_path, stats)
             append_jsonl(
                 log_path,
                 {
@@ -588,12 +587,14 @@ def run_all(
                     "full_name": stored.get("repository", {}).get("full_name"),
                     "file_count": stored.get("repository", {}).get("file_count", 0),
                     "raw_cache_path": stored.get("repository", {}).get("raw_cache_path"),
+                    "selected_mode": outcome,
                 },
             )
             print(
                 f"[{index}/{len(repositories)}] stored "
                 f"{stored.get('repository', {}).get('full_name', repo_url)} "
-                f"({stored.get('repository', {}).get('file_count', 0)} files)",
+                f"({stored.get('repository', {}).get('file_count', 0)} files) "
+                f"[{outcome}]",
                 flush=True,
             )
         else:
@@ -611,7 +612,7 @@ def run_all(
             }
             append_jsonl(log_path, error_event)
             append_jsonl(error_path, error_event)
-            print(f"[{index}/{len(repositories)}] ERROR {repo_url}: {error}", flush=True)
+            print(f"[{index}/{len(repositories)}] ERROR {repo_url}: {outcome}", flush=True)
 
         write_progress(progress_path, stats)
         write_progress(latest_progress_path, stats)
@@ -662,7 +663,7 @@ def run_all(
                     )
                     stats["updated_at"] = utc_now()
                     write_progress(progress_path, stats)
-                write_progress(latest_progress_path, stats)
+                    write_progress(latest_progress_path, stats)
                     print(
                         f"GitHub rate-limit pause active; ~{remaining}s remaining. "
                         f"{len(future_info)} tasks in flight, "
