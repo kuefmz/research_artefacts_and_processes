@@ -70,3 +70,15 @@ def test_run_all_signature_accepts_workers():
     signature = inspect.signature(all_repositories.run_all)
     assert "workers" in signature.parameters
     assert "repo_timeout_seconds" in signature.parameters
+
+
+def test_run_all_signature_includes_smoke_test_limit():
+    import inspect
+    signature = inspect.signature(all_repositories.run_all)
+    assert "max_new" in signature.parameters
+
+
+def test_result_path_check_is_available_for_fast_resume():
+    from research_process_steps.storage import result_path
+    path = result_path("https://github.com/example/repo")
+    assert path.name.endswith(".json")
