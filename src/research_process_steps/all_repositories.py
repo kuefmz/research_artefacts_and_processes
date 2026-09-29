@@ -170,6 +170,13 @@ def run_all(
     if limit is not None:
         repositories = repositories[:limit]
 
+    requested_workers = max(1, workers)
+    effective_workers = (
+        min(requested_workers, 16)
+        if acquisition_mode == "git"
+        else requested_workers
+    )
+
     log_dir.mkdir(parents=True, exist_ok=True)
     log_path = log_dir / "run_all.jsonl"
     error_path = log_dir / "errors.jsonl"
@@ -208,7 +215,8 @@ def run_all(
         "log_file": str(log_path),
         "error_file": str(error_path),
         "authenticated_rate_limit": auth_status,
-        "workers": workers,
+        "requested_workers": requested_workers,
+        "workers": effective_workers,
         "repo_timeout_seconds": repo_timeout_seconds,
         "acquisition_mode": acquisition_mode,
     }
@@ -223,6 +231,9 @@ def run_all(
             "repositories": len(repositories),
             "rate_limit": auth_status,
             "raw_cache_dir": str(raw_cache_dir),
+            "requested_workers": requested_workers,
+            "workers": effective_workers,
+            "acquisition_mode": acquisition_mode,
         },
     )
 
@@ -386,15 +397,96 @@ def run_all(
                         time.sleep(min(30 * (2 ** (attempt - 1)), 5 * 60))
         return index, repo_url, None, last_error
 
-    with ThreadPoolExecutor(max_workers=workers) as executor:
-        futures = {
-            executor.submit(execute_one, index, repo_url): (index, repo_url)
-            for index, repo_url in pending
-        }
-        pending_futures = set(futures)
-        while pending_futures:
-            done, pending_futures = wait(
-                pending_futures,
+    if requested_workers != effective_workers:
+        print(
+            f"Git acquisition safety cap: requested {requested_workers} workers; "
+            f"using {effective_workers}.",
+            flush=True,
+        )
+
+    def record_finished_future(future, future_info: dict[Any, tuple[int, str]]) -> None:
+        index, repo_url = future_info[future]
+        stats["last_repository"] = repo_url
+        try:
+            _, _, stored, error = future.result()
+        except KeyboardInterrupt:
+            stats["updated_at"] = utc_now()
+            write_progress(progress_path, stats)
+            append_jsonl(
+                log_path,
+                {
+                    "timestamp": utc_now(),
+                    "event": "batch_interrupted",
+                    "index": index,
+                    "repo_url": repo_url,
+                },
+            )
+            raise
+
+        if stored is not None:
+            stats["completed_now"] += 1
+            stats["processed"] += 1
+            stats["updated_at"] = utc_now()
+            append_jsonl(
+                log_path,
+                {
+                    "timestamp": utc_now(),
+                    "event": "repository_complete",
+                    "index": index,
+                    "total": len(repositories),
+                    "repo_url": repo_url,
+                    "execution_id": stored.get("execution", {}).get("id"),
+                    "full_name": stored.get("repository", {}).get("full_name"),
+                    "file_count": stored.get("repository", {}).get("file_count", 0),
+                    "raw_cache_path": stored.get("repository", {}).get("raw_cache_path"),
+                },
+            )
+            print(
+                f"[{index}/{len(repositories)}] stored "
+                f"{stored.get('repository', {}).get('full_name', repo_url)} "
+                f"({stored.get('repository', {}).get('file_count', 0)} files)",
+                flush=True,
+            )
+        else:
+            stats["errors"] += 1
+            stats["processed"] += 1
+            stats["updated_at"] = utc_now()
+            error_event = {
+                "timestamp": utc_now(),
+                "event": "repository_error",
+                "index": index,
+                "total": len(repositories),
+                "repo_url": repo_url,
+                "attempts": max_retries,
+                "error": error,
+            }
+            append_jsonl(log_path, error_event)
+            append_jsonl(error_path, error_event)
+            print(f"[{index}/{len(repositories)}] ERROR {repo_url}: {error}", flush=True)
+
+        write_progress(progress_path, stats)
+
+    # Keep only a small bounded set of futures in memory. Previously every
+    # remaining repository (~100k) was submitted at once, making stall
+    # reporting misleading and wasting substantial memory.
+    max_inflight = max(effective_workers, effective_workers * 2)
+    next_pending = 0
+    future_info: dict[Any, tuple[int, str]] = {}
+
+    with ThreadPoolExecutor(max_workers=effective_workers) as executor:
+        def fill_inflight() -> None:
+            nonlocal next_pending
+            while len(future_info) < max_inflight and next_pending < len(pending):
+                index, repo_url = pending[next_pending]
+                next_pending += 1
+                future = executor.submit(execute_one, index, repo_url)
+                future_info[future] = (index, repo_url)
+
+        fill_inflight()
+
+        while future_info:
+            done, _ = wait(
+                set(future_info),
                 timeout=120,
                 return_when=FIRST_COMPLETED,
             )
@@ -402,6 +494,8 @@ def run_all(
             if not done:
                 with rate_limit_lock:
                     pause_until = rate_limit_pause_until
+
+                queued_remaining = len(pending) - next_pending
                 if pause_until > time.time():
                     remaining = int(max(1, pause_until - time.time()))
                     append_jsonl(
@@ -409,8 +503,9 @@ def run_all(
                         {
                             "timestamp": utc_now(),
                             "event": "rate_limit_waiting",
-                            "pending_tasks": len(pending_futures),
-                            "configured_workers": workers,
+                            "inflight_tasks": len(future_info),
+                            "queued_remaining": queued_remaining,
+                            "configured_workers": effective_workers,
                             "remaining_wait_seconds": remaining,
                             "resume_after_epoch": int(pause_until),
                         },
@@ -419,97 +514,46 @@ def run_all(
                     write_progress(progress_path, stats)
                     print(
                         f"GitHub rate-limit pause active; ~{remaining}s remaining. "
-                        f"{len(pending_futures)} workers will resume automatically.",
+                        f"{len(future_info)} tasks in flight, "
+                        f"{queued_remaining} not yet submitted.",
                         flush=True,
                     )
                     continue
 
-                stuck = [
+                active_sample = [
                     {
-                        "index": futures[future][0],
-                        "repo_url": futures[future][1],
+                        "index": future_info[future][0],
+                        "repo_url": future_info[future][1],
                     }
-                    for future in list(pending_futures)[:20]
+                    for future in list(future_info)[:min(20, len(future_info))]
                 ]
                 append_jsonl(
                     log_path,
                     {
                         "timestamp": utc_now(),
                         "event": "batch_stall_warning",
-                        "pending_workers": len(pending_futures),
-                        "sample_pending": stuck,
+                        "inflight_tasks": len(future_info),
+                        "queued_remaining": queued_remaining,
+                        "configured_workers": effective_workers,
+                        "sample_inflight": active_sample,
                     },
                 )
                 stats["updated_at"] = utc_now()
                 write_progress(progress_path, stats)
                 print(
                     f"WARNING: no repository completed for 120s; "
-                    f"{len(pending_futures)} futures still pending.",
+                    f"{len(future_info)} tasks are in flight "
+                    f"(max {effective_workers} running), "
+                    f"{queued_remaining} remain unsubmitted.",
                     flush=True,
                 )
                 continue
 
             for future in done:
-                index, repo_url = futures[future]
-                stats["last_repository"] = repo_url
-                try:
-                    _, _, stored, error = future.result()
-                except KeyboardInterrupt:
-                    stats["updated_at"] = utc_now()
-                    write_progress(progress_path, stats)
-                    append_jsonl(
-                        log_path,
-                        {
-                            "timestamp": utc_now(),
-                            "event": "batch_interrupted",
-                            "index": index,
-                            "repo_url": repo_url,
-                        },
-                    )
-                    raise
+                record_finished_future(future, future_info)
+                del future_info[future]
 
-                if stored is not None:
-                    stats["completed_now"] += 1
-                    stats["processed"] += 1
-                    stats["updated_at"] = utc_now()
-                    append_jsonl(
-                        log_path,
-                        {
-                            "timestamp": utc_now(),
-                            "event": "repository_complete",
-                            "index": index,
-                            "total": len(repositories),
-                            "repo_url": repo_url,
-                            "execution_id": stored.get("execution", {}).get("id"),
-                            "full_name": stored.get("repository", {}).get("full_name"),
-                            "file_count": stored.get("repository", {}).get("file_count", 0),
-                            "raw_cache_path": stored.get("repository", {}).get("raw_cache_path"),
-                        },
-                    )
-                    print(
-                        f"[{index}/{len(repositories)}] stored "
-                        f"{stored.get('repository', {}).get('full_name', repo_url)} "
-                        f"({stored.get('repository', {}).get('file_count', 0)} files)",
-                        flush=True,
-                    )
-                else:
-                    stats["errors"] += 1
-                    stats["processed"] += 1
-                    stats["updated_at"] = utc_now()
-                    error_event = {
-                        "timestamp": utc_now(),
-                        "event": "repository_error",
-                        "index": index,
-                        "total": len(repositories),
-                        "repo_url": repo_url,
-                        "attempts": max_retries,
-                        "error": error,
-                    }
-                    append_jsonl(log_path, error_event)
-                    append_jsonl(error_path, error_event)
-                    print(f"[{index}/{len(repositories)}] ERROR {repo_url}: {error}", flush=True)
-
-                write_progress(progress_path, stats)
+            fill_inflight()
 
     stats["finished_at"] = utc_now()
     stats["updated_at"] = stats["finished_at"]
@@ -593,7 +637,10 @@ def main() -> None:
         "--workers",
         type=int,
         default=4,
-        help="Concurrent repository workers (default: 4). Use 2-6 conservatively.",
+        help=(
+            "Concurrent repository workers (default: 4). Git mode is safety-capped "
+            "at 16 even if a higher value is requested."
+        ),
     )
     parser.add_argument(
         "--repo-timeout-seconds",
