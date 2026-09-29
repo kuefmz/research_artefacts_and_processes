@@ -165,6 +165,7 @@ def run_all(
     retry_failed: bool,
     acquisition_mode: str,
     limit: int | None = None,
+    max_new: int | None = None,
 ) -> dict[str, Any]:
     repositories = load_repositories(dataset_path)
     if limit is not None:
@@ -284,6 +285,11 @@ def run_all(
             )
         else:
             pending.append((index, repo_url))
+
+    if max_new is not None:
+        pending = pending[:max(0, max_new)]
+        stats["max_new"] = max_new
+        stats["new_repositories_scheduled"] = len(pending)
 
     write_progress(progress_path, stats)
 
@@ -659,7 +665,15 @@ def main() -> None:
     parser.add_argument(
         "--limit",
         type=int,
-        help="Optional first-N repository limit for a small test run.",
+        help="Optional first-N repository limit before resume filtering.",
+    )
+    parser.add_argument(
+        "--max-new",
+        type=int,
+        help=(
+            "After skipping successful/previously failed repositories, process at "
+            "most this many unseen repositories. Useful for a production smoke test."
+        ),
     )
     args = parser.parse_args()
 
@@ -683,6 +697,7 @@ def main() -> None:
         retry_failed=args.retry_failed,
         acquisition_mode=args.acquisition_mode,
         limit=args.limit,
+        max_new=args.max_new,
     )
     print(json.dumps(result, indent=2), flush=True)
 
