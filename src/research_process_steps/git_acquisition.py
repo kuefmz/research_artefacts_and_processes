@@ -65,18 +65,33 @@ def _run_git(
     timeout: float = 60.0,
     text: bool = True,
 ) -> subprocess.CompletedProcess:
+    """Run Git with both process and low-speed network timeouts."""
     env = dict(os.environ)
     env["GIT_TERMINAL_PROMPT"] = "0"
     env["GIT_LFS_SKIP_SMUDGE"] = "1"
-    return subprocess.run(
-        ["git", *args],
-        cwd=cwd,
-        env=env,
-        check=True,
-        capture_output=True,
-        text=text,
-        timeout=timeout,
-    )
+
+    # Prevent git-remote-https from occupying a worker indefinitely when a
+    # transfer stops making meaningful progress.
+    env["GIT_CONFIG_COUNT"] = "2"
+    env["GIT_CONFIG_KEY_0"] = "http.lowSpeedLimit"
+    env["GIT_CONFIG_VALUE_0"] = "1024"
+    env["GIT_CONFIG_KEY_1"] = "http.lowSpeedTime"
+    env["GIT_CONFIG_VALUE_1"] = "20"
+
+    try:
+        return subprocess.run(
+            ["git", *args],
+            cwd=cwd,
+            env=env,
+            check=True,
+            capture_output=True,
+            text=text,
+            timeout=timeout,
+        )
+    except subprocess.TimeoutExpired as exc:
+        raise RepositoryTimeoutError(
+            f"Git command exceeded its {timeout:.1f}s timeout."
+        ) from exc
 
 
 def _resolve_head(repository_url: str, deadline: float | None) -> tuple[str, str]:
