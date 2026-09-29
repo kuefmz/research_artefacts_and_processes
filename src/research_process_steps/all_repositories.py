@@ -121,6 +121,10 @@ def write_progress(path: Path, payload: dict[str, Any]) -> None:
     tmp_path.replace(path)
 
 
+def api_quota_available(status: dict[str, int], reserve: int) -> bool:
+    return status["remaining"] > reserve + API_REQUESTS_PER_UNCACHED_REPOSITORY
+
+
 def wait_for_safe_quota(
     token: str,
     *,
@@ -174,16 +178,20 @@ def run_all(
     requested_workers = max(1, workers)
     effective_workers = (
         min(requested_workers, 16)
-        if acquisition_mode == "git"
+        if acquisition_mode in {"git", "hybrid"}
         else requested_workers
     )
 
     log_dir.mkdir(parents=True, exist_ok=True)
-    log_path = log_dir / "run_all.jsonl"
+    run_id = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+    run_dir = log_dir / "runs" / run_id
+    run_dir.mkdir(parents=True, exist_ok=True)
+    log_path = run_dir / "events.jsonl"
     error_path = log_dir / "errors.jsonl"
-    progress_path = log_dir / "progress.json"
+    progress_path = run_dir / "progress.json"
+    latest_progress_path = log_dir / "progress.json"
 
-    if acquisition_mode == "api":
+    if acquisition_mode in {"api", "hybrid"}:
         auth_status = get_rate_limit(token)
         if auth_status["limit"] < 5000:
             raise RuntimeError(
@@ -201,6 +209,7 @@ def run_all(
         }
 
     stats: dict[str, Any] = {
+        "run_id": run_id,
         "started_at": utc_now(),
         "updated_at": utc_now(),
         "dataset": str(dataset_path),
@@ -220,8 +229,13 @@ def run_all(
         "workers": effective_workers,
         "repo_timeout_seconds": repo_timeout_seconds,
         "acquisition_mode": acquisition_mode,
+        "api_completed": 0,
+        "fallback_completed": 0,
+        "api_checks": 0,
     }
     write_progress(progress_path, stats)
+    write_progress(latest_progress_path, stats)
+    write_progress(latest_progress_path, stats)
 
     append_jsonl(
         log_path,
@@ -235,6 +249,8 @@ def run_all(
             "requested_workers": requested_workers,
             "workers": effective_workers,
             "acquisition_mode": acquisition_mode,
+            "run_id": run_id,
+            "run_dir": str(run_dir),
         },
     )
 
@@ -292,6 +308,7 @@ def run_all(
         stats["new_repositories_scheduled"] = len(pending)
 
     write_progress(progress_path, stats)
+    write_progress(latest_progress_path, stats)
 
     rate_limit_lock = threading.Lock()
     rate_limit_pause_until = 0.0
@@ -341,29 +358,58 @@ def run_all(
     def execute_one(index: int, repo_url: str) -> tuple[int, str, dict[str, Any] | None, str | None]:
         last_error = ""
         for attempt in range(1, max_retries + 1):
-            while True:
-                try:
-                    wait_for_global_rate_limit()
-                    append_jsonl(
-                        log_path,
-                        {
-                            "timestamp": utc_now(),
-                            "event": "repository_start",
-                            "index": index,
-                            "total": len(repositories),
-                            "repo_url": repo_url,
-                            "attempt": attempt,
-                            "rate_limit_before": "managed_from_response_headers",
-                        },
-                    )
-                    if acquisition_mode == "git":
-                        result = analyze_github_repository_git(
-                            repo_url,
-                            max_content_bytes=max_content_bytes,
-                            raw_cache_dir=raw_cache_dir,
-                            timeout_seconds=repo_timeout_seconds,
+            started = time.monotonic()
+            selected_mode = acquisition_mode
+
+            def log_stage(stage: str) -> None:
+                append_jsonl(
+                    log_path,
+                    {
+                        "timestamp": utc_now(),
+                        "event": "repository_stage",
+                        "index": index,
+                        "repo_url": repo_url,
+                        "mode": selected_mode,
+                        "stage": stage,
+                        "elapsed_seconds": round(time.monotonic() - started, 3),
+                    },
+                )
+
+            try:
+                rate_status = None
+                if acquisition_mode == "hybrid":
+                    # GitHub documents GET /rate_limit as not consuming the primary
+                    # REST quota. Check it for every repository dispatch so API use
+                    # resumes automatically as soon as quota is available again.
+                    try:
+                        rate_status = get_rate_limit(token)
+                        with rate_limit_lock:
+                            stats["api_checks"] += 1
+                        selected_mode = (
+                            "api"
+                            if api_quota_available(rate_status, rate_limit_reserve)
+                            else "fallback"
                         )
-                    else:
+                    except Exception as exc:
+                        selected_mode = "fallback"
+                        rate_status = {"check_error": f"{type(exc).__name__}: {exc}"}
+
+                append_jsonl(
+                    log_path,
+                    {
+                        "timestamp": utc_now(),
+                        "event": "repository_start",
+                        "index": index,
+                        "total": len(repositories),
+                        "repo_url": repo_url,
+                        "attempt": attempt,
+                        "selected_mode": selected_mode,
+                        "rate_limit_before": rate_status,
+                    },
+                )
+
+                if selected_mode == "api":
+                    try:
                         result = analyze_github_repository(
                             repo_url,
                             token=token,
@@ -371,41 +417,128 @@ def run_all(
                             raw_cache_dir=raw_cache_dir,
                             timeout_seconds=repo_timeout_seconds,
                         )
-                    stored = save_result(repo_url, result)
-                    return index, repo_url, stored, None
-                except GitHubRateLimitError as exc:
-                    register_global_rate_limit(exc, repo_url)
-                    wait_for_global_rate_limit()
-                    continue
-                except Exception as exc:
-                    last_error = f"{type(exc).__name__}: {exc}"
-                    timed_out = isinstance(exc, RepositoryTimeoutError)
-                    forbidden = (
-                        "GitHub request failed (403)" in last_error
-                        or "GitHub content request failed (403)" in last_error
+                        result.setdefault("repository", {})["acquisition"] = "github_rest_api"
+                    except GitHubRateLimitError as exc:
+                        # Never wait out the REST window in hybrid mode. Fall back
+                        # immediately, then the next worker checks API health again.
+                        if acquisition_mode != "hybrid":
+                            raise
+                        append_jsonl(
+                            log_path,
+                            {
+                                "timestamp": utc_now(),
+                                "event": "api_rate_limit_fallback",
+                                "index": index,
+                                "repo_url": repo_url,
+                                "status_code": exc.status_code,
+                                "wait_seconds": exc.wait_seconds,
+                                "remaining_header": exc.remaining,
+                                "reset_header": exc.reset,
+                            },
+                        )
+                        selected_mode = "fallback"
+                        result = analyze_github_repository_git(
+                            repo_url,
+                            max_content_bytes=max_content_bytes,
+                            raw_cache_dir=raw_cache_dir,
+                            timeout_seconds=repo_timeout_seconds,
+                            stage_callback=log_stage,
+                        )
+                    except Exception as exc:
+                        detail = f"{type(exc).__name__}: {exc}"
+                        is_not_found = (
+                            "GitHub request failed (404)" in detail
+                            or "GitHub content request failed (404)" in detail
+                        )
+                        if acquisition_mode != "hybrid" or is_not_found:
+                            raise
+                        append_jsonl(
+                            log_path,
+                            {
+                                "timestamp": utc_now(),
+                                "event": "api_error_fallback",
+                                "index": index,
+                                "repo_url": repo_url,
+                                "api_error": detail,
+                            },
+                        )
+                        selected_mode = "fallback"
+                        result = analyze_github_repository_git(
+                            repo_url,
+                            max_content_bytes=max_content_bytes,
+                            raw_cache_dir=raw_cache_dir,
+                            timeout_seconds=repo_timeout_seconds,
+                            stage_callback=log_stage,
+                        )
+                elif selected_mode in {"git", "fallback"}:
+                    result = analyze_github_repository_git(
+                        repo_url,
+                        max_content_bytes=max_content_bytes,
+                        raw_cache_dir=raw_cache_dir,
+                        timeout_seconds=repo_timeout_seconds,
+                        stage_callback=log_stage,
                     )
-                    permanent = (
-                        "GitHub request failed (404)" in last_error
-                        or "GitHub content request failed (404)" in last_error
-                        or forbidden
-                        or timed_out
+                else:
+                    result = analyze_github_repository(
+                        repo_url,
+                        token=token,
+                        max_content_bytes=max_content_bytes,
+                        raw_cache_dir=raw_cache_dir,
+                        timeout_seconds=repo_timeout_seconds,
                     )
-                    append_jsonl(
-                        log_path,
-                        {
-                            "timestamp": utc_now(),
-                            "event": "repository_timeout" if timed_out else "repository_retry",
-                            "index": index,
-                            "total": len(repositories),
-                            "repo_url": repo_url,
-                            "attempt": attempt,
-                            "error": last_error,
-                        },
-                    )
-                    if permanent:
-                        break
-                    if attempt < max_retries:
-                        time.sleep(min(30 * (2 ** (attempt - 1)), 5 * 60))
+                    result.setdefault("repository", {})["acquisition"] = "github_rest_api"
+
+                result.setdefault("repository", {})["batch_selected_mode"] = selected_mode
+                stored = save_result(repo_url, result)
+                append_jsonl(
+                    log_path,
+                    {
+                        "timestamp": utc_now(),
+                        "event": "repository_finish",
+                        "index": index,
+                        "repo_url": repo_url,
+                        "selected_mode": selected_mode,
+                        "elapsed_seconds": round(time.monotonic() - started, 3),
+                        "status": "success",
+                    },
+                )
+                return index, repo_url, stored, selected_mode
+            except GitHubRateLimitError as exc:
+                # API-only mode keeps historical pause behavior.
+                register_global_rate_limit(exc, repo_url)
+                wait_for_global_rate_limit()
+                last_error = f"{type(exc).__name__}: {exc}"
+            except Exception as exc:
+                last_error = f"{type(exc).__name__}: {exc}"
+                timed_out = isinstance(exc, RepositoryTimeoutError)
+                forbidden = (
+                    "GitHub request failed (403)" in last_error
+                    or "GitHub content request failed (403)" in last_error
+                )
+                permanent = (
+                    "GitHub request failed (404)" in last_error
+                    or "GitHub content request failed (404)" in last_error
+                    or forbidden
+                    or timed_out
+                )
+                append_jsonl(
+                    log_path,
+                    {
+                        "timestamp": utc_now(),
+                        "event": "repository_timeout" if timed_out else "repository_retry",
+                        "index": index,
+                        "total": len(repositories),
+                        "repo_url": repo_url,
+                        "attempt": attempt,
+                        "selected_mode": selected_mode,
+                        "elapsed_seconds": round(time.monotonic() - started, 3),
+                        "error": last_error,
+                    },
+                )
+                if permanent:
+                    break
+                if attempt < max_retries:
+                    time.sleep(min(30 * (2 ** (attempt - 1)), 5 * 60))
         return index, repo_url, None, last_error
 
     if requested_workers != effective_workers:
@@ -419,10 +552,11 @@ def run_all(
         index, repo_url = future_info[future]
         stats["last_repository"] = repo_url
         try:
-            _, _, stored, error = future.result()
+            _, _, stored, outcome = future.result()
         except KeyboardInterrupt:
             stats["updated_at"] = utc_now()
             write_progress(progress_path, stats)
+        write_progress(latest_progress_path, stats)
             append_jsonl(
                 log_path,
                 {
@@ -435,6 +569,10 @@ def run_all(
             raise
 
         if stored is not None:
+            if outcome == "api":
+                stats["api_completed"] += 1
+            else:
+                stats["fallback_completed"] += 1
             stats["completed_now"] += 1
             stats["processed"] += 1
             stats["updated_at"] = utc_now()
@@ -469,13 +607,14 @@ def run_all(
                 "total": len(repositories),
                 "repo_url": repo_url,
                 "attempts": max_retries,
-                "error": error,
+                "error": outcome,
             }
             append_jsonl(log_path, error_event)
             append_jsonl(error_path, error_event)
             print(f"[{index}/{len(repositories)}] ERROR {repo_url}: {error}", flush=True)
 
         write_progress(progress_path, stats)
+        write_progress(latest_progress_path, stats)
 
     # Keep only a small bounded set of futures in memory. Previously every
     # remaining repository (~100k) was submitted at once, making stall
@@ -523,6 +662,7 @@ def run_all(
                     )
                     stats["updated_at"] = utc_now()
                     write_progress(progress_path, stats)
+                write_progress(latest_progress_path, stats)
                     print(
                         f"GitHub rate-limit pause active; ~{remaining}s remaining. "
                         f"{len(future_info)} tasks in flight, "
@@ -551,6 +691,7 @@ def run_all(
                 )
                 stats["updated_at"] = utc_now()
                 write_progress(progress_path, stats)
+                write_progress(latest_progress_path, stats)
                 print(
                     f"WARNING: no repository completed for 120s; "
                     f"{len(future_info)} tasks are in flight "
@@ -569,6 +710,7 @@ def run_all(
     stats["finished_at"] = utc_now()
     stats["updated_at"] = stats["finished_at"]
     write_progress(progress_path, stats)
+    write_progress(latest_progress_path, stats)
     append_jsonl(
         log_path,
         {
@@ -636,12 +778,13 @@ def main() -> None:
     )
     parser.add_argument(
         "--acquisition-mode",
-        choices=["git", "api"],
-        default="git",
+        choices=["hybrid", "api", "git"],
+        default="hybrid",
         help=(
-            "Repository acquisition method. 'git' (default) uses an exact shallow "
-            "Git snapshot and does not consume GitHub REST core quota. 'api' keeps "
-            "the historical REST/tree/raw acquisition path."
+            "Repository acquisition method. 'hybrid' (default) checks GitHub API "
+            "quota before every repository, uses REST while healthy, and immediately "
+            "falls back to an exact non-REST snapshot when REST is unavailable. "
+            "'api' forces REST and 'git' forces the fallback path."
         ),
     )
     parser.add_argument(
@@ -678,10 +821,9 @@ def main() -> None:
     args = parser.parse_args()
 
     token = os.getenv("GITHUB_TOKEN", "")
-    if args.acquisition_mode == "api" and not token:
+    if args.acquisition_mode in {"api", "hybrid"} and not token:
         raise SystemExit(
-            "GITHUB_TOKEN is required for --acquisition-mode api. "
-            "The default git acquisition mode does not require the REST API token."
+            "GITHUB_TOKEN is required for API or hybrid acquisition mode."
         )
 
     result = run_all(
