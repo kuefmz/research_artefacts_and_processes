@@ -22,7 +22,7 @@ from .analyzer import (
     RepositoryTimeoutError,
     analyze_github_repository,
 )
-from .storage import load_result, normalize_repo_url, save_result
+from .storage import normalize_repo_url, result_id, result_path, save_result
 from .git_acquisition import analyze_github_repository_git
 
 
@@ -242,8 +242,8 @@ def run_all(
     pending: list[tuple[int, str]] = []
     for index, repo_url in enumerate(repositories, start=1):
         stats["last_repository"] = repo_url
-        existing = load_result(repo_url)
-        if existing is not None:
+        existing_path = result_path(repo_url)
+        if existing_path.exists():
             stats["already_completed"] += 1
             stats["processed"] += 1
             stats["updated_at"] = utc_now()
@@ -255,10 +255,15 @@ def run_all(
                     "index": index,
                     "total": len(repositories),
                     "repo_url": repo_url,
-                    "execution_id": existing.get("execution", {}).get("id"),
+                    "execution_id": result_id(repo_url),
                 },
             )
-            print(f"[{index}/{len(repositories)}] already stored: {repo_url}", flush=True)
+            if stats["already_completed"] % 1000 == 0:
+                print(
+                    f"Resume scan: {stats['already_completed']:,} successful "
+                    f"repositories already stored.",
+                    flush=True,
+                )
         elif normalize_repo_url(repo_url) in previously_failed:
             stats["previously_failed_skipped"] += 1
             stats["processed"] += 1
