@@ -100,38 +100,63 @@ def _read_blobs_batch(
     items: list[dict[str, Any]],
     deadline: float | None,
 ) -> dict[str, bytes]:
-    """Read many Git blobs with one git cat-file process."""
+    """Read Git blobs in bounded batches while preserving exact blob bytes."""
     if not items:
         return {}
 
-    payload = "".join(f"{item['sha']}\n" for item in items)
-    result = _run_git(
-        ["cat-file", "--batch"],
-        cwd=repo_dir,
-        timeout=_remaining(deadline, 60),
-        text=False,
-        input_data=payload.encode("ascii"),
-    )
-
-    stream = memoryview(result.stdout)
-    offset = 0
+    max_batch_files = 256
+    max_batch_bytes = 32 * 1024 * 1024
     blobs: dict[str, bytes] = {}
+
+    batch: list[dict[str, Any]] = []
+    batch_bytes = 0
+
+    def flush(current: list[dict[str, Any]]) -> None:
+        if not current:
+            return
+        payload = "".join(f"{item['sha']}\n" for item in current)
+        result = _run_git(
+            ["cat-file", "--batch"],
+            cwd=repo_dir,
+            timeout=_remaining(deadline, 60),
+            text=False,
+            input_data=payload.encode("ascii"),
+        )
+
+        offset = 0
+        output = result.stdout
+        for item in current:
+            newline = output.find(b"\n", offset)
+            if newline < 0:
+                raise RuntimeError("Malformed git cat-file --batch output.")
+            header = output[offset:newline].decode("ascii", errors="replace")
+            offset = newline + 1
+            parts = header.split()
+            if len(parts) != 3 or parts[1] != "blob":
+                raise RuntimeError(f"Unexpected git cat-file header: {header}")
+            size = int(parts[2])
+            data = output[offset:offset + size]
+            offset += size
+            if offset >= len(output) or output[offset:offset + 1] != b"\n":
+                raise RuntimeError("Malformed git cat-file blob delimiter.")
+            offset += 1
+            blobs[item["sha"]] = data
+
     for item in items:
-        newline = result.stdout.find(b"\n", offset)
-        if newline < 0:
-            raise RuntimeError("Malformed git cat-file --batch output.")
-        header = bytes(stream[offset:newline]).decode("ascii", errors="replace")
-        offset = newline + 1
-        parts = header.split()
-        if len(parts) != 3 or parts[1] != "blob":
-            raise RuntimeError(f"Unexpected git cat-file header: {header}")
-        size = int(parts[2])
-        data = bytes(stream[offset:offset + size])
-        offset += size
-        if offset >= len(result.stdout) or result.stdout[offset:offset + 1] != b"\n":
-            raise RuntimeError("Malformed git cat-file blob delimiter.")
-        offset += 1
-        blobs[item["sha"]] = data
+        size = int(item.get("size") or 0)
+        if batch and (
+            len(batch) >= max_batch_files
+            or batch_bytes + size > max_batch_bytes
+        ):
+            flush(batch)
+            batch = []
+            batch_bytes = 0
+            _check_deadline(deadline, str(repo_dir))
+
+        batch.append(item)
+        batch_bytes += size
+
+    flush(batch)
     return blobs
 
 def _snapshot_dir(cache_root: Path, owner: str, repo: str, ref: str) -> Path:
