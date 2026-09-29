@@ -1,21 +1,24 @@
-"""Git-based repository acquisition that avoids GitHub REST API quota.
+"""Exact repository acquisition without GitHub REST-core quota.
 
-This module preserves the existing deterministic heuristic layer. Repository
-state is acquired with Git's smart HTTP protocol, then file-tree metadata and
-blob contents are read from the exact checked-out commit locally.
+The default path resolves the repository HEAD with a lightweight git ls-remote,
+downloads that exact commit as one GitHub codeload archive, and feeds the same
+deterministic heuristic layer the exact file bytes.
 """
 
 from __future__ import annotations
 
 import hashlib
+import io
 import json
 import os
 import subprocess
+import tarfile
 import tempfile
 import time
 from pathlib import Path
 from typing import Any
 from urllib.parse import quote, urlparse
+from urllib.request import Request, urlopen
 
 from .analyzer import (
     DEFAULT_CONTENT_LIMIT,
@@ -190,12 +193,112 @@ def _read_blob(repo_dir: Path, sha: str, deadline: float | None) -> bytes:
     """Compatibility helper used by tests and small callers."""
     return _read_blobs_batch(repo_dir, [{"sha": sha}], deadline)[sha]
 
+def _resolve_head(repository_url: str, deadline: float | None) -> tuple[str, str]:
+    """Resolve default branch and exact HEAD commit with a tiny Git transfer."""
+    result = _run_git(
+        ["ls-remote", "--symref", repository_url, "HEAD"],
+        timeout=min(_remaining(deadline, 15), 15),
+    )
+    branch = ""
+    commit = ""
+    for line in result.stdout.splitlines():
+        if line.startswith("ref: ") and line.endswith("\tHEAD"):
+            ref = line.split("\t", 1)[0][5:]
+            prefix = "refs/heads/"
+            branch = ref[len(prefix):] if ref.startswith(prefix) else ref
+        elif line.endswith("\tHEAD"):
+            commit = line.split("\t", 1)[0].strip()
+    if not branch or not commit:
+        raise RuntimeError("Could not resolve repository default branch/HEAD.")
+    return branch, commit
+
+
+def _download_archive(
+    owner: str,
+    repo: str,
+    commit_sha: str,
+    deadline: float | None,
+) -> bytes:
+    """Download one immutable GitHub archive for the resolved commit."""
+    url = (
+        "https://codeload.github.com/"
+        f"{quote(owner)}/{quote(repo)}/tar.gz/{quote(commit_sha, safe='')}"
+    )
+    request = Request(url, headers={"User-Agent": "research-process-steps/0.1"})
+    timeout = min(_remaining(deadline, 45), 45)
+    with urlopen(request, timeout=timeout) as response:
+        chunks: list[bytes] = []
+        while True:
+            _check_deadline(deadline, f"https://github.com/{owner}/{repo}")
+            chunk = response.read(1024 * 1024)
+            if not chunk:
+                break
+            chunks.append(chunk)
+        return b"".join(chunks)
+
+
+def _git_blob_sha(data: bytes) -> str:
+    digest = hashlib.sha1()
+    digest.update(f"blob {len(data)}\0".encode("ascii"))
+    digest.update(data)
+    return digest.hexdigest()
+
+
+def _archive_files(archive_bytes: bytes) -> list[dict[str, Any]]:
+    """Return exact blob-like file records from a GitHub tar archive."""
+    records: list[dict[str, Any]] = []
+    with tarfile.open(fileobj=io.BytesIO(archive_bytes), mode="r:gz") as tar:
+        members = tar.getmembers()
+        roots = {
+            member.name.split("/", 1)[0]
+            for member in members
+            if member.name and "/" in member.name
+        }
+        if len(roots) != 1:
+            raise RuntimeError("Could not identify a unique GitHub archive root.")
+        root_prefix = next(iter(roots)) + "/"
+
+        for member in members:
+            if not member.name.startswith(root_prefix):
+                continue
+            path = member.name[len(root_prefix):].rstrip("/")
+            if not path or member.isdir():
+                continue
+            if member.issym():
+                data = member.linkname.encode("utf-8")
+                mode = "120000"
+            elif member.isfile() or member.islnk():
+                extracted = tar.extractfile(member)
+                if extracted is None:
+                    continue
+                data = extracted.read()
+                mode = "100755" if (member.mode & 0o111) else "100644"
+            else:
+                # Gitlinks/submodules are not blobs and were never classified
+                # by the historical analyzer either.
+                continue
+
+            records.append(
+                {
+                    "path": path,
+                    "mode": mode,
+                    "type": "blob",
+                    "sha": _git_blob_sha(data),
+                    "size": len(data),
+                    "_raw": data,
+                }
+            )
+    records.sort(key=lambda item: item["path"].lower())
+    return records
+
+
 def analyze_github_repository_git(
     repository_url: str,
     *,
     max_content_bytes: int = DEFAULT_CONTENT_LIMIT,
     raw_cache_dir: Path | str | None = None,
     timeout_seconds: float | None = None,
+    stage_callback=None,
 ) -> dict[str, Any]:
     """Analyze an exact GitHub HEAD snapshot without REST API requests."""
 
@@ -207,140 +310,125 @@ def analyze_github_repository_git(
     owner, repo = _parse(repository_url)
     cache_root = Path(raw_cache_dir or DEFAULT_RAW_CACHE_DIR)
 
+    def stage(name: str) -> None:
+        if stage_callback is not None:
+            stage_callback(name)
+
+    _check_deadline(deadline, repository_url)
+    stage("resolve_head")
+    branch, commit_sha = _resolve_head(repository_url, deadline)
+
+    snapshot_cache = _snapshot_dir(cache_root, owner, repo, branch)
+    snapshot_cache.mkdir(parents=True, exist_ok=True)
+
+    stage("download_archive")
+    archive_bytes = _download_archive(owner, repo, commit_sha, deadline)
+
+    stage("parse_archive")
+    blobs = _archive_files(archive_bytes)
     _check_deadline(deadline, repository_url)
 
-    with tempfile.TemporaryDirectory(prefix="rps-git-") as temp:
-        checkout = Path(temp) / "repo"
-        _run_git(
-            [
-                "clone",
-                "--depth", "1",
-                "--no-tags",
-                "--single-branch",
-                repository_url,
-                str(checkout),
-            ],
-            timeout=_remaining(deadline, 60),
-        )
+    # Tree SHA here is the exact immutable commit identifier plus per-blob SHAs.
+    # The commit SHA is the authoritative repository snapshot identifier.
+    tree_fingerprint = hashlib.sha256()
+    for item in blobs:
+        tree_fingerprint.update(item["mode"].encode("ascii"))
+        tree_fingerprint.update(b"\0")
+        tree_fingerprint.update(item["path"].encode("utf-8", errors="surrogateescape"))
+        tree_fingerprint.update(b"\0")
+        tree_fingerprint.update(item["sha"].encode("ascii"))
+        tree_fingerprint.update(b"\n")
+    snapshot_fingerprint = tree_fingerprint.hexdigest()
 
-        branch = _run_git(
-            ["symbolic-ref", "--short", "HEAD"],
-            cwd=checkout,
-            timeout=_remaining(deadline, 5),
-        ).stdout.strip()
-        commit_sha = _run_git(
-            ["rev-parse", "HEAD"], cwd=checkout, timeout=_remaining(deadline, 5)
-        ).stdout.strip()
-
-        snapshot_cache = _snapshot_dir(cache_root, owner, repo, branch)
-        snapshot_cache.mkdir(parents=True, exist_ok=True)
-
-        tree_sha = _run_git(
-            ["rev-parse", "HEAD^{tree}"], cwd=checkout, timeout=_remaining(deadline, 10)
-        ).stdout.strip()
-
-        tree_raw = _run_git(
-            ["ls-tree", "-r", "-t", "-l", "-z", "HEAD"],
-            cwd=checkout,
-            timeout=_remaining(deadline, 30),
-            text=False,
-        ).stdout
-        tree_items = _parse_ls_tree(tree_raw)
-        blobs = [item for item in tree_items if item.get("type") == "blob"]
-        blobs.sort(key=lambda item: item["path"].lower())
-
-        tree_payload = {
-            "sha": tree_sha,
-            "tree": tree_items,
-            "truncated": False,
-            "git_acquisition": True,
-            "resolved_commit_sha": commit_sha,
-        }
-        (snapshot_cache / "tree.json").write_text(
-            json.dumps(tree_payload, indent=2, ensure_ascii=False) + "\n",
-            encoding="utf-8",
-        )
-        (snapshot_cache / "manifest.json").write_text(
-            json.dumps(
-                {
-                    "repository_url": repository_url,
-                    "full_name": f"{owner}/{repo}",
-                    "ref": branch,
-                    "resolved_commit_sha": commit_sha,
-                    "tree_sha": tree_sha,
-                    "acquisition": "git_shallow_clone",
-                },
-                indent=2,
-                ensure_ascii=False,
-            ) + "\n",
-            encoding="utf-8",
-        )
-
-        scannable_items = [
-            item
+    tree_payload = {
+        "resolved_commit_sha": commit_sha,
+        "snapshot_fingerprint_sha256": snapshot_fingerprint,
+        "tree": [
+            {key: value for key, value in item.items() if key != "_raw"}
             for item in blobs
-            if _content_is_scannable(item["path"])
-            and int(item.get("size") or 0) <= max_content_bytes
-        ]
-        raw_content_by_sha = _read_blobs_batch(checkout, scannable_items, deadline)
+        ],
+        "truncated": False,
+        "archive_acquisition": True,
+    }
+    (snapshot_cache / "tree.json").write_text(
+        json.dumps(tree_payload, indent=2, ensure_ascii=False) + "\n",
+        encoding="utf-8",
+    )
+    (snapshot_cache / "manifest.json").write_text(
+        json.dumps(
+            {
+                "repository_url": repository_url,
+                "full_name": f"{owner}/{repo}",
+                "ref": branch,
+                "resolved_commit_sha": commit_sha,
+                "snapshot_fingerprint_sha256": snapshot_fingerprint,
+                "acquisition": "exact_commit_codeload_archive",
+            },
+            indent=2,
+            ensure_ascii=False,
+        ) + "\n",
+        encoding="utf-8",
+    )
 
-        output_files: list[dict[str, Any]] = []
-        for item in blobs:
-            _check_deadline(deadline, repository_url)
-            path = item["path"]
-            size = int(item.get("size") or 0)
-            content = ""
-            content_scanned = False
+    stage("analyze_files")
+    output_files: list[dict[str, Any]] = []
+    for item in blobs:
+        _check_deadline(deadline, repository_url)
+        path = item["path"]
+        size = int(item.get("size") or 0)
+        content = ""
+        content_scanned = False
 
-            if _content_is_scannable(path) and size <= max_content_bytes:
-                raw = raw_content_by_sha[item["sha"]]
-                content = raw.decode("utf-8", errors="replace")
-                content_scanned = True
-                cached = snapshot_cache / "content" / Path(path)
-                cached.parent.mkdir(parents=True, exist_ok=True)
-                cached.write_text(content, encoding="utf-8")
+        if _content_is_scannable(path) and size <= max_content_bytes:
+            content = item["_raw"].decode("utf-8", errors="replace")
+            content_scanned = True
+            cached = snapshot_cache / "content" / Path(path)
+            cached.parent.mkdir(parents=True, exist_ok=True)
+            cached.write_text(content, encoding="utf-8")
 
-            result = analyze_file(path, content)
-            encoded_path = quote(path, safe="/")
-            file_url = (
-                f"https://github.com/{quote(owner)}/{quote(repo)}/blob/"
-                f"{quote(branch, safe='')}/{encoded_path}"
-            )
-            for evidence in result["evidence"]:
-                for match in evidence.get("matches", []):
-                    line = match.get("line")
-                    match["url"] = f"{file_url}#L{line}" if line else file_url
+        result = analyze_file(path, content)
+        encoded_path = quote(path, safe="/")
+        file_url = (
+            f"https://github.com/{quote(owner)}/{quote(repo)}/blob/"
+            f"{quote(commit_sha, safe='')}/{encoded_path}"
+        )
+        for evidence in result["evidence"]:
+            for match in evidence.get("matches", []):
+                line = match.get("line")
+                match["url"] = f"{file_url}#L{line}" if line else file_url
 
-            file_path = Path(path)
-            result.update(
-                {
-                    "file_name": file_path.name,
-                    "directory": "" if str(file_path.parent) == "." else str(file_path.parent),
-                    "extension": file_path.suffix.lower(),
-                    "size_bytes": size,
-                    "content_scanned": content_scanned,
-                    "blob_sha": item.get("sha"),
-                    "file_url": file_url,
-                    "ref": branch,
-                }
-            )
-            output_files.append(result)
+        file_path = Path(path)
+        result.update(
+            {
+                "file_name": file_path.name,
+                "directory": "" if str(file_path.parent) == "." else str(file_path.parent),
+                "extension": file_path.suffix.lower(),
+                "size_bytes": size,
+                "content_scanned": content_scanned,
+                "blob_sha": item.get("sha"),
+                "file_url": file_url,
+                "ref": branch,
+            }
+        )
+        output_files.append(result)
 
     step_counts = {
         step: sum(step in record["steps"] for record in output_files)
         for step in RESEARCH_PROCESS_STEPS
     }
 
+    stage("complete")
     return {
         "repository": {
             "url": repository_url,
             "full_name": f"{owner}/{repo}",
             "ref": branch,
             "resolved_commit_sha": commit_sha,
-            "commit_tree_sha": tree_sha,
+            "commit_tree_sha": None,
+            "snapshot_fingerprint_sha256": snapshot_fingerprint,
             "file_count": len(output_files),
             "raw_cache_path": str(snapshot_cache),
-            "acquisition": "git_shallow_clone",
+            "acquisition": "exact_commit_codeload_archive",
         },
         "method": {
             "name": "deterministic_research_process_step_heuristics",
