@@ -708,3 +708,15 @@ slots or the general explorer. Server jobs are tracked in memory; stopping the
 server stops its jobs, while completed heuristic results and reports remain
 on disk. Restart the runner to reuse completed results and attempt remaining
 repositories.
+
+### Rerun all stored repositories
+
+Click **Rerun all heuristics** in Executed repositories to refresh every stored
+repository with the current rules. This runs in the background with progress
+and a completion/error summary. Each successful result replaces its stored
+output; a failed repository keeps its previous result and does not stop the
+remaining reruns. The scope is all stored repositories, regardless of the
+current view or filter. New repositories are handled by the existing run buttons.
+
+API: `POST /api/publication-collection/jobs` with `{"action":"rerun_all"}`.
+Poll `GET /api/publication-collection/jobs/{id}` for progress and results.

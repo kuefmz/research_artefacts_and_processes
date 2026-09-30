@@ -88,3 +88,46 @@ def test_job_rejects_concurrent_run(monkeypatch):
     client = TestClient(api.app)
     response = client.post("/api/publication-collection/jobs", json={"action": "analytics"})
     assert response.status_code == 409
+
+
+def test_rerun_all_refreshes_each_stored_repository_and_continues_after_errors(monkeypatch):
+    monkeypatch.setattr(api, "COLLECTION_JOBS", {})
+    urls = ["https://github.com/example/one", "https://github.com/example/two"]
+    monkeypatch.setattr(api, "list_executions", lambda: [{"repo_url": url} for url in urls + urls[:1]])
+    calls = []
+
+    def execute(url, **kwargs):
+        assert kwargs["force"] is True
+        calls.append(url)
+        if url == urls[0]:
+            raise RuntimeError("unavailable")
+        return {"execution": {"id": "fresh"}}, True
+
+    class Worker:
+        def submit(self, function, *args):
+            function(*args)
+
+    monkeypatch.setattr(api, "execute_repository_once", execute)
+    monkeypatch.setattr(api, "COLLECTION_WORKER", Worker())
+    client = TestClient(api.app)
+    response = client.post("/api/publication-collection/jobs", json={"action": "rerun_all"})
+    assert response.status_code == 200
+    state = client.get(f"/api/publication-collection/jobs/{response.json()['id']}").json()
+    assert calls == urls
+    assert state["status"] == "completed"
+    assert state["progress"]["index"] == 2
+    assert len(state["result"]["completed"]) == 1
+    assert state["result"]["errors"] == [{"repo_url": urls[0], "error": "unavailable"}]
+
+
+def test_rerun_all_empty_store_completes(monkeypatch):
+    monkeypatch.setattr(api, "COLLECTION_JOBS", {})
+    monkeypatch.setattr(api, "list_executions", lambda: [])
+
+    class Worker:
+        def submit(self, function, *args):
+            function(*args)
+
+    monkeypatch.setattr(api, "COLLECTION_WORKER", Worker())
+    job = api.start_collection_job(api.CollectionJobRequest(action="rerun_all"))
+    assert api.collection_job(job["id"])["result"] == {"completed": [], "errors": []}

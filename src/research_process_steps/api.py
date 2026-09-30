@@ -232,7 +232,7 @@ def publication_collection() -> dict[str, Any]:
 
 
 class CollectionJobRequest(BaseModel):
-    action: str = Field(pattern="^(heuristics|analytics)$")
+    action: str = Field(pattern="^(heuristics|analytics|rerun_all)$")
 
 
 def _execute_collection_job(job_id: str, action: str) -> None:
@@ -240,7 +240,20 @@ def _execute_collection_job(job_id: str, action: str) -> None:
         with COLLECTION_JOB_LOCK:
             COLLECTION_JOBS[job_id]["progress"] = item
     try:
-        result = run_collection(progress) if action == "heuristics" else run_collection_analytics()
+        if action == "rerun_all":
+            repositories = COLLECTION_JOBS[job_id]["repositories"]
+            result = {"completed": [], "errors": []}
+            for index, repo_url in enumerate(repositories, 1):
+                progress({"index": index, "total": len(repositories), "repo_url": repo_url, "status": "rerunning"})
+                try:
+                    refreshed, _ = execute_repository_once(
+                        repo_url, token=os.getenv("GITHUB_TOKEN"), force=True,
+                    )
+                    result["completed"].append({"repo_url": repo_url, "execution": refreshed.get("execution")})
+                except Exception as exc:
+                    result["errors"].append({"repo_url": repo_url, "error": str(exc)})
+        else:
+            result = run_collection(progress) if action == "heuristics" else run_collection_analytics()
         with COLLECTION_JOB_LOCK:
             COLLECTION_JOBS[job_id].update(status="completed", result=result)
     except Exception as exc:
@@ -258,6 +271,10 @@ def start_collection_job(request: CollectionJobRequest) -> dict[str, str]:
             COLLECTION_JOBS.pop(next(iter(COLLECTION_JOBS)))
         job_id = uuid4().hex
         COLLECTION_JOBS[job_id] = {"id": job_id, "action": request.action, "status": "running"}
+        if request.action == "rerun_all":
+            COLLECTION_JOBS[job_id]["repositories"] = list(dict.fromkeys(
+                item["repo_url"] for item in list_executions()
+            ))
     COLLECTION_WORKER.submit(_execute_collection_job, job_id, request.action)
     return {"id": job_id, "status": "running"}
 

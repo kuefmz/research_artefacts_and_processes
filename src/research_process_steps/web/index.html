@@ -213,7 +213,8 @@
           <h2>Executed repositories</h2>
           <p id="historyCount" class="panel-copy">Loading stored results…</p>
         </div>
-        <button id="refreshHistory" class="secondary small">Refresh</button>
+        <div><button id="rerunAll" class="secondary">Rerun all heuristics</button>
+        <button id="refreshHistory" class="secondary small">Refresh</button></div>
       </div>
       <div class="table-wrap history-wrap">
         <table>
@@ -660,11 +661,12 @@
     }
 
     async function runCollectionJob(action) {
-      const buttons = [document.getElementById("runCollection"), document.getElementById("analyzeCollection")];
+      const buttons = [document.getElementById("runCollection"), document.getElementById("analyzeCollection"), document.getElementById("rerunAll")];
       const jobStatus = document.getElementById("collectionJobStatus");
       buttons.forEach(button => button.disabled = true);
       jobStatus.className = "status";
-      jobStatus.textContent = `Starting dataset ${action}…`;
+      jobStatus.textContent = action === "rerun_all" ? "Starting rerun of all stored repositories…" : `Starting dataset ${action}…`;
+      if (action === "rerun_all") jobStatus.scrollIntoView({block: "center"});
       try {
         const response = await fetch("/api/publication-collection/jobs", {
           method: "POST", headers: {"Content-Type":"application/json"}, body: JSON.stringify({action})
@@ -683,7 +685,7 @@
               const coverage = state.result.dataset_scope;
               jobStatus.textContent = `All five analytics completed for ${coverage.completed_count} of ${coverage.repository_count} dataset repositories. Reports saved in data/publication_collection_analysis.`;
             } else {
-              jobStatus.textContent = `Heuristics finished: ${state.result.completed.length} stored/reused, ${state.result.errors.length} errors.`;
+              jobStatus.textContent = `Heuristics finished: ${state.result.completed.length} ${action === "rerun_all" ? "rerun" : "stored/reused"}, ${state.result.errors.length} errors.`;
               if (state.result.errors.length) jobStatus.textContent += " " + state.result.errors.map(item => `${item.repo_url}: ${item.error}`).join("; ");
             }
             await loadSelection(); await loadHistory();
@@ -701,6 +703,7 @@
         buttons.forEach(button => button.disabled = false);
       }
     }
+    document.getElementById("rerunAll").addEventListener("click", () => runCollectionJob("rerun_all"));
     document.getElementById("runCollection").addEventListener("click", () => runCollectionJob("heuristics"));
     document.getElementById("analyzeCollection").addEventListener("click", () => runCollectionJob("analytics"));
     collectionSearch.addEventListener("input", renderSelection);
