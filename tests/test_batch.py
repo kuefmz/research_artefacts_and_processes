@@ -71,3 +71,37 @@ def test_random_selection_excludes_stored_repositories(tmp_path, monkeypatch):
     assert len(selected) == 10
     assert urls[0] not in selected
     assert len(set(selected)) == 10
+
+
+def test_forced_rerun_replaces_result_and_preserves_old_result_on_failure(tmp_path, monkeypatch):
+    import pytest
+
+    monkeypatch.setenv("RPS_RESULTS_DIR", str(tmp_path))
+    repo = "https://github.com/example/repo"
+    storage.save_result(repo, {"files": [{"path": "old.R"}]})
+    monkeypatch.setattr(batch, "analyze_github_repository", lambda *args, **kwargs: {"files": [{"path": "new.R"}]})
+    result, executed = batch.execute_repository_once(repo, force=True)
+    assert executed is True
+    assert result["cache"]["hit"] is False
+    assert storage.load_result(repo)["files"] == [{"path": "new.R"}]
+
+    def fail(*args, **kwargs):
+        raise RuntimeError("Analysis failed")
+
+    monkeypatch.setattr(batch, "analyze_github_repository", fail)
+    with pytest.raises(RuntimeError, match="Analysis failed"):
+        batch.execute_repository_once(repo, force=True)
+    assert storage.load_result(repo)["files"] == [{"path": "new.R"}]
+    assert not storage.lock_path(repo).exists()
+
+
+def test_forced_rerun_respects_execution_lock(tmp_path, monkeypatch):
+    import pytest
+
+    monkeypatch.setenv("RPS_RESULTS_DIR", str(tmp_path))
+    repo = "https://github.com/example/repo"
+    storage.save_result(repo, {"files": []})
+    assert storage.acquire_execution(repo)
+    with pytest.raises(RuntimeError, match="already being executed"):
+        batch.execute_repository_once(repo, force=True)
+    assert storage.lock_path(repo).exists()

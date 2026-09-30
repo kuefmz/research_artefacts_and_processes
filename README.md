@@ -226,7 +226,10 @@ Request:
 }
 ```
 
-Optional fields are `ref` and `max_content_bytes`.
+Optional fields are `ref`, `max_content_bytes`, and `force` (default `false`).
+Set `force: true` to rerun heuristics using the current rules and replace the stored
+result. The web interface provides **Rerun heuristics** for stored repositories
+and in the single-repository form. Failed reruns preserve the previous result.
 
 A file-level response contains evidence such as:
 
@@ -274,7 +277,7 @@ Repository file names in the result table link directly to the corresponding Git
 
 ## Persistent random corpus experiments
 
-Repository analyses are now **write-once by repository URL**. Before any manual or batch execution, the application checks the persistent result store. If that repository already has a result, the stored JSON is returned and GitHub is not scanned again.
+Repository analyses are **cached by repository URL**. Normal requests reuse stored results. Explicit reruns (`force: true` on `POST /api/analyze`) bypass repository and demo caches, scan the default branch again, and replace the stored result. Random batches continue to select never-executed repositories.
 
 By default, results are written under:
 

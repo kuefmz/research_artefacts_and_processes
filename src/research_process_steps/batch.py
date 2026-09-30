@@ -69,23 +69,24 @@ def execute_repository_once(
     *,
     token: str | None = None,
     max_content_bytes: int = DEFAULT_CONTENT_LIMIT,
+    force: bool = False,
 ) -> tuple[dict[str, Any], bool]:
-    """Return (result, executed_now). A stored repository is never rerun."""
+    """Return (result, executed_now); force explicitly refreshes stored results."""
     existing = load_result(repo_url)
-    if existing is not None:
+    if existing is not None and not force:
         return existing, False
 
     if not acquire_execution(repo_url):
         # Another process/server request owns this repository. Do not execute it.
         existing = load_result(repo_url)
-        if existing is not None:
+        if existing is not None and not force:
             return existing, False
         raise RuntimeError(f"Repository is already being executed: {repo_url}")
 
     try:
         # Check again after obtaining the lock in case another process completed it.
         existing = load_result(repo_url)
-        if existing is not None:
+        if existing is not None and not force:
             return existing, False
 
         result = analyze_github_repository(

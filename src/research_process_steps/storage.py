@@ -1,7 +1,7 @@
 """Persistent result store for repository-level heuristic executions.
 
 A normalized GitHub repository URL is the identity key. Once a result exists for
-that repository, callers must reuse it rather than execute the repository again.
+that repository, callers reuse it unless an explicit rerun is requested.
 """
 
 from __future__ import annotations
