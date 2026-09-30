@@ -623,3 +623,37 @@ research-process-steps-all --workers 16 --repo-timeout-seconds 60
 
 Passing `--workers 32` in Git mode is accepted but intentionally capped to 16
 concurrent workers for stability.
+
+
+## First-ten-paper manual review
+
+The frontend defaults to the first **10 papers** in source dataset order, linked
+ to **8 distinct repositories**. The fixed selection and source provenance live
+in `src/research_process_steps/datasets/first_10_papers.json`. These are recorded
+OpenAIRE associations; paper/repository relevance remains unreviewed. Use the
+view selector to switch back to the full repository explorer.
+
+Install and run from the repository root:
+
+```bash
+pip install -e .
+python scripts/run_selected_heuristics.py --list
+python scripts/run_selected_heuristics.py
+research-process-steps-web
+```
+
+The equivalent installed runner is `research-process-steps-selected`. It runs
+only the existing deterministic file heuristics on the selected eight repos,
+reuses results already in `RPS_RESULTS_DIR` (default `data/heuristic_results`),
+continues after individual retrieval failures, and exits nonzero if any fail.
+It does not execute repository code or download papers. Set `GITHUB_TOKEN` if
+needed for GitHub API access. Results use the existing analyzer's current-source
+collection behavior; they are not automatically pinned to publication versions.
+
+Open http://127.0.0.1:8000 to browse the selection. Each paper has an initially
+empty PDF slot, its original paper link, and an upload control (maximum 25 MB).
+Uploaded PDFs persist in `data/selected_papers/D01.pdf` through `D10.pdf`, or in
+`RPS_PAPERS_DIR` if set. You can also copy PDFs to those paths manually. Uploading
+again replaces that paper's PDF. No PDFs are bundled or fetched automatically.
+Keep the server local; uploads and stored outputs use the existing unauthenticated
+local interface.

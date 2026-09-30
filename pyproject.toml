@@ -17,6 +17,7 @@ research-process-steps = "research_process_steps.analyzer:main"
 research-process-steps-web = "research_process_steps.api:run"
 research-process-steps-precache = "research_process_steps.api:precache_demo"
 research-process-steps-random = "research_process_steps.batch:main"
+research-process-steps-selected = "research_process_steps.selected_repositories:main"
 research-process-steps-all = "research_process_steps.all_repositories:main"
 research-process-steps-analyze = "research_process_steps.analyze_results:main"
 
@@ -34,7 +35,7 @@ research-process-steps-analyze-all = "research_process_steps.analyze_all:main"
 where = ["src"]
 
 [tool.setuptools.package-data]
-research_process_steps = ["web/*.html", "demo_cache/*.json"]
+research_process_steps = ["web/*.html", "demo_cache/*.json", "datasets/*.json"]
 
 [tool.pytest.ini_options]
 pythonpath = ["src", "."]

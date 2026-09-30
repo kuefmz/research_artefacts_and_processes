@@ -149,6 +149,22 @@
     </p>
 
     <section class="panel">
+      <div class="section-head">
+        <div><h2>First 10 papers · 8 repositories</h2>
+          <p class="panel-copy">Dataset associations await manual verification. PDFs start empty; upload your own copies below.</p></div>
+        <select id="scope" aria-label="Repository view">
+          <option value="selected">Selected repositories</option>
+          <option value="all">All repositories</option>
+        </select>
+      </div>
+      <div id="selectionStatus" class="status">Loading selection…</div>
+      <div class="table-wrap history-wrap"><table>
+        <thead><tr><th>Repository</th><th>Heuristics</th><th>Paper</th><th>Uploaded PDF</th></tr></thead>
+        <tbody id="selectionRows"></tbody>
+      </table></div>
+    </section>
+
+    <section class="panel general-panel hidden">
       <h2>Analyze one repository</h2>
       <div class="form-row">
         <input id="repo" type="url" placeholder="https://github.com/owner/repository"
@@ -164,7 +180,7 @@
       <div id="status" class="status"></div>
     </section>
 
-    <section class="panel">
+    <section class="panel general-panel hidden">
       <h2>Run random unseen repositories</h2>
       <p class="panel-copy">
         Repositories are sampled from the compiled OpenAIRE GitHub corpus. Repositories with stored results are excluded
@@ -205,6 +221,7 @@
     </section>
 
     <section id="results" class="hidden">
+      <p id="resultStatus" class="status"></p>
       <div id="summary" class="summary"></div>
 
       <div class="controls">
@@ -252,6 +269,79 @@
     const searchInput = document.getElementById("search");
     const stepFilter = document.getElementById("stepFilter");
     let data = null;
+    const scope = document.getElementById("scope");
+    const selectionStatus = document.getElementById("selectionStatus");
+    const selectionRows = document.getElementById("selectionRows");
+    let selectedUrls = new Set();
+
+    async function loadSelection() {
+      try {
+        const response = await fetch("/api/selection");
+        const payload = await response.json();
+        if (!response.ok) throw new Error(payload.detail || "Could not load selection.");
+        selectedUrls = new Set(payload.repositories.map(item => item.repo_url.toLowerCase()));
+        const executions = new Map(payload.repositories.map(item => [item.repo_url, item.execution]));
+        selectionRows.innerHTML = payload.papers.map(paper => {
+          const execution = executions.get(paper.github_url);
+          const name = paper.github_url.replace("https://github.com/", "");
+          return `<tr>
+            <td><a class="repo-link" href="${escapeHtml(paper.github_url)}" target="_blank" rel="noopener">${escapeHtml(name)}</a></td>
+            <td>${execution
+              ? `<button class="secondary small selected-result" data-id="${escapeHtml(execution.id)}">View output</button>`
+              : `<button class="secondary small selected-analyze" data-url="${escapeHtml(paper.github_url)}">Run heuristics</button>`}</td>
+            <td><span class="meta">${escapeHtml(paper.paper_id)}</span><br><a class="repo-link" href="${escapeHtml(paper.paper_url)}" target="_blank" rel="noopener">${escapeHtml(paper.title)}</a></td>
+            <td>${paper.pdf_url ? `<a class="repo-link" href="${escapeHtml(paper.pdf_url)}" target="_blank" rel="noopener">Open PDF</a>` : '<span class="none">No PDF uploaded</span>'}
+              <br><label class="meta">${paper.pdf_url ? "Replace PDF" : "Upload PDF"}
+              <input class="paper-upload" type="file" accept="application/pdf,.pdf" data-id="${escapeHtml(paper.paper_id)}" aria-label="Upload PDF for ${escapeHtml(paper.paper_id)}" style="max-width:240px"></label></td>
+          </tr>`;
+        }).join("");
+        selectionRows.querySelectorAll(".selected-result").forEach(button => {
+          button.addEventListener("click", () => loadStoredResult(button.dataset.id));
+        });
+        selectionRows.querySelectorAll(".selected-analyze").forEach(button => {
+          button.addEventListener("click", async () => {
+            button.disabled = true;
+            repoInput.value = button.dataset.url;
+            selectionStatus.textContent = `Running heuristics for ${button.dataset.url}…`;
+            const succeeded = await analyze();
+            if (succeeded) {
+              await loadSelection();
+            } else {
+              selectionStatus.className = "status error";
+              selectionStatus.textContent = status.textContent;
+              button.disabled = false;
+            }
+          });
+        });
+        selectionRows.querySelectorAll(".paper-upload").forEach(input => {
+          input.addEventListener("change", async () => {
+            const file = input.files[0];
+            if (!file) return;
+            input.disabled = true;
+            selectionStatus.textContent = `Uploading ${input.dataset.id}…`;
+            try {
+              if (file.size > 25 * 1024 * 1024) throw new Error("PDF must be at most 25 MB.");
+              const response = await fetch(`/api/selection/papers/${input.dataset.id}`, {
+                method: "PUT", headers: {"Content-Type": "application/pdf"}, body: file
+              });
+              const payload = await response.json();
+              if (!response.ok) throw new Error(payload.detail || "Upload failed.");
+              await loadSelection();
+            } catch (error) {
+              selectionStatus.className = "status error";
+              selectionStatus.textContent = error.message;
+              input.disabled = false;
+            }
+          });
+        });
+        selectionStatus.className = "status";
+        selectionStatus.textContent = `${payload.papers.length} papers linked to ${payload.repositories.length} repositories. PDFs are saved on this server (maximum 25 MB each).`;
+      } catch (error) {
+        selectionStatus.className = "status error";
+        selectionStatus.textContent = error.message;
+      }
+    }
+
 
     document.querySelectorAll("[data-url]").forEach(button => {
       button.addEventListener("click", () => {
@@ -367,6 +457,7 @@
 
       const cacheBadge = data.cache?.hit ? '<span class="cache-badge">stored result</span>' : '<span class="cache-badge">newly stored</span>';
       status.innerHTML = `Showing ${filtered.length} of ${data.files.length} files from ${escapeHtml(data.repository.full_name)} @ ${escapeHtml(data.repository.ref)} ${cacheBadge}`;
+      document.getElementById("resultStatus").innerHTML = status.innerHTML;
     }
 
     function showPayload(payload) {
@@ -386,8 +477,9 @@
         const payload = await response.json();
         if (!response.ok) throw new Error(payload.detail || "Could not load stored results.");
 
-        historyCount.textContent = `${payload.count} repositories have persistent results.`;
-        historyRows.innerHTML = payload.repositories.map(item => {
+        const visible = payload.repositories.filter(item => scope.value === "all" || selectedUrls.has(item.repo_url.toLowerCase()));
+        historyCount.textContent = `${visible.length} repositories have persistent results in this view.`;
+        historyRows.innerHTML = visible.map(item => {
           const stepCounts = Object.entries(item.files_per_step || {})
             .filter(([, count]) => count)
             .map(([step, count]) => `${escapeHtml(step)}: ${count}`)
@@ -449,10 +541,12 @@
         if (!response.ok) throw new Error(payload.detail || "Analysis failed.");
         showPayload(payload);
         await loadHistory();
+        return true;
       } catch (error) {
         data = null;
         status.className = "status error";
         status.textContent = error.message;
+        return false;
       } finally {
         clearInterval(timer);
         analyzeButton.disabled = false;
@@ -499,11 +593,17 @@
     batchButtons.forEach(button => {
       button.addEventListener("click", () => runBatch(Number(button.dataset.count)));
     });
-    refreshHistory.addEventListener("click", loadHistory);
+    refreshHistory.addEventListener("click", async () => { await loadSelection(); await loadHistory(); });
+    scope.addEventListener("change", () => {
+      document.querySelectorAll(".general-panel").forEach(panel => panel.classList.toggle("hidden", scope.value !== "all"));
+      results.classList.add("hidden");
+      loadHistory();
+    });
     searchInput.addEventListener("input", renderRows);
     stepFilter.addEventListener("change", renderRows);
 
-    loadHistory();
+    loadSelection().then(loadHistory);
   </script>
 </body>
 </html>
+

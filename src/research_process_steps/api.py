@@ -8,7 +8,7 @@ import os
 from pathlib import Path
 from typing import Any
 
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Request
 from fastapi.responses import FileResponse
 from pydantic import BaseModel, Field
 
@@ -25,6 +25,17 @@ from .storage import (
     load_result_by_id,
     save_result,
 )
+from .selected_repositories import load_selection, selected_repositories
+
+
+def paper_directory() -> Path:
+    return Path(os.getenv("RPS_PAPERS_DIR", "data/selected_papers"))
+
+
+def paper_path(paper_id: str) -> Path:
+    if paper_id not in {paper["paper_id"] for paper in load_selection()["papers"]}:
+        raise HTTPException(status_code=404, detail="Unknown selected paper.")
+    return paper_directory() / f"{paper_id}.pdf"
 
 
 class AnalyzeRequest(BaseModel):
@@ -150,6 +161,59 @@ def health() -> dict[str, Any]:
 def executed_repositories() -> dict[str, Any]:
     executions = list_executions()
     return {"count": len(executions), "repositories": executions}
+
+
+@app.get("/api/selection")
+def selection() -> dict[str, Any]:
+    payload = load_selection()
+    executions = {
+        _normalize_repo_url(item["repo_url"]): item for item in list_executions()
+    }
+    payload["repositories"] = [
+        {"repo_url": url, "execution": executions.get(_normalize_repo_url(url))}
+        for url in selected_repositories()
+    ]
+    for paper in payload["papers"]:
+        paper["pdf_url"] = (
+            f"/api/selection/papers/{paper['paper_id']}"
+            if paper_path(paper["paper_id"]).is_file() else None
+        )
+    return payload
+
+
+@app.get("/api/selection/papers/{paper_id}")
+def selected_paper(paper_id: str) -> FileResponse:
+    path = paper_path(paper_id)
+    if not path.is_file():
+        raise HTTPException(status_code=404, detail="No PDF uploaded yet.")
+    return FileResponse(path, media_type="application/pdf", filename=f"{paper_id}.pdf")
+
+
+@app.put("/api/selection/papers/{paper_id}")
+async def upload_selected_paper(paper_id: str, request: Request) -> dict[str, str]:
+    path = paper_path(paper_id)
+    contents = bytearray()
+    async for chunk in request.stream():
+        contents.extend(chunk)
+        if len(contents) > 25 * 1024 * 1024:
+            raise HTTPException(status_code=413, detail="PDF must be at most 25 MB.")
+    if not contents.startswith(b"%PDF-"):
+        raise HTTPException(status_code=422, detail="Please upload a PDF file.")
+    path.parent.mkdir(parents=True, exist_ok=True)
+    # Unique temporary files avoid collisions between simultaneous uploads.
+    import tempfile
+    with tempfile.NamedTemporaryFile(dir=path.parent, delete=False) as stream:
+        temporary = Path(stream.name)
+        try:
+            stream.write(contents)
+        except BaseException:
+            temporary.unlink(missing_ok=True)
+            raise
+    try:
+        temporary.replace(path)
+    finally:
+        temporary.unlink(missing_ok=True)
+    return {"paper_id": paper_id, "pdf_url": f"/api/selection/papers/{paper_id}"}
 
 
 @app.get("/api/executed/{execution_id}")
