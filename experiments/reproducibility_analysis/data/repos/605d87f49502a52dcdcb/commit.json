@@ -1,0 +1,176 @@
+{
+  "provider": "github",
+  "requested_url": "https://api.github.com/repos/rakitko/NoStRa/commits/master",
+  "retrieved_at": "2026-09-30T11:53:13.356836+00:00",
+  "status": "ok",
+  "http_status": 200,
+  "final_url": "https://api.github.com/repos/rakitko/NoStRa/commits/master",
+  "sha256": "6e950d902cd23c382d7ad46f757ae1c5b07289f3138520275a6908855d932d6a",
+  "content_type": "application/json; charset=utf-8",
+  "data": {
+    "sha": "525e776d20115d8db97b745e153be41e792a92db",
+    "node_id": "MDY6Q29tbWl0OTI1MDI1NjY6NTI1ZTc3NmQyMDExNWQ4ZGI5N2I3NDVlMTUzYmU0MWU3OTJhOTJkYg==",
+    "commit": {
+      "author": {
+        "name": "cyrulnic",
+        "email": "cyrulnic@users.noreply.github.com",
+        "date": "2017-08-24T17:22:04Z"
+      },
+      "committer": {
+        "name": "GitHub",
+        "email": "noreply@github.com",
+        "date": "2017-08-24T17:22:04Z"
+      },
+      "message": "Add files via upload",
+      "tree": {
+        "sha": "80f26c421aac5f8857202f969514585191e023cd",
+        "url": "https://api.github.com/repos/rakitko/NoStRa/git/trees/80f26c421aac5f8857202f969514585191e023cd"
+      },
+      "url": "https://api.github.com/repos/rakitko/NoStRa/git/commits/525e776d20115d8db97b745e153be41e792a92db",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/rakitko/NoStRa/commits/525e776d20115d8db97b745e153be41e792a92db",
+    "html_url": "https://github.com/rakitko/NoStRa/commit/525e776d20115d8db97b745e153be41e792a92db",
+    "comments_url": "https://api.github.com/repos/rakitko/NoStRa/commits/525e776d20115d8db97b745e153be41e792a92db/comments",
+    "author": {
+      "login": "cyrulnic",
+      "id": 13350737,
+      "node_id": "MDQ6VXNlcjEzMzUwNzM3",
+      "avatar_url": "https://avatars.githubusercontent.com/u/13350737?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/cyrulnic",
+      "html_url": "https://github.com/cyrulnic",
+      "followers_url": "https://api.github.com/users/cyrulnic/followers",
+      "following_url": "https://api.github.com/users/cyrulnic/following{/other_user}",
+      "gists_url": "https://api.github.com/users/cyrulnic/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/cyrulnic/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/cyrulnic/subscriptions",
+      "organizations_url": "https://api.github.com/users/cyrulnic/orgs",
+      "repos_url": "https://api.github.com/users/cyrulnic/repos",
+      "events_url": "https://api.github.com/users/cyrulnic/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/cyrulnic/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "web-flow",
+      "id": 19864447,
+      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/web-flow",
+      "html_url": "https://github.com/web-flow",
+      "followers_url": "https://api.github.com/users/web-flow/followers",
+      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+      "organizations_url": "https://api.github.com/users/web-flow/orgs",
+      "repos_url": "https://api.github.com/users/web-flow/repos",
+      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/web-flow/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "634c344d4da24ec498e5aa8242bac51f42cce02a",
+        "url": "https://api.github.com/repos/rakitko/NoStRa/commits/634c344d4da24ec498e5aa8242bac51f42cce02a",
+        "html_url": "https://github.com/rakitko/NoStRa/commit/634c344d4da24ec498e5aa8242bac51f42cce02a"
+      }
+    ],
+    "stats": {
+      "total": 0,
+      "additions": 0,
+      "deletions": 0
+    },
+    "files": [
+      {
+        "sha": "bfeb80b0b9aeb2ce2cf1c65600c50ee3d3b0ebcf",
+        "filename": "Statistics/EnKF-covs/B_tmean_101520.RData",
+        "status": "added",
+        "additions": 0,
+        "deletions": 0,
+        "changes": 0,
+        "blob_url": "https://github.com/rakitko/NoStRa/blob/525e776d20115d8db97b745e153be41e792a92db/Statistics%2FEnKF-covs%2FB_tmean_101520.RData",
+        "raw_url": "https://github.com/rakitko/NoStRa/raw/525e776d20115d8db97b745e153be41e792a92db/Statistics%2FEnKF-covs%2FB_tmean_101520.RData",
+        "contents_url": "https://api.github.com/repos/rakitko/NoStRa/contents/Statistics%2FEnKF-covs%2FB_tmean_101520.RData?ref=525e776d20115d8db97b745e153be41e792a92db"
+      },
+      {
+        "sha": "b4af03b0142ad34c2d1f4c9179a1287eeeaa1c10",
+        "filename": "Statistics/EnKF-covs/B_tmean_101570.RData",
+        "status": "added",
+        "additions": 0,
+        "deletions": 0,
+        "changes": 0,
+        "blob_url": "https://github.com/rakitko/NoStRa/blob/525e776d20115d8db97b745e153be41e792a92db/Statistics%2FEnKF-covs%2FB_tmean_101570.RData",
+        "raw_url": "https://github.com/rakitko/NoStRa/raw/525e776d20115d8db97b745e153be41e792a92db/Statistics%2FEnKF-covs%2FB_tmean_101570.RData",
+        "contents_url": "https://api.github.com/repos/rakitko/NoStRa/contents/Statistics%2FEnKF-covs%2FB_tmean_101570.RData?ref=525e776d20115d8db97b745e153be41e792a92db"
+      },
+      {
+        "sha": "6275312aad32f08c30c561c451140cda18adb4c9",
+        "filename": "Statistics/EnKF-covs/B_tmean_101610.RData",
+        "status": "added",
+        "additions": 0,
+        "deletions": 0,
+        "changes": 0,
+        "blob_url": "https://github.com/rakitko/NoStRa/blob/525e776d20115d8db97b745e153be41e792a92db/Statistics%2FEnKF-covs%2FB_tmean_101610.RData",
+        "raw_url": "https://github.com/rakitko/NoStRa/raw/525e776d20115d8db97b745e153be41e792a92db/Statistics%2FEnKF-covs%2FB_tmean_101610.RData",
+        "contents_url": "https://api.github.com/repos/rakitko/NoStRa/contents/Statistics%2FEnKF-covs%2FB_tmean_101610.RData?ref=525e776d20115d8db97b745e153be41e792a92db"
+      },
+      {
+        "sha": "c07cc73accb1234774cde79836d5945efc6b0096",
+        "filename": "Statistics/EnKF-covs/B_tmean_10500.RData",
+        "status": "added",
+        "additions": 0,
+        "deletions": 0,
+        "changes": 0,
+        "blob_url": "https://github.com/rakitko/NoStRa/blob/525e776d20115d8db97b745e153be41e792a92db/Statistics%2FEnKF-covs%2FB_tmean_10500.RData",
+        "raw_url": "https://github.com/rakitko/NoStRa/raw/525e776d20115d8db97b745e153be41e792a92db/Statistics%2FEnKF-covs%2FB_tmean_10500.RData",
+        "contents_url": "https://api.github.com/repos/rakitko/NoStRa/contents/Statistics%2FEnKF-covs%2FB_tmean_10500.RData?ref=525e776d20115d8db97b745e153be41e792a92db"
+      },
+      {
+        "sha": "98a478b540c0ff44d68efa13c13a35801158db8a",
+        "filename": "Statistics/EnKF-covs/B_tmean_10510.RData",
+        "status": "added",
+        "additions": 0,
+        "deletions": 0,
+        "changes": 0,
+        "blob_url": "https://github.com/rakitko/NoStRa/blob/525e776d20115d8db97b745e153be41e792a92db/Statistics%2FEnKF-covs%2FB_tmean_10510.RData",
+        "raw_url": "https://github.com/rakitko/NoStRa/raw/525e776d20115d8db97b745e153be41e792a92db/Statistics%2FEnKF-covs%2FB_tmean_10510.RData",
+        "contents_url": "https://api.github.com/repos/rakitko/NoStRa/contents/Statistics%2FEnKF-covs%2FB_tmean_10510.RData?ref=525e776d20115d8db97b745e153be41e792a92db"
+      },
+      {
+        "sha": "31e517e37343fd4da01b5fc4cd95d916c07abd0c",
+        "filename": "Statistics/EnKF-covs/B_tmean_10530.RData",
+        "status": "added",
+        "additions": 0,
+        "deletions": 0,
+        "changes": 0,
+        "blob_url": "https://github.com/rakitko/NoStRa/blob/525e776d20115d8db97b745e153be41e792a92db/Statistics%2FEnKF-covs%2FB_tmean_10530.RData",
+        "raw_url": "https://github.com/rakitko/NoStRa/raw/525e776d20115d8db97b745e153be41e792a92db/Statistics%2FEnKF-covs%2FB_tmean_10530.RData",
+        "contents_url": "https://api.github.com/repos/rakitko/NoStRa/contents/Statistics%2FEnKF-covs%2FB_tmean_10530.RData?ref=525e776d20115d8db97b745e153be41e792a92db"
+      },
+      {
+        "sha": "3de16622be0e9f52f24a162e845a9963820e753f",
+        "filename": "Statistics/EnKF-covs/B_tmean_10590.RData",
+        "status": "added",
+        "additions": 0,
+        "deletions": 0,
+        "changes": 0,
+        "blob_url": "https://github.com/rakitko/NoStRa/blob/525e776d20115d8db97b745e153be41e792a92db/Statistics%2FEnKF-covs%2FB_tmean_10590.RData",
+        "raw_url": "https://github.com/rakitko/NoStRa/raw/525e776d20115d8db97b745e153be41e792a92db/Statistics%2FEnKF-covs%2FB_tmean_10590.RData",
+        "contents_url": "https://api.github.com/repos/rakitko/NoStRa/contents/Statistics%2FEnKF-covs%2FB_tmean_10590.RData?ref=525e776d20115d8db97b745e153be41e792a92db"
+      }
+    ]
+  }
+}

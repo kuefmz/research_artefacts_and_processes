@@ -1,0 +1,318 @@
+{
+  "provider": "crossref",
+  "requested_url": "https://api.crossref.org/works/10.1088/1742-6596/1015/3/032055",
+  "retrieved_at": "2026-09-30T11:53:35.938499+00:00",
+  "status": "ok",
+  "http_status": 200,
+  "final_url": "https://api.crossref.org/works/10.1088/1742-6596/1015/3/032055",
+  "sha256": "cdd4dc4ffcbfeb8ac56cb298a473c42ff8d0c7cd36f3737f144bb552cc6e03fa",
+  "content_type": "application/json",
+  "data": {
+    "status": "ok",
+    "message-type": "work",
+    "message-version": "1.0.0",
+    "message": {
+      "indexed": {
+        "date-parts": [
+          [
+            2022,
+            3,
+            29
+          ]
+        ],
+        "date-time": "2022-03-29T17:51:41Z",
+        "timestamp": 1648576301591
+      },
+      "reference-count": 11,
+      "publisher": "IOP Publishing",
+      "license": [
+        {
+          "start": {
+            "date-parts": [
+              [
+                2018,
+                5,
+                1
+              ]
+            ],
+            "date-time": "2018-05-01T00:00:00Z",
+            "timestamp": 1525132800000
+          },
+          "content-version": "tdm",
+          "delay-in-days": 0,
+          "URL": "http://iopscience.iop.org/info/page/text-and-data-mining"
+        },
+        {
+          "start": {
+            "date-parts": [
+              [
+                2018,
+                5,
+                1
+              ]
+            ],
+            "date-time": "2018-05-01T00:00:00Z",
+            "timestamp": 1525132800000
+          },
+          "content-version": "vor",
+          "delay-in-days": 0,
+          "URL": "http://creativecommons.org/licenses/by/3.0/"
+        }
+      ],
+      "content-domain": {
+        "domain": [],
+        "crossmark-restriction": false
+      },
+      "short-container-title": [
+        "J. Phys.: Conf. Ser."
+      ],
+      "published-print": {
+        "date-parts": [
+          [
+            2018,
+            5
+          ]
+        ]
+      },
+      "DOI": "10.1088/1742-6596/1015/3/032055",
+      "type": "journal-article",
+      "created": {
+        "date-parts": [
+          [
+            2018,
+            5,
+            21
+          ]
+        ],
+        "date-time": "2018-05-21T15:14:30Z",
+        "timestamp": 1526915670000
+      },
+      "page": "032055",
+      "source": "Crossref",
+      "is-referenced-by-count": 0,
+      "title": [
+        "Development of DKB ETL module in case of data conversion"
+      ],
+      "prefix": "10.1088",
+      "volume": "1015",
+      "author": [
+        {
+          "given": "A Y",
+          "family": "Kaida",
+          "sequence": "first",
+          "affiliation": [],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        },
+        {
+          "given": "M V",
+          "family": "Golosova",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        },
+        {
+          "given": "M A",
+          "family": "Grigorieva",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        },
+        {
+          "given": "M Y",
+          "family": "Gubin",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        }
+      ],
+      "member": "266",
+      "published-online": {
+        "date-parts": [
+          [
+            2018,
+            5,
+            21
+          ]
+        ]
+      },
+      "reference": [
+        {
+          "key": "1",
+          "volume": "8",
+          "author": "Evans L",
+          "year": "2008",
+          "journal-title": "Journal of Instrumentation",
+          "ISSN": "http://id.crossref.org/issn/1748-0221",
+          "issn-type": "print"
+        },
+        {
+          "key": "2",
+          "doi-asserted-by": "crossref",
+          "DOI": "10.1088/1742-6596/664/3/032013",
+          "volume": "664",
+          "author": "Cranmer K",
+          "year": "2015",
+          "journal-title": "Journal of Physics: Conference Series",
+          "ISSN": "http://id.crossref.org/issn/1742-6596",
+          "issn-type": "print"
+        },
+        {
+          "key": "3",
+          "doi-asserted-by": "crossref",
+          "DOI": "10.1088/1742-6596/762/1/012017",
+          "volume": "762",
+          "author": "Grigorieva M A",
+          "year": "2016",
+          "journal-title": "Journal of Physics: Conference Series",
+          "ISSN": "http://id.crossref.org/issn/1742-6596",
+          "issn-type": "print"
+        },
+        {
+          "key": "4",
+          "author": "Allemang D",
+          "year": "2011",
+          "journal-title": "Semantic web for the working ontologist: effective modeling in RDFS and OWL"
+        },
+        {
+          "key": "5",
+          "author": "ATLAS Collaboration",
+          "year": "1992",
+          "journal-title": "Letter of Intent for a General Purpose pp Experiment at the Large Hadron Collider at CERN"
+        },
+        {
+          "key": "6",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/j.websem.2003.07.003"
+        },
+        {
+          "key": "7",
+          "first-page": "39",
+          "author": "Klepmann M ed Cutt S",
+          "year": "2016",
+          "journal-title": "Making Sense of Stream Processing: The Philosophy Behind Apache Kafka and Scalable Stream Data Platforms"
+        },
+        {
+          "key": "8",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/B978-0-12-805394-2.00002-7"
+        },
+        {
+          "key": "9",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1109/IHMSC.2016.64"
+        },
+        {
+          "key": "10",
+          "author": ""
+        },
+        {
+          "key": "11",
+          "author": ""
+        }
+      ],
+      "container-title": [
+        "Journal of Physics: Conference Series"
+      ],
+      "original-title": [],
+      "link": [
+        {
+          "URL": "http://stacks.iop.org/1742-6596/1015/i=3/a=032055/pdf",
+          "content-type": "application/pdf",
+          "content-version": "vor",
+          "intended-application": "text-mining"
+        },
+        {
+          "URL": "http://stacks.iop.org/1742-6596/1015/i=3/a=032055?key=crossref.28458b01aa8ac719c63eb256a2c2006d",
+          "content-type": "text/html",
+          "content-version": "vor",
+          "intended-application": "text-mining"
+        },
+        {
+          "URL": "http://stacks.iop.org/1742-6596/1015/i=3/a=032055/pdf",
+          "content-type": "application/pdf",
+          "content-version": "vor",
+          "intended-application": "similarity-checking"
+        },
+        {
+          "URL": "http://stacks.iop.org/1742-6596/1015/i=3/a=032055?key=crossref.28458b01aa8ac719c63eb256a2c2006d",
+          "content-type": "text/html",
+          "content-version": "vor",
+          "intended-application": "similarity-checking"
+        }
+      ],
+      "deposited": {
+        "date-parts": [
+          [
+            2020,
+            4,
+            11
+          ]
+        ],
+        "date-time": "2020-04-11T03:28:11Z",
+        "timestamp": 1586575691000
+      },
+      "score": 1,
+      "resource": {
+        "primary": {
+          "URL": "https://iopscience.iop.org/article/10.1088/1742-6596/1015/3/032055"
+        }
+      },
+      "subtitle": [],
+      "short-title": [],
+      "issued": {
+        "date-parts": [
+          [
+            2018,
+            5
+          ]
+        ]
+      },
+      "references-count": 11,
+      "URL": "https://doi.org/10.1088/1742-6596/1015/3/032055",
+      "relation": {},
+      "ISSN": [
+        "1742-6588",
+        "1742-6596"
+      ],
+      "issn-type": [
+        {
+          "value": "1742-6588",
+          "type": "print"
+        },
+        {
+          "value": "1742-6596",
+          "type": "electronic"
+        }
+      ],
+      "subject": [],
+      "published": {
+        "date-parts": [
+          [
+            2018,
+            5
+          ]
+        ]
+      }
+    }
+  }
+}

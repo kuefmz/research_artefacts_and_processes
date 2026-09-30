@@ -1,0 +1,626 @@
+{
+  "provider": "crossref",
+  "requested_url": "https://api.crossref.org/works/10.1371/journal.pone.0199550",
+  "retrieved_at": "2026-09-30T11:53:19.838714+00:00",
+  "status": "ok",
+  "http_status": 200,
+  "final_url": "https://api.crossref.org/works/10.1371/journal.pone.0199550",
+  "sha256": "f65312223d68d39de556060376d9ee7a2932a81469b5d3f390b0a2f2382d5cb8",
+  "content_type": "application/json",
+  "data": {
+    "status": "ok",
+    "message-type": "work",
+    "message-version": "1.0.0",
+    "message": {
+      "indexed": {
+        "date-parts": [
+          [
+            2026,
+            6,
+            9
+          ]
+        ],
+        "date-time": "2026-06-09T14:55:32Z",
+        "timestamp": 1781016932363,
+        "version": "3.54.1"
+      },
+      "reference-count": 49,
+      "publisher": "Public Library of Science (PLoS)",
+      "issue": "6",
+      "license": [
+        {
+          "start": {
+            "date-parts": [
+              [
+                2018,
+                6,
+                22
+              ]
+            ],
+            "date-time": "2018-06-22T00:00:00Z",
+            "timestamp": 1529625600000
+          },
+          "content-version": "vor",
+          "delay-in-days": 0,
+          "URL": "http://creativecommons.org/licenses/by/4.0/"
+        }
+      ],
+      "funder": [
+        {
+          "DOI": "10.13039/501100004329",
+          "name": "Javna Agencija za Raziskovalno Dejavnost RS",
+          "doi-asserted-by": "publisher",
+          "award": [
+            "P2-0016"
+          ],
+          "award-info": [
+            {
+              "award-number": [
+                "P2-0016"
+              ]
+            }
+          ],
+          "id": [
+            {
+              "id": "10.13039/501100004329",
+              "id-type": "DOI",
+              "asserted-by": "publisher"
+            }
+          ]
+        },
+        {
+          "DOI": "10.13039/100010661",
+          "name": "Horizon 2020 Framework Programme",
+          "doi-asserted-by": "publisher",
+          "award": [
+            "688116"
+          ],
+          "award-info": [
+            {
+              "award-number": [
+                "688116"
+              ]
+            }
+          ],
+          "id": [
+            {
+              "id": "10.13039/100010661",
+              "id-type": "DOI",
+              "asserted-by": "publisher"
+            }
+          ]
+        }
+      ],
+      "content-domain": {
+        "domain": [
+          "www.plosone.org"
+        ],
+        "crossmark-restriction": false
+      },
+      "short-container-title": [
+        "PLoS ONE"
+      ],
+      "DOI": "10.1371/journal.pone.0199550",
+      "type": "journal-article",
+      "created": {
+        "date-parts": [
+          [
+            2018,
+            6,
+            22
+          ]
+        ],
+        "date-time": "2018-06-22T13:26:41Z",
+        "timestamp": 1529674001000
+      },
+      "page": "e0199550",
+      "update-policy": "https://doi.org/10.1371/journal.pone.corrections_policy",
+      "source": "Crossref",
+      "is-referenced-by-count": 12,
+      "title": [
+        "A methodology for experimental evaluation of signal detection methods in spectrum sensing"
+      ],
+      "prefix": "10.1371",
+      "volume": "13",
+      "author": [
+        {
+          "ORCID": "https://orcid.org/0000-0001-6326-1636",
+          "authenticated-orcid": true,
+          "given": "Tomaž",
+          "family": "Šolc",
+          "sequence": "first",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Mihael",
+          "family": "Mohorčič",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Carolina",
+          "family": "Fortuna",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        }
+      ],
+      "member": "340",
+      "published-online": {
+        "date-parts": [
+          [
+            2018,
+            6,
+            22
+          ]
+        ]
+      },
+      "reference": [
+        {
+          "key": "ref1",
+          "first-page": "7",
+          "article-title": "TV White Spaces—A pragmatic approach. The Abdus Salam International Centre for Theoretical Physics",
+          "author": "R Horovitz",
+          "year": "2013"
+        },
+        {
+          "key": "ref2",
+          "unstructured": "802 11 Working Group. IEEE Std 802.11-2012, IEEE Standard for Information technology – Telecommunications and information exchange between systems—Local and metropolitan area network—Specific requirements—Part 11: Wireless LAN Medium Access Control (MAC) and Physical Layer (PHY) specifications. IEEE-SA Standards Board. 2012;."
+        },
+        {
+          "key": "ref3",
+          "unstructured": "Cisco. Wireless LAN—Radio Settings—Auto Channel; 2016. online publication, <comment><ext-link xmlns:xlink=\"http://www.w3.org/1999/xlink\" ext-link-type=\"uri\" xlink:href=\"https://documentation.meraki.com/MR/Radio_Settings/Auto_Channel\" xlink:type=\"simple\">https://documentation.meraki.com/MR/Radio_Settings/Auto_Channel</ext-link></comment>"
+        },
+        {
+          "issue": "1",
+          "key": "ref4",
+          "doi-asserted-by": "crossref",
+          "first-page": "20",
+          "DOI": "10.1145/2972413.2972421",
+          "article-title": "A Critique of FCC’s TV White Space Regulations",
+          "volume": "20",
+          "author": "Ramjee",
+          "year": "2016",
+          "journal-title": "GetMobile: Mobile Computing and Communications"
+        },
+        {
+          "key": "ref5",
+          "doi-asserted-by": "crossref",
+          "unstructured": "Holland, Oliver and others. Some initial results and observations from a series of trials within the Ofcom TV white spaces pilot. In: IEEE 81st Vehicular Technology Conference (VTC Spring). IEEE; 2015. p. 1–7.",
+          "DOI": "10.1109/VTCSpring.2015.7146093"
+        },
+        {
+          "issue": "1",
+          "key": "ref6",
+          "first-page": "38",
+          "article-title": "An Introduction to the First Wireless Standard based on Cognitive Radios",
+          "volume": "1",
+          "author": "Cordeiro",
+          "year": "2016",
+          "journal-title": "Journal of Communications"
+        },
+        {
+          "key": "ref7",
+          "doi-asserted-by": "crossref",
+          "unstructured": "Vartiainen, Johanna and Höyhtyä, Marko and Vuohtoniemi, Risto and Ramani, Vidhya L. The future of spectrum sensing. In: 8th International Conference on Ubiquitous and Future Networks (ICUFN). IEEE; 2016. p. 247–252.",
+          "DOI": "10.1109/ICUFN.2016.7537026"
+        },
+        {
+          "key": "ref8",
+          "doi-asserted-by": "crossref",
+          "first-page": "15",
+          "DOI": "10.1016/j.comcom.2016.09.002",
+          "article-title": "Spectrum sensing in cognitive vehicular network: State-of-Art, challenges and open issues",
+          "volume": "97",
+          "author": "Chembe",
+          "year": "2017",
+          "journal-title": "Computer Communications"
+        },
+        {
+          "key": "ref9",
+          "doi-asserted-by": "crossref",
+          "unstructured": "Irnich, Tim and Kronander, Jonas and Selén, Yngve and Li, Gen. Spectrum Sharing Scenarios and Resulting Technical Requirements for 5G Systems. In: 24th International Symposium on Personal, Indoor and Mobile Radio Communications (PIMRC Workshops). IEEE; 2013. p. 127–132.",
+          "DOI": "10.1109/PIMRCW.2013.6707850"
+        },
+        {
+          "key": "ref10",
+          "doi-asserted-by": "crossref",
+          "unstructured": "Nikonowicz, Jakub and Jessa, Mieczysław. Blind detection methods in cognitive radio—An overview and comparison. In: 10th International Symposium on Communication Systems, Networks and Digital Signal Processing (CSNDSP). IEEE; 2016. p. 1–6.",
+          "DOI": "10.1109/CSNDSP.2016.7574025"
+        },
+        {
+          "key": "ref11",
+          "doi-asserted-by": "crossref",
+          "unstructured": "Zeng Y, Liang YC. Spectrum-Sensing Algorithms for Cognitive Radio Based on Statistical Covariances. In: IEEE Transactions on Vehicular Technology. vol. 58; 2009. p. 1804–1815.",
+          "DOI": "10.1109/TVT.2008.2005267"
+        },
+        {
+          "key": "ref12",
+          "unstructured": "Dionísio R, et al. Sensing algorithms for TVWS operations. COGEU project (FP7 ICT-2009.1.1); 2011."
+        },
+        {
+          "key": "ref13",
+          "doi-asserted-by": "crossref",
+          "unstructured": "Omer, Ala Eldin. Review of Spectrum Sensing Techniques in Cognitive Radio Networks. In: International Conference on Computing, Control, Networking, Electronics and Embedded Systems Engineering (ICCNEEE). IEEE; 2015. p. 439–446.",
+          "DOI": "10.1109/ICCNEEE.2015.7381409"
+        },
+        {
+          "issue": "1",
+          "key": "ref14",
+          "doi-asserted-by": "crossref",
+          "first-page": "116",
+          "DOI": "10.1161/CIRCRESAHA.114.303819",
+          "article-title": "Reproducibility in Science",
+          "volume": "116",
+          "author": "CG Begley",
+          "year": "2014",
+          "journal-title": "Circulation Research"
+        },
+        {
+          "issue": "1",
+          "key": "ref15",
+          "doi-asserted-by": "crossref",
+          "first-page": "116",
+          "DOI": "10.1109/SURV.2009.090109",
+          "article-title": "A survey of spectrum sensing algorithms for cognitive radio applications",
+          "volume": "11",
+          "author": "Yucek",
+          "year": "2009",
+          "journal-title": "IEEE Communications Surveys & Tutorials"
+        },
+        {
+          "issue": "1",
+          "key": "ref16",
+          "doi-asserted-by": "crossref",
+          "first-page": "1",
+          "DOI": "10.1155/2010/381465",
+          "article-title": "A Review on Spectrum Sensing for Cognitive Radio: Challenges and Solutions",
+          "volume": "2010",
+          "author": "Zeng",
+          "year": "2010",
+          "journal-title": "EURASIP Journal on Advances in Signal Processing"
+        },
+        {
+          "issue": "4s",
+          "key": "ref17",
+          "doi-asserted-by": "crossref",
+          "first-page": "137:1",
+          "DOI": "10.1145/2584666",
+          "article-title": "A Cross-Layer Reliability Design Methodology for Efficient, Dependable Wireless Receivers",
+          "volume": "13",
+          "author": "C Gimmler-Dumont",
+          "year": "2014",
+          "journal-title": "ACM Trans Embed Comput Syst"
+        },
+        {
+          "key": "ref18",
+          "unstructured": "Yee, Dennis Gee-Wai. A design methodology for highly-integrated low-power receivers for wireless communications [Ph.D. dissertation]. University of California, Berkley; 2001."
+        },
+        {
+          "issue": "5",
+          "key": "ref19",
+          "doi-asserted-by": "crossref",
+          "first-page": "605",
+          "DOI": "10.1109/90.803376",
+          "article-title": "TCP over wireless with link level error control: analysis and design methodology",
+          "volume": "7",
+          "author": "N Chaskar",
+          "year": "1999",
+          "journal-title": "IEEE/ACM Transactions on networking"
+        },
+        {
+          "issue": "4",
+          "key": "ref20",
+          "doi-asserted-by": "crossref",
+          "first-page": "616",
+          "DOI": "10.1109/TPDS.2011.208",
+          "article-title": "An MDP-based dynamic optimization methodology for wireless sensor networks",
+          "volume": "23",
+          "author": "A Munir",
+          "year": "2012",
+          "journal-title": "IEEE Transactions on Parallel and Distributed Systems"
+        },
+        {
+          "issue": "3",
+          "key": "ref21",
+          "doi-asserted-by": "crossref",
+          "first-page": "160",
+          "DOI": "10.1109/MCOM.2013.6476882",
+          "article-title": "A systematic and flexible approach for testing future mobile networks by exploiting a wrap-around testing methodology",
+          "volume": "51",
+          "author": "Pinola",
+          "year": "2013",
+          "journal-title": "IEEE Communications Magazine"
+        },
+        {
+          "issue": "8",
+          "key": "ref22",
+          "doi-asserted-by": "crossref",
+          "first-page": "680",
+          "DOI": "10.1002/ett.1453",
+          "article-title": "Methodological aspects of spectrum occupancy evaluation in the context of cognitive radio",
+          "volume": "21",
+          "author": "López-Benítez",
+          "year": "2010",
+          "journal-title": "European Transactions on Telecommunications"
+        },
+        {
+          "key": "ref23",
+          "unstructured": "Ofcom. The future role of spectrum sharing for mobile and wireless data services: Licensed sharing, Wi-Fi, and dynamic spectrum access; 2014. online publication, <comment><ext-link xmlns:xlink=\"http://www.w3.org/1999/xlink\" ext-link-type=\"uri\" xlink:href=\"https://www.ofcom.org.uk/__data/assets/pdf_file/0023/62609/spectrum_sharing.pdf\" xlink:type=\"simple\">https://www.ofcom.org.uk/__data/assets/pdf_file/0023/62609/spectrum_sharing.pdf</ext-link></comment>"
+        },
+        {
+          "issue": "03-108",
+          "key": "ref24",
+          "first-page": "73",
+          "article-title": "Notice of proposed rule making and order: Facilitating opportunities for flexible, efficient, and reliable spectrum use employing cognitive radio technologies",
+          "year": "2005",
+          "journal-title": "ET docket"
+        },
+        {
+          "key": "ref25",
+          "doi-asserted-by": "crossref",
+          "unstructured": "Cabric, Danijela and Tkachenko, Artem and Brodersen, Robert W. Experimental study of spectrum sensing based on energy detection and network cooperation. In: Proceedings of the first international workshop on Technology and policy for accessing spectrum. ACM; 2006. p. 12.",
+          "DOI": "10.1145/1234388.1234400"
+        },
+        {
+          "key": "ref26",
+          "doi-asserted-by": "crossref",
+          "unstructured": "Tkachenko A, Cabric D, Brodersen RW. Cyclostationary Feature Detector Experiments using Reconfigurable BEE2. In: IEEE Symposium on New Frontiers in Dynamic Spectrum Access Networks. IEEE; 2007. p. 216–219.",
+          "DOI": "10.1109/DYSPAN.2007.36"
+        },
+        {
+          "key": "ref27",
+          "unstructured": "Yousry, Hatem and Newagy, Fatma and ElRamly, Salwa and Ibrahim, Magdi. Wireless Microphone Sensing Using Cyclostationary Detector. In: Innovations on Communication Theory; 2012."
+        },
+        {
+          "key": "ref28",
+          "doi-asserted-by": "crossref",
+          "unstructured": "Zeng Y, Liang YC. Robust Spectrum Sensing in Cognitive Radio. In: IEEE International Symposium on Personal, Indoor and Mobile Radio Communications Workshops. IEEE; 2010. p. 1–8.",
+          "DOI": "10.1109/PIMRCW.2010.5670361"
+        },
+        {
+          "issue": "1",
+          "key": "ref29",
+          "doi-asserted-by": "crossref",
+          "first-page": "26",
+          "DOI": "10.1186/1687-1499-2014-26",
+          "article-title": "Blind spectrum sensing using symmetry property of cyclic autocorrelation function: from theory to practice",
+          "volume": "2014",
+          "author": "Safatly",
+          "year": "2014",
+          "journal-title": "EURASIP Journal on Wireless Communications and Networking"
+        },
+        {
+          "key": "ref30",
+          "unstructured": "Anant S, Hoven N, Tandra R. Some fundamental limits on cognitive radio. In: Allerton Conference on Communication, Control, and Computing; 2004. p. 1662–1671."
+        },
+        {
+          "issue": "1",
+          "key": "ref31",
+          "doi-asserted-by": "crossref",
+          "first-page": "4",
+          "DOI": "10.1109/JSTSP.2007.914879",
+          "article-title": "SNR walls for signal detection",
+          "volume": "2",
+          "author": "Tandra",
+          "year": "2008",
+          "journal-title": "IEEE Journal of selected topics in Signal Processing"
+        },
+        {
+          "key": "ref32",
+          "doi-asserted-by": "crossref",
+          "unstructured": "Zeng, Yonghong and Liang, Ying-Chang. Covariance Based Signal Detections for Cognitive Radio. In: IEEE International Symposium on New Frontiers in Dynamic Spectrum Access Networks. IEEE; 2007. p. 202–207.",
+          "DOI": "10.1109/DYSPAN.2007.33"
+        },
+        {
+          "issue": "1",
+          "key": "ref33",
+          "doi-asserted-by": "crossref",
+          "first-page": "109",
+          "DOI": "10.1186/s13638-017-0899-y",
+          "article-title": "SNR-Walls in Eigenvalue-based Spectrum Sensing",
+          "volume": "2017",
+          "author": "Bollig",
+          "year": "2017",
+          "journal-title": "EURASIP Journal on Wireless Communications and Networking"
+        },
+        {
+          "issue": "6",
+          "key": "ref34",
+          "doi-asserted-by": "crossref",
+          "first-page": "1784",
+          "DOI": "10.1109/TCOMM.2009.06.070402",
+          "article-title": "Eigenvalue-Based Spectrum Sensing Algorithms for Cognitive Radio",
+          "volume": "57",
+          "author": "Y Zeng",
+          "year": "2009",
+          "journal-title": "IEEE Transactions on Communications"
+        },
+        {
+          "key": "ref35",
+          "article-title": "Digital Signal Processing Handbook",
+          "author": "GB Giannakis",
+          "year": "1999"
+        },
+        {
+          "issue": "2",
+          "key": "ref36",
+          "doi-asserted-by": "crossref",
+          "first-page": "38",
+          "DOI": "10.1109/79.81008",
+          "article-title": "Computationally efficient algorithms for cyclic spectral analysis",
+          "volume": "8",
+          "author": "Roberts",
+          "year": "1991",
+          "journal-title": "IEEE Signal Processing Magazine"
+        },
+        {
+          "key": "ref37",
+          "unstructured": "Clanton C, Kenkel M, Tang Y. Wireless Microphone Signal Simulation Method; 2007. IEEE 802.22-07/0124r0."
+        },
+        {
+          "key": "ref38",
+          "unstructured": "IEEE P802 15 Working Group. IEEE Std 802.15.4-2011, IEEE Standard for Local and metropolitan area networks—Part 15.4: Low-Rate Wireless Personal Area Networks (LR-WPANs). IEEE-SA Standards Board. 2011;."
+        },
+        {
+          "key": "ref39",
+          "unstructured": "Ettus Research. USRP N200/N210 Networked Series; 2012. <comment><ext-link xmlns:xlink=\"http://www.w3.org/1999/xlink\" ext-link-type=\"uri\" xlink:href=\"https://www.ettus.com/content/files/07495_Ettus_N200-210_DS_Flyer_HR_1.pdf\" xlink:type=\"simple\">https://www.ettus.com/content/files/07495_Ettus_N200-210_DS_Flyer_HR_1.pdf</ext-link></comment>"
+        },
+        {
+          "key": "ref40",
+          "unstructured": "GNU Radio Foundation, Inc. GNU Radio, the free &amp; open software radio ecosystem;. <comment>Available from: <ext-link xmlns:xlink=\"http://www.w3.org/1999/xlink\" ext-link-type=\"uri\" xlink:href=\"https://gnuradio.org\" xlink:type=\"simple\">https://gnuradio.org</ext-link></comment>"
+        },
+        {
+          "key": "ref41",
+          "unstructured": "Šolc T. SNE-ISMTV: VESNA wireless sensor node expansion for cognitive radio experiments. In: Tenth International Symposium on Wireless Communication Systems (ISWCS). VDE; 2013."
+        },
+        {
+          "key": "ref42",
+          "unstructured": "SensorLab. VESNA modular wireless sensor network platform; 2014. <comment><ext-link xmlns:xlink=\"http://www.w3.org/1999/xlink\" ext-link-type=\"uri\" xlink:href=\"http://sensorlab.ijs.si/hardware.html\" xlink:type=\"simple\">http://sensorlab.ijs.si/hardware.html</ext-link></comment>"
+        },
+        {
+          "key": "ref43",
+          "unstructured": "Analog Devices. AD8306: Low Cost DC to 500 MHz, 92 dB Logarithmic Amplifier; 2008."
+        },
+        {
+          "key": "ref44",
+          "unstructured": "Šolc T. Spectrum sensing application for the VESNA platform; 2015. <comment><ext-link xmlns:xlink=\"http://www.w3.org/1999/xlink\" ext-link-type=\"uri\" xlink:href=\"https://github.com/sensorlab/vesna-spectrum-sensor\" xlink:type=\"simple\">https://github.com/sensorlab/vesna-spectrum-sensor</ext-link></comment>"
+        },
+        {
+          "key": "ref45",
+          "unstructured": "Rohde &amp; Schwarz. SMBV100A Vector Signal Generator Specifications; 2011."
+        },
+        {
+          "key": "ref46",
+          "unstructured": "Numpy developers. Numpy; 2016. <comment><ext-link xmlns:xlink=\"http://www.w3.org/1999/xlink\" ext-link-type=\"uri\" xlink:href=\"http://www.numpy.org/\" xlink:type=\"simple\">http://www.numpy.org/</ext-link></comment>"
+        },
+        {
+          "key": "ref47",
+          "unstructured": "STMicroelectronics. RM0008 Reference manual: STM32F101xx, STM32F102xx, STM32F103xx, STM32F105xx and STM32F107xx advanced ARM-based 32-bit MCUs; 2011."
+        },
+        {
+          "issue": "4",
+          "key": "ref48",
+          "doi-asserted-by": "crossref",
+          "first-page": "404",
+          "DOI": "10.1093/biomet/26.4.404",
+          "article-title": "The use of confidence or fiducial limits illustrated in the case of the binomial",
+          "volume": "26",
+          "author": "Clopper",
+          "year": "1934",
+          "journal-title": "Biometrika"
+        },
+        {
+          "key": "ref49",
+          "unstructured": "Python Software Foundation. The Python Standard Library; 2012. <comment><ext-link xmlns:xlink=\"http://www.w3.org/1999/xlink\" ext-link-type=\"uri\" xlink:href=\"https://docs.python.org/2/library/timeit.html\" xlink:type=\"simple\">https://docs.python.org/2/library/timeit.html</ext-link></comment>"
+        }
+      ],
+      "container-title": [
+        "PLOS ONE"
+      ],
+      "original-title": [],
+      "language": "en",
+      "link": [
+        {
+          "URL": "http://dx.plos.org/10.1371/journal.pone.0199550",
+          "content-type": "unspecified",
+          "content-version": "vor",
+          "intended-application": "similarity-checking"
+        }
+      ],
+      "deposited": {
+        "date-parts": [
+          [
+            2019,
+            10,
+            19
+          ]
+        ],
+        "date-time": "2019-10-19T17:52:33Z",
+        "timestamp": 1571507553000
+      },
+      "score": 1,
+      "resource": {
+        "primary": {
+          "URL": "https://dx.plos.org/10.1371/journal.pone.0199550"
+        }
+      },
+      "subtitle": [],
+      "editor": [
+        {
+          "given": "Lixiang",
+          "family": "Li",
+          "sequence": "first",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "editor"
+            }
+          ]
+        }
+      ],
+      "short-title": [],
+      "issued": {
+        "date-parts": [
+          [
+            2018,
+            6,
+            22
+          ]
+        ]
+      },
+      "references-count": 49,
+      "journal-issue": {
+        "issue": "6",
+        "published-online": {
+          "date-parts": [
+            [
+              2018,
+              6,
+              22
+            ]
+          ]
+        }
+      },
+      "URL": "https://doi.org/10.1371/journal.pone.0199550",
+      "relation": {},
+      "ISSN": [
+        "1932-6203"
+      ],
+      "issn-type": [
+        {
+          "value": "1932-6203",
+          "type": "electronic"
+        }
+      ],
+      "subject": [],
+      "published": {
+        "date-parts": [
+          [
+            2018,
+            6,
+            22
+          ]
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "provider": "crossref",
+  "requested_url": "https://api.crossref.org/works/10.48550/arxiv.1609.07378",
+  "retrieved_at": "2026-09-30T11:53:48.133363+00:00",
+  "status": "error",
+  "http_status": 404,
+  "error": "HTTP Error 404: Not Found"
+}

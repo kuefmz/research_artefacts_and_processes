@@ -1,0 +1,695 @@
+{
+  "repo_id": "605d87f49502a52dcdcb",
+  "snapshot_commit_sha": "525e776d20115d8db97b745e153be41e792a92db",
+  "snapshot_role": "current_default_branch_not_verified_paper_version",
+  "paper_commit_sha": null,
+  "tree_truncated": false,
+  "files": [
+    {
+      "path": ".gitignore",
+      "blob_sha": "d4c3d84b600130d624398c0e4f3e23643dfca1a5",
+      "size": 19,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Docs/DSADM.pdf",
+      "blob_sha": "8ea6193529c8fd34996a079e54e260c4c632a0a1",
+      "size": 988845,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Docs/abstract.txt",
+      "blob_sha": "09807157d4cecbf003adb86f19227acc8b1d6049",
+      "size": 2030,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Docs/readme.txt",
+      "blob_sha": "bd998e6475cad2161b60bb750c5f6545d21d545c",
+      "size": 3557,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Generator/.DS_Store",
+      "blob_sha": "cfc182a9503f85a3885233b627765c78f0312778",
+      "size": 8196,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Generator/Out/.DS_Store",
+      "blob_sha": "1eed71c33d0c34b3b73983ba8b29e7559e440c4e",
+      "size": 8196,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Generator/config.txt",
+      "blob_sha": "a63e125a3ba7a708e25b35a98567937ee6acff16",
+      "size": 363,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Generator/functions_0.6.R",
+      "blob_sha": "3c23da02e90973835dff30a9e1ee7fa8d99784a6",
+      "size": 50733,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Generator/generate_fields.R",
+      "blob_sha": "35a22fcdd7e4b8eb5199bfe2fefb913489af9a5b",
+      "size": 13185,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Generator/generate_fields_functions.cpp",
+      "blob_sha": "589be3ddb90874370d5128bf93f713f1bd07a73e",
+      "size": 12047,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Statistics/.DS_Store",
+      "blob_sha": "6f73000bce38500f3294975ee7f7d4326c10f5cd",
+      "size": 6148,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Statistics/EnKF-covs/.Rhistory",
+      "blob_sha": "c55b7484bfcdb3fe9b78c906e0184c63cec8caa4",
+      "size": 82,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Statistics/EnKF-covs/B_mod_se101520.png",
+      "blob_sha": "efdb3740551f8518c58091e72bebde26c320c515",
+      "size": 32166,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Statistics/EnKF-covs/B_tmean_101520.RData",
+      "blob_sha": "bfeb80b0b9aeb2ce2cf1c65600c50ee3d3b0ebcf",
+      "size": 18653,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Statistics/EnKF-covs/B_tmean_101570.RData",
+      "blob_sha": "b4af03b0142ad34c2d1f4c9179a1287eeeaa1c10",
+      "size": 18659,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Statistics/EnKF-covs/B_tmean_101610.RData",
+      "blob_sha": "6275312aad32f08c30c561c451140cda18adb4c9",
+      "size": 18636,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Statistics/EnKF-covs/B_tmean_10500.RData",
+      "blob_sha": "c07cc73accb1234774cde79836d5945efc6b0096",
+      "size": 18707,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Statistics/EnKF-covs/B_tmean_10510.RData",
+      "blob_sha": "98a478b540c0ff44d68efa13c13a35801158db8a",
+      "size": 18688,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Statistics/EnKF-covs/B_tmean_10530.RData",
+      "blob_sha": "31e517e37343fd4da01b5fc4cd95d916c07abd0c",
+      "size": 18624,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Statistics/EnKF-covs/B_tmean_10590.RData",
+      "blob_sha": "3de16622be0e9f52f24a162e845a9963820e753f",
+      "size": 18674,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Statistics/EnKF-covs/B_tru_se101520.png",
+      "blob_sha": "b9365ae09b0fcb3766b3e8057e36cb13ee171066",
+      "size": 32814,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Statistics/EnKF-covs/Cov2VarCor.R",
+      "blob_sha": "ba006eabc8d572ce0501a2f1dfe9c576b1e48985",
+      "size": 257,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Statistics/EnKF-covs/ExamEnKFcovs.R",
+      "blob_sha": "0dac3406ed53ee8d64a2cdf4561d27c4f9cc6aca",
+      "size": 33797,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Statistics/EnKF-covs/ExamEnkfFld.R",
+      "blob_sha": "600b0f2b75db7dcc380389345f5f3a6bfbb1feeb",
+      "size": 1895,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Statistics/EnKF-covs/Gaspari.R",
+      "blob_sha": "227d1cb6161835dab3cffe9f8016c03f832ca734",
+      "size": 361,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Statistics/EnKF-covs/Im_SpeCRM_tru_se101520.png",
+      "blob_sha": "905a4045cfb3537b05cfd4d8c3a6adcd7c5aecc5",
+      "size": 37298,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Statistics/EnKF-covs/Re_SpeCRM-I_tru_se101520.png",
+      "blob_sha": "08e2b3dd533a373d261747d9e53269e47eba5361",
+      "size": 37036,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Statistics/EnKF-covs/Re_SpeCRM_tru_se101520.png",
+      "blob_sha": "db71b253e9254beef4134e26ca6e5768166f9123",
+      "size": 36536,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Statistics/EnKF-covs/Re_SpeCVM_tru_se101520.png",
+      "blob_sha": "ac9dea5c0196c62baa2f674ee205d39f1e9054f1",
+      "size": 37705,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Statistics/EnKF-covs/S_loc_se101520.png",
+      "blob_sha": "9747880ad82bfe3f06890ff536523daf80e18e61",
+      "size": 29839,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Statistics/EnKF-covs/SpaCrl_t10i26.png",
+      "blob_sha": "307dc4241c9e28e0ef7899519e0bcef3e8e00a6d",
+      "size": 51969,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Statistics/EnKF-covs/SpaCrl_t11i15.png",
+      "blob_sha": "4127941f0fd9b997f881d686dda23625bf9697be",
+      "size": 55501,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Statistics/EnKF-covs/SpaCrl_t14i41.png",
+      "blob_sha": "aaf34d0c71b914e7deab6780d42ca9cdc3cde023",
+      "size": 54915,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Statistics/EnKF-covs/Typic3Covs_se101520.png",
+      "blob_sha": "decf1f8343a232d407e567fb497f08e8cfb1a5a4",
+      "size": 39732,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Statistics/EnKF-covs/create_LocMx.R",
+      "blob_sha": "451e9d74c6a38a33ed63aa86c7de0ccaf9ec84f3",
+      "size": 917,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Statistics/EnKF-covs/fft_Rspe_rearrange.R",
+      "blob_sha": "d79233bc1bd7c47a4f808ac4fa8c8d47371349f1",
+      "size": 825,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Statistics/EnKF-covs/filter.RData",
+      "blob_sha": "c2ca8bab663e72dcf314a79ca2b26eabd9015362",
+      "size": 1992056,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Statistics/EnKF-covs/functions_prior.R",
+      "blob_sha": "4998ad0ce4d4c89847d8e255887b3c5fb8ee3ef3",
+      "size": 5759,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Statistics/EnKF-covs/mx_fft.R",
+      "blob_sha": "7e9482187a686c79a2e4f56f94e47ca504887656",
+      "size": 1443,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Statistics/EnKF-covs/mx_fft_Rspe_rearrange.R",
+      "blob_sha": "8adb8307ccb921a1b34fd0d361153ce41e1dfe66",
+      "size": 677,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Statistics/EnKF-covs/ndiag.R",
+      "blob_sha": "4029a9d3a2c127e68da38d41b33c9c3afed7b8c9",
+      "size": 320,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Statistics/EnKF-covs/out_inpSeed101520.txt",
+      "blob_sha": "2d26376891b02b9d1adb1bd224e5f289bf4df851",
+      "size": 1174,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Statistics/EnKF-covs/u_20i41.png",
+      "blob_sha": "fddb64f0ab4744d59d6bd57b24be433138d6aea6",
+      "size": 40257,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Statistics/EnKF-covs/u_27i28.png",
+      "blob_sha": "f01afbfa4ee7fa84e68d9257a270690ee423d31c",
+      "size": 41705,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Statistics/EnKF-covs/u_27i30.png",
+      "blob_sha": "7d00c768b160f5eba34db94ae8faf8f587067d45",
+      "size": 40892,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Statistics/EnKF-covs/u_tmean_tsd101520.png",
+      "blob_sha": "8103b903b36a2d17c8c812cde3600aecd1224a3d",
+      "size": 35336,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Statistics/EnKF-covs/uu101520.png",
+      "blob_sha": "f2aa77bc323feca6496ce5be0c3e7201eff5c83f",
+      "size": 27405,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Statistics/Fields_long/.Rhistory",
+      "blob_sha": "5cac4261b7e1dc0de1265ec6b3ce04fc747d2ea0",
+      "size": 2156,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Statistics/Fields_long/Exam_fields_long.R",
+      "blob_sha": "193d9f8a5809bccc17ee1de389816013ed854831",
+      "size": 6839,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Statistics/Fields_long/QQplot_xi_perturb_all.png",
+      "blob_sha": "889aa6b6878da4d8a11aa58298566990b4da7eac",
+      "size": 29549,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Statistics/Fields_long/SpaCrl_mean_all.png",
+      "blob_sha": "7eb307ac4277d9b3c12e10fa79073da700d04dff",
+      "size": 25355,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Statistics/Fields_long/TimCrl_mean_.png",
+      "blob_sha": "90a1e51d9d7f66477146efe7537249e4f0d4eb15",
+      "size": 32119,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Statistics/Fields_long/TimCrl_mean_1.png",
+      "blob_sha": "4616b70a86ae9d11ce63e1aee47e2c5344a6d55a",
+      "size": 31314,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Statistics/Fields_long/TimCrl_mean_301.png",
+      "blob_sha": "e314d9146cb040321bd92ec11e2bcde6d4ad5968",
+      "size": 31156,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Statistics/Fields_long/U_1.png",
+      "blob_sha": "be4935c41a1d211052f9bac56b70b998da3b1463",
+      "size": 80423,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Statistics/Fields_long/est_crf_timser.R",
+      "blob_sha": "edb7d87e2970da819ec2e369e4c12da37bfaf040",
+      "size": 952,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Statistics/Fields_long/fields_long.RData",
+      "blob_sha": "0336f41e16ec748e48999eeee80abc9e8be68fcb",
+      "size": 1506955,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Statistics/Fields_long/nu_1.png",
+      "blob_sha": "245af4f4eda43c4173bd91b8af6da204e7a3f562",
+      "size": 85890,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Statistics/Fields_long/out_xi_all.txt",
+      "blob_sha": "5724eb1ec91eeebb5105687eda3529fa8fbcb179",
+      "size": 1051,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Statistics/Fields_long/rho_1.png",
+      "blob_sha": "cacc1d5cec5e6791b95493a75035695ac13dedeb",
+      "size": 85593,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Statistics/Fields_long/sigma_1.png",
+      "blob_sha": "6f0dc640b2e55229a0396fd9d88bb6ae7b1205d5",
+      "size": 81476,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Statistics/Fields_long/xi_1.png",
+      "blob_sha": "ced2a46000294aed01abfcdab35e1b12dc2ff499",
+      "size": 74602,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Statistics/NstatioFieldCovs/.Rhistory",
+      "blob_sha": "73a2374ef7256cb018a5e004cf4526a7432f02f8",
+      "size": 90,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Statistics/NstatioFieldCovs/ExamDSMoutput.R",
+      "blob_sha": "09cd6f7c3c3e297237277f6b25e3cdcb9688c428",
+      "size": 12459,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Statistics/NstatioFieldCovs/Lambda.png",
+      "blob_sha": "528d86e28d9a97670ed6780f386bec68a3247396",
+      "size": 31078,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Statistics/NstatioFieldCovs/SpaCrl_Pert_16.png",
+      "blob_sha": "e06375a955dcbfaa16cca63eb4cd53ca47c79d26",
+      "size": 58408,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Statistics/NstatioFieldCovs/U.png",
+      "blob_sha": "c20161220ab8d4b7342aeb0c3b2baa9b59da85d8",
+      "size": 30455,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Statistics/NstatioFieldCovs/V.png",
+      "blob_sha": "f8abfff0d944bccdf2d78c67f98e0438b2fdf9eb",
+      "size": 32372,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Statistics/NstatioFieldCovs/est_crf_timser.R",
+      "blob_sha": "edb7d87e2970da819ec2e369e4c12da37bfaf040",
+      "size": 952,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Statistics/NstatioFieldCovs/model.RData",
+      "blob_sha": "66271bec705165417a9f50229b331760551cd9e9",
+      "size": 3103462,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Statistics/NstatioFieldCovs/nu.png",
+      "blob_sha": "1e4dfd3fe68e447e845836e626abbf9fb4190d03",
+      "size": 34068,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Statistics/NstatioFieldCovs/out_all.txt",
+      "blob_sha": "df90ef449b01392bfb5c092d2a97d6b8379d73cd",
+      "size": 1228,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Statistics/NstatioFieldCovs/rho.png",
+      "blob_sha": "a63e94b69633f1407e499506ff75d9ee36cfa261",
+      "size": 34616,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Statistics/NstatioFieldCovs/sigma.png",
+      "blob_sha": "79035bca284a93f0dad89c6ab82b1e2e6ab89c71",
+      "size": 32620,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Statistics/NstatioFieldCovs/xi.png",
+      "blob_sha": "b8f4056ff0f1e1c637240bb9baa0457346f549e4",
+      "size": 30055,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "initial",
+      "blob_sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    }
+  ],
+  "somef_status": "not_run",
+  "note": "No source archive collected. Tree paths and blob hashes are an index, not runnable source."
+}

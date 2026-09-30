@@ -1,0 +1,3206 @@
+{
+  "repo_id": "d5637f661f099b889b9d",
+  "snapshot_commit_sha": "f0d1799fba7c06f332e294706e939b52d22a1cd6",
+  "snapshot_role": "current_default_branch_not_verified_paper_version",
+  "paper_commit_sha": null,
+  "tree_truncated": false,
+  "files": [
+    {
+      "path": "Storm-Surge/LICENSE",
+      "blob_sha": "9cecc1d4669ee8af2ca727a5d8cde10cd8b2d7cc",
+      "size": 35141,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/code/feedforward_three_layers.py",
+      "blob_sha": "8473638c2df45428fc1aaf070610de164b34ea24",
+      "size": 8636,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/code/feedforward_two_layers.py",
+      "blob_sha": "3815959cc9dc911a95ac45170377440961519a0b",
+      "size": 8296,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/code/ilt_aux_model.py",
+      "blob_sha": "3f65463fd489ea7bef78a22ca11f79c96849eb17",
+      "size": 2432,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/code/ilt_default_feed.py",
+      "blob_sha": "4c7aea2296b3d9acd659f00fa053676f3cb86fb5",
+      "size": 10293,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/code/ilt_density.py",
+      "blob_sha": "15707d8c89d89db4b2ff2e8fb23dfaaff399107d",
+      "size": 3771,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/code/ilt_multi_gpu_feed.py",
+      "blob_sha": "89a1269f86d071d2573075b90744ab2bcc688cab",
+      "size": 12586,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/code/ilt_one_layer.py",
+      "blob_sha": "896785f9db7b67c17f66c938c17f0cbf7ff3d916",
+      "size": 3068,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/code/ilt_sep_two_layers.py",
+      "blob_sha": "f4db673048c402f51cd1d94d0f03444ecbf29f70",
+      "size": 3107,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/code/ilt_three_layers.py",
+      "blob_sha": "52979090b458fa76c16b0b91d917eca880664e23",
+      "size": 3321,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/code/ilt_two_layers.py",
+      "blob_sha": "e514e95c366827d47c98e67b82f70f19a5385b61",
+      "size": 3133,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/code/load_datasets.py",
+      "blob_sha": "0484147696130407876bc7015f268ede214c5e49",
+      "size": 10611,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/code/lstm_loaddatasets.py",
+      "blob_sha": "a294e56dffc8b61b3f3466f00413582f3a5e8b2a",
+      "size": 8586,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/code/lstm_model.py",
+      "blob_sha": "2892b2c414b8d911f983d3b61710658fcecd5fe1",
+      "size": 16648,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/code/tensorboard.sh",
+      "blob_sha": "8debcd0f5dfbc84768a23a3c273cb2dae253b99f",
+      "size": 183,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1.tar",
+      "blob_sha": "4aefc8e142e9d757260bec099646547bebdf5d6a",
+      "size": 5642240,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.001.dat",
+      "blob_sha": "2e7d0c684983cf7a8f637d58b40906f07afefb1e",
+      "size": 16506,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.002.dat",
+      "blob_sha": "6454b6f66c400af70018b9b2f4bc88eaaa689efa",
+      "size": 16525,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.003.dat",
+      "blob_sha": "86b7c3588b44e8fb25653acc15511048d9f806e6",
+      "size": 16539,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.004.dat",
+      "blob_sha": "5bc1ae286955cb5d6cdc0260f87d46cc972f13a2",
+      "size": 16600,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.005.dat",
+      "blob_sha": "ae24ba512a2f8d8eb4840fa90739aa35302593cd",
+      "size": 16614,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.006.dat",
+      "blob_sha": "81d437340632d1e1fae63732464ad9e2b3b8699a",
+      "size": 16565,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.007.dat",
+      "blob_sha": "8693ef4b3cba21384f1f0b3600cf1a0fcf6c7b81",
+      "size": 16617,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.008.dat",
+      "blob_sha": "360e7cce9d6187a7ac694e48504cf77fd654f4ad",
+      "size": 16602,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.009.dat",
+      "blob_sha": "483868c389a02b8366a284e7234b8f54f69daf4c",
+      "size": 16581,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.010.dat",
+      "blob_sha": "8c09ba39a3336023bab4a02479906523b0771d7e",
+      "size": 16516,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.011.dat",
+      "blob_sha": "73e1f331031b9f1fa80ab8c4e655e9b5e1f196d8",
+      "size": 16577,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.012.dat",
+      "blob_sha": "2dd19daaca39f1106d3bb336ea45db07d501fab7",
+      "size": 16547,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.013.dat",
+      "blob_sha": "8daf1ebc4ee921f8cbcebedbae71e3b888ccb414",
+      "size": 16640,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.014.dat",
+      "blob_sha": "e9d353ae25161273837509056311755a53572760",
+      "size": 16653,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.015.dat",
+      "blob_sha": "f9cc76dfe9a632db5f372e341a0fb640502b333d",
+      "size": 16634,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.016.dat",
+      "blob_sha": "88a0d3b6a7912e891ecb586c0d271d5d7011f1d3",
+      "size": 16681,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.017.dat",
+      "blob_sha": "805dfd1ec0c769628f3f9edc246d504844c8495c",
+      "size": 16652,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.018.dat",
+      "blob_sha": "dea948c5d00ccf128122324874d8f15ea4b5841c",
+      "size": 16631,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.019.dat",
+      "blob_sha": "985b0659c14c6786f1dc2538db02ef3cffec01fc",
+      "size": 16606,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.020.dat",
+      "blob_sha": "020440354a49ee58bf9569945318a247b1395b0a",
+      "size": 16668,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.021.dat",
+      "blob_sha": "711473c3d320fffa51f090685615933d955d1bdd",
+      "size": 16612,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.022.dat",
+      "blob_sha": "b7f180fd259596042ec86c3155da0c6eca4d9d00",
+      "size": 16690,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.023.dat",
+      "blob_sha": "6750d5492949aaff4e654d44cebe120330a308a7",
+      "size": 16640,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.024.dat",
+      "blob_sha": "d3571914b316c9faa09f031c82038834740e824d",
+      "size": 16666,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.025.dat",
+      "blob_sha": "203efb17c0a5b24872a010493a89799f7d3bc27c",
+      "size": 16686,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.026.dat",
+      "blob_sha": "d273efb3a225456984be913d4fbed50c4a233735",
+      "size": 16677,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.027.dat",
+      "blob_sha": "ea5ac1ca95c695f4c85981c3c205d2e518a6c141",
+      "size": 16647,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.028.dat",
+      "blob_sha": "8bfd67d4a6c79f61023ab18bace6652d580f61e9",
+      "size": 16524,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.029.dat",
+      "blob_sha": "3877e56ba63ed73955657202f73b021eea323a1d",
+      "size": 16498,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.030.dat",
+      "blob_sha": "47ed014a9487e360d7baf85f50de1531495e5f23",
+      "size": 16467,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.031.dat",
+      "blob_sha": "3b21a5ba5227cb4cb0c1b1166ed0eb0fdd11b56d",
+      "size": 16590,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.032.dat",
+      "blob_sha": "b6e2052b8158ef788cbba19340b41823bb6d2a5e",
+      "size": 16562,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.033.dat",
+      "blob_sha": "a25483d961827fc8c716027a838ba64f2e168c77",
+      "size": 16557,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.034.dat",
+      "blob_sha": "9e929ab41a037808b4ce3ba489ceb7354313211f",
+      "size": 16625,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.035.dat",
+      "blob_sha": "d90190ab7918a8844852d5d78ff23a6601bb1ea1",
+      "size": 16585,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.036.dat",
+      "blob_sha": "d3f38904a29b2067f979569b547069ad5a0c528c",
+      "size": 16554,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.037.dat",
+      "blob_sha": "c47e4f94105e0357124f6a62be1b1d4da73e3c34",
+      "size": 16509,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.038.dat",
+      "blob_sha": "ebe93fa8b0d2be40a174ede453c5a521091460a1",
+      "size": 16523,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.039.dat",
+      "blob_sha": "8e48556aae90c4fef915b4434eb50b4550bafafb",
+      "size": 16476,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.040.dat",
+      "blob_sha": "4c71b2c7485bc1cdb3428f22a7993b5510c2ba67",
+      "size": 16628,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.041.dat",
+      "blob_sha": "ce5a17cb4c07020e8d650239db78e44520027110",
+      "size": 16620,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.042.dat",
+      "blob_sha": "b1efebf69d8c33daa16df77a3727dbb4e588b15a",
+      "size": 16604,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.043.dat",
+      "blob_sha": "7e7aaaf91c2461fb0b180521172d6a713c7cfdda",
+      "size": 16601,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.044.dat",
+      "blob_sha": "c08a51167da9845f9e7d6aeb27dbe7390ffd684a",
+      "size": 16608,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.045.dat",
+      "blob_sha": "31f9588874becf0a1bf335240b8a773caee88169",
+      "size": 16551,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.046.dat",
+      "blob_sha": "6b67e78baf8c5279ebdc6e45ebfd32ce97a73875",
+      "size": 16573,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.047.dat",
+      "blob_sha": "df5ca3eaeb6891af07c5ddabd758a270010ea75c",
+      "size": 16543,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.048.dat",
+      "blob_sha": "01c6fd3fa7d352d4e755858a79bc37bd25de8bcf",
+      "size": 16483,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.049.dat",
+      "blob_sha": "f21b40b30f4348a6ee0ba5ce8cd2af1d6cb43e3c",
+      "size": 16674,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.050.dat",
+      "blob_sha": "def9222f8dd23f319ddf2b6635ae13aa14500f85",
+      "size": 16655,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.051.dat",
+      "blob_sha": "5d3aad0edc91bf6828ae6653e4a24183ae0006b0",
+      "size": 16628,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.052.dat",
+      "blob_sha": "0e4a33e4ee376a1257cfa13927c9957fe6c8e7a7",
+      "size": 16664,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.053.dat",
+      "blob_sha": "81e5041cd4763f1dae8078d41060fa72a6c9d511",
+      "size": 16626,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.054.dat",
+      "blob_sha": "307dca8fbd8e407365d952ccd7870e457245354e",
+      "size": 16606,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.055.dat",
+      "blob_sha": "9b95827abc8e1f011e1bc6d2d1553e39350439e9",
+      "size": 16520,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.056.dat",
+      "blob_sha": "1ac430054ca419248d2ccf57fd07a237b7a77a91",
+      "size": 16553,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.057.dat",
+      "blob_sha": "800f3d4715c729417b0d89259c5500568937864b",
+      "size": 16582,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.058.dat",
+      "blob_sha": "bddfe0136b0369644ff02679e585f0ce22311741",
+      "size": 16603,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.059.dat",
+      "blob_sha": "28552ae504557c66ba799ef06aff6f467d9c83dd",
+      "size": 16571,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.060.dat",
+      "blob_sha": "7a99b03a5ce00293ccbd7a7f7780cb3a4da587a7",
+      "size": 16598,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.061.dat",
+      "blob_sha": "9538e63fc2d4cdfe00e78054f5327acb0d3f709a",
+      "size": 16584,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.062.dat",
+      "blob_sha": "c36f038996b900bd4e0df4813cc9641c5f1974e4",
+      "size": 16583,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.063.dat",
+      "blob_sha": "c69778f2f325fb3827c43b648ab70a5eca6bda6e",
+      "size": 16584,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.064.dat",
+      "blob_sha": "99068046b3187442dbb595f766e3858849825950",
+      "size": 16546,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.065.dat",
+      "blob_sha": "0de0443e6a2478b47517163a690c18a4b8ab94a0",
+      "size": 16557,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.066.dat",
+      "blob_sha": "7ee145cf4246eed68ccecf279f4c08f8f40b2b60",
+      "size": 16574,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.067.dat",
+      "blob_sha": "a167bb28b900dc804ddc79025a22f640d5a5761a",
+      "size": 16649,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.068.dat",
+      "blob_sha": "1d065cd08cb0c46175c83b9035191574ae71c945",
+      "size": 16569,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.069.dat",
+      "blob_sha": "c3a01a2d5ad0b65805940e5388b0d9cf0db18dbe",
+      "size": 16603,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.070.dat",
+      "blob_sha": "3b330cc4058766e8151b7d2fda26f8fe2a65e380",
+      "size": 16679,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.071.dat",
+      "blob_sha": "4cb049b4bf62781d49dd4e3de05b07cc2674277e",
+      "size": 16669,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.072.dat",
+      "blob_sha": "ab9e5721542379064d78f659d5a716a01317e3e6",
+      "size": 16630,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.073.dat",
+      "blob_sha": "239dc766af8b9071ff93d18c2bf9b87a062e131b",
+      "size": 16506,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.074.dat",
+      "blob_sha": "fa5d112df1b6c70a700a818cebd15fa65a18d386",
+      "size": 16541,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.075.dat",
+      "blob_sha": "33796de8f5b8aee3b2e9427a9e7b3d73caeea0d4",
+      "size": 16554,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.076.dat",
+      "blob_sha": "93d4b70693ff5749aae0e1e04a2be642ac5d9baa",
+      "size": 16644,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.077.dat",
+      "blob_sha": "3115ce08794ee4641ffac746e16d23916d087e54",
+      "size": 16711,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.078.dat",
+      "blob_sha": "23d28d4ddfa773e82704467a9e129e10602bce2f",
+      "size": 16661,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.079.dat",
+      "blob_sha": "64e0aabe00b612c8ae490eec404bd19bf2b74c04",
+      "size": 16687,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.080.dat",
+      "blob_sha": "0c55b2cf799e230f3427ae550467ca9a1afce890",
+      "size": 16614,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.081.dat",
+      "blob_sha": "5f7ed1d8d29cfcd3f7e9209763e8126a3d4721a9",
+      "size": 16620,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.082.dat",
+      "blob_sha": "29879f82d4500efa36e586717f8164c0470b2d39",
+      "size": 16476,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.083.dat",
+      "blob_sha": "2782dea68525bd0de4f558c55c0a888b4416b202",
+      "size": 16524,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.084.dat",
+      "blob_sha": "7e322fe7012ed8687bbc3ad17d3889c80a8a4ebf",
+      "size": 16487,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.085.dat",
+      "blob_sha": "7c17666ace242414fb2665795b4f3f31409392ea",
+      "size": 16586,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.086.dat",
+      "blob_sha": "cccf77265621107e87a63449b081b45f9b5cc729",
+      "size": 16596,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.087.dat",
+      "blob_sha": "a14f6324de55b3944c60293f7e0e35753b64fa50",
+      "size": 16585,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.088.dat",
+      "blob_sha": "a952726423c6d6e34c859fa6f40d29e277ae3a97",
+      "size": 16607,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.089.dat",
+      "blob_sha": "636d81791bb6fbe94f1e5e11dab088c7460d6d0c",
+      "size": 16635,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.090.dat",
+      "blob_sha": "61b068ed2eaae39350aaa7696db7aca764aa501c",
+      "size": 16569,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.091.dat",
+      "blob_sha": "f4f5e70137b8a9418f379c60854c1a7906181687",
+      "size": 16497,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.092.dat",
+      "blob_sha": "a042eaf1634d4ef5ee502c4796f543e0981f4fc3",
+      "size": 16527,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.093.dat",
+      "blob_sha": "da823816cf1f11bc4888279ccfb570db08346c1b",
+      "size": 16509,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.094.dat",
+      "blob_sha": "54725ee31a0723126d10f322b5d8ef9364f5b1a4",
+      "size": 16648,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.095.dat",
+      "blob_sha": "3bce061ef37e3cfd0d61f4f0d7de30a79bee0c94",
+      "size": 16648,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.096.dat",
+      "blob_sha": "fc3d0869753868fb38f6cc1712f462206186ff72",
+      "size": 16623,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.097.dat",
+      "blob_sha": "475bf29e4c40abf38ab8eae91e3962715fd7606f",
+      "size": 16680,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.098.dat",
+      "blob_sha": "c04c68bbf5d92c7b06a00800cd9a75c4f923073b",
+      "size": 16635,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.099.dat",
+      "blob_sha": "b585958e078f67cdacea4cb67f23a0a4a681dd4c",
+      "size": 16625,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.100.dat",
+      "blob_sha": "a5e4df7bb4f7fd57bcb7e9127a5115a43895f5f6",
+      "size": 16605,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.101.dat",
+      "blob_sha": "7477fe523920eba7c3bfe6ffcd61e1d7242f8add",
+      "size": 16599,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.102.dat",
+      "blob_sha": "ce7585eb62bf7aaf83fb98497d8acd5ccf9a0e9d",
+      "size": 16561,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.103.dat",
+      "blob_sha": "44eb9c9e921d4a33d066979efc6d71db2beb5f58",
+      "size": 16694,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.104.dat",
+      "blob_sha": "d204e9378f1ea3ff6af1eb9df7b4a8b773f86224",
+      "size": 16643,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.105.dat",
+      "blob_sha": "8666bd6fbaa78be5e14997795d5eac3cfc5be76a",
+      "size": 16670,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.106.dat",
+      "blob_sha": "5befb96d083ae9c296baec5a650eb6fbe8956afd",
+      "size": 16697,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.107.dat",
+      "blob_sha": "fb1b1ad8421ab9f7d3d46113f1c66836a246cb12",
+      "size": 16674,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.108.dat",
+      "blob_sha": "1ad34d16525364fd132a810c2534ee0c8dc566a3",
+      "size": 16628,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.109.dat",
+      "blob_sha": "c5e668e34f9cf25a3e9758aac728bc3ba764179a",
+      "size": 16470,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.110.dat",
+      "blob_sha": "7e215083fe3ed831ada39b03f6878372dc51eb53",
+      "size": 16527,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.111.dat",
+      "blob_sha": "05c83d1b8b7c9585b3e4ad99329f32ea03b9f9e1",
+      "size": 16460,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.112.dat",
+      "blob_sha": "d1a68bf55095b42c03c0d274e5807ecbbd6e7766",
+      "size": 16610,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.113.dat",
+      "blob_sha": "24ae868509592b29f80734da5105e13f9c6a4466",
+      "size": 16554,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.114.dat",
+      "blob_sha": "6b6e5f620437f4c1c832c3fd43bc31899866ddbb",
+      "size": 16517,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.115.dat",
+      "blob_sha": "5944583218ae60b6c5a459ccf77b9ad72d32c5d7",
+      "size": 16600,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.116.dat",
+      "blob_sha": "ad768314931be67b14e3fad30dfa39620169e657",
+      "size": 16605,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.117.dat",
+      "blob_sha": "fdffa4e86313b08c6c943cf1218d8f6a439d6cbb",
+      "size": 16530,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.118.dat",
+      "blob_sha": "afcc9c3fc39a1bb80c7647e3948a3ff832949972",
+      "size": 16510,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.119.dat",
+      "blob_sha": "1ffb86aca5f017e1ac4198f9d864a2bea2110ef9",
+      "size": 16506,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.120.dat",
+      "blob_sha": "184d3fe910512867bb88f1d0bd5e28a25a7876c6",
+      "size": 16505,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.121.dat",
+      "blob_sha": "98b46bab51ba11f587af15e4e662250cf2bba3e6",
+      "size": 16617,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.122.dat",
+      "blob_sha": "541e3aa1a273eb4d52f5dda6fb6f28a08cf61a03",
+      "size": 16616,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.123.dat",
+      "blob_sha": "e89431519da3497545639f28e125836fd2c24262",
+      "size": 16576,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.124.dat",
+      "blob_sha": "84207ecbd66ef8453a25f9964ace96aed4c8b4ae",
+      "size": 16632,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.125.dat",
+      "blob_sha": "ac8ad0941b1511ca9636392d82014802abe3e1bd",
+      "size": 16596,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.126.dat",
+      "blob_sha": "a866d0e9e732fa9cf8883f19e57379e19318a9bf",
+      "size": 16593,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.127.dat",
+      "blob_sha": "44b82ba39dbf4cb8212ab1e38adfcdd4806af038",
+      "size": 16538,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.128.dat",
+      "blob_sha": "44f8e599d0d14246c5ca0aabad37481869fde878",
+      "size": 16591,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.129.dat",
+      "blob_sha": "450c9eaed07e3802da9d83bf84df50e26a084042",
+      "size": 16518,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.130.dat",
+      "blob_sha": "7aa1f4c60d9ee3a52c9f5bd511f1c69e1790edf0",
+      "size": 16665,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.131.dat",
+      "blob_sha": "f7212751227c3f35e7695a20a7545ef819008005",
+      "size": 16632,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.132.dat",
+      "blob_sha": "67524598aeb4a54680538c4d6afda939386a5b16",
+      "size": 16606,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.133.dat",
+      "blob_sha": "7e140b9a39d6e0d6b5c5487a13061fb4851fd9c7",
+      "size": 16626,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.134.dat",
+      "blob_sha": "db0a24525cc6d249bf0aa2f471ffdd37e97ceb1c",
+      "size": 16619,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.135.dat",
+      "blob_sha": "dc1777a6611b9cf7e61f79d45ba1e919b42f9b51",
+      "size": 16612,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.136.dat",
+      "blob_sha": "13a478cf02720e84348d241c6f01c57d7067bc5f",
+      "size": 16542,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.137.dat",
+      "blob_sha": "89d18c8078a7e0449cf908b32eacb41152cf12b7",
+      "size": 16509,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.138.dat",
+      "blob_sha": "c2f417981b4698b6c25e248d0a6898d916a52ece",
+      "size": 16485,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.139.dat",
+      "blob_sha": "f1676f8ae7dc1d73128c03b97c6ebae5d6ee7b06",
+      "size": 16570,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.140.dat",
+      "blob_sha": "70f68feaae9111cce13e25f8ee2ab431dc2524c0",
+      "size": 16568,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.141.dat",
+      "blob_sha": "df2572688c70e8dfafcc8b845112c831fd009e09",
+      "size": 16548,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.142.dat",
+      "blob_sha": "efb8621c78183d05b1af35b8387a08382d602f74",
+      "size": 16572,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.143.dat",
+      "blob_sha": "5ef06dfcd1ca5fb897b3083f5645a357b8a41a4c",
+      "size": 16569,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.144.dat",
+      "blob_sha": "ce2a0f42094b8b29b282997bfe3ec9fd1d54df45",
+      "size": 16587,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.145.dat",
+      "blob_sha": "9c84a476322445b37a512576b0cb687a1fbb7290",
+      "size": 16524,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.146.dat",
+      "blob_sha": "b77679ad6f8b8519b31c9942abda5c0b0bfeafd4",
+      "size": 16534,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.147.dat",
+      "blob_sha": "7e322bf874803b4b8c8a46e38ef8ed06547c5d1b",
+      "size": 16561,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.148.dat",
+      "blob_sha": "3da58dcc4eb2d351a66ff56f95fbb4bd64deb461",
+      "size": 16567,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.149.dat",
+      "blob_sha": "aab25d5753173a0b07b633b0ad14d5d2cd76793c",
+      "size": 16575,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.150.dat",
+      "blob_sha": "07034e6dcad6a64d32d5fcdfb3e700c2a29ffd91",
+      "size": 16590,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.151.dat",
+      "blob_sha": "1303f6b53d7e1e85b29092acf9fe5198c6799b68",
+      "size": 16646,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.152.dat",
+      "blob_sha": "cce4a16cbffbf814fc7ab15dc8bcef9a527d10ca",
+      "size": 16582,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.153.dat",
+      "blob_sha": "bc19b6e8fbdee6597a050cb50bc8c5c33d60f3d6",
+      "size": 16607,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.154.dat",
+      "blob_sha": "6358243acf5c700066ee89e4a578deee4b90552a",
+      "size": 16537,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.155.dat",
+      "blob_sha": "7aee147afcb8220bcb6397bb827b0fd69309da81",
+      "size": 16522,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.156.dat",
+      "blob_sha": "225496c109d14248b9d54843ad283526d2ebada9",
+      "size": 16574,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.157.dat",
+      "blob_sha": "f77ea78a0f02f59ffb789d8e70b9185ff3e0a3b8",
+      "size": 16685,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.158.dat",
+      "blob_sha": "7b99b34492f713e53b14dad1b7500382ab1db60b",
+      "size": 16607,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.159.dat",
+      "blob_sha": "336aaf5dd98bfe58fef5ad5a364ed78b02c141ab",
+      "size": 16617,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.160.dat",
+      "blob_sha": "55710a0cdfe4a6e5d1e2c58e77e459ec69fe1d8b",
+      "size": 16644,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.161.dat",
+      "blob_sha": "c2d568263b4f7090f303a9f8c56de8a8120cece0",
+      "size": 16598,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.162.dat",
+      "blob_sha": "30722518b4366897fbf561f627eff636033c0521",
+      "size": 16611,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.163.dat",
+      "blob_sha": "92e09db6bbe62563863089b47de0aff88bd9121e",
+      "size": 16515,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.164.dat",
+      "blob_sha": "999438b9ab820f3a7b955f5239cf18adff2de4bd",
+      "size": 16522,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.165.dat",
+      "blob_sha": "273fad4a49df55d6e98aaadef229f75522072074",
+      "size": 16486,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.166.dat",
+      "blob_sha": "2a29060240f87ec2a918ab48ad3569b894c9e5b2",
+      "size": 16600,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.167.dat",
+      "blob_sha": "a68a685e2202aa073fc847f20842eb4d292f7d8f",
+      "size": 16575,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.168.dat",
+      "blob_sha": "f6d10544cf7153d731ea1d122532bebf2fd36d1e",
+      "size": 16589,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.169.dat",
+      "blob_sha": "21ac3a1ffb89b74632819e1ac55256d8f5461ced",
+      "size": 16618,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.170.dat",
+      "blob_sha": "7b722035a53d0512364a65ec43d30caf1aa42c4b",
+      "size": 16607,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.171.dat",
+      "blob_sha": "c392cc4de757524c81b7a6a2e5da34a5c2ad12eb",
+      "size": 16556,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.172.dat",
+      "blob_sha": "79ecbd2f0566f8d41a0710742e66af8a925d66b6",
+      "size": 16506,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.173.dat",
+      "blob_sha": "1a13a71824a4699ec681cf73141832bfbb85a245",
+      "size": 16513,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.174.dat",
+      "blob_sha": "4a80c90c087d4e1a86503beffc21856f845f9499",
+      "size": 16508,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.175.dat",
+      "blob_sha": "00285ede5d3414c90d0435fbb495ad0746698016",
+      "size": 16642,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.176.dat",
+      "blob_sha": "f873469d9ce0a07b1c48ea9bfc29cd3dc6eed35b",
+      "size": 16647,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.177.dat",
+      "blob_sha": "6e78f0377e96d6c38551f8ad3dc330dc6617f8e0",
+      "size": 16613,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.178.dat",
+      "blob_sha": "341efbfb99868101cda9f35b97f7b7036fea95e8",
+      "size": 16654,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.179.dat",
+      "blob_sha": "8120363c03515ec5103ac48fd6c7c3474cd2b520",
+      "size": 16629,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.180.dat",
+      "blob_sha": "4bfd18ce8668bf1ce0a165c6335e7216eeba4211",
+      "size": 16614,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.181.dat",
+      "blob_sha": "3b617e5355ae862a44d34e7a077bc0e52919ce73",
+      "size": 16538,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.182.dat",
+      "blob_sha": "3990c26ac36d25f71309754bfef00e44572f3f47",
+      "size": 16564,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.183.dat",
+      "blob_sha": "c24f4ab7f63f09fb92628685f50cee7b688f9bd9",
+      "size": 16558,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.184.dat",
+      "blob_sha": "1fe1e1087b79ca3839df192258ed119f658481f5",
+      "size": 16681,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.185.dat",
+      "blob_sha": "908052248ffae47eb40ae2d303f3d090a95ac987",
+      "size": 16672,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.186.dat",
+      "blob_sha": "427644e2b56a5554994997997f5d7b654659b349",
+      "size": 16665,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.187.dat",
+      "blob_sha": "7afb4e72bc55df5ef83e661832738ea91d1d5b22",
+      "size": 16661,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.188.dat",
+      "blob_sha": "8c6cd00c66ef7572d823406579b9f2aaa273a1b7",
+      "size": 16669,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.189.dat",
+      "blob_sha": "6ff6bf70029334b66c100bd8acf21377e6d28e83",
+      "size": 16641,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.190.dat",
+      "blob_sha": "6cab0bf29a2e8d5599cca6ef98529608278f8819",
+      "size": 16485,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.191.dat",
+      "blob_sha": "48e4e140765f47a530ba6a40e730d26b1e0a32c8",
+      "size": 16502,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.192.dat",
+      "blob_sha": "ebe477870168a2a0842cf46d8a6b9c431c293ada",
+      "size": 16494,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.193.dat",
+      "blob_sha": "446a1d2a442e188ae34f20565c4837ecd28ee219",
+      "size": 16565,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.194.dat",
+      "blob_sha": "9d9da027830e75fe62a9a1f9225e581e81f255d8",
+      "size": 16545,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.195.dat",
+      "blob_sha": "4779457c564251c07d0aa8f20ddec86958f69b85",
+      "size": 16525,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.196.dat",
+      "blob_sha": "507905cb67a109475506cd0fec958a769e61904d",
+      "size": 16565,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.197.dat",
+      "blob_sha": "309910f57e5ea57caf55ec10b68e5d8a5ad9e298",
+      "size": 16589,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.198.dat",
+      "blob_sha": "646ccb59f25c8e95b6423226ad187053873a88a4",
+      "size": 16518,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.199.dat",
+      "blob_sha": "aebae2718a4e1591fae83c4a7f5a4a4e69ddd066",
+      "size": 16492,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.200.dat",
+      "blob_sha": "73b1f9130b1a8b78c67c2409748f879b00bec993",
+      "size": 16530,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.201.dat",
+      "blob_sha": "bb55fd065277b59fd1b27f0e97c0e97367b2bd63",
+      "size": 16478,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.202.dat",
+      "blob_sha": "e872b000700c92d88736fa6d7ebd8e02b4c617a7",
+      "size": 16587,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.203.dat",
+      "blob_sha": "7349013c4b54abe1f16a132bde254b50b6a36aaa",
+      "size": 16604,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.204.dat",
+      "blob_sha": "dc853711042c3b29e92ebe607cda30e2466f7e3f",
+      "size": 16560,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.205.dat",
+      "blob_sha": "88a9690c2743226d4bda2c7f17e163e6a5a5238f",
+      "size": 16626,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.206.dat",
+      "blob_sha": "849095fc3977cbdbd8fec21a4bdc7f228b2ac578",
+      "size": 16588,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.207.dat",
+      "blob_sha": "dcdcdbff3e456040e17ce966dee72c6a3a348bd2",
+      "size": 16557,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.208.dat",
+      "blob_sha": "66194830a0eb13a26a4d226369461547969611e6",
+      "size": 16507,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.209.dat",
+      "blob_sha": "443c082bcebc9f1a72c358e5791f9e9b89552139",
+      "size": 16524,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.210.dat",
+      "blob_sha": "7eae9354ed66998ac5eb76a9a404032670dede15",
+      "size": 16482,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.211.dat",
+      "blob_sha": "0be2246e8b29f25c707f43b976427c6ea9ff36c5",
+      "size": 16661,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.212.dat",
+      "blob_sha": "c9affc003cfc2e3e7b0ced8162a940f9df003152",
+      "size": 16627,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.213.dat",
+      "blob_sha": "17f69e58b29210af43f811f5d35518a6e92f51e8",
+      "size": 16633,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.214.dat",
+      "blob_sha": "dcf4a7e4cdf16ee662b966118d79900db050f04a",
+      "size": 16656,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.215.dat",
+      "blob_sha": "d4282505faa769520031b09f96773b5baa02a3dd",
+      "size": 16635,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.216.dat",
+      "blob_sha": "3be9bf016d9269aba36cdb825543754bdd3516df",
+      "size": 16603,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.217.dat",
+      "blob_sha": "48de7b58b2e47aa16448afa8786d4125476927dd",
+      "size": 16535,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.218.dat",
+      "blob_sha": "7866ebe0b56b2b25384e8e7bd945edff5d2b2cf0",
+      "size": 16529,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.219.dat",
+      "blob_sha": "f2456bb623f4e1c1f4a645e7f20b9461963ef07c",
+      "size": 16546,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.220.dat",
+      "blob_sha": "d9b88423c59e184c763829faa66b1cf03f708d5b",
+      "size": 16570,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.221.dat",
+      "blob_sha": "70a10e3ff93509d56868f740573a9cbd3778270f",
+      "size": 16570,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.222.dat",
+      "blob_sha": "b5290d310b98fe8d28491209aa7649016feafd7a",
+      "size": 16533,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.223.dat",
+      "blob_sha": "bcb8b071921b65c65d0205d48bb6fa5165c58fbc",
+      "size": 16616,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.224.dat",
+      "blob_sha": "4dfb7e3d54001001a36a53bf03b6734e5a3e6e11",
+      "size": 16569,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.225.dat",
+      "blob_sha": "648195e06ebaa9fc91967cd6446d4e9e3d5860a5",
+      "size": 16566,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.226.dat",
+      "blob_sha": "9e9dc500204f2be6ec1fc4ef963dd9ce8d6c9a98",
+      "size": 16533,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.227.dat",
+      "blob_sha": "074687078e812e37126def330662d748e1b65892",
+      "size": 16495,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.228.dat",
+      "blob_sha": "bbd70802379518ff5c543fe3fc099c86cdc19a79",
+      "size": 16502,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.229.dat",
+      "blob_sha": "9a19e88ccc2909d66bafcfd9533dd4f8b2a2f679",
+      "size": 16643,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.230.dat",
+      "blob_sha": "f3ccdcd97cb46c022c496deebd73fe0541a489e5",
+      "size": 16547,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.231.dat",
+      "blob_sha": "9c190598b651c1396cba87579f342cf8e19a32c4",
+      "size": 16595,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.232.dat",
+      "blob_sha": "94f8cd272bd1b21beac1da80cca90ac8d775d7be",
+      "size": 16628,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.233.dat",
+      "blob_sha": "91c81a39d7257e66051488e5be3434355495639f",
+      "size": 16578,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.234.dat",
+      "blob_sha": "6e533e9662f3ba823867ff98e475d6a14aa5df5b",
+      "size": 16595,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.235.dat",
+      "blob_sha": "c57c955c0b588b87622245b88552254ae75a278d",
+      "size": 16527,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.236.dat",
+      "blob_sha": "827aeb6224279e40d80a3d0fb319c4b7e31cdd77",
+      "size": 16497,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.237.dat",
+      "blob_sha": "269d50770853b6ae330ad14fc970f165a3e5df12",
+      "size": 16503,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.238.dat",
+      "blob_sha": "37cf193ae978f8d3c535fd0d504dfed5a5bdb5a2",
+      "size": 16666,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.239.dat",
+      "blob_sha": "c7022b05b896ad000371eaf930696f2a3edb1cdd",
+      "size": 16591,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.240.dat",
+      "blob_sha": "7f511728be31d47bd960f049dbc7341e1a3ed956",
+      "size": 16613,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.241.dat",
+      "blob_sha": "d6eec3ea84e6ea84cec76ea02dc3aceb8342d13a",
+      "size": 16659,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.242.dat",
+      "blob_sha": "d29b08669f4360bfb4c25fafa5448de32edfccfb",
+      "size": 16646,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.243.dat",
+      "blob_sha": "2bbf48bae86af3dd1cb4d48121ccdb53fa20eee6",
+      "size": 16639,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.244.dat",
+      "blob_sha": "0a91f5b043f9358e2ceeb3e006094da85a1be8c9",
+      "size": 16520,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.245.dat",
+      "blob_sha": "312a0a2976e6f36d370a3e5f96830c6211dc699d",
+      "size": 16529,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.246.dat",
+      "blob_sha": "19f50b4575e38385c0c0c28ba77e1ae8a1541125",
+      "size": 16518,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.247.dat",
+      "blob_sha": "5efcd6349f9ae3a695ed070b695e297fe54393a3",
+      "size": 16594,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.248.dat",
+      "blob_sha": "e30a5c631fe82f89d332d0e17d8008526b03e07e",
+      "size": 16581,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.249.dat",
+      "blob_sha": "51e08a04a2b0aee6e0841f032a011994285fcde5",
+      "size": 16578,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.250.dat",
+      "blob_sha": "ed774d3f6701f30593b9a44e673e1458c2dab685",
+      "size": 16609,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.251.dat",
+      "blob_sha": "496a6c6924941d337d1f480303bb6719fec1646a",
+      "size": 16621,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.252.dat",
+      "blob_sha": "ef4b744bbccecf89f30127693f2b8ffcb73c7571",
+      "size": 16576,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.253.dat",
+      "blob_sha": "d7afa22aba1b5ffbddc0cabd9e5e0ab378017731",
+      "size": 16527,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.254.dat",
+      "blob_sha": "71432f013c6b4230cbf3fabefcdd3a17b20334b3",
+      "size": 16543,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.255.dat",
+      "blob_sha": "01700b525a7719323f48bf5bc86a18bc44afd271",
+      "size": 16537,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.256.dat",
+      "blob_sha": "02dbf58d8921c6287325ab8b04e004a2bf1aaca8",
+      "size": 16656,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.257.dat",
+      "blob_sha": "188ef1f5181a7899ac5aefc850f8a68ada4a9fd2",
+      "size": 16641,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.258.dat",
+      "blob_sha": "1a2a15cc686375a89df90bc955ca58eeb464ac09",
+      "size": 16633,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.259.dat",
+      "blob_sha": "8b58a223a5283be3a71442433f16139d1c52db79",
+      "size": 16664,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.260.dat",
+      "blob_sha": "e43cd23c2fde0a14224022e00557bf1e180f28fe",
+      "size": 16664,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.261.dat",
+      "blob_sha": "f8de5539486d1b7d2fff5094e88b45a78b381999",
+      "size": 16606,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.262.dat",
+      "blob_sha": "24a8f012c1d1399ec9a15cef54eb5f15025a9b45",
+      "size": 16566,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.263.dat",
+      "blob_sha": "d08b42c7219f55fd626d6830059f4902ba6b9495",
+      "size": 16568,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.264.dat",
+      "blob_sha": "664cbed1901fb68ca76a6207addd0a38971874c9",
+      "size": 16552,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.265.dat",
+      "blob_sha": "c39c96d4ef283154b7a30708480fdaca46c47a77",
+      "size": 16690,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.266.dat",
+      "blob_sha": "991ae56cc0728f87f5be7d2595e8aba7a6b80a9b",
+      "size": 16675,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.267.dat",
+      "blob_sha": "a5b5c051a7196db43bb2b82256b5951ddf3b7893",
+      "size": 16663,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.268.dat",
+      "blob_sha": "50682d0d78e19817dd23c60d5155c712351505e0",
+      "size": 16696,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.269.dat",
+      "blob_sha": "f844fc5614bb8508274b4b40a286f7a28f09d8df",
+      "size": 16665,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.270.dat",
+      "blob_sha": "34587b2541a8bb1fdc6915b44d0d91e3315dd8fa",
+      "size": 16623,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.271.dat",
+      "blob_sha": "629d649f75316771e9d6605a7dd644ae798cf878",
+      "size": 16485,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.272.dat",
+      "blob_sha": "2328e092c9155cd88d23f069256e02de4bf0e762",
+      "size": 16513,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.273.dat",
+      "blob_sha": "418bfb4dadaed5a4668b3d339b0abb0c717aa718",
+      "size": 16525,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.274.dat",
+      "blob_sha": "0e0456a0541875e240ed662208b5af182a385eb8",
+      "size": 16552,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.275.dat",
+      "blob_sha": "b1afaf7a98c12d10f13d08b56ba85a31451f0a57",
+      "size": 16534,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.276.dat",
+      "blob_sha": "1b22fe5caae1450371eb865dc1bd997f4e5dd239",
+      "size": 16530,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.277.dat",
+      "blob_sha": "dc0c231c63c9c276a9f9a1f887e9a761328b5a69",
+      "size": 16580,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.278.dat",
+      "blob_sha": "b4ef2407566915dad2fdb10baf4dbe9f9d6bd784",
+      "size": 16582,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.279.dat",
+      "blob_sha": "c965aa71f1aa9002852fa35f50d77e3231ce7ddd",
+      "size": 16543,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.280.dat",
+      "blob_sha": "57a1e847324d25a1f3a532cc8b584f2f93318ce7",
+      "size": 16511,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.281.dat",
+      "blob_sha": "e18f3b08e69e14b3ae9f6b66d41d946441e2e898",
+      "size": 16520,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.282.dat",
+      "blob_sha": "6c445a5bca5fe3b2524c72d82efb650208dbfa2c",
+      "size": 16527,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.283.dat",
+      "blob_sha": "9755b080b8c826ee9eb1ca2f74c81ca5ec2f449f",
+      "size": 16630,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.284.dat",
+      "blob_sha": "b05d64225557b011b3fc76922299096c586e4167",
+      "size": 16592,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.285.dat",
+      "blob_sha": "585a1b26a4f710f8b785ef595434211c66f50031",
+      "size": 16582,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.286.dat",
+      "blob_sha": "6759c5263e3604c9d8b6bdd219715a2a3298817f",
+      "size": 16599,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.287.dat",
+      "blob_sha": "40f46ad497b2ee15cf48b0e7c9143eadc10cf3d1",
+      "size": 16604,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.288.dat",
+      "blob_sha": "8931105dce761c1073e032f8598067c3b0e2f819",
+      "size": 16598,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.289.dat",
+      "blob_sha": "96533b84846ea70f4746dc6473cb1523cb685ce4",
+      "size": 16491,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.290.dat",
+      "blob_sha": "3a027c67104c1acab30ece6c69a8f2078a82110f",
+      "size": 16508,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.291.dat",
+      "blob_sha": "465b184bd51490fda14c94b2ab49717121ab863a",
+      "size": 16504,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.292.dat",
+      "blob_sha": "61cdcfe9ee3cc82eff3b9513b77ae8b72bdcf63d",
+      "size": 16612,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.293.dat",
+      "blob_sha": "159bea0b0242027d981d4ef5086f295ff108113a",
+      "size": 16621,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.294.dat",
+      "blob_sha": "0e71d87ce0bc99ee7f702b575707021da4aa4843",
+      "size": 16604,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.295.dat",
+      "blob_sha": "1b86507a9525058ebd895c97e54281d7012def73",
+      "size": 16662,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.296.dat",
+      "blob_sha": "325659cd1f68ceb4fc4db6fbdf5b0cefa66c3f66",
+      "size": 16615,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.297.dat",
+      "blob_sha": "5bfc9f6f3ce32ffdb2def90da65e4a29edc5e4ea",
+      "size": 16626,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.298.dat",
+      "blob_sha": "cc26577e66c00bd2036601398b5e5bbf572a6487",
+      "size": 16532,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.299.dat",
+      "blob_sha": "a099166cd5d3cd8382631f0c880e44dd73ea604e",
+      "size": 16505,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.300.dat",
+      "blob_sha": "3d6cb80d7ed1a9a04cc15fa734f45a220ecc4f2e",
+      "size": 16509,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.301.dat",
+      "blob_sha": "6531af8810631a2e10b0dcaf58f32bb8ae7281db",
+      "size": 16565,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.302.dat",
+      "blob_sha": "45d1ac5518a82252b4effe15f03953d0dd61476d",
+      "size": 16543,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.303.dat",
+      "blob_sha": "76f1b97372d83f4593961b8b314fc8c926ec227f",
+      "size": 16541,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.304.dat",
+      "blob_sha": "2ae8dd4d85641f639a16bf8c82a9fbb9f4892e17",
+      "size": 16590,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.305.dat",
+      "blob_sha": "46acf8cbee5d5bc1256dfd62eeba45d606582428",
+      "size": 16561,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.306.dat",
+      "blob_sha": "26027aa66358593c6658ff18bad71a58a1004e5d",
+      "size": 16525,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.307.dat",
+      "blob_sha": "e720be3c98e2dc347cf66832b5745a18a5de526f",
+      "size": 16503,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.308.dat",
+      "blob_sha": "d11bd5ab2bb17f05fe69a64d3bb161a0010c23ad",
+      "size": 16548,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.309.dat",
+      "blob_sha": "ac078e61d4a70dd9c78180a95619999557858f8d",
+      "size": 16488,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.310.dat",
+      "blob_sha": "9868d6031175f1f55265877f0f26aa458b86f15e",
+      "size": 16574,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.311.dat",
+      "blob_sha": "1ee5eb53d86aaa60895c51b944d6d15447ea3d14",
+      "size": 16542,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.312.dat",
+      "blob_sha": "cc687d272263496b85caf263c3d5684fa577fcb1",
+      "size": 16550,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.313.dat",
+      "blob_sha": "cef8f3c939587fe2761cd063d8033784926e1972",
+      "size": 16602,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.314.dat",
+      "blob_sha": "4baa50b4eba0a80f917a0cc586b32a84be33db7a",
+      "size": 16559,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.315.dat",
+      "blob_sha": "2c8d242e3288694124c0ab71b5889abd5f0ee972",
+      "size": 16542,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.316.dat",
+      "blob_sha": "521ac58b3211c3295794c0f23767d70298d426f5",
+      "size": 16536,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.317.dat",
+      "blob_sha": "e89cd043524fbdfc480abd2e557155816016cac7",
+      "size": 16553,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.318.dat",
+      "blob_sha": "afbb74770811632e3caff515d1850c63a2cc2f93",
+      "size": 16503,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.319.dat",
+      "blob_sha": "a6028732f9f6e165fdc403578479eff1fdc63a6c",
+      "size": 16558,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.320.dat",
+      "blob_sha": "189d037a68c95b76b61e2c2b85c7186d401dadb8",
+      "size": 16546,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.321.dat",
+      "blob_sha": "fb852a8787e971b7aaf6e55ccb1fa636bd3fcb1b",
+      "size": 16528,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.322.dat",
+      "blob_sha": "890336921465492045fb8bcee66efdc89c434fcf",
+      "size": 16581,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.323.dat",
+      "blob_sha": "2fff64ab076885cc67780aec93cb22403a86f1b4",
+      "size": 16572,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/data/ann_dataset1/track.324.dat",
+      "blob_sha": "39923a7117c100e9655e4c845c49ac9ce263368e",
+      "size": 16542,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/notebooks/.ipynb_checkpoints/feedforward_NN-checkpoint.ipynb",
+      "blob_sha": "978c0f2a613c6e45240f233e1afaafbfb1e2f59d",
+      "size": 21317,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/notebooks/ANN Analysis on synthetic hurricanes.ipynb",
+      "blob_sha": "4524a5d27d24f05b4631326cfef6f9e63d7de9b9",
+      "size": 9966,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/notebooks/DHS Report figures.ipynb",
+      "blob_sha": "2abeb85230f6d6c80482c8baa621fdcffd467757",
+      "size": 1993,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/notebooks/Density Network Hurricane Test.ipynb",
+      "blob_sha": "83e3d4f51a5ed30ae099acdf15f7b1f2c0fda27d",
+      "size": 13000,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/notebooks/Density Regression NN.ipynb",
+      "blob_sha": "25a00485be0e090d9adf2e37548774e41417da86",
+      "size": 10397,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/notebooks/Mix Density NN.ipynb",
+      "blob_sha": "71c10ac490933bc6b4ff38abb975ef21b60f5cb3",
+      "size": 4738,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/notebooks/RNN Run.ipynb",
+      "blob_sha": "b67ca0c229991944da9735417857b3afe22bda8a",
+      "size": 11357,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/notebooks/Simple FF ANN.ipynb",
+      "blob_sha": "153a357fe7ae173d879b8c2d2c7650cbcfbaa79e",
+      "size": 22602,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/notebooks/Simple Regression LSTM.ipynb",
+      "blob_sha": "cd98d935738c26ddc6df7a96962a16f380122331",
+      "size": 17877,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/notebooks/Storm Surge LSTM.ipynb",
+      "blob_sha": "9d41747ed07c90bb1a9587bd6d31e05a6c8d7f5f",
+      "size": 23124,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/notebooks/embedded_feedforward_NN.ipynb",
+      "blob_sha": "613b172af153d71a965e3d888d8e3e2eecf7aaf0",
+      "size": 30656,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/notebooks/embedded_feedforward_separable_NN.ipynb",
+      "blob_sha": "06eef6960c6df52424d0bad17572d3f9f6eec4fb",
+      "size": 28735,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/notebooks/embedded_feedforward_single_output.ipynb",
+      "blob_sha": "e9b943000368a4401a6a0001e5e0c20897220f02",
+      "size": 28814,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/notebooks/feedforward_NN.ipynb",
+      "blob_sha": "785f4c1f5e8fc0e2a75de77266a2764224571d73",
+      "size": 21319,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Storm-Surge/notebooks/response surface method.ipynb",
+      "blob_sha": "4b4d45a232aacb0ef6c60deeeec5278aa73b2bad",
+      "size": 24417,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    }
+  ],
+  "somef_status": "not_run",
+  "note": "No source archive collected. Tree paths and blob hashes are an index, not runnable source."
+}

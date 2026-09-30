@@ -1,0 +1,5492 @@
+{
+  "repo_id": "954100b7c31a52ab56dc",
+  "snapshot_commit_sha": "7fd628574eaf50d5635baf89a417c7ed943d17fd",
+  "snapshot_role": "current_default_branch_not_verified_paper_version",
+  "paper_commit_sha": null,
+  "tree_truncated": false,
+  "files": [
+    {
+      "path": ".gitattributes",
+      "blob_sha": "176a458f94e0ea5272ce67c36bf30b6be9caf623",
+      "size": 12,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": ".github/workflows/build_almalinux_9_docker.yaml",
+      "blob_sha": "634cc5925b0e22193a13d8c0c55ec6e0a757f165",
+      "size": 3399,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": ".github/workflows/doc_update_on_push2master.yml",
+      "blob_sha": "43d5aac46ce8858f08077fd7cf8fa9fd606a496a",
+      "size": 1277,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": ".gitignore",
+      "blob_sha": "dde3895fc112ad34a839b2fed9210ac2288a959b",
+      "size": 16,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": ".travis.yml",
+      "blob_sha": "eec37c8cabb58c0ac98567c8f3ec1a8bdeb70838",
+      "size": 1208,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Docs/.gitignore",
+      "blob_sha": "6fc23b5492745b90c21966086d5551bd88124f65",
+      "size": 40,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Docs/Makefile",
+      "blob_sha": "0d3ab247026bc86352e7df5200481b25617219d0",
+      "size": 984,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Docs/build/pdf/DKB.pdf",
+      "blob_sha": "bad5f75570d2f654520904b7130be05a0ba53c49",
+      "size": 214260,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Docs/misc/instructions/Dataflow.docx",
+      "blob_sha": "a510ecad14b433f14089811269a4a6bb34272932",
+      "size": 15726,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Docs/misc/instructions/documentContent_usage",
+      "blob_sha": "efa45a3a3d85075bdb631752df9fa660d7aebf2c",
+      "size": 427,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Docs/misc/instructions/ontology_ATLASDocs.xlsx",
+      "blob_sha": "c48abc4da1e616e2240876ccbb17d3e07d77f6c8",
+      "size": 26593,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Docs/misc/instructions/virtuoso_importInstructions.docx",
+      "blob_sha": "a90b6bca4ba193a1c9205f4debe8883387436f4e",
+      "size": 283730,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Docs/misc/presentations/ApacheKafka.pdf",
+      "blob_sha": "f5e56a574e70af2bd80a37a3ab2ef175abbb2a4f",
+      "size": 1833041,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Docs/misc/presentations/ApacheKafka.pptx",
+      "blob_sha": "99a8c5014eafbeade4e75d8347493b997c26506a",
+      "size": 613603,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Docs/source/Stages/055_documents2TTL/055_documents2TTL.rst",
+      "blob_sha": "a809ffd64463b24de8cbdb3297972747d08ae381",
+      "size": 149,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Docs/source/Stages/Stages.rst",
+      "blob_sha": "86aa8a93ecdc56c6500824b703ce6004aa80054c",
+      "size": 119,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Docs/source/conf.py",
+      "blob_sha": "2210ae2303512bf83bd7cd0237637c53d34322d1",
+      "size": 5138,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Docs/source/index.rst",
+      "blob_sha": "63e4212c10541e2e64cdfd77698984e72aff31b8",
+      "size": 496,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Installation/Conda/README",
+      "blob_sha": "9f292be153e8ccc10f0cdad9172d784e50113b52",
+      "size": 338,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Installation/Conda/environment.yaml",
+      "blob_sha": "070c933714df8f20b6afda2a61e67e4186058eaa",
+      "size": 3131,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Installation/Docker/AL9/Dockerfile",
+      "blob_sha": "060d5a38352616de3179de8191202c84faac9a53",
+      "size": 2552,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Installation/Docker/AL9/httpclient.py",
+      "blob_sha": "1f02bfcafbf7d7d349ddfe6b5eed5a059076a56b",
+      "size": 5151,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Installation/Elasticsearch/.gitignore",
+      "blob_sha": "50841d33fa4e0c916aa5ddced4ba65e9bb1d5499",
+      "size": 9,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Installation/Elasticsearch/README",
+      "blob_sha": "344560af62513a9392c45cc303cacc36e96a9a82",
+      "size": 315,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Installation/Elasticsearch/install.sh",
+      "blob_sha": "422c60e2fececb4f7a87653aa7454de125d49f60",
+      "size": 5067,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Installation/Elasticsearch/kibana.init.d",
+      "blob_sha": "6f68fc8a41aafc1c46bef435746d3eec4d20dfd0",
+      "size": 3564,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Installation/OrientDB/install.sh",
+      "blob_sha": "29dbdf2646a685d865968e835024826313884ff7",
+      "size": 4274,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Patches/kafka-connect-jdbc-3.1.1.patch",
+      "blob_sha": "fc4b33081a499ea2691305070e57115486ffa74f",
+      "size": 26761,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Patches/selenium.patch",
+      "blob_sha": "eb3f8a33bc0be9ad3857cf8a9510d91be5fec646",
+      "size": 645,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "README",
+      "blob_sha": "0e6603a58b01d306d73e500d4e12e4d0e7c4539c",
+      "size": 2502,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Tests/Dockerfile.OrientDB_install",
+      "blob_sha": "bfbcf4a931d4b9d6b4d36da6fa3862044f18a927",
+      "size": 387,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Tests/docker.sh",
+      "blob_sha": "c24b9eb99a0bb20d99b7d7419f03fceed275871d",
+      "size": 327,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Tests/travis/README_long_lines.sh",
+      "blob_sha": "d57e0c52fb059a08b0b017040778605936abf07b",
+      "size": 598,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Tests/travis/README_tabs.sh",
+      "blob_sha": "81483743d86b451c9386b75ed0d1a8a6780e3685",
+      "size": 401,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Tests/travis/README_trailing_spaces.sh",
+      "blob_sha": "b0e106c836713b02049cb097a59cdbe93fc77731",
+      "size": 413,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Tests/travis/functions.sh",
+      "blob_sha": "c30fe68327dec91e31643110d0449f721935df3c",
+      "size": 413,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Tests/travis/pyDKB.sh",
+      "blob_sha": "65484bf29cef681a23aecfa40635e6ab2550624c",
+      "size": 390,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Tests/travis/tests/test_funtions_getURL.sh",
+      "blob_sha": "027e368a9bb8e791205d8bc6836e4d778cc7c83b",
+      "size": 1300,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/API/server/.files",
+      "blob_sha": "01ab9c2bfe7a5a21793532c3a7edad70dbd43d65",
+      "size": 400,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/API/server/.gitignore",
+      "blob_sha": "79660c656327a4d61441b1f007efc01cf98f6b93",
+      "size": 17,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/API/server/README",
+      "blob_sha": "1a2596b63afe6059891682636b81620bca8c48a0",
+      "size": 3644,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/API/server/cgi-bin/dkb.fcgi",
+      "blob_sha": "95e898362a6c44debeb5cc9c44e2e304fff4a7c4",
+      "size": 5672,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/API/server/dkb-api.service",
+      "blob_sha": "dc232da348a6178a107be2ecca45ea4b4397d65e",
+      "size": 242,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/API/server/dkb.yaml.example",
+      "blob_sha": "00dea3c40bdd3af52fedf1a3fdb77bb4ac4948fe",
+      "size": 403,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/API/server/lib/dkb/api/__init__.py",
+      "blob_sha": "75b182c0d51cf2705c1648c61ff8048472be0b93",
+      "size": 1295,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/API/server/lib/dkb/api/common.py",
+      "blob_sha": "8e180e3f6497bc76854d9fc2aa5a269c36e8c098",
+      "size": 510,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/API/server/lib/dkb/api/config.py",
+      "blob_sha": "f56ba7597cdcb20799d7d0b6d13b7233f661345a",
+      "size": 1524,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/API/server/lib/dkb/api/exceptions.py",
+      "blob_sha": "01ee80306397882fbb16741863522815802405ab",
+      "size": 5633,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/API/server/lib/dkb/api/handlers.py",
+      "blob_sha": "40aedd328c9d6c4c481aa81f4440a747172b8dd8",
+      "size": 21819,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/API/server/lib/dkb/api/methods.py",
+      "blob_sha": "5a17d37b2e1976d556c921f82b6a557de4e2c469",
+      "size": 8412,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/API/server/lib/dkb/api/misc.py",
+      "blob_sha": "087b713486e7c8c7638c46fc856f4c3eac6755b5",
+      "size": 1681,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/API/server/lib/dkb/api/storages/__init__.py",
+      "blob_sha": "34265d382baa8fd9189c103447c3552f0332c688",
+      "size": 3107,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/API/server/lib/dkb/api/storages/es/__init__.py",
+      "blob_sha": "804a055861b02cc69b61bee002106b4dccf2bf35",
+      "size": 334,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/API/server/lib/dkb/api/storages/es/common.py",
+      "blob_sha": "e9432e4f63ef011266044a6614e5a4f7ab84aad6",
+      "size": 15255,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/API/server/lib/dkb/api/storages/es/methods.py",
+      "blob_sha": "42457f6e03850f9ff3f2b029974b9898728b40ae",
+      "size": 15311,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/API/server/lib/dkb/api/storages/es/query/campaign-stat-step-aggs",
+      "blob_sha": "167b1bd7ce60103f7608f5b7b78b07bbb23ba1a2",
+      "size": 1446,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/API/server/lib/dkb/api/storages/es/query/deriv",
+      "blob_sha": "ddac180f8673f86234b891c2dbce4ee200672adb",
+      "size": 1309,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/API/server/lib/dkb/api/storages/es/query/task-steps-hist",
+      "blob_sha": "dc8f56291923d8abb28d0fb7a12583387ff3c9be",
+      "size": 778,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/API/server/lib/dkb/api/storages/es/transform.py",
+      "blob_sha": "bb6484bc8b1f3df71e4fe8dbf8067d0c436bd870",
+      "size": 21257,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/API/server/lib/dkb/api/storages/es_nested/__init__.py",
+      "blob_sha": "ec9d22d07d2a9541b3ee4fe4a0b97f083f93d2df",
+      "size": 364,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/API/server/lib/dkb/api/storages/es_nested/common.py",
+      "blob_sha": "01a5d37fb18c0c45f0cf5dba66ee32ea0cb2c977",
+      "size": 13973,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/API/server/lib/dkb/api/storages/es_nested/methods.py",
+      "blob_sha": "27444f22146667d113123c1d8a5f52c160e3ce25",
+      "size": 13625,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/API/server/lib/dkb/api/storages/es_nested/query/campaign-stat-step-aggs",
+      "blob_sha": "9fa7060445c038fe1bb58ab41e42818fb24693f0",
+      "size": 1478,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/API/server/lib/dkb/api/storages/es_nested/query/deriv",
+      "blob_sha": "32e77019912fb3977acd9b9db52fad5e88964105",
+      "size": 1603,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/API/server/lib/dkb/api/storages/es_nested/query/task-steps-hist",
+      "blob_sha": "dc8f56291923d8abb28d0fb7a12583387ff3c9be",
+      "size": 778,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/API/server/lib/dkb/api/storages/es_nested/transform.py",
+      "blob_sha": "08e3f4ccf6b025bc903fc51cc05604357823a007",
+      "size": 20250,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/API/server/lib/dkb/api/storages/exceptions.py",
+      "blob_sha": "aabfc8cc02d445545b2650ece88978122cd7d1ab",
+      "size": 2066,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/API/server/nginx.dkb.conf",
+      "blob_sha": "fe4a931ebf7f691a072bdf5f1a03b82fe1da4d70",
+      "size": 303,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/API/server/setup.sh",
+      "blob_sha": "07461a10d42b5d4711144ea05a249a84e8ff077f",
+      "size": 14067,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/.gitignore",
+      "blob_sha": "6c97f0466cf37be32564265c22a51e9dbce3d264",
+      "size": 29,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/000_kafka/README",
+      "blob_sha": "8abcd5f920fe5329e7b1a037e0f20f135c830ebb",
+      "size": 11818,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/000_kafka/compile.sh",
+      "blob_sha": "c349ea6d6c47fef6687f30487529886d84a7baae",
+      "size": 223,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/000_kafka/config/010-connect-standalone.properties",
+      "blob_sha": "c26d08fa42a02e219c3860117002107d300704ff",
+      "size": 666,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/000_kafka/config/010-glance-lop-source.properties",
+      "blob_sha": "234b1a487b13acc87dde013d4bd0e4baa66836bd",
+      "size": 394,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/000_kafka/config/015-application.properties",
+      "blob_sha": "3eae27fcb3d25a642dd1c9e2560825da597d04d8",
+      "size": 1356,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/000_kafka/config/015-topology.properties",
+      "blob_sha": "e1c6142c6f60b60596e62cd43b08e392879af3f0",
+      "size": 1371,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/000_kafka/config/054-application.properties",
+      "blob_sha": "543ac13e49986d4da20268bd0a4e91b0e4658605",
+      "size": 1232,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/000_kafka/config/054-topology.properties",
+      "blob_sha": "d60267462df2c06ab4202e381e79a5b9f6007059",
+      "size": 1766,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/000_kafka/config/055-application.properties",
+      "blob_sha": "546208e97419e1734b41addf301cb07153ff0b60",
+      "size": 1228,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/000_kafka/config/055-topology.properties",
+      "blob_sha": "0f9bdb48fb28eccfd60984749549af0b64c7123f",
+      "size": 1046,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/000_kafka/config/060-connect-standalone.properties",
+      "blob_sha": "a0480dd3d9c336d5dff9d52e7c6d1578a6a20aaa",
+      "size": 688,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/000_kafka/config/060-virtuoso-sparql-sink.properties",
+      "blob_sha": "d3888fc603e814c87d344673bf84b83b8bd8d0fa",
+      "size": 383,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/000_kafka/config/060-virtuoso-ttl-sink.properties",
+      "blob_sha": "ecce47125c0402f94a6b715d5cfbd24f509d0d30",
+      "size": 438,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/000_kafka/config/application.properties",
+      "blob_sha": "f81f2fd55674e258d303f2c1bff96f4ca288b950",
+      "size": 1072,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/000_kafka/config/connect-sinks-standalone.properties",
+      "blob_sha": "ea1e1fb7102f6054b583a5a76a55a741d86fad11",
+      "size": 1457,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/000_kafka/config/connect-sources-standalone.properties",
+      "blob_sha": "e275c91c3c68ddf2d1845c2877364d5b1b646de4",
+      "size": 1637,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/000_kafka/config/example-sink.properties",
+      "blob_sha": "3f4f95954e3462a862f2993966247e3a64a4f0a3",
+      "size": 578,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/000_kafka/config/example-source.properties",
+      "blob_sha": "89db06fc98ac3566a15488cae1fb95c5aa601492",
+      "size": 851,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/000_kafka/config/log4j.properties",
+      "blob_sha": "9578593216fe5eb697258befc142972e4f2a80ee",
+      "size": 1015,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/000_kafka/config/plain-topology.properties",
+      "blob_sha": "24ee98e197df416eb37b2056f2f4a968beb669a8",
+      "size": 979,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/000_kafka/config/topology.properties",
+      "blob_sha": "9914358ec79f486489c7f9d863755f882322ca4a",
+      "size": 3553,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/000_kafka/ru/kiae/dkb/kafka/common/external/ExternalProcessLogger.java",
+      "blob_sha": "009a158198850c3641127cee964bba10f69b6f15",
+      "size": 2124,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/000_kafka/ru/kiae/dkb/kafka/connect/external/ExternalSinkConnector.java",
+      "blob_sha": "9c432c93dadefff4822982984d6ff99933b8bfab",
+      "size": 1425,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/000_kafka/ru/kiae/dkb/kafka/connect/external/ExternalSourceConnector.java",
+      "blob_sha": "964e72785e054dc17f54cb60c534fb20746d19b1",
+      "size": 1936,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/000_kafka/ru/kiae/dkb/kafka/connect/external/sink/ExternalProcessWriter.java",
+      "blob_sha": "3090db08c2880fb452d15ff9a60227a4de09d4bc",
+      "size": 3389,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/000_kafka/ru/kiae/dkb/kafka/connect/external/sink/ExternalSinkConfig.java",
+      "blob_sha": "77a2be0273c72e3dc1c355392d0caafaf5905c2d",
+      "size": 3340,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/000_kafka/ru/kiae/dkb/kafka/connect/external/sink/ExternalSinkTask.java",
+      "blob_sha": "576e6b3aaf779e7df3a51d74c7605b34238213e7",
+      "size": 2611,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/000_kafka/ru/kiae/dkb/kafka/connect/external/source/ExternalProcessQuerier.java",
+      "blob_sha": "17cd35c13a2ab29cec5d98057bdc92f33ad59bf6",
+      "size": 8833,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/000_kafka/ru/kiae/dkb/kafka/connect/external/source/ExternalSourceConfig.java",
+      "blob_sha": "6ae75ed59cb315463aab3effe45c92da6980036b",
+      "size": 4336,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/000_kafka/ru/kiae/dkb/kafka/connect/external/source/ExternalSourceTask.java",
+      "blob_sha": "8afbef2312a4dbb6763cb5a7e388e1dd72b671a3",
+      "size": 3483,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/000_kafka/ru/kiae/dkb/kafka/connect/runPipeConnector.java",
+      "blob_sha": "0885a7c089bf05bf1783f2fbd94aca9322f9b105",
+      "size": 9537,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/000_kafka/ru/kiae/dkb/kafka/streams/cli/StreamsApplication.java",
+      "blob_sha": "5fd29a2fa14f71e0ee0b2c6b5de65adb96568d56",
+      "size": 2320,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/000_kafka/ru/kiae/dkb/kafka/streams/csv2ttlProcessor.java",
+      "blob_sha": "60cd7d3975b7a9bc8200efd13062701adf076b89",
+      "size": 3235,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/000_kafka/ru/kiae/dkb/kafka/streams/processor/ProcessorConfig.java",
+      "blob_sha": "f938f26dab5aaa76cf8da30b170b92abb3878bff",
+      "size": 1384,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/000_kafka/ru/kiae/dkb/kafka/streams/processor/external/ExternalProcessorConfig.java",
+      "blob_sha": "b3649a63dc781b68164ae1b4c9ea6b8a349d62c1",
+      "size": 4306,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/000_kafka/ru/kiae/dkb/kafka/streams/processor/external/ExternalProcessorSupplier.java",
+      "blob_sha": "b5a8f5f7f93239fb9b7bf5e167dbe010c5756426",
+      "size": 8754,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/000_kafka/ru/kiae/dkb/kafka/streams/processor/filter/FilterProcessorConfig.java",
+      "blob_sha": "9c451a1bd274ac7407d6fbb52a3209c1292392be",
+      "size": 1052,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/000_kafka/ru/kiae/dkb/kafka/streams/processor/filter/KeyFilterProcessorSupplier.java",
+      "blob_sha": "2903e4f3b4e35414cb25b533471edcd18935561e",
+      "size": 2830,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/000_kafka/ru/kiae/dkb/kafka/streams/processor/glance/GlanceProcessorSupplier.java",
+      "blob_sha": "5d04c6ca7b779ca01ac8324eac41cc94300439c4",
+      "size": 2206,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/000_kafka/ru/kiae/dkb/kafka/streams/runExternalProcessor.java",
+      "blob_sha": "ccb27e375c9ab2e3bb4aeee276ae172ea8a123ca",
+      "size": 2779,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/000_kafka/ru/kiae/dkb/kafka/streams/runGlanceProcessor.java",
+      "blob_sha": "6b5e6fa777dcf8820f0c0f4e58aabb7c9f644228",
+      "size": 6295,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/000_kafka/ru/kiae/dkb/kafka/streams/topology/ConfiguredTopologyBuilder.java",
+      "blob_sha": "c32a6495ff464ee246e9a80ef438170114a7de16",
+      "size": 2525,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/000_kafka/ru/kiae/dkb/kafka/streams/topology/ProcessorNodeConfig.java",
+      "blob_sha": "6287f24d52a66e1eeb80293384ac3c934ed2853b",
+      "size": 4241,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/000_kafka/ru/kiae/dkb/kafka/streams/topology/SinkNodeConfig.java",
+      "blob_sha": "40a8eefcea480fb2b0807ab38b444593592f7586",
+      "size": 2122,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/000_kafka/ru/kiae/dkb/kafka/streams/topology/SourceNodeConfig.java",
+      "blob_sha": "818234799a9eede31d0589c6622296a70fb342e0",
+      "size": 1631,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/000_kafka/ru/kiae/dkb/kafka/streams/topology/StateStoreConfig.java",
+      "blob_sha": "23ff92de52d19e2fdd3259792deb72d92fd3975e",
+      "size": 2842,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/000_kafka/ru/kiae/dkb/kafka/streams/topology/TopologyConfig.java",
+      "blob_sha": "133c6cdccb57c6def59c66bd725e83ca0e5ef4be",
+      "size": 5432,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/000_kafka/ru/kiae/dkb/kafka/streams/topology/TopologyNodeConfig.java",
+      "blob_sha": "438883996a7f4da876a690d8f7febc30cd769b63",
+      "size": 1085,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/000_kafka/run-class.sh",
+      "blob_sha": "8ca31b3667fd34d6a0fc3d647cf54659f32d01a7",
+      "size": 487,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/000_kafka/run.sh",
+      "blob_sha": "116ce6bcf0f72185de84317a22822994b450088a",
+      "size": 3381,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/000_kafka/runExternalProcessor.sh",
+      "blob_sha": "28bc4241641fa845fcfe349a99753294e6578b38",
+      "size": 174,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/000_kafka/runStreamsApplication.sh",
+      "blob_sha": "5abb4e568cb0962c62123d77bdb9e4a14ceaa4f2",
+      "size": 135,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/README",
+      "blob_sha": "40ae50758c72f65df193ade49b91a89cfe26cb8e",
+      "size": 10908,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/data4es/009_oracleConnector/OffsetStorage.py",
+      "blob_sha": "650e2083087f3b568a208fc204161477b05bfcb4",
+      "size": 1574,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/data4es/009_oracleConnector/Oracle2JSON.py",
+      "blob_sha": "645e153ba8d48a8ba77f80a36412e00b246e693d",
+      "size": 21013,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/data4es/009_oracleConnector/README",
+      "blob_sha": "32990f4cc7e47501e62878ecd8abd36ac1248c51",
+      "size": 1986,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/data4es/009_oracleConnector/dbConnection.py",
+      "blob_sha": "779c180d551077fbeb4087f216f1fa1e5954e5d5",
+      "size": 8170,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/data4es/009_oracleConnector/output/consistency.ndjson",
+      "blob_sha": "d3e4ecd9abaa85b02e90f3af4e195e46e23ea82d",
+      "size": 38626,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/data4es/009_oracleConnector/output/sample2016.ndjson",
+      "blob_sha": "15c91f92577a099ab9495a2e0fcff767e8b1ce8c",
+      "size": 389827,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/data4es/009_oracleConnector/output/sample2020.ndjson",
+      "blob_sha": "9e547b5fa42f71084aafbad21eddfbf6f0ea3164",
+      "size": 74259,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/data4es/009_oracleConnector/query/data4es-consistency/tasks",
+      "blob_sha": "c0b386f9d0d4c4ec251c16ccb4cc754e1d29f83f",
+      "size": 348,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/data4es/009_oracleConnector/query/data4es/datasets",
+      "blob_sha": "3069b38b6de3f03786a37c4c950ceb1261df7f01",
+      "size": 515,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/data4es/009_oracleConnector/query/data4es/tasks",
+      "blob_sha": "15a6244aaa790960bcd1479794f0d7400b416c24",
+      "size": 6881,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/data4es/009_oracleConnector/query/mc16_campaign_for_ES.sql",
+      "blob_sha": "684fb48a4e186c67ddb844b80be7d0742ea4d382",
+      "size": 8370,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/data4es/016_task2es/README",
+      "blob_sha": "4b0fdd800738693c61d8ce4060832c2a4bf5e654",
+      "size": 441,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/data4es/016_task2es/input",
+      "blob_sha": "6ad98af73170382a6253872553108908e973c508",
+      "size": 24,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/data4es/016_task2es/output/consistency.ndjson",
+      "blob_sha": "24318c7fd3259bd98af5d6bf722936dea8b93000",
+      "size": 49217,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/data4es/016_task2es/output/sample2016.ndjson",
+      "blob_sha": "af3e69f111ecc95eae952d6d29d046862f31bbb3",
+      "size": 458878,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/data4es/016_task2es/output/sample2020.ndjson",
+      "blob_sha": "b629fd4935de93660a830f030bca856d16cf7ff2",
+      "size": 88058,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/data4es/016_task2es/task2es.py",
+      "blob_sha": "9aeda44db2cba74171b8b681576d631922100be0",
+      "size": 1848,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/data4es/016_task2es/tests/__init__.py",
+      "blob_sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/data4es/016_task2es/tests/test_task2es_add_es_index_info.py",
+      "blob_sha": "437c3ef9fde699356bd6f19a86317b5a3ea767f0",
+      "size": 825,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/data4es/017_adjustMetadata/README",
+      "blob_sha": "6eaa7fbb51b08c589f8b96dca9d928ab06f03210",
+      "size": 631,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/data4es/017_adjustMetadata/adjustMetadata.py",
+      "blob_sha": "8baffef8135b587fc79ae578bc6a0d977f49a0df",
+      "size": 14378,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/data4es/017_adjustMetadata/input",
+      "blob_sha": "1d5f9c5abedcea96a1dff4692520159e475ac4d4",
+      "size": 22,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/data4es/017_adjustMetadata/output/sample2016.ndjson",
+      "blob_sha": "082e952c6351f12ebc85a5b6ee17b610dd00c323",
+      "size": 503522,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/data4es/017_adjustMetadata/output/sample2020.ndjson",
+      "blob_sha": "304283f86ca5496bdfcb704e75a879aabdb15b0c",
+      "size": 98465,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/data4es/017_adjustMetadata/tests/__init__.py",
+      "blob_sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/data4es/017_adjustMetadata/tests/test_task2es_get_category.py",
+      "blob_sha": "eb9834e315f85d77750eabcce46ea58004c6e440",
+      "size": 4101,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/data4es/019_esFormat/README",
+      "blob_sha": "164e1a2bedb0d71c6b7834f24219973e313994fe",
+      "size": 1835,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/data4es/019_esFormat/esFormat.php",
+      "blob_sha": "7c2c5d98f3c068f40409fec76d172f200af6f7c4",
+      "size": 10054,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/data4es/019_esFormat/input",
+      "blob_sha": "881aa507d141a5c8b31034c937a0539d90e4617b",
+      "size": 29,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/data4es/019_esFormat/output/sample2016.ndjson",
+      "blob_sha": "8a3997bddad8bc528fb1c2260abcce4825e92a43",
+      "size": 573848,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/data4es/019_esFormat/output/sample2016.update.ndjson",
+      "blob_sha": "d9c78b6fee05ced41ff3076661f60f8176fdcca0",
+      "size": 598864,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/data4es/019_esFormat/output/sample2020.ndjson",
+      "blob_sha": "2d6a3f75dc4cdd05e43b7246f2ef3225abb2eb67",
+      "size": 116321,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/data4es/019_esFormat/run.sh",
+      "blob_sha": "c5218f206d87069051c49eddcd51bf60ff9335b3",
+      "size": 1375,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/data4es/025_chicagoES/README",
+      "blob_sha": "50417cc9458689e33ef2285617c9c24889b46b20",
+      "size": 861,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/data4es/025_chicagoES/input",
+      "blob_sha": "37a5a3fc0f7582f8c31d6d7ce5d443dca0547e63",
+      "size": 28,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/data4es/025_chicagoES/output/sample2016.ndjson",
+      "blob_sha": "8a91167e827f8cf6c8662c4b5094e3c77053745a",
+      "size": 455102,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/data4es/025_chicagoES/output/sample2020.ndjson",
+      "blob_sha": "45204bbde51bc407f7f6cacf5a7425f5bee68b1e",
+      "size": 87225,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/data4es/025_chicagoES/require",
+      "blob_sha": "00cf59a7240c66da83a0eb713cc443eaf1ee0c54",
+      "size": 41,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/data4es/025_chicagoES/stage.py",
+      "blob_sha": "31b307e21657b790c1187b837cabe26a9938a57e",
+      "size": 13162,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/data4es/040_progress/README",
+      "blob_sha": "fa75ff24305be3fcc9c419ad0466ae9c8e184ba6",
+      "size": 422,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/data4es/040_progress/input",
+      "blob_sha": "d01e3ed526067a182f6fff53dd8e773902f59685",
+      "size": 29,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/data4es/040_progress/output/sample2016.ndjson",
+      "blob_sha": "38d5e9fc97b4ff45ca3ad9347ee6d5f9f3e28721",
+      "size": 578034,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/data4es/040_progress/output/sample2020.ndjson",
+      "blob_sha": "c1a1b234d5071a75f6399ccd026e44c55b6486ec",
+      "size": 112669,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/data4es/040_progress/stage.py",
+      "blob_sha": "7c6ee4e00183e65a1a178407e760ffea9445cf32",
+      "size": 4524,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/data4es/069_upload2es/README",
+      "blob_sha": "a258165a5b7958c6f39f9e57d4796c1b27dc9bdc",
+      "size": 304,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/data4es/069_upload2es/input/sample2016",
+      "blob_sha": "09acf4977661ddb763c64f7cc7d47de34f4bac91",
+      "size": 573033,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/data4es/069_upload2es/input/sample2016.update",
+      "blob_sha": "ac96cad5bb1e0c45ced6611afcd7dcfccfc6fb1e",
+      "size": 611725,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/data4es/069_upload2es/input/sample2020",
+      "blob_sha": "a16e1f5b59bc5c0ae4bdedd81c494ee7416964d7",
+      "size": 111707,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/data4es/069_upload2es/load_data.sh",
+      "blob_sha": "ca1860f3cf103daa155a0ef9f144b38db6e2d5ca",
+      "size": 2716,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/data4es/071_esConsistency/README",
+      "blob_sha": "13c5065d8d8c4e78cd76f571840ed0142759db44",
+      "size": 925,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/data4es/071_esConsistency/consistency.py",
+      "blob_sha": "92baf7286871ae10916ff89f8a041b28e3bcfc71",
+      "size": 6333,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/data4es/071_esConsistency/input",
+      "blob_sha": "1d5f9c5abedcea96a1dff4692520159e475ac4d4",
+      "size": 22,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/data4es/091_datasetsRucio/.gitignore",
+      "blob_sha": "6407b81b3534b325e67e44f4e7dedfa74c2c2bc0",
+      "size": 41,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/data4es/091_datasetsRucio/.rucio/etc/rucio.cfg.example",
+      "blob_sha": "f8e0d1feaa8a8fda8735c67456e1b9985d1ee814",
+      "size": 421,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/data4es/091_datasetsRucio/README",
+      "blob_sha": "2c962f9f9de1bef4bc48ab87ef67b85f1cfeeae4",
+      "size": 2474,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/data4es/091_datasetsRucio/datasets_processing.py",
+      "blob_sha": "31b688801946bd14f84f5e502997be7c5d46165c",
+      "size": 10900,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/data4es/091_datasetsRucio/input",
+      "blob_sha": "28378f4d6faa4fc7afdc5ab607ad6455ebf2f0df",
+      "size": 30,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/data4es/091_datasetsRucio/output/sample2016.ndjson",
+      "blob_sha": "5416f139049c8ec828a1313e630245c483af943e",
+      "size": 457014,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/data4es/091_datasetsRucio/output/sample2020.ndjson",
+      "blob_sha": "3cf856b754582779e1a3d45110cb45de948649a3",
+      "size": 87242,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/data4es/093_datasetsFormat/README",
+      "blob_sha": "e9c5bea716af00e569e879e793669814abd602ee",
+      "size": 454,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/data4es/093_datasetsFormat/datasets_format.py",
+      "blob_sha": "8139ed8d749639106e827daf3e7999836e416cfe",
+      "size": 1186,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/data4es/093_datasetsFormat/input",
+      "blob_sha": "f08055a4c33bb4011e7fb3281be96682feb25d79",
+      "size": 23,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/data4es/093_datasetsFormat/output/sample2016.ndjson",
+      "blob_sha": "87d384e85f9bee1db8b7fbd0073d91eb0bbeae13",
+      "size": 587182,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/data4es/093_datasetsFormat/output/sample2020.ndjson",
+      "blob_sha": "5a00daceed7b9598daba27688fcaa8e973aa08e5",
+      "size": 114075,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/data4es/095_datasetInfoAMI/README",
+      "blob_sha": "571c3aadf35599905cdf0cb20bcb598798066ee3",
+      "size": 1762,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/data4es/095_datasetInfoAMI/amiDatasets.py",
+      "blob_sha": "67897a68e6a5b84b4432f60f2dbe4caacfc24673",
+      "size": 9350,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/data4es/095_datasetInfoAMI/input",
+      "blob_sha": "d2ea976c0c3378aeef2675a9ef6cc5e6e814ce41",
+      "size": 29,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/data4es/095_datasetInfoAMI/output/sample2016.ndjson",
+      "blob_sha": "77a72be7d4ed4df3fccf917f877001dfecd2aa72",
+      "size": 601451,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/data4es/095_datasetInfoAMI/output/sample2020.ndjson",
+      "blob_sha": "36aa7824632fee272812da7569bd02b5b354f8b0",
+      "size": 115448,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/data4es/config/009.cfg.example",
+      "blob_sha": "142b71144d3410ccd4b756d3ebdb72a3dba75364",
+      "size": 1974,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/data4es/config/025.cfg.example",
+      "blob_sha": "ed34231c11a70cf658646356b06f7c5682050548",
+      "size": 54,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/data4es/config/095.cfg.example",
+      "blob_sha": "ebb70634fd150e1d641bb977deaeb1940acfa69a",
+      "size": 91,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/data4es/config/README",
+      "blob_sha": "8e33a8f12114b4ac357124238e36c6b12db29ca1",
+      "size": 437,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/data4es/pyDKB",
+      "blob_sha": "4d8c644ede12e556cbdc9154de680d2f32f0694a",
+      "size": 8,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/data4es/run/data4es-consistency-check",
+      "blob_sha": "b57bee6cd6b673d6ec6f4a324424d80f9a98bb97",
+      "size": 1113,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/data4es/run/data4es-start",
+      "blob_sha": "458e54d1c7ff1565e14962e45cfaca7cb80f9050",
+      "size": 6344,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/data4es/run/data4es-status",
+      "blob_sha": "d009308b7631e6c801d1c9f1f5a8903f7c999ca4",
+      "size": 701,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/data4es/run/data4es-stop",
+      "blob_sha": "90f053c8ad231bd686cd1eddf6bb0b79756308c6",
+      "size": 1231,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/data4es/shell_lib",
+      "blob_sha": "1699f4b141a1075354f73d63d71bacbb659605a8",
+      "size": 13,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/010_glancePapers/README",
+      "blob_sha": "3b85183a7d3d3c3d052ceab9b7bec2f6237341dc",
+      "size": 1704,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/010_glancePapers/output/list_of_papers.json",
+      "blob_sha": "6d9e60417575a4ba2ec11dd32bd6a9108d59d469",
+      "size": 311178,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/010_glancePapers/output/list_of_papers_formatted.json",
+      "blob_sha": "52496d9f8159439f0e85761758a0f359d394743c",
+      "size": 340576,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/010_glancePapers/papersFromGLANCE.py",
+      "blob_sha": "55dc5049472733e5d44a8e38c8f1ef11b553dc96",
+      "size": 1137,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/010_glancePapers/papersFromGLANCE.sh",
+      "blob_sha": "b71625324d63dea069da62c8b950938b1cf8970f",
+      "size": 3080,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/015_CDSDocuments/getCDSDocuments.py",
+      "blob_sha": "404f6c8f35d93f546493745d31d0b352cb10db5e",
+      "size": 12884,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/015_CDSDocuments/input",
+      "blob_sha": "ceea9fb844b2146ce5457452a2038f4cf54dafc4",
+      "size": 27,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/015_CDSDocuments/output/261.json",
+      "blob_sha": "ae96b7791e3716b9a835e9eeabe1ad63ee56dfe4",
+      "size": 586288,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/015_CDSDocuments/output/261_pretty.json",
+      "blob_sha": "f2611683b6a6f3f59b67f2c182a388c28c403ff0",
+      "size": 804231,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/018_PDFDownloader/README",
+      "blob_sha": "fd5cdacf36e75e86e8ea3816f9afb976a4dd67e3",
+      "size": 831,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/018_PDFDownloader/getPDFfromCDS.py",
+      "blob_sha": "dd65095af8121006ea46df5d103df148ad5b07d5",
+      "size": 3412,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/018_PDFDownloader/kerberos_init.sh",
+      "blob_sha": "93f8d322fd1064421663d967cba5f5109b756669",
+      "size": 717,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/018_PDFDownloader/output/example.json",
+      "blob_sha": "39cb771492f04e3b0de5d6abcf7ea08e1c5ba5e4",
+      "size": 7570,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/018_PDFDownloader/switch_realm",
+      "blob_sha": "99b6560801573bc0da569ae8578f0ae19cc4b631",
+      "size": 433,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/018_PDFDownloader/transferPDF.sh",
+      "blob_sha": "6292e34ab6778c7d07a31631eb0d65e680358367",
+      "size": 1510,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/030_PDFAnalyzer/README",
+      "blob_sha": "68b709e20992a0b6678f03774eeb746d605fa5a1",
+      "size": 2253,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/030_PDFAnalyzer/export/25.json",
+      "blob_sha": "fd6f135de5832beab7137e558f6cf5a389dfad16",
+      "size": 1270,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/030_PDFAnalyzer/export/30.json",
+      "blob_sha": "31914d6f99d6c6a51dbbf81f860697b107144ac5",
+      "size": 2742,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/030_PDFAnalyzer/flow.py",
+      "blob_sha": "5d7e522c92cb6690e2ede83530be26566dde186f",
+      "size": 3356,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/030_PDFAnalyzer/manager.py",
+      "blob_sha": "1786e5ee00505009b53d6ecf06fe4cd670c4a7b6",
+      "size": 71296,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/030_PDFAnalyzer/papers/25/25.pdf",
+      "blob_sha": "28e174a35ef6a16b5dae23e7af9a417a5a0fce54",
+      "size": 532984,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/030_PDFAnalyzer/papers/25/metadata.json",
+      "blob_sha": "c98ffcb9794d3fcb2f99c36579c984743d8e20f3",
+      "size": 243,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/030_PDFAnalyzer/papers/25/txt/1.txt",
+      "blob_sha": "7be09bd1e92effe5994c45f4b4df6b25e854754b",
+      "size": 636,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/030_PDFAnalyzer/papers/25/txt/10.txt",
+      "blob_sha": "98543c1ccd78f00858ef8acdc30bbb25d07df1ea",
+      "size": 1371,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/030_PDFAnalyzer/papers/25/txt/11.txt",
+      "blob_sha": "140bd4f5c366ba22947bed85f076ddd47bdf82d4",
+      "size": 3126,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/030_PDFAnalyzer/papers/25/txt/12.txt",
+      "blob_sha": "0540ec67555bdb9b752da1e91f1842e83fb33735",
+      "size": 2247,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/030_PDFAnalyzer/papers/25/txt/13.txt",
+      "blob_sha": "bfa5ca3db34b82830a87c2e6b10f048a54b3c30b",
+      "size": 1211,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/030_PDFAnalyzer/papers/25/txt/2.txt",
+      "blob_sha": "24ec5f7b093df15b68333cd565a585e0c9b9d45e",
+      "size": 2567,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/030_PDFAnalyzer/papers/25/txt/3.txt",
+      "blob_sha": "ae0e774e678218b1dff9c4544827e438eeeda119",
+      "size": 3030,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/030_PDFAnalyzer/papers/25/txt/4.txt",
+      "blob_sha": "ffd5d08cf797ac8acf1c8bb9a0041b93f2a4c98a",
+      "size": 2694,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/030_PDFAnalyzer/papers/25/txt/5.txt",
+      "blob_sha": "530d67045fc723d41ac2dbc3a257347f365df50d",
+      "size": 2851,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/030_PDFAnalyzer/papers/25/txt/6.txt",
+      "blob_sha": "bb22eba1e07b6c1cfa24c0e7094ac8b16ea51591",
+      "size": 3359,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/030_PDFAnalyzer/papers/25/txt/7.txt",
+      "blob_sha": "d9f127abd19e7a696b7fff3c27ec906d7a3a0556",
+      "size": 2410,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/030_PDFAnalyzer/papers/25/txt/8.txt",
+      "blob_sha": "02574f599f259a8dc4496945f166d3c75312c6be",
+      "size": 3140,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/030_PDFAnalyzer/papers/25/txt/9.txt",
+      "blob_sha": "98404aaa91305f4897ba7215a83ececde341142f",
+      "size": 2663,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/030_PDFAnalyzer/papers/25/xml/1.xml",
+      "blob_sha": "fefd473626150febcca55b23063777e0fe1dba5c",
+      "size": 49361,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/030_PDFAnalyzer/papers/25/xml/12.xml",
+      "blob_sha": "92954d035447575d6ee6320a805affed9d13297b",
+      "size": 301496,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/030_PDFAnalyzer/papers/25/xml/3.xml",
+      "blob_sha": "d3d2ffc672f95c2e564db17c03cf828769c67869",
+      "size": 255302,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/030_PDFAnalyzer/papers/25/xml/4.xml",
+      "blob_sha": "d5798c6d8719f023b1aed09458a3483b3b3735c5",
+      "size": 208552,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/030_PDFAnalyzer/papers/25/xml/5.xml",
+      "blob_sha": "3f7f3be54c8f081f6dbc848b54409b240e58fc47",
+      "size": 310732,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/030_PDFAnalyzer/papers/30/30.pdf",
+      "blob_sha": "1e5c2df3bff299603e9ee97572f8ff7144f90fa9",
+      "size": 2461033,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/030_PDFAnalyzer/papers/30/metadata.json",
+      "blob_sha": "015c553c263f460a1a0171da14fa8330a1ef83b3",
+      "size": 243,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/030_PDFAnalyzer/papers/30/txt/1.txt",
+      "blob_sha": "f9c53cb7f57b9112460438aa389d13e10c1c03a4",
+      "size": 925,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/030_PDFAnalyzer/papers/30/txt/10.txt",
+      "blob_sha": "1a024935357053c11a817a516c6c88ab709ea6f2",
+      "size": 647,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/030_PDFAnalyzer/papers/30/txt/11.txt",
+      "blob_sha": "74d36ad8d13cd36f3ba838694ad8967687a94acf",
+      "size": 1411,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/030_PDFAnalyzer/papers/30/txt/12.txt",
+      "blob_sha": "1eaf7c9771b2569b8bfd3f81578d827b764bb0fa",
+      "size": 3531,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/030_PDFAnalyzer/papers/30/txt/13.txt",
+      "blob_sha": "e553e1a5ea1ccd321f4b79a963c32cd8264e7605",
+      "size": 2061,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/030_PDFAnalyzer/papers/30/txt/14.txt",
+      "blob_sha": "f4d45d709c76702807e43dc099ee8f1cf3698bbc",
+      "size": 720,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/030_PDFAnalyzer/papers/30/txt/15.txt",
+      "blob_sha": "d8bbd4643029fac263ccde7fb87b51e4d9d45fbe",
+      "size": 2860,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/030_PDFAnalyzer/papers/30/txt/16.txt",
+      "blob_sha": "8897788bf12ea38db5c55611f8601b5b36440a69",
+      "size": 550,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/030_PDFAnalyzer/papers/30/txt/17.txt",
+      "blob_sha": "93a2abb6445684e588ee0d4789b25e8dd32ef2d8",
+      "size": 538,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/030_PDFAnalyzer/papers/30/txt/18.txt",
+      "blob_sha": "e0261193a747dbc31450cb56db4e5158caf53c9f",
+      "size": 563,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/030_PDFAnalyzer/papers/30/txt/19.txt",
+      "blob_sha": "c558242526f6469bb47fa2e9fe6629d155a700d3",
+      "size": 3496,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/030_PDFAnalyzer/papers/30/txt/2.txt",
+      "blob_sha": "55492da014370a8a9082e84dde0ee7f4ffc41bbf",
+      "size": 2002,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/030_PDFAnalyzer/papers/30/txt/20.txt",
+      "blob_sha": "9c979f2699eac5c8f746b3f5a6cc04a3ab5e4f48",
+      "size": 2320,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/030_PDFAnalyzer/papers/30/txt/21.txt",
+      "blob_sha": "c6b81d81faf7fb69b843ab20e1269c61f2edd945",
+      "size": 1273,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/030_PDFAnalyzer/papers/30/txt/22.txt",
+      "blob_sha": "90065abefd30bc0b4e379b7bce6a653371da937b",
+      "size": 1288,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/030_PDFAnalyzer/papers/30/txt/23.txt",
+      "blob_sha": "fd41fb9709c208f456b3d96705a1f5cf9c147982",
+      "size": 3171,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/030_PDFAnalyzer/papers/30/txt/24.txt",
+      "blob_sha": "73a171ac1c8067e41a3cab1467ae93ebc53d0998",
+      "size": 2758,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/030_PDFAnalyzer/papers/30/txt/25.txt",
+      "blob_sha": "5d00056bd100ca7f5aba73f89ebd7a45bef3b534",
+      "size": 1735,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/030_PDFAnalyzer/papers/30/txt/26.txt",
+      "blob_sha": "908b2fd552acaedd5839a45db7abecdc14d175cf",
+      "size": 2441,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/030_PDFAnalyzer/papers/30/txt/27.txt",
+      "blob_sha": "cc397e77a37eaa78d675410c836b4524b50faa3d",
+      "size": 2902,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/030_PDFAnalyzer/papers/30/txt/28.txt",
+      "blob_sha": "72d18b06218306dcfa8c0bfde0492d768368be72",
+      "size": 1303,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/030_PDFAnalyzer/papers/30/txt/29.txt",
+      "blob_sha": "a15dbeb12121f6e662338735b383bdd22c81f34b",
+      "size": 1664,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/030_PDFAnalyzer/papers/30/txt/3.txt",
+      "blob_sha": "9e4db4ffe834a6f80050917ef7a17bbfcebf3bb2",
+      "size": 3899,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/030_PDFAnalyzer/papers/30/txt/30.txt",
+      "blob_sha": "e38fce5acec6a5344b0b011ee1ae1959a0ef9a24",
+      "size": 857,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/030_PDFAnalyzer/papers/30/txt/31.txt",
+      "blob_sha": "ea7a335c92c8cae018f7290251837a8b620169e2",
+      "size": 1511,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/030_PDFAnalyzer/papers/30/txt/32.txt",
+      "blob_sha": "7817e4d3b8d09681599a4f8162c446bb6dc4196a",
+      "size": 3150,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/030_PDFAnalyzer/papers/30/txt/33.txt",
+      "blob_sha": "ab368782c1aa57c6ddc8a7951365c72425a0db9d",
+      "size": 1008,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/030_PDFAnalyzer/papers/30/txt/34.txt",
+      "blob_sha": "9e99db3efcb39e5ef76508cdda3e6a829afe92cf",
+      "size": 2206,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/030_PDFAnalyzer/papers/30/txt/35.txt",
+      "blob_sha": "9a62a114d098b92f697b2c8bb73453d3abfc2828",
+      "size": 2196,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/030_PDFAnalyzer/papers/30/txt/36.txt",
+      "blob_sha": "cd0080d759dd68ff3620e1792b4160c3a83424cb",
+      "size": 782,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/030_PDFAnalyzer/papers/30/txt/37.txt",
+      "blob_sha": "ee707e01bf5989ca40418633fa29561013de03ed",
+      "size": 1871,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/030_PDFAnalyzer/papers/30/txt/38.txt",
+      "blob_sha": "a62e72246ad40c5a9a2edf14fbe224c916135aad",
+      "size": 1986,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/030_PDFAnalyzer/papers/30/txt/39.txt",
+      "blob_sha": "fee15975b392f30ace874ce00c273d9d34b425b9",
+      "size": 2228,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/030_PDFAnalyzer/papers/30/txt/4.txt",
+      "blob_sha": "90f7854eaa1589864b18185cb614d787672d7922",
+      "size": 4047,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/030_PDFAnalyzer/papers/30/txt/40.txt",
+      "blob_sha": "8da5c7c75a166e206e1cb42ce6a541257b9264ac",
+      "size": 1779,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/030_PDFAnalyzer/papers/30/txt/41.txt",
+      "blob_sha": "3feb9b18ec90bdf0ac7da1ad9581ff793178b686",
+      "size": 279,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/030_PDFAnalyzer/papers/30/txt/42.txt",
+      "blob_sha": "ead1743e0f7174b366e93f50925b387f12fd54e9",
+      "size": 968,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/030_PDFAnalyzer/papers/30/txt/43.txt",
+      "blob_sha": "eefe0090657d452fe70cbf934fbe207833da0b6a",
+      "size": 989,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/030_PDFAnalyzer/papers/30/txt/44.txt",
+      "blob_sha": "d21c1537ed190abc88ef5948403f9cd018331e9a",
+      "size": 897,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/030_PDFAnalyzer/papers/30/txt/45.txt",
+      "blob_sha": "6b5a00a56c350f4f418bb817dac9185585f566fe",
+      "size": 1091,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/030_PDFAnalyzer/papers/30/txt/46.txt",
+      "blob_sha": "b92415894c191dd6783871b1fffc851291a8528d",
+      "size": 1179,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/030_PDFAnalyzer/papers/30/txt/47.txt",
+      "blob_sha": "883ae74d11883e44613aa0235e21efe843c8f5d6",
+      "size": 775,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/030_PDFAnalyzer/papers/30/txt/48.txt",
+      "blob_sha": "3c918806bb5dabc2619cc92484723c983392cf36",
+      "size": 774,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/030_PDFAnalyzer/papers/30/txt/5.txt",
+      "blob_sha": "96d1f231f1477001c73dff02df7588c2b8a3abf0",
+      "size": 2969,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/030_PDFAnalyzer/papers/30/txt/6.txt",
+      "blob_sha": "6dfcda62da8e9a0183d77293ea416fdc32d401eb",
+      "size": 3765,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/030_PDFAnalyzer/papers/30/txt/7.txt",
+      "blob_sha": "f08730a15e3481813bb4941dae34d0d8db290604",
+      "size": 2732,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/030_PDFAnalyzer/papers/30/txt/8.txt",
+      "blob_sha": "60377a67e1525d605aa2ff750c53e1388d6c9035",
+      "size": 3380,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/030_PDFAnalyzer/papers/30/txt/9.txt",
+      "blob_sha": "209a1fd65fc29eda4850fe405d2a91e1d2c3645f",
+      "size": 867,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/030_PDFAnalyzer/papers/30/xml/1.xml",
+      "blob_sha": "4c69c93be60344e99b3a1ae92853beaad7c3d582",
+      "size": 83808,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/030_PDFAnalyzer/papers/30/xml/31.xml",
+      "blob_sha": "50c79b1ec100ebda1e30d4332dfd5eb96b1fe382",
+      "size": 161118,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/030_PDFAnalyzer/papers/30/xml/32.xml",
+      "blob_sha": "d5f6e95516baad6ac72995386d4d702f1748f9fe",
+      "size": 274770,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/030_PDFAnalyzer/papers/30/xml/33.xml",
+      "blob_sha": "1bf2fffa8b5f6e2999abbc8aebe9697011e5b2f6",
+      "size": 125509,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/030_PDFAnalyzer/papers/30/xml/34.xml",
+      "blob_sha": "f1598c2899d9c6f329fb722ebaf3239baf409d14",
+      "size": 205353,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/030_PDFAnalyzer/papers/30/xml/5.xml",
+      "blob_sha": "36cf0aea4f068f383879ca145e6aa8fc2552082f",
+      "size": 254265,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/030_PDFAnalyzer/pdfwork.py",
+      "blob_sha": "0e9053720a52e062496d4960b69c942654a7bdc9",
+      "size": 3824,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/030_PDFAnalyzer/xmltable.py",
+      "blob_sha": "78ad9f383a738252109702ac4b4851f520695bee",
+      "size": 18032,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/054_docContent2TTL/README",
+      "blob_sha": "f4434f62ee1faf4e4311fd1033ee01968f9e47d9",
+      "size": 4953,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/054_docContent2TTL/docContent2TTL.py",
+      "blob_sha": "908934eee74d7ded4a8577df09bedf6f2adc4978",
+      "size": 6120,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/054_docContent2TTL/input/25.json",
+      "blob_sha": "517ecae2a1767b73c5111a3f0e56aaaa8093997d",
+      "size": 1300,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/054_docContent2TTL/input/30.json",
+      "blob_sha": "06b87b383a8a32844ab32300e541725456d39043",
+      "size": 2769,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/054_docContent2TTL/output/25.ttl",
+      "blob_sha": "2b5be2c2daaa6e8705d5fb1cfeafd6d0b96083c3",
+      "size": 4656,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/054_docContent2TTL/output/30.ttl",
+      "blob_sha": "ff0921899a89c6450f27b0486fae7aad7e2a8c6c",
+      "size": 601,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/055_documents2TTL/README.txt",
+      "blob_sha": "78453f605a9ab64da2c2d0ee7fa8aabfaf253e30",
+      "size": 1483,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/055_documents2TTL/__init__.py",
+      "blob_sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/055_documents2TTL/documents2ttl.py",
+      "blob_sha": "d53b4d78c5305d7313b74b07da2d64886b446488",
+      "size": 20820,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/055_documents2TTL/input/1983.json",
+      "blob_sha": "404cfa21f78eb28103af659c8d81b4fe908ecb23",
+      "size": 621319,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/055_documents2TTL/output/1983.ttl",
+      "blob_sha": "029ab3a4165702311b21f9f4f6827771515b4511",
+      "size": 5990,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/055_documents2TTL/tests/__init__.py",
+      "blob_sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/055_documents2TTL/tests/test_documents2ttl_arxiv_extraction.py",
+      "blob_sha": "969a052776b18037b18fa813769f5881b988ce25",
+      "size": 1724,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/055_documents2TTL/tests/test_documents2ttl_fix_string.py",
+      "blob_sha": "f192849a89b33f8e930f24fde0767ea73aaad916",
+      "size": 1109,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/055_documents2TTL/tests/test_documents2ttl_generate_journal_id.py",
+      "blob_sha": "946b6a22d7139cbf7ebf737e3f7ac4e5e805134b",
+      "size": 1451,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/055_documents2TTL/tests/test_documents2ttl_iri_links.py",
+      "blob_sha": "bc4cc1ce5032eb4c6c528634e506d102be30c28c",
+      "size": 1196,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/060_upload2virtuoso/README",
+      "blob_sha": "2cc79fad508a79c42681d875dd57157d48c0c0d6",
+      "size": 1814,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/060_upload2virtuoso/input",
+      "blob_sha": "5e8f865834c1a8e024491d16e4b46b1bebf68047",
+      "size": 29,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/060_upload2virtuoso/uploadTTL.sh",
+      "blob_sha": "1b7673ca0c52e74bc63b43aefdc02735d7642c23",
+      "size": 5765,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/docs4virtuoso/pyDKB",
+      "blob_sha": "4d8c644ede12e556cbdc9154de680d2f32f0694a",
+      "size": 8,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/pyDKB-setup.py",
+      "blob_sha": "1eee9c81137194fea2d52e299887efcfa0a78e5a",
+      "size": 474,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/pyDKB/VERSION",
+      "blob_sha": "4b9fcbec101a6ff8ec68e0f95131ccda4861407f",
+      "size": 6,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/pyDKB/__init__.py",
+      "blob_sha": "4299e9c4740725acb0d790b00a3b67b6f06a7504",
+      "size": 5274,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/pyDKB/atlas/__init__.py",
+      "blob_sha": "7d651a9a79b1883789d1b49bdc3ef68cfd23770a",
+      "size": 87,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/pyDKB/atlas/misc.py",
+      "blob_sha": "0d80386c59d69b0aad620be8bbb3cc4f8488a0f0",
+      "size": 2175,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/pyDKB/common/LoggableObject.py",
+      "blob_sha": "d15d7aad11b4aff050108668eba37b55a43b9471",
+      "size": 537,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/pyDKB/common/Type.py",
+      "blob_sha": "ed19cd5347cdab2a1cc4491cff7e8318b5aa5a02",
+      "size": 1740,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/pyDKB/common/__init__.py",
+      "blob_sha": "1bbf38dfc4de455d27d5d2b9ded37028a7e22083",
+      "size": 214,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/pyDKB/common/custom_readline.py",
+      "blob_sha": "7443fabb501d720df856aeecc77bee9b5fafc5ce",
+      "size": 2605,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/pyDKB/common/exceptions.py",
+      "blob_sha": "ba4e2739c77175e730b2603ae3d886bf545fcba9",
+      "size": 167,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/pyDKB/common/hdfs.py",
+      "blob_sha": "2a67738388523659d920a36dcb5e0b634711c772",
+      "size": 6958,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/pyDKB/common/json_utils.py",
+      "blob_sha": "05a967e95c52e5889cdfa661fee946c97efc1990",
+      "size": 2224,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/pyDKB/common/misc.py",
+      "blob_sha": "f059f8847904c03d83dcea00f75e70328669915e",
+      "size": 5122,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/pyDKB/common/types.py",
+      "blob_sha": "047b66663d402e552c7b241b9231a9d9c4484f05",
+      "size": 179,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/pyDKB/dataflow/__init__.py",
+      "blob_sha": "940eb49cfd36bbce5540fa56433bb2d13fe5251e",
+      "size": 191,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/pyDKB/dataflow/cds.py",
+      "blob_sha": "6a6a10e5673507f45e09d1b4ec83a7e9e7750ab0",
+      "size": 3630,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/pyDKB/dataflow/communication/__init__.py",
+      "blob_sha": "a32262ec084adb67f3b8d9a3d6476e108a764cbe",
+      "size": 243,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/pyDKB/dataflow/communication/consumer/Consumer.py",
+      "blob_sha": "13df562a55ee4cc81bc6f2e37bad83fa89af5db5",
+      "size": 3919,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/pyDKB/dataflow/communication/consumer/FileConsumer.py",
+      "blob_sha": "a6505558f98f39cc2216eb77cfcbce3de3d425f7",
+      "size": 4968,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/pyDKB/dataflow/communication/consumer/HDFSConsumer.py",
+      "blob_sha": "258f6bc0328e55a907aae021131bed403e5e9bec",
+      "size": 2396,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/pyDKB/dataflow/communication/consumer/StreamConsumer.py",
+      "blob_sha": "a404732572fe7ba11bd58c230680f39093abf013",
+      "size": 1136,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/pyDKB/dataflow/communication/consumer/__init__.py",
+      "blob_sha": "4206f7f82f068bced9da3b07c019408a7a065d97",
+      "size": 2108,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/pyDKB/dataflow/communication/messages.py",
+      "blob_sha": "028253ae4f07d153f10f877bcd1302ce404f38b8",
+      "size": 6379,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/pyDKB/dataflow/communication/producer/FileProducer.py",
+      "blob_sha": "29f4c071e4d67abec2d413ea2cfac452f63ca086",
+      "size": 6442,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/pyDKB/dataflow/communication/producer/HDFSProducer.py",
+      "blob_sha": "6e57e7e37db0c7a7b5ec0d19dbb061035df9fafc",
+      "size": 2061,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/pyDKB/dataflow/communication/producer/Producer.py",
+      "blob_sha": "d953cf070b284b25ebd5e8b2edb8597cf9d66f78",
+      "size": 3152,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/pyDKB/dataflow/communication/producer/StreamProducer.py",
+      "blob_sha": "205180f533b349c22ed73096c0a00b8c3adb1929",
+      "size": 778,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/pyDKB/dataflow/communication/producer/__init__.py",
+      "blob_sha": "6b5a5b57aced1308110ebfd66a7c1ec2fa4a0c6f",
+      "size": 2552,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/pyDKB/dataflow/communication/stream/InputStream.py",
+      "blob_sha": "8c0150be5feac55da63199fbd500e6fb652ffdc8",
+      "size": 6337,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/pyDKB/dataflow/communication/stream/OutputStream.py",
+      "blob_sha": "ecbb365932a484aefe81d3f57e8c508354fa2865",
+      "size": 1367,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/pyDKB/dataflow/communication/stream/Stream.py",
+      "blob_sha": "800878b20227346a82b39da2953f9e103eacd6e5",
+      "size": 2151,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/pyDKB/dataflow/communication/stream/__init__.py",
+      "blob_sha": "77e0c984c3406052f41501c314b32c37112aaa7f",
+      "size": 2033,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/pyDKB/dataflow/communication/stream/exceptions.py",
+      "blob_sha": "c843bdadf855f3aab052541a8628a816984b5142",
+      "size": 186,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/pyDKB/dataflow/dkbID.conf",
+      "blob_sha": "0e8aebbdac87a750f420dad50c005e2749201e6d",
+      "size": 284,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/pyDKB/dataflow/dkbID.py",
+      "blob_sha": "3dbcc8fcf19728e08a1912e9d70bb6741c226064",
+      "size": 2469,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/pyDKB/dataflow/exceptions.py",
+      "blob_sha": "92821fd37b38422f4301b66c021d1e3e8e990fe0",
+      "size": 646,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/pyDKB/dataflow/stage/AbstractStage.py",
+      "blob_sha": "1d713cbf16f8bd0444e586a9d64060befaaa6b9c",
+      "size": 11648,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/pyDKB/dataflow/stage/ProcessorStage.py",
+      "blob_sha": "254afe9290619bc13fa93e4c701bdc8ae682002d",
+      "size": 14882,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/pyDKB/dataflow/stage/__init__.py",
+      "blob_sha": "a62ef2bc1736517f450fd88f7f5c2d6f72c97d54",
+      "size": 177,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/pyDKB/dataflow/types.py",
+      "blob_sha": "b21e0db9af91c84068c57696a345ac325bfe6664",
+      "size": 244,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/run/.gitignore",
+      "blob_sha": "ba4d9df79df29de01ab6a1ab933a396ce1389939",
+      "size": 26,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/run/data4es-consistency-check",
+      "blob_sha": "28abeaf55a38cc8f2d6f78f49e5f46964cc331c5",
+      "size": 40,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/run/data4es-start",
+      "blob_sha": "42d66da21e435777a7db4ff0e33f70222d39fa32",
+      "size": 28,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/run/data4es-status",
+      "blob_sha": "777826916ff8281044f4d97bef7712383bcef376",
+      "size": 29,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/run/data4es-stop",
+      "blob_sha": "364c368aec3b057b59e0a31119edf925e233f546",
+      "size": 27,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/shell_lib/eop_filter",
+      "blob_sha": "30f00d2f7b05cf7eea1156efdb3603611003166b",
+      "size": 108,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/shell_lib/get_config",
+      "blob_sha": "3f1986987204cab0a70cc2243fb78ee30b5dbf9b",
+      "size": 479,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/shell_lib/log",
+      "blob_sha": "cf17d721d23377928649a82c9462a2d1671f3e19",
+      "size": 194,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/shell_lib/run_stage",
+      "blob_sha": "93c90c3de4bc32211229d27e6bd79eb09e0a7896",
+      "size": 706,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/skel/README",
+      "blob_sha": "96dab10f23e63dc440af590670a6c7c0c79db760",
+      "size": 280,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/skel/stage.py",
+      "blob_sha": "076d9b100f8f4606cf829da5c1326dedade84c00",
+      "size": 1542,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/README",
+      "blob_sha": "6a294f85171ef423b063f662ff7985ba9243365d",
+      "size": 1326,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/01/cmd",
+      "blob_sha": "55ed353b07ce1a0a3be9313c14aece34aa022086",
+      "size": 37,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/01/err",
+      "blob_sha": "1b770d97459be4f877729e827937214f5918703c",
+      "size": 717,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/01/info",
+      "blob_sha": "1480efc389cb3ff2f44c32e3f16fb6b8a8c7f2c7",
+      "size": 36,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/01/out",
+      "blob_sha": "e280030fded21c1f87486a4231ac34bc1b203950",
+      "size": 39,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/02/cmd",
+      "blob_sha": "a8dce9bc6cb7e652702b4a0f7f37db5c8b4af398",
+      "size": 19,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/02/err",
+      "blob_sha": "9800b8bd9de1d92d5b9c7ee1c527d376d3631479",
+      "size": 91,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/02/info",
+      "blob_sha": "d0c154bff32f974e72b42fd4debb434578a668a6",
+      "size": 30,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/02/out",
+      "blob_sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/03/cmd",
+      "blob_sha": "893b67840d265aec337b9ed836826f46b72f6a10",
+      "size": 14,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/03/err",
+      "blob_sha": "9800b8bd9de1d92d5b9c7ee1c527d376d3631479",
+      "size": 91,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/03/info",
+      "blob_sha": "fe55cb954d2414324f003728feee8083c6812bb6",
+      "size": 42,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/03/out",
+      "blob_sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/04/cmd",
+      "blob_sha": "2b64db7a16cae8b8034cad61b71884b79e11a48e",
+      "size": 55,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/04/err",
+      "blob_sha": "2fc14047a665bfae463a22d3ff932c354965aa8e",
+      "size": 738,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/04/info",
+      "blob_sha": "0b424cbda6ffde52d60f3a37763956a076f724a9",
+      "size": 39,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/04/out",
+      "blob_sha": "721fb98f471fd37cc73d749619455bf0c7f511ed",
+      "size": 78,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/05/cmd",
+      "blob_sha": "a41fe168f0f3644d42439f1d9fe02b58e98d9a3a",
+      "size": 39,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/05/err",
+      "blob_sha": "c6f215dd955d8af97592aaa77d9333a1b16060e9",
+      "size": 965,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/05/info",
+      "blob_sha": "370d5a95c6e1488e61a88a6cebbface18240b9c8",
+      "size": 25,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/05/out",
+      "blob_sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/06/cmd",
+      "blob_sha": "01c6d70fd4dbdd9882de79c3a0889d574e994a32",
+      "size": 44,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/06/err",
+      "blob_sha": "48a0c3e15eedce989625b3dff64e5d125e920108",
+      "size": 824,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/06/info",
+      "blob_sha": "22cf34b44e2b96127dca34306f26f67929f90990",
+      "size": 26,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/06/out",
+      "blob_sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/07/cmd",
+      "blob_sha": "1308f1b1083643a17e1c0ec319080eba3022689d",
+      "size": 46,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/07/err",
+      "blob_sha": "b5af1321cb49f64bd8495e997331ae02121d1039",
+      "size": 720,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/07/info",
+      "blob_sha": "bdb702f182737b779cba02a1389bde68d17f0706",
+      "size": 36,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/07/out",
+      "blob_sha": "104911c489bfa3287e2510485d436211acea3814",
+      "size": 36,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/08/cmd",
+      "blob_sha": "b3d50bf1e53eb0cc695a8e44da4b75f86d87fa6e",
+      "size": 66,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/08/err",
+      "blob_sha": "73362f3335c656a5c61f6655ec915f9e5cc3c16d",
+      "size": 743,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/08/info",
+      "blob_sha": "bf831deca99e06ed1eaf3474d3c52f63231f485e",
+      "size": 39,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/08/out",
+      "blob_sha": "b40188f76dea065be433c9a1b8047dd8e7230be0",
+      "size": 72,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/09/cmd",
+      "blob_sha": "7c3ed48e7ae7c08c5cf5387f8c1032de67ca72b5",
+      "size": 48,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/09/err",
+      "blob_sha": "dd11f68206941fd244d3b8a38c3c12c1f05e6afe",
+      "size": 832,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/09/info",
+      "blob_sha": "a651e9f77f6d6dddf1d35c702ad2a4b7c234640d",
+      "size": 26,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/09/out",
+      "blob_sha": "e280030fded21c1f87486a4231ac34bc1b203950",
+      "size": 39,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/10/cmd",
+      "blob_sha": "22845de1c438a4d3ce121f9408f85225ecd17d2e",
+      "size": 57,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/10/err",
+      "blob_sha": "d52cd8d764a7743eb25647c0ff1774244843897f",
+      "size": 836,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/10/info",
+      "blob_sha": "d9be927603937ee161dcdfc87e132b07fcebffe7",
+      "size": 27,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/10/out",
+      "blob_sha": "104911c489bfa3287e2510485d436211acea3814",
+      "size": 36,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/11/cmd",
+      "blob_sha": "d032060bdbb4ed7f151ac7c50dff1a65a882f26f",
+      "size": 40,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/11/err",
+      "blob_sha": "c769c5d32a5c1c10f4585b6b908ff069a2ea5b6b",
+      "size": 715,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/11/info",
+      "blob_sha": "9fd4aad580867a32038e47a5db576ea7c979948f",
+      "size": 44,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/11/out",
+      "blob_sha": "e280030fded21c1f87486a4231ac34bc1b203950",
+      "size": 39,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/12/cmd",
+      "blob_sha": "4f1e39092b686c1f0ad489646534712a6aab058b",
+      "size": 96,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/12/err",
+      "blob_sha": "a39a67ebf81551b44dc219755cbf1c3aa07a363d",
+      "size": 786,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/12/info",
+      "blob_sha": "7181c99866836d97cc4064361aa64398c0b705b9",
+      "size": 32,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/12/out",
+      "blob_sha": "721fb98f471fd37cc73d749619455bf0c7f511ed",
+      "size": 78,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/13/cmd",
+      "blob_sha": "d74cc67cd7dfe9008df196a4b1d7955091696b36",
+      "size": 107,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/13/err",
+      "blob_sha": "fe034108179d9f3efec74804a189e4f2aa480d4c",
+      "size": 791,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/13/info",
+      "blob_sha": "98fcfc44f18944c141bf25bd0b7d0929b51a6203",
+      "size": 33,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/13/out",
+      "blob_sha": "b40188f76dea065be433c9a1b8047dd8e7230be0",
+      "size": 72,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/14/cmd",
+      "blob_sha": "58749837701bcf46de7c5ab1a424ca75deab273c",
+      "size": 32,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/14/err",
+      "blob_sha": "01a1006d4acf558dc9a5e843eb77c8e1ea6a541b",
+      "size": 737,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/14/info",
+      "blob_sha": "26e762d793dd6df4aa58f10b28226923e5f28406",
+      "size": 26,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/14/out",
+      "blob_sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/15/cmd",
+      "blob_sha": "18f76f8c4af3cfa15c020ba963ea09aaec29e695",
+      "size": 44,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/15/err",
+      "blob_sha": "01a1006d4acf558dc9a5e843eb77c8e1ea6a541b",
+      "size": 737,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/15/info",
+      "blob_sha": "4994377bd3fad5727f8ffcd4cffd101d224640d9",
+      "size": 34,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/15/out",
+      "blob_sha": "49216c299d618e6b2a6697bbedc00c77fd20a60e",
+      "size": 42,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/16/cmd",
+      "blob_sha": "53f4da44ce5c94430da34c95a8b1aed2f4b65ca9",
+      "size": 53,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/16/err",
+      "blob_sha": "6dfa4bb6373da4e966b2044cde770724fe05d218",
+      "size": 738,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/16/info",
+      "blob_sha": "7dd4662fd4d2993807d777df3c2e56b61989223e",
+      "size": 33,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/16/out",
+      "blob_sha": "4a9d6f4b3f3256fd1aa4a904cfcf139e13f5c72f",
+      "size": 38,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/17/cmd",
+      "blob_sha": "a25384b0fedf60b2ca5fb2809c6592a92722f326",
+      "size": 55,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/17/err",
+      "blob_sha": "887c9a1b4b926cbf877b7c2a11e1408880a0902a",
+      "size": 841,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/17/info",
+      "blob_sha": "d6a296ab619ff8c7c1fe89f00f6f6fae7b2e4915",
+      "size": 32,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/17/out",
+      "blob_sha": "f697e386d0be8c59971844a0469c87e354f30153",
+      "size": 43,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/18/cmd",
+      "blob_sha": "38e2555994b293435cb0b8c3be58e399cae978e4",
+      "size": 64,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/18/err",
+      "blob_sha": "ce739b65ef505dc2eff5a1ebe64b4b35dc60d218",
+      "size": 843,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/18/info",
+      "blob_sha": "402b68d1bed6cc85c6795408813b84f04dc8995d",
+      "size": 33,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/18/out",
+      "blob_sha": "ed002e38bdb13665b9c3a466d075426c6ad5f1b1",
+      "size": 39,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/19/after",
+      "blob_sha": "d8c184c580a5cd0a91ff9252e8eed44c9c39d839",
+      "size": 120,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/19/before",
+      "blob_sha": "eb75cbb76e23b319c2a19e4096a3b24383b1802e",
+      "size": 29,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/19/cmd",
+      "blob_sha": "4dc7fd0cf395bd0c8daeeac59dedf8a592942e19",
+      "size": 32,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/19/err",
+      "blob_sha": "5210f9bb9f54387fc7ae5bda96285961b96cce95",
+      "size": 854,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/19/info",
+      "blob_sha": "dcb8025f87d26a8ebb25dd0171bb25930df5859d",
+      "size": 69,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/19/out",
+      "blob_sha": "6bdd88ce361f8e2b57bf94222c47e5dfcc16ff5a",
+      "size": 80,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/20/after",
+      "blob_sha": "eb75cbb76e23b319c2a19e4096a3b24383b1802e",
+      "size": 29,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/20/before",
+      "blob_sha": "0a85cfc68accba5c58c8e098bd4ffe4fa3aaa1a3",
+      "size": 58,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/20/cmd",
+      "blob_sha": "4dc7fd0cf395bd0c8daeeac59dedf8a592942e19",
+      "size": 32,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/20/err",
+      "blob_sha": "d095d109763b0e733f5b8af81664d82aba843044",
+      "size": 1953,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/20/info",
+      "blob_sha": "499cf742698d47436c5acd017c574cb9397e4b34",
+      "size": 39,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/20/out",
+      "blob_sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/21/after",
+      "blob_sha": "eb75cbb76e23b319c2a19e4096a3b24383b1802e",
+      "size": 29,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/21/before",
+      "blob_sha": "ae9cb45680e0d8b5d4ccdebe72c2de6acc1a2b1a",
+      "size": 45,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/21/cmd",
+      "blob_sha": "4dc7fd0cf395bd0c8daeeac59dedf8a592942e19",
+      "size": 32,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/21/err",
+      "blob_sha": "61d34be0904d61af1c0d6e25aaaa6b81203bc2ad",
+      "size": 2424,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/21/info",
+      "blob_sha": "0ddd932c987be0fa458863106263bfc1207ed637",
+      "size": 46,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/21/out",
+      "blob_sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/22/cmd",
+      "blob_sha": "53a7d36d2c6479bfd2b2fb8fc7b1b44673399e27",
+      "size": 46,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/22/err",
+      "blob_sha": "ca4bf4b94906a011017b4489c0c3f0fad39ef405",
+      "size": 882,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/22/info",
+      "blob_sha": "71671814281f5868a6477a97308e520e401c4534",
+      "size": 60,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/22/out",
+      "blob_sha": "89c3c4b48dce20112f09f6c8e8d3567851076805",
+      "size": 43,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/22/todo",
+      "blob_sha": "fa855e34e701e0ef273b44338d4e6b36df7e7da9",
+      "size": 41,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/23/after",
+      "blob_sha": "aa8912919b57aadf13a4e00b184e146f0b44a13a",
+      "size": 177,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/23/before",
+      "blob_sha": "298fda6e2f8a6db0ea8c2f2be7228c6800f61e74",
+      "size": 20,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/23/cmd",
+      "blob_sha": "6941660ed5ae1dd0625ae721ca02948e5ef2b221",
+      "size": 62,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/23/err",
+      "blob_sha": "9061c7a43a41fd6854b03468cd074767a6b41ad8",
+      "size": 883,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/23/info",
+      "blob_sha": "7be6a99b7deb3249c11c946ec17e1d680eeb22bf",
+      "size": 46,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/23/out",
+      "blob_sha": "812dd462dffcb3f41cb9c679f30e0c256e0f71aa",
+      "size": 187,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/24/after",
+      "blob_sha": "46e87ab0deeba0946a4875b5d8c41afba13d33e3",
+      "size": 165,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/24/before",
+      "blob_sha": "6ab7de1046ff9a5fe73771496cfe3c18692cefa9",
+      "size": 16,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/24/cmd",
+      "blob_sha": "3231a346d5cf5ce5c47b715bb1bb18fc2fd3d4e0",
+      "size": 64,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/24/err",
+      "blob_sha": "770b83f5525109b2cf4a14c612a7a1118a3b4d4d",
+      "size": 820,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/24/info",
+      "blob_sha": "ef7b5978903e3da7972337656d35f431a0b1f297",
+      "size": 45,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/24/out",
+      "blob_sha": "f93ea9de0fd62f8bd322858618f00edaa3f2971a",
+      "size": 179,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/25/after",
+      "blob_sha": "46e87ab0deeba0946a4875b5d8c41afba13d33e3",
+      "size": 165,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/25/before",
+      "blob_sha": "6ab7de1046ff9a5fe73771496cfe3c18692cefa9",
+      "size": 16,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/25/cmd",
+      "blob_sha": "97b148fb0ebd9f866343224b4d13de2a3a8d026a",
+      "size": 72,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/25/err",
+      "blob_sha": "770b83f5525109b2cf4a14c612a7a1118a3b4d4d",
+      "size": 820,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/25/info",
+      "blob_sha": "7712c52325e80f6b53ec8d497d07f8b5cf7aa5e7",
+      "size": 45,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/25/out",
+      "blob_sha": "f93ea9de0fd62f8bd322858618f00edaa3f2971a",
+      "size": 179,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/26/cmd",
+      "blob_sha": "f1b85c0d9da3a02eb1aea3794e8285d153c43118",
+      "size": 50,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/26/err",
+      "blob_sha": "7abd4fddcceaed9bdcae744a092caa14a69aefc1",
+      "size": 725,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/26/info",
+      "blob_sha": "4c4a3e56315c5a1e33af713e27a8a400b4e9c983",
+      "size": 44,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/26/out",
+      "blob_sha": "e280030fded21c1f87486a4231ac34bc1b203950",
+      "size": 39,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/26/todo",
+      "blob_sha": "23937fc30600d4c60f76bf92150d3270acd2f51e",
+      "size": 31,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/27/cmd",
+      "blob_sha": "126e6d4f1d5d0619fbd1adf6b17daef0011319f7",
+      "size": 30,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/27/err",
+      "blob_sha": "d1f2a4c22999daaff1f032c68dcc329f3d117cba",
+      "size": 2068,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/27/info",
+      "blob_sha": "00c350d0d56f4dbebaedfd5b5a522ca4b88b297a",
+      "size": 44,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/27/out",
+      "blob_sha": "63783f8e21c84275c0b2d0a973b81cf61d181bb8",
+      "size": 184,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/27/todo",
+      "blob_sha": "23937fc30600d4c60f76bf92150d3270acd2f51e",
+      "size": 31,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/28/after",
+      "blob_sha": "73485a8a1ae3606c34a04d770768aba03519d5e7",
+      "size": 185,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/28/before",
+      "blob_sha": "b6b3bf8111390bfd88dcb5f4b67080d3a5dea6c4",
+      "size": 24,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/28/cmd",
+      "blob_sha": "9f006523daa5f16211a92b1bb498b3b23cb6ea82",
+      "size": 48,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/28/err",
+      "blob_sha": "feb436a47bd7b29745c8968c9316cb430ebd56ce",
+      "size": 874,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/28/info",
+      "blob_sha": "465bccb393a2581e271c6de1697c91cfa2ee7ddd",
+      "size": 42,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/28/out",
+      "blob_sha": "32d9c9174c0c745ab8b133c7c64981e5816a9cee",
+      "size": 62,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/29/cmd",
+      "blob_sha": "4cfab477f456629c02aa13d75e78d89a8204befc",
+      "size": 43,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/29/err",
+      "blob_sha": "c9ddd321bee0fa0e59c3c060b1ee08ac00462aae",
+      "size": 958,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/29/info",
+      "blob_sha": "b9b65cda9b1e68c4feb581b96668ca31992d492b",
+      "size": 32,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/29/out",
+      "blob_sha": "8b137891791fe96927ad78e64b0aad7bded08bdc",
+      "size": 1,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/29/todo",
+      "blob_sha": "fa855e34e701e0ef273b44338d4e6b36df7e7da9",
+      "size": 41,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/30/cmd",
+      "blob_sha": "6ae03e3dbb1cd89a5033c3f5ed4e16397eb7dbd8",
+      "size": 25,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/30/err",
+      "blob_sha": "19f2529b1786a42a20acd92812411737cc7fa433",
+      "size": 160,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/30/info",
+      "blob_sha": "32d4905363d5a23466cfe34d157eb1c9b6eece11",
+      "size": 24,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/30/out",
+      "blob_sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/30/todo",
+      "blob_sha": "5f796dfbf3ff0306d1c2313cc9833d18b71c98bb",
+      "size": 41,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/31/cmd",
+      "blob_sha": "b0231e9f0c47dbd869fe5472f57121be1e82e27d",
+      "size": 61,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/31/err",
+      "blob_sha": "6d1f6699cfcad18852f7923b7e7a8707b8c207f7",
+      "size": 740,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/31/info",
+      "blob_sha": "62347b256bf5521ae092cfef7c748302e956fe70",
+      "size": 31,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/31/out",
+      "blob_sha": "786d32d1e970d1dc410b221bbeee0ac26714f3e7",
+      "size": 48,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/32/cmd",
+      "blob_sha": "2ca2bb86f1a7d8c6b04d1bcd768ca9e90f09426c",
+      "size": 50,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/32/err",
+      "blob_sha": "0d4114797c6790cad9b6111c2d325a3e8b6e7e22",
+      "size": 739,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/32/info",
+      "blob_sha": "80ef9bcf3a79ee1bff636063fc9d82c9da582e62",
+      "size": 33,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/32/out",
+      "blob_sha": "786d32d1e970d1dc410b221bbeee0ac26714f3e7",
+      "size": 48,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/33/cmd",
+      "blob_sha": "e0e5f0fc40ef041d2b3f8d1148b472f5c46bbc45",
+      "size": 42,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/33/err",
+      "blob_sha": "1a42c866fa4a3ad811c2fcaf02165f059c0ec913",
+      "size": 718,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/33/info",
+      "blob_sha": "ddd037a2313021d05e55c6215f1e22802fc71c0f",
+      "size": 25,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/33/out",
+      "blob_sha": "49216c299d618e6b2a6697bbedc00c77fd20a60e",
+      "size": 42,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/34/cmd",
+      "blob_sha": "40b8ff3308fc843ff9ab963a3f4f4ca3b44aa56f",
+      "size": 44,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/34/err",
+      "blob_sha": "0afef6972606319f8a49caa80bb17abdd7d2b4a3",
+      "size": 736,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/34/info",
+      "blob_sha": "a32ffa92777af7244ce96d684b8a90db16bb9787",
+      "size": 26,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/34/out",
+      "blob_sha": "e280030fded21c1f87486a4231ac34bc1b203950",
+      "size": 39,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/35/cmd",
+      "blob_sha": "8b76370c6fb7bd506b253cd0bbe5ddaf382ed3d3",
+      "size": 24,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/35/err",
+      "blob_sha": "171f8cb2c7b70e0dbdf65b6a047505802e98d7d9",
+      "size": 84,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/35/info",
+      "blob_sha": "49b490264868f1d83beba56ff7c9111cfba7e00e",
+      "size": 29,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/35/out",
+      "blob_sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/36/cmd",
+      "blob_sha": "665f606afd1c1b98f6920bc8e2e68fe3d115efdb",
+      "size": 24,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/36/err",
+      "blob_sha": "171f8cb2c7b70e0dbdf65b6a047505802e98d7d9",
+      "size": 84,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/36/info",
+      "blob_sha": "7f2b9ede8c026b6cde4e9f84485f17bcbd5bf0f3",
+      "size": 30,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/36/out",
+      "blob_sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/37/cmd",
+      "blob_sha": "1ada2ac34a55238fcb02333e9110d269ac797e46",
+      "size": 51,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/37/err",
+      "blob_sha": "337eace45763439e4826ca1926fc48848a2ebdda",
+      "size": 748,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/37/info",
+      "blob_sha": "8d2e80f0e6892b6815a2b46df5ed243ff5cfc68a",
+      "size": 40,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/37/out",
+      "blob_sha": "2f7b10351db7b387b025e601cab37e8cad756fa8",
+      "size": 105,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/38/cmd",
+      "blob_sha": "625666d9c57c495a64c65860caf4ef0598e6b223",
+      "size": 50,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/38/err",
+      "blob_sha": "337eace45763439e4826ca1926fc48848a2ebdda",
+      "size": 748,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/38/info",
+      "blob_sha": "dcdeb32a3c073abd0452d10b0872931e84177cc5",
+      "size": 39,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/38/out",
+      "blob_sha": "49216c299d618e6b2a6697bbedc00c77fd20a60e",
+      "size": 42,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/39/cmd",
+      "blob_sha": "ee2edfed8e2b2546f48967abaedc9d8f089c0b13",
+      "size": 61,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/39/err",
+      "blob_sha": "592b83e68372c378ab9842e03d69b35eb3cca695",
+      "size": 846,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/39/info",
+      "blob_sha": "ff9a1160721aed342604754f6d53b054c17afd69",
+      "size": 38,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/39/out",
+      "blob_sha": "a866bc20ef12e4e5cefbbdf74651b6a9220eb55e",
+      "size": 45,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/40/cmd",
+      "blob_sha": "92228e1f1354d77140241bf5bc8584c9d4a08620",
+      "size": 60,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/40/err",
+      "blob_sha": "592b83e68372c378ab9842e03d69b35eb3cca695",
+      "size": 846,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/40/info",
+      "blob_sha": "d23d3b84c2ae41bfc683dcc2b12dd1543627f7a2",
+      "size": 22,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/40/out",
+      "blob_sha": "79a89ca674768b2a936b92784475923e46215cff",
+      "size": 43,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/41/cmd",
+      "blob_sha": "5a539b62cb071795bb8a6b3b95a21b2bf041eb5a",
+      "size": 59,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/41/err",
+      "blob_sha": "e7301c16cc4bf02f70fa8a567f3321f87de39ed2",
+      "size": 1732,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/41/info",
+      "blob_sha": "58c72ad9056fed211c00bd6a8fe4aac8db6bf800",
+      "size": 32,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/case/41/out",
+      "blob_sha": "dcbd9c8e9dfccc0cab31f83e40325822fa59c843",
+      "size": 33,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/example.cfg",
+      "blob_sha": "3f0126f926ea25f9ecfa4b43587c24823ec95649",
+      "size": 79,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/input/EOMDjson.json",
+      "blob_sha": "3d3e3743db8546056b8aad0fc6bd83a9bf934e98",
+      "size": 33,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/input/EOMDjson_unfinished.json",
+      "blob_sha": "2d52143e7c702e3aa0142c4678e8a85a871c8f6f",
+      "size": 59,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/input/NDjson-2.json",
+      "blob_sha": "b6558bd21b1b5bcb6a2d1de048f7132187677fad",
+      "size": 58,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/input/NDjson-natives.json",
+      "blob_sha": "b0794082c577178229c8f1616380bd8aa3af065f",
+      "size": 40,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/input/NDjson.json",
+      "blob_sha": "ed9a8e0742666cb2fe99e486c3e96527c36dc73e",
+      "size": 39,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/input/NDjson_unfinished.json",
+      "blob_sha": "8d7d19aea520d4f9ee39efd2fdbad1f4c5ea101d",
+      "size": 65,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/input/empty.json",
+      "blob_sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/input/jsonArray.json",
+      "blob_sha": "3c090169115d08611918a1e3facedcd0eafe39ef",
+      "size": 45,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/json2JSON.py",
+      "blob_sha": "e8f865af4cd6ab711c4778ec67a32c472ef3f26c",
+      "size": 2148,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/json2TTL.py",
+      "blob_sha": "8475e04d80860a3f46643596a5dd827d87577299",
+      "size": 2061,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/pyDKB/test.sh",
+      "blob_sha": "2fd9c2ee606464b5abb95d548c56bcbe109961e8",
+      "size": 3474,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/utils/compare_ndjson_files.py",
+      "blob_sha": "466f427d86c76967d996be21a2118dc22c7b5687",
+      "size": 2842,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Dataflow/test/utils/reconstruction.py",
+      "blob_sha": "3098124159ec326333f3b7c586c9753e3eac2c1e",
+      "size": 4750,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Elasticsearch/.gitignore",
+      "blob_sha": "2a0f6a7428eb723ac870f74469acbff20c848744",
+      "size": 70,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Elasticsearch/config/es.example",
+      "blob_sha": "8900c6e7614f9a3690d43f2b4c834d033de1c901",
+      "size": 854,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Elasticsearch/mapping/README",
+      "blob_sha": "c9a5a071158e9ecaa638adbfd38449f7c8408b1f",
+      "size": 1145,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Elasticsearch/mapping/progress.mapping",
+      "blob_sha": "67949beced8288d2340bd78feafd269dfd4e2201",
+      "size": 773,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Elasticsearch/mapping/tasks.mapping",
+      "blob_sha": "5bd4ec3ade9b6436248a863db944db432de363ad",
+      "size": 9918,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Elasticsearch/requests/campaign-stat-jq-parser",
+      "blob_sha": "81fae6cd67dc6e0d529dd6da199eaeb4882f0711",
+      "size": 847,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Elasticsearch/requests/campaign-stat-q.json",
+      "blob_sha": "01ff5c58cf2287fcdd4a95348a03c5bf6fcf495f",
+      "size": 1198,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Elasticsearch/requests/campaign-stat-r-parsed.json",
+      "blob_sha": "0c1b0ce939f65c8618e168720c09e8508b0f0dc0",
+      "size": 3176,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Elasticsearch/requests/campaign-stat-r.json",
+      "blob_sha": "b1895913f721da30a356f1e5d23c10e112ac369a",
+      "size": 7454,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Elasticsearch/requests/deriv-ratio-q.json",
+      "blob_sha": "9a072142431a1c6d020252af8e9c91e34833a28a",
+      "size": 1784,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Elasticsearch/requests/deriv-ratio-r.json",
+      "blob_sha": "600cdeb14761c3a103c410fa0fba8cabfcf0a90d",
+      "size": 652,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Elasticsearch/requests/hashtag-steps-statistics-q.json",
+      "blob_sha": "82b0ae646a3d04c05dc911d94c53ec0e29141b30",
+      "size": 1986,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Elasticsearch/requests/hashtag-steps-statistics-r.json",
+      "blob_sha": "b95ce97d03d64f9a999add1545847c05af2435c7",
+      "size": 10692,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Elasticsearch/requests/task-steps-gantt-q.json",
+      "blob_sha": "c2fa24113105a770cd6c0a315543182fd01dc17f",
+      "size": 862,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Elasticsearch/requests/task-steps-gantt-r.json",
+      "blob_sha": "93e48537c06c9a7cacf7d2c8400fffa964dbd298",
+      "size": 77408,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Elasticsearch/tools/.gitignore",
+      "blob_sha": "d2127d0564f9ac2592ce0a4a5ba428d5eb033203",
+      "size": 6,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Elasticsearch/tools/drop_index.sh",
+      "blob_sha": "3c802e9c848de5667e08928db11b7a9a2ee9f1d4",
+      "size": 102,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Elasticsearch/tools/load_mapping.sh",
+      "blob_sha": "2bf3bd586f907b3a1cf10c5bd24e56c0512f3855",
+      "size": 997,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Elasticsearch/tools/reindex.ini.example",
+      "blob_sha": "b0be3b26f9735ee7e4cbc4b015c2d317bf9a5fc0",
+      "size": 541,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Elasticsearch/tools/reindex.sh",
+      "blob_sha": "41ebe1625e2e0b70ada97b1a27af9b4d307bec5c",
+      "size": 3810,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Elasticsearch/tools/search.sh",
+      "blob_sha": "11d20942c2f9d3cfe91315ade2a017e6bbbfb369",
+      "size": 368,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Elasticsearch/tools/transform-to-nested.jq",
+      "blob_sha": "8d6d9b8d3e3a154f5ef25f65b793e2baac3dfec8",
+      "size": 1911,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Elasticsearch/tools/tunnel.sh",
+      "blob_sha": "4dc718147b7109e23099bf9ca69dd586051ab33b",
+      "size": 346,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Virtuoso/README",
+      "blob_sha": "ec5a39de8cf4487b5b51f529e0e7f6fc974e4b83",
+      "size": 965,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Virtuoso/ontology/ATLAS.owl",
+      "blob_sha": "55b6a6325b4c0a2cbd55f75fae1063984c2bfc9e",
+      "size": 129655,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Virtuoso/tools/create_graph.sh",
+      "blob_sha": "d40f3164e39a204d303c08f1d026e696e4eed391",
+      "size": 1611,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Virtuoso/tools/load_ontology.sh",
+      "blob_sha": "438319cb2ee83339c4571311779e08055c13f986",
+      "size": 2891,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Virtuoso/tools/ttl/DataFromAMI/getDataPeriods_AMI.py",
+      "blob_sha": "33b8161c19902b192c4b3990cb7c5b597afeb3f4",
+      "size": 1096,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Virtuoso/tools/ttl/DataFromAMI/getRunNumbersFromAMI.py",
+      "blob_sha": "085211c1ca2944a09822b49066149c7e91833f2f",
+      "size": 927,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Virtuoso/tools/ttl/DataFromAMI/periods.json",
+      "blob_sha": "68e060c6a3abe352aad3bbc7b512d05cf9ca8f52",
+      "size": 101426,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Virtuoso/tools/ttl/DataFromAMI/runs.json",
+      "blob_sha": "dfc56c42ee18bdb8391b080cc56b65f84db23f73",
+      "size": 1003927,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Virtuoso/tools/ttl/Projects2TTL.py",
+      "blob_sha": "a5f4008785de4abb8e8bd1b4dad69120e811725f",
+      "size": 2357,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Virtuoso/tools/ttl/README",
+      "blob_sha": "323199a2f31f67fc291410f16970e3e1a61c62a5",
+      "size": 418,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Virtuoso/tools/ttl/data/Projects",
+      "blob_sha": "b9e5c6eff79074d215ebc518012ff7af297bdccd",
+      "size": 2801,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Virtuoso/tools/ttl/data/dataperiods16.json",
+      "blob_sha": "60f0c621135c3790d3a683332f42a5c3360178ea",
+      "size": 3538,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Virtuoso/tools/ttl/dataPeriods2TTL.py",
+      "blob_sha": "c9f8c2ba5ed3a3190aba527bc897151f1aa4d2f6",
+      "size": 5236,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Virtuoso/tools/ttl/proj2TTL.py",
+      "blob_sha": "c4a809e85949615d4b9bb453e78837e64c6984fe",
+      "size": 5397,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Virtuoso/tools/ttl/ttl/data_periods.ttl",
+      "blob_sha": "1671ec8a83eb82ff55e6dbfaf7db73a9453a2ae5",
+      "size": 489967,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Virtuoso/tools/ttl/ttl/data_periods2016.ttl",
+      "blob_sha": "a762b97a95d007093398f6017b6ecd75d645b225",
+      "size": 21164,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "Utils/Virtuoso/tools/ttl/ttl/projects.ttl",
+      "blob_sha": "60331fee260cf5e4f5293599faab73b77e554e69",
+      "size": 23899,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    }
+  ],
+  "somef_status": "not_run",
+  "note": "No source archive collected. Tree paths and blob hashes are an index, not runnable source."
+}

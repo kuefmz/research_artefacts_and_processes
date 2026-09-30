@@ -1,0 +1,799 @@
+{
+  "provider": "openalex",
+  "requested_url": "https://api.openalex.org/works/https://doi.org/10.48550/arxiv.1609.07378",
+  "retrieved_at": "2026-09-30T11:53:54.965839+00:00",
+  "status": "ok",
+  "http_status": 200,
+  "final_url": "https://api.openalex.org/works/https://doi.org/10.48550/arxiv.1609.07378",
+  "sha256": "f806427967e4e6fa851081771a90d6c0197f544fed848ce56c29d1f6610d5d7b",
+  "content_type": "application/json",
+  "data": {
+    "id": "https://openalex.org/W2525117968",
+    "doi": "https://doi.org/10.48550/arxiv.1609.07378",
+    "title": "Multi-Output Artificial Neural Network for Storm Surge Prediction in North Carolina",
+    "display_name": "Multi-Output Artificial Neural Network for Storm Surge Prediction in North Carolina",
+    "publication_year": 2016,
+    "publication_date": "2016-09-23",
+    "ids": {
+      "openalex": "https://openalex.org/W2525117968",
+      "doi": "https://doi.org/10.48550/arxiv.1609.07378",
+      "mag": "2525117968"
+    },
+    "language": "en",
+    "primary_location": {
+      "id": "pmh:oai:arXiv.org:1609.07378",
+      "is_oa": true,
+      "landing_page_url": "http://arxiv.org/abs/1609.07378",
+      "pdf_url": "https://arxiv.org/pdf/1609.07378",
+      "source": {
+        "id": "https://openalex.org/S4306400194",
+        "display_name": "arXiv (Cornell University)",
+        "issn_l": "2331-8422",
+        "issn": [
+          "2331-8422"
+        ],
+        "is_oa": true,
+        "is_in_doaj": false,
+        "is_core": false,
+        "host_organization": "https://openalex.org/I205783295",
+        "host_organization_name": "Cornell University",
+        "host_organization_lineage": [
+          "https://openalex.org/I205783295"
+        ],
+        "host_organization_lineage_names": [],
+        "type": "repository"
+      },
+      "license": null,
+      "license_id": null,
+      "version": "submittedVersion",
+      "is_accepted": false,
+      "is_published": false,
+      "raw_source_name": null,
+      "raw_type": "text"
+    },
+    "type": "preprint",
+    "indexed_in": [
+      "arxiv",
+      "datacite"
+    ],
+    "open_access": {
+      "is_oa": true,
+      "oa_status": "green",
+      "oa_url": "https://arxiv.org/pdf/1609.07378",
+      "any_repository_has_fulltext": true
+    },
+    "authorships": [
+      {
+        "author_position": "first",
+        "author": {
+          "id": "https://openalex.org/A5089708055",
+          "display_name": "Anton Bezuglov",
+          "orcid": "https://orcid.org/0000-0003-1829-6586"
+        },
+        "institutions": [],
+        "countries": [],
+        "is_corresponding": false,
+        "raw_author_name": "Bezuglov, Anton",
+        "raw_affiliation_strings": [],
+        "raw_orcid": null,
+        "affiliations": []
+      },
+      {
+        "author_position": "middle",
+        "author": {
+          "id": "https://openalex.org/A5052394788",
+          "display_name": "Brian Blanton",
+          "orcid": "https://orcid.org/0000-0002-3162-2799"
+        },
+        "institutions": [],
+        "countries": [],
+        "is_corresponding": false,
+        "raw_author_name": "Blanton, Brian",
+        "raw_affiliation_strings": [],
+        "raw_orcid": null,
+        "affiliations": []
+      },
+      {
+        "author_position": "last",
+        "author": {
+          "id": "https://openalex.org/A5079502116",
+          "display_name": "Reinaldo Santiago",
+          "orcid": null
+        },
+        "institutions": [],
+        "countries": [],
+        "is_corresponding": false,
+        "raw_author_name": "Santiago, Reinaldo",
+        "raw_affiliation_strings": [],
+        "raw_orcid": null,
+        "affiliations": []
+      }
+    ],
+    "institutions": [],
+    "countries_distinct_count": 0,
+    "institutions_distinct_count": 0,
+    "corresponding_author_ids": [],
+    "corresponding_institution_ids": [],
+    "apc_list": null,
+    "apc_paid": null,
+    "fwci": null,
+    "has_fulltext": false,
+    "cited_by_count": 9,
+    "citation_normalized_percentile": null,
+    "cited_by_percentile_year": null,
+    "biblio": {
+      "volume": null,
+      "issue": null,
+      "first_page": null,
+      "last_page": null
+    },
+    "is_retracted": false,
+    "is_paratext": false,
+    "is_xpac": false,
+    "primary_topic": {
+      "id": "https://openalex.org/T11483",
+      "display_name": "Tropical and Extratropical Cyclones Research",
+      "score": 0.9993000030517578,
+      "subfield": {
+        "id": "https://openalex.org/subfields/1902",
+        "display_name": "Atmospheric Science"
+      },
+      "field": {
+        "id": "https://openalex.org/fields/19",
+        "display_name": "Earth and Planetary Sciences"
+      },
+      "domain": {
+        "id": "https://openalex.org/domains/3",
+        "display_name": "Physical Sciences"
+      }
+    },
+    "topics": [
+      {
+        "id": "https://openalex.org/T11483",
+        "display_name": "Tropical and Extratropical Cyclones Research",
+        "score": 0.9993000030517578,
+        "subfield": {
+          "id": "https://openalex.org/subfields/1902",
+          "display_name": "Atmospheric Science"
+        },
+        "field": {
+          "id": "https://openalex.org/fields/19",
+          "display_name": "Earth and Planetary Sciences"
+        },
+        "domain": {
+          "id": "https://openalex.org/domains/3",
+          "display_name": "Physical Sciences"
+        }
+      },
+      {
+        "id": "https://openalex.org/T10466",
+        "display_name": "Meteorological Phenomena and Simulations",
+        "score": 0.9990000128746033,
+        "subfield": {
+          "id": "https://openalex.org/subfields/1902",
+          "display_name": "Atmospheric Science"
+        },
+        "field": {
+          "id": "https://openalex.org/fields/19",
+          "display_name": "Earth and Planetary Sciences"
+        },
+        "domain": {
+          "id": "https://openalex.org/domains/3",
+          "display_name": "Physical Sciences"
+        }
+      },
+      {
+        "id": "https://openalex.org/T11490",
+        "display_name": "Hydrological Forecasting Using AI",
+        "score": 0.9955999851226807,
+        "subfield": {
+          "id": "https://openalex.org/subfields/2305",
+          "display_name": "Environmental Engineering"
+        },
+        "field": {
+          "id": "https://openalex.org/fields/23",
+          "display_name": "Environmental Science"
+        },
+        "domain": {
+          "id": "https://openalex.org/domains/3",
+          "display_name": "Physical Sciences"
+        }
+      }
+    ],
+    "keywords": [
+      {
+        "id": "https://openalex.org/keywords/storm-surge",
+        "display_name": "Storm surge",
+        "score": 0.9363696575164795
+      },
+      {
+        "id": "https://openalex.org/keywords/artificial-neural-network",
+        "display_name": "Artificial neural network",
+        "score": 0.6831210255622864
+      },
+      {
+        "id": "https://openalex.org/keywords/storm",
+        "display_name": "Storm",
+        "score": 0.6526920795440674
+      },
+      {
+        "id": "https://openalex.org/keywords/meteorology",
+        "display_name": "Meteorology",
+        "score": 0.6238357424736023
+      },
+      {
+        "id": "https://openalex.org/keywords/surge",
+        "display_name": "Surge",
+        "score": 0.600212574005127
+      },
+      {
+        "id": "https://openalex.org/keywords/computer-science",
+        "display_name": "Computer science",
+        "score": 0.46736499667167664
+      },
+      {
+        "id": "https://openalex.org/keywords/environmental-science",
+        "display_name": "Environmental science",
+        "score": 0.45399460196495056
+      },
+      {
+        "id": "https://openalex.org/keywords/climatology",
+        "display_name": "Climatology",
+        "score": 0.3849484920501709
+      },
+      {
+        "id": "https://openalex.org/keywords/machine-learning",
+        "display_name": "Machine learning",
+        "score": 0.251190721988678
+      },
+      {
+        "id": "https://openalex.org/keywords/geography",
+        "display_name": "Geography",
+        "score": 0.2255200743675232
+      },
+      {
+        "id": "https://openalex.org/keywords/geology",
+        "display_name": "Geology",
+        "score": 0.16663020849227905
+      }
+    ],
+    "concepts": [
+      {
+        "id": "https://openalex.org/C22818535",
+        "wikidata": "https://www.wikidata.org/wiki/Q121742",
+        "display_name": "Storm surge",
+        "level": 3,
+        "score": 0.9363696575164795
+      },
+      {
+        "id": "https://openalex.org/C50644808",
+        "wikidata": "https://www.wikidata.org/wiki/Q192776",
+        "display_name": "Artificial neural network",
+        "level": 2,
+        "score": 0.6831210255622864
+      },
+      {
+        "id": "https://openalex.org/C105306849",
+        "wikidata": "https://www.wikidata.org/wiki/Q81054",
+        "display_name": "Storm",
+        "level": 2,
+        "score": 0.6526920795440674
+      },
+      {
+        "id": "https://openalex.org/C153294291",
+        "wikidata": "https://www.wikidata.org/wiki/Q25261",
+        "display_name": "Meteorology",
+        "level": 1,
+        "score": 0.6238357424736023
+      },
+      {
+        "id": "https://openalex.org/C154108245",
+        "wikidata": "https://www.wikidata.org/wiki/Q287381",
+        "display_name": "Surge",
+        "level": 2,
+        "score": 0.600212574005127
+      },
+      {
+        "id": "https://openalex.org/C41008148",
+        "wikidata": "https://www.wikidata.org/wiki/Q21198",
+        "display_name": "Computer science",
+        "level": 0,
+        "score": 0.46736499667167664
+      },
+      {
+        "id": "https://openalex.org/C39432304",
+        "wikidata": "https://www.wikidata.org/wiki/Q188847",
+        "display_name": "Environmental science",
+        "level": 0,
+        "score": 0.45399460196495056
+      },
+      {
+        "id": "https://openalex.org/C49204034",
+        "wikidata": "https://www.wikidata.org/wiki/Q52139",
+        "display_name": "Climatology",
+        "level": 1,
+        "score": 0.3849484920501709
+      },
+      {
+        "id": "https://openalex.org/C119857082",
+        "wikidata": "https://www.wikidata.org/wiki/Q2539",
+        "display_name": "Machine learning",
+        "level": 1,
+        "score": 0.251190721988678
+      },
+      {
+        "id": "https://openalex.org/C205649164",
+        "wikidata": "https://www.wikidata.org/wiki/Q1071",
+        "display_name": "Geography",
+        "level": 0,
+        "score": 0.2255200743675232
+      },
+      {
+        "id": "https://openalex.org/C127313418",
+        "wikidata": "https://www.wikidata.org/wiki/Q1069",
+        "display_name": "Geology",
+        "level": 0,
+        "score": 0.16663020849227905
+      }
+    ],
+    "mesh": [],
+    "locations_count": 2,
+    "locations": [
+      {
+        "id": "pmh:oai:arXiv.org:1609.07378",
+        "is_oa": true,
+        "landing_page_url": "http://arxiv.org/abs/1609.07378",
+        "pdf_url": "https://arxiv.org/pdf/1609.07378",
+        "source": {
+          "id": "https://openalex.org/S4306400194",
+          "display_name": "arXiv (Cornell University)",
+          "issn_l": "2331-8422",
+          "issn": [
+            "2331-8422"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "host_organization": "https://openalex.org/I205783295",
+          "host_organization_name": "Cornell University",
+          "host_organization_lineage": [
+            "https://openalex.org/I205783295"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "text"
+      },
+      {
+        "id": "doi:10.48550/arxiv.1609.07378",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.48550/arxiv.1609.07378",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S4306400194",
+          "display_name": "arXiv (Cornell University)",
+          "issn_l": "2331-8422",
+          "issn": [
+            "2331-8422"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "host_organization": "https://openalex.org/I205783295",
+          "host_organization_name": "Cornell University",
+          "host_organization_lineage": [
+            "https://openalex.org/I205783295"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": null,
+        "is_accepted": false,
+        "is_published": null,
+        "raw_source_name": null,
+        "raw_type": "Preprint"
+      }
+    ],
+    "best_oa_location": {
+      "id": "pmh:oai:arXiv.org:1609.07378",
+      "is_oa": true,
+      "landing_page_url": "http://arxiv.org/abs/1609.07378",
+      "pdf_url": "https://arxiv.org/pdf/1609.07378",
+      "source": {
+        "id": "https://openalex.org/S4306400194",
+        "display_name": "arXiv (Cornell University)",
+        "issn_l": "2331-8422",
+        "issn": [
+          "2331-8422"
+        ],
+        "is_oa": true,
+        "is_in_doaj": false,
+        "is_core": false,
+        "host_organization": "https://openalex.org/I205783295",
+        "host_organization_name": "Cornell University",
+        "host_organization_lineage": [
+          "https://openalex.org/I205783295"
+        ],
+        "host_organization_lineage_names": [],
+        "type": "repository"
+      },
+      "license": null,
+      "license_id": null,
+      "version": "submittedVersion",
+      "is_accepted": false,
+      "is_published": false,
+      "raw_source_name": null,
+      "raw_type": "text"
+    },
+    "sustainable_development_goals": [],
+    "x_sdgs": [],
+    "study_designs": [],
+    "awards": [],
+    "funders": [],
+    "has_content": {
+      "grobid_xml": false,
+      "pdf": false
+    },
+    "content_urls": null,
+    "referenced_works_count": 30,
+    "referenced_works": [
+      "https://openalex.org/W217796688",
+      "https://openalex.org/W1498436455",
+      "https://openalex.org/W1522301498",
+      "https://openalex.org/W1645858368",
+      "https://openalex.org/W1965906651",
+      "https://openalex.org/W1968704069",
+      "https://openalex.org/W1971722118",
+      "https://openalex.org/W1975675155",
+      "https://openalex.org/W1985048212",
+      "https://openalex.org/W1987998981",
+      "https://openalex.org/W1995039436",
+      "https://openalex.org/W2001521497",
+      "https://openalex.org/W2035478691",
+      "https://openalex.org/W2036885847",
+      "https://openalex.org/W2058674828",
+      "https://openalex.org/W2061843932",
+      "https://openalex.org/W2066760478",
+      "https://openalex.org/W2073072796",
+      "https://openalex.org/W2089619738",
+      "https://openalex.org/W2089640048",
+      "https://openalex.org/W2098263691",
+      "https://openalex.org/W2101358581",
+      "https://openalex.org/W2106408385",
+      "https://openalex.org/W2107845890",
+      "https://openalex.org/W2123737232",
+      "https://openalex.org/W2148946684",
+      "https://openalex.org/W2337469812",
+      "https://openalex.org/W2413306771",
+      "https://openalex.org/W2789492867",
+      "https://openalex.org/W2797602122"
+    ],
+    "related_works": [
+      "https://openalex.org/W2586462994",
+      "https://openalex.org/W4205593056",
+      "https://openalex.org/W4245899862",
+      "https://openalex.org/W1679724328",
+      "https://openalex.org/W2914204445",
+      "https://openalex.org/W2755850463",
+      "https://openalex.org/W2913401879",
+      "https://openalex.org/W2949668870",
+      "https://openalex.org/W2084720422",
+      "https://openalex.org/W2535045285"
+    ],
+    "abstract_inverted_index": {
+      "During": [
+        0
+      ],
+      "hurricane": [
+        1,
+        111
+      ],
+      "seasons,": [
+        2
+      ],
+      "emergency": [
+        3
+      ],
+      "managers": [
+        4
+      ],
+      "and": [
+        5,
+        11,
+        30,
+        109
+      ],
+      "other": [
+        6,
+        105
+      ],
+      "decision": [
+        7
+      ],
+      "makers": [
+        8
+      ],
+      "need": [
+        9
+      ],
+      "accurate": [
+        10
+      ],
+      "`on-time'": [
+        12
+      ],
+      "information": [
+        13
+      ],
+      "on": [
+        14,
+        107
+      ],
+      "potential": [
+        15
+      ],
+      "storm": [
+        16,
+        28,
+        73,
+        85
+      ],
+      "surge": [
+        17,
+        74,
+        86
+      ],
+      "impacts.": [
+        18
+      ],
+      "Fully": [
+        19
+      ],
+      "dynamical": [
+        20
+      ],
+      "computer": [
+        21
+      ],
+      "models,": [
+        22
+      ],
+      "such": [
+        23
+      ],
+      "as": [
+        24
+      ],
+      "the": [
+        25,
+        97,
+        100
+      ],
+      "ADCIRC": [
+        26
+      ],
+      "tide,": [
+        27
+      ],
+      "surge,": [
+        29
+      ],
+      "wind-wave": [
+        31
+      ],
+      "model": [
+        32,
+        71,
+        81,
+        103
+      ],
+      "take": [
+        33
+      ],
+      "several": [
+        34
+      ],
+      "hours": [
+        35
+      ],
+      "to": [
+        36
+      ],
+      "complete": [
+        37
+      ],
+      "a": [
+        38
+      ],
+      "forecast": [
+        39
+      ],
+      "when": [
+        40
+      ],
+      "configured": [
+        41
+      ],
+      "at": [
+        42,
+        88
+      ],
+      "high": [
+        43
+      ],
+      "spatial": [
+        44
+      ],
+      "resolution.": [
+        45
+      ],
+      "Additionally,": [
+        46
+      ],
+      "statically": [
+        47
+      ],
+      "meaningful": [
+        48
+      ],
+      "ensembles": [
+        49
+      ],
+      "of": [
+        50,
+        99
+      ],
+      "high-resolution": [
+        51
+      ],
+      "models": [
+        52,
+        106
+      ],
+      "(needed": [
+        53
+      ],
+      "for": [
+        54,
+        72
+      ],
+      "uncertainty": [
+        55
+      ],
+      "estimation)": [
+        56
+      ],
+      "cannot": [
+        57
+      ],
+      "easily": [
+        58
+      ],
+      "be": [
+        59
+      ],
+      "computed": [
+        60
+      ],
+      "in": [
+        61,
+        76,
+        91
+      ],
+      "near": [
+        62
+      ],
+      "real-time.": [
+        63
+      ],
+      "This": [
+        64
+      ],
+      "paper": [
+        65,
+        95
+      ],
+      "discusses": [
+        66
+      ],
+      "an": [
+        67
+      ],
+      "artificial": [
+        68
+      ],
+      "neural": [
+        69,
+        101
+      ],
+      "network": [
+        70,
+        80,
+        102
+      ],
+      "prediction": [
+        75
+      ],
+      "North": [
+        77,
+        92
+      ],
+      "Carolina.": [
+        78,
+        93
+      ],
+      "The": [
+        79,
+        94
+      ],
+      "provides": [
+        82
+      ],
+      "fast,": [
+        83
+      ],
+      "real-time": [
+        84
+      ],
+      "estimates": [
+        87
+      ],
+      "coastal": [
+        89
+      ],
+      "locations": [
+        90
+      ],
+      "studies": [
+        96
+      ],
+      "performance": [
+        98
+      ],
+      "vs.": [
+        104
+      ],
+      "synthetic": [
+        108
+      ],
+      "real": [
+        110
+      ],
+      "data.": [
+        112
+      ]
+    },
+    "counts_by_year": [
+      {
+        "year": 2024,
+        "cited_by_count": 2
+      },
+      {
+        "year": 2023,
+        "cited_by_count": 1
+      },
+      {
+        "year": 2020,
+        "cited_by_count": 2
+      },
+      {
+        "year": 2019,
+        "cited_by_count": 1
+      },
+      {
+        "year": 2018,
+        "cited_by_count": 3
+      }
+    ],
+    "updated_date": "2026-08-26T07:47:46.906454",
+    "created_date": "2025-10-10T00:00:00"
+  }
+}

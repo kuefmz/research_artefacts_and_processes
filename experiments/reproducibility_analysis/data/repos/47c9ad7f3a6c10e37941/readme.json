@@ -1,0 +1,28 @@
+{
+  "provider": "github",
+  "requested_url": "https://api.github.com/repos/DanSBS/NGSPower/readme?ref=68b25e447440eaf168e9637bde501b7debce3f9d",
+  "retrieved_at": "2026-09-30T11:52:49.847376+00:00",
+  "status": "ok",
+  "http_status": 200,
+  "final_url": "https://api.github.com/repos/DanSBS/NGSPower/readme?ref=68b25e447440eaf168e9637bde501b7debce3f9d",
+  "sha256": "569dd379eaf1419ae94130c674b6dc673c50b6650be9e2e550253fb7d02f8b02",
+  "content_type": "application/json; charset=utf-8",
+  "data": {
+    "name": "README.md",
+    "path": "README.md",
+    "sha": "7cb8e3a271b43b9f799cc151ad119fdc4eebf351",
+    "size": 54,
+    "url": "https://api.github.com/repos/DanSBS/NGSPower/contents/README.md?ref=68b25e447440eaf168e9637bde501b7debce3f9d",
+    "html_url": "https://github.com/DanSBS/NGSPower/blob/68b25e447440eaf168e9637bde501b7debce3f9d/README.md",
+    "git_url": "https://api.github.com/repos/DanSBS/NGSPower/git/blobs/7cb8e3a271b43b9f799cc151ad119fdc4eebf351",
+    "download_url": "https://raw.githubusercontent.com/DanSBS/NGSPower/68b25e447440eaf168e9637bde501b7debce3f9d/README.md",
+    "type": "file",
+    "content": "IyBOR1NQb3dlcgpTYW1wbGUgc2l6ZSBlc3RpbWF0aW9uIGZvciBOR1MgRXhw\nZXJpbWVudHMK\n",
+    "encoding": "base64",
+    "_links": {
+      "self": "https://api.github.com/repos/DanSBS/NGSPower/contents/README.md?ref=68b25e447440eaf168e9637bde501b7debce3f9d",
+      "git": "https://api.github.com/repos/DanSBS/NGSPower/git/blobs/7cb8e3a271b43b9f799cc151ad119fdc4eebf351",
+      "html": "https://github.com/DanSBS/NGSPower/blob/68b25e447440eaf168e9637bde501b7debce3f9d/README.md"
+    }
+  }
+}

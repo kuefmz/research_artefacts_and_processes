@@ -1,0 +1,738 @@
+{
+  "provider": "openalex",
+  "requested_url": "https://api.openalex.org/works/https://doi.org/10.54546/mlit.2021.26.74.001",
+  "retrieved_at": "2026-09-30T11:53:43.488868+00:00",
+  "status": "ok",
+  "http_status": 200,
+  "final_url": "https://api.openalex.org/works/https://doi.org/10.54546/mlit.2021.26.74.001",
+  "sha256": "76dbcf6dde6d1003cf3ea1b6ef951f11ac2581f8647985bac55f8b4127f25ade",
+  "content_type": "application/json",
+  "data": {
+    "id": "https://openalex.org/W4206466513",
+    "doi": "https://doi.org/10.54546/mlit.2021.26.74.001",
+    "title": "DATA KNOWLEDGE BASE CURRENT STATUS AND OPERATION",
+    "display_name": "DATA KNOWLEDGE BASE CURRENT STATUS AND OPERATION",
+    "publication_year": 2021,
+    "publication_date": "2021-12-13",
+    "ids": {
+      "openalex": "https://openalex.org/W4206466513",
+      "doi": "https://doi.org/10.54546/mlit.2021.26.74.001"
+    },
+    "language": "en",
+    "primary_location": {
+      "id": "doi:10.54546/mlit.2021.26.74.001",
+      "is_oa": true,
+      "landing_page_url": "https://doi.org/10.54546/mlit.2021.26.74.001",
+      "pdf_url": "https://doi.org/10.54546/mlit.2021.26.74.001",
+      "source": {
+        "id": "https://openalex.org/S4363608474",
+        "display_name": "9th International Conference \"Distributed Computing and Grid Technologies in Science and Education\"",
+        "issn_l": null,
+        "issn": null,
+        "is_oa": false,
+        "is_in_doaj": false,
+        "is_core": false,
+        "listed_in": [],
+        "host_organization": null,
+        "host_organization_name": null,
+        "host_organization_lineage": [],
+        "host_organization_lineage_names": [],
+        "type": "conference"
+      },
+      "license": "cc-by",
+      "license_id": "https://openalex.org/licenses/cc-by",
+      "version": "publishedVersion",
+      "is_accepted": true,
+      "is_published": true,
+      "raw_source_name": "9th International Conference \"Distributed Computing and Grid Technologies in Science and Education\"",
+      "raw_type": "proceedings-article"
+    },
+    "type": "conference-paper",
+    "indexed_in": [
+      "crossref"
+    ],
+    "open_access": {
+      "is_oa": true,
+      "oa_status": "hybrid",
+      "oa_url": "https://doi.org/10.54546/mlit.2021.26.74.001",
+      "any_repository_has_fulltext": false
+    },
+    "authorships": [
+      {
+        "author_position": "first",
+        "author": {
+          "id": "https://openalex.org/A5062285061",
+          "display_name": "V. Kotliar",
+          "orcid": "https://orcid.org/0000-0002-7443-4042",
+          "observed_orcids": [
+            "https://orcid.org/0000-0002-7443-4042"
+          ]
+        },
+        "institutions": [
+          {
+            "id": "https://openalex.org/I2800235667",
+            "display_name": "Kurchatov Institute",
+            "ror": "https://ror.org/00n1nz186",
+            "country_code": "RU",
+            "type": "facility",
+            "lineage": [
+              "https://openalex.org/I2800235667"
+            ]
+          },
+          {
+            "id": "https://openalex.org/I3129407955",
+            "display_name": "Institute for High Energy Physics",
+            "ror": "https://ror.org/03kn4xv14",
+            "country_code": "RU",
+            "type": "facility",
+            "lineage": [
+              "https://openalex.org/I3129407955"
+            ]
+          }
+        ],
+        "countries": [
+          "RU"
+        ],
+        "is_corresponding": true,
+        "raw_author_name": "V. Kotliar",
+        "raw_affiliation_strings": [
+          "Institute for High Energy Physics named by A.A . Logunov of National Research Center \"Kurchatov Institute\" , Nauki Square 1 , Protvino , Moscow region , Russia, 142281",
+          "Institute for High Energy Physics named by A.A. Logunov of National Research Center \"Kurchatov Institute\", Nauki Square 1, Protvino, Moscow region, Russia, 142281"
+        ],
+        "raw_orcid": "https://orcid.org/0000-0002-7443-4042",
+        "affiliations": [
+          {
+            "raw_affiliation_string": "Institute for High Energy Physics named by A.A . Logunov of National Research Center \"Kurchatov Institute\" , Nauki Square 1 , Protvino , Moscow region , Russia, 142281",
+            "institution_ids": [
+              "https://openalex.org/I2800235667",
+              "https://openalex.org/I3129407955"
+            ]
+          },
+          {
+            "raw_affiliation_string": "Institute for High Energy Physics named by A.A. Logunov of National Research Center \"Kurchatov Institute\", Nauki Square 1, Protvino, Moscow region, Russia, 142281",
+            "institution_ids": [
+              "https://openalex.org/I2800235667",
+              "https://openalex.org/I3129407955"
+            ]
+          }
+        ]
+      }
+    ],
+    "institutions": [],
+    "countries_distinct_count": 1,
+    "institutions_distinct_count": 2,
+    "corresponding_author_ids": [
+      "https://openalex.org/A5062285061"
+    ],
+    "corresponding_institution_ids": [
+      "https://openalex.org/I2800235667",
+      "https://openalex.org/I3129407955"
+    ],
+    "apc_list": null,
+    "apc_paid": null,
+    "fwci": 0.0,
+    "has_fulltext": true,
+    "cited_by_count": 0,
+    "citation_normalized_percentile": {
+      "value": 0.12823713,
+      "is_in_top_1_percent": false,
+      "is_in_top_10_percent": false
+    },
+    "cited_by_percentile_year": null,
+    "biblio": {
+      "volume": null,
+      "issue": null,
+      "first_page": "256",
+      "last_page": "260"
+    },
+    "is_retracted": false,
+    "is_paratext": false,
+    "is_xpac": false,
+    "primary_topic": {
+      "id": "https://openalex.org/T11044",
+      "display_name": "Particle Detector Development and Performance",
+      "score": 0.9984999895095825,
+      "subfield": {
+        "id": "https://openalex.org/subfields/3106",
+        "display_name": "Nuclear and High Energy Physics"
+      },
+      "field": {
+        "id": "https://openalex.org/fields/31",
+        "display_name": "Physics and Astronomy"
+      },
+      "domain": {
+        "id": "https://openalex.org/domains/3",
+        "display_name": "Physical Sciences"
+      }
+    },
+    "topics": [
+      {
+        "id": "https://openalex.org/T11044",
+        "display_name": "Particle Detector Development and Performance",
+        "score": 0.9984999895095825,
+        "subfield": {
+          "id": "https://openalex.org/subfields/3106",
+          "display_name": "Nuclear and High Energy Physics"
+        },
+        "field": {
+          "id": "https://openalex.org/fields/31",
+          "display_name": "Physics and Astronomy"
+        },
+        "domain": {
+          "id": "https://openalex.org/domains/3",
+          "display_name": "Physical Sciences"
+        }
+      },
+      {
+        "id": "https://openalex.org/T10715",
+        "display_name": "Distributed and Parallel Computing Systems",
+        "score": 0.993399977684021,
+        "subfield": {
+          "id": "https://openalex.org/subfields/1705",
+          "display_name": "Computer Networks and Communications"
+        },
+        "field": {
+          "id": "https://openalex.org/fields/17",
+          "display_name": "Computer Science"
+        },
+        "domain": {
+          "id": "https://openalex.org/domains/3",
+          "display_name": "Physical Sciences"
+        }
+      },
+      {
+        "id": "https://openalex.org/T11181",
+        "display_name": "Advanced Data Storage Technologies",
+        "score": 0.9876000285148621,
+        "subfield": {
+          "id": "https://openalex.org/subfields/1705",
+          "display_name": "Computer Networks and Communications"
+        },
+        "field": {
+          "id": "https://openalex.org/fields/17",
+          "display_name": "Computer Science"
+        },
+        "domain": {
+          "id": "https://openalex.org/domains/3",
+          "display_name": "Physical Sciences"
+        }
+      }
+    ],
+    "keywords": [
+      {
+        "id": "https://openalex.org/keywords/computer-science",
+        "display_name": "Computer science",
+        "score": 0.839540958404541
+      },
+      {
+        "id": "https://openalex.org/keywords/workflow",
+        "display_name": "Workflow",
+        "score": 0.779651939868927
+      },
+      {
+        "id": "https://openalex.org/keywords/metadata",
+        "display_name": "Metadata",
+        "score": 0.7608317136764526
+      },
+      {
+        "id": "https://openalex.org/keywords/knowledge-base",
+        "display_name": "Knowledge base",
+        "score": 0.67584228515625
+      },
+      {
+        "id": "https://openalex.org/keywords/information-retrieval",
+        "display_name": "Information retrieval",
+        "score": 0.527273952960968
+      },
+      {
+        "id": "https://openalex.org/keywords/variety",
+        "display_name": "Variety (cybernetics)",
+        "score": 0.48502010107040405
+      },
+      {
+        "id": "https://openalex.org/keywords/data-integration",
+        "display_name": "Data integration",
+        "score": 0.4685821235179901
+      },
+      {
+        "id": "https://openalex.org/keywords/database",
+        "display_name": "Database",
+        "score": 0.4643203616142273
+      },
+      {
+        "id": "https://openalex.org/keywords/metadata-management",
+        "display_name": "Metadata management",
+        "score": 0.4590133726596832
+      },
+      {
+        "id": "https://openalex.org/keywords/data-science",
+        "display_name": "Data science",
+        "score": 0.4580300450325012
+      },
+      {
+        "id": "https://openalex.org/keywords/base",
+        "display_name": "Base (topology)",
+        "score": 0.4443027079105377
+      },
+      {
+        "id": "https://openalex.org/keywords/world-wide-web",
+        "display_name": "World Wide Web",
+        "score": 0.37085580825805664
+      },
+      {
+        "id": "https://openalex.org/keywords/data-mining",
+        "display_name": "Data mining",
+        "score": 0.3541029691696167
+      },
+      {
+        "id": "https://openalex.org/keywords/artificial-intelligence",
+        "display_name": "Artificial intelligence",
+        "score": 0.09999620914459229
+      }
+    ],
+    "concepts": [
+      {
+        "id": "https://openalex.org/C41008148",
+        "wikidata": "https://www.wikidata.org/wiki/Q21198",
+        "display_name": "Computer science",
+        "level": 0,
+        "score": 0.839540958404541
+      },
+      {
+        "id": "https://openalex.org/C177212765",
+        "wikidata": "https://www.wikidata.org/wiki/Q627335",
+        "display_name": "Workflow",
+        "level": 2,
+        "score": 0.779651939868927
+      },
+      {
+        "id": "https://openalex.org/C93518851",
+        "wikidata": "https://www.wikidata.org/wiki/Q180160",
+        "display_name": "Metadata",
+        "level": 2,
+        "score": 0.7608317136764526
+      },
+      {
+        "id": "https://openalex.org/C4554734",
+        "wikidata": "https://www.wikidata.org/wiki/Q593744",
+        "display_name": "Knowledge base",
+        "level": 2,
+        "score": 0.67584228515625
+      },
+      {
+        "id": "https://openalex.org/C23123220",
+        "wikidata": "https://www.wikidata.org/wiki/Q816826",
+        "display_name": "Information retrieval",
+        "level": 1,
+        "score": 0.527273952960968
+      },
+      {
+        "id": "https://openalex.org/C136197465",
+        "wikidata": "https://www.wikidata.org/wiki/Q1729295",
+        "display_name": "Variety (cybernetics)",
+        "level": 2,
+        "score": 0.48502010107040405
+      },
+      {
+        "id": "https://openalex.org/C72634772",
+        "wikidata": "https://www.wikidata.org/wiki/Q386824",
+        "display_name": "Data integration",
+        "level": 2,
+        "score": 0.4685821235179901
+      },
+      {
+        "id": "https://openalex.org/C77088390",
+        "wikidata": "https://www.wikidata.org/wiki/Q8513",
+        "display_name": "Database",
+        "level": 1,
+        "score": 0.4643203616142273
+      },
+      {
+        "id": "https://openalex.org/C2779489174",
+        "wikidata": "https://www.wikidata.org/wiki/Q6822246",
+        "display_name": "Metadata management",
+        "level": 3,
+        "score": 0.4590133726596832
+      },
+      {
+        "id": "https://openalex.org/C2522767166",
+        "wikidata": "https://www.wikidata.org/wiki/Q2374463",
+        "display_name": "Data science",
+        "level": 1,
+        "score": 0.4580300450325012
+      },
+      {
+        "id": "https://openalex.org/C42058472",
+        "wikidata": "https://www.wikidata.org/wiki/Q810214",
+        "display_name": "Base (topology)",
+        "level": 2,
+        "score": 0.4443027079105377
+      },
+      {
+        "id": "https://openalex.org/C136764020",
+        "wikidata": "https://www.wikidata.org/wiki/Q466",
+        "display_name": "World Wide Web",
+        "level": 1,
+        "score": 0.37085580825805664
+      },
+      {
+        "id": "https://openalex.org/C124101348",
+        "wikidata": "https://www.wikidata.org/wiki/Q172491",
+        "display_name": "Data mining",
+        "level": 1,
+        "score": 0.3541029691696167
+      },
+      {
+        "id": "https://openalex.org/C154945302",
+        "wikidata": "https://www.wikidata.org/wiki/Q11660",
+        "display_name": "Artificial intelligence",
+        "level": 1,
+        "score": 0.09999620914459229
+      },
+      {
+        "id": "https://openalex.org/C33923547",
+        "wikidata": "https://www.wikidata.org/wiki/Q395",
+        "display_name": "Mathematics",
+        "level": 0,
+        "score": 0.0
+      },
+      {
+        "id": "https://openalex.org/C134306372",
+        "wikidata": "https://www.wikidata.org/wiki/Q7754",
+        "display_name": "Mathematical analysis",
+        "level": 1,
+        "score": 0.0
+      }
+    ],
+    "mesh": [],
+    "locations_count": 1,
+    "locations": [
+      {
+        "id": "doi:10.54546/mlit.2021.26.74.001",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.54546/mlit.2021.26.74.001",
+        "pdf_url": "https://doi.org/10.54546/mlit.2021.26.74.001",
+        "source": {
+          "id": "https://openalex.org/S4363608474",
+          "display_name": "9th International Conference \"Distributed Computing and Grid Technologies in Science and Education\"",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": null,
+          "host_organization_name": null,
+          "host_organization_lineage": [],
+          "host_organization_lineage_names": [],
+          "type": "conference"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "9th International Conference \"Distributed Computing and Grid Technologies in Science and Education\"",
+        "raw_type": "proceedings-article"
+      }
+    ],
+    "best_oa_location": {
+      "id": "doi:10.54546/mlit.2021.26.74.001",
+      "is_oa": true,
+      "landing_page_url": "https://doi.org/10.54546/mlit.2021.26.74.001",
+      "pdf_url": "https://doi.org/10.54546/mlit.2021.26.74.001",
+      "source": {
+        "id": "https://openalex.org/S4363608474",
+        "display_name": "9th International Conference \"Distributed Computing and Grid Technologies in Science and Education\"",
+        "issn_l": null,
+        "issn": null,
+        "is_oa": false,
+        "is_in_doaj": false,
+        "is_core": false,
+        "listed_in": [],
+        "host_organization": null,
+        "host_organization_name": null,
+        "host_organization_lineage": [],
+        "host_organization_lineage_names": [],
+        "type": "conference"
+      },
+      "license": "cc-by",
+      "license_id": "https://openalex.org/licenses/cc-by",
+      "version": "publishedVersion",
+      "is_accepted": true,
+      "is_published": true,
+      "raw_source_name": "9th International Conference \"Distributed Computing and Grid Technologies in Science and Education\"",
+      "raw_type": "proceedings-article"
+    },
+    "sustainable_development_goals": [
+      {
+        "id": "https://metadata.un.org/sdg/9",
+        "display_name": "Industry, innovation and infrastructure",
+        "score": 0.44999998807907104
+      }
+    ],
+    "x_sdgs": [],
+    "study_designs": [],
+    "awards": [],
+    "funders": [
+      {
+        "id": "https://openalex.org/F4320313559",
+        "display_name": "CERN",
+        "ror": "https://ror.org/01ggx4157"
+      },
+      {
+        "id": "https://openalex.org/F4320327961",
+        "display_name": "National Research Center \"Kurchatov Institute\"",
+        "ror": "https://ror.org/037styt87"
+      }
+    ],
+    "has_content": {
+      "grobid_xml": true,
+      "pdf": true
+    },
+    "content_urls": {
+      "pdf": "https://content.openalex.org/works/W4206466513.pdf",
+      "grobid_xml": "https://content.openalex.org/works/W4206466513.grobid-xml"
+    },
+    "referenced_works_count": 2,
+    "referenced_works": [
+      "https://openalex.org/W2895871616",
+      "https://openalex.org/W4211046286"
+    ],
+    "related_works": [
+      "https://openalex.org/W1487702188",
+      "https://openalex.org/W2374913837",
+      "https://openalex.org/W2460834149",
+      "https://openalex.org/W1512114296",
+      "https://openalex.org/W2109107360",
+      "https://openalex.org/W2354316773",
+      "https://openalex.org/W2376038160",
+      "https://openalex.org/W2907247951",
+      "https://openalex.org/W4205875026",
+      "https://openalex.org/W2389651964"
+    ],
+    "abstract_inverted_index": {
+      "The": [
+        0
+      ],
+      "Data": [
+        1
+      ],
+      "Knowledge": [
+        2
+      ],
+      "Base": [
+        3
+      ],
+      "(DKB)": [
+        4
+      ],
+      "project": [
+        5,
+        69
+      ],
+      "aims": [
+        6
+      ],
+      "at": [
+        7
+      ],
+      "knowledge": [
+        8
+      ],
+      "acquisition": [
+        9
+      ],
+      "and": [
+        10,
+        26,
+        30,
+        79
+      ],
+      "metadata": [
+        11
+      ],
+      "integration.": [
+        12
+      ],
+      "Itprovides": [
+        13
+      ],
+      "fast": [
+        14
+      ],
+      "response": [
+        15
+      ],
+      "for": [
+        16
+      ],
+      "a": [
+        17,
+        50,
+        53
+      ],
+      "variety": [
+        18
+      ],
+      "of": [
+        19,
+        67
+      ],
+      "complicated": [
+        20
+      ],
+      "queries,": [
+        21
+      ],
+      "such": [
+        22
+      ],
+      "as": [
+        23,
+        70,
+        72
+      ],
+      "summary": [
+        24
+      ],
+      "reports": [
+        25
+      ],
+      "monitoringtasks": [
+        27
+      ],
+      "(aggregation": [
+        28
+      ],
+      "queries)": [
+        29
+      ],
+      "multi-system": [
+        31
+      ],
+      "join": [
+        32
+      ],
+      "queries.": [
+        33
+      ],
+      "Such": [
+        34
+      ],
+      "queries": [
+        35
+      ],
+      "are": [
+        36,
+        46
+      ],
+      "not": [
+        37
+      ],
+      "easy": [
+        38
+      ],
+      "to": [
+        39,
+        52
+      ],
+      "implement": [
+        40
+      ],
+      "in": [
+        41
+      ],
+      "atimely": [
+        42
+      ],
+      "manner": [
+        43
+      ],
+      "and,": [
+        44
+      ],
+      "obviously,": [
+        45
+      ],
+      "less": [
+        47
+      ],
+      "efficient": [
+        48
+      ],
+      "than": [
+        49
+      ],
+      "query": [
+        51
+      ],
+      "single": [
+        54
+      ],
+      "system": [
+        55
+      ],
+      "with": [
+        56,
+        74
+      ],
+      "integrated": [
+        57
+      ],
+      "andpre-processed": [
+        58
+      ],
+      "information": [
+        59
+      ],
+      "would": [
+        60
+      ],
+      "be.": [
+        61
+      ],
+      "This": [
+        62
+      ],
+      "work": [
+        63
+      ],
+      "describes": [
+        64
+      ],
+      "the": [
+        65,
+        68,
+        75
+      ],
+      "status": [
+        66
+      ],
+      "well": [
+        71
+      ],
+      "itsintegration": [
+        73
+      ],
+      "ATLAS": [
+        76
+      ],
+      "Workflow": [
+        77
+      ],
+      "Management": [
+        78
+      ],
+      "future": [
+        80
+      ],
+      "perspectives.": [
+        81
+      ]
+    },
+    "counts_by_year": [],
+    "updated_date": "2026-09-06T09:10:53.072986",
+    "created_date": "2025-10-10T00:00:00"
+  }
+}

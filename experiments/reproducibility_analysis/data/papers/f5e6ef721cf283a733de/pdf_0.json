@@ -1,0 +1,8 @@
+{
+  "provider": "crossref_pdf_link_access_unverified",
+  "requested_url": "https://peerj.com/preprints/1435v1.pdf",
+  "retrieved_at": "2026-09-30T11:53:13.763369+00:00",
+  "status": "error",
+  "http_status": 403,
+  "error": "HTTP Error 403: Forbidden"
+}

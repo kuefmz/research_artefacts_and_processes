@@ -1,0 +1,164 @@
+{
+  "repo_id": "47c9ad7f3a6c10e37941",
+  "snapshot_commit_sha": "68b25e447440eaf168e9637bde501b7debce3f9d",
+  "snapshot_role": "current_default_branch_not_verified_paper_version",
+  "paper_commit_sha": null,
+  "tree_truncated": false,
+  "files": [
+    {
+      "path": "NGSPower/R/allPlots.R",
+      "blob_sha": "f223477f0581b05685bf52ac85b1515699f05104",
+      "size": 3309,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "NGSPower/R/analysis99to1.R",
+      "blob_sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "NGSPower/R/analysis_50_50_mod.R",
+      "blob_sha": "4da1a35a9061dedacaf887098ccff6dd88f58211",
+      "size": 5982,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "NGSPower/R/analysis_50_50_weak.R",
+      "blob_sha": "af2847520770d2b92cb885aad7679e3a730d743b",
+      "size": 5987,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "NGSPower/R/analysis_99_1_mod.R",
+      "blob_sha": "2c046d4e14bec3d57191c646e1bbfab5ad823103",
+      "size": 6031,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "NGSPower/R/analysis_99_1_weak.R",
+      "blob_sha": "4035baf6bb37b27ff846b46b1deacd943fe1b399",
+      "size": 5841,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "NGSPower/R/makeData50to50.R",
+      "blob_sha": "9054689946ee44dfaef5f71adac3a4f54c23384d",
+      "size": 4409,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "NGSPower/R/makeData99to1.R",
+      "blob_sha": "01d16110194482e3c2996810c9643181a6639768",
+      "size": 4454,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "NGSPower/plots/eps001_50pure_mod.png",
+      "blob_sha": "fbbe9e5ae533b4fe80f02739f11639bd146f6a1b",
+      "size": 134887,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "NGSPower/plots/eps001_50pure_weak.png",
+      "blob_sha": "8d395bf2eea2488f77dea6546b80bad37d202a42",
+      "size": 138901,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "NGSPower/plots/eps001_99pure_mod.png",
+      "blob_sha": "e1203bf1fb0a9f01f2b9f7124ff732285d9dbeec",
+      "size": 72136,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "NGSPower/plots/eps001_99pure_weak.png",
+      "blob_sha": "71727b049518a938fcefbad3554dbb93eb66068c",
+      "size": 87859,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "NGSPower/plots/pow_50pure_mod.png",
+      "blob_sha": "2a24a3f0f36db24cd936655922f9aaae5dd1bfe1",
+      "size": 40700,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "NGSPower/plots/pow_50pure_weak.png",
+      "blob_sha": "00b1a2e8106ce75e831e8bde181cdae6e8662452",
+      "size": 35925,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "NGSPower/plots/pow_99pure_mod.png",
+      "blob_sha": "6ea0874aa25a493d112fc152e5ddd8d24d17da90",
+      "size": 53994,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "NGSPower/plots/pow_99pure_weak.png",
+      "blob_sha": "6891bdc8ab261f9ea689df42751c71dcb54f225e",
+      "size": 57058,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    },
+    {
+      "path": "README.md",
+      "blob_sha": "7cb8e3a271b43b9f799cc151ad119fdc4eebf351",
+      "size": 54,
+      "artefact_types": [],
+      "research_process_steps": [],
+      "annotation_status": "unannotated",
+      "evidence": []
+    }
+  ],
+  "somef_status": "not_run",
+  "note": "No source archive collected. Tree paths and blob hashes are an index, not runnable source."
+}

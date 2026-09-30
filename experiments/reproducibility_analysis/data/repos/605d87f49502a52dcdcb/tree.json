@@ -1,0 +1,674 @@
+{
+  "provider": "github",
+  "requested_url": "https://api.github.com/repos/rakitko/NoStRa/git/trees/525e776d20115d8db97b745e153be41e792a92db?recursive=1",
+  "retrieved_at": "2026-09-30T11:53:19.549221+00:00",
+  "status": "ok",
+  "http_status": 200,
+  "final_url": "https://api.github.com/repos/rakitko/NoStRa/git/trees/525e776d20115d8db97b745e153be41e792a92db?recursive=1",
+  "sha256": "de599ccaf1fbd366dd3c47f205a1604f8cfa7d7269732c3c089cc9fe7971421e",
+  "content_type": "application/json; charset=utf-8",
+  "data": {
+    "sha": "525e776d20115d8db97b745e153be41e792a92db",
+    "url": "https://api.github.com/repos/rakitko/NoStRa/git/trees/525e776d20115d8db97b745e153be41e792a92db",
+    "tree": [
+      {
+        "path": ".gitignore",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "d4c3d84b600130d624398c0e4f3e23643dfca1a5",
+        "size": 19,
+        "url": "https://api.github.com/repos/rakitko/NoStRa/git/blobs/d4c3d84b600130d624398c0e4f3e23643dfca1a5"
+      },
+      {
+        "path": "Docs",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "19052c1e9e62b20152ba3f5044c239ebe9650bb4",
+        "url": "https://api.github.com/repos/rakitko/NoStRa/git/trees/19052c1e9e62b20152ba3f5044c239ebe9650bb4"
+      },
+      {
+        "path": "Docs/DSADM.pdf",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "8ea6193529c8fd34996a079e54e260c4c632a0a1",
+        "size": 988845,
+        "url": "https://api.github.com/repos/rakitko/NoStRa/git/blobs/8ea6193529c8fd34996a079e54e260c4c632a0a1"
+      },
+      {
+        "path": "Docs/abstract.txt",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "09807157d4cecbf003adb86f19227acc8b1d6049",
+        "size": 2030,
+        "url": "https://api.github.com/repos/rakitko/NoStRa/git/blobs/09807157d4cecbf003adb86f19227acc8b1d6049"
+      },
+      {
+        "path": "Docs/readme.txt",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "bd998e6475cad2161b60bb750c5f6545d21d545c",
+        "size": 3557,
+        "url": "https://api.github.com/repos/rakitko/NoStRa/git/blobs/bd998e6475cad2161b60bb750c5f6545d21d545c"
+      },
+      {
+        "path": "Generator",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "bc48ac0a3a3eec45a6d0ab7556b42054505aa200",
+        "url": "https://api.github.com/repos/rakitko/NoStRa/git/trees/bc48ac0a3a3eec45a6d0ab7556b42054505aa200"
+      },
+      {
+        "path": "Generator/.DS_Store",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "cfc182a9503f85a3885233b627765c78f0312778",
+        "size": 8196,
+        "url": "https://api.github.com/repos/rakitko/NoStRa/git/blobs/cfc182a9503f85a3885233b627765c78f0312778"
+      },
+      {
+        "path": "Generator/Out",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "6a28333b50b41a5196c93d2ffb13849cbe6d4013",
+        "url": "https://api.github.com/repos/rakitko/NoStRa/git/trees/6a28333b50b41a5196c93d2ffb13849cbe6d4013"
+      },
+      {
+        "path": "Generator/Out/.DS_Store",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "1eed71c33d0c34b3b73983ba8b29e7559e440c4e",
+        "size": 8196,
+        "url": "https://api.github.com/repos/rakitko/NoStRa/git/blobs/1eed71c33d0c34b3b73983ba8b29e7559e440c4e"
+      },
+      {
+        "path": "Generator/config.txt",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "a63e125a3ba7a708e25b35a98567937ee6acff16",
+        "size": 363,
+        "url": "https://api.github.com/repos/rakitko/NoStRa/git/blobs/a63e125a3ba7a708e25b35a98567937ee6acff16"
+      },
+      {
+        "path": "Generator/functions_0.6.R",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "3c23da02e90973835dff30a9e1ee7fa8d99784a6",
+        "size": 50733,
+        "url": "https://api.github.com/repos/rakitko/NoStRa/git/blobs/3c23da02e90973835dff30a9e1ee7fa8d99784a6"
+      },
+      {
+        "path": "Generator/generate_fields.R",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "35a22fcdd7e4b8eb5199bfe2fefb913489af9a5b",
+        "size": 13185,
+        "url": "https://api.github.com/repos/rakitko/NoStRa/git/blobs/35a22fcdd7e4b8eb5199bfe2fefb913489af9a5b"
+      },
+      {
+        "path": "Generator/generate_fields_functions.cpp",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "589be3ddb90874370d5128bf93f713f1bd07a73e",
+        "size": 12047,
+        "url": "https://api.github.com/repos/rakitko/NoStRa/git/blobs/589be3ddb90874370d5128bf93f713f1bd07a73e"
+      },
+      {
+        "path": "Statistics",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "247085507d43bf17ab467b0ee40dee1161d3e6b2",
+        "url": "https://api.github.com/repos/rakitko/NoStRa/git/trees/247085507d43bf17ab467b0ee40dee1161d3e6b2"
+      },
+      {
+        "path": "Statistics/.DS_Store",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "6f73000bce38500f3294975ee7f7d4326c10f5cd",
+        "size": 6148,
+        "url": "https://api.github.com/repos/rakitko/NoStRa/git/blobs/6f73000bce38500f3294975ee7f7d4326c10f5cd"
+      },
+      {
+        "path": "Statistics/EnKF-covs",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "f4034de3958d79ceba40f30747751b20c4ecc6dc",
+        "url": "https://api.github.com/repos/rakitko/NoStRa/git/trees/f4034de3958d79ceba40f30747751b20c4ecc6dc"
+      },
+      {
+        "path": "Statistics/EnKF-covs/.Rhistory",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "c55b7484bfcdb3fe9b78c906e0184c63cec8caa4",
+        "size": 82,
+        "url": "https://api.github.com/repos/rakitko/NoStRa/git/blobs/c55b7484bfcdb3fe9b78c906e0184c63cec8caa4"
+      },
+      {
+        "path": "Statistics/EnKF-covs/B_mod_se101520.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "efdb3740551f8518c58091e72bebde26c320c515",
+        "size": 32166,
+        "url": "https://api.github.com/repos/rakitko/NoStRa/git/blobs/efdb3740551f8518c58091e72bebde26c320c515"
+      },
+      {
+        "path": "Statistics/EnKF-covs/B_tmean_101520.RData",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "bfeb80b0b9aeb2ce2cf1c65600c50ee3d3b0ebcf",
+        "size": 18653,
+        "url": "https://api.github.com/repos/rakitko/NoStRa/git/blobs/bfeb80b0b9aeb2ce2cf1c65600c50ee3d3b0ebcf"
+      },
+      {
+        "path": "Statistics/EnKF-covs/B_tmean_101570.RData",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "b4af03b0142ad34c2d1f4c9179a1287eeeaa1c10",
+        "size": 18659,
+        "url": "https://api.github.com/repos/rakitko/NoStRa/git/blobs/b4af03b0142ad34c2d1f4c9179a1287eeeaa1c10"
+      },
+      {
+        "path": "Statistics/EnKF-covs/B_tmean_101610.RData",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "6275312aad32f08c30c561c451140cda18adb4c9",
+        "size": 18636,
+        "url": "https://api.github.com/repos/rakitko/NoStRa/git/blobs/6275312aad32f08c30c561c451140cda18adb4c9"
+      },
+      {
+        "path": "Statistics/EnKF-covs/B_tmean_10500.RData",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "c07cc73accb1234774cde79836d5945efc6b0096",
+        "size": 18707,
+        "url": "https://api.github.com/repos/rakitko/NoStRa/git/blobs/c07cc73accb1234774cde79836d5945efc6b0096"
+      },
+      {
+        "path": "Statistics/EnKF-covs/B_tmean_10510.RData",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "98a478b540c0ff44d68efa13c13a35801158db8a",
+        "size": 18688,
+        "url": "https://api.github.com/repos/rakitko/NoStRa/git/blobs/98a478b540c0ff44d68efa13c13a35801158db8a"
+      },
+      {
+        "path": "Statistics/EnKF-covs/B_tmean_10530.RData",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "31e517e37343fd4da01b5fc4cd95d916c07abd0c",
+        "size": 18624,
+        "url": "https://api.github.com/repos/rakitko/NoStRa/git/blobs/31e517e37343fd4da01b5fc4cd95d916c07abd0c"
+      },
+      {
+        "path": "Statistics/EnKF-covs/B_tmean_10590.RData",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "3de16622be0e9f52f24a162e845a9963820e753f",
+        "size": 18674,
+        "url": "https://api.github.com/repos/rakitko/NoStRa/git/blobs/3de16622be0e9f52f24a162e845a9963820e753f"
+      },
+      {
+        "path": "Statistics/EnKF-covs/B_tru_se101520.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "b9365ae09b0fcb3766b3e8057e36cb13ee171066",
+        "size": 32814,
+        "url": "https://api.github.com/repos/rakitko/NoStRa/git/blobs/b9365ae09b0fcb3766b3e8057e36cb13ee171066"
+      },
+      {
+        "path": "Statistics/EnKF-covs/Cov2VarCor.R",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "ba006eabc8d572ce0501a2f1dfe9c576b1e48985",
+        "size": 257,
+        "url": "https://api.github.com/repos/rakitko/NoStRa/git/blobs/ba006eabc8d572ce0501a2f1dfe9c576b1e48985"
+      },
+      {
+        "path": "Statistics/EnKF-covs/ExamEnKFcovs.R",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "0dac3406ed53ee8d64a2cdf4561d27c4f9cc6aca",
+        "size": 33797,
+        "url": "https://api.github.com/repos/rakitko/NoStRa/git/blobs/0dac3406ed53ee8d64a2cdf4561d27c4f9cc6aca"
+      },
+      {
+        "path": "Statistics/EnKF-covs/ExamEnkfFld.R",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "600b0f2b75db7dcc380389345f5f3a6bfbb1feeb",
+        "size": 1895,
+        "url": "https://api.github.com/repos/rakitko/NoStRa/git/blobs/600b0f2b75db7dcc380389345f5f3a6bfbb1feeb"
+      },
+      {
+        "path": "Statistics/EnKF-covs/Gaspari.R",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "227d1cb6161835dab3cffe9f8016c03f832ca734",
+        "size": 361,
+        "url": "https://api.github.com/repos/rakitko/NoStRa/git/blobs/227d1cb6161835dab3cffe9f8016c03f832ca734"
+      },
+      {
+        "path": "Statistics/EnKF-covs/Im_SpeCRM_tru_se101520.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "905a4045cfb3537b05cfd4d8c3a6adcd7c5aecc5",
+        "size": 37298,
+        "url": "https://api.github.com/repos/rakitko/NoStRa/git/blobs/905a4045cfb3537b05cfd4d8c3a6adcd7c5aecc5"
+      },
+      {
+        "path": "Statistics/EnKF-covs/Re_SpeCRM-I_tru_se101520.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "08e2b3dd533a373d261747d9e53269e47eba5361",
+        "size": 37036,
+        "url": "https://api.github.com/repos/rakitko/NoStRa/git/blobs/08e2b3dd533a373d261747d9e53269e47eba5361"
+      },
+      {
+        "path": "Statistics/EnKF-covs/Re_SpeCRM_tru_se101520.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "db71b253e9254beef4134e26ca6e5768166f9123",
+        "size": 36536,
+        "url": "https://api.github.com/repos/rakitko/NoStRa/git/blobs/db71b253e9254beef4134e26ca6e5768166f9123"
+      },
+      {
+        "path": "Statistics/EnKF-covs/Re_SpeCVM_tru_se101520.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "ac9dea5c0196c62baa2f674ee205d39f1e9054f1",
+        "size": 37705,
+        "url": "https://api.github.com/repos/rakitko/NoStRa/git/blobs/ac9dea5c0196c62baa2f674ee205d39f1e9054f1"
+      },
+      {
+        "path": "Statistics/EnKF-covs/S_loc_se101520.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "9747880ad82bfe3f06890ff536523daf80e18e61",
+        "size": 29839,
+        "url": "https://api.github.com/repos/rakitko/NoStRa/git/blobs/9747880ad82bfe3f06890ff536523daf80e18e61"
+      },
+      {
+        "path": "Statistics/EnKF-covs/SpaCrl_t10i26.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "307dc4241c9e28e0ef7899519e0bcef3e8e00a6d",
+        "size": 51969,
+        "url": "https://api.github.com/repos/rakitko/NoStRa/git/blobs/307dc4241c9e28e0ef7899519e0bcef3e8e00a6d"
+      },
+      {
+        "path": "Statistics/EnKF-covs/SpaCrl_t11i15.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "4127941f0fd9b997f881d686dda23625bf9697be",
+        "size": 55501,
+        "url": "https://api.github.com/repos/rakitko/NoStRa/git/blobs/4127941f0fd9b997f881d686dda23625bf9697be"
+      },
+      {
+        "path": "Statistics/EnKF-covs/SpaCrl_t14i41.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "aaf34d0c71b914e7deab6780d42ca9cdc3cde023",
+        "size": 54915,
+        "url": "https://api.github.com/repos/rakitko/NoStRa/git/blobs/aaf34d0c71b914e7deab6780d42ca9cdc3cde023"
+      },
+      {
+        "path": "Statistics/EnKF-covs/Typic3Covs_se101520.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "decf1f8343a232d407e567fb497f08e8cfb1a5a4",
+        "size": 39732,
+        "url": "https://api.github.com/repos/rakitko/NoStRa/git/blobs/decf1f8343a232d407e567fb497f08e8cfb1a5a4"
+      },
+      {
+        "path": "Statistics/EnKF-covs/create_LocMx.R",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "451e9d74c6a38a33ed63aa86c7de0ccaf9ec84f3",
+        "size": 917,
+        "url": "https://api.github.com/repos/rakitko/NoStRa/git/blobs/451e9d74c6a38a33ed63aa86c7de0ccaf9ec84f3"
+      },
+      {
+        "path": "Statistics/EnKF-covs/fft_Rspe_rearrange.R",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "d79233bc1bd7c47a4f808ac4fa8c8d47371349f1",
+        "size": 825,
+        "url": "https://api.github.com/repos/rakitko/NoStRa/git/blobs/d79233bc1bd7c47a4f808ac4fa8c8d47371349f1"
+      },
+      {
+        "path": "Statistics/EnKF-covs/filter.RData",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "c2ca8bab663e72dcf314a79ca2b26eabd9015362",
+        "size": 1992056,
+        "url": "https://api.github.com/repos/rakitko/NoStRa/git/blobs/c2ca8bab663e72dcf314a79ca2b26eabd9015362"
+      },
+      {
+        "path": "Statistics/EnKF-covs/functions_prior.R",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "4998ad0ce4d4c89847d8e255887b3c5fb8ee3ef3",
+        "size": 5759,
+        "url": "https://api.github.com/repos/rakitko/NoStRa/git/blobs/4998ad0ce4d4c89847d8e255887b3c5fb8ee3ef3"
+      },
+      {
+        "path": "Statistics/EnKF-covs/mx_fft.R",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "7e9482187a686c79a2e4f56f94e47ca504887656",
+        "size": 1443,
+        "url": "https://api.github.com/repos/rakitko/NoStRa/git/blobs/7e9482187a686c79a2e4f56f94e47ca504887656"
+      },
+      {
+        "path": "Statistics/EnKF-covs/mx_fft_Rspe_rearrange.R",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "8adb8307ccb921a1b34fd0d361153ce41e1dfe66",
+        "size": 677,
+        "url": "https://api.github.com/repos/rakitko/NoStRa/git/blobs/8adb8307ccb921a1b34fd0d361153ce41e1dfe66"
+      },
+      {
+        "path": "Statistics/EnKF-covs/ndiag.R",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "4029a9d3a2c127e68da38d41b33c9c3afed7b8c9",
+        "size": 320,
+        "url": "https://api.github.com/repos/rakitko/NoStRa/git/blobs/4029a9d3a2c127e68da38d41b33c9c3afed7b8c9"
+      },
+      {
+        "path": "Statistics/EnKF-covs/out_inpSeed101520.txt",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "2d26376891b02b9d1adb1bd224e5f289bf4df851",
+        "size": 1174,
+        "url": "https://api.github.com/repos/rakitko/NoStRa/git/blobs/2d26376891b02b9d1adb1bd224e5f289bf4df851"
+      },
+      {
+        "path": "Statistics/EnKF-covs/u_20i41.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "fddb64f0ab4744d59d6bd57b24be433138d6aea6",
+        "size": 40257,
+        "url": "https://api.github.com/repos/rakitko/NoStRa/git/blobs/fddb64f0ab4744d59d6bd57b24be433138d6aea6"
+      },
+      {
+        "path": "Statistics/EnKF-covs/u_27i28.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "f01afbfa4ee7fa84e68d9257a270690ee423d31c",
+        "size": 41705,
+        "url": "https://api.github.com/repos/rakitko/NoStRa/git/blobs/f01afbfa4ee7fa84e68d9257a270690ee423d31c"
+      },
+      {
+        "path": "Statistics/EnKF-covs/u_27i30.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "7d00c768b160f5eba34db94ae8faf8f587067d45",
+        "size": 40892,
+        "url": "https://api.github.com/repos/rakitko/NoStRa/git/blobs/7d00c768b160f5eba34db94ae8faf8f587067d45"
+      },
+      {
+        "path": "Statistics/EnKF-covs/u_tmean_tsd101520.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "8103b903b36a2d17c8c812cde3600aecd1224a3d",
+        "size": 35336,
+        "url": "https://api.github.com/repos/rakitko/NoStRa/git/blobs/8103b903b36a2d17c8c812cde3600aecd1224a3d"
+      },
+      {
+        "path": "Statistics/EnKF-covs/uu101520.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "f2aa77bc323feca6496ce5be0c3e7201eff5c83f",
+        "size": 27405,
+        "url": "https://api.github.com/repos/rakitko/NoStRa/git/blobs/f2aa77bc323feca6496ce5be0c3e7201eff5c83f"
+      },
+      {
+        "path": "Statistics/Fields_long",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "94e4bcfe81f6be67f613edcae63b54770d359c06",
+        "url": "https://api.github.com/repos/rakitko/NoStRa/git/trees/94e4bcfe81f6be67f613edcae63b54770d359c06"
+      },
+      {
+        "path": "Statistics/Fields_long/.Rhistory",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "5cac4261b7e1dc0de1265ec6b3ce04fc747d2ea0",
+        "size": 2156,
+        "url": "https://api.github.com/repos/rakitko/NoStRa/git/blobs/5cac4261b7e1dc0de1265ec6b3ce04fc747d2ea0"
+      },
+      {
+        "path": "Statistics/Fields_long/Exam_fields_long.R",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "193d9f8a5809bccc17ee1de389816013ed854831",
+        "size": 6839,
+        "url": "https://api.github.com/repos/rakitko/NoStRa/git/blobs/193d9f8a5809bccc17ee1de389816013ed854831"
+      },
+      {
+        "path": "Statistics/Fields_long/QQplot_xi_perturb_all.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "889aa6b6878da4d8a11aa58298566990b4da7eac",
+        "size": 29549,
+        "url": "https://api.github.com/repos/rakitko/NoStRa/git/blobs/889aa6b6878da4d8a11aa58298566990b4da7eac"
+      },
+      {
+        "path": "Statistics/Fields_long/SpaCrl_mean_all.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "7eb307ac4277d9b3c12e10fa79073da700d04dff",
+        "size": 25355,
+        "url": "https://api.github.com/repos/rakitko/NoStRa/git/blobs/7eb307ac4277d9b3c12e10fa79073da700d04dff"
+      },
+      {
+        "path": "Statistics/Fields_long/TimCrl_mean_.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "90a1e51d9d7f66477146efe7537249e4f0d4eb15",
+        "size": 32119,
+        "url": "https://api.github.com/repos/rakitko/NoStRa/git/blobs/90a1e51d9d7f66477146efe7537249e4f0d4eb15"
+      },
+      {
+        "path": "Statistics/Fields_long/TimCrl_mean_1.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "4616b70a86ae9d11ce63e1aee47e2c5344a6d55a",
+        "size": 31314,
+        "url": "https://api.github.com/repos/rakitko/NoStRa/git/blobs/4616b70a86ae9d11ce63e1aee47e2c5344a6d55a"
+      },
+      {
+        "path": "Statistics/Fields_long/TimCrl_mean_301.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e314d9146cb040321bd92ec11e2bcde6d4ad5968",
+        "size": 31156,
+        "url": "https://api.github.com/repos/rakitko/NoStRa/git/blobs/e314d9146cb040321bd92ec11e2bcde6d4ad5968"
+      },
+      {
+        "path": "Statistics/Fields_long/U_1.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "be4935c41a1d211052f9bac56b70b998da3b1463",
+        "size": 80423,
+        "url": "https://api.github.com/repos/rakitko/NoStRa/git/blobs/be4935c41a1d211052f9bac56b70b998da3b1463"
+      },
+      {
+        "path": "Statistics/Fields_long/est_crf_timser.R",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "edb7d87e2970da819ec2e369e4c12da37bfaf040",
+        "size": 952,
+        "url": "https://api.github.com/repos/rakitko/NoStRa/git/blobs/edb7d87e2970da819ec2e369e4c12da37bfaf040"
+      },
+      {
+        "path": "Statistics/Fields_long/fields_long.RData",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "0336f41e16ec748e48999eeee80abc9e8be68fcb",
+        "size": 1506955,
+        "url": "https://api.github.com/repos/rakitko/NoStRa/git/blobs/0336f41e16ec748e48999eeee80abc9e8be68fcb"
+      },
+      {
+        "path": "Statistics/Fields_long/nu_1.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "245af4f4eda43c4173bd91b8af6da204e7a3f562",
+        "size": 85890,
+        "url": "https://api.github.com/repos/rakitko/NoStRa/git/blobs/245af4f4eda43c4173bd91b8af6da204e7a3f562"
+      },
+      {
+        "path": "Statistics/Fields_long/out_xi_all.txt",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "5724eb1ec91eeebb5105687eda3529fa8fbcb179",
+        "size": 1051,
+        "url": "https://api.github.com/repos/rakitko/NoStRa/git/blobs/5724eb1ec91eeebb5105687eda3529fa8fbcb179"
+      },
+      {
+        "path": "Statistics/Fields_long/rho_1.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "cacc1d5cec5e6791b95493a75035695ac13dedeb",
+        "size": 85593,
+        "url": "https://api.github.com/repos/rakitko/NoStRa/git/blobs/cacc1d5cec5e6791b95493a75035695ac13dedeb"
+      },
+      {
+        "path": "Statistics/Fields_long/sigma_1.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "6f0dc640b2e55229a0396fd9d88bb6ae7b1205d5",
+        "size": 81476,
+        "url": "https://api.github.com/repos/rakitko/NoStRa/git/blobs/6f0dc640b2e55229a0396fd9d88bb6ae7b1205d5"
+      },
+      {
+        "path": "Statistics/Fields_long/xi_1.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "ced2a46000294aed01abfcdab35e1b12dc2ff499",
+        "size": 74602,
+        "url": "https://api.github.com/repos/rakitko/NoStRa/git/blobs/ced2a46000294aed01abfcdab35e1b12dc2ff499"
+      },
+      {
+        "path": "Statistics/NstatioFieldCovs",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "0eb44881273af0d8d514944a6f38c559198fbafe",
+        "url": "https://api.github.com/repos/rakitko/NoStRa/git/trees/0eb44881273af0d8d514944a6f38c559198fbafe"
+      },
+      {
+        "path": "Statistics/NstatioFieldCovs/.Rhistory",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "73a2374ef7256cb018a5e004cf4526a7432f02f8",
+        "size": 90,
+        "url": "https://api.github.com/repos/rakitko/NoStRa/git/blobs/73a2374ef7256cb018a5e004cf4526a7432f02f8"
+      },
+      {
+        "path": "Statistics/NstatioFieldCovs/ExamDSMoutput.R",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "09cd6f7c3c3e297237277f6b25e3cdcb9688c428",
+        "size": 12459,
+        "url": "https://api.github.com/repos/rakitko/NoStRa/git/blobs/09cd6f7c3c3e297237277f6b25e3cdcb9688c428"
+      },
+      {
+        "path": "Statistics/NstatioFieldCovs/Lambda.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "528d86e28d9a97670ed6780f386bec68a3247396",
+        "size": 31078,
+        "url": "https://api.github.com/repos/rakitko/NoStRa/git/blobs/528d86e28d9a97670ed6780f386bec68a3247396"
+      },
+      {
+        "path": "Statistics/NstatioFieldCovs/SpaCrl_Pert_16.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e06375a955dcbfaa16cca63eb4cd53ca47c79d26",
+        "size": 58408,
+        "url": "https://api.github.com/repos/rakitko/NoStRa/git/blobs/e06375a955dcbfaa16cca63eb4cd53ca47c79d26"
+      },
+      {
+        "path": "Statistics/NstatioFieldCovs/U.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "c20161220ab8d4b7342aeb0c3b2baa9b59da85d8",
+        "size": 30455,
+        "url": "https://api.github.com/repos/rakitko/NoStRa/git/blobs/c20161220ab8d4b7342aeb0c3b2baa9b59da85d8"
+      },
+      {
+        "path": "Statistics/NstatioFieldCovs/V.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "f8abfff0d944bccdf2d78c67f98e0438b2fdf9eb",
+        "size": 32372,
+        "url": "https://api.github.com/repos/rakitko/NoStRa/git/blobs/f8abfff0d944bccdf2d78c67f98e0438b2fdf9eb"
+      },
+      {
+        "path": "Statistics/NstatioFieldCovs/est_crf_timser.R",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "edb7d87e2970da819ec2e369e4c12da37bfaf040",
+        "size": 952,
+        "url": "https://api.github.com/repos/rakitko/NoStRa/git/blobs/edb7d87e2970da819ec2e369e4c12da37bfaf040"
+      },
+      {
+        "path": "Statistics/NstatioFieldCovs/model.RData",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "66271bec705165417a9f50229b331760551cd9e9",
+        "size": 3103462,
+        "url": "https://api.github.com/repos/rakitko/NoStRa/git/blobs/66271bec705165417a9f50229b331760551cd9e9"
+      },
+      {
+        "path": "Statistics/NstatioFieldCovs/nu.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "1e4dfd3fe68e447e845836e626abbf9fb4190d03",
+        "size": 34068,
+        "url": "https://api.github.com/repos/rakitko/NoStRa/git/blobs/1e4dfd3fe68e447e845836e626abbf9fb4190d03"
+      },
+      {
+        "path": "Statistics/NstatioFieldCovs/out_all.txt",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "df90ef449b01392bfb5c092d2a97d6b8379d73cd",
+        "size": 1228,
+        "url": "https://api.github.com/repos/rakitko/NoStRa/git/blobs/df90ef449b01392bfb5c092d2a97d6b8379d73cd"
+      },
+      {
+        "path": "Statistics/NstatioFieldCovs/rho.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "a63e94b69633f1407e499506ff75d9ee36cfa261",
+        "size": 34616,
+        "url": "https://api.github.com/repos/rakitko/NoStRa/git/blobs/a63e94b69633f1407e499506ff75d9ee36cfa261"
+      },
+      {
+        "path": "Statistics/NstatioFieldCovs/sigma.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "79035bca284a93f0dad89c6ab82b1e2e6ab89c71",
+        "size": 32620,
+        "url": "https://api.github.com/repos/rakitko/NoStRa/git/blobs/79035bca284a93f0dad89c6ab82b1e2e6ab89c71"
+      },
+      {
+        "path": "Statistics/NstatioFieldCovs/xi.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "b8f4056ff0f1e1c637240bb9baa0457346f549e4",
+        "size": 30055,
+        "url": "https://api.github.com/repos/rakitko/NoStRa/git/blobs/b8f4056ff0f1e1c637240bb9baa0457346f549e4"
+      },
+      {
+        "path": "initial",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+        "size": 0,
+        "url": "https://api.github.com/repos/rakitko/NoStRa/git/blobs/e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+      }
+    ],
+    "truncated": false
+  }
+}

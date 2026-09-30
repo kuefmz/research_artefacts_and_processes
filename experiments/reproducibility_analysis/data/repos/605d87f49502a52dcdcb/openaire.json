@@ -1,0 +1,140 @@
+{
+  "provider": "openaire_graph_v2",
+  "requested_url": "https://api.openaire.eu/graph/v2/researchProducts/openaire____::f02c7904e4abb7834691dd2c7defd239",
+  "retrieved_at": "2026-09-30T11:53:04.433204+00:00",
+  "status": "ok",
+  "http_status": 200,
+  "final_url": "https://api.openaire.eu/graph/v2/researchProducts/openaire____::f02c7904e4abb7834691dd2c7defd239",
+  "sha256": "86d9590e0713c54a13f5a8b0e9ea44c4017be25a5a055d783981cc745ed42928",
+  "content_type": "application/json",
+  "data": {
+    "authors": null,
+    "openAccessColor": null,
+    "publiclyFunded": null,
+    "type": "software",
+    "language": {
+      "code": "und",
+      "label": "Undetermined"
+    },
+    "countries": null,
+    "subjects": [
+      {
+        "subject": {
+          "scheme": "FOS",
+          "value": "0101 mathematics"
+        },
+        "provenance": null
+      },
+      {
+        "subject": {
+          "scheme": "FOS",
+          "value": "01 natural sciences"
+        },
+        "provenance": null
+      }
+    ],
+    "mainTitle": "NoStRa software on GitHub",
+    "subTitle": null,
+    "descriptions": [
+      "The R package NoStRa allows one to carry out numerical experiments with the Doubly Stochastic Advection-Diffusion-Decay Model."
+    ],
+    "publicationDate": null,
+    "publisher": null,
+    "embargoEndDate": null,
+    "sources": null,
+    "formats": null,
+    "contributors": null,
+    "coverages": null,
+    "bestAccessRight": {
+      "code": "c_abf2",
+      "label": "OPEN",
+      "scheme": "http://vocabularies.coar-repositories.org/documentation/access_rights/"
+    },
+    "container": null,
+    "documentationUrls": null,
+    "codeRepositoryUrl": "https://github.com/rakitko/NoStRa",
+    "programmingLanguage": null,
+    "contactPeople": null,
+    "contactGroups": null,
+    "tools": null,
+    "size": null,
+    "version": null,
+    "geoLocations": null,
+    "id": "openaire____::f02c7904e4abb7834691dd2c7defd239",
+    "originalIds": null,
+    "pids": null,
+    "dateOfCollection": null,
+    "lastUpdateTimeStamp": null,
+    "indicators": {
+      "citationImpact": {
+        "citationCount": 0.0,
+        "influence": 2.1746283e-09,
+        "popularity": 1.8198539e-10,
+        "impulse": 0.0,
+        "citationClass": "C5",
+        "influenceClass": "C5",
+        "impulseClass": "C5",
+        "popularityClass": "C5"
+      }
+    },
+    "projects": null,
+    "organizations": null,
+    "communities": null,
+    "collectedFrom": [
+      {
+        "key": "openaire____::d3b7c913cd04ebfec0e9ec32cb6fd58c",
+        "value": "GitHub"
+      },
+      {
+        "key": "openaire____::dbfd07503aaa1ed31beed7dec942f3f4",
+        "value": "Software Heritage"
+      }
+    ],
+    "instances": [
+      {
+        "accessRight": {
+          "code": "c_abf2",
+          "label": "OPEN",
+          "scheme": "http://vocabularies.coar-repositories.org/documentation/access_rights/",
+          "openAccessRoute": null
+        },
+        "type": "Software",
+        "urls": [
+          "https://github.com/rakitko/NoStRa"
+        ],
+        "refereed": "nonPeerReviewed",
+        "hostedBy": {
+          "key": "openaire____::d3b7c913cd04ebfec0e9ec32cb6fd58c",
+          "value": "GitHub"
+        },
+        "collectedFrom": {
+          "key": "openaire____::dbfd07503aaa1ed31beed7dec942f3f4",
+          "value": "Software Heritage"
+        }
+      },
+      {
+        "accessRight": {
+          "code": "c_abf2",
+          "label": "OPEN",
+          "scheme": "http://vocabularies.coar-repositories.org/documentation/access_rights/",
+          "openAccessRoute": null
+        },
+        "type": "Software",
+        "urls": [
+          "https://archive.softwareheritage.org/browse/origin/https://github.com/rakitko/NoStRa"
+        ],
+        "refereed": "nonPeerReviewed",
+        "hostedBy": {
+          "key": "openaire____::dbfd07503aaa1ed31beed7dec942f3f4",
+          "value": "Software Heritage"
+        },
+        "collectedFrom": {
+          "key": "openaire____::dbfd07503aaa1ed31beed7dec942f3f4",
+          "value": "Software Heritage"
+        }
+      }
+    ],
+    "isGreen": null,
+    "isInDiamondJournal": null
+  }
+}

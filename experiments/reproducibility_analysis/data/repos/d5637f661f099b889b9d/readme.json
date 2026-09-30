@@ -1,0 +1,8 @@
+{
+  "provider": "github",
+  "requested_url": "https://api.github.com/repos/abezuglov/ANN/readme?ref=f0d1799fba7c06f332e294706e939b52d22a1cd6",
+  "retrieved_at": "2026-09-30T11:53:27.900635+00:00",
+  "status": "error",
+  "http_status": 404,
+  "error": "HTTP Error 404: Not Found"
+}

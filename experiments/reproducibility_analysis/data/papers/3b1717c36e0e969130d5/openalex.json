@@ -1,0 +1,1206 @@
+{
+  "provider": "openalex",
+  "requested_url": "https://api.openalex.org/works/https://doi.org/10.1088/1742-6596/1015/3/032055",
+  "retrieved_at": "2026-09-30T11:53:43.541668+00:00",
+  "status": "ok",
+  "http_status": 200,
+  "final_url": "https://api.openalex.org/works/https://doi.org/10.1088/1742-6596/1015/3/032055",
+  "sha256": "706829dce6586887cf1538b9ba8b695689640d7ab23b100bfc81c8f94d0f10ff",
+  "content_type": "application/json",
+  "data": {
+    "id": "https://openalex.org/W2803504792",
+    "doi": "https://doi.org/10.1088/1742-6596/1015/3/032055",
+    "title": "Development of DKB ETL module in case of data conversion",
+    "display_name": "Development of DKB ETL module in case of data conversion",
+    "publication_year": 2018,
+    "publication_date": "2018-05-01",
+    "ids": {
+      "openalex": "https://openalex.org/W2803504792",
+      "doi": "https://doi.org/10.1088/1742-6596/1015/3/032055",
+      "mag": "2803504792"
+    },
+    "language": "en",
+    "primary_location": {
+      "id": "doi:10.1088/1742-6596/1015/3/032055",
+      "is_oa": true,
+      "landing_page_url": "https://doi.org/10.1088/1742-6596/1015/3/032055",
+      "pdf_url": "https://iopscience.iop.org/article/10.1088/1742-6596/1015/3/032055/pdf",
+      "source": {
+        "id": "https://openalex.org/S4210187594",
+        "display_name": "Journal of Physics Conference Series",
+        "issn_l": "1742-6588",
+        "issn": [
+          "1742-6588",
+          "1742-6596"
+        ],
+        "is_oa": true,
+        "is_in_doaj": false,
+        "is_core": true,
+        "listed_in": [
+          "cwts-core",
+          "jufo-1",
+          "norway-1"
+        ],
+        "host_organization": "https://openalex.org/P4310320083",
+        "host_organization_name": "IOP Publishing",
+        "host_organization_lineage": [
+          "https://openalex.org/P4310320083",
+          "https://openalex.org/P4310311669"
+        ],
+        "host_organization_lineage_names": [
+          "IOP Publishing",
+          "Institute of Physics"
+        ],
+        "type": "journal"
+      },
+      "license": "cc-by",
+      "license_id": "https://openalex.org/licenses/cc-by",
+      "version": "publishedVersion",
+      "is_accepted": true,
+      "is_published": true,
+      "raw_source_name": "Journal of Physics: Conference Series",
+      "raw_type": "journal-article"
+    },
+    "type": "conference-paper",
+    "indexed_in": [
+      "crossref"
+    ],
+    "open_access": {
+      "is_oa": true,
+      "oa_status": "diamond",
+      "oa_url": "https://iopscience.iop.org/article/10.1088/1742-6596/1015/3/032055/pdf",
+      "any_repository_has_fulltext": true
+    },
+    "authorships": [
+      {
+        "author_position": "first",
+        "author": {
+          "id": "https://openalex.org/A5021980553",
+          "display_name": "Anastasiia Kaida",
+          "orcid": "https://orcid.org/0000-0003-4243-8628",
+          "observed_orcids": [
+            "https://orcid.org/0000-0003-4243-8628"
+          ]
+        },
+        "institutions": [
+          {
+            "id": "https://openalex.org/I30849647",
+            "display_name": "Tomsk Polytechnic University",
+            "ror": "https://ror.org/00a45v709",
+            "country_code": "RU",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I30849647"
+            ]
+          }
+        ],
+        "countries": [
+          "RU"
+        ],
+        "is_corresponding": false,
+        "raw_author_name": "A Y Kaida",
+        "raw_affiliation_strings": [
+          "Tomsk Polytechnic University, 30, Lenina Ave., Tomsk, 634050, Russia"
+        ],
+        "raw_orcid": null,
+        "affiliations": [
+          {
+            "raw_affiliation_string": "Tomsk Polytechnic University, 30, Lenina Ave., Tomsk, 634050, Russia",
+            "institution_ids": [
+              "https://openalex.org/I30849647"
+            ]
+          }
+        ]
+      },
+      {
+        "author_position": "middle",
+        "author": {
+          "id": "https://openalex.org/A5082050634",
+          "display_name": "Marina Golosova",
+          "orcid": null,
+          "observed_orcids": []
+        },
+        "institutions": [
+          {
+            "id": "https://openalex.org/I2800235667",
+            "display_name": "Kurchatov Institute",
+            "ror": "https://ror.org/00n1nz186",
+            "country_code": "RU",
+            "type": "facility",
+            "lineage": [
+              "https://openalex.org/I2800235667"
+            ]
+          }
+        ],
+        "countries": [
+          "RU"
+        ],
+        "is_corresponding": false,
+        "raw_author_name": "M V Golosova",
+        "raw_affiliation_strings": [
+          "National Research Center “Kurchatov Institute”, 1, Akademika Kurchatova Sq., Moscow, 123182, Russia"
+        ],
+        "raw_orcid": null,
+        "affiliations": [
+          {
+            "raw_affiliation_string": "National Research Center “Kurchatov Institute”, 1, Akademika Kurchatova Sq., Moscow, 123182, Russia",
+            "institution_ids": [
+              "https://openalex.org/I2800235667"
+            ]
+          }
+        ]
+      },
+      {
+        "author_position": "middle",
+        "author": {
+          "id": "https://openalex.org/A5069979785",
+          "display_name": "Maria Grigorieva",
+          "orcid": "https://orcid.org/0000-0002-8851-2187",
+          "observed_orcids": [
+            "https://orcid.org/0000-0002-8851-2187"
+          ]
+        },
+        "institutions": [
+          {
+            "id": "https://openalex.org/I2800235667",
+            "display_name": "Kurchatov Institute",
+            "ror": "https://ror.org/00n1nz186",
+            "country_code": "RU",
+            "type": "facility",
+            "lineage": [
+              "https://openalex.org/I2800235667"
+            ]
+          }
+        ],
+        "countries": [
+          "RU"
+        ],
+        "is_corresponding": false,
+        "raw_author_name": "M A Grigorieva",
+        "raw_affiliation_strings": [
+          "National Research Center “Kurchatov Institute”, 1, Akademika Kurchatova Sq., Moscow, 123182, Russia"
+        ],
+        "raw_orcid": null,
+        "affiliations": [
+          {
+            "raw_affiliation_string": "National Research Center “Kurchatov Institute”, 1, Akademika Kurchatova Sq., Moscow, 123182, Russia",
+            "institution_ids": [
+              "https://openalex.org/I2800235667"
+            ]
+          }
+        ]
+      },
+      {
+        "author_position": "last",
+        "author": {
+          "id": "https://openalex.org/A5086853786",
+          "display_name": "M Y Gubin",
+          "orcid": "https://orcid.org/0000-0002-7982-4605",
+          "observed_orcids": [
+            "https://orcid.org/0000-0002-7982-4605"
+          ]
+        },
+        "institutions": [
+          {
+            "id": "https://openalex.org/I30849647",
+            "display_name": "Tomsk Polytechnic University",
+            "ror": "https://ror.org/00a45v709",
+            "country_code": "RU",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I30849647"
+            ]
+          }
+        ],
+        "countries": [
+          "RU"
+        ],
+        "is_corresponding": false,
+        "raw_author_name": "M Y Gubin",
+        "raw_affiliation_strings": [
+          "Tomsk Polytechnic University, 30, Lenina Ave., Tomsk, 634050, Russia"
+        ],
+        "raw_orcid": null,
+        "affiliations": [
+          {
+            "raw_affiliation_string": "Tomsk Polytechnic University, 30, Lenina Ave., Tomsk, 634050, Russia",
+            "institution_ids": [
+              "https://openalex.org/I30849647"
+            ]
+          }
+        ]
+      }
+    ],
+    "institutions": [],
+    "countries_distinct_count": 1,
+    "institutions_distinct_count": 2,
+    "corresponding_author_ids": [],
+    "corresponding_institution_ids": [],
+    "apc_list": null,
+    "apc_paid": null,
+    "fwci": 0.2159,
+    "has_fulltext": true,
+    "cited_by_count": 1,
+    "citation_normalized_percentile": {
+      "value": 0.33758478,
+      "is_in_top_1_percent": false,
+      "is_in_top_10_percent": false
+    },
+    "cited_by_percentile_year": {
+      "min": 89,
+      "max": 94
+    },
+    "biblio": {
+      "volume": "1015",
+      "issue": null,
+      "first_page": "032055",
+      "last_page": "032055"
+    },
+    "is_retracted": false,
+    "is_paratext": false,
+    "is_xpac": false,
+    "primary_topic": {
+      "id": "https://openalex.org/T10715",
+      "display_name": "Distributed and Parallel Computing Systems",
+      "score": 0.996399998664856,
+      "subfield": {
+        "id": "https://openalex.org/subfields/1705",
+        "display_name": "Computer Networks and Communications"
+      },
+      "field": {
+        "id": "https://openalex.org/fields/17",
+        "display_name": "Computer Science"
+      },
+      "domain": {
+        "id": "https://openalex.org/domains/3",
+        "display_name": "Physical Sciences"
+      }
+    },
+    "topics": [
+      {
+        "id": "https://openalex.org/T10715",
+        "display_name": "Distributed and Parallel Computing Systems",
+        "score": 0.996399998664856,
+        "subfield": {
+          "id": "https://openalex.org/subfields/1705",
+          "display_name": "Computer Networks and Communications"
+        },
+        "field": {
+          "id": "https://openalex.org/fields/17",
+          "display_name": "Computer Science"
+        },
+        "domain": {
+          "id": "https://openalex.org/domains/3",
+          "display_name": "Physical Sciences"
+        }
+      },
+      {
+        "id": "https://openalex.org/T11181",
+        "display_name": "Advanced Data Storage Technologies",
+        "score": 0.9939000010490417,
+        "subfield": {
+          "id": "https://openalex.org/subfields/1705",
+          "display_name": "Computer Networks and Communications"
+        },
+        "field": {
+          "id": "https://openalex.org/fields/17",
+          "display_name": "Computer Science"
+        },
+        "domain": {
+          "id": "https://openalex.org/domains/3",
+          "display_name": "Physical Sciences"
+        }
+      },
+      {
+        "id": "https://openalex.org/T11937",
+        "display_name": "Research Data Management Practices",
+        "score": 0.9933000206947327,
+        "subfield": {
+          "id": "https://openalex.org/subfields/1710",
+          "display_name": "Information Systems"
+        },
+        "field": {
+          "id": "https://openalex.org/fields/17",
+          "display_name": "Computer Science"
+        },
+        "domain": {
+          "id": "https://openalex.org/domains/3",
+          "display_name": "Physical Sciences"
+        }
+      }
+    ],
+    "keywords": [
+      {
+        "id": "https://openalex.org/keywords/metadata",
+        "display_name": "Metadata",
+        "score": 0.8520169258117676
+      },
+      {
+        "id": "https://openalex.org/keywords/computer-science",
+        "display_name": "Computer science",
+        "score": 0.7443321347236633
+      },
+      {
+        "id": "https://openalex.org/keywords/data-mapping",
+        "display_name": "Data mapping",
+        "score": 0.5742082595825195
+      },
+      {
+        "id": "https://openalex.org/keywords/data-element",
+        "display_name": "Data element",
+        "score": 0.5720507502555847
+      },
+      {
+        "id": "https://openalex.org/keywords/pipeline",
+        "display_name": "Pipeline (software)",
+        "score": 0.5062488913536072
+      },
+      {
+        "id": "https://openalex.org/keywords/process",
+        "display_name": "Process (computing)",
+        "score": 0.4948880076408386
+      },
+      {
+        "id": "https://openalex.org/keywords/metadata-repository",
+        "display_name": "Metadata repository",
+        "score": 0.4933694899082184
+      },
+      {
+        "id": "https://openalex.org/keywords/database",
+        "display_name": "Database",
+        "score": 0.4595851004123688
+      },
+      {
+        "id": "https://openalex.org/keywords/data-integration",
+        "display_name": "Data integration",
+        "score": 0.4297041893005371
+      },
+      {
+        "id": "https://openalex.org/keywords/data-mining",
+        "display_name": "Data mining",
+        "score": 0.38115862011909485
+      },
+      {
+        "id": "https://openalex.org/keywords/operating-system",
+        "display_name": "Operating system",
+        "score": 0.1715581715106964
+      }
+    ],
+    "concepts": [
+      {
+        "id": "https://openalex.org/C93518851",
+        "wikidata": "https://www.wikidata.org/wiki/Q180160",
+        "display_name": "Metadata",
+        "level": 2,
+        "score": 0.8520169258117676
+      },
+      {
+        "id": "https://openalex.org/C41008148",
+        "wikidata": "https://www.wikidata.org/wiki/Q21198",
+        "display_name": "Computer science",
+        "level": 0,
+        "score": 0.7443321347236633
+      },
+      {
+        "id": "https://openalex.org/C137314826",
+        "wikidata": "https://www.wikidata.org/wiki/Q2330408",
+        "display_name": "Data mapping",
+        "level": 2,
+        "score": 0.5742082595825195
+      },
+      {
+        "id": "https://openalex.org/C30872290",
+        "wikidata": "https://www.wikidata.org/wiki/Q1172389",
+        "display_name": "Data element",
+        "level": 3,
+        "score": 0.5720507502555847
+      },
+      {
+        "id": "https://openalex.org/C43521106",
+        "wikidata": "https://www.wikidata.org/wiki/Q2165493",
+        "display_name": "Pipeline (software)",
+        "level": 2,
+        "score": 0.5062488913536072
+      },
+      {
+        "id": "https://openalex.org/C98045186",
+        "wikidata": "https://www.wikidata.org/wiki/Q205663",
+        "display_name": "Process (computing)",
+        "level": 2,
+        "score": 0.4948880076408386
+      },
+      {
+        "id": "https://openalex.org/C153048206",
+        "wikidata": "https://www.wikidata.org/wiki/Q3454922",
+        "display_name": "Metadata repository",
+        "level": 3,
+        "score": 0.4933694899082184
+      },
+      {
+        "id": "https://openalex.org/C77088390",
+        "wikidata": "https://www.wikidata.org/wiki/Q8513",
+        "display_name": "Database",
+        "level": 1,
+        "score": 0.4595851004123688
+      },
+      {
+        "id": "https://openalex.org/C72634772",
+        "wikidata": "https://www.wikidata.org/wiki/Q386824",
+        "display_name": "Data integration",
+        "level": 2,
+        "score": 0.4297041893005371
+      },
+      {
+        "id": "https://openalex.org/C124101348",
+        "wikidata": "https://www.wikidata.org/wiki/Q172491",
+        "display_name": "Data mining",
+        "level": 1,
+        "score": 0.38115862011909485
+      },
+      {
+        "id": "https://openalex.org/C111919701",
+        "wikidata": "https://www.wikidata.org/wiki/Q9135",
+        "display_name": "Operating system",
+        "level": 1,
+        "score": 0.1715581715106964
+      }
+    ],
+    "mesh": [],
+    "locations_count": 2,
+    "locations": [
+      {
+        "id": "doi:10.1088/1742-6596/1015/3/032055",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1088/1742-6596/1015/3/032055",
+        "pdf_url": "https://iopscience.iop.org/article/10.1088/1742-6596/1015/3/032055/pdf",
+        "source": {
+          "id": "https://openalex.org/S4210187594",
+          "display_name": "Journal of Physics Conference Series",
+          "issn_l": "1742-6588",
+          "issn": [
+            "1742-6588",
+            "1742-6596"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "jufo-1",
+            "norway-1"
+          ],
+          "host_organization": "https://openalex.org/P4310320083",
+          "host_organization_name": "IOP Publishing",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320083",
+            "https://openalex.org/P4310311669"
+          ],
+          "host_organization_lineage_names": [
+            "IOP Publishing",
+            "Institute of Physics"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Journal of Physics: Conference Series",
+        "raw_type": "journal-article"
+      },
+      {
+        "id": "pmh:oai:earchive.tpu.ru:11683/52924",
+        "is_oa": true,
+        "landing_page_url": "http://earchive.tpu.ru/handle/11683/52924",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S4306401192",
+          "display_name": "Электронный научный архив ТПУ: Главная страница (Tomsk Polytechnic University)",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I30849647",
+          "host_organization_name": "Tomsk Polytechnic University",
+          "host_organization_lineage": [
+            "https://openalex.org/I30849647"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": "other-oa",
+        "license_id": "https://openalex.org/licenses/other-oa",
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": "",
+        "raw_type": "info:eu-repo/semantics/conferencePaper"
+      }
+    ],
+    "best_oa_location": {
+      "id": "doi:10.1088/1742-6596/1015/3/032055",
+      "is_oa": true,
+      "landing_page_url": "https://doi.org/10.1088/1742-6596/1015/3/032055",
+      "pdf_url": "https://iopscience.iop.org/article/10.1088/1742-6596/1015/3/032055/pdf",
+      "source": {
+        "id": "https://openalex.org/S4210187594",
+        "display_name": "Journal of Physics Conference Series",
+        "issn_l": "1742-6588",
+        "issn": [
+          "1742-6588",
+          "1742-6596"
+        ],
+        "is_oa": true,
+        "is_in_doaj": false,
+        "is_core": true,
+        "listed_in": [
+          "cwts-core",
+          "jufo-1",
+          "norway-1"
+        ],
+        "host_organization": "https://openalex.org/P4310320083",
+        "host_organization_name": "IOP Publishing",
+        "host_organization_lineage": [
+          "https://openalex.org/P4310320083",
+          "https://openalex.org/P4310311669"
+        ],
+        "host_organization_lineage_names": [
+          "IOP Publishing",
+          "Institute of Physics"
+        ],
+        "type": "journal"
+      },
+      "license": "cc-by",
+      "license_id": "https://openalex.org/licenses/cc-by",
+      "version": "publishedVersion",
+      "is_accepted": true,
+      "is_published": true,
+      "raw_source_name": "Journal of Physics: Conference Series",
+      "raw_type": "journal-article"
+    },
+    "sustainable_development_goals": [
+      {
+        "display_name": "Industry, innovation and infrastructure",
+        "score": 0.4000000059604645,
+        "id": "https://metadata.un.org/sdg/9"
+      }
+    ],
+    "x_sdgs": [],
+    "study_designs": [],
+    "awards": [
+      {
+        "id": "https://openalex.org/G3118402170",
+        "display_name": null,
+        "funder_award_id": "16-11-",
+        "funder_id": "https://openalex.org/F4320324099",
+        "funder_display_name": "Russian Science Foundation"
+      },
+      {
+        "id": "https://openalex.org/G4724797907",
+        "display_name": null,
+        "funder_award_id": "10280",
+        "funder_id": "https://openalex.org/F4320324099",
+        "funder_display_name": "Russian Science Foundation"
+      }
+    ],
+    "funders": [
+      {
+        "id": "https://openalex.org/F4320313922",
+        "display_name": "Tomsk Polytechnic University",
+        "ror": "https://ror.org/00a45v709"
+      },
+      {
+        "id": "https://openalex.org/F4320324099",
+        "display_name": "Russian Science Foundation",
+        "ror": "https://ror.org/03y2gwe85"
+      }
+    ],
+    "has_content": {
+      "pdf": true,
+      "grobid_xml": true
+    },
+    "content_urls": {
+      "pdf": "https://content.openalex.org/works/W2803504792.pdf",
+      "grobid_xml": "https://content.openalex.org/works/W2803504792.grobid-xml"
+    },
+    "referenced_works_count": 7,
+    "referenced_works": [
+      "https://openalex.org/W1718459485",
+      "https://openalex.org/W2143237190",
+      "https://openalex.org/W2198739892",
+      "https://openalex.org/W2479054499",
+      "https://openalex.org/W2541711954",
+      "https://openalex.org/W2551116061",
+      "https://openalex.org/W2564266326"
+    ],
+    "related_works": [
+      "https://openalex.org/W2183628870",
+      "https://openalex.org/W2379265733",
+      "https://openalex.org/W3199469221",
+      "https://openalex.org/W2545809202",
+      "https://openalex.org/W1503116306",
+      "https://openalex.org/W1927820993",
+      "https://openalex.org/W3084772717",
+      "https://openalex.org/W2353291710",
+      "https://openalex.org/W2555822790",
+      "https://openalex.org/W1987988355"
+    ],
+    "abstract_inverted_index": {
+      "Modern": [
+        0
+      ],
+      "scientific": [
+        1,
+        155
+      ],
+      "experiments": [
+        2,
+        56,
+        152
+      ],
+      "involve": [
+        3
+      ],
+      "the": [
+        4,
+        58,
+        71,
+        76,
+        79,
+        95,
+        114,
+        122,
+        154,
+        163,
+        182,
+        217,
+        224,
+        230,
+        236
+      ],
+      "producing": [
+        5
+      ],
+      "of": [
+        6,
+        9,
+        35,
+        60,
+        78,
+        91,
+        131,
+        172,
+        200,
+        219,
+        229,
+        240
+      ],
+      "huge": [
+        7
+      ],
+      "volumes": [
+        8
+      ],
+      "data": [
+        10,
+        16,
+        20,
+        116,
+        157,
+        176,
+        179,
+        186,
+        202,
+        237
+      ],
+      "that": [
+        11
+      ],
+      "requires": [
+        12
+      ],
+      "new": [
+        13
+      ],
+      "approaches": [
+        14
+      ],
+      "in": [
+        15,
+        57,
+        125,
+        223
+      ],
+      "processing": [
+        17,
+        26,
+        107
+      ],
+      "and": [
+        18,
+        27,
+        45,
+        47,
+        118,
+        144,
+        226,
+        233
+      ],
+      "storage.These": [
+        19
+      ],
+      "themselves,": [
+        21
+      ],
+      "as": [
+        22,
+        24,
+        169,
+        197,
+        210
+      ],
+      "well": [
+        23
+      ],
+      "their": [
+        25
+      ],
+      "storage,": [
+        28
+      ],
+      "are": [
+        29
+      ],
+      "accompanied": [
+        30
+      ],
+      "by": [
+        31,
+        190
+      ],
+      "a": [
+        32,
+        49,
+        67,
+        92,
+        126,
+        170,
+        191,
+        198
+      ],
+      "valuable": [
+        33
+      ],
+      "amount": [
+        34
+      ],
+      "additional": [
+        36
+      ],
+      "information,": [
+        37
+      ],
+      "called": [
+        38
+      ],
+      "metadata,": [
+        39
+      ],
+      "distributed": [
+        40
+      ],
+      "over": [
+        41
+      ],
+      "multiple": [
+        42
+      ],
+      "informational": [
+        43
+      ],
+      "systems": [
+        44
+      ],
+      "repositories,": [
+        46
+      ],
+      "having": [
+        48
+      ],
+      "complicated,": [
+        50
+      ],
+      "heterogeneous": [
+        51
+      ],
+      "structure.Gathering": [
+        52
+      ],
+      "these": [
+        53
+      ],
+      "metadata": [
+        54,
+        84,
+        98,
+        109
+      ],
+      "for": [
+        55,
+        73,
+        153,
+        162
+      ],
+      "field": [
+        59
+      ],
+      "high": [
+        61
+      ],
+      "energy": [
+        62
+      ],
+      "nuclear": [
+        63
+      ],
+      "physics": [
+        64
+      ],
+      "(HENP)": [
+        65
+      ],
+      "is": [
+        66,
+        81,
+        139,
+        208
+      ],
+      "complex": [
+        68
+      ],
+      "issue,": [
+        69
+      ],
+      "requiring": [
+        70
+      ],
+      "quest": [
+        72
+      ],
+      "solutions": [
+        74
+      ],
+      "outside": [
+        75
+      ],
+      "box.One": [
+        77
+      ],
+      "tasks": [
+        80
+      ],
+      "to": [
+        82,
+        113,
+        121,
+        141,
+        147,
+        181
+      ],
+      "integrate": [
+        83
+      ],
+      "from": [
+        85,
+        100,
+        178
+      ],
+      "different": [
+        86
+      ],
+      "repositories": [
+        87,
+        103
+      ],
+      "into": [
+        88,
+        235
+      ],
+      "some": [
+        89
+      ],
+      "kind": [
+        90
+      ],
+      "central": [
+        93
+      ],
+      "storage.During": [
+        94
+      ],
+      "integration": [
+        96,
+        158,
+        238
+      ],
+      "process,": [
+        97,
+        188
+      ],
+      "taken": [
+        99
+      ],
+      "original": [
+        101
+      ],
+      "source": [
+        102
+      ],
+      "go": [
+        104
+      ],
+      "through": [
+        105
+      ],
+      "several": [
+        106
+      ],
+      "steps:": [
+        108
+      ],
+      "aggregation,": [
+        110
+      ],
+      "transformation": [
+        111,
+        187,
+        203
+      ],
+      "according": [
+        112
+      ],
+      "current": [
+        115
+      ],
+      "model": [
+        117
+      ],
+      "loading": [
+        119
+      ],
+      "it": [
+        120
+      ],
+      "general": [
+        123
+      ],
+      "storage": [
+        124
+      ],
+      "standardized": [
+        127
+      ],
+      "form.The": [
+        128
+      ],
+      "R&D": [
+        129
+      ],
+      "project": [
+        130
+      ],
+      "ATLAS": [
+        132
+      ],
+      "experiment": [
+        133
+      ],
+      "on": [
+        134
+      ],
+      "LHC,": [
+        135
+      ],
+      "Data": [
+        136
+      ],
+      "Knowledge": [
+        137
+      ],
+      "Base,": [
+        138
+      ],
+      "aimed": [
+        140
+      ],
+      "provide": [
+        142
+      ],
+      "fast": [
+        143
+      ],
+      "easy": [
+        145
+      ],
+      "access": [
+        146
+      ],
+      "significant": [
+        148
+      ],
+      "information": [
+        149
+      ],
+      "about": [
+        150
+      ],
+      "LHC": [
+        151
+      ],
+      "community.The": [
+        156
+      ],
+      "subsystem,": [
+        159
+      ],
+      "being": [
+        160
+      ],
+      "developed": [
+        161,
+        232
+      ],
+      "DKB": [
+        164,
+        184
+      ],
+      "project,": [
+        165
+      ],
+      "can": [
+        166,
+        194
+      ],
+      "be": [
+        167,
+        195
+      ],
+      "represented": [
+        168,
+        189
+      ],
+      "number": [
+        171,
+        199
+      ],
+      "particular": [
+        173
+      ],
+      "pipelines,": [
+        174
+      ],
+      "arranging": [
+        175
+      ],
+      "flow": [
+        177
+      ],
+      "sources": [
+        180
+      ],
+      "main": [
+        183
+      ],
+      "storage.The": [
+        185
+      ],
+      "single": [
+        192
+      ],
+      "pipeline,": [
+        193
+      ],
+      "considered": [
+        196
+      ],
+      "successive": [
+        201
+      ],
+      "steps,": [
+        204
+      ],
+      "where": [
+        205
+      ],
+      "each": [
+        206
+      ],
+      "step": [
+        207
+      ],
+      "implemented": [
+        209
+      ],
+      "an": [
+        211
+      ],
+      "individual": [
+        212
+      ],
+      "program": [
+        213,
+        220
+      ],
+      "module.This": [
+        214
+      ],
+      "article": [
+        215
+      ],
+      "outlines": [
+        216
+      ],
+      "specifics": [
+        218
+      ],
+      "modules,": [
+        221
+      ],
+      "used": [
+        222
+      ],
+      "dataflow,": [
+        225
+      ],
+      "describes": [
+        227
+      ],
+      "one": [
+        228
+      ],
+      "modules": [
+        231
+      ],
+      "integrated": [
+        234
+      ],
+      "subsystem": [
+        239
+      ],
+      "DKB.": [
+        241
+      ]
+    },
+    "counts_by_year": [
+      {
+        "year": 2018,
+        "cited_by_count": 1
+      }
+    ],
+    "updated_date": "2026-09-21T07:43:02.447757",
+    "created_date": "2025-10-10T00:00:00"
+  }
+}

@@ -1,0 +1,266 @@
+{
+  "provider": "crossref",
+  "requested_url": "https://api.crossref.org/works/10.7287/peerj.preprints.1435v1",
+  "retrieved_at": "2026-09-30T11:52:57.216329+00:00",
+  "status": "ok",
+  "http_status": 200,
+  "final_url": "https://api.crossref.org/works/10.7287/peerj.preprints.1435v1",
+  "sha256": "6bb95d5d76452fe014557a2845bb586714ea3cc1325148acbd02f5686561e374",
+  "content_type": "application/json",
+  "data": {
+    "status": "ok",
+    "message-type": "work",
+    "message-version": "1.0.0",
+    "message": {
+      "indexed": {
+        "date-parts": [
+          [
+            2026,
+            2,
+            28
+          ]
+        ],
+        "date-time": "2026-02-28T07:50:52Z",
+        "timestamp": 1772265052813,
+        "version": "3.50.1"
+      },
+      "posted": {
+        "date-parts": [
+          [
+            2015,
+            10,
+            15
+          ]
+        ]
+      },
+      "group-title": "PeerJ PrePrints",
+      "reference-count": 0,
+      "publisher": "PeerJ",
+      "license": [
+        {
+          "start": {
+            "date-parts": [
+              [
+                2015,
+                10,
+                15
+              ]
+            ],
+            "date-time": "2015-10-15T00:00:00Z",
+            "timestamp": 1444867200000
+          },
+          "content-version": "unspecified",
+          "delay-in-days": 0,
+          "URL": "http://creativecommons.org/licenses/by/4.0/"
+        }
+      ],
+      "content-domain": {
+        "domain": [],
+        "crossmark-restriction": false
+      },
+      "short-container-title": [],
+      "abstract": "<jats:p>\n                  The rapid adoption of microbial whole genome sequencing in public health, clinical testing, and forensic laboratories requires the use of validated measurement processes. Reference materials that are well characterized, homogeneous, and stable can be used to evaluate measurement processes and help to establish confidence in the results. Given the variety of microbial genome sequencing applications and platforms, as well as the vast microbial genomic diversity, there is a need for application-specific genomic materials for method validation. We have developed a reproducible and transparent bioinformatics tool for characterizing prokaryotic genomic materials; ”PEPR”, Pipelines for Evaluating Prokaryotic References. We demonstrate the tool and its output using sequencing data while developing a\n                  <jats:italic>Staphylococcus aureus</jats:italic>\n                  candidate genomic reference material.\n                </jats:p>",
+      "DOI": "10.7287/peerj.preprints.1435v1",
+      "type": "posted-content",
+      "created": {
+        "date-parts": [
+          [
+            2018,
+            1,
+            12
+          ]
+        ],
+        "date-time": "2018-01-12T18:13:50Z",
+        "timestamp": 1515780830000
+      },
+      "source": "Crossref",
+      "is-referenced-by-count": 0,
+      "title": [
+        "PEPR: Pipelines for evaluating prokaryotic references"
+      ],
+      "prefix": "10.7287",
+      "author": [
+        {
+          "given": "Nathan D.",
+          "family": "Olson",
+          "sequence": "first",
+          "affiliation": [
+            {
+              "name": "Biosystems and Biomaterials Division, National Institute of Standards and Technology, Gaithersburg, MD, United States"
+            }
+          ],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        },
+        {
+          "given": "Justin M.",
+          "family": "Zook",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Material Measurement Laboratory, National Institute of Standards and Technology, Gaithersburg, MD, United States"
+            }
+          ],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        },
+        {
+          "given": "Daniel V.",
+          "family": "Samarov",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Statistical Engineering Division, National Institute of Standards and Technology, Gaithersburg, Maryland, United States"
+            }
+          ],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        },
+        {
+          "given": "Scott A.",
+          "family": "Jackson",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Biosystems and Biomaterials Division, National Institute of Standards and Technology, Gaithersburg, MD, United States"
+            }
+          ],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        },
+        {
+          "given": "Marc L.",
+          "family": "Salit",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Biosystems and Biomaterials Division, National Institute of Standards and Technology, Gaithersburg, MD, United States"
+            },
+            {
+              "name": "Department of Bioengineering, Stanford University, Stanford, California, United States"
+            }
+          ],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        }
+      ],
+      "member": "4443",
+      "container-title": [],
+      "original-title": [],
+      "link": [
+        {
+          "URL": "https://peerj.com/preprints/1435v1.pdf",
+          "content-type": "application/pdf",
+          "content-version": "vor",
+          "intended-application": "text-mining"
+        },
+        {
+          "URL": "https://peerj.com/preprints/1435v1.xml",
+          "content-type": "application/xml",
+          "content-version": "vor",
+          "intended-application": "text-mining"
+        },
+        {
+          "URL": "https://peerj.com/preprints/1435v1.html",
+          "content-type": "text/html",
+          "content-version": "vor",
+          "intended-application": "text-mining"
+        },
+        {
+          "URL": "https://peerj.com/preprints/1435v1.pdf",
+          "content-type": "unspecified",
+          "content-version": "vor",
+          "intended-application": "similarity-checking"
+        }
+      ],
+      "deposited": {
+        "date-parts": [
+          [
+            2019,
+            12,
+            23
+          ]
+        ],
+        "date-time": "2019-12-23T14:00:33Z",
+        "timestamp": 1577109633000
+      },
+      "score": 1,
+      "resource": {
+        "primary": {
+          "URL": "https://peerj.com/preprints/1435v1"
+        }
+      },
+      "subtitle": [],
+      "short-title": [],
+      "issued": {
+        "date-parts": [
+          [
+            2015,
+            10,
+            15
+          ]
+        ]
+      },
+      "references-count": 0,
+      "aliases": [
+        "10.7287/peerj.preprints.1435"
+      ],
+      "URL": "https://doi.org/10.7287/peerj.preprints.1435v1",
+      "relation": {
+        "references": [
+          {
+            "id-type": "doi",
+            "id": "10.7287/peerj.preprints.1435v1/supp-1",
+            "asserted-by": "subject"
+          },
+          {
+            "id-type": "doi",
+            "id": "10.7287/peerj.preprints.1435v1/supp-2",
+            "asserted-by": "subject"
+          },
+          {
+            "id-type": "doi",
+            "id": "10.7287/peerj.preprints.1435v1/supp-1",
+            "asserted-by": "object"
+          },
+          {
+            "id-type": "doi",
+            "id": "10.7287/peerj.preprints.1435v1/supp-2",
+            "asserted-by": "object"
+          }
+        ]
+      },
+      "subject": [],
+      "published": {
+        "date-parts": [
+          [
+            2015,
+            10,
+            15
+          ]
+        ]
+      },
+      "subtype": "preprint"
+    }
+  }
+}

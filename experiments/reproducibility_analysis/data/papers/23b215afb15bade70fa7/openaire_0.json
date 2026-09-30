@@ -1,0 +1,449 @@
+{
+  "provider": "openaire_graph_v2",
+  "requested_url": "https://api.openaire.eu/graph/v2/researchProducts/doi_dedup___::e5bc141ffd6557406cdf32f9bfb1ed2e",
+  "retrieved_at": "2026-09-30T11:54:32.940064+00:00",
+  "status": "ok",
+  "http_status": 200,
+  "final_url": "https://api.openaire.eu/graph/v2/researchProducts/doi_dedup___::e5bc141ffd6557406cdf32f9bfb1ed2e",
+  "sha256": "75dfef6d4d77c6854016152f48d2a93a708496fdbf309b6edc8d6b9b2f120395",
+  "content_type": "application/json",
+  "data": {
+    "authors": [
+      {
+        "fullName": "Michael Tsyrulnikov",
+        "name": "Michael",
+        "surname": "Tsyrulnikov",
+        "rank": 1,
+        "pid": {
+          "id": {
+            "scheme": "orcid",
+            "value": "0000-0002-7357-334x"
+          },
+          "provenance": null
+        }
+      },
+      {
+        "fullName": "Alexander Rakitko",
+        "name": "Alexander",
+        "surname": "Rakitko",
+        "rank": 2,
+        "pid": {
+          "id": {
+            "scheme": "orcid",
+            "value": "0000-0003-0567-7734"
+          },
+          "provenance": null
+        }
+      }
+    ],
+    "openAccessColor": "bronze",
+    "publiclyFunded": false,
+    "type": "publication",
+    "language": {
+      "code": "eng",
+      "label": "English"
+    },
+    "countries": null,
+    "subjects": [
+      {
+        "subject": {
+          "scheme": "keyword",
+          "value": "Physics - Geophysics"
+        },
+        "provenance": null
+      },
+      {
+        "subject": {
+          "scheme": "keyword",
+          "value": "Physics - Atmospheric and Oceanic Physics"
+        },
+        "provenance": null
+      },
+      {
+        "subject": {
+          "scheme": "keyword",
+          "value": "Physics - Data Analysis, Statistics and Probability"
+        },
+        "provenance": null
+      },
+      {
+        "subject": {
+          "scheme": "keyword",
+          "value": "Atmospheric and Oceanic Physics (physics.ao-ph)"
+        },
+        "provenance": null
+      },
+      {
+        "subject": {
+          "scheme": "FOS",
+          "value": "0207 environmental engineering"
+        },
+        "provenance": null
+      },
+      {
+        "subject": {
+          "scheme": "keyword",
+          "value": "FOS: Physical sciences"
+        },
+        "provenance": null
+      },
+      {
+        "subject": {
+          "scheme": "FOS",
+          "value": "02 engineering and technology"
+        },
+        "provenance": null
+      },
+      {
+        "subject": {
+          "scheme": "FOS",
+          "value": "01 natural sciences"
+        },
+        "provenance": null
+      },
+      {
+        "subject": {
+          "scheme": "keyword",
+          "value": "Data Analysis, Statistics and Probability (physics.data-an)"
+        },
+        "provenance": null
+      },
+      {
+        "subject": {
+          "scheme": "FOS",
+          "value": "0105 earth and related environmental sciences"
+        },
+        "provenance": null
+      },
+      {
+        "subject": {
+          "scheme": "keyword",
+          "value": "Geophysics (physics.geo-ph)"
+        },
+        "provenance": null
+      }
+    ],
+    "mainTitle": "Impact of non‐stationarity on hybrid ensemble filters: A study with a doubly stochastic advection‐diffusion‐decay model",
+    "subTitle": null,
+    "descriptions": [
+      "<jats:p>Effects of non‐stationarity on the performance of hybrid ensemble filters is studied. (By hybrid filters we mean those which blend ensemble covariances with some other regularizing covariances.) To isolate effects of non‐stationarity from effects due to nonlinearity (and the non‐Gaussianity it causes), a new doubly stochastic advection‐diffusion‐decay model (DSADM) is proposed. The model is hierarchical: it is a linear stochastic partial differential equation whose coefficients are random fields defined through their own stochastic partial differential equations. DSADM generates conditionally Gaussian spatiotemporal random fields with a tunable degree of non‐stationarity in space and time. DSADM allows the use of the exact Kalman filter as a baseline benchmark.</jats:p><jats:p>In numerical experiments with DSADM as the “model of truth”, the relative importance of the three kinds of covariance blending is studied: with static, time‐smoothed, and space‐smoothed covariances. It is shown that the stronger the non‐stationarity, the less useful the static covariance matrix becomes and the more beneficial the time‐smoothed covariances are. Time‐smoothing of background‐error covariances proved to be systematically more useful than their space‐smoothing. Under non‐stationarity, a filter that extends the (previously proposed by the authors) Hierarchical Bayes Ensemble Filter and accommodates the three covariance‐blending techniques is shown to outperform all other configurations of the filters tested.</jats:p>"
+    ],
+    "publicationDate": "2019-06-03",
+    "publisher": "Wiley",
+    "embargoEndDate": "2017-08-01",
+    "sources": [
+      "Crossref"
+    ],
+    "formats": null,
+    "contributors": null,
+    "coverages": null,
+    "bestAccessRight": {
+      "code": "c_abf2",
+      "label": "OPEN",
+      "scheme": "http://vocabularies.coar-repositories.org/documentation/access_rights/"
+    },
+    "container": {
+      "name": "Quarterly Journal of the Royal Meteorological Society",
+      "issnPrinted": "0035-9009",
+      "issnOnline": "1477-870X",
+      "issnLinking": null,
+      "ep": "2271",
+      "iss": null,
+      "sp": "2255",
+      "vol": "145",
+      "edition": null,
+      "conferencePlace": null,
+      "conferenceDate": null
+    },
+    "documentationUrls": null,
+    "codeRepositoryUrl": null,
+    "programmingLanguage": null,
+    "contactPeople": null,
+    "contactGroups": null,
+    "tools": null,
+    "size": null,
+    "version": null,
+    "geoLocations": null,
+    "id": "doi_dedup___::e5bc141ffd6557406cdf32f9bfb1ed2e",
+    "originalIds": [
+      "10.1002/qj.3556",
+      "50|doiboost____|e5bc141ffd6557406cdf32f9bfb1ed2e",
+      "50|datacite____::5666a351cd939ab9b715c6cdefa890d1",
+      "10.48550/arxiv.1708.08794",
+      "50|od________18::287ca4990884ce10e27016af4c3d3671",
+      "oai:arXiv.org:1708.08794",
+      "2943177340",
+      "3154964776"
+    ],
+    "pids": [
+      {
+        "scheme": "doi",
+        "value": "10.1002/qj.3556"
+      },
+      {
+        "scheme": "doi",
+        "value": "10.48550/arxiv.1708.08794"
+      },
+      {
+        "scheme": "arXiv",
+        "value": "1708.08794"
+      }
+    ],
+    "dateOfCollection": null,
+    "lastUpdateTimeStamp": null,
+    "indicators": {
+      "citationImpact": {
+        "citationCount": 4.0,
+        "influence": 2.3967728e-09,
+        "popularity": 3.6170236e-09,
+        "impulse": 1.0,
+        "citationClass": "C5",
+        "influenceClass": "C5",
+        "impulseClass": "C5",
+        "popularityClass": "C4"
+      }
+    },
+    "projects": null,
+    "organizations": null,
+    "communities": null,
+    "collectedFrom": [
+      {
+        "key": "openaire____::9e3be59865b2c1c335d32dae2fe7b254",
+        "value": "Datacite"
+      },
+      {
+        "key": "openaire____::8ac8380272269217cb09a928c8caa993",
+        "value": "UnpayWall"
+      },
+      {
+        "key": "openaire____::081b82f96300b6a6e3d282bad31cb6e2",
+        "value": "Crossref"
+      },
+      {
+        "key": "openaire____::5f532a3fc4f1ea403f37070f59a7a53a",
+        "value": "Microsoft Academic Graph"
+      },
+      {
+        "key": "opendoar____::6f4922f45568161a8cdf4ad2299f6d23",
+        "value": "arXiv.org e-Print Archive"
+      }
+    ],
+    "instances": [
+      {
+        "pids": [
+          {
+            "scheme": "doi",
+            "value": "10.1002/qj.3556"
+          }
+        ],
+        "license": "Wiley Online Library User Agreement",
+        "accessRight": {
+          "code": "c_14cb",
+          "label": "CLOSED",
+          "scheme": "http://vocabularies.coar-repositories.org/documentation/access_rights/",
+          "openAccessRoute": null
+        },
+        "type": "Article",
+        "urls": [
+          "https://doi.org/10.1002/qj.3556"
+        ],
+        "publicationDate": "2019-06-03",
+        "refereed": "peerReviewed",
+        "hostedBy": {
+          "key": "issn___print::733b7764cc782c8f731794842e51c1d1",
+          "value": "Quarterly Journal of the Royal Meteorological Society"
+        },
+        "collectedFrom": {
+          "key": "openaire____::081b82f96300b6a6e3d282bad31cb6e2",
+          "value": "Crossref"
+        }
+      },
+      {
+        "pids": [
+          {
+            "scheme": "doi",
+            "value": "10.1002/qj.3556"
+          }
+        ],
+        "accessRight": {
+          "code": "c_abf2",
+          "label": "OPEN",
+          "scheme": "http://vocabularies.coar-repositories.org/documentation/access_rights/",
+          "openAccessRoute": "green"
+        },
+        "type": "Article",
+        "urls": [
+          "http://arxiv.org/pdf/1708.08794"
+        ],
+        "refereed": "nonPeerReviewed",
+        "hostedBy": {
+          "key": "issn___print::733b7764cc782c8f731794842e51c1d1",
+          "value": "Quarterly Journal of the Royal Meteorological Society"
+        },
+        "collectedFrom": {
+          "key": "openaire____::8ac8380272269217cb09a928c8caa993",
+          "value": "UnpayWall"
+        }
+      },
+      {
+        "pids": [
+          {
+            "scheme": "doi",
+            "value": "10.48550/arxiv.1708.08794"
+          }
+        ],
+        "license": "arXiv Non-Exclusive Distribution",
+        "type": "Article",
+        "urls": [
+          "https://dx.doi.org/10.48550/arxiv.1708.08794"
+        ],
+        "publicationDate": "2017-01-01",
+        "refereed": "nonPeerReviewed",
+        "hostedBy": {
+          "key": "openaire____::55045bd2a65019fd8e6741a755395c8c",
+          "value": "Unknown Repository"
+        },
+        "collectedFrom": {
+          "key": "openaire____::9e3be59865b2c1c335d32dae2fe7b254",
+          "value": "Datacite"
+        }
+      },
+      {
+        "pids": [
+          {
+            "scheme": "arXiv",
+            "value": "1708.08794"
+          }
+        ],
+        "alternateIdentifiers": [
+          {
+            "scheme": "doi",
+            "value": "10.1002/qj.3556"
+          }
+        ],
+        "accessRight": {
+          "code": "c_abf2",
+          "label": "OPEN",
+          "scheme": "http://vocabularies.coar-repositories.org/documentation/access_rights/",
+          "openAccessRoute": null
+        },
+        "type": "Preprint",
+        "urls": [
+          "http://arxiv.org/abs/1708.08794"
+        ],
+        "publicationDate": "2017-08-29",
+        "refereed": "nonPeerReviewed",
+        "hostedBy": {
+          "key": "opendoar____::6f4922f45568161a8cdf4ad2299f6d23",
+          "value": "arXiv.org e-Print Archive"
+        },
+        "collectedFrom": {
+          "key": "opendoar____::6f4922f45568161a8cdf4ad2299f6d23",
+          "value": "arXiv.org e-Print Archive"
+        }
+      },
+      {
+        "alternateIdentifiers": [
+          {
+            "scheme": "mag_id",
+            "value": "2943177340"
+          },
+          {
+            "scheme": "doi",
+            "value": "10.1002/qj.3556"
+          }
+        ],
+        "type": "Article",
+        "urls": [
+          "https://dx.doi.org/10.1002/qj.3556"
+        ],
+        "refereed": "nonPeerReviewed",
+        "hostedBy": {
+          "key": "openaire____::55045bd2a65019fd8e6741a755395c8c",
+          "value": "Unknown Repository"
+        },
+        "collectedFrom": {
+          "key": "openaire____::5f532a3fc4f1ea403f37070f59a7a53a",
+          "value": "Microsoft Academic Graph"
+        }
+      },
+      {
+        "alternateIdentifiers": [
+          {
+            "scheme": "mag_id",
+            "value": "3154964776"
+          },
+          {
+            "scheme": "doi",
+            "value": "10.1002/qj.3556"
+          }
+        ],
+        "type": "Other literature type",
+        "urls": [
+          "https://dx.doi.org/10.1002/qj.3556"
+        ],
+        "refereed": "nonPeerReviewed",
+        "hostedBy": {
+          "key": "openaire____::55045bd2a65019fd8e6741a755395c8c",
+          "value": "Unknown Repository"
+        },
+        "collectedFrom": {
+          "key": "openaire____::5f532a3fc4f1ea403f37070f59a7a53a",
+          "value": "Microsoft Academic Graph"
+        }
+      },
+      {
+        "alternateIdentifiers": [
+          {
+            "scheme": "mag_id",
+            "value": "2943177340"
+          },
+          {
+            "scheme": "doi",
+            "value": "10.1002/qj.3556"
+          }
+        ],
+        "type": "Article",
+        "urls": [
+          "https://dx.doi.org/10.1002/qj.3556"
+        ],
+        "refereed": "nonPeerReviewed",
+        "hostedBy": {
+          "key": "openaire____::55045bd2a65019fd8e6741a755395c8c",
+          "value": "Unknown Repository"
+        },
+        "collectedFrom": {
+          "key": "openaire____::5f532a3fc4f1ea403f37070f59a7a53a",
+          "value": "Microsoft Academic Graph"
+        }
+      },
+      {
+        "alternateIdentifiers": [
+          {
+            "scheme": "mag_id",
+            "value": "3154964776"
+          },
+          {
+            "scheme": "doi",
+            "value": "10.1002/qj.3556"
+          }
+        ],
+        "type": "Other literature type",
+        "urls": [
+          "https://dx.doi.org/10.1002/qj.3556"
+        ],
+        "refereed": "nonPeerReviewed",
+        "hostedBy": {
+          "key": "openaire____::55045bd2a65019fd8e6741a755395c8c",
+          "value": "Unknown Repository"
+        },
+        "collectedFrom": {
+          "key": "openaire____::5f532a3fc4f1ea403f37070f59a7a53a",
+          "value": "Microsoft Academic Graph"
+        }
+      }
+    ],
+    "isGreen": true,
+    "isInDiamondJournal": false
+  }
+}

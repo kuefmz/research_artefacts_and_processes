@@ -1,0 +1,17 @@
+{
+  "provider": "publisher",
+  "requested_url": "https://journals.plos.org/plosone/article/file?id=10.1371%2Fjournal.pone.0199550&type=printable",
+  "retrieved_at": "2026-09-30T11:53:40.424667+00:00",
+  "status": "ok",
+  "http_status": 200,
+  "final_url": "https://journals.plos.org/plosone/article/file?id=10.1371%2Fjournal.pone.0199550&type=printable",
+  "sha256": "eb4cd883b9e2241132c5c9580f71ae3c9acfe617af3a26a5834083e3a2058e8d",
+  "content_type": "application/pdf",
+  "local_file": "reproducibility_study/data/papers/de39db5bc16920aaae2d/pdf_0.pdf",
+  "bytes": 14805767,
+  "text_extraction": {
+    "exit_code": 0,
+    "local_file": "reproducibility_study/data/papers/de39db5bc16920aaae2d/pdf_0.txt",
+    "tool": "pdftotext -layout"
+  }
+}

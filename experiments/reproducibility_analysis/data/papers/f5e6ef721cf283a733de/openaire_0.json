@@ -1,0 +1,999 @@
+{
+  "provider": "openaire_graph_v2",
+  "requested_url": "https://api.openaire.eu/graph/v2/researchProducts/doi_dedup___::95da6f53112d833dc4727e8f35be34c9",
+  "retrieved_at": "2026-09-30T11:53:11.375608+00:00",
+  "status": "ok",
+  "http_status": 200,
+  "final_url": "https://api.openaire.eu/graph/v2/researchProducts/doi_dedup___::95da6f53112d833dc4727e8f35be34c9",
+  "sha256": "71b8ae5db3401511f93129c98a0dd5cfc30c3a9f43f20e9360ea22acf8d10157",
+  "content_type": "application/json",
+  "data": {
+    "authors": [
+      {
+        "fullName": "Nathan D. Olson",
+        "name": "Nathan D.",
+        "surname": "Olson",
+        "rank": 1,
+        "pid": {
+          "id": {
+            "scheme": "orcid",
+            "value": "0000-0003-2585-3037"
+          },
+          "provenance": null
+        }
+      },
+      {
+        "fullName": "Justin M. Zook",
+        "name": "Justin M.",
+        "surname": "Zook",
+        "rank": 2,
+        "pid": null
+      },
+      {
+        "fullName": "Daniel V. Samarov",
+        "name": "Daniel V.",
+        "surname": "Samarov",
+        "rank": 3,
+        "pid": null
+      },
+      {
+        "fullName": "Scott A. Jackson",
+        "name": "Scott A.",
+        "surname": "Jackson",
+        "rank": 4,
+        "pid": {
+          "id": {
+            "scheme": "orcid",
+            "value": "0000-0003-4891-8323"
+          },
+          "provenance": null
+        }
+      },
+      {
+        "fullName": "Marc L. Salit",
+        "name": "Marc L.",
+        "surname": "Salit",
+        "rank": 5,
+        "pid": {
+          "id": {
+            "scheme": "orcid",
+            "value": "0000-0003-1624-5195"
+          },
+          "provenance": null
+        }
+      }
+    ],
+    "openAccessColor": "hybrid",
+    "publiclyFunded": false,
+    "type": "publication",
+    "language": {
+      "code": "und",
+      "label": "Undetermined"
+    },
+    "countries": null,
+    "subjects": [
+      {
+        "subject": {
+          "scheme": "FOS",
+          "value": "0301 basic medicine"
+        },
+        "provenance": null
+      },
+      {
+        "subject": {
+          "scheme": "FOS",
+          "value": "0303 health sciences"
+        },
+        "provenance": null
+      },
+      {
+        "subject": {
+          "scheme": "FOS",
+          "value": "03 medical and health sciences"
+        },
+        "provenance": null
+      },
+      {
+        "subject": {
+          "scheme": "keyword",
+          "value": "Genome"
+        },
+        "provenance": null
+      },
+      {
+        "subject": {
+          "scheme": "keyword",
+          "value": "Computational Biology"
+        },
+        "provenance": null
+      },
+      {
+        "subject": {
+          "scheme": "keyword",
+          "value": "High-Throughput Nucleotide Sequencing"
+        },
+        "provenance": null
+      },
+      {
+        "subject": {
+          "scheme": "keyword",
+          "value": "Biochemistry"
+        },
+        "provenance": null
+      },
+      {
+        "subject": {
+          "scheme": "keyword",
+          "value": "Analytical Chemistry"
+        },
+        "provenance": null
+      },
+      {
+        "subject": {
+          "scheme": "keyword",
+          "value": "Research Paper"
+        },
+        "provenance": null
+      },
+      {
+        "subject": {
+          "scheme": "SDG",
+          "value": "3. Good health"
+        },
+        "provenance": null
+      }
+    ],
+    "mainTitle": "PEPR: Pipelines for evaluating prokaryotic references",
+    "subTitle": null,
+    "descriptions": [
+      "<jats:p>                   The rapid adoption of microbial whole genome sequencing in public health, clinical testing, and forensic laboratories requires the use of validated measurement processes. Reference materials that are well characterized, homogeneous, and stable can be used to evaluate measurement processes and help to establish confidence in the results. Given the variety of microbial genome sequencing applications and platforms, as well as the vast microbial genomic diversity, there is a need for application-specific genomic materials for method validation. We have developed a reproducible and transparent bioinformatics tool for characterizing prokaryotic genomic materials; ”PEPR”, Pipelines for Evaluating Prokaryotic References. We demonstrate the tool and its output using sequencing data while developing a                   <jats:italic>Staphylococcus aureus</jats:italic>                   candidate genomic reference material.                 </jats:p>"
+    ],
+    "publicationDate": "2015-10-15",
+    "publisher": "PeerJ",
+    "embargoEndDate": null,
+    "sources": [
+      "Crossref",
+      "Anal Bioanal Chem"
+    ],
+    "formats": null,
+    "contributors": null,
+    "coverages": null,
+    "bestAccessRight": {
+      "code": "c_abf2",
+      "label": "OPEN",
+      "scheme": "http://vocabularies.coar-repositories.org/documentation/access_rights/"
+    },
+    "container": {
+      "name": "Analytical and Bioanalytical Chemistry",
+      "issnPrinted": "1618-2642",
+      "issnOnline": "1618-2650",
+      "issnLinking": null,
+      "ep": "2983",
+      "iss": null,
+      "sp": "2975",
+      "vol": "408",
+      "edition": null,
+      "conferencePlace": null,
+      "conferenceDate": null
+    },
+    "documentationUrls": null,
+    "codeRepositoryUrl": null,
+    "programmingLanguage": null,
+    "contactPeople": null,
+    "contactGroups": null,
+    "tools": null,
+    "size": null,
+    "version": null,
+    "geoLocations": null,
+    "id": "doi_dedup___::95da6f53112d833dc4727e8f35be34c9",
+    "originalIds": [
+      "10.7287/peerj.preprints.1435v1",
+      "50|doiboost____|95da6f53112d833dc4727e8f35be34c9",
+      "9299",
+      "10.1007/s00216-015-9299-5",
+      "50|doiboost____|d1d3ffb8633965244f08f507be5cf222",
+      "od_______267::e0421de0a9b9b72eca368ea9a721beae",
+      "26935931",
+      "PMC4819933",
+      "50|od_______267::e0421de0a9b9b72eca368ea9a721beae",
+      "oai:pubmedcentral.nih.gov:4819933",
+      "https://dev-openaire.d4science.org/RS/Springer-OA/data/Springer-OA/pdf/069/aHR0cDovL2xpbmsuc3ByaW5nZXIuY29tLzEwLjEwMDcvczAwMjE2LTAxNS05Mjk5LTUucGRm.pdf",
+      "50|core_ac_uk__::6905017717abf7bdd65685174dbe9501",
+      "2243233948"
+    ],
+    "pids": [
+      {
+        "scheme": "doi",
+        "value": "10.7287/peerj.preprints.1435v1"
+      },
+      {
+        "scheme": "doi",
+        "value": "10.1007/s00216-015-9299-5"
+      },
+      {
+        "scheme": "pmid",
+        "value": "26935931"
+      },
+      {
+        "scheme": "pmc",
+        "value": "PMC4819933"
+      }
+    ],
+    "dateOfCollection": null,
+    "lastUpdateTimeStamp": null,
+    "indicators": {
+      "citationImpact": {
+        "citationCount": 5.0,
+        "influence": 2.5346012e-09,
+        "popularity": 9.872739e-10,
+        "impulse": 4.0,
+        "citationClass": "C5",
+        "influenceClass": "C5",
+        "impulseClass": "C4",
+        "popularityClass": "C5"
+      }
+    },
+    "projects": null,
+    "organizations": [
+      {
+        "legalName": "Stanford University",
+        "acronym": "SU",
+        "id": "openorgs____::53ee3650a38fe22fbba02a4b2e0a4ed9",
+        "pids": [
+          {
+            "scheme": "FundRef",
+            "value": "100011099"
+          },
+          {
+            "scheme": "fundref",
+            "value": "100020322"
+          },
+          {
+            "scheme": "fundref",
+            "value": "100014495"
+          },
+          {
+            "scheme": "FundRef",
+            "value": "100013720"
+          },
+          {
+            "scheme": "fundref",
+            "value": "100011099"
+          },
+          {
+            "scheme": "FundRef",
+            "value": "100018793"
+          },
+          {
+            "scheme": "fundref",
+            "value": "100014493"
+          },
+          {
+            "scheme": "FundRef",
+            "value": "100010869"
+          },
+          {
+            "scheme": "fundref",
+            "value": "100014750"
+          },
+          {
+            "scheme": "fundref",
+            "value": "100010868"
+          },
+          {
+            "scheme": "FundRef",
+            "value": "100005541"
+          },
+          {
+            "scheme": "RRID",
+            "value": "RRID:nlx_44253"
+          },
+          {
+            "scheme": "fundref",
+            "value": "100010865"
+          },
+          {
+            "scheme": "OrgRef",
+            "value": "435330"
+          },
+          {
+            "scheme": "FundRef",
+            "value": "100010870"
+          },
+          {
+            "scheme": "fundref",
+            "value": "100010864"
+          },
+          {
+            "scheme": "FundRef",
+            "value": "100012502"
+          },
+          {
+            "scheme": "fundref",
+            "value": "100010866"
+          },
+          {
+            "scheme": "fundref",
+            "value": "100010867"
+          },
+          {
+            "scheme": "FundRef",
+            "value": "100014498"
+          },
+          {
+            "scheme": "FundRef",
+            "value": "100005575"
+          },
+          {
+            "scheme": "FundRef",
+            "value": "100014374"
+          },
+          {
+            "scheme": "FundRef",
+            "value": "100014496"
+          },
+          {
+            "scheme": "FundRef",
+            "value": "100006521"
+          },
+          {
+            "scheme": "fundref",
+            "value": "100005575"
+          },
+          {
+            "scheme": "FundRef",
+            "value": "100005492"
+          },
+          {
+            "scheme": "FundRef",
+            "value": "100016959"
+          },
+          {
+            "scheme": "mag_id",
+            "value": "97018004"
+          },
+          {
+            "scheme": "fundref",
+            "value": "100014498"
+          },
+          {
+            "scheme": "fundref",
+            "value": "100022370"
+          },
+          {
+            "scheme": "FundRef",
+            "value": "100011098"
+          },
+          {
+            "scheme": "FundRef",
+            "value": "100022370"
+          },
+          {
+            "scheme": "fundref",
+            "value": "100011098"
+          },
+          {
+            "scheme": "fundref",
+            "value": "100010863"
+          },
+          {
+            "scheme": "GRID",
+            "value": "grid.168010.e"
+          },
+          {
+            "scheme": "wikidata",
+            "value": "Q1754977"
+          },
+          {
+            "scheme": "fundref",
+            "value": "100016959"
+          },
+          {
+            "scheme": "fundref",
+            "value": "100013720"
+          },
+          {
+            "scheme": "Wikidata",
+            "value": "Q1754977"
+          },
+          {
+            "scheme": "fundref",
+            "value": "100012502"
+          },
+          {
+            "scheme": "fundref",
+            "value": "100006521"
+          },
+          {
+            "scheme": "FundRef",
+            "value": "100020322"
+          },
+          {
+            "scheme": "fundref",
+            "value": "100014373"
+          },
+          {
+            "scheme": "FundRef",
+            "value": "100006100"
+          },
+          {
+            "scheme": "wikidata",
+            "value": "Q41506"
+          },
+          {
+            "scheme": "fundref",
+            "value": "100014494"
+          },
+          {
+            "scheme": "FundRef",
+            "value": "100014373"
+          },
+          {
+            "scheme": "fundref",
+            "value": "100014496"
+          },
+          {
+            "scheme": "FundRef",
+            "value": "100013120"
+          },
+          {
+            "scheme": "fundref",
+            "value": "100008643"
+          },
+          {
+            "scheme": "fundref",
+            "value": "100014374"
+          },
+          {
+            "scheme": "fundref",
+            "value": "100010870"
+          },
+          {
+            "scheme": "FundRef",
+            "value": "100010865"
+          },
+          {
+            "scheme": "fundref",
+            "value": "100010869"
+          },
+          {
+            "scheme": "ROR",
+            "value": "https://ror.org/00f54p054"
+          },
+          {
+            "scheme": "fundref",
+            "value": "100013120"
+          },
+          {
+            "scheme": "FundRef",
+            "value": "100014495"
+          },
+          {
+            "scheme": "fundref",
+            "value": "100006382"
+          },
+          {
+            "scheme": "FundRef",
+            "value": "100014750"
+          },
+          {
+            "scheme": "FundRef",
+            "value": "100006057"
+          },
+          {
+            "scheme": "FundRef",
+            "value": "100014494"
+          },
+          {
+            "scheme": "FundRef",
+            "value": "100010867"
+          },
+          {
+            "scheme": "fundref",
+            "value": "100006057"
+          },
+          {
+            "scheme": "fundref",
+            "value": "100005492"
+          },
+          {
+            "scheme": "FundRef",
+            "value": "100006382"
+          },
+          {
+            "scheme": "fundref",
+            "value": "100006100"
+          },
+          {
+            "scheme": "RRID",
+            "value": "RRID:SCR_011538"
+          },
+          {
+            "scheme": "FundRef",
+            "value": "100010863"
+          },
+          {
+            "scheme": "FundRef",
+            "value": "100010868"
+          },
+          {
+            "scheme": "fundref",
+            "value": "100006598"
+          },
+          {
+            "scheme": "FundRef",
+            "value": "100010864"
+          },
+          {
+            "scheme": "FundRef",
+            "value": "100010866"
+          },
+          {
+            "scheme": "OrgRef",
+            "value": "452927"
+          },
+          {
+            "scheme": "ISNI",
+            "value": "0000000419368956"
+          },
+          {
+            "scheme": "fundref",
+            "value": "100016667"
+          },
+          {
+            "scheme": "OrgRef",
+            "value": "382431"
+          },
+          {
+            "scheme": "FundRef",
+            "value": "100014493"
+          },
+          {
+            "scheme": "Wikidata",
+            "value": "Q41506"
+          },
+          {
+            "scheme": "FundRef",
+            "value": "100006598"
+          },
+          {
+            "scheme": "FundRef",
+            "value": "100016667"
+          },
+          {
+            "scheme": "fundref",
+            "value": "100005541"
+          },
+          {
+            "scheme": "fundref",
+            "value": "100018793"
+          },
+          {
+            "scheme": "FundRef",
+            "value": "100008643"
+          },
+          {
+            "scheme": "OrgRef",
+            "value": "26977"
+          }
+        ]
+      },
+      {
+        "legalName": "Information Technology Laboratory",
+        "acronym": "ITL",
+        "id": "openorgs____::119f8370492c60ead4ef1e16ea1eaaee",
+        "pids": [
+          {
+            "scheme": "GRID",
+            "value": "grid.507874.9"
+          },
+          {
+            "scheme": "ISNI",
+            "value": "0000000406479411"
+          },
+          {
+            "scheme": "fundref",
+            "value": "100007764"
+          },
+          {
+            "scheme": "wikidata",
+            "value": "Q97040332"
+          },
+          {
+            "scheme": "Wikidata",
+            "value": "Q97040332"
+          },
+          {
+            "scheme": "ROR",
+            "value": "https://ror.org/0440c3437"
+          },
+          {
+            "scheme": "FundRef",
+            "value": "100007764"
+          }
+        ]
+      },
+      {
+        "legalName": "Material Measurement Laboratory",
+        "acronym": "MML",
+        "id": "openorgs____::2d1ba3569df3ea5acebc0dfb0bf7cd20",
+        "pids": [
+          {
+            "scheme": "wikidata",
+            "value": "Q97040310"
+          },
+          {
+            "scheme": "fundref",
+            "value": "100007767"
+          },
+          {
+            "scheme": "ISNI",
+            "value": "0000000406479307"
+          },
+          {
+            "scheme": "GRID",
+            "value": "grid.507869.5"
+          },
+          {
+            "scheme": "FundRef",
+            "value": "100007767"
+          },
+          {
+            "scheme": "ROR",
+            "value": "https://ror.org/04a0y3b96"
+          },
+          {
+            "scheme": "Wikidata",
+            "value": "Q97040310"
+          }
+        ]
+      },
+      {
+        "legalName": "National Institute of Standards and Technology",
+        "acronym": "NIST",
+        "id": "openorgs____::5fb2bbcddbf0ea21870dbee8467526a4",
+        "pids": [
+          {
+            "scheme": "ROR",
+            "value": "https://ror.org/05xpvk416"
+          },
+          {
+            "scheme": "GRID",
+            "value": "grid.94225.38"
+          },
+          {
+            "scheme": "ISNI",
+            "value": "000000012158463X"
+          },
+          {
+            "scheme": "ISNI",
+            "value": "0000000405068207"
+          },
+          {
+            "scheme": "RRID",
+            "value": "RRID:SCR_006440"
+          },
+          {
+            "scheme": "RRID",
+            "value": "RRID:nlx_144073"
+          },
+          {
+            "scheme": "Wikidata",
+            "value": "Q176691"
+          },
+          {
+            "scheme": "OrgRef",
+            "value": "21888"
+          },
+          {
+            "scheme": "ROR",
+            "value": "https://ror.org/016s8vs02"
+          },
+          {
+            "scheme": "FundRef",
+            "value": "100000161"
+          },
+          {
+            "scheme": "wikidata",
+            "value": "Q176691"
+          },
+          {
+            "scheme": "mag_id",
+            "value": "1321296531"
+          },
+          {
+            "scheme": "fundref",
+            "value": "100000161"
+          }
+        ]
+      },
+      {
+        "legalName": "Department of Bioengineering University of California San Diego",
+        "acronym": "Department of Bioengineering University of California San Diego",
+        "id": "pending_org_::e6a9d8981abe0dc488b98b2671f8e3c0",
+        "pids": null
+      }
+    ],
+    "communities": null,
+    "collectedFrom": [
+      {
+        "key": "openaire____::0a836ef43dcb67bb7cbd4dd509b11b73",
+        "value": "CORE (RIOXX-UK Aggregator)"
+      },
+      {
+        "key": "openaire____::8ac8380272269217cb09a928c8caa993",
+        "value": "UnpayWall"
+      },
+      {
+        "key": "openaire____::081b82f96300b6a6e3d282bad31cb6e2",
+        "value": "Crossref"
+      },
+      {
+        "key": "openaire____::5f532a3fc4f1ea403f37070f59a7a53a",
+        "value": "Microsoft Academic Graph"
+      },
+      {
+        "key": "opendoar____::8b6dd7db9af49e67306feb59a8bdc52c",
+        "value": "Europe PubMed Central"
+      },
+      {
+        "key": "opendoar____::eda80a3d5b344bc40f3bc04f65b7a357",
+        "value": "PubMed Central"
+      }
+    ],
+    "instances": [
+      {
+        "pids": [
+          {
+            "scheme": "doi",
+            "value": "10.7287/peerj.preprints.1435v1"
+          }
+        ],
+        "license": "CC BY",
+        "accessRight": {
+          "code": "c_abf2",
+          "label": "OPEN",
+          "scheme": "http://vocabularies.coar-repositories.org/documentation/access_rights/",
+          "openAccessRoute": "hybrid"
+        },
+        "type": "Article",
+        "urls": [
+          "https://doi.org/10.7287/peerj.preprints.1435v1"
+        ],
+        "publicationDate": "2015-10-15",
+        "refereed": "peerReviewed",
+        "hostedBy": {
+          "key": "openaire____::55045bd2a65019fd8e6741a755395c8c",
+          "value": "Unknown Repository"
+        },
+        "collectedFrom": {
+          "key": "openaire____::081b82f96300b6a6e3d282bad31cb6e2",
+          "value": "Crossref"
+        }
+      },
+      {
+        "pids": [
+          {
+            "scheme": "doi",
+            "value": "10.7287/peerj.preprints.1435v1"
+          }
+        ],
+        "accessRight": {
+          "code": "c_abf2",
+          "label": "OPEN",
+          "scheme": "http://vocabularies.coar-repositories.org/documentation/access_rights/",
+          "openAccessRoute": "green"
+        },
+        "type": "Article",
+        "urls": [
+          "https://doi.org/10.7287/peerj.preprints.1435v1"
+        ],
+        "refereed": "nonPeerReviewed",
+        "hostedBy": {
+          "key": "openaire____::55045bd2a65019fd8e6741a755395c8c",
+          "value": "Unknown Repository"
+        },
+        "collectedFrom": {
+          "key": "openaire____::8ac8380272269217cb09a928c8caa993",
+          "value": "UnpayWall"
+        }
+      },
+      {
+        "pids": [
+          {
+            "scheme": "doi",
+            "value": "10.1007/s00216-015-9299-5"
+          }
+        ],
+        "license": "CC BY",
+        "accessRight": {
+          "code": "c_abf2",
+          "label": "OPEN",
+          "scheme": "http://vocabularies.coar-repositories.org/documentation/access_rights/",
+          "openAccessRoute": "hybrid"
+        },
+        "type": "Article",
+        "urls": [
+          "https://doi.org/10.1007/s00216-015-9299-5"
+        ],
+        "publicationDate": "2016-03-02",
+        "refereed": "peerReviewed",
+        "hostedBy": {
+          "key": "issn___print::0c8a753d46950b5f41d9c56dad47b8cc",
+          "value": "Analytical and Bioanalytical Chemistry"
+        },
+        "collectedFrom": {
+          "key": "openaire____::081b82f96300b6a6e3d282bad31cb6e2",
+          "value": "Crossref"
+        }
+      },
+      {
+        "pids": [
+          {
+            "scheme": "doi",
+            "value": "10.1007/s00216-015-9299-5"
+          }
+        ],
+        "license": "CC BY",
+        "accessRight": {
+          "code": "c_abf2",
+          "label": "OPEN",
+          "scheme": "http://vocabularies.coar-repositories.org/documentation/access_rights/",
+          "openAccessRoute": "hybrid"
+        },
+        "type": "Article",
+        "urls": [
+          "https://link.springer.com/content/pdf/10.1007%2Fs00216-015-9299-5.pdf"
+        ],
+        "refereed": "nonPeerReviewed",
+        "hostedBy": {
+          "key": "issn___print::0c8a753d46950b5f41d9c56dad47b8cc",
+          "value": "Analytical and Bioanalytical Chemistry"
+        },
+        "collectedFrom": {
+          "key": "openaire____::8ac8380272269217cb09a928c8caa993",
+          "value": "UnpayWall"
+        }
+      },
+      {
+        "pids": [
+          {
+            "scheme": "pmid",
+            "value": "26935931"
+          },
+          {
+            "scheme": "pmc",
+            "value": "PMC4819933"
+          }
+        ],
+        "alternateIdentifiers": [
+          {
+            "scheme": "doi",
+            "value": "10.1007/s00216-015-9299-5"
+          }
+        ],
+        "type": "Article",
+        "urls": [
+          "https://pubmed.ncbi.nlm.nih.gov/26935931"
+        ],
+        "publicationDate": "2016-12-13",
+        "refereed": "nonPeerReviewed",
+        "hostedBy": {
+          "key": "issn___print::0c8a753d46950b5f41d9c56dad47b8cc",
+          "value": "Analytical and Bioanalytical Chemistry"
+        },
+        "collectedFrom": {
+          "key": "opendoar____::8b6dd7db9af49e67306feb59a8bdc52c",
+          "value": "Europe PubMed Central"
+        }
+      },
+      {
+        "alternateIdentifiers": [
+          {
+            "scheme": "doi",
+            "value": "10.1007/s00216-015-9299-5"
+          }
+        ],
+        "accessRight": {
+          "code": "c_abf2",
+          "label": "OPEN",
+          "scheme": "http://vocabularies.coar-repositories.org/documentation/access_rights/",
+          "openAccessRoute": null
+        },
+        "type": "Article",
+        "urls": [
+          "http://dx.doi.org/10.1007/s00216-015-9299-5"
+        ],
+        "publicationDate": "2016-03-02",
+        "refereed": "nonPeerReviewed",
+        "hostedBy": {
+          "key": "opendoar____::eda80a3d5b344bc40f3bc04f65b7a357",
+          "value": "PubMed Central"
+        },
+        "collectedFrom": {
+          "key": "opendoar____::eda80a3d5b344bc40f3bc04f65b7a357",
+          "value": "PubMed Central"
+        }
+      },
+      {
+        "alternateIdentifiers": [
+          {
+            "scheme": "doi",
+            "value": "10.1007/s00216-015-9299-5"
+          }
+        ],
+        "accessRight": {
+          "code": "c_abf2",
+          "label": "OPEN",
+          "scheme": "http://vocabularies.coar-repositories.org/documentation/access_rights/",
+          "openAccessRoute": null
+        },
+        "type": "Article",
+        "urls": [
+          "http://dx.doi.org/10.1007/s00216-015-9299-5"
+        ],
+        "refereed": "nonPeerReviewed",
+        "hostedBy": {
+          "key": "issn___print::0c8a753d46950b5f41d9c56dad47b8cc",
+          "value": "Analytical and Bioanalytical Chemistry"
+        },
+        "collectedFrom": {
+          "key": "openaire____::0a836ef43dcb67bb7cbd4dd509b11b73",
+          "value": "CORE (RIOXX-UK Aggregator)"
+        }
+      },
+      {
+        "alternateIdentifiers": [
+          {
+            "scheme": "mag_id",
+            "value": "2243233948"
+          },
+          {
+            "scheme": "doi",
+            "value": "10.1007/s00216-015-9299-5"
+          }
+        ],
+        "type": "Article",
+        "urls": [
+          "https://dx.doi.org/10.1007/s00216-015-9299-5"
+        ],
+        "refereed": "nonPeerReviewed",
+        "hostedBy": {
+          "key": "openaire____::55045bd2a65019fd8e6741a755395c8c",
+          "value": "Unknown Repository"
+        },
+        "collectedFrom": {
+          "key": "openaire____::5f532a3fc4f1ea403f37070f59a7a53a",
+          "value": "Microsoft Academic Graph"
+        }
+      },
+      {
+        "alternateIdentifiers": [
+          {
+            "scheme": "mag_id",
+            "value": "2243233948"
+          },
+          {
+            "scheme": "doi",
+            "value": "10.1007/s00216-015-9299-5"
+          }
+        ],
+        "type": "Article",
+        "urls": [
+          "https://dx.doi.org/10.1007/s00216-015-9299-5"
+        ],
+        "refereed": "nonPeerReviewed",
+        "hostedBy": {
+          "key": "openaire____::55045bd2a65019fd8e6741a755395c8c",
+          "value": "Unknown Repository"
+        },
+        "collectedFrom": {
+          "key": "openaire____::5f532a3fc4f1ea403f37070f59a7a53a",
+          "value": "Microsoft Academic Graph"
+        }
+      }
+    ],
+    "isGreen": true,
+    "isInDiamondJournal": false
+  }
+}

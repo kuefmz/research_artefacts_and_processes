@@ -1,0 +1,17 @@
+{
+  "provider": "openalex_oa_location",
+  "requested_url": "https://doi.org/10.54546/mlit.2021.26.74.001",
+  "retrieved_at": "2026-09-30T11:54:04.512819+00:00",
+  "status": "ok",
+  "http_status": 200,
+  "final_url": "https://ceur-ws.org/Vol-3041/256-260-paper-47.pdf",
+  "sha256": "dbafcefbe841b605dfcf18eb7fa3878f8e966fa06a4edf829a7d530ee5f9e46f",
+  "content_type": "application/pdf",
+  "local_file": "reproducibility_study/data/papers/5cb59bd6295c46bfcd0f/pdf_0.pdf",
+  "bytes": 627713,
+  "text_extraction": {
+    "exit_code": 0,
+    "local_file": "reproducibility_study/data/papers/5cb59bd6295c46bfcd0f/pdf_0.txt",
+    "tool": "pdftotext -layout"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "paper_id": "3b1717c36e0e969130d5",
+  "candidates": [
+    {
+      "source": "openalex_oa_location",
+      "url": "https://iopscience.iop.org/article/10.1088/1742-6596/1015/3/032055/pdf"
+    },
+    {
+      "source": "crossref_pdf_link_access_unverified",
+      "url": "http://stacks.iop.org/1742-6596/1015/i=3/a=032055/pdf"
+    }
+  ],
+  "identity_status": "unreviewed",
+  "note": "Discovery is incomplete; no full-text landing-page crawler. Downloads do not establish redistribution permission."
+}

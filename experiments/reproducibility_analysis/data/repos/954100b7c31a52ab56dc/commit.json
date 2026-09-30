@@ -1,0 +1,128 @@
+{
+  "provider": "github",
+  "requested_url": "https://api.github.com/repos/PanDAWMS/dkb/commits/master",
+  "retrieved_at": "2026-09-30T11:52:37.270611+00:00",
+  "status": "ok",
+  "http_status": 200,
+  "final_url": "https://api.github.com/repos/PanDAWMS/dkb/commits/master",
+  "sha256": "91835109017aee962ae510be7df41be4bfca83bc39a136a289d65d8ad4c83bba",
+  "content_type": "application/json; charset=utf-8",
+  "data": {
+    "sha": "7fd628574eaf50d5635baf89a417c7ed943d17fd",
+    "node_id": "C_kwDOBVUsy9oAKDdmZDYyODU3NGVhZjUwZDU2MzViYWY4OWE0MTdjN2VkOTQzZDE3ZmQ",
+    "commit": {
+      "author": {
+        "name": "witxka",
+        "email": "39950520+witxka@users.noreply.github.com",
+        "date": "2025-09-22T08:11:09Z"
+      },
+      "committer": {
+        "name": "GitHub",
+        "email": "noreply@github.com",
+        "date": "2025-09-22T08:11:09Z"
+      },
+      "message": "Merge pull request #452 from PanDAWMS/issue_451_remove_ChicagoES\n\nIssue 451 remove chicago es",
+      "tree": {
+        "sha": "8f2ab8aa8c23613da7670df1e1d8723ee374dd2d",
+        "url": "https://api.github.com/repos/PanDAWMS/dkb/git/trees/8f2ab8aa8c23613da7670df1e1d8723ee374dd2d"
+      },
+      "url": "https://api.github.com/repos/PanDAWMS/dkb/git/commits/7fd628574eaf50d5635baf89a417c7ed943d17fd",
+      "comment_count": 0,
+      "verification": {
+        "verified": true,
+        "reason": "valid",
+        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJo0QSdCRC1aQ7uu5UhlAAAk4wQAHfg7vyw70IytqkwTvxSXq6e\nfgsPX04LUFg/rTbz2efufYt0eofg9P8S0w3FRGFpV9bqC5MmtW7iXPl8DE1TvFEY\nVAi2PY4GONRe+WtPrB9+RLPzzNHPFQuxnbGh/Tf4spTJoa0tDWu7q1sk/FOtfGdO\n6W0TKnuTdn6EnkGG9on1ylndufGqO3UHHVyEpKJpPHnKxSPNvQRmMlYDlDyVs23V\nr5llxCYsYzA+SIldCNf9F4baJT89CaGddSktrG2MqoH3hQ7XXF8fcHvmBJy9EN8O\nnKnlTLqeiP+zdAygYuafpYNWy/fq+XTAcjdY3RodCDNp7OZ1jOh1Iu8EcqiEcynD\nscoAFSyyGm9qOwg3Kquato4V5uckAQC7sNVqVNDyUUzBopUQjYgTsVW9MJCZBnSX\n6xXMqdIIYGsYb0UNaCQu+45SeZ42QMNrfes9Ng0p/W22OJRP3gCOh5HRsG3iWyMD\n8ox9ON5L0OUCyS6WNkdRwS49j/TrVWXg87vY54vYKuJ68Yh5SnD8v6k3z5fKPAsg\n+iw6ZbtZsRgB7v56MurxXtK6gNeQy6QakUwwMsPxOT0BnnisKLqJRyMSDalzJjcT\nCKql7J2ckWBCAy1boTRTalQACNgt132Ki73CVN+Lii9ZuJEb9P40dANc0U3uHawj\ntpiUXHoYAUBmdVFji66E\n=Iego\n-----END PGP SIGNATURE-----\n",
+        "payload": "tree 8f2ab8aa8c23613da7670df1e1d8723ee374dd2d\nparent 54cbb6d7ea7978e1d46c26ab72eb6232476ea4bc\nparent 9b9afb070dde42507deb47eac8eb6494ff60cd2d\nauthor witxka <39950520+witxka@users.noreply.github.com> 1758528669 +0300\ncommitter GitHub <noreply@github.com> 1758528669 +0300\n\nMerge pull request #452 from PanDAWMS/issue_451_remove_ChicagoES\n\nIssue 451 remove chicago es",
+        "verified_at": "2025-09-22T08:11:09Z"
+      }
+    },
+    "url": "https://api.github.com/repos/PanDAWMS/dkb/commits/7fd628574eaf50d5635baf89a417c7ed943d17fd",
+    "html_url": "https://github.com/PanDAWMS/dkb/commit/7fd628574eaf50d5635baf89a417c7ed943d17fd",
+    "comments_url": "https://api.github.com/repos/PanDAWMS/dkb/commits/7fd628574eaf50d5635baf89a417c7ed943d17fd/comments",
+    "author": {
+      "login": "witxka",
+      "id": 39950520,
+      "node_id": "MDQ6VXNlcjM5OTUwNTIw",
+      "avatar_url": "https://avatars.githubusercontent.com/u/39950520?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/witxka",
+      "html_url": "https://github.com/witxka",
+      "followers_url": "https://api.github.com/users/witxka/followers",
+      "following_url": "https://api.github.com/users/witxka/following{/other_user}",
+      "gists_url": "https://api.github.com/users/witxka/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/witxka/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/witxka/subscriptions",
+      "organizations_url": "https://api.github.com/users/witxka/orgs",
+      "repos_url": "https://api.github.com/users/witxka/repos",
+      "events_url": "https://api.github.com/users/witxka/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/witxka/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "web-flow",
+      "id": 19864447,
+      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/web-flow",
+      "html_url": "https://github.com/web-flow",
+      "followers_url": "https://api.github.com/users/web-flow/followers",
+      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+      "organizations_url": "https://api.github.com/users/web-flow/orgs",
+      "repos_url": "https://api.github.com/users/web-flow/repos",
+      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/web-flow/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "54cbb6d7ea7978e1d46c26ab72eb6232476ea4bc",
+        "url": "https://api.github.com/repos/PanDAWMS/dkb/commits/54cbb6d7ea7978e1d46c26ab72eb6232476ea4bc",
+        "html_url": "https://github.com/PanDAWMS/dkb/commit/54cbb6d7ea7978e1d46c26ab72eb6232476ea4bc"
+      },
+      {
+        "sha": "9b9afb070dde42507deb47eac8eb6494ff60cd2d",
+        "url": "https://api.github.com/repos/PanDAWMS/dkb/commits/9b9afb070dde42507deb47eac8eb6494ff60cd2d",
+        "html_url": "https://github.com/PanDAWMS/dkb/commit/9b9afb070dde42507deb47eac8eb6494ff60cd2d"
+      }
+    ],
+    "stats": {
+      "total": 7,
+      "additions": 5,
+      "deletions": 2
+    },
+    "files": [
+      {
+        "sha": "060d5a38352616de3179de8191202c84faac9a53",
+        "filename": "Installation/Docker/AL9/Dockerfile",
+        "status": "modified",
+        "additions": 5,
+        "deletions": 1,
+        "changes": 6,
+        "blob_url": "https://github.com/PanDAWMS/dkb/blob/7fd628574eaf50d5635baf89a417c7ed943d17fd/Installation%2FDocker%2FAL9%2FDockerfile",
+        "raw_url": "https://github.com/PanDAWMS/dkb/raw/7fd628574eaf50d5635baf89a417c7ed943d17fd/Installation%2FDocker%2FAL9%2FDockerfile",
+        "contents_url": "https://api.github.com/repos/PanDAWMS/dkb/contents/Installation%2FDocker%2FAL9%2FDockerfile?ref=7fd628574eaf50d5635baf89a417c7ed943d17fd",
+        "patch": "@@ -41,7 +41,11 @@ RUN mkdir ${DKB_DIR} \\\n   && \\\n     sh ./Miniconda3-latest-Linux-x86_64.sh -b -p /opt/dkb3/miniconda3 -s -m \\\n   && \\\n-    source \"/opt/dkb3/miniconda3/etc/profile.d/conda.sh\" \\ \n+    source \"/opt/dkb3/miniconda3/etc/profile.d/conda.sh\" \\\n+  && \\\n+    conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/main \\\n+  && \\\n+    conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/r \\\n   && \\\n     conda create -y -n dkb_python_3_9 python=3.9 \\\n   && \\"
+      },
+      {
+        "sha": "458e54d1c7ff1565e14962e45cfaca7cb80f9050",
+        "filename": "Utils/Dataflow/data4es/run/data4es-start",
+        "status": "modified",
+        "additions": 0,
+        "deletions": 1,
+        "changes": 1,
+        "blob_url": "https://github.com/PanDAWMS/dkb/blob/7fd628574eaf50d5635baf89a417c7ed943d17fd/Utils%2FDataflow%2Fdata4es%2Frun%2Fdata4es-start",
+        "raw_url": "https://github.com/PanDAWMS/dkb/raw/7fd628574eaf50d5635baf89a417c7ed943d17fd/Utils%2FDataflow%2Fdata4es%2Frun%2Fdata4es-start",
+        "contents_url": "https://api.github.com/repos/PanDAWMS/dkb/contents/Utils%2FDataflow%2Fdata4es%2Frun%2Fdata4es-start?ref=7fd628574eaf50d5635baf89a417c7ed943d17fd",
+        "patch": "@@ -240,7 +240,6 @@ source_chain() {\n \n process_chain() {\n   cat $b_process | run_stage '91' | eop_filter \\\n-                 | run_stage '25' | eop_filter \\\n                  | run_stage '16' | eop_filter \\\n                  | run_stage '17' | eop_filter \\\n                  | run_stage '40' | eop_filter \\"
+      }
+    ]
+  }
+}

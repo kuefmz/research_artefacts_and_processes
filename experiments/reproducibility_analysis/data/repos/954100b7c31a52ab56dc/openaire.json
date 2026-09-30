@@ -1,0 +1,182 @@
+{
+  "provider": "openaire_graph_v2",
+  "requested_url": "https://api.openaire.eu/graph/v2/researchProducts/openaire____::8a36007b111fe1d63a04ef6a4e3758b9",
+  "retrieved_at": "2026-09-30T11:52:27.071297+00:00",
+  "status": "ok",
+  "http_status": 200,
+  "final_url": "https://api.openaire.eu/graph/v2/researchProducts/openaire____::8a36007b111fe1d63a04ef6a4e3758b9",
+  "sha256": "3a6b5734397a6fad10b3a818e4ab343111121c2416eb6ee2f47623205add4b61",
+  "content_type": "application/json",
+  "data": {
+    "authors": null,
+    "openAccessColor": null,
+    "publiclyFunded": null,
+    "type": "software",
+    "language": {
+      "code": "und",
+      "label": "Undetermined"
+    },
+    "countries": null,
+    "subjects": [
+      {
+        "subject": {
+          "scheme": "FOS",
+          "value": "0202 electrical engineering, electronic engineering, information engineering"
+        },
+        "provenance": null
+      },
+      {
+        "subject": {
+          "scheme": "FOS",
+          "value": "02 engineering and technology"
+        },
+        "provenance": null
+      }
+    ],
+    "mainTitle": "dkb software on GitHub",
+    "subTitle": null,
+    "descriptions": [
+      "Data Knowledge Base for HENP experiments"
+    ],
+    "publicationDate": null,
+    "publisher": null,
+    "embargoEndDate": null,
+    "sources": null,
+    "formats": null,
+    "contributors": null,
+    "coverages": null,
+    "bestAccessRight": {
+      "code": "c_abf2",
+      "label": "OPEN",
+      "scheme": "http://vocabularies.coar-repositories.org/documentation/access_rights/"
+    },
+    "container": null,
+    "documentationUrls": null,
+    "codeRepositoryUrl": "https://github.com/PanDAWMS/dkb",
+    "programmingLanguage": null,
+    "contactPeople": null,
+    "contactGroups": null,
+    "tools": null,
+    "size": null,
+    "version": null,
+    "geoLocations": null,
+    "id": "openaire____::8a36007b111fe1d63a04ef6a4e3758b9",
+    "originalIds": null,
+    "pids": null,
+    "dateOfCollection": null,
+    "lastUpdateTimeStamp": null,
+    "indicators": {
+      "citationImpact": {
+        "citationCount": 0.0,
+        "influence": 2.1746283e-09,
+        "popularity": 1.8198539e-10,
+        "impulse": 0.0,
+        "citationClass": "C5",
+        "influenceClass": "C5",
+        "impulseClass": "C5",
+        "popularityClass": "C5"
+      }
+    },
+    "projects": null,
+    "organizations": null,
+    "communities": null,
+    "collectedFrom": [
+      {
+        "key": "openaire____::d3b7c913cd04ebfec0e9ec32cb6fd58c",
+        "value": "GitHub"
+      },
+      {
+        "key": "openaire____::dbfd07503aaa1ed31beed7dec942f3f4",
+        "value": "Software Heritage"
+      }
+    ],
+    "instances": [
+      {
+        "accessRight": {
+          "code": "c_abf2",
+          "label": "OPEN",
+          "scheme": "http://vocabularies.coar-repositories.org/documentation/access_rights/",
+          "openAccessRoute": null
+        },
+        "type": "Software",
+        "urls": [
+          "https://github.com/PanDAWMS/dkb"
+        ],
+        "refereed": "nonPeerReviewed",
+        "hostedBy": {
+          "key": "openaire____::d3b7c913cd04ebfec0e9ec32cb6fd58c",
+          "value": "GitHub"
+        },
+        "collectedFrom": {
+          "key": "openaire____::dbfd07503aaa1ed31beed7dec942f3f4",
+          "value": "Software Heritage"
+        }
+      },
+      {
+        "accessRight": {
+          "code": "c_abf2",
+          "label": "OPEN",
+          "scheme": "http://vocabularies.coar-repositories.org/documentation/access_rights/",
+          "openAccessRoute": null
+        },
+        "type": "Software",
+        "urls": [
+          "https://archive.softwareheritage.org/browse/origin/https://github.com/PanDAWMS/dkb"
+        ],
+        "refereed": "nonPeerReviewed",
+        "hostedBy": {
+          "key": "openaire____::dbfd07503aaa1ed31beed7dec942f3f4",
+          "value": "Software Heritage"
+        },
+        "collectedFrom": {
+          "key": "openaire____::dbfd07503aaa1ed31beed7dec942f3f4",
+          "value": "Software Heritage"
+        }
+      },
+      {
+        "accessRight": {
+          "code": "c_abf2",
+          "label": "OPEN",
+          "scheme": "http://vocabularies.coar-repositories.org/documentation/access_rights/",
+          "openAccessRoute": null
+        },
+        "type": "Software",
+        "urls": [
+          "https://github.com/PanDAWMS/dkb"
+        ],
+        "refereed": "nonPeerReviewed",
+        "hostedBy": {
+          "key": "openaire____::d3b7c913cd04ebfec0e9ec32cb6fd58c",
+          "value": "GitHub"
+        },
+        "collectedFrom": {
+          "key": "openaire____::dbfd07503aaa1ed31beed7dec942f3f4",
+          "value": "Software Heritage"
+        }
+      },
+      {
+        "accessRight": {
+          "code": "c_abf2",
+          "label": "OPEN",
+          "scheme": "http://vocabularies.coar-repositories.org/documentation/access_rights/",
+          "openAccessRoute": null
+        },
+        "type": "Software",
+        "urls": [
+          "https://archive.softwareheritage.org/browse/origin/https://github.com/PanDAWMS/dkb"
+        ],
+        "refereed": "nonPeerReviewed",
+        "hostedBy": {
+          "key": "openaire____::dbfd07503aaa1ed31beed7dec942f3f4",
+          "value": "Software Heritage"
+        },
+        "collectedFrom": {
+          "key": "openaire____::dbfd07503aaa1ed31beed7dec942f3f4",
+          "value": "Software Heritage"
+        }
+      }
+    ],
+    "isGreen": null,
+    "isInDiamondJournal": null
+  }
+}

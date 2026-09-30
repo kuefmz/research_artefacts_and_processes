@@ -1,0 +1,122 @@
+{
+  "provider": "github",
+  "requested_url": "https://api.github.com/repos/abezuglov/ANN/commits/master",
+  "retrieved_at": "2026-09-30T11:53:13.771340+00:00",
+  "status": "ok",
+  "http_status": 200,
+  "final_url": "https://api.github.com/repos/abezuglov/ANN/commits/master",
+  "sha256": "083ecebce213a48264a4ad30feab60dec8889ff9c0de121ff1490baf4fc04b7c",
+  "content_type": "application/json; charset=utf-8",
+  "data": {
+    "sha": "f0d1799fba7c06f332e294706e939b52d22a1cd6",
+    "node_id": "MDY6Q29tbWl0NTU4MTE5MDc6ZjBkMTc5OWZiYTdjMDZmMzMyZTI5NDcwNmU5MzliNTJkMjJhMWNkNg==",
+    "commit": {
+      "author": {
+        "name": "Anton Bezuglov",
+        "email": "abezuglov@gmail.com",
+        "date": "2016-10-17T22:11:31Z"
+      },
+      "committer": {
+        "name": "Anton Bezuglov",
+        "email": "abezuglov@gmail.com",
+        "date": "2016-10-17T22:11:31Z"
+      },
+      "message": "Work on LSTM models",
+      "tree": {
+        "sha": "61943a42101b8512636261d28465dd86fca8cd96",
+        "url": "https://api.github.com/repos/abezuglov/ANN/git/trees/61943a42101b8512636261d28465dd86fca8cd96"
+      },
+      "url": "https://api.github.com/repos/abezuglov/ANN/git/commits/f0d1799fba7c06f332e294706e939b52d22a1cd6",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/abezuglov/ANN/commits/f0d1799fba7c06f332e294706e939b52d22a1cd6",
+    "html_url": "https://github.com/abezuglov/ANN/commit/f0d1799fba7c06f332e294706e939b52d22a1cd6",
+    "comments_url": "https://api.github.com/repos/abezuglov/ANN/commits/f0d1799fba7c06f332e294706e939b52d22a1cd6/comments",
+    "author": {
+      "login": "abezuglov",
+      "id": 6935493,
+      "node_id": "MDQ6VXNlcjY5MzU0OTM=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/6935493?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/abezuglov",
+      "html_url": "https://github.com/abezuglov",
+      "followers_url": "https://api.github.com/users/abezuglov/followers",
+      "following_url": "https://api.github.com/users/abezuglov/following{/other_user}",
+      "gists_url": "https://api.github.com/users/abezuglov/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/abezuglov/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/abezuglov/subscriptions",
+      "organizations_url": "https://api.github.com/users/abezuglov/orgs",
+      "repos_url": "https://api.github.com/users/abezuglov/repos",
+      "events_url": "https://api.github.com/users/abezuglov/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/abezuglov/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "abezuglov",
+      "id": 6935493,
+      "node_id": "MDQ6VXNlcjY5MzU0OTM=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/6935493?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/abezuglov",
+      "html_url": "https://github.com/abezuglov",
+      "followers_url": "https://api.github.com/users/abezuglov/followers",
+      "following_url": "https://api.github.com/users/abezuglov/following{/other_user}",
+      "gists_url": "https://api.github.com/users/abezuglov/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/abezuglov/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/abezuglov/subscriptions",
+      "organizations_url": "https://api.github.com/users/abezuglov/orgs",
+      "repos_url": "https://api.github.com/users/abezuglov/repos",
+      "events_url": "https://api.github.com/users/abezuglov/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/abezuglov/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "f9d169e0e6dc77aa4c5e1da387af0be7f0873de5",
+        "url": "https://api.github.com/repos/abezuglov/ANN/commits/f9d169e0e6dc77aa4c5e1da387af0be7f0873de5",
+        "html_url": "https://github.com/abezuglov/ANN/commit/f9d169e0e6dc77aa4c5e1da387af0be7f0873de5"
+      }
+    ],
+    "stats": {
+      "total": 8,
+      "additions": 4,
+      "deletions": 4
+    },
+    "files": [
+      {
+        "sha": null,
+        "filename": "Storm-Surge/code/ilt_aux_model.py",
+        "status": "modified",
+        "additions": 0,
+        "deletions": 0,
+        "changes": 0,
+        "blob_url": "https://github.com/abezuglov/ANN/blob/f0d1799fba7c06f332e294706e939b52d22a1cd6/Storm-Surge%2Fcode%2Filt_aux_model.py",
+        "raw_url": "https://github.com/abezuglov/ANN/raw/f0d1799fba7c06f332e294706e939b52d22a1cd6/Storm-Surge%2Fcode%2Filt_aux_model.py",
+        "contents_url": "https://api.github.com/repos/abezuglov/ANN/contents/Storm-Surge%2Fcode%2Filt_aux_model.py?ref=f0d1799fba7c06f332e294706e939b52d22a1cd6"
+      },
+      {
+        "sha": "2892b2c414b8d911f983d3b61710658fcecd5fe1",
+        "filename": "Storm-Surge/code/lstm_model.py",
+        "status": "modified",
+        "additions": 4,
+        "deletions": 4,
+        "changes": 8,
+        "blob_url": "https://github.com/abezuglov/ANN/blob/f0d1799fba7c06f332e294706e939b52d22a1cd6/Storm-Surge%2Fcode%2Flstm_model.py",
+        "raw_url": "https://github.com/abezuglov/ANN/raw/f0d1799fba7c06f332e294706e939b52d22a1cd6/Storm-Surge%2Fcode%2Flstm_model.py",
+        "contents_url": "https://api.github.com/repos/abezuglov/ANN/contents/Storm-Surge%2Fcode%2Flstm_model.py?ref=f0d1799fba7c06f332e294706e939b52d22a1cd6",
+        "patch": "@@ -14,9 +14,9 @@\n flags.DEFINE_boolean('train', True, 'When True, run training & save model. When False, load a previously saved model and evaluate it')\n \n # Structure of the network\n-flags.DEFINE_integer('num_nodes', 20, 'Size of the gates')\n+flags.DEFINE_integer('num_nodes', 15, 'Size of the gates')\n flags.DEFINE_integer('batch_size', 19*193, 'Batch size')\n-flags.DEFINE_integer('num_unrollings', 10, 'Num unrollings')\n+flags.DEFINE_integer('num_unrollings', 35, 'Num unrollings')\n flags.DEFINE_integer('output_vars', 10, 'Size of the output layer')\n flags.DEFINE_integer('input_vars', 6, 'Size of the input layer')\n \n@@ -28,7 +28,7 @@\n # Increase if convergence is steady but too slow\n flags.DEFINE_float('learning_rate', 0.0002, 'Initial learning rate')\n flags.DEFINE_float('learning_rate_decay', 0.02, 'Learning rate decay, i.e. the fraction of the initial learning rate at the end of training')\n-flags.DEFINE_integer('max_steps', 50001, 'Number of steps to run trainer')\n+flags.DEFINE_integer('max_steps', 25001, 'Number of steps to run trainer')\n \n # Save models in this directory\n flags.DEFINE_string('checkpoints_dir', './checkpoints_isabel', 'Directory to store checkpoints')\n@@ -161,7 +161,7 @@ def lstm_cell(i, o, state):\n \n \t\t\tmean_loss += l\n \t\t\tnum_steps += 1\n-\t\t\tif step%(FLAGS.max_steps//100) == 0:\n+\t\t\tif step%(FLAGS.max_steps//20) == 0:\n \t\t\t\tif step > 0:\n \t\t\t\t\tmean_loss = mean_loss / num_steps\n "
+      }
+    ]
+  }
+}

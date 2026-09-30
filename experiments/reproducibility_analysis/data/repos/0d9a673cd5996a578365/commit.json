@@ -1,0 +1,111 @@
+{
+  "provider": "github",
+  "requested_url": "https://api.github.com/repos/avian2/spectrum-sensing-methods/commits/master",
+  "retrieved_at": "2026-09-30T11:52:37.035935+00:00",
+  "status": "ok",
+  "http_status": 200,
+  "final_url": "https://api.github.com/repos/avian2/spectrum-sensing-methods/commits/master",
+  "sha256": "0af86c86c7d91dd6b49ed0fe8a821fe3263a213dd42628be2e996fc619027331",
+  "content_type": "application/json; charset=utf-8",
+  "data": {
+    "sha": "e4bdf12e72f93f241c145ae0c7137facadd41d3b",
+    "node_id": "MDY6Q29tbWl0MjMyMjc0Nzg6ZTRiZGYxMmU3MmY5M2YyNDFjMTQ1YWUwYzcxMzdmYWNhZGQ0MWQzYg==",
+    "commit": {
+      "author": {
+        "name": "Tomaz Solc",
+        "email": "tomaz.solc@tablix.org",
+        "date": "2021-08-21T15:26:31Z"
+      },
+      "committer": {
+        "name": "Tomaz Solc",
+        "email": "tomaz.solc@tablix.org",
+        "date": "2021-08-21T15:26:31Z"
+      },
+      "message": "Add CITATION.cff",
+      "tree": {
+        "sha": "b6cbf825aac574ac290afafcd233731740ca8131",
+        "url": "https://api.github.com/repos/avian2/spectrum-sensing-methods/git/trees/b6cbf825aac574ac290afafcd233731740ca8131"
+      },
+      "url": "https://api.github.com/repos/avian2/spectrum-sensing-methods/git/commits/e4bdf12e72f93f241c145ae0c7137facadd41d3b",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/avian2/spectrum-sensing-methods/commits/e4bdf12e72f93f241c145ae0c7137facadd41d3b",
+    "html_url": "https://github.com/avian2/spectrum-sensing-methods/commit/e4bdf12e72f93f241c145ae0c7137facadd41d3b",
+    "comments_url": "https://api.github.com/repos/avian2/spectrum-sensing-methods/commits/e4bdf12e72f93f241c145ae0c7137facadd41d3b/comments",
+    "author": {
+      "login": "avian2",
+      "id": 1135442,
+      "node_id": "MDQ6VXNlcjExMzU0NDI=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1135442?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/avian2",
+      "html_url": "https://github.com/avian2",
+      "followers_url": "https://api.github.com/users/avian2/followers",
+      "following_url": "https://api.github.com/users/avian2/following{/other_user}",
+      "gists_url": "https://api.github.com/users/avian2/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/avian2/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/avian2/subscriptions",
+      "organizations_url": "https://api.github.com/users/avian2/orgs",
+      "repos_url": "https://api.github.com/users/avian2/repos",
+      "events_url": "https://api.github.com/users/avian2/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/avian2/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "avian2",
+      "id": 1135442,
+      "node_id": "MDQ6VXNlcjExMzU0NDI=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1135442?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/avian2",
+      "html_url": "https://github.com/avian2",
+      "followers_url": "https://api.github.com/users/avian2/followers",
+      "following_url": "https://api.github.com/users/avian2/following{/other_user}",
+      "gists_url": "https://api.github.com/users/avian2/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/avian2/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/avian2/subscriptions",
+      "organizations_url": "https://api.github.com/users/avian2/orgs",
+      "repos_url": "https://api.github.com/users/avian2/repos",
+      "events_url": "https://api.github.com/users/avian2/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/avian2/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "798f5f357914905520e6d39ac6bbfa3cabeb1c8b",
+        "url": "https://api.github.com/repos/avian2/spectrum-sensing-methods/commits/798f5f357914905520e6d39ac6bbfa3cabeb1c8b",
+        "html_url": "https://github.com/avian2/spectrum-sensing-methods/commit/798f5f357914905520e6d39ac6bbfa3cabeb1c8b"
+      }
+    ],
+    "stats": {
+      "total": 20,
+      "additions": 20,
+      "deletions": 0
+    },
+    "files": [
+      {
+        "sha": "f56e465297280b43cd37440f01c3ce32a870d54f",
+        "filename": "CITATION.cff",
+        "status": "added",
+        "additions": 20,
+        "deletions": 0,
+        "changes": 20,
+        "blob_url": "https://github.com/avian2/spectrum-sensing-methods/blob/e4bdf12e72f93f241c145ae0c7137facadd41d3b/CITATION.cff",
+        "raw_url": "https://github.com/avian2/spectrum-sensing-methods/raw/e4bdf12e72f93f241c145ae0c7137facadd41d3b/CITATION.cff",
+        "contents_url": "https://api.github.com/repos/avian2/spectrum-sensing-methods/contents/CITATION.cff?ref=e4bdf12e72f93f241c145ae0c7137facadd41d3b",
+        "patch": "@@ -0,0 +1,20 @@\n+cff-version: 1.2.0\n+preferred-citation:\n+  type: article\n+  message: \"Please cite this paper if you use code or data in this repository in an academic publication.\"\n+  authors:\n+  - family-names: Šolc\n+    given-names: Tomaž\n+    orcid: https://orcid.org/0000-0001-6326-1636\n+  - family-names: Mohorčič\n+    given-names: Mihael\n+  - family-names: Fortuna\n+    given-names: Carolina\n+  title: \"A methodology for experimental evaluation of signal detection methods in spectrum sensing\"\n+  doi: 10.1371/journal.pone.0199550\n+  journal: \"PLOS ONE\"\n+  publisher: \"Public Library of Science\"\n+  year: 2018\n+  month: 6\n+  volume: 13\n+  issue: 6"
+      }
+    ]
+  }
+}

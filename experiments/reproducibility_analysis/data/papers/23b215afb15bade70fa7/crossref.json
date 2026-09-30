@@ -1,0 +1,522 @@
+{
+  "provider": "crossref",
+  "requested_url": "https://api.crossref.org/works/10.1002/qj.3556",
+  "retrieved_at": "2026-09-30T11:54:15.771590+00:00",
+  "status": "ok",
+  "http_status": 200,
+  "final_url": "https://api.crossref.org/works/10.1002/qj.3556",
+  "sha256": "9142feb2390a15a3940240428a6ac287aa9bbf25f06af31e6a4a03b3100abce4",
+  "content_type": "application/json",
+  "data": {
+    "status": "ok",
+    "message-type": "work",
+    "message-version": "1.0.0",
+    "message": {
+      "indexed": {
+        "date-parts": [
+          [
+            2026,
+            4,
+            6
+          ]
+        ],
+        "date-time": "2026-04-06T06:00:34Z",
+        "timestamp": 1775455234387,
+        "version": "3.50.1"
+      },
+      "reference-count": 45,
+      "publisher": "Wiley",
+      "issue": "722",
+      "license": [
+        {
+          "start": {
+            "date-parts": [
+              [
+                2019,
+                6,
+                3
+              ]
+            ],
+            "date-time": "2019-06-03T00:00:00Z",
+            "timestamp": 1559520000000
+          },
+          "content-version": "vor",
+          "delay-in-days": 0,
+          "URL": "http://onlinelibrary.wiley.com/termsAndConditions#vor"
+        }
+      ],
+      "content-domain": {
+        "domain": [
+          "rmets.onlinelibrary.wiley.com"
+        ],
+        "crossmark-restriction": true
+      },
+      "short-container-title": [
+        "Quart J Royal Meteoro Soc"
+      ],
+      "published-print": {
+        "date-parts": [
+          [
+            2019,
+            7
+          ]
+        ]
+      },
+      "abstract": "<jats:p>Effects of non‐stationarity on the performance of hybrid ensemble filters is studied. (By hybrid filters we mean those which blend ensemble covariances with some other regularizing covariances.) To isolate effects of non‐stationarity from effects due to nonlinearity (and the non‐Gaussianity it causes), a new doubly stochastic advection‐diffusion‐decay model (DSADM) is proposed. The model is hierarchical: it is a linear stochastic partial differential equation whose coefficients are random fields defined through their own stochastic partial differential equations. DSADM generates conditionally Gaussian spatiotemporal random fields with a tunable degree of non‐stationarity in space and time. DSADM allows the use of the exact Kalman filter as a baseline benchmark.</jats:p><jats:p>In numerical experiments with DSADM as the “model of truth”, the relative importance of the three kinds of covariance blending is studied: with static, time‐smoothed, and space‐smoothed covariances. It is shown that the stronger the non‐stationarity, the less useful the static covariance matrix becomes and the more beneficial the time‐smoothed covariances are. Time‐smoothing of background‐error covariances proved to be systematically more useful than their space‐smoothing. Under non‐stationarity, a filter that extends the (previously proposed by the authors) Hierarchical Bayes Ensemble Filter and accommodates the three covariance‐blending techniques is shown to outperform all other configurations of the filters tested.</jats:p>",
+      "DOI": "10.1002/qj.3556",
+      "type": "journal-article",
+      "created": {
+        "date-parts": [
+          [
+            2019,
+            5,
+            2
+          ]
+        ],
+        "date-time": "2019-05-02T15:09:22Z",
+        "timestamp": 1556809762000
+      },
+      "page": "2255-2271",
+      "update-policy": "https://doi.org/10.1002/crossmark_policy",
+      "source": "Crossref",
+      "is-referenced-by-count": 4,
+      "title": [
+        "Impact of non‐stationarity on hybrid ensemble filters: A study with a doubly stochastic advection‐diffusion‐decay model"
+      ],
+      "prefix": "10.1002",
+      "volume": "145",
+      "author": [
+        {
+          "ORCID": "https://orcid.org/0000-0002-7357-334X",
+          "authenticated-orcid": false,
+          "given": "Michael",
+          "family": "Tsyrulnikov",
+          "sequence": "first",
+          "affiliation": [
+            {
+              "name": "Hydrometeorological Research Centre of Russia Moscow Russian Federation Moscow, Russian Federation"
+            }
+          ],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        },
+        {
+          "given": "Alexander",
+          "family": "Rakitko",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Genotek Ltd. Moscow, Russian Federation"
+            }
+          ],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        }
+      ],
+      "member": "311",
+      "published-online": {
+        "date-parts": [
+          [
+            2019,
+            6,
+            3
+          ]
+        ]
+      },
+      "reference": [
+        {
+          "key": "e_1_2_10_2_1",
+          "first-page": "15",
+          "article-title": "Variational data assimilation for discrete Burgers equation",
+          "volume": "19",
+          "author": "Apte A.",
+          "year": "2010",
+          "journal-title": "Electronic Journal of Differential Equations"
+        },
+        {
+          "key": "e_1_2_10_3_1",
+          "volume-title": "Stochastic Differential Equations: Theory and applications",
+          "author": "Arnold L.",
+          "year": "1974"
+        },
+        {
+          "issue": "2",
+          "key": "e_1_2_10_4_1",
+          "first-page": "199",
+          "article-title": "Estimating high‐dimensional covariance matrices and its applications",
+          "volume": "12",
+          "author": "Bai J.",
+          "year": "2011",
+          "journal-title": "Annals of Economics and Finance"
+        },
+        {
+          "key": "e_1_2_10_5_1",
+          "volume-title": "Hierarchical Modeling and Analysis for Spatial Data",
+          "author": "Banerjee S.",
+          "year": "2015"
+        },
+        {
+          "key": "e_1_2_10_6_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1002/qj.2565"
+        },
+        {
+          "key": "e_1_2_10_7_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1175/MWR-D-12-00118.1"
+        },
+        {
+          "key": "e_1_2_10_8_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.5194/npg-18-735-2011"
+        },
+        {
+          "key": "e_1_2_10_9_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.5194/npg-22-645-2015"
+        },
+        {
+          "key": "e_1_2_10_10_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1002/qj.2652"
+        },
+        {
+          "key": "e_1_2_10_11_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1002/qj.50"
+        },
+        {
+          "key": "e_1_2_10_12_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.5194/npg-20-669-2013"
+        },
+        {
+          "key": "e_1_2_10_13_1",
+          "volume-title": "The Analysis of Time Series: An Introduction",
+          "author": "Chatfield C.",
+          "year": "2016"
+        },
+        {
+          "issue": "1",
+          "key": "e_1_2_10_14_1",
+          "first-page": "2100",
+          "article-title": "How deep are deep Gaussian processes?",
+          "volume": "19",
+          "author": "Dunlop M.M.",
+          "year": "2018",
+          "journal-title": "Journal of Machine Learning Research"
+        },
+        {
+          "key": "e_1_2_10_15_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1002/qj.2180"
+        },
+        {
+          "key": "e_1_2_10_16_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1002/qj.49712555417"
+        },
+        {
+          "key": "e_1_2_10_17_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.5194/npg-21-303-2014"
+        },
+        {
+          "key": "e_1_2_10_18_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1175/1520-0493(2000)128<2905:AHEKFV>2.0.CO;2"
+        },
+        {
+          "key": "e_1_2_10_19_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1034/j.1600-0870.2001.00118.x"
+        },
+        {
+          "key": "e_1_2_10_20_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1175/MWR-D-15-0440.1"
+        },
+        {
+          "key": "e_1_2_10_21_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1137/1.9781611974263"
+        },
+        {
+          "key": "e_1_2_10_22_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/S0047-259X(03)00096-4"
+        },
+        {
+          "key": "e_1_2_10_23_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1111/j.1467-9868.2011.00777.x"
+        },
+        {
+          "key": "e_1_2_10_24_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1256/qj.02.132"
+        },
+        {
+          "key": "e_1_2_10_25_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1002/qj.2990"
+        },
+        {
+          "key": "e_1_2_10_26_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1175/1520-0469(1963)020<0130:DNF>2.0.CO;2"
+        },
+        {
+          "key": "e_1_2_10_27_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1175/JAS3430.1"
+        },
+        {
+          "key": "e_1_2_10_28_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1175/1520-0469(1998)055<0399:OSFSWO>2.0.CO;2"
+        },
+        {
+          "key": "e_1_2_10_29_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1175/MWR-D-15-0057.1"
+        },
+        {
+          "key": "e_1_2_10_30_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1175/MWR-D-14-00157.1"
+        },
+        {
+          "key": "e_1_2_10_31_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1175/1520-0469(1994)051<1037:ADAISN>2.0.CO;2"
+        },
+        {
+          "key": "e_1_2_10_32_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/S0377-0265(02)00003-9"
+        },
+        {
+          "key": "e_1_2_10_33_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.2118/125851-PA"
+        },
+        {
+          "key": "e_1_2_10_34_1",
+          "first-page": "1149",
+          "article-title": "The use of the canonical‐correlation method in analyzing the geopotential field",
+          "volume": "4",
+          "author": "Olevskaya S.M.",
+          "year": "1968",
+          "journal-title": "Izvestiya Atmospheric and Oceanic Physics"
+        },
+        {
+          "key": "e_1_2_10_35_1",
+          "volume-title": "Advection and Diffusion in Random Media: Implications for sea surface temperature anomalies",
+          "author": "Piterbarg L.",
+          "year": "2013"
+        },
+        {
+          "key": "e_1_2_10_36_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.3934/ipi.2019001"
+        },
+        {
+          "issue": "2",
+          "key": "e_1_2_10_37_1",
+          "first-page": "27",
+          "article-title": "Distance–time autocorrelation functions for winds in the Australian region",
+          "volume": "23",
+          "author": "Seaman R.",
+          "year": "1975",
+          "journal-title": "Australian Meteorological Magazine"
+        },
+        {
+          "key": "e_1_2_10_38_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1111/rssb.12061"
+        },
+        {
+          "key": "e_1_2_10_39_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1111/j.1467-9892.1986.tb00485.x"
+        },
+        {
+          "key": "e_1_2_10_40_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1002/qj.49712757812"
+        },
+        {
+          "key": "e_1_2_10_41_1",
+          "doi-asserted-by": "crossref",
+          "unstructured": "Tsyrulnikov M.andGayfulin D.(2016).A spatio‐temporal stochastic pattern generator for simulation of uncertainties in geophysical ensemble prediction and ensemble data assimilation. arXiv:1605.02018.",
+          "DOI": "10.1127/metz/2017/0815"
+        },
+        {
+          "key": "e_1_2_10_42_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1127/metz/2017/0815"
+        },
+        {
+          "key": "e_1_2_10_43_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1016/j.physd.2016.07.009"
+        },
+        {
+          "key": "e_1_2_10_44_1",
+          "volume-title": "Systems in Stochastic Equilibrium",
+          "author": "Whittle P.",
+          "year": "1986"
+        },
+        {
+          "key": "e_1_2_10_45_1",
+          "doi-asserted-by": "publisher",
+          "DOI": "10.1023/A:1009662704779"
+        },
+        {
+          "key": "e_1_2_10_46_1",
+          "volume-title": "Correlation Theory of Stationary and Related Random Functions, Volume 1: Basic Results",
+          "author": "Yaglom A.M.",
+          "year": "1987"
+        }
+      ],
+      "container-title": [
+        "Quarterly Journal of the Royal Meteorological Society"
+      ],
+      "original-title": [],
+      "language": "en",
+      "link": [
+        {
+          "URL": "https://onlinelibrary.wiley.com/doi/pdf/10.1002/qj.3556",
+          "content-type": "application/pdf",
+          "content-version": "vor",
+          "intended-application": "text-mining"
+        },
+        {
+          "URL": "https://onlinelibrary.wiley.com/doi/full-xml/10.1002/qj.3556",
+          "content-type": "application/xml",
+          "content-version": "vor",
+          "intended-application": "text-mining"
+        },
+        {
+          "URL": "https://rmets.onlinelibrary.wiley.com/doi/pdf/10.1002/qj.3556",
+          "content-type": "unspecified",
+          "content-version": "vor",
+          "intended-application": "similarity-checking"
+        }
+      ],
+      "deposited": {
+        "date-parts": [
+          [
+            2023,
+            9,
+            2
+          ]
+        ],
+        "date-time": "2023-09-02T07:51:37Z",
+        "timestamp": 1693641097000
+      },
+      "score": 1,
+      "resource": {
+        "primary": {
+          "URL": "https://rmets.onlinelibrary.wiley.com/doi/10.1002/qj.3556"
+        }
+      },
+      "subtitle": [],
+      "short-title": [],
+      "issued": {
+        "date-parts": [
+          [
+            2019,
+            6,
+            3
+          ]
+        ]
+      },
+      "references-count": 45,
+      "journal-issue": {
+        "issue": "722",
+        "published-print": {
+          "date-parts": [
+            [
+              2019,
+              7
+            ]
+          ]
+        }
+      },
+      "alternative-id": [
+        "10.1002/qj.3556"
+      ],
+      "URL": "https://doi.org/10.1002/qj.3556",
+      "archive": [
+        "Portico"
+      ],
+      "relation": {},
+      "ISSN": [
+        "0035-9009",
+        "1477-870X"
+      ],
+      "issn-type": [
+        {
+          "value": "0035-9009",
+          "type": "print"
+        },
+        {
+          "value": "1477-870X",
+          "type": "electronic"
+        }
+      ],
+      "subject": [],
+      "published": {
+        "date-parts": [
+          [
+            2019,
+            6,
+            3
+          ]
+        ]
+      },
+      "assertion": [
+        {
+          "value": "2018-09-26",
+          "order": 0,
+          "name": "received",
+          "label": "Received",
+          "group": {
+            "name": "publication_history",
+            "label": "Publication History"
+          }
+        },
+        {
+          "value": "2019-04-26",
+          "order": 1,
+          "name": "accepted",
+          "label": "Accepted",
+          "group": {
+            "name": "publication_history",
+            "label": "Publication History"
+          }
+        },
+        {
+          "value": "2019-06-03",
+          "order": 2,
+          "name": "published",
+          "label": "Published",
+          "group": {
+            "name": "publication_history",
+            "label": "Publication History"
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "provider": "arxiv",
+  "requested_url": "https://arxiv.org/pdf/1609.07378",
+  "retrieved_at": "2026-09-30T11:54:14.581752+00:00",
+  "status": "ok",
+  "http_status": 200,
+  "final_url": "https://arxiv.org/pdf/1609.07378",
+  "sha256": "729cf504804457c5f84d73db94acea440c6798a4414ba69eed1aaecf8946148a",
+  "content_type": "application/pdf",
+  "local_file": "reproducibility_study/data/papers/868b656f9b74837801cc/pdf_0.pdf",
+  "bytes": 9023851,
+  "text_extraction": {
+    "exit_code": 0,
+    "local_file": "reproducibility_study/data/papers/868b656f9b74837801cc/pdf_0.txt",
+    "tool": "pdftotext -layout"
+  }
+}

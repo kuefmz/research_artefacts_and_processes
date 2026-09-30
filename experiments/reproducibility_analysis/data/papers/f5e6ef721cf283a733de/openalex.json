@@ -1,0 +1,900 @@
+{
+  "provider": "openalex",
+  "requested_url": "https://api.openalex.org/works/https://doi.org/10.7287/peerj.preprints.1435v1",
+  "retrieved_at": "2026-09-30T11:53:04.191813+00:00",
+  "status": "ok",
+  "http_status": 200,
+  "final_url": "https://api.openalex.org/works/https://doi.org/10.7287/peerj.preprints.1435v1",
+  "sha256": "da2ecffe8c854221fecc834728c93a617f7f6e576c1d3fcf4017909e3504485e",
+  "content_type": "application/json",
+  "data": {
+    "id": "https://openalex.org/W4234242556",
+    "doi": "https://doi.org/10.7287/peerj.preprints.1435v1",
+    "title": "PEPR: Pipelines for evaluating prokaryotic references",
+    "display_name": "PEPR: Pipelines for evaluating prokaryotic references",
+    "publication_year": 2015,
+    "publication_date": "2015-10-15",
+    "ids": {
+      "openalex": "https://openalex.org/W4234242556",
+      "doi": "https://doi.org/10.7287/peerj.preprints.1435v1"
+    },
+    "language": "en",
+    "primary_location": {
+      "id": "doi:10.7287/peerj.preprints.1435v1",
+      "is_oa": true,
+      "landing_page_url": "https://doi.org/10.7287/peerj.preprints.1435v1",
+      "pdf_url": null,
+      "source": null,
+      "license": "cc-by",
+      "license_id": "https://openalex.org/licenses/cc-by",
+      "version": "acceptedVersion",
+      "is_accepted": true,
+      "is_published": false,
+      "raw_source_name": null,
+      "raw_type": "posted-content"
+    },
+    "type": "preprint",
+    "indexed_in": [
+      "crossref"
+    ],
+    "open_access": {
+      "is_oa": true,
+      "oa_status": "gold",
+      "oa_url": "https://doi.org/10.7287/peerj.preprints.1435v1",
+      "any_repository_has_fulltext": null
+    },
+    "authorships": [
+      {
+        "author_position": "first",
+        "author": {
+          "id": "https://openalex.org/A5066572638",
+          "display_name": "Nathan D. Olson",
+          "orcid": "https://orcid.org/0000-0003-2585-3037"
+        },
+        "institutions": [
+          {
+            "id": "https://openalex.org/I1321296531",
+            "display_name": "National Institute of Standards and Technology",
+            "ror": "https://ror.org/05xpvk416",
+            "country_code": "US",
+            "type": "government",
+            "lineage": [
+              "https://openalex.org/I1321296531",
+              "https://openalex.org/I1343035065"
+            ]
+          }
+        ],
+        "countries": [
+          "US"
+        ],
+        "is_corresponding": false,
+        "raw_author_name": "Nathan D. Olson",
+        "raw_affiliation_strings": [
+          "Biosystems and Biomaterials Division, National Institute of Standards and Technology, Gaithersburg, MD, United States"
+        ],
+        "raw_orcid": null,
+        "affiliations": [
+          {
+            "raw_affiliation_string": "Biosystems and Biomaterials Division, National Institute of Standards and Technology, Gaithersburg, MD, United States",
+            "institution_ids": [
+              "https://openalex.org/I1321296531"
+            ]
+          }
+        ]
+      },
+      {
+        "author_position": "middle",
+        "author": {
+          "id": "https://openalex.org/A5058903767",
+          "display_name": "Justin M. Zook",
+          "orcid": "https://orcid.org/0000-0003-2309-8402"
+        },
+        "institutions": [
+          {
+            "id": "https://openalex.org/I1321296531",
+            "display_name": "National Institute of Standards and Technology",
+            "ror": "https://ror.org/05xpvk416",
+            "country_code": "US",
+            "type": "government",
+            "lineage": [
+              "https://openalex.org/I1321296531",
+              "https://openalex.org/I1343035065"
+            ]
+          },
+          {
+            "id": "https://openalex.org/I4210147263",
+            "display_name": "Material Measurement Laboratory",
+            "ror": "https://ror.org/04a0y3b96",
+            "country_code": "US",
+            "type": "government",
+            "lineage": [
+              "https://openalex.org/I1321296531",
+              "https://openalex.org/I1343035065",
+              "https://openalex.org/I4210147263"
+            ]
+          }
+        ],
+        "countries": [
+          "US"
+        ],
+        "is_corresponding": false,
+        "raw_author_name": "Justin M. Zook",
+        "raw_affiliation_strings": [
+          "Material Measurement Laboratory, National Institute of Standards and Technology, Gaithersburg, MD, United States"
+        ],
+        "raw_orcid": null,
+        "affiliations": [
+          {
+            "raw_affiliation_string": "Material Measurement Laboratory, National Institute of Standards and Technology, Gaithersburg, MD, United States",
+            "institution_ids": [
+              "https://openalex.org/I1321296531",
+              "https://openalex.org/I4210147263"
+            ]
+          }
+        ]
+      },
+      {
+        "author_position": "middle",
+        "author": {
+          "id": "https://openalex.org/A5062263388",
+          "display_name": "Daniel V. Samarov",
+          "orcid": null
+        },
+        "institutions": [
+          {
+            "id": "https://openalex.org/I1321296531",
+            "display_name": "National Institute of Standards and Technology",
+            "ror": "https://ror.org/05xpvk416",
+            "country_code": "US",
+            "type": "government",
+            "lineage": [
+              "https://openalex.org/I1321296531",
+              "https://openalex.org/I1343035065"
+            ]
+          }
+        ],
+        "countries": [
+          "US"
+        ],
+        "is_corresponding": false,
+        "raw_author_name": "Daniel V. Samarov",
+        "raw_affiliation_strings": [
+          "Statistical Engineering Division, National Institute of Standards and Technology, Gaithersburg, Maryland, United States"
+        ],
+        "raw_orcid": null,
+        "affiliations": [
+          {
+            "raw_affiliation_string": "Statistical Engineering Division, National Institute of Standards and Technology, Gaithersburg, Maryland, United States",
+            "institution_ids": [
+              "https://openalex.org/I1321296531"
+            ]
+          }
+        ]
+      },
+      {
+        "author_position": "middle",
+        "author": {
+          "id": "https://openalex.org/A5062535756",
+          "display_name": "Scott A. Jackson",
+          "orcid": "https://orcid.org/0000-0003-4891-8323"
+        },
+        "institutions": [
+          {
+            "id": "https://openalex.org/I1321296531",
+            "display_name": "National Institute of Standards and Technology",
+            "ror": "https://ror.org/05xpvk416",
+            "country_code": "US",
+            "type": "government",
+            "lineage": [
+              "https://openalex.org/I1321296531",
+              "https://openalex.org/I1343035065"
+            ]
+          }
+        ],
+        "countries": [
+          "US"
+        ],
+        "is_corresponding": false,
+        "raw_author_name": "Scott A. Jackson",
+        "raw_affiliation_strings": [
+          "Biosystems and Biomaterials Division, National Institute of Standards and Technology, Gaithersburg, MD, United States"
+        ],
+        "raw_orcid": null,
+        "affiliations": [
+          {
+            "raw_affiliation_string": "Biosystems and Biomaterials Division, National Institute of Standards and Technology, Gaithersburg, MD, United States",
+            "institution_ids": [
+              "https://openalex.org/I1321296531"
+            ]
+          }
+        ]
+      },
+      {
+        "author_position": "last",
+        "author": {
+          "id": "https://openalex.org/A5091471463",
+          "display_name": "Marc Salit",
+          "orcid": "https://orcid.org/0000-0003-1624-5195"
+        },
+        "institutions": [
+          {
+            "id": "https://openalex.org/I1321296531",
+            "display_name": "National Institute of Standards and Technology",
+            "ror": "https://ror.org/05xpvk416",
+            "country_code": "US",
+            "type": "government",
+            "lineage": [
+              "https://openalex.org/I1321296531",
+              "https://openalex.org/I1343035065"
+            ]
+          },
+          {
+            "id": "https://openalex.org/I97018004",
+            "display_name": "Stanford University",
+            "ror": "https://ror.org/00f54p054",
+            "country_code": "US",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I97018004"
+            ]
+          }
+        ],
+        "countries": [
+          "US"
+        ],
+        "is_corresponding": false,
+        "raw_author_name": "Marc L. Salit",
+        "raw_affiliation_strings": [
+          "Biosystems and Biomaterials Division, National Institute of Standards and Technology, Gaithersburg, MD, United States",
+          "Department of Bioengineering, Stanford University, Stanford, California, United States"
+        ],
+        "raw_orcid": null,
+        "affiliations": [
+          {
+            "raw_affiliation_string": "Biosystems and Biomaterials Division, National Institute of Standards and Technology, Gaithersburg, MD, United States",
+            "institution_ids": [
+              "https://openalex.org/I1321296531"
+            ]
+          },
+          {
+            "raw_affiliation_string": "Department of Bioengineering, Stanford University, Stanford, California, United States",
+            "institution_ids": [
+              "https://openalex.org/I97018004"
+            ]
+          }
+        ]
+      }
+    ],
+    "institutions": [],
+    "countries_distinct_count": 1,
+    "institutions_distinct_count": 3,
+    "corresponding_author_ids": [],
+    "corresponding_institution_ids": [],
+    "apc_list": null,
+    "apc_paid": null,
+    "fwci": null,
+    "has_fulltext": false,
+    "cited_by_count": 0,
+    "citation_normalized_percentile": null,
+    "cited_by_percentile_year": null,
+    "biblio": {
+      "volume": null,
+      "issue": null,
+      "first_page": null,
+      "last_page": null
+    },
+    "is_retracted": false,
+    "is_paratext": false,
+    "is_xpac": false,
+    "primary_topic": {
+      "id": "https://openalex.org/T12167",
+      "display_name": "Bacterial Identification and Susceptibility Testing",
+      "score": 0.9991000294685364,
+      "subfield": {
+        "id": "https://openalex.org/subfields/1308",
+        "display_name": "Clinical Biochemistry"
+      },
+      "field": {
+        "id": "https://openalex.org/fields/13",
+        "display_name": "Biochemistry, Genetics and Molecular Biology"
+      },
+      "domain": {
+        "id": "https://openalex.org/domains/1",
+        "display_name": "Life Sciences"
+      }
+    },
+    "topics": [
+      {
+        "id": "https://openalex.org/T12167",
+        "display_name": "Bacterial Identification and Susceptibility Testing",
+        "score": 0.9991000294685364,
+        "subfield": {
+          "id": "https://openalex.org/subfields/1308",
+          "display_name": "Clinical Biochemistry"
+        },
+        "field": {
+          "id": "https://openalex.org/fields/13",
+          "display_name": "Biochemistry, Genetics and Molecular Biology"
+        },
+        "domain": {
+          "id": "https://openalex.org/domains/1",
+          "display_name": "Life Sciences"
+        }
+      },
+      {
+        "id": "https://openalex.org/T11970",
+        "display_name": "Molecular Biology Techniques and Applications",
+        "score": 0.9961000084877014,
+        "subfield": {
+          "id": "https://openalex.org/subfields/1312",
+          "display_name": "Molecular Biology"
+        },
+        "field": {
+          "id": "https://openalex.org/fields/13",
+          "display_name": "Biochemistry, Genetics and Molecular Biology"
+        },
+        "domain": {
+          "id": "https://openalex.org/domains/1",
+          "display_name": "Life Sciences"
+        }
+      },
+      {
+        "id": "https://openalex.org/T10015",
+        "display_name": "Genomics and Phylogenetic Studies",
+        "score": 0.9957000017166138,
+        "subfield": {
+          "id": "https://openalex.org/subfields/1312",
+          "display_name": "Molecular Biology"
+        },
+        "field": {
+          "id": "https://openalex.org/fields/13",
+          "display_name": "Biochemistry, Genetics and Molecular Biology"
+        },
+        "domain": {
+          "id": "https://openalex.org/domains/1",
+          "display_name": "Life Sciences"
+        }
+      }
+    ],
+    "keywords": [
+      {
+        "id": "https://openalex.org/keywords/genome",
+        "display_name": "Genome",
+        "score": 0.6035704612731934
+      },
+      {
+        "id": "https://openalex.org/keywords/computational-biology",
+        "display_name": "Computational biology",
+        "score": 0.5761950016021729
+      },
+      {
+        "id": "https://openalex.org/keywords/homogeneous",
+        "display_name": "Homogeneous",
+        "score": 0.5278192162513733
+      },
+      {
+        "id": "https://openalex.org/keywords/genomic-sequencing",
+        "display_name": "Genomic sequencing",
+        "score": 0.5088236927986145
+      },
+      {
+        "id": "https://openalex.org/keywords/pipeline-transport",
+        "display_name": "Pipeline transport",
+        "score": 0.45539185404777527
+      },
+      {
+        "id": "https://openalex.org/keywords/whole-genome-sequencing",
+        "display_name": "Whole genome sequencing",
+        "score": 0.42172300815582275
+      },
+      {
+        "id": "https://openalex.org/keywords/genomics",
+        "display_name": "Genomics",
+        "score": 0.41670021414756775
+      },
+      {
+        "id": "https://openalex.org/keywords/biology",
+        "display_name": "Biology",
+        "score": 0.3641378581523895
+      },
+      {
+        "id": "https://openalex.org/keywords/computer-science",
+        "display_name": "Computer science",
+        "score": 0.3588867485523224
+      },
+      {
+        "id": "https://openalex.org/keywords/data-mining",
+        "display_name": "Data mining",
+        "score": 0.33417320251464844
+      },
+      {
+        "id": "https://openalex.org/keywords/data-science",
+        "display_name": "Data science",
+        "score": 0.3200373649597168
+      },
+      {
+        "id": "https://openalex.org/keywords/genetics",
+        "display_name": "Genetics",
+        "score": 0.24348995089530945
+      },
+      {
+        "id": "https://openalex.org/keywords/engineering",
+        "display_name": "Engineering",
+        "score": 0.17387330532073975
+      },
+      {
+        "id": "https://openalex.org/keywords/gene",
+        "display_name": "Gene",
+        "score": 0.15960943698883057
+      },
+      {
+        "id": "https://openalex.org/keywords/mathematics",
+        "display_name": "Mathematics",
+        "score": 0.09423714876174927
+      }
+    ],
+    "concepts": [
+      {
+        "id": "https://openalex.org/C141231307",
+        "wikidata": "https://www.wikidata.org/wiki/Q7020",
+        "display_name": "Genome",
+        "level": 3,
+        "score": 0.6035704612731934
+      },
+      {
+        "id": "https://openalex.org/C70721500",
+        "wikidata": "https://www.wikidata.org/wiki/Q177005",
+        "display_name": "Computational biology",
+        "level": 1,
+        "score": 0.5761950016021729
+      },
+      {
+        "id": "https://openalex.org/C66882249",
+        "wikidata": "https://www.wikidata.org/wiki/Q169336",
+        "display_name": "Homogeneous",
+        "level": 2,
+        "score": 0.5278192162513733
+      },
+      {
+        "id": "https://openalex.org/C2994067223",
+        "wikidata": "https://www.wikidata.org/wiki/Q380546",
+        "display_name": "Genomic sequencing",
+        "level": 4,
+        "score": 0.5088236927986145
+      },
+      {
+        "id": "https://openalex.org/C175309249",
+        "wikidata": "https://www.wikidata.org/wiki/Q725864",
+        "display_name": "Pipeline transport",
+        "level": 2,
+        "score": 0.45539185404777527
+      },
+      {
+        "id": "https://openalex.org/C24432333",
+        "wikidata": "https://www.wikidata.org/wiki/Q2068526",
+        "display_name": "Whole genome sequencing",
+        "level": 4,
+        "score": 0.42172300815582275
+      },
+      {
+        "id": "https://openalex.org/C189206191",
+        "wikidata": "https://www.wikidata.org/wiki/Q222046",
+        "display_name": "Genomics",
+        "level": 4,
+        "score": 0.41670021414756775
+      },
+      {
+        "id": "https://openalex.org/C86803240",
+        "wikidata": "https://www.wikidata.org/wiki/Q420",
+        "display_name": "Biology",
+        "level": 0,
+        "score": 0.3641378581523895
+      },
+      {
+        "id": "https://openalex.org/C41008148",
+        "wikidata": "https://www.wikidata.org/wiki/Q21198",
+        "display_name": "Computer science",
+        "level": 0,
+        "score": 0.3588867485523224
+      },
+      {
+        "id": "https://openalex.org/C124101348",
+        "wikidata": "https://www.wikidata.org/wiki/Q172491",
+        "display_name": "Data mining",
+        "level": 1,
+        "score": 0.33417320251464844
+      },
+      {
+        "id": "https://openalex.org/C2522767166",
+        "wikidata": "https://www.wikidata.org/wiki/Q2374463",
+        "display_name": "Data science",
+        "level": 1,
+        "score": 0.3200373649597168
+      },
+      {
+        "id": "https://openalex.org/C54355233",
+        "wikidata": "https://www.wikidata.org/wiki/Q7162",
+        "display_name": "Genetics",
+        "level": 1,
+        "score": 0.24348995089530945
+      },
+      {
+        "id": "https://openalex.org/C127413603",
+        "wikidata": "https://www.wikidata.org/wiki/Q11023",
+        "display_name": "Engineering",
+        "level": 0,
+        "score": 0.17387330532073975
+      },
+      {
+        "id": "https://openalex.org/C104317684",
+        "wikidata": "https://www.wikidata.org/wiki/Q7187",
+        "display_name": "Gene",
+        "level": 2,
+        "score": 0.15960943698883057
+      },
+      {
+        "id": "https://openalex.org/C33923547",
+        "wikidata": "https://www.wikidata.org/wiki/Q395",
+        "display_name": "Mathematics",
+        "level": 0,
+        "score": 0.09423714876174927
+      },
+      {
+        "id": "https://openalex.org/C87717796",
+        "wikidata": "https://www.wikidata.org/wiki/Q146326",
+        "display_name": "Environmental engineering",
+        "level": 1,
+        "score": 0.0
+      },
+      {
+        "id": "https://openalex.org/C114614502",
+        "wikidata": "https://www.wikidata.org/wiki/Q76592",
+        "display_name": "Combinatorics",
+        "level": 1,
+        "score": 0.0
+      }
+    ],
+    "mesh": [],
+    "locations_count": 1,
+    "locations": [
+      {
+        "id": "doi:10.7287/peerj.preprints.1435v1",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.7287/peerj.preprints.1435v1",
+        "pdf_url": null,
+        "source": null,
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "acceptedVersion",
+        "is_accepted": true,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "posted-content"
+      }
+    ],
+    "best_oa_location": {
+      "id": "doi:10.7287/peerj.preprints.1435v1",
+      "is_oa": true,
+      "landing_page_url": "https://doi.org/10.7287/peerj.preprints.1435v1",
+      "pdf_url": null,
+      "source": null,
+      "license": "cc-by",
+      "license_id": "https://openalex.org/licenses/cc-by",
+      "version": "acceptedVersion",
+      "is_accepted": true,
+      "is_published": false,
+      "raw_source_name": null,
+      "raw_type": "posted-content"
+    },
+    "sustainable_development_goals": [],
+    "x_sdgs": [],
+    "study_designs": [],
+    "awards": [],
+    "funders": [],
+    "has_content": {
+      "pdf": false,
+      "grobid_xml": false
+    },
+    "content_urls": null,
+    "referenced_works_count": 0,
+    "referenced_works": [],
+    "related_works": [
+      "https://openalex.org/W1995889332",
+      "https://openalex.org/W3104163240",
+      "https://openalex.org/W1598955744",
+      "https://openalex.org/W4385422621",
+      "https://openalex.org/W3107837688",
+      "https://openalex.org/W3036607553",
+      "https://openalex.org/W2124893282",
+      "https://openalex.org/W1572768157",
+      "https://openalex.org/W4220778537",
+      "https://openalex.org/W2388508343"
+    ],
+    "abstract_inverted_index": {
+      "The": [
+        0
+      ],
+      "rapid": [
+        1
+      ],
+      "adoption": [
+        2
+      ],
+      "of": [
+        3,
+        19,
+        50
+      ],
+      "microbial": [
+        4,
+        51,
+        62
+      ],
+      "whole": [
+        5
+      ],
+      "genome": [
+        6,
+        52
+      ],
+      "sequencing": [
+        7,
+        53,
+        104
+      ],
+      "in": [
+        8,
+        44
+      ],
+      "public": [
+        9
+      ],
+      "health,": [
+        10
+      ],
+      "clinical": [
+        11
+      ],
+      "testing,": [
+        12
+      ],
+      "and": [
+        13,
+        30,
+        39,
+        55,
+        81,
+        100
+      ],
+      "forensic": [
+        14
+      ],
+      "laboratories": [
+        15
+      ],
+      "requires": [
+        16
+      ],
+      "the": [
+        17,
+        45,
+        48,
+        60,
+        98
+      ],
+      "use": [
+        18
+      ],
+      "validated": [
+        20
+      ],
+      "measurement": [
+        21,
+        37
+      ],
+      "processes.": [
+        22
+      ],
+      "Reference": [
+        23
+      ],
+      "materials": [
+        24,
+        72
+      ],
+      "that": [
+        25
+      ],
+      "are": [
+        26
+      ],
+      "well": [
+        27,
+        58
+      ],
+      "characterized,": [
+        28
+      ],
+      "homogeneous,": [
+        29
+      ],
+      "stable": [
+        31
+      ],
+      "can": [
+        32
+      ],
+      "be": [
+        33
+      ],
+      "used": [
+        34
+      ],
+      "to": [
+        35,
+        41
+      ],
+      "evaluate": [
+        36
+      ],
+      "processes": [
+        38
+      ],
+      "help": [
+        40
+      ],
+      "establish": [
+        42
+      ],
+      "confidence": [
+        43
+      ],
+      "results.": [
+        46
+      ],
+      "Given": [
+        47
+      ],
+      "variety": [
+        49
+      ],
+      "applications": [
+        54
+      ],
+      "platforms,": [
+        56
+      ],
+      "as": [
+        57,
+        59
+      ],
+      "vast": [
+        61
+      ],
+      "genomic": [
+        63,
+        71,
+        88,
+        112
+      ],
+      "diversity,": [
+        64
+      ],
+      "there": [
+        65
+      ],
+      "is": [
+        66
+      ],
+      "a": [
+        67,
+        79,
+        108
+      ],
+      "need": [
+        68
+      ],
+      "for": [
+        69,
+        73,
+        85,
+        92
+      ],
+      "application-specific": [
+        70
+      ],
+      "method": [
+        74
+      ],
+      "validation.": [
+        75
+      ],
+      "We": [
+        76,
+        96
+      ],
+      "have": [
+        77
+      ],
+      "developed": [
+        78
+      ],
+      "reproducible": [
+        80
+      ],
+      "transparent": [
+        82
+      ],
+      "bioinformatics": [
+        83
+      ],
+      "tool": [
+        84,
+        99
+      ],
+      "characterizing": [
+        86
+      ],
+      "prokaryotic": [
+        87
+      ],
+      "materials;": [
+        89
+      ],
+      "”PEPR”,": [
+        90
+      ],
+      "Pipelines": [
+        91
+      ],
+      "Evaluating": [
+        93
+      ],
+      "Prokaryotic": [
+        94
+      ],
+      "References.": [
+        95
+      ],
+      "demonstrate": [
+        97
+      ],
+      "its": [
+        101
+      ],
+      "output": [
+        102
+      ],
+      "using": [
+        103
+      ],
+      "data": [
+        105
+      ],
+      "while": [
+        106
+      ],
+      "developing": [
+        107
+      ],
+      "Staphylococcus": [
+        109
+      ],
+      "aureus": [
+        110
+      ],
+      "candidate": [
+        111
+      ],
+      "reference": [
+        113
+      ],
+      "material.": [
+        114
+      ]
+    },
+    "counts_by_year": [],
+    "updated_date": "2026-08-27T14:10:00.468798",
+    "created_date": "2025-10-10T00:00:00"
+  }
+}

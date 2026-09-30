@@ -1,0 +1,17 @@
+{
+  "provider": "openalex_oa_location",
+  "requested_url": "https://iopscience.iop.org/article/10.1088/1742-6596/1015/3/032055/pdf",
+  "retrieved_at": "2026-09-30T11:54:04.324032+00:00",
+  "status": "ok",
+  "http_status": 200,
+  "final_url": "https://iopscience.iop.org/article/10.1088/1742-6596/1015/3/032055/pdf",
+  "sha256": "7a017cd951d905d84908067602e3fd817b8702507ad95e84ad4373b20522c0d0",
+  "content_type": "application/pdf;charset=UTF-8",
+  "local_file": "reproducibility_study/data/papers/3b1717c36e0e969130d5/pdf_0.pdf",
+  "bytes": 599589,
+  "text_extraction": {
+    "exit_code": 0,
+    "local_file": "reproducibility_study/data/papers/3b1717c36e0e969130d5/pdf_0.txt",
+    "tool": "pdftotext -layout"
+  }
+}

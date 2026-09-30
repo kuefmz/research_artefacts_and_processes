@@ -1,0 +1,15 @@
+{
+  "paper_id": "23b215afb15bade70fa7",
+  "candidates": [
+    {
+      "source": "openalex_oa_location",
+      "url": "https://arxiv.org/pdf/1708.08794"
+    },
+    {
+      "source": "crossref_pdf_link_access_unverified",
+      "url": "https://onlinelibrary.wiley.com/doi/pdf/10.1002/qj.3556"
+    }
+  ],
+  "identity_status": "unreviewed",
+  "note": "Discovery is incomplete; no full-text landing-page crawler. Downloads do not establish redistribution permission."
+}

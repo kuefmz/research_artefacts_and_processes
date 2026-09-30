@@ -1,0 +1,24 @@
+[
+  {
+    "path": "data/papers/de39db5bc16920aaae2d/pdf_0.pdf",
+    "bytes": 14805767,
+    "sha256": "eb4cd883b9e2241132c5c9580f71ae3c9acfe617af3a26a5834083e3a2058e8d",
+    "parts": [
+      "data/papers/de39db5bc16920aaae2d/pdf_0.pdf.part001",
+      "data/papers/de39db5bc16920aaae2d/pdf_0.pdf.part002",
+      "data/papers/de39db5bc16920aaae2d/pdf_0.pdf.part003"
+    ]
+  },
+  {
+    "path": "research_reproducibility_starter.zip",
+    "bytes": 27168529,
+    "sha256": "af22528c67430dcb54b82ba4e65c3fa51210bf8f05f6871e167f7b882f9e72ec",
+    "parts": [
+      "research_reproducibility_starter.zip.part001",
+      "research_reproducibility_starter.zip.part002",
+      "research_reproducibility_starter.zip.part003",
+      "research_reproducibility_starter.zip.part004",
+      "research_reproducibility_starter.zip.part005"
+    ]
+  }
+]

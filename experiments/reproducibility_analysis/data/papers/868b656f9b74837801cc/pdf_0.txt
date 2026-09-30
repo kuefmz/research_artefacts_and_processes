@@ -1,0 +1,716 @@
+                                           Multi-Output Artificial Neural Network for Storm Surge Prediction in North
+                                                                            Carolina
+
+                                                                       Anton Bezuglova,∗, Brian Blantonb , Reinaldo Santiagoa
+                                                            a
+                                                           Math and Computer Science Dept, Benedict College, 1600 Harden St., Columbia, SC, 29204
+                                           b
+                                               Renaissance Computing Institute, The University of North Carolina at Chapel Hill, 100 Europa Dr., Chapel Hill, NC,
+                                                                                                    27517
+
+
+
+
+                                         Abstract
+arXiv:1609.07378v1 [cs.NE] 23 Sep 2016
+
+
+
+
+                                         During hurricane seasons, emergency managers and other decision makers need accurate and ‘on-time’
+                                         information on potential storm surge impacts. Fully dynamical computer models, such as the ADCIRC
+                                         tide, storm surge, and wind-wave model take several hours to complete a forecast when configured at high
+                                         spatial resolution. Additionally, statically meaningful ensembles of high-resolution models (needed for
+                                         uncertainty estimation) cannot easily be computed in near real-time. This paper discusses an artificial
+                                         neural network model for storm surge prediction in North Carolina. The network model provides fast,
+                                         real-time storm surge estimates at coastal locations in North Carolina. The paper studies the performance
+                                         of the neural network model vs. other models on synthetic and real hurricane data.
+                                         Keywords: feedforward artificial neural network, storm surge, hurricane, regression
+
+
+                                         1. Introduction
+
+                                                   During hurricane seasons, emergency managers and other decision makers need accurate and ‘on-
+                                         time’ information on potential storm surge impacts. Fully dynamical computer models, such as the
+                                         ADCIRC tide, storm surge, and wind-wave model (Westerink et al., 2008), when configured at high spatial
+                                         resolution, typically take several hours to complete a forecast. This complicates computing statically
+                                         meaningful ensembles of high-resolution models (needed for uncertainty estimation) in near real-time.
+                                         Contrary to this, an artificial neural network (ANN) can be an accurate and fast non-parametric model
+                                         with computational complexity (Skiena, 1998) of only O(N 2 ) for a two layer feedforward neural network
+                                         with N neurons in the hidden layer.
+                                                   This paper focuses on design, implementation, and testing of an ANN model for storm surge prediction
+                                         in North Carolina. The inputs to the model are hurricane parameters such as its location, central pressure,
+                                         and radius to maximum winds. The outputs are the storm surge predictions for specified locations along
+
+                                               ∗
+                                             Corresponding author
+                                             Email addresses: bezuglova@benedict.edu (Anton Bezuglov), bblanton@renci.org (Brian Blanton),
+                                         santiagor@benedict.edu (Reinaldo Santiago)
+
+
+                                         Preprint submitted to Neural Networks                                                                  September 26, 2016
+the coast. We start with a short description of the storm surge simulation process and needed inputs,
+followed by review of machine learning techniques as applied to storm surge. The network architecture is
+then described, followed by application to the North Carolina coast. The contributions of this work are
+as follows:
+
+   • Fast and accurate model for NC coastal areas – the proposed ANN was tested on historic and
+      simulated hurricane tracks;
+
+   • Multiple outputs – one ANN serves multiple locations;
+
+   • Open source implementation – the model is freely available and implemented using TensorFlow
+      library (Abadi et al., 2015);
+
+   Generally, storm surge dynamics is a relatively well-understood area in geosciences (see Flather (2001)
+for an excellent overview of the physics). Recent research activities, motivated by major hurricane events
+such as Hurricanes Katrina (2005) and Sandy (2012), have focused on the ability to model and predict
+storm surge both for deterministic simulations (Lin et al., 2010; Dietrich et al., 2011; Dresback et al.,
+2013) and for probabilistic/ensemble-based approaches that allow assessment of uncertainties (Davis
+et al., 2010; Di Liberto et al., 2011; Bernier and Thompson, 2015). Dynamic models for storm surge
+directly solve the shallow water wave equations given specified initial and boundary conditions (Resio
+and Westerink, 2008), and include NOAAs SLOSH (Jelesnianski et al., 1992), FVCOM (Qi et al., 2009),
+and the Advanced Three-Dimensional Circulation Model (ADCIRC) (Luettich Jr et al., 1992; Westerink
+et al., 2008). For hurricane-driven storm surge simulations, the boundary conditions include specification
+of the atmospheric surface pressure and surface wind velocity that describe the time-evolution of the
+hurricane vortex. The source of the winds and pressures themselves can represent an historical event,
+a synthetic event, or a forecast. Regardless, the data are usually either from dynamic models for the
+atmosphere (e.g., the National Weather Service’s operational forecast models) or parametric descriptions
+of the vortex in terms of a few parameters. These parameters can be derived from analysis of the observed
+hurricane history as characterized in datasets such as the International Best Track Archive for Climate
+Stewardship (IBTrACS, Knapp et al. (2010)) or actual hurricane forecasts from operational groups such
+as the National Hurricane Center. The fundamental parameters that describe hurricanes are the pressure
+deficit between the center of rotation and the far-away ambient conditions, the distance from the center
+of rotation to the location of maximum wind speeds, and the forward speed of the vortex (Holland, 1980,
+2008; Holland et al., 2010). Good overviews of hurricanes are given in Anthes (1974) and Marks (2003).
+   Dynamic models like ADCIRC can be configured at a very high spatial resolution (Figure 1), but at
+a concomitant high cost in terms of computer resources needed to conduct a simulation in near-real-time
+
+                                                    2
+Figure 1: ADCIRC’s finite element grid for the North Carolina coast. The linear, triangular elements are
+shown in gray, with the coastline drawn in black. Colors represent the land topographic heights (green to
+brown) and ocean floor depths (blues). The high resolution is indicated by the density of triangles near
+the coast and along rivers. The ten output locations are shown with red dots, numbered from north to
+south. The paths of Hurricanes Fran (1996) and Isabel (2003) are shown with purple lines.
+
+
+
+(Blanton et al., 2012b). To overcome this challenge, surrogate models can be developed that leverage pre-
+computed datasets of synthetic hurricane parameters and paths and storm surge responses. Regression
+models approximate the (unknown) functional relationship between inputs (hurricane parameters) and
+responses (storm surge), and include response surface methods (Khuri and Mukhopadhyay, 2010) applied
+to rapid storm surge simulations (Taflanidis et al., 2013), as well as kriging (Jia and Taflanidis, 2013).
+   Non-parametric models are largely based on nonlinear regressions, support vector machines (SVM),
+and ANNs. The support vector method for function regression was introduced in Vapnik et al. (1997) and
+Smola and Vapnik (1997). The core of the method is the proposition that a function is approximated by
+a linear combination of a small number of support vectors. Support vector regression is used for building
+non-parametric models. (Yu et al., 2006; Zhang et al., 2006; Sreekumar et al., 2015; Wolff et al., 2016; Ma
+et al., 2003; Khemchandani et al., 2009). Rajasekaran et al. (2008) applied support vector methodology
+
+
+
+                                                    3
+for storm surge prediction and verified it using observations of water level at the Longdong station at
+Taiwan.
+   ANNs belong to a family of non-parametric models and have a wide area of application (Zhang et al.,
+1998; Govindaraju and Rao, 2013; Aminzadeh et al., 2013), including storm surge predictions. Bajo and
+Umgiesser (2010) developed an ANN to reduce the error in storm surge predictions made by a parametric
+hydrodynamic model for Venice, Italy. Lee (2006, 2008) focused on two layer ANNs with the number of
+neurons ranging from 3 to 12 for typhoon storm surge. The models were trained using data from three
+typhoons impacting Taiwan in 2003, including Typhoon Vamco, at three locations and produced outputs
+with root mean squared error (RMSE) from 0.05 to 0.11 m and correlation coefficients (R) from 0.97 to
+0.99. De Oliveira et al. (2009) developed a two layer ANN for south east coastal region of Brazil. The
+model was trained on meteorological parameters (zonal wind stress, meridian wind stress, pressure, wind
+speed) and filtered sea level series of previous hours. The authors observed that the network with 11
+neurons in the hidden layer produced the best results (R from 0.851 to 0.998).
+   One problem with applying non-parametric models, and ANNs in particular, is insufficient amounts
+of the data for model fitting. To overcome this, Kim et al. (2015) generated a set of 446 synthetic
+hurricanes with corresponding storm surge levels computed with the ADCIRC model. The dataset was
+used to train a two-layer model with number of neurons ranging from 16 to 25. The model was tested on
+historical hurricanes Katrina and Gustav and demonstrated R from 0.917 to 0.996. A similar approach
+was proposed by Hashemi et al. (2016), where they used 1050 synthetic tropical storms to build a model
+for Rhode Island coastal waters. Das et al. (2011) used 47 synthetic storms to construct their storm surge
+forecasting tool for coastal Mississippi. The authors posited that a more comprehensive set of storms and
+storm surge responses would improve the results of the method.
+   In this paper, we describe extensions of the above applications. First, we implement a multi-output
+prediction model, where a single ANN model produces storm surge predictions at multiple (currently ten)
+locations along the coast. Second, we use a three layer model (two hidden layers) where the first hidden
+layer pre-processes hurricane data and the second hidden layer calculates individual predictions. The rest
+of the paper is organized as follows: Section 2 reviews basics of ANNs, discusses dealing with multiple
+locations and implementation of the model, Section 3 overviews the data used in the study, Sections 4
+and 5 discuss the findings and conclusions.
+
+
+
+
+                                                    4
+2. Feedforward Artificial Neural Network (FF ANN) for Storm Surge Prediction
+
+2.1. Model Architecture
+
+   We briefly describe the application of artificial neural networks for storm surge prediction. More
+general and thorough discussions of the networks and applicable algorithms can be found in Bishop
+(2006) and De Oliveira et al. (2009), among many others. Suppose hurricane data is described by a
+vector x of parameters such as longitude and latitude of its center, its forward or translation speed,
+radius from the center of rotation to maximum winds, etc. Suppose also that vector y represents storm
+surge predictions at several locations. Assuming that y does not depend on factors other than x, it can
+be evaluated as y = f (x), where f (·) is some modeling function. Depending on the implementation, f (·)
+can take various forms and in case of a two layer feed-forward ANN it is:
+
+                                         f (x) = Wh ∗ h + bh
+
+                                           h = σ(Wi ∗ x + bi )
+
+where h is the output of the hidden layer, and Wh , Wi , bh , bi are weight matrices and biases for the
+the hidden and input layers respectively. The weight matrices and biases constitute a set of independent
+network parameters. σ(·) is a nonlinear function applied component-wise to the vector, which is essential
+as it allows the network to devise a presentation of a nonlinear function. σ(·) is typically a hyperbolic
+tangent or a sigmoid function:
+
+                                                      2e−x − 1
+                                           σtanh (x) =
+                                                      2e−x + 1
+                                                          1
+                                        σsigmoid (x) =
+                                                       1 + e−x
+
+   Figure 2 illustrates the architecture of a two-layer ANN. The information in the network travels
+from left to right (i.e., from the inputs x through a series of operations to the outputs y). The vertices
+represent input, output, hidden variables, and placeholders for biases, and the edges represent independent
+parameters (i.e., the weight matrices and the biases themselves).
+   Suppose for each x, the observations of ‘true’ storm surges ŷ are known. Then, the model can be
+trained to minimize the error between ŷ and y by changing its independent parameters. Rumelhart et al.
+(1988) developed a highly efficient iterative back-propagation algorithm which is now commonly used for
+training. At each step, the algorithm calculates gradients for each model parameter to minimize the error
+from the outputs back to the inputs. The parameters are changed in accordance to their gradients and
+the procedure repeats until convergence.
+   The complexity of ANN algorithms is determined by the number of elementary operations, in this
+case multiplications. The number of multiplications follows from the size of the weight matrices and
+
+                                                         5
+                              Figure 2: Architecture of a two layer ANN
+
+
+
+as such depends on the number of neurons in the hidden layer. In case of a fully trained ANN, the
+network’s inference complexity is expected to be O(N 2 ), where N -number of neurons. The network
+training complexity will then be O(N 2 ∗ k ∗ E), where k-training dataset size and E-number of epochs
+(iterations).
+
+2.2. Dealing with Multiple Outputs
+
+   In contrast to previous studies, here the output vector y contains 10 components, one for each location
+along the coast. A straight-forward approach to modeling would be to have 10 separate two-layer networks
+one per each output and train them individually. This has been thoroughly tested and the literature
+suggests anywhere between eight and thirty neurons in the hidden layer, depending on the complexity
+of geography and other factors. However, due to spatial correlation between the outputs, the networks
+will be somewhat similar and redundant. Besides, intuitively, each hurricane track is a single event that
+impacts multiple locations and as such the information has to be shared across locations.
+   We have used a single network with multiple outputs to mitigate the impacts of this redundancy. Ad-
+ditionally, to improve information sharing in the network, the second hidden layer was included resulting
+in a three layer multiple output ANN. It is difficult, if not impossible, to make propositions regarding
+internals of ANNs, but intuition and empirical evidence suggest that the first hidden layer serves as an
+‘input preparation’ layer, converting x to a better form, whereas the second hidden layer ‘localizes’ the
+
+                                                    6
+outputs. Another proposition is to have more neurons in the second hidden layer compared to the first,
+since the output has more components than the input.
+
+                             Table 1: Preliminary analysis of network types
+
+
+                      ANN type                                       MSE           R
+
+                      10 independent two-layer ANNs (32)             0.010      0.90-0.95
+                      Two layer (200)                             0.014-0.025   0.92-0.95
+                      Three layer (32,32)                            0.007      0.92-0.96
+                      Three layer (64,32)                            0.008      0.90-0.97
+                      Three layer (64,64)                            0.008      0.92-0.98
+                      Three layer (32,64)                         0.006-0.008   0.93-0.98
+
+
+   Table 1 summarizes the empirical data for each network type. The networks are compared by using
+mean squared errors (MSE) and average correlation coefficients (R), which are more formally given in
+Section 4. The first row of the table summarizes the average performance of 10 independent two-layer
+ANNs with 32 neurons in the hidden layer. The second row gives the performance of a two-layer multiple
+output network with 200 neurons. The following rows give the performances of three layer multi-output
+networks with various hidden layer sizes. According to the table, the three layer multiple output networks
+are appropriately accurate and simple, which substantiates the propositions above.
+
+2.3. Implementation
+   Model equations for the multiple output three layer network are as follows:
+
+                                             f (x) = Wo ∗ h2 + bo
+
+                                    h2 = σtanh (Wh2 ∗ h1 + bh2 )
+
+                                        h1 = σtanh (Wh1 ∗ x + bh1 )
+
+where h1 and h2 are the outputs of the first and second hidden layers; Wh1 , Wh2 , Wo , bh1 , bh2 , bo are
+weight matrices and biases for the first, second and output layers respectively. The model is trained using
+the back-propagation algorithm to minimize MSE of the training dataset of size N for K = 10 outputs:
+                                                K X N 
+                                             1 X                        2
+                                 M SE =                 f (xji ) − ŷij
+                                            KN i=1 j=1
+
+
+   The neural network was implemented and trained using Tensorflow library (Abadi et al., 2015). The
+minimization of MSE was performed with the ADAM stochastic optimization algorithm (Kingma and
+
+                                                       7
+Ba, 2014) with batch sizes from 19 to 57 tracks. The code can run on systems with multiple GPUs, in
+which case it calculates update gradients in parallel. Algorithm 1 summarizes the implementation and
+the complete code is available to download from (Bezuglov, 2016).
+
+Algorithm 1 Training algorithm for a multiple output ANN on parallel GPUs using TensorFlow
+ 1: procedure Train(x, ŷ)                                                    . x – inputs,ŷ – observations
+ 2:      xn = Normalize(x)                              . subtract means and divide by std component-wise
+ 3:      for g in GPUs do
+ 4:          g ← InitializeN etwork()                         . Assign a copy of the network on each GPU
+ 5:      end for
+ 6:      for e in Epochs do
+ 7:          b1..GP U s ← GetDataBatch(xn , ŷ, size)        . Fetch batches of training data for each GPU
+ 8:          g1..GP U s ← CalculateGradients(b1..GP U s )               . Calculate gradients on each GPU
+ 9:          g ← M ean(g1..GP U s )                                                . Find average gradient
+10:          v ← AdamOptimizer(g, rate)                     . Obtain the new values of network parameters
+11:          UpdateNetworks(v)                                         . Propagate changes to all networks
+12:      end for
+13: end procedure
+
+
+
+
+3. Dataset
+
+      In this work, the ANNs were trained and validated on a dataset of synthetic hurricanes and storm
+surge responses for coastal North Carolina. The dataset was computed for a recent and detailed coastal
+flood insurance study for FEMA (Blanton et al., 2012a). The hurricane tracks in the dataset are shown in
+Figure 3a, along with representative storm surge responses from ADCIRC (Figure 3). There are a total
+of 324 storm events. This set of hurricanes represents the statistics of landfalling hurricanes in North
+Carolina, including the landfall locations. Note that hurricane landfalls have not occurred north of Cape
+Hatteras (see 1), although storms making landfall along the southeast-facing shore have transited across
+the coastal lands to exit back over water along the northern coast. We also do not include astronomical
+tides in the data set, since the hurricane events would occur at a random phase of the tide.
+      The hurricane parameters were used to train and validate the models. Each track is essentially a table
+with 193 rows and 16 columns. The first six columns represent x: time to landfall in days, hurricane
+center coordinates, radius to maximum winds, maximum wind speed, and storm forward/translation
+speed. The duration of each track is four days, with 3 days prior to landfall and one day post-landfall.
+
+
+                                                        8
+                                                                             (b)
+
+
+
+
+                           (a)
+
+Figure 3: a) Landfalling hurricane tracks derived from the historical record for the North Carolina coastal
+flood insurance study. There are 324 tracks. b) ADCIRC-simulated water levels [meters above mean sea
+level] for a location near Wrightsville Beach, North Carolina for two of the landfalling tracks.
+
+
+The last ten columns are the outputs ŷ, i.e. storm surge in meters above mean sea level at the specified
+output locations (Figure 3a).
+   While discussing the dataset, it is important to touch on the subject of over-fitting, when a model,
+in attempt to minimize the error on a training dataset, fails to generalize on previously unseen data.
+Over-fitting is typically a result of an overly complex model trained on an insufficiently large dataset. In
+this work, several methods were applied to mitigate over-fitting. First, a somewhat heuristic observation
+suggests that the ratio of data samples to free model parameters has to be approximately 4:1 or higher.
+If the number of free parameters in ANN is roughly the squared number of neurons, the recommended
+                                      p
+network size should be 125 neurons ( 62532/4) or fewer.
+   Second, the dataset is split into three subsets: training (70%, 228 tracks), validation (15%, 48 tracks),
+and testing (15%, 48 tracks). The training subset is used to update the network by calculating gradients
+and adjusting network weights and biases. The validation subset is used to evaluate model performance,
+adjust hyper-parameters such as its learning rate, and to detect over-fitting. The model performance is
+evaluated on the testing dataset.
+
+
+4. Experiments and Discussion
+
+   Two metrics were applied to measure network performance: mean squared error (MSE) and correlation
+coefficient (R). Suppose that yij and ŷij are model predictions and observations (ADCIRC) of storm surges
+
+
+                                                     9
+at location i for sample j, then
+                                                                   N 
+                                                                1 X               2
+                                                     M SEi =           yij − ŷij
+                                                                N j=1
+                                                   PN      j     j     j   ¯j
+                                                     j=1 (yi − ȳi )(ŷi − ŷ i )
+                                     Ri = qP
+                                                N     j     j 2 PN      j   ¯j 2
+                                                j=1 (yi − ȳi )  j=1 (ŷi − ŷ i )
+
+All tests below were performed on either synthetic testing datasets or historic hurricanes, which were not
+directly1 used for model training.
+
+4.1. Synthetic Hurricanes
+
+      Table 2 compares performance of several ANNs at each output location on the test set of 48 synthetic
+storms. For each network, the table shows the size of the hidden layer(s) and the number of epochs in the
+training. MSE column is the average mean squared error across all locations, and Ri is the correlation
+coefficient at location i. The upper part of the table summarizes two-layer networks with 60, 120, and
+200 neurons, and the lower part – the three layer networks. For each network, multiple training sessions
+were needed to identify the best hyper-parameters such as the learning rate, number of epochs, learning
+rate decay, batch size and others. The table summarizes the best performances of each network type.
+
+Table 2: Performance on synthetic hurricane tracks. Correlation coefficients R are given for output
+locations, numbered 1-10 from north to south as shown in Figure 1.
+
+
+   ANN (N1 , N2 )        Epochs      MSE      R1        R2      R3      R4          R5   R6     R7     R8     R9     R10
+
+          (60,-)          10,000     0.014    0.90    0.91     0.92    0.93     0.92     0.89   0.94   0.93   0.85   0.89
+          (120,-)         10,000     0.012    0.91    0.92     0.93    0.95     0.93     0.88   0.92   0.91   0.87   0.89
+          (200,-)         25,000     0.014    0.93    0.94     0.94    0.95     0.95     0.92   0.95   0.94   0.92   0.93
+
+          (16,32)         15,000     0.007    0.95    0.96     0.97    0.97     0.97     0.95   0.97   0.96   0.93   0.93
+          (32,32)         15,000     0.007    0.95    0.96     0.96    0.96     0.96     0.93   0.96   0.96   0.94   0.94
+          (16,64)         15,000     0.006    0.97    0.97     0.97    0.98     0.98     0.93   0.97   0.96   0.95   0.95
+         (32,64)*         15,000     0.006    0.96    0.96     0.97    0.98     0.97     0.95   0.97   0.98   0.95   0.95
+         (64,128)         15,000     0.006    0.96    0.96     0.97    0.98     0.98     0.94   0.96   0.96   0.93   0.92
+
+
+      The table suggests a few observations. First, locations 6, 9, and 10 are more challenging for all the
+networks, whereas locations 3, 4, 5, and 7 appear to be the ‘easiest’, which is explained by the shape of
+
+  1
+      The historic hurricanes were used to derive parameters and generate synthetic hurricanes
+
+
+                                                               10
+the coast. Second, the MSEs of three layer networks are about half that of the two layer networks, which
+further justifies the propositions given in Section 2.2. Third, R and MSE consistently improve with the
+growth of network complexity until it reaches (64,128). No further improvements are likely because of
+over-fitting. The (32,64) network demonstrates a good balance between accuracy and complexity and so
+it was selected for further analysis.
+   Figure 4 demonstrates outputs of the (32,64) network on a few synthetic hurricane tracks. Each
+sub-figure shows the ten locations arranged vertically, from north (top) to south (bottom). As seen in
+the figure, tracks 1 and 2 were modeled accurately, whereas in track 3, the observations at locations 6
+and 7 were underestimated. An interesting property of the network can be seen at location 5 for tracks 1
+and 2. Even though the outputs at other locations were somewhat similar, the shared information from
+them did not inadvertently cause detrimental effects on the predictions at location 5.
+
+4.2. Analysis of network errors
+
+   As demonstrated by Table 2, the mean prediction errors of the networks are low and are on average
+between 7 and 8 centimeters. Unfortunately, both MSE and R can be substantially influenced by accurate
+predictions before and after the landfalls and thus neither may represent the acceptable accuracy during
+times of peak water level. This section considers prediction errors by ANN (32,64), which demonstrated
+the best results previously.
+   First, the ANN ran on the complete set of synthetic hurricane tracks and the errors were calculated as
+a difference between network outputs and observations for each data sample at each location. Assuming
+that at each location, the errors are independent, their probability density function (PDF) was fitted
+using kernel density estimation (Scott, 2015). This approach provides an ‘optimistic’ view on model
+errors as it still includes error-free regions long before the landfalls.
+   In order to get a realistic estimation of network accuracy, the further analysis only included regions
+immediately prior and after the landfall that encompass the largest absolute errors. Identically to the pre-
+vious case, for each location, error PDF was fitted and error probabilities evaluated. Table 3 summarizes
+the results for the first and the second cases.
+   In the table, the second column gives per location probabilities of the error to be within 10 centimeters
+for all the data, including pre-landfall regions. The last three columns give intervals and probabilities for
+the time window surrounding landfall.
+
+4.3. Observed hurricane performance
+
+   Since the longterm goal is to develop prediction methods that provide usable information for decision
+makers, we used the ANN (32,64) model to predict the storm surge (without astronomical tides) for two
+
+
+                                                       11
+                          Table 3: Accuracy of (32,64) network on synthetic data
+
+
+   Location     MSE       R      P (|e| ≤ 0.1m)   e∗ , P (|e| ≤ e∗ ) = 0.95   P (|e| ≤ 0.1m)   P (|e| ≤ 0.5m)
+
+      1         0.0017   0.963       0.966                  0.15                  0.864            0.998
+      2         0.0012   0.975       0.976                  0.13                  0.909            0.998
+      3         0.0008   0.988       0.992                  0.10                  0.950            0.999
+      4         0.0004   0.992       0.993                  0.10                  0.953            0.999
+      5         0.0014   0.976       0.978                  0.17                  0.861            0.994
+      6         0.0038   0.932       0.935                  0.32                  0.692            0.985
+      7         0.0079   0.892       0.900                  0.46                  0.531            0.960
+      8         0.0112   0.853       0.864                  0.51                  0.477            0.949
+      9         0.0095   0.901       0.910                  0.44                  0.566            0.960
+      10        0.0175   0.833       0.850                  0.49                  0.475            0.953
+
+
+observed hurricanes that impacted North Carolina, Hurricane Fran (1996) and Hurricane Isabel (2003).
+The storm tracks are shown in Figure 1. The input hurricane parameters for ANN were extracted from
+the IBTrACS dataset and interpolated to match the time intervals in the training data (30 minutes).
+For each hurricane, we computed a ”truth” solution using the ADCIRC model and using the same
+model configuration as that used to compute the training dataset. The parameters for neither storm are
+explicitly in the data set; however, they are in the historical data from which the data set parameters
+were derived.
+   Hurricane Fran made landfall near Southport, NC, (output location 9 on Figure 1) and caused sig-
+nificant flooding and coastal high water that approached 4 m ( 13 ft) in the Wrightsville Beach area
+(output location 8). Figure 5 shows the ANN response at the 10 output locations, along with the ”truth”
+response. In the figure, the red lines represent ADCIRC and blue lines are the ANN model outputs.
+The figure also provides root mean squared errors (rms) and mean absolute errors (mae) in meters for
+each coastal location. Fran had very little coastal impact north of Cape Lookout, noted by the very flat
+response at the northern locations 1-5. The peak storm surge occurs at location 8, where the ANN and
+ADCIRC values are 2.25 and 2.6 m, respectively.
+   Hurricane Isabel made landfall on the Outer Banks of North Carolina near Drum Inlet (between
+output locations 5 and 6), as a strong category 2 storm. Figure 6 summarizes performance of ANN
+(32,64) on Hurricane Isabel (2003). Even though Isabel made landfall within the landfalling zone covered
+by the storms in the data set, there is a significant storm response along the northern NC coast (locations
+
+
+                                                      12
+1-4). This is expected since the size of the storm puts hurricane-force winds onshore and well to the north
+of landfall. There is very little ”truth” storm surge response to the left (southwest) of the storm, but
+the ANN model shows negative water levels at locations 8-10. The figure also demonstrates that ANN
+generally under-predicts storm surge response in the north, where the ADCIRC storm surge is largest.
+   Previously, the experiments on synthetic storms also showed that locations 8-10 were the most chal-
+lenging for the ANN with the greatest range of possible values. We interpret this to mean that the ANN
+training phase attempts to minimize the error by increasing the weight values, which inadvertently causes
+non-physical (negative) values of the storm surges. Unfortunately, none of the feedforward ANNs that
+were studied in this research could demonstrate exceptional accuracy at locations 8-10, which implies
+that the information contained in the input vector (x) may be insufficient. Had the network have some
+form of memory, it could have derived the missing information and use it, but this is not possible due to
+the limitations of the feedforward network architecture.
+
+
+5. Conclusions
+
+   The paper presents a multiple output feedforward ANN for storm surge predictions in North Carolina.
+Several architectures and network sizes were compared with a three layer feedforward ANN with 32 and
+64 neurons being the optimal in terms of its accuracy vs. complexity. The model and its implementation
+is freely available and can be applied to other coastal locations, provided that sufficient training data is
+available.
+   The model accuracy at each output is comparable or slightly better than that reported by other re-
+searchers. Even though the average errors were low, the absolute predictions of the FF ANN are subject
+to occasional under-estimation of peak surges. Based on the number of experiments and tested architec-
+tures, we consider that this is an inherent limitation of the memory-less, feedforward ANN approach. As
+such, further research will target introduction of state variables or memory to the network.
+
+
+Acknowledgments
+
+   This research was performed under an appointment to the U.S. Department of Homeland Security
+(DHS) Science & Technology (S&T) Directorate Office of University Programs Summer Research Team
+Program for Minority Serving Institutions, administered by the Oak Ridge Institute for Science and
+Education (ORISE) through an interagency agreement between the U.S. Department of Energy (DOE)
+and DHS. ORISE is managed by ORAU under DOE contract number DE-AC05-06OR23100. All opinions
+expressed in this paper are the authors’ and do not necessarily reflect the policies and views of DHS,
+DOE or ORAU/ORISE.
+
+                                                    13
+References
+
+Abadi, M., Agarwal, A., Barham, P., Brevdo, E., Chen, Z., Citro, C., Corrado, G. S., Davis, A., Dean,
+  J., Devin, M., et al., 2015. Tensorflow: Large-scale machine learning on heterogeneous systems, 2015.
+  Software available from tensorflow. org 1.
+
+Aminzadeh, F., Sandham, W., Leggett, M., 2013. Geophysical applications of artificial neural networks
+  and fuzzy logic. Vol. 21. Springer Science & Business Media.
+
+Anthes, R. A., 1974. The dynamics and energetics of mature tropical cyclones. Reviews of Geophysics
+  12 (3), 495–522.
+  URL http://dx.doi.org/10.1029/RG012i003p00495
+
+Bajo, M., Umgiesser, G., 2010. Storm surge forecast through a combination of dynamic and neural
+  network models. Ocean Modelling 33 (1), 1–9.
+
+Bernier, N. B., Thompson, K. R., 2015. Deterministic and ensemble storm surge prediction for atlantic
+  canada with lead times of hours to ten days. Ocean Modelling 86, 114–127.
+
+Bezuglov, A., 2016. ANN for storm surge prediction. https://github.com/abezuglov/ANN, [Online;
+  accessed 19-July-2016].
+
+Bishop, C. M., 2006. Pattern recognition. Machine Learning 128.
+
+Blanton, B., Luettich, R., Vickery, P., Hanson, J., Slover, K., Langan, T., 2012a. North Carolina Flood-
+  plain Mapping Program: Coastal Flood Insurance Study - Production Simulations and Statistical
+  Analyses. Technical Report TR-12-03, Renaissance Computing Institute, The University of North Car-
+  olina at Chapel Hill.
+
+Blanton, B., McGee, J., Fleming, J., Kaiser, C., Kaiser, H., Lander, H., Luettich, R., Dresback, K., Kolar,
+  R., 2012b. Urgent computing of storm surge for North Carolina’s coast. Procedia Computer Science
+  9 (0), 1677 – 1686, proceedings of the International Conference on Computational Science, ICCS 2012.
+  URL http://www.sciencedirect.com/science/article/pii/S1877050912003067
+
+Das, H. S., Jung, H., Ebersole, B., Wamsley, T., Whalin, R. W., 2011. An efficient storm surge forecasting
+  tool for coastal mississippi. Coastal Engineering Proceedings 1 (32), 21.
+
+Davis, J. R., Paramygin, V. A., Forrest, D., Sheng, Y. P., 2011/10/27 2010. Toward the probabilistic
+  simulation of storm surge and inundation in a limited-resource environment. Mon. Wea. Rev. 138 (7),
+
+
+
+                                                    14
+  2953–2974.
+  URL http://dx.doi.org/10.1175/2010MWR3136.1
+
+De Oliveira, M. M., Ebecken, N. F. F., De Oliveira, J. L. F., de Azevedo Santos, I., 2009. Neural network
+  model to predict a storm surge. Journal of Applied Meteorology and Climatology 48 (1), 143–155.
+
+Di Liberto, T., Colle, B. A., Georgas, N., Blumberg, A. F., Taylor, A. A., 2011. Verification of a multi-
+  model storm surge ensemble around New York City and Long Island for the cool season. Weather and
+  Forecasting 26 (6), 922–939.
+
+Dietrich, J. C., Westerink, J. J., Kennedy, A. B., Smith, J. M., Jensen, R. E., Zijlema, M., Holthui-
+  jsen, L. H., Dawson, C., Luettich, R. A., Powell, M. D., Cardone, V. J., Cox, A. T., Stone, G. W.,
+  Pourtaheri, H., Hope, M. E., Tanaka, S., Westerink, L. G., Westerink, H. J., Cobell, Z., 2011. Hur-
+  ricane Gustav (2008) waves and storm surge: Hindcast, synoptic analysis, and validation in southern
+  louisiana. Monthly Weather Review 139 (8), 2488–2522.
+  URL http://dx.doi.org/10.1175/2011MWR3611.1
+
+Dresback, K., Fleming, J., Blanton, B., Kaiser, C., Gourley, J., Tromble, E., Jr., R. L., Kolar, R., Hong,
+  Y., Cooten, S., Vergara, H., Flamig, Z., Lander, H., Kelleher, K., Nemunaitis-Monroe, K., 2013. Skill
+  assessment of a real-time forecast system utilizing a coupled hydrologic and coastal hydrodynamic
+  model during Hurricane Irene (2011). Cont. Shelf Res. 71, 78–94.
+
+Flather, R., 2001. Storm surges. In: Steele, J., Thorpe, S., Turekian, K. (Eds.), Encyclopedia of Ocean
+  Science. Academic Press, pp. 2882–2892.
+
+Govindaraju, R. S., Rao, A. R., 2013. Artificial neural networks in hydrology. Vol. 36. Springer Science
+  & Business Media.
+
+Hashemi, M. R., Spaulding, M. L., Shaw, A., Farhadi, H., Lewis, M., 2016. An efficient artificial intelli-
+  gence model for prediction of tropical storm surge. Natural Hazards 82 (1), 471–491.
+
+Holland, G. J., 1980. An analytic model of the wind and pressure profiles in hurricanes. Monthly Weather
+  Review 108 (8), 1212–1218.
+
+Holland, G. J., 2008. A revised hurricane pressure-wind model. Monthly Weather Review 136 (9), 3432–
+  3445.
+
+Holland, G. J., Belanger, J. I., Fritz, A., 2010. A revised model for radial profiles of hurricane winds.
+  Monthly Weather Review 138 (12), 4393–4401.
+
+
+                                                   15
+Jelesnianski, C., Chen, J., Shaffer, W. A., 1992. SLOSH: Sea, Lake, and Overland Surges from Hurricanes.
+  NOAA Technical Report NWS 48, U.S. Department of Commerce.
+
+Jia, G., Taflanidis, A. A., 2013. Kriging metamodeling for approximation of high-dimensional wave and
+  surge responses in real-time storm/hurricane risk assessment. Computer Methods in Applied Mechanics
+  and Engineering 261, 24–38.
+
+Khemchandani, R., Chandra, S., et al., 2009. Regularized least squares fuzzy support vector regression
+  for financial time series forecasting. Expert Systems with Applications 36 (1), 132–138.
+
+Khuri, A. I., Mukhopadhyay, S., 2010. Response surface methodology. Wiley Interdisciplinary Reviews:
+  Computational Statistics 2 (2), 128–149.
+  URL http://dx.doi.org/10.1002/wics.73
+
+Kim, S.-W., Melby, J. A., Nadal-Caraballo, N. C., Ratcliff, J., 2015. A time-dependent surrogate model
+  for storm surge prediction based on an artificial neural network using high-fidelity synthetic hurricane
+  modeling. Natural Hazards 76 (1), 565–585.
+
+Kingma, D., Ba, J., 2014. Adam: A method for stochastic optimization. arXiv preprint arXiv:1412.6980.
+
+Knapp, K., Kruk, M., Levinson, D., Diamond, H., Neumann, C., 2010. The International Best Track
+  Archive for Climate Stewardship (IBTrACS): Unifying tropical cyclone best track data. Bulletin of the
+  American Meteorological Society 91, 363–376.
+
+Lee, T.-L., 2006. Neural network prediction of a storm surge. Ocean Engineering 33 (3), 483–494.
+
+Lee, T.-L., 2008. Back-propagation neural network for the prediction of the short-term storm surge in
+  Taichung Harbor, Taiwan. Engineering Applications of Artificial Intelligence 21 (1), 63–72.
+
+Lin, N., Smith, J. A., Villarini, G., Marchok, T. P., Baeck, M. L., 2011/10/27 2010. Modeling extreme
+  rainfall, winds, and surge from hurricane isabel (2003). Weather and Forecasting 25 (5), 1342–1361.
+  URL http://dx.doi.org/10.1175/2010WAF2222349.1
+
+Luettich Jr, R., Westerink, J., Scheffner, N. W., 1992. ADCIRC: An advanced three-dimensional circu-
+  lation model for shelves, coasts, and estuaries. report 1. theory and methodology of adcirc-2ddi and
+  adcirc-3dl. Tech. rep., DTIC Document.
+
+Ma, J., Theiler, J., Perkins, S., 2003. Accurate on-line support vector regression. Neural computation
+  15 (11), 2683–2703.
+
+
+
+                                                   16
+Marks, F. D., 2003. Hurricanes. Handbook of Weather, Climate, and Water: Dynamics, Climate, Physical
+  Meteorology, Weather Systems, and Measurements, 641–675.
+
+Qi, J., Chen, C., Beardsley, R., Perrie, W., Cowles, G., 2009. An unstructured-grid finite-volume surface
+  wave model (FVCOM-SWAVE): Implementation, validations and applications. Ocean Modelling 28,
+  153–166.
+
+Rajasekaran, S., Gayathri, S., Lee, T.-L., 2008. Support vector regression methodology for storm surge
+  predictions. Ocean Engineering 35 (16), 1578–1587.
+
+Resio, D., Westerink, J., September 2008. Modeling the physics of storm surges. Physics Today.
+
+Rumelhart, D. E., Hinton, G. E., Williams, R. J., 1988. Learning representations by back-propagating
+  errors. Cognitive modeling 5 (3), 1.
+
+Scott, D. W., 2015. Multivariate density estimation: theory, practice, and visualization. John Wiley &
+  Sons.
+
+Skiena, S. S., 1998. The algorithm design manual: Text. Vol. 1. Springer Science & Business Media.
+
+Smola, A., Vapnik, V., 1997. Support vector regression machines. Advances in neural information pro-
+  cessing systems 9, 155–161.
+
+Sreekumar, S., Verma, J., Sujil, A., Kumar, R., 2015. One day forth forecasting of hourly electrical load
+  using genetically tuned support vector regression for smart grid frame work. In: 2015 2nd International
+  Conference on Recent Advances in Engineering & Computational Sciences (RAECS). IEEE, pp. 1–6.
+
+Taflanidis, A. A., Kennedy, A. B., Westerink, J. J., Smith, J., Cheung, K. F., Hope, M., Tanaka, S.,
+  2013. Rapid assessment of wave and surge risk during landfalling hurricanes: probabilistic approach.
+  Journal of Waterway, Port, Coastal, and Ocean Engineering 139 (3), 171–182.
+
+Vapnik, V., Golowich, S. E., Smola, A., et al., 1997. Support vector method for function approximation,
+  regression estimation, and signal processing. Advances in Neural Information Processing Systems, 281–
+  287.
+
+Westerink, J., Luettich, R., Feyen, J., Atkinson, J., Dawson, C., Roberts, H., Powell, M., Dunion, J.,
+  Kubatko, E., Pourtaheri, H., 2008. A basin- to channel-scale unstructured grid hurricane storm surge
+  model applied to Southern Louisiana. Mon. Weather Rev. 136, 833–864.
+
+
+
+
+                                                   17
+Wolff, B., Kühnert, J., Lorenz, E., Kramer, O., Heinemann, D., 2016. Comparing support vector regres-
+  sion for pv power forecasting to a physical modeling approach using measurement, numerical weather
+  prediction, and cloud motion data. Solar Energy 135, 197–208.
+
+Yu, P.-S., Chen, S.-T., Chang, I.-F., 2006. Support vector regression for real-time flood stage forecasting.
+  Journal of Hydrology 328 (3), 704–716.
+
+Zhang, G., Patuwo, B. E., Hu, M. Y., 1998. Forecasting with artificial neural networks:: The state of the
+  art. International journal of forecasting 14 (1), 35–62.
+
+Zhang, J., Sato, T., Iai, S., 2006. Support vector regression for on-line health monitoring of large-scale
+  structures. Structural Safety 28 (4), 392–406.
+
+
+
+
+                                                    18
+                      (a) Track 1
+                                                                    (b) Track 2
+
+
+
+
+                      (c) Track 3                                   (d) Track 4
+
+
+Figure 4: Performance of ANN (32, 64) for four synthetic hurricane tracks. ADCIRC model results
+(”observations”) are shown with red lines; ANN model outputs are shown with blue lines.
+
+
+                                                 19
+Figure 5: Performance of ANN (32, 64) on Hurricane Fran (1996). ADCIRC model results (”observa-
+tions”) are shown with red lines; ANN model outputs are shown with blue lines.
+
+
+                                                 20
+Figure 6: Performance of ANN (32, 64) on Hurricane Isabel (2003). ADCIRC model results (”observa-
+tions”) are shown with red lines; ANN model outputs are shown with blue lines.
+
+
+                                                 21
+

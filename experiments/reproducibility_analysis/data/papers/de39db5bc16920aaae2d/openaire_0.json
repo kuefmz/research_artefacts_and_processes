@@ -1,0 +1,611 @@
+{
+  "provider": "openaire_graph_v2",
+  "requested_url": "https://api.openaire.eu/graph/v2/researchProducts/doi_dedup___::2ce919f6498a88d4f3312dc70e3a2fee",
+  "retrieved_at": "2026-09-30T11:53:34.106752+00:00",
+  "status": "ok",
+  "http_status": 200,
+  "final_url": "https://api.openaire.eu/graph/v2/researchProducts/doi_dedup___::2ce919f6498a88d4f3312dc70e3a2fee",
+  "sha256": "4c12f6b2d1f81172d7dace7863860ed9e4c98c42cd0816067a76eed42d8b6fa4",
+  "content_type": "application/json",
+  "data": {
+    "authors": [
+      {
+        "fullName": "Tomaž Šolc",
+        "name": "Tomaž",
+        "surname": "Šolc",
+        "rank": 1,
+        "pid": {
+          "id": {
+            "scheme": "orcid_pending",
+            "value": "0000-0001-6326-1636"
+          },
+          "provenance": null
+        }
+      },
+      {
+        "fullName": "Mihael Mohorčič",
+        "name": "Mihael",
+        "surname": "Mohorčič",
+        "rank": 2,
+        "pid": {
+          "id": {
+            "scheme": "orcid",
+            "value": "0000-0001-6379-3966"
+          },
+          "provenance": null
+        }
+      },
+      {
+        "fullName": "Carolina Fortuna",
+        "name": "Carolina",
+        "surname": "Fortuna",
+        "rank": 3,
+        "pid": null
+      }
+    ],
+    "openAccessColor": "gold",
+    "publiclyFunded": false,
+    "type": "publication",
+    "language": {
+      "code": "eng",
+      "label": "English"
+    },
+    "countries": null,
+    "subjects": [
+      {
+        "subject": {
+          "scheme": "keyword",
+          "value": "Evaluation Studies as Topic"
+        },
+        "provenance": null
+      },
+      {
+        "subject": {
+          "scheme": "keyword",
+          "value": "Radio Waves"
+        },
+        "provenance": null
+      },
+      {
+        "subject": {
+          "scheme": "keyword",
+          "value": "Science"
+        },
+        "provenance": null
+      },
+      {
+        "subject": {
+          "scheme": "keyword",
+          "value": "Q"
+        },
+        "provenance": null
+      },
+      {
+        "subject": {
+          "scheme": "FOS",
+          "value": "0202 electrical engineering, electronic engineering, information engineering"
+        },
+        "provenance": null
+      },
+      {
+        "subject": {
+          "scheme": "keyword",
+          "value": "R"
+        },
+        "provenance": null
+      },
+      {
+        "subject": {
+          "scheme": "keyword",
+          "value": "Medicine"
+        },
+        "provenance": null
+      },
+      {
+        "subject": {
+          "scheme": "keyword",
+          "value": "Computer Simulation"
+        },
+        "provenance": null
+      },
+      {
+        "subject": {
+          "scheme": "FOS",
+          "value": "02 engineering and technology"
+        },
+        "provenance": null
+      },
+      {
+        "subject": {
+          "scheme": "keyword",
+          "value": "Wireless Technology"
+        },
+        "provenance": null
+      },
+      {
+        "subject": {
+          "scheme": "keyword",
+          "value": "Algorithms"
+        },
+        "provenance": null
+      },
+      {
+        "subject": {
+          "scheme": "keyword",
+          "value": "Software"
+        },
+        "provenance": null
+      },
+      {
+        "subject": {
+          "scheme": "keyword",
+          "value": "Research Article"
+        },
+        "provenance": null
+      }
+    ],
+    "mainTitle": "A methodology for experimental evaluation of signal detection methods in spectrum sensing",
+    "subTitle": null,
+    "descriptions": [
+      "Lack of unallocated spectrum and increasing demand for bandwidth in wireless networks is forcing new devices and technologies to share frequency bands. Spectrum sensing is a key enabler for frequency sharing and there is a large body of existing work on signal detection methods. However a unified methodology that would be suitable for objective comparison of detection methods based on experimental evaluations is missing. In this paper we propose such a methodology comprised of seven steps that can be applied to evaluate methods in simulation or practical experiments. Using the proposed methodology, we perform the most comprehensive experimental evaluation of signal detection methods to date: we compare energy detection, covariance-based and eigenvalue-based detection and cyclostationary detection. We measure minimal detectable signal power, sensitivity to noise power changes and computational complexity using an experimental setup that covers typical capabilities from low-cost embedded to high-end software defined radio devices. Presented results validate our premise that a unified methodology is valuable in obtaining reliable and reproducible comparisons of signal detection methods."
+    ],
+    "publicationDate": "2018-06-22",
+    "publisher": "Public Library of Science (PLoS)",
+    "embargoEndDate": null,
+    "sources": [
+      "Crossref",
+      "PLoS One",
+      "PLoS ONE, Vol 13, Iss 6, p e0199550 (2018)"
+    ],
+    "formats": null,
+    "contributors": null,
+    "coverages": null,
+    "bestAccessRight": {
+      "code": "c_abf2",
+      "label": "OPEN",
+      "scheme": "http://vocabularies.coar-repositories.org/documentation/access_rights/"
+    },
+    "container": {
+      "name": "PLOS ONE",
+      "issnPrinted": null,
+      "issnOnline": "1932-6203",
+      "issnLinking": null,
+      "ep": null,
+      "iss": null,
+      "sp": "e0199550",
+      "vol": "13",
+      "edition": null,
+      "conferencePlace": null,
+      "conferenceDate": null
+    },
+    "documentationUrls": null,
+    "codeRepositoryUrl": null,
+    "programmingLanguage": null,
+    "contactPeople": null,
+    "contactGroups": null,
+    "tools": null,
+    "size": null,
+    "version": null,
+    "geoLocations": null,
+    "id": "doi_dedup___::2ce919f6498a88d4f3312dc70e3a2fee",
+    "originalIds": [
+      "10.1371/journal.pone.0199550",
+      "50|doiboost____|2ce919f6498a88d4f3312dc70e3a2fee",
+      "od_______267::d54d61d1b8baffc7348c98ff8fe53c31",
+      "29933398",
+      "PMC6014670",
+      "oai:pubmedcentral.nih.gov:6014670",
+      "50|od_______267::d54d61d1b8baffc7348c98ff8fe53c31",
+      "50|doajarticles::4413f2b2c2c2da00861bccc3da97af33",
+      "oai:doaj.org/article:feb6b9fff6f342a49c4c228e71a49ec1",
+      "2808719633"
+    ],
+    "pids": [
+      {
+        "scheme": "doi",
+        "value": "10.1371/journal.pone.0199550"
+      },
+      {
+        "scheme": "pmid",
+        "value": "29933398"
+      },
+      {
+        "scheme": "pmc",
+        "value": "PMC6014670"
+      }
+    ],
+    "dateOfCollection": null,
+    "lastUpdateTimeStamp": null,
+    "indicators": {
+      "citationImpact": {
+        "citationCount": 12.0,
+        "influence": 2.9802154e-09,
+        "popularity": 7.725483e-09,
+        "impulse": 4.0,
+        "citationClass": "C4",
+        "influenceClass": "C4",
+        "impulseClass": "C4",
+        "popularityClass": "C4"
+      }
+    },
+    "projects": [
+      {
+        "id": "corda__h2020::def4d9a2846e3a3da8e60be248a0cbaa",
+        "code": "688116",
+        "acronym": "eWINE",
+        "title": "elastic WIreless Networking Experimentation",
+        "funder": "European Commission",
+        "pids": [
+          {
+            "scheme": "doi",
+            "value": "10.3030/688116"
+          }
+        ]
+      }
+    ],
+    "organizations": [
+      {
+        "legalName": "Jožef Stefan International Postgraduate School",
+        "acronym": "IPS",
+        "id": "openorgs____::3a5caa1d58209d5c6548da8fb9bfb81b",
+        "pids": [
+          {
+            "scheme": "ROR",
+            "value": "https://ror.org/01hdkb925"
+          },
+          {
+            "scheme": "PIC",
+            "value": "991475995"
+          },
+          {
+            "scheme": "Wikidata",
+            "value": "Q20520998"
+          },
+          {
+            "scheme": "OrgReg",
+            "value": "SI0022"
+          },
+          {
+            "scheme": "GRID",
+            "value": "grid.445211.7"
+          },
+          {
+            "scheme": "wikidata",
+            "value": "Q20520998"
+          }
+        ]
+      },
+      {
+        "legalName": "Beijing University of Posts and Telecommunications",
+        "acronym": "BUPT",
+        "id": "openorgs____::f3765c9858ccee0bf5ac5f0e43fcc47c",
+        "pids": [
+          {
+            "scheme": "OrgRef",
+            "value": "574730"
+          },
+          {
+            "scheme": "fundref",
+            "value": "501100002766"
+          },
+          {
+            "scheme": "mag_id",
+            "value": "139759216"
+          },
+          {
+            "scheme": "Wikidata",
+            "value": "Q4881210"
+          },
+          {
+            "scheme": "ROR",
+            "value": "https://ror.org/04w9fbh59"
+          },
+          {
+            "scheme": "GRID",
+            "value": "grid.31880.32"
+          },
+          {
+            "scheme": "FundRef",
+            "value": "501100002766"
+          },
+          {
+            "scheme": "wikidata",
+            "value": "Q4881210"
+          },
+          {
+            "scheme": "PIC",
+            "value": "999579763"
+          },
+          {
+            "scheme": "ISNI",
+            "value": "0000000087801230"
+          }
+        ]
+      },
+      {
+        "legalName": "Jožef Stefan Institute",
+        "acronym": "IJS",
+        "id": "openorgs____::b0f4f22ed2bfb469aab50e4de6cb3b2d",
+        "pids": [
+          {
+            "scheme": "fundref",
+            "value": "100017498"
+          },
+          {
+            "scheme": "mag_id",
+            "value": "3006985408"
+          },
+          {
+            "scheme": "Wikidata",
+            "value": "Q5918873"
+          },
+          {
+            "scheme": "ISNI",
+            "value": "0000000107060012"
+          },
+          {
+            "scheme": "GRID",
+            "value": "grid.11375.31"
+          },
+          {
+            "scheme": "OrgRef",
+            "value": "525062"
+          },
+          {
+            "scheme": "wikidata",
+            "value": "Q5918873"
+          },
+          {
+            "scheme": "FundRef",
+            "value": "100017498"
+          },
+          {
+            "scheme": "PIC",
+            "value": "999971837"
+          },
+          {
+            "scheme": "ROR",
+            "value": "https://ror.org/05060sz93"
+          },
+          {
+            "scheme": "OrgReg",
+            "value": "SI1003"
+          }
+        ]
+      }
+    ],
+    "communities": null,
+    "collectedFrom": [
+      {
+        "key": "openaire____::8ac8380272269217cb09a928c8caa993",
+        "value": "UnpayWall"
+      },
+      {
+        "key": "driver______::bee53aa31dc2cbb538c10c2b65fa5824",
+        "value": "DOAJ"
+      },
+      {
+        "key": "openaire____::081b82f96300b6a6e3d282bad31cb6e2",
+        "value": "Crossref"
+      },
+      {
+        "key": "openaire____::5f532a3fc4f1ea403f37070f59a7a53a",
+        "value": "Microsoft Academic Graph"
+      },
+      {
+        "key": "opendoar____::8b6dd7db9af49e67306feb59a8bdc52c",
+        "value": "Europe PubMed Central"
+      },
+      {
+        "key": "opendoar____::eda80a3d5b344bc40f3bc04f65b7a357",
+        "value": "PubMed Central"
+      }
+    ],
+    "instances": [
+      {
+        "pids": [
+          {
+            "scheme": "doi",
+            "value": "10.1371/journal.pone.0199550"
+          }
+        ],
+        "license": "CC BY",
+        "accessRight": {
+          "code": "c_abf2",
+          "label": "OPEN",
+          "scheme": "http://vocabularies.coar-repositories.org/documentation/access_rights/",
+          "openAccessRoute": "gold"
+        },
+        "type": "Article",
+        "urls": [
+          "https://doi.org/10.1371/journal.pone.0199550"
+        ],
+        "publicationDate": "2018-06-22",
+        "refereed": "peerReviewed",
+        "hostedBy": {
+          "key": "doajarticles::830e55b42c4aaa815c19cfa4f2e5855e",
+          "value": "PLoS ONE"
+        },
+        "collectedFrom": {
+          "key": "openaire____::081b82f96300b6a6e3d282bad31cb6e2",
+          "value": "Crossref"
+        }
+      },
+      {
+        "pids": [
+          {
+            "scheme": "doi",
+            "value": "10.1371/journal.pone.0199550"
+          }
+        ],
+        "license": "CC BY",
+        "accessRight": {
+          "code": "c_abf2",
+          "label": "OPEN",
+          "scheme": "http://vocabularies.coar-repositories.org/documentation/access_rights/",
+          "openAccessRoute": "gold"
+        },
+        "type": "Article",
+        "urls": [
+          "https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0199550&type=printable"
+        ],
+        "refereed": "nonPeerReviewed",
+        "hostedBy": {
+          "key": "doajarticles::830e55b42c4aaa815c19cfa4f2e5855e",
+          "value": "PLoS ONE"
+        },
+        "collectedFrom": {
+          "key": "openaire____::8ac8380272269217cb09a928c8caa993",
+          "value": "UnpayWall"
+        }
+      },
+      {
+        "pids": [
+          {
+            "scheme": "pmid",
+            "value": "29933398"
+          },
+          {
+            "scheme": "pmc",
+            "value": "PMC6014670"
+          }
+        ],
+        "alternateIdentifiers": [
+          {
+            "scheme": "doi",
+            "value": "10.1371/journal.pone.0199550"
+          }
+        ],
+        "accessRight": {
+          "code": "c_abf2",
+          "label": "OPEN",
+          "scheme": "http://vocabularies.coar-repositories.org/documentation/access_rights/",
+          "openAccessRoute": "gold"
+        },
+        "type": "Article",
+        "urls": [
+          "https://pubmed.ncbi.nlm.nih.gov/29933398"
+        ],
+        "publicationDate": "2018-12-27",
+        "refereed": "nonPeerReviewed",
+        "hostedBy": {
+          "key": "doajarticles::830e55b42c4aaa815c19cfa4f2e5855e",
+          "value": "PLoS ONE"
+        },
+        "collectedFrom": {
+          "key": "opendoar____::8b6dd7db9af49e67306feb59a8bdc52c",
+          "value": "Europe PubMed Central"
+        }
+      },
+      {
+        "alternateIdentifiers": [
+          {
+            "scheme": "doi",
+            "value": "10.1371/journal.pone.0199550"
+          }
+        ],
+        "license": "CC BY",
+        "accessRight": {
+          "code": "c_abf2",
+          "label": "OPEN",
+          "scheme": "http://vocabularies.coar-repositories.org/documentation/access_rights/",
+          "openAccessRoute": null
+        },
+        "type": "Article",
+        "urls": [
+          "http://dx.doi.org/10.1371/journal.pone.0199550"
+        ],
+        "publicationDate": "2018-06-22",
+        "refereed": "nonPeerReviewed",
+        "hostedBy": {
+          "key": "opendoar____::eda80a3d5b344bc40f3bc04f65b7a357",
+          "value": "PubMed Central"
+        },
+        "collectedFrom": {
+          "key": "opendoar____::eda80a3d5b344bc40f3bc04f65b7a357",
+          "value": "PubMed Central"
+        }
+      },
+      {
+        "alternateIdentifiers": [
+          {
+            "scheme": "doi",
+            "value": "10.1371/journal.pone.0199550"
+          }
+        ],
+        "accessRight": {
+          "code": "c_abf2",
+          "label": "OPEN",
+          "scheme": "http://vocabularies.coar-repositories.org/documentation/access_rights/",
+          "openAccessRoute": "gold"
+        },
+        "type": "Article",
+        "urls": [
+          "https://doaj.org/article/feb6b9fff6f342a49c4c228e71a49ec1"
+        ],
+        "publicationDate": "2018-01-01",
+        "refereed": "nonPeerReviewed",
+        "hostedBy": {
+          "key": "doajarticles::830e55b42c4aaa815c19cfa4f2e5855e",
+          "value": "PLoS ONE"
+        },
+        "collectedFrom": {
+          "key": "driver______::bee53aa31dc2cbb538c10c2b65fa5824",
+          "value": "DOAJ"
+        }
+      },
+      {
+        "alternateIdentifiers": [
+          {
+            "scheme": "doi",
+            "value": "10.1371/journal.pone.0199550"
+          },
+          {
+            "scheme": "mag_id",
+            "value": "2808719633"
+          }
+        ],
+        "type": "Article",
+        "urls": [
+          "https://dx.doi.org/10.1371/journal.pone.0199550"
+        ],
+        "refereed": "nonPeerReviewed",
+        "hostedBy": {
+          "key": "openaire____::55045bd2a65019fd8e6741a755395c8c",
+          "value": "Unknown Repository"
+        },
+        "collectedFrom": {
+          "key": "openaire____::5f532a3fc4f1ea403f37070f59a7a53a",
+          "value": "Microsoft Academic Graph"
+        }
+      },
+      {
+        "alternateIdentifiers": [
+          {
+            "scheme": "mag_id",
+            "value": "2808719633"
+          },
+          {
+            "scheme": "doi",
+            "value": "10.1371/journal.pone.0199550"
+          }
+        ],
+        "type": "Article",
+        "urls": [
+          "https://dx.doi.org/10.1371/journal.pone.0199550"
+        ],
+        "refereed": "nonPeerReviewed",
+        "hostedBy": {
+          "key": "openaire____::55045bd2a65019fd8e6741a755395c8c",
+          "value": "Unknown Repository"
+        },
+        "collectedFrom": {
+          "key": "openaire____::5f532a3fc4f1ea403f37070f59a7a53a",
+          "value": "Microsoft Academic Graph"
+        }
+      }
+    ],
+    "isGreen": true,
+    "isInDiamondJournal": false
+  }
+}

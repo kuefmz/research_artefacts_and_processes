@@ -1,0 +1,150 @@
+{
+  "provider": "crossref",
+  "requested_url": "https://api.crossref.org/works/10.54546/mlit.2021.26.74.001",
+  "retrieved_at": "2026-09-30T11:53:35.909225+00:00",
+  "status": "ok",
+  "http_status": 200,
+  "final_url": "https://api.crossref.org/works/10.54546/mlit.2021.26.74.001",
+  "sha256": "d45d160987413a5c677432bd114373dae01d7391130589f1a5b926e85ea99a07",
+  "content_type": "application/json",
+  "data": {
+    "status": "ok",
+    "message-type": "work",
+    "message-version": "1.0.0",
+    "message": {
+      "indexed": {
+        "date-parts": [
+          [
+            2026,
+            1,
+            15
+          ]
+        ],
+        "date-time": "2026-01-15T05:25:28Z",
+        "timestamp": 1768454728464,
+        "version": "3.49.0"
+      },
+      "reference-count": 0,
+      "publisher": "Crossref",
+      "license": [
+        {
+          "start": {
+            "date-parts": [
+              [
+                2021,
+                12,
+                13
+              ]
+            ],
+            "date-time": "2021-12-13T00:00:00Z",
+            "timestamp": 1639353600000
+          },
+          "content-version": "unspecified",
+          "delay-in-days": 0,
+          "URL": "https://creativecommons.org/licenses/by/4.0/"
+        }
+      ],
+      "content-domain": {
+        "domain": [],
+        "crossmark-restriction": false
+      },
+      "short-container-title": [],
+      "abstract": "<jats:p>The Data Knowledge Base (DKB) project aims at knowledge acquisition and metadata integration. Itprovides fast response for a variety of complicated queries, such as summary reports and monitoringtasks (aggregation queries) and multi-system join queries. Such queries are not easy to implement in atimely manner and, obviously, are less efficient than a query to a single system with integrated andpre-processed information would be. This work describes the status of the project as well as itsintegration with the ATLAS Workflow Management and future perspectives.</jats:p>",
+      "DOI": "10.54546/mlit.2021.26.74.001",
+      "type": "proceedings-article",
+      "created": {
+        "date-parts": [
+          [
+            2022,
+            1,
+            21
+          ]
+        ],
+        "date-time": "2022-01-21T09:01:56Z",
+        "timestamp": 1642755716000
+      },
+      "page": "256-260",
+      "source": "Crossref",
+      "is-referenced-by-count": 0,
+      "title": [
+        "DATA KNOWLEDGE BASE CURRENT STATUS AND OPERATION"
+      ],
+      "prefix": "10.54546",
+      "author": [
+        {
+          "ORCID": "https://orcid.org/0000-0002-7443-4042",
+          "authenticated-orcid": false,
+          "given": "V.",
+          "family": "Kotliar",
+          "sequence": "first",
+          "affiliation": [],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        }
+      ],
+      "member": "33042",
+      "published-online": {
+        "date-parts": [
+          [
+            2021,
+            12,
+            13
+          ]
+        ]
+      },
+      "event": {
+        "name": "9th International Conference \"Distributed Computing and Grid Technologies in Science and Education\"",
+        "acronym": "GRID2021"
+      },
+      "container-title": [
+        "9th International Conference \"Distributed Computing and Grid Technologies in Science and Education\""
+      ],
+      "original-title": [],
+      "deposited": {
+        "date-parts": [
+          [
+            2026,
+            1,
+            14
+          ]
+        ],
+        "date-time": "2026-01-14T18:27:07Z",
+        "timestamp": 1768415227000
+      },
+      "score": 1,
+      "resource": {
+        "primary": {
+          "URL": "http://ceur-ws.org/Vol-3041/256-260-paper-47.pdf"
+        }
+      },
+      "subtitle": [],
+      "short-title": [],
+      "issued": {
+        "date-parts": [
+          [
+            2021,
+            12,
+            13
+          ]
+        ]
+      },
+      "references-count": 0,
+      "URL": "https://doi.org/10.54546/mlit.2021.26.74.001",
+      "relation": {},
+      "subject": [],
+      "published": {
+        "date-parts": [
+          [
+            2021,
+            12,
+            13
+          ]
+        ]
+      }
+    }
+  }
+}

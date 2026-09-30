@@ -1,0 +1,678 @@
+{
+  "provider": "openaire_graph_v2",
+  "requested_url": "https://api.openaire.eu/graph/v2/researchProducts/doi_dedup___::6f136b61d82afcb5cc522688c3086955",
+  "retrieved_at": "2026-09-30T11:54:07.220051+00:00",
+  "status": "ok",
+  "http_status": 200,
+  "final_url": "https://api.openaire.eu/graph/v2/researchProducts/doi_dedup___::6f136b61d82afcb5cc522688c3086955",
+  "sha256": "2e527d379e8c936a5a5dfa6c72526a6f0af5c35717b667f9e33934e4f6e8361d",
+  "content_type": "application/json",
+  "data": {
+    "authors": [
+      {
+        "fullName": "Anton Bezuglov",
+        "name": null,
+        "surname": null,
+        "rank": 1,
+        "pid": null
+      },
+      {
+        "fullName": "Brian Blanton",
+        "name": null,
+        "surname": null,
+        "rank": 2,
+        "pid": null
+      },
+      {
+        "fullName": "Reinaldo Santiago",
+        "name": null,
+        "surname": null,
+        "rank": 3,
+        "pid": null
+      }
+    ],
+    "openAccessColor": null,
+    "publiclyFunded": false,
+    "type": "publication",
+    "language": {
+      "code": "und",
+      "label": "Undetermined"
+    },
+    "countries": null,
+    "subjects": [
+      {
+        "subject": {
+          "scheme": "keyword",
+          "value": "FOS: Computer and information sciences"
+        },
+        "provenance": null
+      },
+      {
+        "subject": {
+          "scheme": "keyword",
+          "value": "Physics - Atmospheric and Oceanic Physics"
+        },
+        "provenance": null
+      },
+      {
+        "subject": {
+          "scheme": "SDG",
+          "value": "13. Climate action"
+        },
+        "provenance": null
+      },
+      {
+        "subject": {
+          "scheme": "keyword",
+          "value": "Atmospheric and Oceanic Physics (physics.ao-ph)"
+        },
+        "provenance": null
+      },
+      {
+        "subject": {
+          "scheme": "keyword",
+          "value": "Computer Science - Neural and Evolutionary Computing"
+        },
+        "provenance": null
+      },
+      {
+        "subject": {
+          "scheme": "keyword",
+          "value": "FOS: Physical sciences"
+        },
+        "provenance": null
+      },
+      {
+        "subject": {
+          "scheme": "keyword",
+          "value": "Applications (stat.AP)"
+        },
+        "provenance": null
+      },
+      {
+        "subject": {
+          "scheme": "keyword",
+          "value": "Neural and Evolutionary Computing (cs.NE)"
+        },
+        "provenance": null
+      },
+      {
+        "subject": {
+          "scheme": "FOS",
+          "value": "01 natural sciences"
+        },
+        "provenance": null
+      },
+      {
+        "subject": {
+          "scheme": "keyword",
+          "value": "Statistics - Applications"
+        },
+        "provenance": null
+      },
+      {
+        "subject": {
+          "scheme": "FOS",
+          "value": "0105 earth and related environmental sciences"
+        },
+        "provenance": null
+      }
+    ],
+    "mainTitle": "Multi-Output Artificial Neural Network for Storm Surge Prediction in North Carolina",
+    "subTitle": null,
+    "descriptions": [
+      "During hurricane seasons, emergency managers and other decision makers need accurate and `on-time' information on potential storm surge impacts. Fully dynamical computer models, such as the ADCIRC tide, storm surge, and wind-wave model take several hours to complete a forecast when configured at high spatial resolution. Additionally, statically meaningful ensembles of high-resolution models (needed for uncertainty estimation) cannot easily be computed in near real-time. This paper discusses an artificial neural network model for storm surge prediction in North Carolina. The network model provides fast, real-time storm surge estimates at coastal locations in North Carolina. The paper studies the performance of the neural network model vs. other models on synthetic and real hurricane data."
+    ],
+    "publicationDate": "2016-01-01",
+    "publisher": null,
+    "embargoEndDate": "2016-09-01",
+    "sources": null,
+    "formats": null,
+    "contributors": null,
+    "coverages": null,
+    "bestAccessRight": {
+      "code": "c_abf2",
+      "label": "OPEN",
+      "scheme": "http://vocabularies.coar-repositories.org/documentation/access_rights/"
+    },
+    "container": {
+      "name": "CoRR",
+      "issnPrinted": null,
+      "issnOnline": null,
+      "issnLinking": null,
+      "ep": null,
+      "iss": null,
+      "sp": null,
+      "vol": "abs/1609.07378",
+      "edition": null,
+      "conferencePlace": null,
+      "conferenceDate": null
+    },
+    "documentationUrls": null,
+    "codeRepositoryUrl": null,
+    "programmingLanguage": null,
+    "contactPeople": null,
+    "contactGroups": null,
+    "tools": null,
+    "size": null,
+    "version": null,
+    "geoLocations": null,
+    "id": "doi_dedup___::6f136b61d82afcb5cc522688c3086955",
+    "originalIds": [
+      "50|datacite____::6f136b61d82afcb5cc522688c3086955",
+      "10.48550/arxiv.1609.07378",
+      "oai:arXiv.org:1609.07378",
+      "50|od________18::a3c603af7bf1a099048fa3f92beee10b",
+      "50|dblp________::d35d72e131c4b8448f9f0bc6a92e2f6c"
+    ],
+    "pids": [
+      {
+        "scheme": "doi",
+        "value": "10.48550/arxiv.1609.07378"
+      },
+      {
+        "scheme": "arXiv",
+        "value": "1609.07378"
+      }
+    ],
+    "dateOfCollection": null,
+    "lastUpdateTimeStamp": null,
+    "indicators": {
+      "citationImpact": {
+        "citationCount": 0.0,
+        "influence": 2.1746283e-09,
+        "popularity": 6.719034e-10,
+        "impulse": 0.0,
+        "citationClass": "C5",
+        "influenceClass": "C5",
+        "impulseClass": "C5",
+        "popularityClass": "C5"
+      }
+    },
+    "projects": null,
+    "organizations": [
+      {
+        "legalName": "Benedict College",
+        "acronym": "Benedict College",
+        "id": "openorgs____::85483e443abd8867f4d320c8a7292110",
+        "pids": [
+          {
+            "scheme": "Wikidata",
+            "value": "Q4887262"
+          },
+          {
+            "scheme": "mag_id",
+            "value": "207692693"
+          },
+          {
+            "scheme": "OrgRef",
+            "value": "2159872"
+          },
+          {
+            "scheme": "ROR",
+            "value": "https://ror.org/045r9wn29"
+          },
+          {
+            "scheme": "ISNI",
+            "value": "0000000105581623"
+          },
+          {
+            "scheme": "GRID",
+            "value": "grid.423229.c"
+          },
+          {
+            "scheme": "wikidata",
+            "value": "Q4887262"
+          }
+        ]
+      },
+      {
+        "legalName": "Renaissance Computing Institute",
+        "acronym": "RENCI",
+        "id": "openorgs____::56b0a18cec34b84d27bb12a0aacb251e",
+        "pids": [
+          {
+            "scheme": "mag_id",
+            "value": "69048370"
+          },
+          {
+            "scheme": "wikidata",
+            "value": "Q7312413"
+          },
+          {
+            "scheme": "Wikidata",
+            "value": "Q7312413"
+          },
+          {
+            "scheme": "GRID",
+            "value": "grid.450328.8"
+          },
+          {
+            "scheme": "ROR",
+            "value": "https://ror.org/01s91ey96"
+          },
+          {
+            "scheme": "ISNI",
+            "value": "0000000449042260"
+          }
+        ]
+      },
+      {
+        "legalName": "University of North Carolina at Chapel Hill",
+        "acronym": "UNC",
+        "id": "openorgs____::0598c13eee48e349298faf6960fb8d4f",
+        "pids": [
+          {
+            "scheme": "Wikidata",
+            "value": "Q192334"
+          },
+          {
+            "scheme": "fundref",
+            "value": "100017079"
+          },
+          {
+            "scheme": "FundRef",
+            "value": "100005539"
+          },
+          {
+            "scheme": "OrgRef",
+            "value": "89510"
+          },
+          {
+            "scheme": "fundref",
+            "value": "100005539"
+          },
+          {
+            "scheme": "FundRef",
+            "value": "100016294"
+          },
+          {
+            "scheme": "fundref",
+            "value": "100005592"
+          },
+          {
+            "scheme": "fundref",
+            "value": "100016294"
+          },
+          {
+            "scheme": "wikidata",
+            "value": "Q192334"
+          },
+          {
+            "scheme": "fundref",
+            "value": "100013056"
+          },
+          {
+            "scheme": "Wikidata",
+            "value": "Q1783178"
+          },
+          {
+            "scheme": "GRID",
+            "value": "grid.266860.c"
+          },
+          {
+            "scheme": "fundref",
+            "value": "100007811"
+          },
+          {
+            "scheme": "ROR",
+            "value": "https://ror.org/02t0qr014"
+          },
+          {
+            "scheme": "fundref",
+            "value": "100013506"
+          },
+          {
+            "scheme": "fundref",
+            "value": "100009744"
+          },
+          {
+            "scheme": "FundRef",
+            "value": "100011082"
+          },
+          {
+            "scheme": "FundRef",
+            "value": "100007890"
+          },
+          {
+            "scheme": "FundRef",
+            "value": "100009744"
+          },
+          {
+            "scheme": "fundref",
+            "value": "100007327"
+          },
+          {
+            "scheme": "ISNI",
+            "value": "0000000102917689"
+          },
+          {
+            "scheme": "FundRef",
+            "value": "100007327"
+          },
+          {
+            "scheme": "FundRef",
+            "value": "100011072"
+          },
+          {
+            "scheme": "FundRef",
+            "value": "100010942"
+          },
+          {
+            "scheme": "fundref",
+            "value": "100007890"
+          },
+          {
+            "scheme": "Wikidata",
+            "value": "Q2092214"
+          },
+          {
+            "scheme": "Wikidata",
+            "value": "Q7895940"
+          },
+          {
+            "scheme": "fundref",
+            "value": "100015505"
+          },
+          {
+            "scheme": "fundref",
+            "value": "100011082"
+          },
+          {
+            "scheme": "fundref",
+            "value": "100007810"
+          },
+          {
+            "scheme": "OrgRef",
+            "value": "409849"
+          },
+          {
+            "scheme": "FundRef",
+            "value": "100013192"
+          },
+          {
+            "scheme": "wikidata",
+            "value": "Q7895940"
+          },
+          {
+            "scheme": "FundRef",
+            "value": "100017079"
+          },
+          {
+            "scheme": "PIC",
+            "value": "999573264"
+          },
+          {
+            "scheme": "ROR",
+            "value": "https://ror.org/04fnxsj42"
+          },
+          {
+            "scheme": "FundRef",
+            "value": "100011485"
+          },
+          {
+            "scheme": "GRID",
+            "value": "grid.266859.6"
+          },
+          {
+            "scheme": "OrgRef",
+            "value": "166156"
+          },
+          {
+            "scheme": "ROR",
+            "value": "https://ror.org/017c6at71"
+          },
+          {
+            "scheme": "GRID",
+            "value": "grid.217197.b"
+          },
+          {
+            "scheme": "wikidata",
+            "value": "Q1321380"
+          },
+          {
+            "scheme": "FundRef",
+            "value": "100007811"
+          },
+          {
+            "scheme": "FundRef",
+            "value": "100005899"
+          },
+          {
+            "scheme": "Wikidata",
+            "value": "Q1321380"
+          },
+          {
+            "scheme": "fundref",
+            "value": "100011862"
+          },
+          {
+            "scheme": "fundref",
+            "value": "100011072"
+          },
+          {
+            "scheme": "FundRef",
+            "value": "100011106"
+          },
+          {
+            "scheme": "FundRef",
+            "value": "100005592"
+          },
+          {
+            "scheme": "FundRef",
+            "value": "100011862"
+          },
+          {
+            "scheme": "ISNI",
+            "value": "0000000085982218"
+          },
+          {
+            "scheme": "fundref",
+            "value": "100013192"
+          },
+          {
+            "scheme": "OrgRef",
+            "value": "412677"
+          },
+          {
+            "scheme": "FundRef",
+            "value": "100006808"
+          },
+          {
+            "scheme": "FundRef",
+            "value": "100015505"
+          },
+          {
+            "scheme": "fundref",
+            "value": "100006808"
+          },
+          {
+            "scheme": "FundRef",
+            "value": "100013056"
+          },
+          {
+            "scheme": "wikidata",
+            "value": "Q2092214"
+          },
+          {
+            "scheme": "wikidata",
+            "value": "Q1783178"
+          },
+          {
+            "scheme": "FundRef",
+            "value": "100015514"
+          },
+          {
+            "scheme": "RRID",
+            "value": "RRID:SCR_006100"
+          },
+          {
+            "scheme": "ROR",
+            "value": "https://ror.org/04dawnj30"
+          },
+          {
+            "scheme": "GRID",
+            "value": "grid.266856.9"
+          },
+          {
+            "scheme": "OrgRef",
+            "value": "77958"
+          },
+          {
+            "scheme": "FundRef",
+            "value": "100013506"
+          },
+          {
+            "scheme": "GRID",
+            "value": "grid.10698.36"
+          },
+          {
+            "scheme": "FundRef",
+            "value": "100007810"
+          },
+          {
+            "scheme": "fundref",
+            "value": "100011485"
+          },
+          {
+            "scheme": "fundref",
+            "value": "100010942"
+          },
+          {
+            "scheme": "fundref",
+            "value": "100005899"
+          },
+          {
+            "scheme": "ISNI",
+            "value": "0000000122483208"
+          },
+          {
+            "scheme": "ROR",
+            "value": "https://ror.org/0130frc33"
+          },
+          {
+            "scheme": "OrgRef",
+            "value": "4326148"
+          },
+          {
+            "scheme": "fundref",
+            "value": "100011106"
+          },
+          {
+            "scheme": "FundRef",
+            "value": "100008615"
+          },
+          {
+            "scheme": "mag_id",
+            "value": "114027177"
+          },
+          {
+            "scheme": "ISNI",
+            "value": "0000000098130452"
+          },
+          {
+            "scheme": "ISNI",
+            "value": "000000010671255X"
+          },
+          {
+            "scheme": "fundref",
+            "value": "100015514"
+          }
+        ]
+      }
+    ],
+    "communities": null,
+    "collectedFrom": [
+      {
+        "key": "openaire____::9e3be59865b2c1c335d32dae2fe7b254",
+        "value": "Datacite"
+      },
+      {
+        "key": "openaire____::d8b68cc0a53121f6f896883a7d60c1db",
+        "value": "DBLP"
+      },
+      {
+        "key": "opendoar____::6f4922f45568161a8cdf4ad2299f6d23",
+        "value": "arXiv.org e-Print Archive"
+      }
+    ],
+    "instances": [
+      {
+        "pids": [
+          {
+            "scheme": "doi",
+            "value": "10.48550/arxiv.1609.07378"
+          }
+        ],
+        "license": "arXiv Non-Exclusive Distribution",
+        "type": "Article",
+        "urls": [
+          "https://dx.doi.org/10.48550/arxiv.1609.07378"
+        ],
+        "publicationDate": "2016-01-01",
+        "refereed": "nonPeerReviewed",
+        "hostedBy": {
+          "key": "openaire____::55045bd2a65019fd8e6741a755395c8c",
+          "value": "Unknown Repository"
+        },
+        "collectedFrom": {
+          "key": "openaire____::9e3be59865b2c1c335d32dae2fe7b254",
+          "value": "Datacite"
+        }
+      },
+      {
+        "pids": [
+          {
+            "scheme": "arXiv",
+            "value": "1609.07378"
+          }
+        ],
+        "accessRight": {
+          "code": "c_abf2",
+          "label": "OPEN",
+          "scheme": "http://vocabularies.coar-repositories.org/documentation/access_rights/",
+          "openAccessRoute": null
+        },
+        "type": "Preprint",
+        "urls": [
+          "http://arxiv.org/abs/1609.07378"
+        ],
+        "publicationDate": "2016-09-23",
+        "refereed": "nonPeerReviewed",
+        "hostedBy": {
+          "key": "opendoar____::6f4922f45568161a8cdf4ad2299f6d23",
+          "value": "arXiv.org e-Print Archive"
+        },
+        "collectedFrom": {
+          "key": "opendoar____::6f4922f45568161a8cdf4ad2299f6d23",
+          "value": "arXiv.org e-Print Archive"
+        }
+      },
+      {
+        "alternateIdentifiers": [
+          {
+            "scheme": "arXiv",
+            "value": "1609.07378"
+          }
+        ],
+        "type": "Article",
+        "urls": [
+          "https://dblp.org/rec/journals/corr/BezuglovBS16.html",
+          "http://arxiv.org/abs/1609.07378"
+        ],
+        "publicationDate": "2016-01-01",
+        "refereed": "nonPeerReviewed",
+        "hostedBy": {
+          "key": "openaire____::d8b68cc0a53121f6f896883a7d60c1db",
+          "value": "DBLP"
+        },
+        "collectedFrom": {
+          "key": "openaire____::d8b68cc0a53121f6f896883a7d60c1db",
+          "value": "DBLP"
+        }
+      }
+    ],
+    "isGreen": true,
+    "isInDiamondJournal": false
+  }
+}

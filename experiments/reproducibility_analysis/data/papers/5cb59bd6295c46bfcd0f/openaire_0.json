@@ -1,0 +1,197 @@
+{
+  "provider": "openaire_graph_v2",
+  "requested_url": "https://api.openaire.eu/graph/v2/researchProducts/doi_________::0364617470aeeae84532a2370e11e8e7",
+  "retrieved_at": "2026-09-30T11:53:51.670170+00:00",
+  "status": "ok",
+  "http_status": 200,
+  "final_url": "https://api.openaire.eu/graph/v2/researchProducts/doi_________::0364617470aeeae84532a2370e11e8e7",
+  "sha256": "1cc58e7243a1a128c690522de5bb97221bd822fc7fe3814088abda87daf16be6",
+  "content_type": "application/json",
+  "data": {
+    "authors": [
+      {
+        "fullName": "V. Kotliar",
+        "name": "V.",
+        "surname": "Kotliar",
+        "rank": 1,
+        "pid": {
+          "id": {
+            "scheme": "orcid",
+            "value": "0000-0002-7443-4042"
+          },
+          "provenance": null
+        }
+      }
+    ],
+    "openAccessColor": "hybrid",
+    "publiclyFunded": false,
+    "type": "publication",
+    "language": {
+      "code": "und",
+      "label": "Undetermined"
+    },
+    "countries": null,
+    "subjects": [
+      {
+        "subject": {
+          "scheme": "FOS",
+          "value": "0103 physical sciences"
+        },
+        "provenance": null
+      },
+      {
+        "subject": {
+          "scheme": "FOS",
+          "value": "01 natural sciences"
+        },
+        "provenance": null
+      }
+    ],
+    "mainTitle": "DATA KNOWLEDGE BASE CURRENT STATUS AND OPERATION",
+    "subTitle": null,
+    "descriptions": [
+      "<jats:p>The Data Knowledge Base (DKB) project aims at knowledge acquisition and metadata integration. Itprovides fast response for a variety of complicated queries, such as summary reports and monitoringtasks (aggregation queries) and multi-system join queries. Such queries are not easy to implement in atimely manner and, obviously, are less efficient than a query to a single system with integrated andpre-processed information would be. This work describes the status of the project as well as itsintegration with the ATLAS Workflow Management and future perspectives.</jats:p>"
+    ],
+    "publicationDate": "2021-12-13",
+    "publisher": "Crossref",
+    "embargoEndDate": null,
+    "sources": [
+      "Crossref"
+    ],
+    "formats": null,
+    "contributors": null,
+    "coverages": null,
+    "bestAccessRight": {
+      "code": "c_abf2",
+      "label": "OPEN",
+      "scheme": "http://vocabularies.coar-repositories.org/documentation/access_rights/"
+    },
+    "container": {
+      "name": "9th International Conference \"Distributed Computing and Grid Technologies in Science and Education\"",
+      "issnPrinted": null,
+      "issnOnline": null,
+      "issnLinking": null,
+      "ep": "260",
+      "iss": null,
+      "sp": "256",
+      "vol": null,
+      "edition": null,
+      "conferencePlace": null,
+      "conferenceDate": null
+    },
+    "documentationUrls": null,
+    "codeRepositoryUrl": null,
+    "programmingLanguage": null,
+    "contactPeople": null,
+    "contactGroups": null,
+    "tools": null,
+    "size": null,
+    "version": null,
+    "geoLocations": null,
+    "id": "doi_________::0364617470aeeae84532a2370e11e8e7",
+    "originalIds": [
+      "10.54546/mlit.2021.26.74.001",
+      "50|doiboost____|0364617470aeeae84532a2370e11e8e7"
+    ],
+    "pids": [
+      {
+        "scheme": "doi",
+        "value": "10.54546/mlit.2021.26.74.001"
+      }
+    ],
+    "dateOfCollection": null,
+    "lastUpdateTimeStamp": null,
+    "indicators": {
+      "citationImpact": {
+        "citationCount": 0.0,
+        "influence": 2.1746283e-09,
+        "popularity": 1.272318e-09,
+        "impulse": 0.0,
+        "citationClass": "C5",
+        "influenceClass": "C5",
+        "impulseClass": "C5",
+        "popularityClass": "C5"
+      }
+    },
+    "projects": null,
+    "organizations": [
+      {
+        "legalName": "Institute for High Energy Physics named by A.A. Logunov of National Research Centre \"Kurchatov Institute\"",
+        "acronym": "Institute for High Energy Physics named by A.A. Logunov of National Research Centre \"Kurchatov Institute\"",
+        "id": "pending_org_::4194c4ea6e059746de020968af19e0d1",
+        "pids": null
+      }
+    ],
+    "communities": null,
+    "collectedFrom": [
+      {
+        "key": "openaire____::8ac8380272269217cb09a928c8caa993",
+        "value": "UnpayWall"
+      },
+      {
+        "key": "openaire____::081b82f96300b6a6e3d282bad31cb6e2",
+        "value": "Crossref"
+      }
+    ],
+    "instances": [
+      {
+        "pids": [
+          {
+            "scheme": "doi",
+            "value": "10.54546/mlit.2021.26.74.001"
+          }
+        ],
+        "license": "CC BY",
+        "accessRight": {
+          "code": "c_abf2",
+          "label": "OPEN",
+          "scheme": "http://vocabularies.coar-repositories.org/documentation/access_rights/",
+          "openAccessRoute": "hybrid"
+        },
+        "type": "Article",
+        "urls": [
+          "https://doi.org/10.54546/mlit.2021.26.74.001"
+        ],
+        "publicationDate": "2021-12-13",
+        "refereed": "peerReviewed",
+        "hostedBy": {
+          "key": "openaire____::55045bd2a65019fd8e6741a755395c8c",
+          "value": "Unknown Repository"
+        },
+        "collectedFrom": {
+          "key": "openaire____::081b82f96300b6a6e3d282bad31cb6e2",
+          "value": "Crossref"
+        }
+      },
+      {
+        "pids": [
+          {
+            "scheme": "doi",
+            "value": "10.54546/mlit.2021.26.74.001"
+          }
+        ],
+        "accessRight": {
+          "code": "c_abf2",
+          "label": "OPEN",
+          "scheme": "http://vocabularies.coar-repositories.org/documentation/access_rights/",
+          "openAccessRoute": "bronze"
+        },
+        "type": "Article",
+        "urls": [
+          "https://doi.org/10.54546/mlit.2021.26.74.001"
+        ],
+        "refereed": "nonPeerReviewed",
+        "hostedBy": {
+          "key": "openaire____::55045bd2a65019fd8e6741a755395c8c",
+          "value": "Unknown Repository"
+        },
+        "collectedFrom": {
+          "key": "openaire____::8ac8380272269217cb09a928c8caa993",
+          "value": "UnpayWall"
+        }
+      }
+    ],
+    "isGreen": false,
+    "isInDiamondJournal": false
+  }
+}

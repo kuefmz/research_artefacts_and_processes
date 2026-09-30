@@ -1,0 +1,174 @@
+{
+  "provider": "github",
+  "requested_url": "https://api.github.com/repos/DanSBS/NGSPower/git/trees/68b25e447440eaf168e9637bde501b7debce3f9d?recursive=1",
+  "retrieved_at": "2026-09-30T11:52:43.849723+00:00",
+  "status": "ok",
+  "http_status": 200,
+  "final_url": "https://api.github.com/repos/DanSBS/NGSPower/git/trees/68b25e447440eaf168e9637bde501b7debce3f9d?recursive=1",
+  "sha256": "fb3682d26f406936f57cf73c28c9370058cb8cceca0d35eb67c93b69a1a48a37",
+  "content_type": "application/json; charset=utf-8",
+  "data": {
+    "sha": "68b25e447440eaf168e9637bde501b7debce3f9d",
+    "url": "https://api.github.com/repos/DanSBS/NGSPower/git/trees/68b25e447440eaf168e9637bde501b7debce3f9d",
+    "tree": [
+      {
+        "path": "NGSPower",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "ded9d9ff8517123d8f8a74acecd30fcf7d740269",
+        "url": "https://api.github.com/repos/DanSBS/NGSPower/git/trees/ded9d9ff8517123d8f8a74acecd30fcf7d740269"
+      },
+      {
+        "path": "NGSPower/R",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "686293d18bb98912752a65c0c7ef9a898d0b3abb",
+        "url": "https://api.github.com/repos/DanSBS/NGSPower/git/trees/686293d18bb98912752a65c0c7ef9a898d0b3abb"
+      },
+      {
+        "path": "NGSPower/R/allPlots.R",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "f223477f0581b05685bf52ac85b1515699f05104",
+        "size": 3309,
+        "url": "https://api.github.com/repos/DanSBS/NGSPower/git/blobs/f223477f0581b05685bf52ac85b1515699f05104"
+      },
+      {
+        "path": "NGSPower/R/analysis99to1.R",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+        "size": 0,
+        "url": "https://api.github.com/repos/DanSBS/NGSPower/git/blobs/e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+      },
+      {
+        "path": "NGSPower/R/analysis_50_50_mod.R",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "4da1a35a9061dedacaf887098ccff6dd88f58211",
+        "size": 5982,
+        "url": "https://api.github.com/repos/DanSBS/NGSPower/git/blobs/4da1a35a9061dedacaf887098ccff6dd88f58211"
+      },
+      {
+        "path": "NGSPower/R/analysis_50_50_weak.R",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "af2847520770d2b92cb885aad7679e3a730d743b",
+        "size": 5987,
+        "url": "https://api.github.com/repos/DanSBS/NGSPower/git/blobs/af2847520770d2b92cb885aad7679e3a730d743b"
+      },
+      {
+        "path": "NGSPower/R/analysis_99_1_mod.R",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "2c046d4e14bec3d57191c646e1bbfab5ad823103",
+        "size": 6031,
+        "url": "https://api.github.com/repos/DanSBS/NGSPower/git/blobs/2c046d4e14bec3d57191c646e1bbfab5ad823103"
+      },
+      {
+        "path": "NGSPower/R/analysis_99_1_weak.R",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "4035baf6bb37b27ff846b46b1deacd943fe1b399",
+        "size": 5841,
+        "url": "https://api.github.com/repos/DanSBS/NGSPower/git/blobs/4035baf6bb37b27ff846b46b1deacd943fe1b399"
+      },
+      {
+        "path": "NGSPower/R/makeData50to50.R",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "9054689946ee44dfaef5f71adac3a4f54c23384d",
+        "size": 4409,
+        "url": "https://api.github.com/repos/DanSBS/NGSPower/git/blobs/9054689946ee44dfaef5f71adac3a4f54c23384d"
+      },
+      {
+        "path": "NGSPower/R/makeData99to1.R",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "01d16110194482e3c2996810c9643181a6639768",
+        "size": 4454,
+        "url": "https://api.github.com/repos/DanSBS/NGSPower/git/blobs/01d16110194482e3c2996810c9643181a6639768"
+      },
+      {
+        "path": "NGSPower/plots",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "a40586a7613408537e0365f25ab3f469ca213b48",
+        "url": "https://api.github.com/repos/DanSBS/NGSPower/git/trees/a40586a7613408537e0365f25ab3f469ca213b48"
+      },
+      {
+        "path": "NGSPower/plots/eps001_50pure_mod.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "fbbe9e5ae533b4fe80f02739f11639bd146f6a1b",
+        "size": 134887,
+        "url": "https://api.github.com/repos/DanSBS/NGSPower/git/blobs/fbbe9e5ae533b4fe80f02739f11639bd146f6a1b"
+      },
+      {
+        "path": "NGSPower/plots/eps001_50pure_weak.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "8d395bf2eea2488f77dea6546b80bad37d202a42",
+        "size": 138901,
+        "url": "https://api.github.com/repos/DanSBS/NGSPower/git/blobs/8d395bf2eea2488f77dea6546b80bad37d202a42"
+      },
+      {
+        "path": "NGSPower/plots/eps001_99pure_mod.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e1203bf1fb0a9f01f2b9f7124ff732285d9dbeec",
+        "size": 72136,
+        "url": "https://api.github.com/repos/DanSBS/NGSPower/git/blobs/e1203bf1fb0a9f01f2b9f7124ff732285d9dbeec"
+      },
+      {
+        "path": "NGSPower/plots/eps001_99pure_weak.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "71727b049518a938fcefbad3554dbb93eb66068c",
+        "size": 87859,
+        "url": "https://api.github.com/repos/DanSBS/NGSPower/git/blobs/71727b049518a938fcefbad3554dbb93eb66068c"
+      },
+      {
+        "path": "NGSPower/plots/pow_50pure_mod.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "2a24a3f0f36db24cd936655922f9aaae5dd1bfe1",
+        "size": 40700,
+        "url": "https://api.github.com/repos/DanSBS/NGSPower/git/blobs/2a24a3f0f36db24cd936655922f9aaae5dd1bfe1"
+      },
+      {
+        "path": "NGSPower/plots/pow_50pure_weak.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "00b1a2e8106ce75e831e8bde181cdae6e8662452",
+        "size": 35925,
+        "url": "https://api.github.com/repos/DanSBS/NGSPower/git/blobs/00b1a2e8106ce75e831e8bde181cdae6e8662452"
+      },
+      {
+        "path": "NGSPower/plots/pow_99pure_mod.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "6ea0874aa25a493d112fc152e5ddd8d24d17da90",
+        "size": 53994,
+        "url": "https://api.github.com/repos/DanSBS/NGSPower/git/blobs/6ea0874aa25a493d112fc152e5ddd8d24d17da90"
+      },
+      {
+        "path": "NGSPower/plots/pow_99pure_weak.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "6891bdc8ab261f9ea689df42751c71dcb54f225e",
+        "size": 57058,
+        "url": "https://api.github.com/repos/DanSBS/NGSPower/git/blobs/6891bdc8ab261f9ea689df42751c71dcb54f225e"
+      },
+      {
+        "path": "README.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "7cb8e3a271b43b9f799cc151ad119fdc4eebf351",
+        "size": 54,
+        "url": "https://api.github.com/repos/DanSBS/NGSPower/git/blobs/7cb8e3a271b43b9f799cc151ad119fdc4eebf351"
+      }
+    ],
+    "truncated": false
+  }
+}

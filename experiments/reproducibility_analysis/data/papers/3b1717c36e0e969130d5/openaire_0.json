@@ -1,0 +1,457 @@
+{
+  "provider": "openaire_graph_v2",
+  "requested_url": "https://api.openaire.eu/graph/v2/researchProducts/doi_dedup___::ccc5afaa8f6b4a6deaf16f25023210b3",
+  "retrieved_at": "2026-09-30T11:53:51.404062+00:00",
+  "status": "ok",
+  "http_status": 200,
+  "final_url": "https://api.openaire.eu/graph/v2/researchProducts/doi_dedup___::ccc5afaa8f6b4a6deaf16f25023210b3",
+  "sha256": "b79201fe4fc2a714cd4b297817729d7292569fba37477d1f4b3fdf71803dac83",
+  "content_type": "application/json",
+  "data": {
+    "authors": [
+      {
+        "fullName": "Kaida, A. Y.",
+        "name": "A. Y.",
+        "surname": "Kaida",
+        "rank": 1,
+        "pid": {
+          "id": {
+            "scheme": "orcid",
+            "value": "0000-0003-4243-8628"
+          },
+          "provenance": null
+        }
+      },
+      {
+        "fullName": "Golosova, M. V.",
+        "name": "M. V.",
+        "surname": "Golosova",
+        "rank": 2,
+        "pid": null
+      },
+      {
+        "fullName": "Grigorieva, M. A.",
+        "name": "M. A.",
+        "surname": "Grigorieva",
+        "rank": 3,
+        "pid": {
+          "id": {
+            "scheme": "orcid",
+            "value": "0000-0002-8851-2187"
+          },
+          "provenance": null
+        }
+      },
+      {
+        "fullName": "Gubin, Maksim Yurjevich",
+        "name": "Maksim Yurjevich",
+        "surname": "Gubin",
+        "rank": 4,
+        "pid": null
+      }
+    ],
+    "openAccessColor": "gold",
+    "publiclyFunded": false,
+    "type": "publication",
+    "language": {
+      "code": "und",
+      "label": "Undetermined"
+    },
+    "countries": [
+      {
+        "code": "RU",
+        "label": "Russian Federation",
+        "provenance": null
+      }
+    ],
+    "subjects": [
+      {
+        "subject": {
+          "scheme": "keyword",
+          "value": "обработка данных"
+        },
+        "provenance": null
+      },
+      {
+        "subject": {
+          "scheme": "FOS",
+          "value": "0103 physical sciences"
+        },
+        "provenance": null
+      },
+      {
+        "subject": {
+          "scheme": "keyword",
+          "value": "хранение"
+        },
+        "provenance": null
+      },
+      {
+        "subject": {
+          "scheme": "keyword",
+          "value": "программные модули"
+        },
+        "provenance": null
+      },
+      {
+        "subject": {
+          "scheme": "keyword",
+          "value": "большие данные"
+        },
+        "provenance": null
+      },
+      {
+        "subject": {
+          "scheme": "keyword",
+          "value": "методанные"
+        },
+        "provenance": null
+      },
+      {
+        "subject": {
+          "scheme": "keyword",
+          "value": "агрегация"
+        },
+        "provenance": null
+      },
+      {
+        "subject": {
+          "scheme": "keyword",
+          "value": "модули"
+        },
+        "provenance": null
+      },
+      {
+        "subject": {
+          "scheme": "FOS",
+          "value": "01 natural sciences"
+        },
+        "provenance": null
+      },
+      {
+        "subject": {
+          "scheme": "SDG",
+          "value": "7. Clean energy"
+        },
+        "provenance": null
+      }
+    ],
+    "mainTitle": "Development of DKB ETL module in case of data conversion",
+    "subTitle": null,
+    "descriptions": [
+      "Modern scientific experiments involve the producing of huge volumes of data that requires new approaches in data processing and storage. These data themselves, as well as their processing and storage, are accompanied by a valuable amount of additional information, called metadata, distributed over multiple informational systems and repositories, and having a complicated, heterogeneous structure. Gathering these metadata for experiments in the field of high energy nuclear physics (HENP) is a complex issue, requiring the quest for solutions outside the box. One of the tasks is to integrate metadata from different repositories into some kind of a central storage. During the integration process, metadata taken from original source repositories go through several processing steps: metadata aggregation, transformation according to the current data model and loading it to the general storage in a standardized form. The R&D project of ATLAS experiment on LHC, Data Knowledge Base, is aimed to provide fast and easy access to significant information about LHC experiments for the scientific community. The data integration subsystem, being developed for the DKB project, can be represented as a number of particular pipelines, arranging data flow from data sources to the main DKB storage. The data transformation process, represented by a single pipeline, can be considered as a number of successive data transformation steps, where each step is implemented as an individual program module. This article outlines the specifics of program modules, used in the dataflow, and describes one of the modules developed and integrated into the data integration subsystem of DKB."
+    ],
+    "publicationDate": "2018-05-01",
+    "publisher": "IOP Publishing",
+    "embargoEndDate": null,
+    "sources": [
+      "Crossref"
+    ],
+    "formats": null,
+    "contributors": null,
+    "coverages": null,
+    "bestAccessRight": {
+      "code": "c_abf2",
+      "label": "OPEN",
+      "scheme": "http://vocabularies.coar-repositories.org/documentation/access_rights/"
+    },
+    "container": {
+      "name": "Journal of Physics: Conference Series",
+      "issnPrinted": "1742-6588",
+      "issnOnline": "1742-6596",
+      "issnLinking": null,
+      "ep": null,
+      "iss": null,
+      "sp": "032055",
+      "vol": "1015",
+      "edition": null,
+      "conferencePlace": null,
+      "conferenceDate": null
+    },
+    "documentationUrls": null,
+    "codeRepositoryUrl": null,
+    "programmingLanguage": null,
+    "contactPeople": null,
+    "contactGroups": null,
+    "tools": null,
+    "size": null,
+    "version": null,
+    "geoLocations": null,
+    "id": "doi_dedup___::ccc5afaa8f6b4a6deaf16f25023210b3",
+    "originalIds": [
+      "10.1088/1742-6596/1015/3/032055",
+      "50|doiboost____|ccc5afaa8f6b4a6deaf16f25023210b3",
+      "2803504792",
+      "50|od______3626::5c216c227f292e5044c65868db100125",
+      "oai:earchive.tpu.ru:11683/52924"
+    ],
+    "pids": [
+      {
+        "scheme": "doi",
+        "value": "10.1088/1742-6596/1015/3/032055"
+      }
+    ],
+    "dateOfCollection": null,
+    "lastUpdateTimeStamp": null,
+    "indicators": {
+      "citationImpact": {
+        "citationCount": 0.0,
+        "influence": 2.1746283e-09,
+        "popularity": 8.566651e-10,
+        "impulse": 0.0,
+        "citationClass": "C5",
+        "influenceClass": "C5",
+        "impulseClass": "C5",
+        "popularityClass": "C5"
+      }
+    },
+    "projects": null,
+    "organizations": [
+      {
+        "legalName": "Kurchatov Institute",
+        "acronym": "Kurchatov Institute",
+        "id": "openorgs____::0f2d31dc327ca9666b19c5a477760d2c",
+        "pids": [
+          {
+            "scheme": "ISNI",
+            "value": "0000000406204151"
+          },
+          {
+            "scheme": "OrgRef",
+            "value": "2810116"
+          },
+          {
+            "scheme": "GRID",
+            "value": "grid.18919.38"
+          },
+          {
+            "scheme": "ROR",
+            "value": "https://ror.org/00n1nz186"
+          },
+          {
+            "scheme": "wikidata",
+            "value": "Q1794356"
+          },
+          {
+            "scheme": "mag_id",
+            "value": "2800235667"
+          },
+          {
+            "scheme": "Wikidata",
+            "value": "Q1794356"
+          }
+        ]
+      },
+      {
+        "legalName": "Tomsk Polytechnic University",
+        "acronym": "TPU",
+        "id": "openorgs____::f8ace2dfc2be2be73b004476f2d5f5e9",
+        "pids": [
+          {
+            "scheme": "PIC",
+            "value": "997438488"
+          },
+          {
+            "scheme": "ISNI",
+            "value": "0000000093211499"
+          },
+          {
+            "scheme": "Wikidata",
+            "value": "Q1466666"
+          },
+          {
+            "scheme": "fundref",
+            "value": "100012934"
+          },
+          {
+            "scheme": "wikidata",
+            "value": "Q1466666"
+          },
+          {
+            "scheme": "ROR",
+            "value": "https://ror.org/00a45v709"
+          },
+          {
+            "scheme": "GRID",
+            "value": "grid.27736.37"
+          },
+          {
+            "scheme": "mag_id",
+            "value": "30849647"
+          },
+          {
+            "scheme": "OrgRef",
+            "value": "4563685"
+          },
+          {
+            "scheme": "FundRef",
+            "value": "100012934"
+          }
+        ]
+      }
+    ],
+    "communities": [
+      {
+        "code": "energy-planning",
+        "label": "Energy Planning",
+        "provenance": null
+      }
+    ],
+    "collectedFrom": [
+      {
+        "key": "openaire____::8ac8380272269217cb09a928c8caa993",
+        "value": "UnpayWall"
+      },
+      {
+        "key": "openaire____::081b82f96300b6a6e3d282bad31cb6e2",
+        "value": "Crossref"
+      },
+      {
+        "key": "opendoar____::0ee8b85a85a49346fdff9665312a5cc4",
+        "value": "Electronic archive of Tomsk Polytechnic University"
+      },
+      {
+        "key": "openaire____::5f532a3fc4f1ea403f37070f59a7a53a",
+        "value": "Microsoft Academic Graph"
+      }
+    ],
+    "instances": [
+      {
+        "pids": [
+          {
+            "scheme": "doi",
+            "value": "10.1088/1742-6596/1015/3/032055"
+          }
+        ],
+        "license": "CC BY",
+        "accessRight": {
+          "code": "c_abf2",
+          "label": "OPEN",
+          "scheme": "http://vocabularies.coar-repositories.org/documentation/access_rights/",
+          "openAccessRoute": "gold"
+        },
+        "type": "Article",
+        "urls": [
+          "https://doi.org/10.1088/1742-6596/1015/3/032055"
+        ],
+        "publicationDate": "2018-05-01",
+        "refereed": "peerReviewed",
+        "hostedBy": {
+          "key": "doajarticles::67632cd8f65fbdb59ed6d1470c0cf8a6",
+          "value": "Journal of Physics : Conference Series"
+        },
+        "collectedFrom": {
+          "key": "openaire____::081b82f96300b6a6e3d282bad31cb6e2",
+          "value": "Crossref"
+        }
+      },
+      {
+        "pids": [
+          {
+            "scheme": "doi",
+            "value": "10.1088/1742-6596/1015/3/032055"
+          }
+        ],
+        "accessRight": {
+          "code": "c_abf2",
+          "label": "OPEN",
+          "scheme": "http://vocabularies.coar-repositories.org/documentation/access_rights/",
+          "openAccessRoute": "gold"
+        },
+        "type": "Article",
+        "urls": [
+          "https://doi.org/10.1088/1742-6596/1015/3/032055"
+        ],
+        "refereed": "nonPeerReviewed",
+        "hostedBy": {
+          "key": "doajarticles::67632cd8f65fbdb59ed6d1470c0cf8a6",
+          "value": "Journal of Physics : Conference Series"
+        },
+        "collectedFrom": {
+          "key": "openaire____::8ac8380272269217cb09a928c8caa993",
+          "value": "UnpayWall"
+        }
+      },
+      {
+        "alternateIdentifiers": [
+          {
+            "scheme": "mag_id",
+            "value": "2803504792"
+          },
+          {
+            "scheme": "doi",
+            "value": "10.1088/1742-6596/1015/3/032055"
+          }
+        ],
+        "type": "Other literature type",
+        "urls": [
+          "https://dx.doi.org/10.1088/1742-6596/1015/3/032055"
+        ],
+        "refereed": "nonPeerReviewed",
+        "hostedBy": {
+          "key": "openaire____::55045bd2a65019fd8e6741a755395c8c",
+          "value": "Unknown Repository"
+        },
+        "collectedFrom": {
+          "key": "openaire____::5f532a3fc4f1ea403f37070f59a7a53a",
+          "value": "Microsoft Academic Graph"
+        }
+      },
+      {
+        "alternateIdentifiers": [
+          {
+            "scheme": "doi",
+            "value": "10.1088/1742-6596/1015/3/032055"
+          }
+        ],
+        "accessRight": {
+          "code": "c_abf2",
+          "label": "OPEN",
+          "scheme": "http://vocabularies.coar-repositories.org/documentation/access_rights/",
+          "openAccessRoute": null
+        },
+        "type": "Conference object",
+        "urls": [
+          "http://earchive.tpu.ru/handle/11683/52924"
+        ],
+        "publicationDate": "2019-02-28",
+        "refereed": "nonPeerReviewed",
+        "hostedBy": {
+          "key": "opendoar____::0ee8b85a85a49346fdff9665312a5cc4",
+          "value": "Electronic archive of Tomsk Polytechnic University"
+        },
+        "collectedFrom": {
+          "key": "opendoar____::0ee8b85a85a49346fdff9665312a5cc4",
+          "value": "Electronic archive of Tomsk Polytechnic University"
+        }
+      },
+      {
+        "alternateIdentifiers": [
+          {
+            "scheme": "mag_id",
+            "value": "2803504792"
+          },
+          {
+            "scheme": "doi",
+            "value": "10.1088/1742-6596/1015/3/032055"
+          }
+        ],
+        "type": "Other literature type",
+        "urls": [
+          "https://dx.doi.org/10.1088/1742-6596/1015/3/032055"
+        ],
+        "refereed": "nonPeerReviewed",
+        "hostedBy": {
+          "key": "openaire____::55045bd2a65019fd8e6741a755395c8c",
+          "value": "Unknown Repository"
+        },
+        "collectedFrom": {
+          "key": "openaire____::5f532a3fc4f1ea403f37070f59a7a53a",
+          "value": "Microsoft Academic Graph"
+        }
+      }
+    ],
+    "isGreen": true,
+    "isInDiamondJournal": false
+  }
+}
