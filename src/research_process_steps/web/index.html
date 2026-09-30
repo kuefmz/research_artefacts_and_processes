@@ -150,13 +150,24 @@
 
     <section class="panel">
       <div class="section-head">
-        <div><h2>First 10 papers · 8 repositories</h2>
+        <div><h2 id="collectionTitle">Publication collection</h2>
           <p class="panel-copy">Dataset associations await manual verification. PDFs start empty; upload your own copies below.</p></div>
         <select id="scope" aria-label="Repository view">
-          <option value="selected">Selected repositories</option>
+          <option value="collection">Full publication dataset</option>
+          <option value="selected">First 10 papers</option>
           <option value="all">All repositories</option>
         </select>
       </div>
+      <div id="collectionActions" class="batch-buttons">
+        <button id="runCollection">Run dataset heuristics</button>
+        <button id="analyzeCollection" class="secondary">Run complete dataset analytics</button>
+      </div>
+      <div class="controls" style="margin-top:12px">
+        <input id="collectionSearch" placeholder="Filter repository or paper title" aria-label="Filter dataset">
+        <select id="collectionFilter" aria-label="Filter result status"><option value="">All results</option><option value="stored">With stored results</option><option value="missing">Without results</option></select>
+      </div>
+      <div id="collectionJobStatus" class="status" role="status"></div>
+      <details id="analyticsPanel" class="hidden"><summary>Dataset analytics summary</summary><pre id="analyticsSummary" style="white-space:pre-wrap"></pre></details>
       <div id="selectionStatus" class="status">Loading selection…</div>
       <div class="table-wrap history-wrap"><table>
         <thead><tr><th>Repository</th><th>Heuristics</th><th>Paper</th><th>Uploaded PDF</th></tr></thead>
@@ -273,15 +284,43 @@
     const selectionStatus = document.getElementById("selectionStatus");
     const selectionRows = document.getElementById("selectionRows");
     let selectedUrls = new Set();
+    let collectionUrls = new Set();
+    let selectionPayload = null;
+    const collectionSearch = document.getElementById("collectionSearch");
+    const collectionFilter = document.getElementById("collectionFilter");
+    let selectionRequest = 0;
 
     async function loadSelection() {
       try {
-        const response = await fetch("/api/selection");
+        const requestNumber = ++selectionRequest;
+        const fullCollection = scope.value === "collection";
+        const response = await fetch(fullCollection ? "/api/publication-collection" : "/api/selection");
         const payload = await response.json();
         if (!response.ok) throw new Error(payload.detail || "Could not load selection.");
-        selectedUrls = new Set(payload.repositories.map(item => item.repo_url.toLowerCase()));
-        const executions = new Map(payload.repositories.map(item => [item.repo_url, item.execution]));
-        selectionRows.innerHTML = payload.papers.map(paper => {
+        if (requestNumber !== selectionRequest) return;
+        selectionPayload = payload;
+        if (fullCollection) collectionUrls = new Set(payload.repositories.map(item => item.repo_url.toLowerCase()));
+        else selectedUrls = new Set(payload.repositories.map(item => item.repo_url.toLowerCase()));
+        document.getElementById("collectionTitle").textContent = `${payload.papers.length} papers · ${payload.repositories.length} repositories`;
+        renderSelection();
+      } catch (error) {
+        selectionStatus.className = "status error";
+        selectionStatus.textContent = error.message;
+      }
+    }
+
+    function renderSelection() {
+      if (!selectionPayload) return;
+      const payload = selectionPayload;
+      const query = collectionSearch.value.trim().toLowerCase();
+      const filter = collectionFilter.value;
+      const executions = new Map(payload.repositories.map(item => [item.repo_url, item.execution]));
+        const visiblePapers = payload.papers.filter(paper => {
+          const hasResult = Boolean(executions.get(paper.github_url));
+          return (!query || `${paper.github_url} ${paper.title}`.toLowerCase().includes(query)) &&
+            (!filter || (filter === "stored" ? hasResult : !hasResult));
+        });
+        selectionRows.innerHTML = visiblePapers.map(paper => {
           const execution = executions.get(paper.github_url);
           const name = paper.github_url.replace("https://github.com/", "");
           return `<tr>
@@ -335,11 +374,7 @@
           });
         });
         selectionStatus.className = "status";
-        selectionStatus.textContent = `${payload.papers.length} papers linked to ${payload.repositories.length} repositories. PDFs are saved on this server (maximum 25 MB each).`;
-      } catch (error) {
-        selectionStatus.className = "status error";
-        selectionStatus.textContent = error.message;
-      }
+        selectionStatus.textContent = `Showing ${visiblePapers.length} of ${payload.papers.length} paper associations across ${payload.repositories.length} repositories. PDFs persist on this server (25 MB maximum).`;
     }
 
 
@@ -477,7 +512,8 @@
         const payload = await response.json();
         if (!response.ok) throw new Error(payload.detail || "Could not load stored results.");
 
-        const visible = payload.repositories.filter(item => scope.value === "all" || selectedUrls.has(item.repo_url.toLowerCase()));
+        const visible = payload.repositories.filter(item => scope.value === "all" ||
+          (scope.value === "collection" ? collectionUrls : selectedUrls).has(item.repo_url.toLowerCase().replace(/\/(blob|tree)\/.*$/, "")));
         historyCount.textContent = `${visible.length} repositories have persistent results in this view.`;
         historyRows.innerHTML = visible.map(item => {
           const stepCounts = Object.entries(item.files_per_step || {})
@@ -586,6 +622,53 @@
       }
     }
 
+    async function runCollectionJob(action) {
+      const buttons = [document.getElementById("runCollection"), document.getElementById("analyzeCollection")];
+      const jobStatus = document.getElementById("collectionJobStatus");
+      buttons.forEach(button => button.disabled = true);
+      jobStatus.className = "status";
+      jobStatus.textContent = `Starting dataset ${action}…`;
+      try {
+        const response = await fetch("/api/publication-collection/jobs", {
+          method: "POST", headers: {"Content-Type":"application/json"}, body: JSON.stringify({action})
+        });
+        const job = await response.json();
+        if (!response.ok) throw new Error(job.detail || "Could not start dataset job.");
+        while (true) {
+          const poll = await fetch(`/api/publication-collection/jobs/${job.id}`);
+          const state = await poll.json();
+          if (!poll.ok) throw new Error(state.detail || "Could not retrieve job status.");
+          if (state.status === "failed") throw new Error(state.error);
+          if (state.status === "completed") {
+            if (action === "analytics") {
+              document.getElementById("analyticsSummary").textContent = JSON.stringify(state.result, null, 2);
+              document.getElementById("analyticsPanel").classList.remove("hidden");
+              const coverage = state.result.dataset_scope;
+              jobStatus.textContent = `All five analytics completed for ${coverage.completed_count} of ${coverage.repository_count} dataset repositories. Reports saved in data/publication_collection_analysis.`;
+            } else {
+              jobStatus.textContent = `Heuristics finished: ${state.result.completed.length} stored/reused, ${state.result.errors.length} errors.`;
+              if (state.result.errors.length) jobStatus.textContent += " " + state.result.errors.map(item => `${item.repo_url}: ${item.error}`).join("; ");
+            }
+            await loadSelection(); await loadHistory();
+            break;
+          }
+          jobStatus.textContent = state.progress
+            ? `${action}: ${state.progress.index}/${state.progress.total} · ${state.progress.status} · ${state.progress.repo_url}`
+            : `Dataset ${action} is running…`;
+          await new Promise(resolve => setTimeout(resolve, 2000));
+        }
+      } catch (error) {
+        jobStatus.className = "status error";
+        jobStatus.textContent = error.message;
+      } finally {
+        buttons.forEach(button => button.disabled = false);
+      }
+    }
+    document.getElementById("runCollection").addEventListener("click", () => runCollectionJob("heuristics"));
+    document.getElementById("analyzeCollection").addEventListener("click", () => runCollectionJob("analytics"));
+    collectionSearch.addEventListener("input", renderSelection);
+    collectionFilter.addEventListener("change", renderSelection);
+
     analyzeButton.addEventListener("click", analyze);
     repoInput.addEventListener("keydown", event => {
       if (event.key === "Enter") analyze();
@@ -594,10 +677,12 @@
       button.addEventListener("click", () => runBatch(Number(button.dataset.count)));
     });
     refreshHistory.addEventListener("click", async () => { await loadSelection(); await loadHistory(); });
-    scope.addEventListener("change", () => {
+    scope.addEventListener("change", async () => {
       document.querySelectorAll(".general-panel").forEach(panel => panel.classList.toggle("hidden", scope.value !== "all"));
       results.classList.add("hidden");
-      loadHistory();
+      document.getElementById("collectionActions").classList.toggle("hidden", scope.value !== "collection");
+      await loadSelection();
+      await loadHistory();
     });
     searchInput.addEventListener("input", renderRows);
     stepFilter.addEventListener("change", renderRows);

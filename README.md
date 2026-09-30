@@ -627,8 +627,8 @@ concurrent workers for stability.
 
 ## First-ten-paper manual review
 
-The frontend defaults to the first **10 papers** in source dataset order, linked
- to **8 distinct repositories**. The fixed selection and source provenance live
+The first-ten-paper view contains the first **10 papers** in source dataset order,
+linked to **8 distinct repositories**. The fixed selection and source provenance live
 in `src/research_process_steps/datasets/first_10_papers.json`. These are recorded
 OpenAIRE associations; paper/repository relevance remains unreviewed. Use the
 view selector to switch back to the full repository explorer.
@@ -657,3 +657,43 @@ Uploaded PDFs persist in `data/selected_papers/D01.pdf` through `D10.pdf`, or in
 again replaces that paper's PDF. No PDFs are bundled or fetched automatically.
 Keep the server local; uploads and stored outputs use the existing unauthenticated
 local interface.
+
+## Full software-with-publications collection
+
+The complete uploaded collection is bundled unchanged at
+`src/research_process_steps/datasets/software_with_publications_v2.json`:
+386 software/repository records and 1,732 paper associations. Paper associations
+are not necessarily unique publications or verified experiment packages.
+
+```bash
+pip install -e .
+python scripts/run_publication_dataset_heuristics.py --list
+python scripts/run_publication_dataset_heuristics.py
+python scripts/run_publication_dataset_heuristics.py --analytics-only
+research-process-steps-web
+```
+
+The installed equivalent is `research-process-steps-publications`. The runner
+normalizes nested GitHub file/tree URLs to their owner/repository root and
+processes only this bundled collection, once per repository. Existing persisted
+results are reused; failures are reported and produce a nonzero exit code. It
+never runs repository code or automatically downloads papers.
+
+The frontend defaults to **Full publication dataset**. Filter by repository or
+paper title, and by presence of stored heuristic results. The execution history
+is restricted to the dataset in this view. **Run dataset heuristics** starts a
+background job with progress; **Run complete dataset analytics** runs all five
+existing analytics on a fresh snapshot containing only this dataset's stored
+results. The displayed summary reports completed/missing repositories; partial
+coverage is not presented as a complete dataset run. Reports are written to
+`data/publication_collection_analysis` (CLI override: `--output-dir`). Source
+content analytics use only available cached source files and report missing
+cache coverage; they do not fetch additional content.
+
+Full-collection PDF slots start empty and are saved as `C0001.pdf` through
+`C1732.pdf` in `RPS_PAPERS_DIR` (default `data/selected_papers`). First-ten-paper
+slots keep their existing D01–D10 IDs. Use the view selector to access those
+slots or the general explorer. Server jobs are tracked in memory; stopping the
+server stops its jobs, while completed heuristic results and reports remain
+on disk. Restart the runner to reuse completed results and attempt remaining
+repositories.

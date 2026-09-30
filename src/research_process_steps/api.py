@@ -26,6 +26,30 @@ from .storage import (
     save_result,
 )
 from .selected_repositories import load_selection, selected_repositories
+from .publication_collection import (
+    load_collection, collection_repositories, repository_identity,
+    run_collection, run_collection_analytics,
+)
+from concurrent.futures import ThreadPoolExecutor
+from threading import Lock
+from uuid import uuid4
+
+COLLECTION_WORKER = ThreadPoolExecutor(max_workers=1)
+COLLECTION_JOB_LOCK = Lock()
+COLLECTION_JOBS: dict[str, dict[str, Any]] = {}
+
+
+def collection_papers() -> list[dict[str, Any]]:
+    papers = []
+    for record in load_collection()["results"]:
+        for source in record.get("related_to", []):
+            papers.append({
+                "paper_id": f"C{len(papers) + 1:04d}",
+                "github_url": repository_identity(record["github_url"]),
+                "title": source.get("title", ""),
+                "doi": source.get("doi"), "paper_url": source.get("url", ""),
+            })
+    return papers
 
 
 def paper_directory() -> Path:
@@ -33,7 +57,9 @@ def paper_directory() -> Path:
 
 
 def paper_path(paper_id: str) -> Path:
-    if paper_id not in {paper["paper_id"] for paper in load_selection()["papers"]}:
+    allowed = {paper["paper_id"] for paper in load_selection()["papers"]}
+    allowed.update(paper["paper_id"] for paper in collection_papers())
+    if paper_id not in allowed:
         raise HTTPException(status_code=404, detail="Unknown selected paper.")
     return paper_directory() / f"{paper_id}.pdf"
 
@@ -179,6 +205,68 @@ def selection() -> dict[str, Any]:
             if paper_path(paper["paper_id"]).is_file() else None
         )
     return payload
+
+
+@app.get("/api/publication-collection")
+def publication_collection() -> dict[str, Any]:
+    executions = {}
+    for item in list_executions():
+        try:
+            executions[repository_identity(item["repo_url"])] = item
+        except (ValueError, KeyError):
+            continue
+    papers = collection_papers()
+    for paper in papers:
+        paper["pdf_url"] = (
+            f"/api/selection/papers/{paper['paper_id']}"
+            if (paper_directory() / f"{paper['paper_id']}.pdf").is_file() else None
+        )
+    return {
+        "papers": papers,
+        "repositories": [
+            {"repo_url": url, "execution": executions.get(url)}
+            for url in collection_repositories()
+        ],
+    }
+
+
+class CollectionJobRequest(BaseModel):
+    action: str = Field(pattern="^(heuristics|analytics)$")
+
+
+def _execute_collection_job(job_id: str, action: str) -> None:
+    def progress(item: dict[str, Any]) -> None:
+        with COLLECTION_JOB_LOCK:
+            COLLECTION_JOBS[job_id]["progress"] = item
+    try:
+        result = run_collection(progress) if action == "heuristics" else run_collection_analytics()
+        with COLLECTION_JOB_LOCK:
+            COLLECTION_JOBS[job_id].update(status="completed", result=result)
+    except Exception as exc:
+        with COLLECTION_JOB_LOCK:
+            COLLECTION_JOBS[job_id].update(status="failed", error=str(exc))
+
+
+@app.post("/api/publication-collection/jobs")
+def start_collection_job(request: CollectionJobRequest) -> dict[str, str]:
+    with COLLECTION_JOB_LOCK:
+        if any(job["status"] == "running" for job in COLLECTION_JOBS.values()):
+            raise HTTPException(status_code=409, detail="A dataset job is already running.")
+        # Keep bounded history in this local server process.
+        if len(COLLECTION_JOBS) >= 20:
+            COLLECTION_JOBS.pop(next(iter(COLLECTION_JOBS)))
+        job_id = uuid4().hex
+        COLLECTION_JOBS[job_id] = {"id": job_id, "action": request.action, "status": "running"}
+    COLLECTION_WORKER.submit(_execute_collection_job, job_id, request.action)
+    return {"id": job_id, "status": "running"}
+
+
+@app.get("/api/publication-collection/jobs/{job_id}")
+def collection_job(job_id: str) -> dict[str, Any]:
+    with COLLECTION_JOB_LOCK:
+        if job_id not in COLLECTION_JOBS:
+            raise HTTPException(status_code=404, detail="Dataset job not found.")
+        return dict(COLLECTION_JOBS[job_id])
 
 
 @app.get("/api/selection/papers/{paper_id}")
