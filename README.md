@@ -148,6 +148,14 @@ The current detection threshold is **2**, so a single incidental content keyword
 
 Path and filename evidence is primary. Content inspection is secondary and is performed only on likely text/source files below a configurable size threshold.
 
+Every recognized source-code extension provides Implementation evidence through
+`IMP_SOURCE_CODE_FILE`, regardless of directory (including repository-root files,
+R package directories, documentation examples, and vendor directories). All
+recognized source-code extensions are eligible for content scanning. Other
+process-step rules still apply, so a source file can receive multiple labels.
+Existing stored analyses are reused; regenerate them with the CLI to see updated
+heuristics in previously analyzed repositories.
+
 ### Evaluation vs software tests
 
 Ordinary software tests (`tests/`, `test_*.py`, etc.) are classified as **Implementation**, not scientific **Evaluation**. Evaluation requires evidence such as explicit benchmark/evaluation/metric/ablation artifacts.
