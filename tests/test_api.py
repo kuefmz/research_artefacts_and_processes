@@ -102,3 +102,22 @@ def test_bundled_demo_is_promoted_to_general_store(tmp_path, monkeypatch):
     assert first["cache"]["persistent"] is True
     assert second["cache"]["hit"] is True
     assert first["execution"]["id"] == second["execution"]["id"]
+
+
+def test_force_analysis_bypasses_all_caches(monkeypatch):
+    def unexpected(*args, **kwargs):
+        raise AssertionError("Forced reruns must bypass cached results")
+
+    monkeypatch.setattr(api, "load_result", unexpected)
+    monkeypatch.setattr(api, "_bundled_demo_path", unexpected)
+    monkeypatch.setattr(api, "_demo_cache_path", unexpected)
+    captured = {}
+
+    def execute(repo_url, **kwargs):
+        captured.update(kwargs)
+        return {"files": [], "cache": {"hit": False}}, True
+
+    monkeypatch.setattr(api, "execute_repository_once", execute)
+    result = api.analyze(api.AnalyzeRequest(repo_url="https://github.com/example/repo", force=True))
+    assert captured["force"] is True
+    assert result["cache"]["hit"] is False

@@ -67,6 +67,7 @@ def paper_path(paper_id: str) -> Path:
 class AnalyzeRequest(BaseModel):
     repo_url: str = Field(..., examples=["https://github.com/KnowledgeCaptureAndDiscovery/somef"])
     ref: str | None = None
+    force: bool = Field(default=False, description="Rerun heuristics and replace the stored result.")
     max_content_bytes: int = Field(
         default=DEFAULT_CONTENT_LIMIT,
         ge=0,
@@ -336,33 +337,33 @@ def random_batch(request: RandomBatchRequest) -> dict[str, Any]:
 
 @app.post("/api/analyze")
 def analyze(request: AnalyzeRequest) -> dict[str, Any]:
-    """Analyze once; all later requests for the same repository reuse storage."""
+    """Reuse stored results unless an explicit rerun is requested."""
     try:
-        existing = load_result(request.repo_url)
-        if existing is not None:
-            return existing
+        if not request.force:
+            existing = load_result(request.repo_url)
+            if existing is not None:
+                return existing
 
-        # Preserve the precomputed demos, but promote them into the general
-        # repository store so they participate in history and no-repeat logic.
-        bundled_path = _bundled_demo_path(request)
-        if bundled_path is not None:
-            bundled = _load_cache(bundled_path)
-            if bundled is not None:
-                return save_result(request.repo_url, bundled)
+            # Preserve the precomputed demos, but promote them into the general
+            # repository store so they participate in history and no-repeat logic.
+            bundled_path = _bundled_demo_path(request)
+            if bundled_path is not None:
+                bundled = _load_cache(bundled_path)
+                if bundled is not None:
+                    return save_result(request.repo_url, bundled)
 
-        cache_path = _demo_cache_path(request)
-        if cache_path is not None:
-            cached = _load_cache(cache_path)
-            if cached is not None:
-                return save_result(request.repo_url, cached)
+            cache_path = _demo_cache_path(request)
+            if cache_path is not None:
+                cached = _load_cache(cache_path)
+                if cached is not None:
+                    return save_result(request.repo_url, cached)
 
         if request.ref is not None:
             raise HTTPException(
                 status_code=422,
                 detail=(
                     "Persistent repository executions are keyed by repository URL. "
-                    "Custom refs are disabled to guarantee that a repository is never "
-                    "executed twice."
+                    "Custom refs are disabled; executions use the default branch."
                 ),
             )
 
@@ -370,6 +371,7 @@ def analyze(request: AnalyzeRequest) -> dict[str, Any]:
             request.repo_url,
             token=os.getenv("GITHUB_TOKEN"),
             max_content_bytes=request.max_content_bytes,
+            **({"force": True} if request.force else {}),
         )
         return result
     except HTTPException:
