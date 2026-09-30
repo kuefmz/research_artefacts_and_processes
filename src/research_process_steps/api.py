@@ -274,7 +274,10 @@ def selected_paper(paper_id: str) -> FileResponse:
     path = paper_path(paper_id)
     if not path.is_file():
         raise HTTPException(status_code=404, detail="No PDF uploaded yet.")
-    return FileResponse(path, media_type="application/pdf", filename=f"{paper_id}.pdf")
+    return FileResponse(
+        path, media_type="application/pdf", filename=f"{paper_id}.pdf",
+        content_disposition_type="inline",
+    )
 
 
 @app.put("/api/selection/papers/{paper_id}")
