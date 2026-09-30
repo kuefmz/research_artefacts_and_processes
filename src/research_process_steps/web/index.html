@@ -234,6 +234,11 @@
     <section id="results" class="hidden">
       <p id="resultStatus" class="status"></p>
       <div id="summary" class="summary"></div>
+      <section class="panel" aria-labelledby="unclassifiedHeading">
+        <h2 id="unclassifiedHeading">Unclassified files</h2>
+        <p id="unclassifiedStats" class="panel-copy"></p>
+        <div id="unclassifiedExtensions"></div>
+      </section>
 
       <div class="controls">
         <input id="search" placeholder="Filter by file path, matched keyword, or rule..." />
@@ -394,11 +399,40 @@
       const counts = payload.summary.files_per_step;
       const metrics = [
         ["Files", payload.repository.file_count],
+        ["Unclassified", payload.files.filter(file => file.unclassified).length],
         ...Object.entries(counts).map(([step, count]) => [step, count])
       ];
       summary.innerHTML = metrics.map(([label, value]) =>
         `<div class="metric"><div class="value">${value}</div><div class="label">${escapeHtml(label)}</div></div>`
       ).join("");
+      renderUnclassifiedStats(payload.files);
+    }
+
+    function unclassifiedExtensionStats(files) {
+      const unclassified = files.filter(file => file.unclassified);
+      const extensions = new Map();
+      for (const file of unclassified) {
+        const name = (file.path || "").split("/").pop();
+        const dot = name.lastIndexOf(".");
+        const extension = (file.extension || (dot > 0 ? name.slice(dot) : "")).toLowerCase() || "(no extension)";
+        extensions.set(extension, (extensions.get(extension) || 0) + 1);
+      }
+      const top = [...extensions.entries()]
+        .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+        .slice(0, 5);
+      return { total: unclassified.length, fileCount: files.length, top };
+    }
+
+    function renderUnclassifiedStats(files) {
+      const stats = unclassifiedExtensionStats(files);
+      const rate = stats.fileCount ? 100 * stats.total / stats.fileCount : 0;
+      document.getElementById("unclassifiedStats").textContent =
+        `${stats.total.toLocaleString()} of ${stats.fileCount.toLocaleString()} files are unclassified (${rate.toFixed(1)}%). Top five extensions across the full repository result; percentages use unclassified files as the denominator.`;
+      document.getElementById("unclassifiedExtensions").innerHTML = stats.total
+        ? `<table style="min-width:0"><thead><tr><th>Extension</th><th>Unclassified files</th><th>Share of unclassified</th></tr></thead><tbody>${
+            stats.top.map(([extension, count]) => `<tr><td class="path">${escapeHtml(extension)}</td><td>${count.toLocaleString()}</td><td>${(100 * count / stats.total).toFixed(1)}%</td></tr>`).join("")
+          }</tbody></table>`
+        : '<span class="none">No unclassified files in this repository result.</span>';
     }
 
     function searchableText(file) {
