@@ -1,7 +1,4 @@
-import pytest
-
 from research_process_steps.analyzer import _content_is_scannable, analyze_file
-from research_process_steps.heuristics import SOURCE_CODE_EXTENSIONS
 
 
 def steps(path: str, content: str = "") -> set[str]:
@@ -20,19 +17,12 @@ def test_source_code_is_implementation():
     assert "implementation" in steps("src/somef/cli.py")
 
 
-@pytest.mark.parametrize("extension", sorted(SOURCE_CODE_EXTENSIONS))
-@pytest.mark.parametrize("directory", ["", "NGSPower/R/", "assets/", "vendor/", "docs/", "arbitrary/deep/location/"])
-def test_source_code_is_considered_regardless_of_location(extension, directory):
-    path = f"{directory}analysis{extension.upper()}"
-    result = analyze_file(path)
+def test_source_extension_alone_is_not_a_process_step():
+    result = analyze_file("NGSPower/R/allPlots.R")
     assert result["artifact_kind"] == "source_code"
-    assert "implementation" in result["steps"]
-    assert any(item["rule_id"] == "IMP_SOURCE_CODE_FILE" for item in result["evidence"])
-    assert _content_is_scannable(path)
-
-
-def test_screenshot_r_source_is_implementation():
-    assert "implementation" in steps("NGSPower/R/allPlots.R")
+    assert result["steps"] == []
+    assert result["unclassified"] is True
+    assert _content_is_scannable("NGSPower/R/allPlots.R")
 
 
 def test_tests_are_implementation_not_evaluation():
