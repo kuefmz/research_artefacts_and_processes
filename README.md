@@ -720,3 +720,18 @@ current view or filter. New repositories are handled by the existing run buttons
 
 API: `POST /api/publication-collection/jobs` with `{"action":"rerun_all"}`.
 Poll `GET /api/publication-collection/jobs/{id}` for progress and results.
+
+### Conversation links
+
+Repository tables show two manually attached conversation variants: **No metadata**
+and **Research process step metadata**. Use Attach link or Edit link to save a URL,
+and Remove to delete it. Saved links open in a new tab; empty entries show
+Not attached. No conversation content or metadata is fetched.
+
+Links persist separately in `data/conversation_links/` (override with
+`RPS_CONVERSATIONS_DIR`) and survive heuristic reruns and server restarts.
+The same repository links appear across the publication, selected-paper, and
+executed-repository views.
+
+API: `PUT /api/conversations` with `repo_url`, `variant` (`no_metadata` or
+`research_process_step_metadata`), and `url` (an HTTP/HTTPS URL, or `null` to remove).

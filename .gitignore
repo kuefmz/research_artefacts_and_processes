@@ -11,3 +11,5 @@ data/raw/software.tar
 data/heuristic_results/
 data/github_cache/
 data/batch_runs/
+
+data/conversation_links/

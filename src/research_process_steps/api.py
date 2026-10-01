@@ -10,8 +10,9 @@ from typing import Any
 
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.responses import FileResponse
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, HttpUrl
 
+from .conversations import ConversationVariant, load_conversations, save_conversation
 from .analyzer import DEFAULT_CONTENT_LIMIT
 from .batch import (
     ALLOWED_BATCH_SIZES,
@@ -187,7 +188,25 @@ def health() -> dict[str, Any]:
 @app.get("/api/executed")
 def executed_repositories() -> dict[str, Any]:
     executions = list_executions()
+    for item in executions:
+        item["conversations"] = load_conversations(item["repo_url"])
     return {"count": len(executions), "repositories": executions}
+
+
+class ConversationLinkRequest(BaseModel):
+    repo_url: str
+    variant: ConversationVariant
+    url: HttpUrl | None = None
+
+
+@app.put("/api/conversations")
+def update_conversation(request: ConversationLinkRequest) -> dict[str, Any]:
+    try:
+        repo_url = repository_identity(request.repo_url)
+        save_conversation(repo_url, request.variant, str(request.url) if request.url else None)
+        return {"repo_url": repo_url, "conversations": load_conversations(repo_url)}
+    except ValueError as exc:
+        raise HTTPException(status_code=422, detail=str(exc)) from exc
 
 
 @app.get("/api/selection")
@@ -197,7 +216,7 @@ def selection() -> dict[str, Any]:
         _normalize_repo_url(item["repo_url"]): item for item in list_executions()
     }
     payload["repositories"] = [
-        {"repo_url": url, "execution": executions.get(_normalize_repo_url(url))}
+        {"repo_url": url, "execution": executions.get(_normalize_repo_url(url)), "conversations": load_conversations(url)}
         for url in selected_repositories()
     ]
     for paper in payload["papers"]:
@@ -225,7 +244,7 @@ def publication_collection() -> dict[str, Any]:
     return {
         "papers": papers,
         "repositories": [
-            {"repo_url": url, "execution": executions.get(url)}
+            {"repo_url": url, "execution": executions.get(url), "conversations": load_conversations(url)}
             for url in collection_repositories()
         ],
     }

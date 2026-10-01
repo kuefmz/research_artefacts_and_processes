@@ -169,7 +169,7 @@
       <details id="analyticsPanel" class="hidden"><summary>Dataset analytics summary</summary><pre id="analyticsSummary" style="white-space:pre-wrap"></pre></details>
       <div id="selectionStatus" class="status">Loading selection…</div>
       <div class="table-wrap history-wrap"><table>
-        <thead><tr><th>Repository</th><th>Heuristics</th><th>Paper</th><th>Uploaded PDF</th></tr></thead>
+        <thead><tr><th>Repository</th><th>Heuristics</th><th>Paper</th><th>Uploaded PDF</th><th>Conversation — No metadata</th><th>Conversation — Research process step metadata</th></tr></thead>
         <tbody id="selectionRows"></tbody>
       </table></div>
     </section>
@@ -225,6 +225,8 @@
               <th>Files</th>
               <th>Step counts</th>
               <th>Result</th>
+              <th>Conversation — No metadata</th>
+              <th>Conversation — Research process step metadata</th>
             </tr>
           </thead>
           <tbody id="historyRows"></tbody>
@@ -321,6 +323,7 @@
       const query = collectionSearch.value.trim().toLowerCase();
       const filter = collectionFilter.value;
       const executions = new Map(payload.repositories.map(item => [item.repo_url, item.execution]));
+      const conversations = new Map(payload.repositories.map(item => [item.repo_url, item.conversations]));
         const visiblePapers = payload.papers.filter(paper => {
           const hasResult = Boolean(executions.get(paper.github_url));
           return (!query || `${paper.github_url} ${paper.title}`.toLowerCase().includes(query)) &&
@@ -338,8 +341,10 @@
             <td>${paper.pdf_url ? `<a class="repo-link" href="${escapeHtml(paper.pdf_url)}" target="_blank" rel="noopener">Open PDF</a>` : '<span class="none">No PDF uploaded</span>'}
               <br><label class="meta">${paper.pdf_url ? "Replace PDF" : "Upload PDF"}
               <input class="paper-upload" type="file" accept="application/pdf,.pdf" data-id="${escapeHtml(paper.paper_id)}" aria-label="Upload PDF for ${escapeHtml(paper.paper_id)}" style="max-width:240px"></label></td>
+            ${conversationCells(paper.github_url, conversations.get(paper.github_url))}
           </tr>`;
         }).join("");
+        bindConversationEditors(selectionRows);
         selectionRows.querySelectorAll(".selected-result").forEach(button => {
           button.addEventListener("click", () => loadStoredResult(button.dataset.id));
         });
@@ -394,6 +399,56 @@
       return String(value ?? "").replace(/[&<>"']/g, char => ({
         "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#039;"
       })[char]);
+    }
+
+    function conversationCells(repoUrl, links = {}) {
+      return [
+        ["no_metadata", "No metadata"],
+        ["research_process_step_metadata", "Research process step metadata"]
+      ].map(([variant, label]) => {
+        const url = links?.[variant] || "";
+        return `<td>
+          ${url ? `<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">Open conversation</a>` : '<span class="none">Not attached</span>'}
+          <details><summary>${url ? "Edit link" : "Attach link"}</summary>
+            <form class="conversation-editor" data-repo="${escapeHtml(repoUrl)}" data-variant="${variant}">
+              <input type="url" name="url" value="${escapeHtml(url)}" placeholder="https://…" aria-label="${escapeHtml(label)} conversation URL for ${escapeHtml(repoUrl)}" style="min-width:220px">
+              <button type="submit" class="secondary small">Save</button>
+              ${url ? '<button type="button" class="secondary small remove-conversation">Remove</button>' : ""}
+              <span class="conversation-status" role="status"></span>
+            </form>
+          </details>
+        </td>`;
+      }).join("");
+    }
+
+    function bindConversationEditors(container) {
+      container.querySelectorAll(".conversation-editor").forEach(form => {
+        async function save(url) {
+          const buttons = form.querySelectorAll("button");
+          const message = form.querySelector(".conversation-status");
+          buttons.forEach(button => button.disabled = true);
+          message.textContent = "Saving…";
+          try {
+            const response = await fetch("/api/conversations", {
+              method: "PUT", headers: {"Content-Type": "application/json"},
+              body: JSON.stringify({repo_url: form.dataset.repo, variant: form.dataset.variant, url})
+            });
+            const payload = await response.json();
+            if (!response.ok) throw new Error(typeof payload.detail === "string" ? payload.detail : "Please enter a valid HTTP or HTTPS URL.");
+            await loadSelection();
+            await loadHistory();
+          } catch (error) {
+            message.textContent = error.message;
+          } finally {
+            buttons.forEach(button => button.disabled = false);
+          }
+        }
+        form.addEventListener("submit", event => {
+          event.preventDefault();
+          save(form.elements.url.value.trim() || null);
+        });
+        form.querySelector(".remove-conversation")?.addEventListener("click", () => save(null));
+      });
     }
 
     function renderSummary(payload) {
@@ -562,9 +617,11 @@
             <td>${Number(item.file_count || 0).toLocaleString()}</td>
             <td>${stepCounts}</td>
             <td><button class="secondary small view-result" data-result-id="${escapeHtml(item.id)}">View output</button></td>
+            ${conversationCells(item.repo_url, item.conversations)}
           </tr>`;
         }).join("");
 
+        bindConversationEditors(historyRows);
         document.querySelectorAll(".view-result").forEach(button => {
           button.addEventListener("click", () => loadStoredResult(button.dataset.resultId));
         });
