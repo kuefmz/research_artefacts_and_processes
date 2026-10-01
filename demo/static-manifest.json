@@ -61,8 +61,23 @@
     "e1e47be19f6695ec8965": "data/heuristic_results/e1e47be19f6695ec8965.json",
     "ecd24a0dd4485069897b": "data/heuristic_results/ecd24a0dd4485069897b.json"
   },
-  "pdf_ids": [],
-  "conversation_ids": [],
+  "pdf_ids": [
+    "C0001",
+    "C0002",
+    "C0003",
+    "C0004",
+    "C0005",
+    "C0006",
+    "C0007",
+    "C0008",
+    "C0009",
+    "C0010"
+  ],
+  "conversation_ids": [
+    "C0001",
+    "C0002",
+    "C0003"
+  ],
   "prompts": {
     "c0": {
       "label": "C0 — repository URL + paper PDF",
