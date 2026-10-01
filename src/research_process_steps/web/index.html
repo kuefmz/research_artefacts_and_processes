@@ -161,6 +161,21 @@
         <button id="runCollection">Run dataset heuristics</button>
         <button id="analyzeCollection" class="secondary">Run complete dataset analytics</button>
       </div>
+      <details id="reproPromptPanel" style="margin-top:12px">
+        <summary>Reproducibility prompts (C0 / C1)</summary>
+        <div style="display:grid;gap:14px;margin-top:12px">
+          <div>
+            <strong>C0 — repository URL + paper PDF</strong>
+            <div><button class="secondary small copy-prompt" data-variant="c0">Copy C0 prompt</button></div>
+            <pre id="c0Prompt" style="white-space:pre-wrap;max-height:320px;overflow:auto"></pre>
+          </div>
+          <div>
+            <strong>C1 — repository URL + paper PDF + research-step metadata</strong>
+            <div><button class="secondary small copy-prompt" data-variant="c1">Copy C1 prompt</button></div>
+            <pre id="c1Prompt" style="white-space:pre-wrap;max-height:320px;overflow:auto"></pre>
+          </div>
+        </div>
+      </details>
       <div class="controls" style="margin-top:12px">
         <input id="collectionSearch" placeholder="Filter repository or paper title" aria-label="Filter dataset">
         <select id="collectionFilter" aria-label="Filter result status"><option value="">All results</option><option value="stored">With stored results</option><option value="missing">Without results</option></select>
@@ -169,7 +184,7 @@
       <details id="analyticsPanel" class="hidden"><summary>Dataset analytics summary</summary><pre id="analyticsSummary" style="white-space:pre-wrap"></pre></details>
       <div id="selectionStatus" class="status">Loading selection…</div>
       <div class="table-wrap history-wrap"><table>
-        <thead><tr><th>Repository</th><th>Heuristics</th><th>Paper</th><th>Uploaded PDF</th><th>Conversation — No metadata</th><th>Conversation — Research process step metadata</th></tr></thead>
+        <thead><tr><th>Repository</th><th>Heuristics</th><th>Paper</th><th>Uploaded PDF</th><th>C0</th><th>C1</th></tr></thead>
         <tbody id="selectionRows"></tbody>
       </table></div>
     </section>
@@ -295,6 +310,7 @@
     const collectionSearch = document.getElementById("collectionSearch");
     const collectionFilter = document.getElementById("collectionFilter");
     let selectionRequest = 0;
+    let reproducibilityPrompts = {};
 
     async function loadSelection() {
       try {
@@ -321,7 +337,6 @@
       const query = collectionSearch.value.trim().toLowerCase();
       const filter = collectionFilter.value;
       const executions = new Map(payload.repositories.map(item => [item.repo_url, item.execution]));
-      const conversations = new Map(payload.repositories.map(item => [item.repo_url, item.conversations]));
         const visiblePapers = payload.papers.filter(paper => {
           const hasResult = Boolean(executions.get(paper.github_url));
           return (!query || `${paper.github_url} ${paper.title}`.toLowerCase().includes(query)) &&
@@ -339,10 +354,10 @@
             <td>${paper.pdf_url ? `<a class="repo-link" href="${escapeHtml(paper.pdf_url)}" target="_blank" rel="noopener">Open PDF</a>` : '<span class="none">No PDF uploaded</span>'}
               <br><label class="meta">${paper.pdf_url ? "Replace PDF" : "Upload PDF"}
               <input class="paper-upload" type="file" accept="application/pdf,.pdf" data-id="${escapeHtml(paper.paper_id)}" aria-label="Upload PDF for ${escapeHtml(paper.paper_id)}" style="max-width:240px"></label></td>
-            ${conversationCells(paper.github_url, conversations.get(paper.github_url))}
+            ${paperConversationCells(paper)}
           </tr>`;
         }).join("");
-        bindConversationEditors(selectionRows);
+        bindPaperConversationEditors(selectionRows);
         selectionRows.querySelectorAll(".selected-result").forEach(button => {
           button.addEventListener("click", () => loadStoredResult(button.dataset.id));
         });
@@ -397,6 +412,88 @@
       return String(value ?? "").replace(/[&<>"']/g, char => ({
         "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#039;"
       })[char]);
+    }
+
+    function formatTimestamp(value) {
+      if (!value) return "unknown time";
+      const date = new Date(value);
+      return Number.isNaN(date.getTime()) ? value : date.toLocaleString();
+    }
+
+    function paperConversationCell(paper, variant) {
+      if (!paper.reproducibility_conversations) {
+        return '<td><span class="none">Available in Full publication dataset</span></td>';
+      }
+      const records = paper.reproducibility_conversations?.[variant] || [];
+      const label = variant.toUpperCase();
+      const metadataLink = variant === "c1" && paper.research_step_metadata_url
+        ? `<div><a class="repo-link" href="${escapeHtml(paper.research_step_metadata_url)}" target="_blank" rel="noopener">Open research-step metadata</a></div>`
+        : "";
+      const existing = records.length
+        ? records.map(record => {
+            const changed = record.updated_at && record.updated_at !== record.created_at
+              ? ` · updated ${escapeHtml(formatTimestamp(record.updated_at))}`
+              : "";
+            return `<div style="margin-bottom:8px">
+              <a href="${escapeHtml(record.url)}" target="_blank" rel="noopener noreferrer">Open conversation</a>
+              <div class="meta">${escapeHtml(formatTimestamp(record.created_at))}${changed}</div>
+              <details><summary>Edit / overwrite</summary>
+                <form class="paper-conversation-editor" data-paper="${escapeHtml(paper.paper_id)}" data-variant="${variant}" data-record="${escapeHtml(record.id)}">
+                  <input type="url" name="url" value="${escapeHtml(record.url)}" placeholder="https://…" required style="min-width:220px">
+                  <button type="submit" class="secondary small">Overwrite</button>
+                  <span class="conversation-status" role="status"></span>
+                </form>
+              </details>
+            </div>`;
+          }).join("")
+        : '<div class="none">No conversations yet</div>';
+      return `<td>
+        ${metadataLink}
+        ${existing}
+        <details><summary>Add new ${label} conversation</summary>
+          <form class="paper-conversation-editor" data-paper="${escapeHtml(paper.paper_id)}" data-variant="${variant}">
+            <input type="url" name="url" placeholder="https://…" required aria-label="New ${label} conversation URL" style="min-width:220px">
+            <button type="submit" class="secondary small">Add</button>
+            <span class="conversation-status" role="status"></span>
+          </form>
+        </details>
+      </td>`;
+    }
+
+    function paperConversationCells(paper) {
+      return paperConversationCell(paper, "c0") + paperConversationCell(paper, "c1");
+    }
+
+    function bindPaperConversationEditors(container) {
+      container.querySelectorAll(".paper-conversation-editor").forEach(form => {
+        form.addEventListener("submit", async event => {
+          event.preventDefault();
+          const button = form.querySelector("button");
+          const message = form.querySelector(".conversation-status");
+          const url = form.elements.url.value.trim();
+          if (!url) return;
+          button.disabled = true;
+          message.textContent = "Saving…";
+          const recordId = form.dataset.record;
+          const endpoint = recordId
+            ? `/api/publication-collection/papers/${encodeURIComponent(form.dataset.paper)}/conversations/${encodeURIComponent(recordId)}`
+            : `/api/publication-collection/papers/${encodeURIComponent(form.dataset.paper)}/conversations`;
+          try {
+            const response = await fetch(endpoint, {
+              method: recordId ? "PUT" : "POST",
+              headers: {"Content-Type": "application/json"},
+              body: JSON.stringify({variant: form.dataset.variant, url})
+            });
+            const payload = await response.json();
+            if (!response.ok) throw new Error(payload.detail || "Could not save conversation.");
+            await loadSelection();
+          } catch (error) {
+            message.textContent = error.message;
+          } finally {
+            button.disabled = false;
+          }
+        });
+      });
     }
 
     function conversationCells(repoUrl, links = {}) {
@@ -777,6 +874,32 @@
     searchInput.addEventListener("input", renderRows);
     stepFilter.addEventListener("change", renderRows);
 
+    async function loadReproducibilityPrompts() {
+      try {
+        const response = await fetch("/api/reproducibility/prompts");
+        const payload = await response.json();
+        if (!response.ok) throw new Error(payload.detail || "Could not load reproducibility prompts.");
+        reproducibilityPrompts = payload.prompts || {};
+        document.getElementById("c0Prompt").textContent = reproducibilityPrompts.c0?.prompt || "";
+        document.getElementById("c1Prompt").textContent = reproducibilityPrompts.c1?.prompt || "";
+      } catch (error) {
+        document.getElementById("c0Prompt").textContent = error.message;
+        document.getElementById("c1Prompt").textContent = error.message;
+      }
+    }
+
+    document.querySelectorAll(".copy-prompt").forEach(button => {
+      button.addEventListener("click", async () => {
+        const prompt = reproducibilityPrompts[button.dataset.variant]?.prompt || "";
+        if (!prompt) return;
+        await navigator.clipboard.writeText(prompt);
+        const original = button.textContent;
+        button.textContent = "Copied";
+        setTimeout(() => { button.textContent = original; }, 1200);
+      });
+    });
+
+    loadReproducibilityPrompts();
     loadSelection().then(loadHistory);
   </script>
 </body>
