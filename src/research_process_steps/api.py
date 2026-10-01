@@ -258,7 +258,7 @@ def publication_collection() -> dict[str, Any]:
         paper["reproducibility_conversations"] = load_paper_conversations(paper["paper_id"])
         paper["research_step_metadata_url"] = (
             f"/api/publication-collection/papers/{paper['paper_id']}/research-step-metadata"
-            if load_result(paper["github_url"]) is not None else None
+            if paper["github_url"] in executions else None
         )
     return {
         "papers": papers,
