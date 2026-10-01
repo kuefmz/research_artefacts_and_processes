@@ -86,7 +86,8 @@
         ? RAW + "/data/selected_papers/" + p.paper_id + ".pdf"
         : null;
       if (includeRepro) {
-        p.reproducibility_conversations = conversations[p.paper_id] || {paper_id:p.paper_id, records:{c0:[],c1:[]}};
+        const storedConversations = conversations[p.paper_id];
+        p.reproducibility_conversations = storedConversations?.records || storedConversations || {c0:[],c1:[]};
         p.research_step_metadata_url = execution
           ? "/api/publication-collection/papers/" + p.paper_id + "/research-step-metadata"
           : null;
