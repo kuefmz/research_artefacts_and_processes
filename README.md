@@ -680,6 +680,7 @@ are not necessarily unique publications or verified experiment packages.
 pip install -e .
 python scripts/run_publication_dataset_heuristics.py --list
 python scripts/run_publication_dataset_heuristics.py
+python scripts/run_publication_dataset_heuristics.py --force
 python scripts/run_publication_dataset_heuristics.py --analytics-only
 research-process-steps-web
 ```
@@ -687,8 +688,10 @@ research-process-steps-web
 The installed equivalent is `research-process-steps-publications`. The runner
 normalizes nested GitHub file/tree URLs to their owner/repository root and
 processes only this bundled collection, once per repository. Existing persisted
-results are reused; failures are reported and produce a nonzero exit code. It
-never runs repository code or automatically downloads papers.
+results are reused by default; pass `--force` to rerun all dataset repositories
+with the current heuristics and replace stored results. Failures are reported and
+produce a nonzero exit code. It never runs repository code or automatically
+downloads papers.
 
 The frontend defaults to **Full publication dataset**. Filter by repository or
 paper title, and by presence of stored heuristic results. The execution history
