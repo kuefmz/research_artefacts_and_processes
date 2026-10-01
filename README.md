@@ -58,3 +58,77 @@ The benchmark is intended for comparing:
 4. manual versus LLM-assisted reproduction of selected experiments.
 
 The benchmark selection itself should remain fixed while evaluator judgments are added independently.
+
+## Evaluation criteria
+
+### Generic
+
+- **Has a README file?**
+- **Has usage instructions?**
+
+The benchmark is evaluated using two complementary approaches: **documentation** and **code**.
+
+### Documentation
+
+#### Collection
+
+**Question:** Does documentation explain how the research inputs/data were obtained?  
+**Evidence:** data sources, download instructions, API description
+
+#### Processing
+
+**Question:** Does it describe how inputs must be prepared/transformed?  
+**Evidence:** preprocessing steps, formats, cleaning procedure
+
+#### Method
+
+**Question:** Does it describe the method/model/algorithm implemented by the repository?  
+**Evidence:** model description, algorithm, parameters
+
+#### Experimentation
+
+**Question:** Does it explain how to execute the experiment/analysis?  
+**Evidence:** commands, experiment sequence, configurations
+
+#### Evaluation
+
+**Question:** Does it explain how results are evaluated/validated?  
+**Evidence:** metrics, evaluation commands, baselines
+
+#### Dissemination
+
+**Question:** Does it explain or identify the resulting research outputs/publication?  
+**Evidence:** paper citation, figures, tables, result descriptions
+
+### Code
+
+#### Collection
+
+**Question:** Does the code obtain or generate research input data/resources?  
+**Evidence:** API calls, downloads, database queries, crawlers, synthetic data generation
+
+#### Processing
+
+**Question:** Does the code transform input data into data used by the method/experiment?  
+**Evidence:** cleaning, normalization, filtering, tokenization
+
+#### Method
+
+**Question:** Does the code implement the research method/model/algorithm?  
+**Evidence:** models, algorithms, architectures
+
+#### Experimentation
+
+**Question:** Does the code execute experiments or analyses using the method?  
+**Evidence:** training, inference, experiment runners, analysis scripts
+
+#### Evaluation
+
+**Question:** Does the code measure or validate experimental outputs?  
+**Evidence:** metrics, comparisons, statistical tests, validation, error analysis
+
+#### Dissemination
+
+**Question:** Does the code generate artifacts specifically intended to communicate research results?  
+**Evidence:** publications, repositories
+
