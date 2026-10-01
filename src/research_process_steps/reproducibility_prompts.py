@@ -49,4 +49,10 @@ def render_reproducibility_prompt(
         "\n\nINPUT NOTE: The paper PDF is attached directly to this conversation. "
         "Treat that attached PDF as the paper input for this assessment."
     )
+    if variant == "c1":
+        attachment_note += (
+            " The research-process-step metadata JSON is also attached directly "
+            "to this conversation. Treat that JSON as the supplied additional "
+            "metadata and verify it against the repository files."
+        )
     return rendered + attachment_note
