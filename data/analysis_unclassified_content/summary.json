@@ -1,0 +1,1512 @@
+{
+  "unclassified_source_files": 222691,
+  "cached_content_files_analyzed": 142162,
+  "uncached_content_files": 80529,
+  "cached_content_coverage_pct": 63.8382,
+  "mean_loc_for_cached_files": 247.683,
+  "top_extensions": [
+    {
+      "extension": ".py",
+      "count": 55196
+    },
+    {
+      "extension": ".m",
+      "count": 34029
+    },
+    {
+      "extension": ".h",
+      "count": 27082
+    },
+    {
+      "extension": ".js",
+      "count": 17306
+    },
+    {
+      "extension": ".hpp",
+      "count": 13280
+    },
+    {
+      "extension": ".r",
+      "count": 11084
+    },
+    {
+      "extension": ".c",
+      "count": 10915
+    },
+    {
+      "extension": ".sh",
+      "count": 10121
+    },
+    {
+      "extension": ".pl",
+      "count": 9299
+    },
+    {
+      "extension": ".php",
+      "count": 8746
+    },
+    {
+      "extension": ".cpp",
+      "count": 7553
+    },
+    {
+      "extension": ".java",
+      "count": 4424
+    },
+    {
+      "extension": ".cxx",
+      "count": 3363
+    },
+    {
+      "extension": ".rb",
+      "count": 3037
+    },
+    {
+      "extension": ".go",
+      "count": 2337
+    },
+    {
+      "extension": ".swift",
+      "count": 2060
+    },
+    {
+      "extension": ".cc",
+      "count": 1695
+    },
+    {
+      "extension": ".ts",
+      "count": 377
+    },
+    {
+      "extension": ".jl",
+      "count": 337
+    },
+    {
+      "extension": ".scala",
+      "count": 176
+    },
+    {
+      "extension": ".bash",
+      "count": 173
+    },
+    {
+      "extension": ".rs",
+      "count": 97
+    },
+    {
+      "extension": ".kt",
+      "count": 4
+    }
+  ],
+  "top_filenames": [
+    {
+      "filename": "__init__.py",
+      "count": 6145
+    },
+    {
+      "filename": "utils.py",
+      "count": 776
+    },
+    {
+      "filename": "sdk_config.h",
+      "count": 593
+    },
+    {
+      "filename": "test.py",
+      "count": 546
+    },
+    {
+      "filename": "index.js",
+      "count": 368
+    },
+    {
+      "filename": "package.swift",
+      "count": 329
+    },
+    {
+      "filename": "main.c",
+      "count": 279
+    },
+    {
+      "filename": "run.sh",
+      "count": 232
+    },
+    {
+      "filename": "models.py",
+      "count": 226
+    },
+    {
+      "filename": "model.py",
+      "count": 224
+    },
+    {
+      "filename": "main.cpp",
+      "count": 210
+    },
+    {
+      "filename": "train.py",
+      "count": 200
+    },
+    {
+      "filename": "config.py",
+      "count": 199
+    },
+    {
+      "filename": "api.py",
+      "count": 181
+    },
+    {
+      "filename": "util.py",
+      "count": 172
+    },
+    {
+      "filename": "chain.php",
+      "count": 172
+    },
+    {
+      "filename": "gadgets.php",
+      "count": 172
+    },
+    {
+      "filename": "build.sh",
+      "count": 139
+    },
+    {
+      "filename": "tree-1-2-3.m",
+      "count": 134
+    },
+    {
+      "filename": "contents.m",
+      "count": 129
+    },
+    {
+      "filename": "main.swift",
+      "count": 128
+    },
+    {
+      "filename": "dataset.py",
+      "count": 127
+    },
+    {
+      "filename": "base.py",
+      "count": 123
+    },
+    {
+      "filename": "tree1.m",
+      "count": 112
+    },
+    {
+      "filename": "urls.py",
+      "count": 111
+    },
+    {
+      "filename": "views.py",
+      "count": 111
+    },
+    {
+      "filename": "tree2.m",
+      "count": 111
+    },
+    {
+      "filename": "tree3.m",
+      "count": 111
+    },
+    {
+      "filename": "run_alg.m",
+      "count": 106
+    },
+    {
+      "filename": "__main__.py",
+      "count": 102
+    },
+    {
+      "filename": "data.py",
+      "count": 97
+    },
+    {
+      "filename": "tests.py",
+      "count": 94
+    },
+    {
+      "filename": "run.py",
+      "count": 89
+    },
+    {
+      "filename": "config.h",
+      "count": 86
+    },
+    {
+      "filename": "common.py",
+      "count": 80
+    },
+    {
+      "filename": "install.sh",
+      "count": 79
+    },
+    {
+      "filename": "editor_plugin.js",
+      "count": 79
+    },
+    {
+      "filename": "constants.py",
+      "count": 78
+    },
+    {
+      "filename": "editor_plugin_src.js",
+      "count": 78
+    },
+    {
+      "filename": "impl.sh",
+      "count": 76
+    },
+    {
+      "filename": "plot.py",
+      "count": 74
+    },
+    {
+      "filename": "aesl_pkg.h",
+      "count": 74
+    },
+    {
+      "filename": "settings.py",
+      "count": 72
+    },
+    {
+      "filename": "admin.py",
+      "count": 69
+    },
+    {
+      "filename": "index.php",
+      "count": 69
+    },
+    {
+      "filename": "auth.php",
+      "count": 68
+    },
+    {
+      "filename": "version.py",
+      "count": 67
+    },
+    {
+      "filename": "install.php",
+      "count": 66
+    },
+    {
+      "filename": "test.js",
+      "count": 65
+    },
+    {
+      "filename": "test.sh",
+      "count": 63
+    }
+  ],
+  "top_directories": [
+    {
+      "directory": "(root)",
+      "count": 17130
+    },
+    {
+      "directory": "R",
+      "count": 5390
+    },
+    {
+      "directory": "scripts",
+      "count": 2143
+    },
+    {
+      "directory": "examples",
+      "count": 1678
+    },
+    {
+      "directory": "scripts/artifacts",
+      "count": 969
+    },
+    {
+      "directory": "include",
+      "count": 792
+    },
+    {
+      "directory": "framework/i18n/data",
+      "count": 773
+    },
+    {
+      "directory": "utils",
+      "count": 750
+    },
+    {
+      "directory": "matlab_tools/Converted",
+      "count": 714
+    },
+    {
+      "directory": "jobs",
+      "count": 651
+    },
+    {
+      "directory": "source",
+      "count": 647
+    },
+    {
+      "directory": "mesh",
+      "count": 563
+    },
+    {
+      "directory": "tools",
+      "count": 562
+    },
+    {
+      "directory": "bin",
+      "count": 544
+    },
+    {
+      "directory": "code",
+      "count": 513
+    },
+    {
+      "directory": "e1-robots/data",
+      "count": 480
+    },
+    {
+      "directory": "e2-lego/data",
+      "count": 440
+    },
+    {
+      "directory": "js",
+      "count": 422
+    },
+    {
+      "directory": "4-encryption/data/pl",
+      "count": 400
+    },
+    {
+      "directory": "analysis",
+      "count": 379
+    },
+    {
+      "directory": "models",
+      "count": 371
+    },
+    {
+      "directory": "util",
+      "count": 370
+    },
+    {
+      "directory": "plugins/FluctSplit",
+      "count": 346
+    },
+    {
+      "directory": "MetamorphicTests/all_mutants/sales_forecasting_file",
+      "count": 318
+    },
+    {
+      "directory": "e1-robots/programs",
+      "count": 312
+    },
+    {
+      "directory": "dist",
+      "count": 302
+    },
+    {
+      "directory": "ext/include/blaze/blaze/math/expressions",
+      "count": 286
+    },
+    {
+      "directory": "matlab",
+      "count": 282
+    },
+    {
+      "directory": "ext/include/blaze/blaze/math/typetraits",
+      "count": 271
+    },
+    {
+      "directory": "reduction/pipeline_scripts",
+      "count": 252
+    },
+    {
+      "directory": "plugins/FluxReconstructionMethod",
+      "count": 249
+    },
+    {
+      "directory": "PySkelton/include/gsl",
+      "count": 247
+    },
+    {
+      "directory": "tcpdump/jni/tcpdump",
+      "count": 245
+    },
+    {
+      "directory": "e2-lego/programs",
+      "count": 244
+    },
+    {
+      "directory": "db/migrate",
+      "count": 241
+    },
+    {
+      "directory": "BrainPortal/db/migrate",
+      "count": 237
+    },
+    {
+      "directory": "config",
+      "count": 224
+    },
+    {
+      "directory": "libs/tensorlab",
+      "count": 220
+    },
+    {
+      "directory": "e2-strings/data",
+      "count": 220
+    },
+    {
+      "directory": "third_party/ace/dev",
+      "count": 214
+    },
+    {
+      "directory": "third_party/ace/min",
+      "count": 213
+    },
+    {
+      "directory": "Source",
+      "count": 207
+    },
+    {
+      "directory": "ACRA_2018/Utilities/ewa",
+      "count": 206
+    },
+    {
+      "directory": "IROS_2020/Utilities/ewa",
+      "count": 206
+    },
+    {
+      "directory": "JoFR_2019/Utilities/ewa",
+      "count": 206
+    },
+    {
+      "directory": "misc",
+      "count": 202
+    },
+    {
+      "directory": "js/ace-min-noconflict",
+      "count": 201
+    },
+    {
+      "directory": "1-waiter/data/asp",
+      "count": 200
+    },
+    {
+      "directory": "1-waiter/data/pl",
+      "count": 200
+    },
+    {
+      "directory": "1-waiter/programs/asp",
+      "count": 200
+    }
+  ],
+  "top_imports": [
+    {
+      "import": ".",
+      "count": 23218
+    },
+    {
+      "import": "numpy",
+      "count": 17069
+    },
+    {
+      "import": "blaze",
+      "count": 15824
+    },
+    {
+      "import": "os",
+      "count": 13421
+    },
+    {
+      "import": "..",
+      "count": 11110
+    },
+    {
+      "import": "sys",
+      "count": 10853
+    },
+    {
+      "import": "torch",
+      "count": 9351
+    },
+    {
+      "import": "matplotlib",
+      "count": 6512
+    },
+    {
+      "import": "__future__",
+      "count": 5593
+    },
+    {
+      "import": "scipy",
+      "count": 4921
+    },
+    {
+      "import": "stdio.h",
+      "count": 4581
+    },
+    {
+      "import": "argparse",
+      "count": 4110
+    },
+    {
+      "import": "string.h",
+      "count": 4097
+    },
+    {
+      "import": "stdint.h",
+      "count": 3983
+    },
+    {
+      "import": "stdlib.h",
+      "count": 3981
+    },
+    {
+      "import": "tensorflow",
+      "count": 3866
+    },
+    {
+      "import": "typing",
+      "count": 3826
+    },
+    {
+      "import": "time",
+      "count": 3602
+    },
+    {
+      "import": "logging",
+      "count": 3490
+    },
+    {
+      "import": "collections",
+      "count": 3372
+    },
+    {
+      "import": "pandas",
+      "count": 3272
+    },
+    {
+      "import": "math",
+      "count": 3029
+    },
+    {
+      "import": "sklearn",
+      "count": 2969
+    },
+    {
+      "import": "re",
+      "count": 2900
+    },
+    {
+      "import": "boost",
+      "count": 2881
+    },
+    {
+      "import": "json",
+      "count": 2779
+    },
+    {
+      "import": "string",
+      "count": 2716
+    },
+    {
+      "import": "django",
+      "count": 2635
+    },
+    {
+      "import": "vector",
+      "count": 2613
+    },
+    {
+      "import": "utils",
+      "count": 2571
+    },
+    {
+      "import": "openssl",
+      "count": 2545
+    },
+    {
+      "import": "keras",
+      "count": 2408
+    },
+    {
+      "import": "mbedtls",
+      "count": 2390
+    },
+    {
+      "import": "astropy",
+      "count": 2357
+    },
+    {
+      "import": "datetime",
+      "count": 2349
+    },
+    {
+      "import": "flwr",
+      "count": 2258
+    },
+    {
+      "import": "iostream",
+      "count": 2228
+    },
+    {
+      "import": "random",
+      "count": 2166
+    },
+    {
+      "import": "math.h",
+      "count": 1795
+    },
+    {
+      "import": "scripts",
+      "count": 1747
+    },
+    {
+      "import": "subprocess",
+      "count": 1625
+    },
+    {
+      "import": "abipy",
+      "count": 1529
+    },
+    {
+      "import": "copy",
+      "count": 1471
+    },
+    {
+      "import": "pathlib",
+      "count": 1395
+    },
+    {
+      "import": "warnings",
+      "count": 1393
+    },
+    {
+      "import": "fs",
+      "count": 1364
+    },
+    {
+      "import": "itertools",
+      "count": 1359
+    },
+    {
+      "import": "allennlp",
+      "count": 1345
+    },
+    {
+      "import": "stdbool.h",
+      "count": 1338
+    },
+    {
+      "import": "glob",
+      "count": 1333
+    },
+    {
+      "import": "morph",
+      "count": 1305
+    },
+    {
+      "import": "pickle",
+      "count": 1290
+    },
+    {
+      "import": "common",
+      "count": 1289
+    },
+    {
+      "import": "mozilla",
+      "count": 1286
+    },
+    {
+      "import": "shutil",
+      "count": 1269
+    },
+    {
+      "import": "gsl",
+      "count": 1186
+    },
+    {
+      "import": "ggplot2",
+      "count": 1111
+    },
+    {
+      "import": "ps",
+      "count": 1070
+    },
+    {
+      "import": "stddef.h",
+      "count": 1051
+    },
+    {
+      "import": "functools",
+      "count": 1046
+    },
+    {
+      "import": "tqdm",
+      "count": 1028
+    },
+    {
+      "import": "unistd.h",
+      "count": 1000
+    },
+    {
+      "import": "aminer",
+      "count": 994
+    },
+    {
+      "import": "algorithm",
+      "count": 988
+    },
+    {
+      "import": "utility",
+      "count": 981
+    },
+    {
+      "import": "torchvision",
+      "count": 979
+    },
+    {
+      "import": "fstream",
+      "count": 975
+    },
+    {
+      "import": "memory",
+      "count": 922
+    },
+    {
+      "import": "java.util.list",
+      "count": 911
+    },
+    {
+      "import": "openvdb",
+      "count": 907
+    },
+    {
+      "import": "comma",
+      "count": 893
+    },
+    {
+      "import": "util",
+      "count": 891
+    },
+    {
+      "import": "lib",
+      "count": 891
+    },
+    {
+      "import": "sdk_common.h",
+      "count": 884
+    },
+    {
+      "import": "assert.h",
+      "count": 866
+    },
+    {
+      "import": "map",
+      "count": 852
+    },
+    {
+      "import": "manimlib",
+      "count": 851
+    },
+    {
+      "import": "csv",
+      "count": 826
+    },
+    {
+      "import": "cmath",
+      "count": 818
+    },
+    {
+      "import": "models",
+      "count": 804
+    },
+    {
+      "import": "multiprocessing",
+      "count": 802
+    },
+    {
+      "import": "six",
+      "count": 763
+    },
+    {
+      "import": "cv2",
+      "count": 748
+    },
+    {
+      "import": "theano",
+      "count": 746
+    },
+    {
+      "import": "pil",
+      "count": 738
+    },
+    {
+      "import": "config.h",
+      "count": 727
+    },
+    {
+      "import": "path",
+      "count": 717
+    },
+    {
+      "import": "nrf_log.h",
+      "count": 709
+    },
+    {
+      "import": "unicode",
+      "count": 703
+    },
+    {
+      "import": "google",
+      "count": 682
+    },
+    {
+      "import": "urllib",
+      "count": 679
+    },
+    {
+      "import": "tempfile",
+      "count": 672
+    },
+    {
+      "import": "simulation2",
+      "count": 663
+    },
+    {
+      "import": "internal",
+      "count": 660
+    },
+    {
+      "import": "time.h",
+      "count": 654
+    },
+    {
+      "import": "io",
+      "count": 649
+    },
+    {
+      "import": "dplyr",
+      "count": 646
+    },
+    {
+      "import": "errno.h",
+      "count": 645
+    },
+    {
+      "import": "mex.h",
+      "count": 645
+    },
+    {
+      "import": "app_util.h",
+      "count": 645
+    }
+  ],
+  "top_symbols": [
+    {
+      "symbol": "__init__",
+      "count": 30152
+    },
+    {
+      "symbol": "for",
+      "count": 19271
+    },
+    {
+      "symbol": "to",
+      "count": 8387
+    },
+    {
+      "symbol": "main",
+      "count": 7425
+    },
+    {
+      "symbol": "is",
+      "count": 6387
+    },
+    {
+      "symbol": "void",
+      "count": 5747
+    },
+    {
+      "symbol": "t",
+      "count": 5052
+    },
+    {
+      "symbol": "returns",
+      "count": 4544
+    },
+    {
+      "symbol": "forward",
+      "count": 4175
+    },
+    {
+      "symbol": "e",
+      "count": 4113
+    },
+    {
+      "symbol": "of",
+      "count": 3069
+    },
+    {
+      "symbol": "will",
+      "count": 2900
+    },
+    {
+      "symbol": "that",
+      "count": 2799
+    },
+    {
+      "symbol": "implements",
+      "count": 2769
+    },
+    {
+      "symbol": "a",
+      "count": 2651
+    },
+    {
+      "symbol": "can",
+      "count": 2627
+    },
+    {
+      "symbol": "r",
+      "count": 2547
+    },
+    {
+      "symbol": "n",
+      "count": 2508
+    },
+    {
+      "symbol": "i",
+      "count": 2493
+    },
+    {
+      "symbol": "f",
+      "count": 2269
+    },
+    {
+      "symbol": "c",
+      "count": 2210
+    },
+    {
+      "symbol": "b",
+      "count": 2195
+    },
+    {
+      "symbol": "__repr__",
+      "count": 2133
+    },
+    {
+      "symbol": "d",
+      "count": 2133
+    },
+    {
+      "symbol": "__str__",
+      "count": 2060
+    },
+    {
+      "symbol": "u",
+      "count": 2023
+    },
+    {
+      "symbol": "__call__",
+      "count": 1991
+    },
+    {
+      "symbol": "must",
+      "count": 1907
+    },
+    {
+      "symbol": "o",
+      "count": 1723
+    },
+    {
+      "symbol": "call",
+      "count": 1705
+    },
+    {
+      "symbol": "compute",
+      "count": 1640
+    },
+    {
+      "symbol": "s",
+      "count": 1598
+    },
+    {
+      "symbol": "definition",
+      "count": 1563
+    },
+    {
+      "symbol": "decltype",
+      "count": 1512
+    },
+    {
+      "symbol": "l",
+      "count": 1500
+    },
+    {
+      "symbol": "if",
+      "count": 1419
+    },
+    {
+      "symbol": "g",
+      "count": 1362
+    },
+    {
+      "symbol": "template",
+      "count": 1309
+    },
+    {
+      "symbol": "run",
+      "count": 1305
+    },
+    {
+      "symbol": "name",
+      "count": 1301
+    },
+    {
+      "symbol": "h",
+      "count": 1232
+    },
+    {
+      "symbol": "get",
+      "count": 1205
+    },
+    {
+      "symbol": "k",
+      "count": 1157
+    },
+    {
+      "symbol": "__getitem__",
+      "count": 1144
+    },
+    {
+      "symbol": "explicitly",
+      "count": 1125
+    },
+    {
+      "symbol": "reset",
+      "count": 1114
+    },
+    {
+      "symbol": "__len__",
+      "count": 1079
+    },
+    {
+      "symbol": "in",
+      "count": 1072
+    },
+    {
+      "symbol": "instance",
+      "count": 1038
+    },
+    {
+      "symbol": "should",
+      "count": 1012
+    },
+    {
+      "symbol": "update",
+      "count": 1010
+    },
+    {
+      "symbol": "use",
+      "count": 991
+    },
+    {
+      "symbol": "m",
+      "count": 990
+    },
+    {
+      "symbol": "p",
+      "count": 982
+    },
+    {
+      "symbol": "definitions",
+      "count": 928
+    },
+    {
+      "symbol": "and",
+      "count": 883
+    },
+    {
+      "symbol": "with",
+      "count": 863
+    },
+    {
+      "symbol": "validate",
+      "count": 844
+    },
+    {
+      "symbol": "init",
+      "count": 843
+    },
+    {
+      "symbol": "start_scenario",
+      "count": 838
+    },
+    {
+      "symbol": "j",
+      "count": 821
+    },
+    {
+      "symbol": "__eq__",
+      "count": 743
+    },
+    {
+      "symbol": "v",
+      "count": 740
+    },
+    {
+      "symbol": "x",
+      "count": 728
+    },
+    {
+      "symbol": "pointer",
+      "count": 707
+    },
+    {
+      "symbol": "mexfunction",
+      "count": 697
+    },
+    {
+      "symbol": "type",
+      "count": 692
+    },
+    {
+      "symbol": "train",
+      "count": 690
+    },
+    {
+      "symbol": "y",
+      "count": 678
+    },
+    {
+      "symbol": "w",
+      "count": 677
+    },
+    {
+      "symbol": "as",
+      "count": 669
+    },
+    {
+      "symbol": "does",
+      "count": 668
+    },
+    {
+      "symbol": "used",
+      "count": 662
+    },
+    {
+      "symbol": "close",
+      "count": 650
+    },
+    {
+      "symbol": "__attribute",
+      "count": 648
+    },
+    {
+      "symbol": "register",
+      "count": 646
+    },
+    {
+      "symbol": "__iter__",
+      "count": 645
+    },
+    {
+      "symbol": "which",
+      "count": 635
+    },
+    {
+      "symbol": "derives",
+      "count": 632
+    },
+    {
+      "symbol": "fit",
+      "count": 621
+    },
+    {
+      "symbol": "load",
+      "count": 618
+    },
+    {
+      "symbol": "return",
+      "count": 603
+    },
+    {
+      "symbol": "object",
+      "count": 596
+    },
+    {
+      "symbol": "split",
+      "count": 595
+    },
+    {
+      "symbol": "performs",
+      "count": 595
+    },
+    {
+      "symbol": "int",
+      "count": 583
+    },
+    {
+      "symbol": "predict",
+      "count": 582
+    },
+    {
+      "symbol": "on",
+      "count": 572
+    },
+    {
+      "symbol": "stash_annotation",
+      "count": 570
+    },
+    {
+      "symbol": "q",
+      "count": 569
+    },
+    {
+      "symbol": "or",
+      "count": 527
+    },
+    {
+      "symbol": "meta",
+      "count": 517
+    },
+    {
+      "symbol": "has",
+      "count": 517
+    },
+    {
+      "symbol": "save",
+      "count": 513
+    },
+    {
+      "symbol": "z",
+      "count": 513
+    },
+    {
+      "symbol": "computes",
+      "count": 508
+    },
+    {
+      "symbol": "at",
+      "count": 498
+    },
+    {
+      "symbol": "__attribute__",
+      "count": 491
+    },
+    {
+      "symbol": "id",
+      "count": 490
+    },
+    {
+      "symbol": "checks",
+      "count": 476
+    }
+  ],
+  "top_keywords": [
+    {
+      "keyword": "read",
+      "count": 21064
+    },
+    {
+      "keyword": "write",
+      "count": 19458
+    },
+    {
+      "keyword": "model",
+      "count": 17119
+    },
+    {
+      "keyword": "load",
+      "count": 16709
+    },
+    {
+      "keyword": "save",
+      "count": 12261
+    },
+    {
+      "keyword": "process",
+      "count": 9360
+    },
+    {
+      "keyword": "plot",
+      "count": 8358
+    },
+    {
+      "keyword": "parse",
+      "count": 8186
+    },
+    {
+      "keyword": "export",
+      "count": 7423
+    },
+    {
+      "keyword": "fit",
+      "count": 5748
+    },
+    {
+      "keyword": "train",
+      "count": 5566
+    },
+    {
+      "keyword": "transform",
+      "count": 5231
+    },
+    {
+      "keyword": "extract",
+      "count": 4931
+    },
+    {
+      "keyword": "analysis",
+      "count": 3967
+    },
+    {
+      "keyword": "normalize",
+      "count": 3707
+    },
+    {
+      "keyword": "clean",
+      "count": 3517
+    },
+    {
+      "keyword": "report",
+      "count": 3313
+    },
+    {
+      "keyword": "precision",
+      "count": 3014
+    },
+    {
+      "keyword": "simulation",
+      "count": 2955
+    },
+    {
+      "keyword": "evaluate",
+      "count": 2910
+    },
+    {
+      "keyword": "predict",
+      "count": 2618
+    },
+    {
+      "keyword": "accuracy",
+      "count": 2587
+    },
+    {
+      "keyword": "download",
+      "count": 2577
+    },
+    {
+      "keyword": "evaluation",
+      "count": 2348
+    },
+    {
+      "keyword": "collect",
+      "count": 1852
+    },
+    {
+      "keyword": "fetch",
+      "count": 1788
+    },
+    {
+      "keyword": "metric",
+      "count": 1778
+    },
+    {
+      "keyword": "optimize",
+      "count": 1638
+    },
+    {
+      "keyword": "f1",
+      "count": 1579
+    },
+    {
+      "keyword": "experiment",
+      "count": 1486
+    },
+    {
+      "keyword": "simulate",
+      "count": 1260
+    },
+    {
+      "keyword": "benchmark",
+      "count": 883
+    },
+    {
+      "keyword": "visualize",
+      "count": 818
+    },
+    {
+      "keyword": "preprocess",
+      "count": 587
+    },
+    {
+      "keyword": "recall",
+      "count": 584
+    },
+    {
+      "keyword": "trial",
+      "count": 438
+    },
+    {
+      "keyword": "sweep",
+      "count": 371
+    },
+    {
+      "keyword": "crawl",
+      "count": 43
+    },
+    {
+      "keyword": "scrape",
+      "count": 26
+    }
+  ],
+  "near_miss_steps": [
+    {
+      "step": "processing",
+      "count": 14428
+    },
+    {
+      "step": "evaluation",
+      "count": 7015
+    },
+    {
+      "step": "collection",
+      "count": 1952
+    },
+    {
+      "step": "experimentation",
+      "count": 1356
+    },
+    {
+      "step": "dissemination",
+      "count": 1116
+    }
+  ],
+  "near_miss_rules": [
+    {
+      "rule_id": "PRO_CONTENT_PROCESS",
+      "count": 14428
+    },
+    {
+      "rule_id": "EVA_CONTENT_METRIC",
+      "count": 7015
+    },
+    {
+      "rule_id": "COL_CONTENT_ACQUIRE",
+      "count": 1952
+    },
+    {
+      "rule_id": "EXP_CONTENT_RUN",
+      "count": 1356
+    },
+    {
+      "rule_id": "DIS_CONTENT_CITATION",
+      "count": 1116
+    }
+  ],
+  "sample_file_count": 500
+}

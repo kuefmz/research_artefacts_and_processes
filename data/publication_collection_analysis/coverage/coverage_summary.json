@@ -1,0 +1,842 @@
+{
+  "completed_repositories": 61,
+  "total_files": 131638,
+  "classified_files": 79059,
+  "unclassified_files": 52579,
+  "overall_classification_rate_pct": 60.0579,
+  "eligible_files": 113588,
+  "eligible_classified_files": 79059,
+  "eligible_unclassified_files": 34529,
+  "eligible_classification_rate_pct": 69.6015,
+  "excluded_files": 18050,
+  "excluded_unclassified_files": 18050,
+  "source_like_files": 3491,
+  "source_like_classified_files": 1549,
+  "source_like_unclassified_files": 1942,
+  "source_like_classification_rate_pct": 44.3712,
+  "top_unclassified_extensions": [
+    {
+      "extension": ".dat",
+      "unclassified_files": 24673,
+      "pct_of_unclassified_files": 46.9256,
+      "excluded_by_design": false,
+      "source_like": false
+    },
+    {
+      "extension": ".arff",
+      "unclassified_files": 16328,
+      "pct_of_unclassified_files": 31.0542,
+      "excluded_by_design": true,
+      "source_like": false
+    },
+    {
+      "extension": "(none)",
+      "unclassified_files": 3810,
+      "pct_of_unclassified_files": 7.2462,
+      "excluded_by_design": false,
+      "source_like": false
+    },
+    {
+      "extension": ".gd",
+      "unclassified_files": 1802,
+      "pct_of_unclassified_files": 3.4272,
+      "excluded_by_design": false,
+      "source_like": false
+    },
+    {
+      "extension": ".py",
+      "unclassified_files": 1006,
+      "pct_of_unclassified_files": 1.9133,
+      "excluded_by_design": false,
+      "source_like": true
+    },
+    {
+      "extension": ".json",
+      "unclassified_files": 694,
+      "pct_of_unclassified_files": 1.3199,
+      "excluded_by_design": true,
+      "source_like": false
+    },
+    {
+      "extension": ".txt",
+      "unclassified_files": 525,
+      "pct_of_unclassified_files": 0.9985,
+      "excluded_by_design": false,
+      "source_like": false
+    },
+    {
+      "extension": ".npy",
+      "unclassified_files": 497,
+      "pct_of_unclassified_files": 0.9452,
+      "excluded_by_design": true,
+      "source_like": false
+    },
+    {
+      "extension": ".png",
+      "unclassified_files": 428,
+      "pct_of_unclassified_files": 0.814,
+      "excluded_by_design": false,
+      "source_like": false
+    },
+    {
+      "extension": ".xml",
+      "unclassified_files": 304,
+      "pct_of_unclassified_files": 0.5782,
+      "excluded_by_design": true,
+      "source_like": false
+    },
+    {
+      "extension": ".js",
+      "unclassified_files": 282,
+      "pct_of_unclassified_files": 0.5363,
+      "excluded_by_design": false,
+      "source_like": true
+    },
+    {
+      "extension": ".h",
+      "unclassified_files": 259,
+      "pct_of_unclassified_files": 0.4926,
+      "excluded_by_design": false,
+      "source_like": true
+    },
+    {
+      "extension": ".bin",
+      "unclassified_files": 172,
+      "pct_of_unclassified_files": 0.3271,
+      "excluded_by_design": false,
+      "source_like": false
+    },
+    {
+      "extension": ".md",
+      "unclassified_files": 125,
+      "pct_of_unclassified_files": 0.2377,
+      "excluded_by_design": false,
+      "source_like": false
+    },
+    {
+      "extension": ".model",
+      "unclassified_files": 112,
+      "pct_of_unclassified_files": 0.213,
+      "excluded_by_design": false,
+      "source_like": false
+    },
+    {
+      "extension": ".sh",
+      "unclassified_files": 110,
+      "pct_of_unclassified_files": 0.2092,
+      "excluded_by_design": false,
+      "source_like": true
+    },
+    {
+      "extension": ".css",
+      "unclassified_files": 108,
+      "pct_of_unclassified_files": 0.2054,
+      "excluded_by_design": false,
+      "source_like": false
+    },
+    {
+      "extension": ".r",
+      "unclassified_files": 76,
+      "pct_of_unclassified_files": 0.1445,
+      "excluded_by_design": false,
+      "source_like": true
+    },
+    {
+      "extension": ".cpp",
+      "unclassified_files": 72,
+      "pct_of_unclassified_files": 0.1369,
+      "excluded_by_design": false,
+      "source_like": true
+    },
+    {
+      "extension": ".tsv",
+      "unclassified_files": 63,
+      "pct_of_unclassified_files": 0.1198,
+      "excluded_by_design": true,
+      "source_like": false
+    },
+    {
+      "extension": ".csv",
+      "unclassified_files": 62,
+      "pct_of_unclassified_files": 0.1179,
+      "excluded_by_design": true,
+      "source_like": false
+    },
+    {
+      "extension": ".gif",
+      "unclassified_files": 53,
+      "pct_of_unclassified_files": 0.1008,
+      "excluded_by_design": false,
+      "source_like": false
+    },
+    {
+      "extension": ".glb",
+      "unclassified_files": 49,
+      "pct_of_unclassified_files": 0.0932,
+      "excluded_by_design": false,
+      "source_like": false
+    },
+    {
+      "extension": ".properties",
+      "unclassified_files": 45,
+      "pct_of_unclassified_files": 0.0856,
+      "excluded_by_design": false,
+      "source_like": false
+    },
+    {
+      "extension": ".htm",
+      "unclassified_files": 42,
+      "pct_of_unclassified_files": 0.0799,
+      "excluded_by_design": false,
+      "source_like": false
+    },
+    {
+      "extension": ".pdf",
+      "unclassified_files": 42,
+      "pct_of_unclassified_files": 0.0799,
+      "excluded_by_design": false,
+      "source_like": false
+    },
+    {
+      "extension": ".m",
+      "unclassified_files": 40,
+      "pct_of_unclassified_files": 0.0761,
+      "excluded_by_design": false,
+      "source_like": true
+    },
+    {
+      "extension": ".pkl",
+      "unclassified_files": 40,
+      "pct_of_unclassified_files": 0.0761,
+      "excluded_by_design": true,
+      "source_like": false
+    },
+    {
+      "extension": ".java",
+      "unclassified_files": 33,
+      "pct_of_unclassified_files": 0.0628,
+      "excluded_by_design": false,
+      "source_like": true
+    },
+    {
+      "extension": ".html",
+      "unclassified_files": 29,
+      "pct_of_unclassified_files": 0.0552,
+      "excluded_by_design": false,
+      "source_like": false
+    },
+    {
+      "extension": ".ipynb",
+      "unclassified_files": 27,
+      "pct_of_unclassified_files": 0.0514,
+      "excluded_by_design": false,
+      "source_like": true
+    },
+    {
+      "extension": ".bmp",
+      "unclassified_files": 27,
+      "pct_of_unclassified_files": 0.0514,
+      "excluded_by_design": false,
+      "source_like": false
+    },
+    {
+      "extension": ".svg",
+      "unclassified_files": 26,
+      "pct_of_unclassified_files": 0.0494,
+      "excluded_by_design": false,
+      "source_like": false
+    },
+    {
+      "extension": ".jpage",
+      "unclassified_files": 26,
+      "pct_of_unclassified_files": 0.0494,
+      "excluded_by_design": false,
+      "source_like": false
+    },
+    {
+      "extension": ".ndjson",
+      "unclassified_files": 21,
+      "pct_of_unclassified_files": 0.0399,
+      "excluded_by_design": true,
+      "source_like": false
+    },
+    {
+      "extension": ".gnuplot",
+      "unclassified_files": 19,
+      "pct_of_unclassified_files": 0.0361,
+      "excluded_by_design": false,
+      "source_like": false
+    },
+    {
+      "extension": ".yml",
+      "unclassified_files": 17,
+      "pct_of_unclassified_files": 0.0323,
+      "excluded_by_design": true,
+      "source_like": false
+    },
+    {
+      "extension": ".patch",
+      "unclassified_files": 16,
+      "pct_of_unclassified_files": 0.0304,
+      "excluded_by_design": false,
+      "source_like": false
+    },
+    {
+      "extension": ".mtl",
+      "unclassified_files": 16,
+      "pct_of_unclassified_files": 0.0304,
+      "excluded_by_design": false,
+      "source_like": false
+    },
+    {
+      "extension": ".obj",
+      "unclassified_files": 16,
+      "pct_of_unclassified_files": 0.0304,
+      "excluded_by_design": false,
+      "source_like": false
+    },
+    {
+      "extension": ".rdata",
+      "unclassified_files": 16,
+      "pct_of_unclassified_files": 0.0304,
+      "excluded_by_design": false,
+      "source_like": false
+    },
+    {
+      "extension": ".oebin",
+      "unclassified_files": 14,
+      "pct_of_unclassified_files": 0.0266,
+      "excluded_by_design": false,
+      "source_like": false
+    },
+    {
+      "extension": ".mat",
+      "unclassified_files": 13,
+      "pct_of_unclassified_files": 0.0247,
+      "excluded_by_design": false,
+      "source_like": false
+    },
+    {
+      "extension": ".tre",
+      "unclassified_files": 12,
+      "pct_of_unclassified_files": 0.0228,
+      "excluded_by_design": false,
+      "source_like": false
+    },
+    {
+      "extension": ".rst",
+      "unclassified_files": 11,
+      "pct_of_unclassified_files": 0.0209,
+      "excluded_by_design": false,
+      "source_like": false
+    },
+    {
+      "extension": ".svn-base",
+      "unclassified_files": 10,
+      "pct_of_unclassified_files": 0.019,
+      "excluded_by_design": false,
+      "source_like": false
+    },
+    {
+      "extension": ".bsh",
+      "unclassified_files": 10,
+      "pct_of_unclassified_files": 0.019,
+      "excluded_by_design": false,
+      "source_like": false
+    },
+    {
+      "extension": ".hpp",
+      "unclassified_files": 10,
+      "pct_of_unclassified_files": 0.019,
+      "excluded_by_design": false,
+      "source_like": true
+    },
+    {
+      "extension": ".jar",
+      "unclassified_files": 10,
+      "pct_of_unclassified_files": 0.019,
+      "excluded_by_design": false,
+      "source_like": false
+    },
+    {
+      "extension": ".ttf",
+      "unclassified_files": 9,
+      "pct_of_unclassified_files": 0.0171,
+      "excluded_by_design": false,
+      "source_like": false
+    }
+  ],
+  "top_unclassified_artifact_kinds": [
+    {
+      "artifact_kind": "other",
+      "unclassified_files": 31901,
+      "pct_of_unclassified_files": 60.6725
+    },
+    {
+      "artifact_kind": "data",
+      "unclassified_files": 18021,
+      "pct_of_unclassified_files": 34.2741
+    },
+    {
+      "artifact_kind": "source_code",
+      "unclassified_files": 1914,
+      "pct_of_unclassified_files": 3.6402
+    },
+    {
+      "artifact_kind": "image",
+      "unclassified_files": 517,
+      "pct_of_unclassified_files": 0.9833
+    },
+    {
+      "artifact_kind": "documentation",
+      "unclassified_files": 136,
+      "pct_of_unclassified_files": 0.2587
+    },
+    {
+      "artifact_kind": "configuration",
+      "unclassified_files": 49,
+      "pct_of_unclassified_files": 0.0932
+    },
+    {
+      "artifact_kind": "notebook",
+      "unclassified_files": 28,
+      "pct_of_unclassified_files": 0.0533
+    },
+    {
+      "artifact_kind": "archive",
+      "unclassified_files": 13,
+      "pct_of_unclassified_files": 0.0247
+    }
+  ],
+  "top_unclassified_source_extensions": [
+    {
+      "extension": ".py",
+      "unclassified_source_files": 1006,
+      "pct_of_unclassified_source_files": 51.8023
+    },
+    {
+      "extension": ".js",
+      "unclassified_source_files": 282,
+      "pct_of_unclassified_source_files": 14.5211
+    },
+    {
+      "extension": ".h",
+      "unclassified_source_files": 259,
+      "pct_of_unclassified_source_files": 13.3368
+    },
+    {
+      "extension": ".sh",
+      "unclassified_source_files": 110,
+      "pct_of_unclassified_source_files": 5.6643
+    },
+    {
+      "extension": ".r",
+      "unclassified_source_files": 76,
+      "pct_of_unclassified_source_files": 3.9135
+    },
+    {
+      "extension": ".cpp",
+      "unclassified_source_files": 72,
+      "pct_of_unclassified_source_files": 3.7075
+    },
+    {
+      "extension": ".m",
+      "unclassified_source_files": 40,
+      "pct_of_unclassified_source_files": 2.0597
+    },
+    {
+      "extension": ".java",
+      "unclassified_source_files": 33,
+      "pct_of_unclassified_source_files": 1.6993
+    },
+    {
+      "extension": ".ipynb",
+      "unclassified_source_files": 27,
+      "pct_of_unclassified_source_files": 1.3903
+    },
+    {
+      "extension": ".hpp",
+      "unclassified_source_files": 10,
+      "pct_of_unclassified_source_files": 0.5149
+    },
+    {
+      "extension": ".cc",
+      "unclassified_source_files": 8,
+      "pct_of_unclassified_source_files": 0.4119
+    },
+    {
+      "extension": ".c",
+      "unclassified_source_files": 7,
+      "pct_of_unclassified_source_files": 0.3605
+    },
+    {
+      "extension": ".pl",
+      "unclassified_source_files": 5,
+      "pct_of_unclassified_source_files": 0.2575
+    },
+    {
+      "extension": ".rb",
+      "unclassified_source_files": 5,
+      "pct_of_unclassified_source_files": 0.2575
+    },
+    {
+      "extension": ".sql",
+      "unclassified_source_files": 1,
+      "pct_of_unclassified_source_files": 0.0515
+    },
+    {
+      "extension": ".php",
+      "unclassified_source_files": 1,
+      "pct_of_unclassified_source_files": 0.0515
+    }
+  ],
+  "top_eligible_unclassified_extensions": [
+    {
+      "extension": ".dat",
+      "eligible_unclassified_files": 24673,
+      "pct_of_eligible_unclassified_files": 71.4559
+    },
+    {
+      "extension": "(none)",
+      "eligible_unclassified_files": 3810,
+      "pct_of_eligible_unclassified_files": 11.0342
+    },
+    {
+      "extension": ".gd",
+      "eligible_unclassified_files": 1802,
+      "pct_of_eligible_unclassified_files": 5.2188
+    },
+    {
+      "extension": ".py",
+      "eligible_unclassified_files": 1006,
+      "pct_of_eligible_unclassified_files": 2.9135
+    },
+    {
+      "extension": ".txt",
+      "eligible_unclassified_files": 525,
+      "pct_of_eligible_unclassified_files": 1.5205
+    },
+    {
+      "extension": ".png",
+      "eligible_unclassified_files": 428,
+      "pct_of_eligible_unclassified_files": 1.2395
+    },
+    {
+      "extension": ".js",
+      "eligible_unclassified_files": 282,
+      "pct_of_eligible_unclassified_files": 0.8167
+    },
+    {
+      "extension": ".h",
+      "eligible_unclassified_files": 259,
+      "pct_of_eligible_unclassified_files": 0.7501
+    },
+    {
+      "extension": ".bin",
+      "eligible_unclassified_files": 172,
+      "pct_of_eligible_unclassified_files": 0.4981
+    },
+    {
+      "extension": ".md",
+      "eligible_unclassified_files": 125,
+      "pct_of_eligible_unclassified_files": 0.362
+    },
+    {
+      "extension": ".model",
+      "eligible_unclassified_files": 112,
+      "pct_of_eligible_unclassified_files": 0.3244
+    },
+    {
+      "extension": ".sh",
+      "eligible_unclassified_files": 110,
+      "pct_of_eligible_unclassified_files": 0.3186
+    },
+    {
+      "extension": ".css",
+      "eligible_unclassified_files": 108,
+      "pct_of_eligible_unclassified_files": 0.3128
+    },
+    {
+      "extension": ".r",
+      "eligible_unclassified_files": 76,
+      "pct_of_eligible_unclassified_files": 0.2201
+    },
+    {
+      "extension": ".cpp",
+      "eligible_unclassified_files": 72,
+      "pct_of_eligible_unclassified_files": 0.2085
+    },
+    {
+      "extension": ".gif",
+      "eligible_unclassified_files": 53,
+      "pct_of_eligible_unclassified_files": 0.1535
+    },
+    {
+      "extension": ".glb",
+      "eligible_unclassified_files": 49,
+      "pct_of_eligible_unclassified_files": 0.1419
+    },
+    {
+      "extension": ".properties",
+      "eligible_unclassified_files": 45,
+      "pct_of_eligible_unclassified_files": 0.1303
+    },
+    {
+      "extension": ".htm",
+      "eligible_unclassified_files": 42,
+      "pct_of_eligible_unclassified_files": 0.1216
+    },
+    {
+      "extension": ".pdf",
+      "eligible_unclassified_files": 42,
+      "pct_of_eligible_unclassified_files": 0.1216
+    },
+    {
+      "extension": ".m",
+      "eligible_unclassified_files": 40,
+      "pct_of_eligible_unclassified_files": 0.1158
+    },
+    {
+      "extension": ".java",
+      "eligible_unclassified_files": 33,
+      "pct_of_eligible_unclassified_files": 0.0956
+    },
+    {
+      "extension": ".html",
+      "eligible_unclassified_files": 29,
+      "pct_of_eligible_unclassified_files": 0.084
+    },
+    {
+      "extension": ".ipynb",
+      "eligible_unclassified_files": 27,
+      "pct_of_eligible_unclassified_files": 0.0782
+    },
+    {
+      "extension": ".bmp",
+      "eligible_unclassified_files": 27,
+      "pct_of_eligible_unclassified_files": 0.0782
+    },
+    {
+      "extension": ".svg",
+      "eligible_unclassified_files": 26,
+      "pct_of_eligible_unclassified_files": 0.0753
+    },
+    {
+      "extension": ".jpage",
+      "eligible_unclassified_files": 26,
+      "pct_of_eligible_unclassified_files": 0.0753
+    },
+    {
+      "extension": ".gnuplot",
+      "eligible_unclassified_files": 19,
+      "pct_of_eligible_unclassified_files": 0.055
+    },
+    {
+      "extension": ".patch",
+      "eligible_unclassified_files": 16,
+      "pct_of_eligible_unclassified_files": 0.0463
+    },
+    {
+      "extension": ".mtl",
+      "eligible_unclassified_files": 16,
+      "pct_of_eligible_unclassified_files": 0.0463
+    },
+    {
+      "extension": ".obj",
+      "eligible_unclassified_files": 16,
+      "pct_of_eligible_unclassified_files": 0.0463
+    },
+    {
+      "extension": ".rdata",
+      "eligible_unclassified_files": 16,
+      "pct_of_eligible_unclassified_files": 0.0463
+    },
+    {
+      "extension": ".oebin",
+      "eligible_unclassified_files": 14,
+      "pct_of_eligible_unclassified_files": 0.0405
+    },
+    {
+      "extension": ".mat",
+      "eligible_unclassified_files": 13,
+      "pct_of_eligible_unclassified_files": 0.0376
+    },
+    {
+      "extension": ".tre",
+      "eligible_unclassified_files": 12,
+      "pct_of_eligible_unclassified_files": 0.0348
+    },
+    {
+      "extension": ".rst",
+      "eligible_unclassified_files": 11,
+      "pct_of_eligible_unclassified_files": 0.0319
+    },
+    {
+      "extension": ".svn-base",
+      "eligible_unclassified_files": 10,
+      "pct_of_eligible_unclassified_files": 0.029
+    },
+    {
+      "extension": ".bsh",
+      "eligible_unclassified_files": 10,
+      "pct_of_eligible_unclassified_files": 0.029
+    },
+    {
+      "extension": ".hpp",
+      "eligible_unclassified_files": 10,
+      "pct_of_eligible_unclassified_files": 0.029
+    },
+    {
+      "extension": ".jar",
+      "eligible_unclassified_files": 10,
+      "pct_of_eligible_unclassified_files": 0.029
+    },
+    {
+      "extension": ".ttf",
+      "eligible_unclassified_files": 9,
+      "pct_of_eligible_unclassified_files": 0.0261
+    },
+    {
+      "extension": ".psd",
+      "eligible_unclassified_files": 9,
+      "pct_of_eligible_unclassified_files": 0.0261
+    },
+    {
+      "extension": ".conf",
+      "eligible_unclassified_files": 9,
+      "pct_of_eligible_unclassified_files": 0.0261
+    },
+    {
+      "extension": ".ig",
+      "eligible_unclassified_files": 9,
+      "pct_of_eligible_unclassified_files": 0.0261
+    },
+    {
+      "extension": ".hh",
+      "eligible_unclassified_files": 9,
+      "pct_of_eligible_unclassified_files": 0.0261
+    },
+    {
+      "extension": ".woff",
+      "eligible_unclassified_files": 8,
+      "pct_of_eligible_unclassified_files": 0.0232
+    },
+    {
+      "extension": ".jpg",
+      "eligible_unclassified_files": 8,
+      "pct_of_eligible_unclassified_files": 0.0232
+    },
+    {
+      "extension": ".pyc",
+      "eligible_unclassified_files": 8,
+      "pct_of_eligible_unclassified_files": 0.0232
+    },
+    {
+      "extension": ".launcher$appclassloader@106d69c",
+      "eligible_unclassified_files": 8,
+      "pct_of_eligible_unclassified_files": 0.0232
+    },
+    {
+      "extension": ".rar",
+      "eligible_unclassified_files": 8,
+      "pct_of_eligible_unclassified_files": 0.0232
+    }
+  ],
+  "top_excluded_unclassified_extensions": [
+    {
+      "extension": ".arff",
+      "excluded_unclassified_files": 16328,
+      "pct_of_excluded_unclassified_files": 90.4598
+    },
+    {
+      "extension": ".json",
+      "excluded_unclassified_files": 694,
+      "pct_of_excluded_unclassified_files": 3.8449
+    },
+    {
+      "extension": ".npy",
+      "excluded_unclassified_files": 497,
+      "pct_of_excluded_unclassified_files": 2.7535
+    },
+    {
+      "extension": ".xml",
+      "excluded_unclassified_files": 304,
+      "pct_of_excluded_unclassified_files": 1.6842
+    },
+    {
+      "extension": ".tsv",
+      "excluded_unclassified_files": 63,
+      "pct_of_excluded_unclassified_files": 0.349
+    },
+    {
+      "extension": ".csv",
+      "excluded_unclassified_files": 62,
+      "pct_of_excluded_unclassified_files": 0.3435
+    },
+    {
+      "extension": ".pkl",
+      "excluded_unclassified_files": 40,
+      "pct_of_excluded_unclassified_files": 0.2216
+    },
+    {
+      "extension": ".ndjson",
+      "excluded_unclassified_files": 21,
+      "pct_of_excluded_unclassified_files": 0.1163
+    },
+    {
+      "extension": ".yml",
+      "excluded_unclassified_files": 17,
+      "pct_of_excluded_unclassified_files": 0.0942
+    },
+    {
+      "extension": ".ttl",
+      "excluded_unclassified_files": 7,
+      "pct_of_excluded_unclassified_files": 0.0388
+    },
+    {
+      "extension": ".cfg",
+      "excluded_unclassified_files": 5,
+      "pct_of_excluded_unclassified_files": 0.0277
+    },
+    {
+      "extension": ".ini",
+      "excluded_unclassified_files": 4,
+      "pct_of_excluded_unclassified_files": 0.0222
+    },
+    {
+      "extension": ".yaml",
+      "excluded_unclassified_files": 2,
+      "pct_of_excluded_unclassified_files": 0.0111
+    },
+    {
+      "extension": ".npz",
+      "excluded_unclassified_files": 1,
+      "pct_of_excluded_unclassified_files": 0.0055
+    },
+    {
+      "extension": ".db",
+      "excluded_unclassified_files": 1,
+      "pct_of_excluded_unclassified_files": 0.0055
+    },
+    {
+      "extension": ".pickle",
+      "excluded_unclassified_files": 1,
+      "pct_of_excluded_unclassified_files": 0.0055
+    },
+    {
+      "extension": ".owl",
+      "excluded_unclassified_files": 1,
+      "pct_of_excluded_unclassified_files": 0.0055
+    },
+    {
+      "extension": ".sqlite3",
+      "excluded_unclassified_files": 1,
+      "pct_of_excluded_unclassified_files": 0.0055
+    },
+    {
+      "extension": ".cff",
+      "excluded_unclassified_files": 1,
+      "pct_of_excluded_unclassified_files": 0.0055
+    }
+  ]
+}

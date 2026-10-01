@@ -1,0 +1,357 @@
+{
+  "results_dir": "data/heuristic_results",
+  "completed_repositories": 21302,
+  "invalid_result_files": 0,
+  "total_files": 7513328,
+  "classified_files": 1256329,
+  "unclassified_files": 6256999,
+  "unclassified_pct": 83.2787,
+  "content_scanned_files": 1585347,
+  "content_scanned_pct": 21.1005,
+  "multi_label_files": 25418,
+  "multi_label_pct": 0.3383,
+  "repository_file_count": {
+    "mean": 352.705,
+    "median": 42.0,
+    "p90": 423.9,
+    "p95": 977.0,
+    "max": 385171
+  },
+  "files_per_step": {
+    "dissemination": 315005,
+    "processing": 37685,
+    "evaluation": 44078,
+    "implementation": 773030,
+    "collection": 6302,
+    "experimentation": 105716
+  },
+  "repositories_per_step": {
+    "dissemination": 19987,
+    "processing": 2130,
+    "evaluation": 1917,
+    "implementation": 11091,
+    "collection": 794,
+    "experimentation": 861
+  },
+  "typical_repository": {
+    "file_count": {
+      "mean": 352.705,
+      "median": 42.0
+    },
+    "unclassified_files": {
+      "mean": 293.728,
+      "median": 31.0
+    },
+    "unclassified_pct": {
+      "mean": 76.676,
+      "median": 85.714
+    },
+    "content_scanned_files": {
+      "mean": 74.422,
+      "median": 14.0
+    },
+    "steps": {
+      "collection": {
+        "mean_files_per_repo": 0.296,
+        "median_files_per_repo": 0.0,
+        "mean_pct_of_repo_files": 0.133,
+        "median_pct_of_repo_files": 0.0,
+        "repositories_with_step": 794,
+        "pct_of_repositories_with_step": 3.7273
+      },
+      "processing": {
+        "mean_files_per_repo": 1.769,
+        "median_files_per_repo": 0.0,
+        "mean_pct_of_repo_files": 0.46,
+        "median_pct_of_repo_files": 0.0,
+        "repositories_with_step": 2130,
+        "pct_of_repositories_with_step": 9.9991
+      },
+      "implementation": {
+        "mean_files_per_repo": 36.289,
+        "median_files_per_repo": 1.0,
+        "mean_pct_of_repo_files": 11.605,
+        "median_pct_of_repo_files": 0.621,
+        "repositories_with_step": 11091,
+        "pct_of_repositories_with_step": 52.0655
+      },
+      "experimentation": {
+        "mean_files_per_repo": 4.963,
+        "median_files_per_repo": 0.0,
+        "mean_pct_of_repo_files": 0.429,
+        "median_pct_of_repo_files": 0.0,
+        "repositories_with_step": 861,
+        "pct_of_repositories_with_step": 4.0419
+      },
+      "evaluation": {
+        "mean_files_per_repo": 2.069,
+        "median_files_per_repo": 0.0,
+        "mean_pct_of_repo_files": 0.551,
+        "median_pct_of_repo_files": 0.0,
+        "repositories_with_step": 1917,
+        "pct_of_repositories_with_step": 8.9992
+      },
+      "dissemination": {
+        "mean_files_per_repo": 14.788,
+        "median_files_per_repo": 1.0,
+        "mean_pct_of_repo_files": 10.447,
+        "median_pct_of_repo_files": 4.651,
+        "repositories_with_step": 19987,
+        "pct_of_repositories_with_step": 93.8269
+      }
+    }
+  },
+  "top_unclassified_extensions": [
+    {
+      "extension": ".json",
+      "unclassified_file_count": 713664,
+      "pct_of_unclassified_files": 11.4059
+    },
+    {
+      "extension": ".png",
+      "unclassified_file_count": 461178,
+      "pct_of_unclassified_files": 7.3706
+    },
+    {
+      "extension": "(none)",
+      "unclassified_file_count": 329340,
+      "pct_of_unclassified_files": 5.2635
+    },
+    {
+      "extension": ".csv",
+      "unclassified_file_count": 272844,
+      "pct_of_unclassified_files": 4.3606
+    },
+    {
+      "extension": ".txt",
+      "unclassified_file_count": 253539,
+      "pct_of_unclassified_files": 4.0521
+    },
+    {
+      "extension": ".jpg",
+      "unclassified_file_count": 234704,
+      "pct_of_unclassified_files": 3.7511
+    },
+    {
+      "extension": ".py",
+      "unclassified_file_count": 189308,
+      "pct_of_unclassified_files": 3.0255
+    },
+    {
+      "extension": ".xml",
+      "unclassified_file_count": 172889,
+      "pct_of_unclassified_files": 2.7631
+    },
+    {
+      "extension": ".gz",
+      "unclassified_file_count": 125684,
+      "pct_of_unclassified_files": 2.0087
+    },
+    {
+      "extension": ".m",
+      "unclassified_file_count": 114010,
+      "pct_of_unclassified_files": 1.8221
+    },
+    {
+      "extension": ".sol",
+      "unclassified_file_count": 92382,
+      "pct_of_unclassified_files": 1.4765
+    },
+    {
+      "extension": ".hpp",
+      "unclassified_file_count": 91966,
+      "pct_of_unclassified_files": 1.4698
+    },
+    {
+      "extension": ".pdb",
+      "unclassified_file_count": 91945,
+      "pct_of_unclassified_files": 1.4695
+    },
+    {
+      "extension": ".cidx",
+      "unclassified_file_count": 82879,
+      "pct_of_unclassified_files": 1.3246
+    },
+    {
+      "extension": ".h",
+      "unclassified_file_count": 80944,
+      "pct_of_unclassified_files": 1.2937
+    },
+    {
+      "extension": ".js",
+      "unclassified_file_count": 79069,
+      "pct_of_unclassified_files": 1.2637
+    },
+    {
+      "extension": ".dat",
+      "unclassified_file_count": 78315,
+      "pct_of_unclassified_files": 1.2516
+    },
+    {
+      "extension": ".gxl",
+      "unclassified_file_count": 73213,
+      "pct_of_unclassified_files": 1.1701
+    },
+    {
+      "extension": ".html",
+      "unclassified_file_count": 71796,
+      "pct_of_unclassified_files": 1.1475
+    },
+    {
+      "extension": ".cs",
+      "unclassified_file_count": 65657,
+      "pct_of_unclassified_files": 1.0493
+    },
+    {
+      "extension": ".db",
+      "unclassified_file_count": 64023,
+      "pct_of_unclassified_files": 1.0232
+    },
+    {
+      "extension": ".class",
+      "unclassified_file_count": 59188,
+      "pct_of_unclassified_files": 0.9459
+    },
+    {
+      "extension": ".mat",
+      "unclassified_file_count": 54945,
+      "pct_of_unclassified_files": 0.8781
+    },
+    {
+      "extension": ".npy",
+      "unclassified_file_count": 50776,
+      "pct_of_unclassified_files": 0.8115
+    },
+    {
+      "extension": ".pdf",
+      "unclassified_file_count": 50527,
+      "pct_of_unclassified_files": 0.8075
+    },
+    {
+      "extension": ".e_output",
+      "unclassified_file_count": 48174,
+      "pct_of_unclassified_files": 0.7699
+    },
+    {
+      "extension": ".out",
+      "unclassified_file_count": 47751,
+      "pct_of_unclassified_files": 0.7632
+    },
+    {
+      "extension": ".r",
+      "unclassified_file_count": 45508,
+      "pct_of_unclassified_files": 0.7273
+    },
+    {
+      "extension": ".c",
+      "unclassified_file_count": 37093,
+      "pct_of_unclassified_files": 0.5928
+    },
+    {
+      "extension": ".rd",
+      "unclassified_file_count": 35567,
+      "pct_of_unclassified_files": 0.5684
+    },
+    {
+      "extension": ".meta",
+      "unclassified_file_count": 34284,
+      "pct_of_unclassified_files": 0.5479
+    },
+    {
+      "extension": ".sh",
+      "unclassified_file_count": 34038,
+      "pct_of_unclassified_files": 0.544
+    },
+    {
+      "extension": ".ts",
+      "unclassified_file_count": 33895,
+      "pct_of_unclassified_files": 0.5417
+    },
+    {
+      "extension": ".svg",
+      "unclassified_file_count": 33578,
+      "pct_of_unclassified_files": 0.5366
+    },
+    {
+      "extension": ".yml",
+      "unclassified_file_count": 33458,
+      "pct_of_unclassified_files": 0.5347
+    },
+    {
+      "extension": ".ttl",
+      "unclassified_file_count": 32158,
+      "pct_of_unclassified_files": 0.514
+    },
+    {
+      "extension": ".ini",
+      "unclassified_file_count": 31765,
+      "pct_of_unclassified_files": 0.5077
+    },
+    {
+      "extension": ".go",
+      "unclassified_file_count": 30659,
+      "pct_of_unclassified_files": 0.49
+    },
+    {
+      "extension": ".es",
+      "unclassified_file_count": 30635,
+      "pct_of_unclassified_files": 0.4896
+    },
+    {
+      "extension": ".fasta",
+      "unclassified_file_count": 29916,
+      "pct_of_unclassified_files": 0.4781
+    },
+    {
+      "extension": ".tif",
+      "unclassified_file_count": 29581,
+      "pct_of_unclassified_files": 0.4728
+    },
+    {
+      "extension": ".yaml",
+      "unclassified_file_count": 29549,
+      "pct_of_unclassified_files": 0.4723
+    },
+    {
+      "extension": ".en",
+      "unclassified_file_count": 29225,
+      "pct_of_unclassified_files": 0.4671
+    },
+    {
+      "extension": ".cpp",
+      "unclassified_file_count": 25657,
+      "pct_of_unclassified_files": 0.4101
+    },
+    {
+      "extension": ".mp4",
+      "unclassified_file_count": 25643,
+      "pct_of_unclassified_files": 0.4098
+    },
+    {
+      "extension": ".md",
+      "unclassified_file_count": 25052,
+      "pct_of_unclassified_files": 0.4004
+    },
+    {
+      "extension": ".pkl",
+      "unclassified_file_count": 24426,
+      "pct_of_unclassified_files": 0.3904
+    },
+    {
+      "extension": ".gif",
+      "unclassified_file_count": 22993,
+      "pct_of_unclassified_files": 0.3675
+    },
+    {
+      "extension": ".cif",
+      "unclassified_file_count": 22342,
+      "pct_of_unclassified_files": 0.3571
+    },
+    {
+      "extension": ".wav",
+      "unclassified_file_count": 21560,
+      "pct_of_unclassified_files": 0.3446
+    }
+  ],
+  "invalid_paths": []
+}

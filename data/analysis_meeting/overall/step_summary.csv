@@ -1,0 +1,7 @@
+step,classified_files,pct_of_all_files,repositories_with_step,pct_of_repositories
+collection,2382,0.0791,303,3.3652
+processing,10413,0.3459,876,9.729
+implementation,263733,8.7609,4563,50.6775
+experimentation,15365,0.5104,349,3.8761
+evaluation,16862,0.5601,798,8.8627
+dissemination,112884,3.7499,8431,93.6362

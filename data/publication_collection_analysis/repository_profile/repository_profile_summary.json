@@ -1,0 +1,69 @@
+{
+  "completed_repositories": 61,
+  "file_count": {
+    "mean": 2158.0,
+    "median": 84.0
+  },
+  "unclassified_files": {
+    "mean": 861.951,
+    "median": 38.0
+  },
+  "unclassified_pct": {
+    "mean": 72.513,
+    "median": 84.694
+  },
+  "content_scanned_files": {
+    "mean": 69.41,
+    "median": 26.0
+  },
+  "steps": {
+    "collection": {
+      "mean_files_per_repo": 0.148,
+      "median_files_per_repo": 0.0,
+      "mean_pct_of_repo_files": 0.243,
+      "median_pct_of_repo_files": 0.0,
+      "repositories_with_step": 5,
+      "pct_of_repositories_with_step": 8.1967
+    },
+    "processing": {
+      "mean_files_per_repo": 4.508,
+      "median_files_per_repo": 0.0,
+      "mean_pct_of_repo_files": 0.949,
+      "median_pct_of_repo_files": 0.0,
+      "repositories_with_step": 6,
+      "pct_of_repositories_with_step": 9.8361
+    },
+    "implementation": {
+      "mean_files_per_repo": 23.148,
+      "median_files_per_repo": 1.0,
+      "mean_pct_of_repo_files": 13.634,
+      "median_pct_of_repo_files": 0.979,
+      "repositories_with_step": 35,
+      "pct_of_repositories_with_step": 57.377
+    },
+    "experimentation": {
+      "mean_files_per_repo": 1263.607,
+      "median_files_per_repo": 0.0,
+      "mean_pct_of_repo_files": 3.367,
+      "median_pct_of_repo_files": 0.0,
+      "repositories_with_step": 12,
+      "pct_of_repositories_with_step": 19.6721
+    },
+    "evaluation": {
+      "mean_files_per_repo": 0.672,
+      "median_files_per_repo": 0.0,
+      "mean_pct_of_repo_files": 0.541,
+      "median_pct_of_repo_files": 0.0,
+      "repositories_with_step": 7,
+      "pct_of_repositories_with_step": 11.4754
+    },
+    "dissemination": {
+      "mean_files_per_repo": 8.393,
+      "median_files_per_repo": 1.0,
+      "mean_pct_of_repo_files": 9.894,
+      "median_pct_of_repo_files": 3.774,
+      "repositories_with_step": 57,
+      "pct_of_repositories_with_step": 93.4426
+    }
+  }
+}

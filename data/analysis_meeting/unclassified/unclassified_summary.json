@@ -1,0 +1,891 @@
+{
+  "unclassified_files": 2597768,
+  "excluded_by_design_unclassified_files": 477565,
+  "eligible_unclassified_files": 2120203,
+  "source_like_unclassified_files": 334475,
+  "top_extensions": [
+    {
+      "name": ".png",
+      "unclassified_files": 293313,
+      "pct": 11.291
+    },
+    {
+      "name": "(none)",
+      "unclassified_files": 158692,
+      "pct": 6.1088
+    },
+    {
+      "name": ".csv",
+      "unclassified_files": 153677,
+      "pct": 5.9157
+    },
+    {
+      "name": ".json",
+      "unclassified_files": 113528,
+      "pct": 4.3702
+    },
+    {
+      "name": ".jpg",
+      "unclassified_files": 112901,
+      "pct": 4.3461
+    },
+    {
+      "name": ".pdb",
+      "unclassified_files": 89683,
+      "pct": 3.4523
+    },
+    {
+      "name": ".gz",
+      "unclassified_files": 81389,
+      "pct": 3.133
+    },
+    {
+      "name": ".py",
+      "unclassified_files": 73811,
+      "pct": 2.8413
+    },
+    {
+      "name": ".db",
+      "unclassified_files": 63545,
+      "pct": 2.4461
+    },
+    {
+      "name": ".xml",
+      "unclassified_files": 62190,
+      "pct": 2.394
+    },
+    {
+      "name": ".txt",
+      "unclassified_files": 61213,
+      "pct": 2.3564
+    },
+    {
+      "name": ".e_output",
+      "unclassified_files": 48174,
+      "pct": 1.8544
+    },
+    {
+      "name": ".m",
+      "unclassified_files": 45361,
+      "pct": 1.7462
+    },
+    {
+      "name": ".dat",
+      "unclassified_files": 39475,
+      "pct": 1.5196
+    },
+    {
+      "name": ".html",
+      "unclassified_files": 34656,
+      "pct": 1.3341
+    },
+    {
+      "name": ".cs",
+      "unclassified_files": 34155,
+      "pct": 1.3148
+    },
+    {
+      "name": ".h",
+      "unclassified_files": 32140,
+      "pct": 1.2372
+    },
+    {
+      "name": ".es",
+      "unclassified_files": 29110,
+      "pct": 1.1206
+    },
+    {
+      "name": ".en",
+      "unclassified_files": 29100,
+      "pct": 1.1202
+    },
+    {
+      "name": ".out",
+      "unclassified_files": 28240,
+      "pct": 1.0871
+    },
+    {
+      "name": ".meta",
+      "unclassified_files": 25752,
+      "pct": 0.9913
+    },
+    {
+      "name": ".mp4",
+      "unclassified_files": 25293,
+      "pct": 0.9736
+    },
+    {
+      "name": ".pdf",
+      "unclassified_files": 24027,
+      "pct": 0.9249
+    },
+    {
+      "name": ".mat",
+      "unclassified_files": 23401,
+      "pct": 0.9008
+    },
+    {
+      "name": ".fasta",
+      "unclassified_files": 22976,
+      "pct": 0.8845
+    },
+    {
+      "name": ".npy",
+      "unclassified_files": 22663,
+      "pct": 0.8724
+    },
+    {
+      "name": ".cif",
+      "unclassified_files": 22197,
+      "pct": 0.8545
+    },
+    {
+      "name": ".kp",
+      "unclassified_files": 20803,
+      "pct": 0.8008
+    },
+    {
+      "name": ".js",
+      "unclassified_files": 19466,
+      "pct": 0.7493
+    },
+    {
+      "name": ".r",
+      "unclassified_files": 17678,
+      "pct": 0.6805
+    },
+    {
+      "name": ".class",
+      "unclassified_files": 17544,
+      "pct": 0.6753
+    },
+    {
+      "name": ".yaml",
+      "unclassified_files": 15033,
+      "pct": 0.5787
+    },
+    {
+      "name": ".lisp",
+      "unclassified_files": 14246,
+      "pct": 0.5484
+    },
+    {
+      "name": ".hpp",
+      "unclassified_files": 14234,
+      "pct": 0.5479
+    },
+    {
+      "name": ".proof",
+      "unclassified_files": 13865,
+      "pct": 0.5337
+    },
+    {
+      "name": ".csvy",
+      "unclassified_files": 13775,
+      "pct": 0.5303
+    },
+    {
+      "name": ".svg",
+      "unclassified_files": 13564,
+      "pct": 0.5221
+    },
+    {
+      "name": ".lsp",
+      "unclassified_files": 12984,
+      "pct": 0.4998
+    },
+    {
+      "name": ".rd",
+      "unclassified_files": 12804,
+      "pct": 0.4929
+    },
+    {
+      "name": ".sh",
+      "unclassified_files": 12796,
+      "pct": 0.4926
+    },
+    {
+      "name": ".c",
+      "unclassified_files": 12555,
+      "pct": 0.4833
+    },
+    {
+      "name": ".pddl",
+      "unclassified_files": 11252,
+      "pct": 0.4331
+    },
+    {
+      "name": ".bin",
+      "unclassified_files": 11045,
+      "pct": 0.4252
+    },
+    {
+      "name": ".tif",
+      "unclassified_files": 10217,
+      "pct": 0.3933
+    },
+    {
+      "name": ".yml",
+      "unclassified_files": 10024,
+      "pct": 0.3859
+    },
+    {
+      "name": ".pkl",
+      "unclassified_files": 9954,
+      "pct": 0.3832
+    },
+    {
+      "name": ".pl",
+      "unclassified_files": 9886,
+      "pct": 0.3806
+    },
+    {
+      "name": ".cb",
+      "unclassified_files": 9762,
+      "pct": 0.3758
+    },
+    {
+      "name": ".cpp",
+      "unclassified_files": 9436,
+      "pct": 0.3632
+    },
+    {
+      "name": ".php",
+      "unclassified_files": 9222,
+      "pct": 0.355
+    }
+  ],
+  "top_artifact_kinds": [
+    {
+      "name": "other",
+      "unclassified_files": 1294002,
+      "pct": 49.8121
+    },
+    {
+      "name": "data",
+      "unclassified_files": 444107,
+      "pct": 17.0957
+    },
+    {
+      "name": "image",
+      "unclassified_files": 439355,
+      "pct": 16.9128
+    },
+    {
+      "name": "source_code",
+      "unclassified_files": 279682,
+      "pct": 10.7662
+    },
+    {
+      "name": "archive",
+      "unclassified_files": 85303,
+      "pct": 3.2837
+    },
+    {
+      "name": "configuration",
+      "unclassified_files": 36759,
+      "pct": 1.415
+    },
+    {
+      "name": "documentation",
+      "unclassified_files": 9531,
+      "pct": 0.3669
+    },
+    {
+      "name": "notebook",
+      "unclassified_files": 9029,
+      "pct": 0.3476
+    }
+  ],
+  "top_source_extensions": [
+    {
+      "name": ".py",
+      "unclassified_source_files": 73811,
+      "pct": 22.0677
+    },
+    {
+      "name": ".m",
+      "unclassified_source_files": 45361,
+      "pct": 13.5619
+    },
+    {
+      "name": ".cs",
+      "unclassified_source_files": 34155,
+      "pct": 10.2115
+    },
+    {
+      "name": ".h",
+      "unclassified_source_files": 32140,
+      "pct": 9.6091
+    },
+    {
+      "name": ".js",
+      "unclassified_source_files": 19466,
+      "pct": 5.8199
+    },
+    {
+      "name": ".r",
+      "unclassified_source_files": 17678,
+      "pct": 5.2853
+    },
+    {
+      "name": ".hpp",
+      "unclassified_source_files": 14234,
+      "pct": 4.2556
+    },
+    {
+      "name": ".sh",
+      "unclassified_source_files": 12796,
+      "pct": 3.8257
+    },
+    {
+      "name": ".c",
+      "unclassified_source_files": 12555,
+      "pct": 3.7536
+    },
+    {
+      "name": ".pl",
+      "unclassified_source_files": 9886,
+      "pct": 2.9557
+    },
+    {
+      "name": ".cpp",
+      "unclassified_source_files": 9436,
+      "pct": 2.8211
+    },
+    {
+      "name": ".php",
+      "unclassified_source_files": 9222,
+      "pct": 2.7572
+    },
+    {
+      "name": ".java",
+      "unclassified_source_files": 5974,
+      "pct": 1.7861
+    },
+    {
+      "name": ".ipynb",
+      "unclassified_source_files": 5546,
+      "pct": 1.6581
+    },
+    {
+      "name": ".go",
+      "unclassified_source_files": 4309,
+      "pct": 1.2883
+    },
+    {
+      "name": ".f90",
+      "unclassified_source_files": 3715,
+      "pct": 1.1107
+    },
+    {
+      "name": ".rb",
+      "unclassified_source_files": 3663,
+      "pct": 1.0951
+    },
+    {
+      "name": ".cxx",
+      "unclassified_source_files": 3449,
+      "pct": 1.0312
+    },
+    {
+      "name": ".tsx",
+      "unclassified_source_files": 3108,
+      "pct": 0.9292
+    },
+    {
+      "name": ".f",
+      "unclassified_source_files": 2571,
+      "pct": 0.7687
+    },
+    {
+      "name": ".sql",
+      "unclassified_source_files": 2447,
+      "pct": 0.7316
+    },
+    {
+      "name": ".cc",
+      "unclassified_source_files": 2135,
+      "pct": 0.6383
+    },
+    {
+      "name": ".swift",
+      "unclassified_source_files": 2129,
+      "pct": 0.6365
+    },
+    {
+      "name": ".lua",
+      "unclassified_source_files": 1850,
+      "pct": 0.5531
+    },
+    {
+      "name": ".pm",
+      "unclassified_source_files": 840,
+      "pct": 0.2511
+    },
+    {
+      "name": ".ts",
+      "unclassified_source_files": 479,
+      "pct": 0.1432
+    },
+    {
+      "name": ".jl",
+      "unclassified_source_files": 432,
+      "pct": 0.1292
+    },
+    {
+      "name": ".jsx",
+      "unclassified_source_files": 387,
+      "pct": 0.1157
+    },
+    {
+      "name": ".scala",
+      "unclassified_source_files": 213,
+      "pct": 0.0637
+    },
+    {
+      "name": ".bash",
+      "unclassified_source_files": 207,
+      "pct": 0.0619
+    },
+    {
+      "name": ".kts",
+      "unclassified_source_files": 151,
+      "pct": 0.0451
+    },
+    {
+      "name": ".rs",
+      "unclassified_source_files": 103,
+      "pct": 0.0308
+    },
+    {
+      "name": ".f95",
+      "unclassified_source_files": 12,
+      "pct": 0.0036
+    },
+    {
+      "name": ".zsh",
+      "unclassified_source_files": 8,
+      "pct": 0.0024
+    },
+    {
+      "name": ".kt",
+      "unclassified_source_files": 4,
+      "pct": 0.0012
+    },
+    {
+      "name": ".for",
+      "unclassified_source_files": 3,
+      "pct": 0.0009
+    }
+  ],
+  "top_eligible_extensions": [
+    {
+      "name": ".png",
+      "eligible_unclassified_files": 293313,
+      "pct": 13.8342
+    },
+    {
+      "name": "(none)",
+      "eligible_unclassified_files": 158692,
+      "pct": 7.4848
+    },
+    {
+      "name": ".jpg",
+      "eligible_unclassified_files": 112901,
+      "pct": 5.325
+    },
+    {
+      "name": ".pdb",
+      "eligible_unclassified_files": 89683,
+      "pct": 4.2299
+    },
+    {
+      "name": ".gz",
+      "eligible_unclassified_files": 81389,
+      "pct": 3.8387
+    },
+    {
+      "name": ".py",
+      "eligible_unclassified_files": 73811,
+      "pct": 3.4813
+    },
+    {
+      "name": ".txt",
+      "eligible_unclassified_files": 61213,
+      "pct": 2.8871
+    },
+    {
+      "name": ".e_output",
+      "eligible_unclassified_files": 48174,
+      "pct": 2.2721
+    },
+    {
+      "name": ".m",
+      "eligible_unclassified_files": 45361,
+      "pct": 2.1395
+    },
+    {
+      "name": ".dat",
+      "eligible_unclassified_files": 39475,
+      "pct": 1.8619
+    },
+    {
+      "name": ".html",
+      "eligible_unclassified_files": 34656,
+      "pct": 1.6346
+    },
+    {
+      "name": ".cs",
+      "eligible_unclassified_files": 34155,
+      "pct": 1.6109
+    },
+    {
+      "name": ".h",
+      "eligible_unclassified_files": 32140,
+      "pct": 1.5159
+    },
+    {
+      "name": ".es",
+      "eligible_unclassified_files": 29110,
+      "pct": 1.373
+    },
+    {
+      "name": ".en",
+      "eligible_unclassified_files": 29100,
+      "pct": 1.3725
+    },
+    {
+      "name": ".out",
+      "eligible_unclassified_files": 28240,
+      "pct": 1.3319
+    },
+    {
+      "name": ".meta",
+      "eligible_unclassified_files": 25752,
+      "pct": 1.2146
+    },
+    {
+      "name": ".mp4",
+      "eligible_unclassified_files": 25293,
+      "pct": 1.193
+    },
+    {
+      "name": ".pdf",
+      "eligible_unclassified_files": 24027,
+      "pct": 1.1332
+    },
+    {
+      "name": ".mat",
+      "eligible_unclassified_files": 23401,
+      "pct": 1.1037
+    },
+    {
+      "name": ".fasta",
+      "eligible_unclassified_files": 22976,
+      "pct": 1.0837
+    },
+    {
+      "name": ".cif",
+      "eligible_unclassified_files": 22197,
+      "pct": 1.0469
+    },
+    {
+      "name": ".kp",
+      "eligible_unclassified_files": 20803,
+      "pct": 0.9812
+    },
+    {
+      "name": ".js",
+      "eligible_unclassified_files": 19466,
+      "pct": 0.9181
+    },
+    {
+      "name": ".r",
+      "eligible_unclassified_files": 17678,
+      "pct": 0.8338
+    },
+    {
+      "name": ".class",
+      "eligible_unclassified_files": 17544,
+      "pct": 0.8275
+    },
+    {
+      "name": ".lisp",
+      "eligible_unclassified_files": 14246,
+      "pct": 0.6719
+    },
+    {
+      "name": ".hpp",
+      "eligible_unclassified_files": 14234,
+      "pct": 0.6714
+    },
+    {
+      "name": ".proof",
+      "eligible_unclassified_files": 13865,
+      "pct": 0.6539
+    },
+    {
+      "name": ".csvy",
+      "eligible_unclassified_files": 13775,
+      "pct": 0.6497
+    },
+    {
+      "name": ".svg",
+      "eligible_unclassified_files": 13564,
+      "pct": 0.6398
+    },
+    {
+      "name": ".lsp",
+      "eligible_unclassified_files": 12984,
+      "pct": 0.6124
+    },
+    {
+      "name": ".rd",
+      "eligible_unclassified_files": 12804,
+      "pct": 0.6039
+    },
+    {
+      "name": ".sh",
+      "eligible_unclassified_files": 12796,
+      "pct": 0.6035
+    },
+    {
+      "name": ".c",
+      "eligible_unclassified_files": 12555,
+      "pct": 0.5922
+    },
+    {
+      "name": ".pddl",
+      "eligible_unclassified_files": 11252,
+      "pct": 0.5307
+    },
+    {
+      "name": ".bin",
+      "eligible_unclassified_files": 11045,
+      "pct": 0.5209
+    },
+    {
+      "name": ".tif",
+      "eligible_unclassified_files": 10217,
+      "pct": 0.4819
+    },
+    {
+      "name": ".pl",
+      "eligible_unclassified_files": 9886,
+      "pct": 0.4663
+    },
+    {
+      "name": ".cb",
+      "eligible_unclassified_files": 9762,
+      "pct": 0.4604
+    },
+    {
+      "name": ".cpp",
+      "eligible_unclassified_files": 9436,
+      "pct": 0.4451
+    },
+    {
+      "name": ".php",
+      "eligible_unclassified_files": 9222,
+      "pct": 0.435
+    },
+    {
+      "name": ".md",
+      "eligible_unclassified_files": 8650,
+      "pct": 0.408
+    },
+    {
+      "name": ".hea",
+      "eligible_unclassified_files": 8619,
+      "pct": 0.4065
+    },
+    {
+      "name": ".hh",
+      "eligible_unclassified_files": 7357,
+      "pct": 0.347
+    },
+    {
+      "name": ".gif",
+      "eligible_unclassified_files": 7346,
+      "pct": 0.3465
+    },
+    {
+      "name": ".conll",
+      "eligible_unclassified_files": 7334,
+      "pct": 0.3459
+    },
+    {
+      "name": ".mables",
+      "eligible_unclassified_files": 7270,
+      "pct": 0.3429
+    },
+    {
+      "name": ".ante_scores",
+      "eligible_unclassified_files": 7270,
+      "pct": 0.3429
+    },
+    {
+      "name": ".chains",
+      "eligible_unclassified_files": 7270,
+      "pct": 0.3429
+    }
+  ],
+  "top_excluded_extensions": [
+    {
+      "name": ".csv",
+      "excluded_unclassified_files": 153677,
+      "pct": 32.1793
+    },
+    {
+      "name": ".json",
+      "excluded_unclassified_files": 113528,
+      "pct": 23.7723
+    },
+    {
+      "name": ".db",
+      "excluded_unclassified_files": 63545,
+      "pct": 13.306
+    },
+    {
+      "name": ".xml",
+      "excluded_unclassified_files": 62190,
+      "pct": 13.0223
+    },
+    {
+      "name": ".npy",
+      "excluded_unclassified_files": 22663,
+      "pct": 4.7455
+    },
+    {
+      "name": ".yaml",
+      "excluded_unclassified_files": 15033,
+      "pct": 3.1478
+    },
+    {
+      "name": ".yml",
+      "excluded_unclassified_files": 10024,
+      "pct": 2.099
+    },
+    {
+      "name": ".pkl",
+      "excluded_unclassified_files": 9954,
+      "pct": 2.0843
+    },
+    {
+      "name": ".tsv",
+      "excluded_unclassified_files": 8381,
+      "pct": 1.7549
+    },
+    {
+      "name": ".pickle",
+      "excluded_unclassified_files": 4523,
+      "pct": 0.9471
+    },
+    {
+      "name": ".toml",
+      "excluded_unclassified_files": 4407,
+      "pct": 0.9228
+    },
+    {
+      "name": ".ini",
+      "excluded_unclassified_files": 1652,
+      "pct": 0.3459
+    },
+    {
+      "name": ".cfg",
+      "excluded_unclassified_files": 1630,
+      "pct": 0.3413
+    },
+    {
+      "name": ".h5",
+      "excluded_unclassified_files": 1386,
+      "pct": 0.2902
+    },
+    {
+      "name": ".ttl",
+      "excluded_unclassified_files": 1186,
+      "pct": 0.2483
+    },
+    {
+      "name": ".npz",
+      "excluded_unclassified_files": 1170,
+      "pct": 0.245
+    },
+    {
+      "name": ".owl",
+      "excluded_unclassified_files": 968,
+      "pct": 0.2027
+    },
+    {
+      "name": ".rdf",
+      "excluded_unclassified_files": 523,
+      "pct": 0.1095
+    },
+    {
+      "name": ".arff",
+      "excluded_unclassified_files": 381,
+      "pct": 0.0798
+    },
+    {
+      "name": ".jsonl",
+      "excluded_unclassified_files": 257,
+      "pct": 0.0538
+    },
+    {
+      "name": ".hdf5",
+      "excluded_unclassified_files": 197,
+      "pct": 0.0413
+    },
+    {
+      "name": ".cff",
+      "excluded_unclassified_files": 102,
+      "pct": 0.0214
+    },
+    {
+      "name": ".feather",
+      "excluded_unclassified_files": 66,
+      "pct": 0.0138
+    },
+    {
+      "name": ".nt",
+      "excluded_unclassified_files": 47,
+      "pct": 0.0098
+    },
+    {
+      "name": ".sqlite",
+      "excluded_unclassified_files": 27,
+      "pct": 0.0057
+    },
+    {
+      "name": ".parquet",
+      "excluded_unclassified_files": 26,
+      "pct": 0.0054
+    },
+    {
+      "name": ".sqlite3",
+      "excluded_unclassified_files": 15,
+      "pct": 0.0031
+    },
+    {
+      "name": ".trig",
+      "excluded_unclassified_files": 3,
+      "pct": 0.0006
+    },
+    {
+      "name": ".joblib",
+      "excluded_unclassified_files": 2,
+      "pct": 0.0004
+    },
+    {
+      "name": ".nq",
+      "excluded_unclassified_files": 1,
+      "pct": 0.0002
+    },
+    {
+      "name": ".ndjson",
+      "excluded_unclassified_files": 1,
+      "pct": 0.0002
+    }
+  ]
+}
