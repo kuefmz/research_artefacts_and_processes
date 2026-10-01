@@ -689,8 +689,12 @@ The installed equivalent is `research-process-steps-publications`. The runner
 normalizes nested GitHub file/tree URLs to their owner/repository root and
 processes only this bundled collection, once per repository. Existing persisted
 results are reused by default; pass `--force` to rerun all dataset repositories
-with the current heuristics and replace stored results. Failures are reported and
-produce a nonzero exit code. It never runs repository code or automatically
+with the current heuristics and replace stored results. Forced runs reuse the
+persistent raw GitHub cache in `data/github_cache` when metadata, trees, or source
+files are already cached, so a forced heuristic rerun can be much faster than a
+fresh GitHub acquisition. Per-repository logs report the total file count, counts
+for all six research-process steps, and unclassified files. Failures are reported
+and produce a nonzero exit code. It never runs repository code or automatically
 downloads papers.
 
 The frontend defaults to **Full publication dataset**. Filter by repository or
