@@ -6,10 +6,12 @@ import argparse
 import json
 import os
 import tempfile
+import time
 from pathlib import Path
 from typing import Any, Callable
 from urllib.parse import urlparse
 
+from .analyzer import GitHubRateLimitError
 from .batch import execute_repository_once
 from .heuristics import RESEARCH_PROCESS_STEPS
 from .storage import results_dir
@@ -42,33 +44,64 @@ def run_collection(
 ) -> dict[str, Any]:
     completed, errors = [], []
     repositories = collection_repositories()
+    token = os.getenv("GITHUB_TOKEN")
+    if not token:
+        print(
+            "Warning: GITHUB_TOKEN is not set. GitHub's unauthenticated API quota "
+            "is small; the runner will pause and retry when rate-limited.",
+            flush=True,
+        )
     for index, url in enumerate(repositories, 1):
-        try:
-            result, executed = execute_repository_once(
-                url,
-                token=os.getenv("GITHUB_TOKEN"),
-                force=force,
-            )
-            repository = result.get("repository", {})
-            summary = result.get("summary", {})
-            files_per_step = summary.get("files_per_step", {})
-            item = {
-                "repo_url": url,
-                "executed_now": executed,
-                "id": result.get("execution", {}).get("id"),
-                "file_count": repository.get("file_count", 0),
-                "files_per_step": {
-                    step: int(files_per_step.get(step, 0))
-                    for step in RESEARCH_PROCESS_STEPS
-                },
-                "unclassified_files": int(summary.get("unclassified_files", 0)),
-            }
-            completed.append(item)
-            status = "refreshed" if force and executed else ("stored" if executed else "reused")
-        except Exception as exc:
-            item = {"repo_url": url, "error": str(exc)}
-            errors.append(item)
-            status = "error"
+        while True:
+            try:
+                result, executed = execute_repository_once(
+                    url,
+                    token=token,
+                    force=force,
+                )
+                repository = result.get("repository", {})
+                summary = result.get("summary", {})
+                files_per_step = summary.get("files_per_step", {})
+                item = {
+                    "repo_url": url,
+                    "executed_now": executed,
+                    "id": result.get("execution", {}).get("id"),
+                    "file_count": repository.get("file_count", 0),
+                    "files_per_step": {
+                        step: int(files_per_step.get(step, 0))
+                        for step in RESEARCH_PROCESS_STEPS
+                    },
+                    "unclassified_files": int(summary.get("unclassified_files", 0)),
+                }
+                completed.append(item)
+                status = "refreshed" if force and executed else ("stored" if executed else "reused")
+                break
+            except GitHubRateLimitError as exc:
+                wait_seconds = max(1, exc.wait_seconds)
+                item = {
+                    "repo_url": url,
+                    "wait_seconds": wait_seconds,
+                    "error": str(exc),
+                }
+                progress = {
+                    "index": index,
+                    "total": len(repositories),
+                    "status": "rate_limited",
+                    **item,
+                }
+                if on_progress:
+                    on_progress(progress)
+                print(
+                    f"[{index}/{len(repositories)}] rate_limited: {url} | "
+                    f"waiting {wait_seconds}s, then retrying the same repository",
+                    flush=True,
+                )
+                time.sleep(wait_seconds)
+            except Exception as exc:
+                item = {"repo_url": url, "error": str(exc)}
+                errors.append(item)
+                status = "error"
+                break
         progress = {"index": index, "total": len(repositories), "status": status, **item}
         if on_progress:
             on_progress(progress)
