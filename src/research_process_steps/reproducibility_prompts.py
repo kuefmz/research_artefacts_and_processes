@@ -20,3 +20,33 @@ def reproducibility_prompts() -> dict[str, dict[str, str]]:
             "prompt": C1_PROMPT,
         },
     }
+
+
+def render_reproducibility_prompt(
+    variant: str,
+    *,
+    case_id: str,
+    title: str,
+    doi: str | None,
+    paper_url: str,
+    repo_url: str,
+    commit: str | None,
+) -> str:
+    prompts = reproducibility_prompts()
+    if variant not in prompts:
+        raise ValueError("Unknown reproducibility prompt variant.")
+    template = prompts[variant]["prompt"]
+    values = {
+        "case_id": case_id,
+        "title": title or "(title unavailable)",
+        "doi": doi or "(DOI unavailable)",
+        "paper_url": paper_url or "(paper source URL unavailable; use the attached PDF)",
+        "repo_url": repo_url,
+        "commit": commit or "(commit not established; use the supplied repository snapshot and report this limitation)",
+    }
+    rendered = template.format(**values)
+    attachment_note = (
+        "\n\nINPUT NOTE: The paper PDF is attached directly to this conversation. "
+        "Treat that attached PDF as the paper input for this assessment."
+    )
+    return rendered + attachment_note
