@@ -48,3 +48,19 @@ def test_reproducibility_prompts_expose_control_and_metadata_condition():
     assert "supplied file-level research-process-step metadata" in prompts["c1"]["prompt"]
     assert "static assessment" in prompts["c0"]["prompt"]
     assert "static assessment" in prompts["c1"]["prompt"]
+
+
+def test_publication_collection_prefills_prompts(tmp_path, monkeypatch):
+    monkeypatch.setenv("RPS_REPRO_CONVERSATIONS_DIR", str(tmp_path / "repro"))
+    client = TestClient(api.app)
+    payload = client.get("/api/publication-collection").json()
+    paper = payload["papers"][0]
+    c0 = paper["reproducibility_prompts"]["c0"]
+    c1 = paper["reproducibility_prompts"]["c1"]
+    assert paper["paper_id"] in c0
+    assert paper["github_url"] in c0
+    assert paper["title"] in c0
+    assert "{repo_url}" not in c0
+    assert "{title}" not in c0
+    assert "paper PDF is attached directly to this conversation" in c0
+    assert "supplied file-level research-process-step metadata" in c1
