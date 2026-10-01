@@ -4,6 +4,7 @@ import pytest
 from fastapi.testclient import TestClient
 
 from research_process_steps import api, publication_collection as collection
+from research_process_steps.analyzer import GitHubRateLimitError
 
 
 def test_full_collection_and_nested_urls():
@@ -131,3 +132,36 @@ def test_rerun_all_empty_store_completes(monkeypatch):
     monkeypatch.setattr(api, "COLLECTION_WORKER", Worker())
     job = api.start_collection_job(api.CollectionJobRequest(action="rerun_all"))
     assert api.collection_job(job["id"])["result"] == {"completed": [], "errors": []}
+
+
+def test_runner_waits_and_retries_rate_limit(monkeypatch):
+    urls = ["https://github.com/a/one"]
+    monkeypatch.setattr(collection, "collection_repositories", lambda: urls)
+    calls = []
+    sleeps = []
+
+    def execute(url, **kwargs):
+        calls.append(url)
+        if len(calls) == 1:
+            raise GitHubRateLimitError(
+                wait_seconds=7,
+                status_code=403,
+                url="https://api.github.com/rate-limited",
+                remaining="0",
+                reset=None,
+                retry_after=None,
+            )
+        return {
+            "repository": {"file_count": 1},
+            "summary": {"files_per_step": {}, "unclassified_files": 1},
+            "execution": {"id": "saved"},
+        }, True
+
+    monkeypatch.setattr(collection, "execute_repository_once", execute)
+    monkeypatch.setattr(collection.time, "sleep", sleeps.append)
+    result = collection.run_collection(force=True)
+
+    assert calls == urls * 2
+    assert sleeps == [7]
+    assert result["errors"] == []
+    assert len(result["completed"]) == 1
