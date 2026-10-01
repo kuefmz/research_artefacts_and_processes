@@ -34,12 +34,20 @@ def collection_repositories() -> list[str]:
                               for record in load_collection()["results"]))
 
 
-def run_collection(on_progress: Callable[[dict[str, Any]], None] | None = None) -> dict[str, Any]:
+def run_collection(
+    on_progress: Callable[[dict[str, Any]], None] | None = None,
+    *,
+    force: bool = False,
+) -> dict[str, Any]:
     completed, errors = [], []
     repositories = collection_repositories()
     for index, url in enumerate(repositories, 1):
         try:
-            result, executed = execute_repository_once(url, token=os.getenv("GITHUB_TOKEN"))
+            result, executed = execute_repository_once(
+                url,
+                token=os.getenv("GITHUB_TOKEN"),
+                force=force,
+            )
             item = {"repo_url": url, "executed_now": executed,
                     "id": result.get("execution", {}).get("id")}
             completed.append(item)
@@ -93,6 +101,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--list", action="store_true", help="List this dataset's repository URLs without running.")
     parser.add_argument("--analytics-only", action="store_true", help="Run all five analytics on stored dataset results.")
+    parser.add_argument("--force", action="store_true", help="Rerun heuristics for every dataset repository and replace stored results.")
     parser.add_argument("--output-dir", type=Path, default=OUTPUT_DIR)
     parser.add_argument("--raw-cache-dir", type=Path, default=Path("data/github_cache"))
     args = parser.parse_args()
@@ -102,7 +111,7 @@ def main() -> None:
         summary = run_collection_analytics(args.output_dir, args.raw_cache_dir)
         print(json.dumps(summary["dataset_scope"], indent=2))
     else:
-        result = run_collection()
+        result = run_collection(force=args.force)
         print(f"Finished: {len(result['completed'])} stored/reused, {len(result['errors'])} errors.")
         if result["errors"]:
             raise SystemExit(1)
