@@ -461,8 +461,8 @@
       const metadataLink = variant === "c1" && paper.research_step_metadata_url
         ? `<div><a class="repo-link" href="${escapeHtml(paper.research_step_metadata_url)}" target="_blank" rel="noopener">Open research-step metadata</a></div>`
         : "";
-      const promptButton = paper.reproducibility_prompts?.[variant]
-        ? `<div><button type="button" class="secondary small paper-copy-prompt" data-paper="${escapeHtml(paper.paper_id)}" data-variant="${variant}">Copy prefilled ${label} prompt</button></div>`
+      const promptLink = paper.reproducibility_prompts?.[variant]
+        ? `<div><a href="#" class="repo-link paper-copy-prompt" data-paper="${escapeHtml(paper.paper_id)}" data-variant="${variant}">Copy prefilled prompt</a></div>`
         : "";
       const existing = records.length
         ? records.map(record => {
@@ -483,7 +483,7 @@
           }).join("")
         : '<div class="none">No conversations yet</div>';
       return `<td>
-        ${promptButton}
+        ${promptLink}
         ${metadataLink}
         ${existing}
         <details><summary>Add new ${label} conversation</summary>
@@ -501,12 +501,13 @@
     }
 
     function bindPaperConversationEditors(container) {
-      container.querySelectorAll(".paper-copy-prompt").forEach(button => {
-        button.addEventListener("click", async () => {
-          await copyPaperPrompt(button.dataset.paper, button.dataset.variant);
-          const original = button.textContent;
-          button.textContent = "Copied";
-          setTimeout(() => { button.textContent = original; }, 1200);
+      container.querySelectorAll(".paper-copy-prompt").forEach(link => {
+        link.addEventListener("click", async event => {
+          event.preventDefault();
+          await copyPaperPrompt(link.dataset.paper, link.dataset.variant);
+          const original = link.textContent;
+          link.textContent = "Copied";
+          setTimeout(() => { link.textContent = original; }, 1200);
         });
       });
       container.querySelectorAll(".paper-conversation-editor").forEach(form => {
