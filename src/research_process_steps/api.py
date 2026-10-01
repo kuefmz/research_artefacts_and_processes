@@ -13,6 +13,13 @@ from fastapi.responses import FileResponse
 from pydantic import BaseModel, Field, HttpUrl
 
 from .conversations import ConversationVariant, load_conversations, save_conversation
+from .paper_conversations import (
+    PaperConversationVariant,
+    add_paper_conversation,
+    load_paper_conversations,
+    update_paper_conversation,
+)
+from .reproducibility_prompts import reproducibility_prompts
 from .analyzer import DEFAULT_CONTENT_LIMIT
 from .batch import (
     ALLOWED_BATCH_SIZES,
@@ -63,6 +70,13 @@ def paper_path(paper_id: str) -> Path:
     if paper_id not in allowed:
         raise HTTPException(status_code=404, detail="Unknown selected paper.")
     return paper_directory() / f"{paper_id}.pdf"
+
+
+def publication_paper(paper_id: str) -> dict[str, Any]:
+    paper = next((item for item in collection_papers() if item["paper_id"] == paper_id), None)
+    if paper is None:
+        raise HTTPException(status_code=404, detail="Unknown publication-collection paper.")
+    return paper
 
 
 class AnalyzeRequest(BaseModel):
@@ -241,11 +255,96 @@ def publication_collection() -> dict[str, Any]:
             f"/api/selection/papers/{paper['paper_id']}"
             if (paper_directory() / f"{paper['paper_id']}.pdf").is_file() else None
         )
+        paper["reproducibility_conversations"] = load_paper_conversations(paper["paper_id"])
+        paper["research_step_metadata_url"] = (
+            f"/api/publication-collection/papers/{paper['paper_id']}/research-step-metadata"
+            if load_result(paper["github_url"]) is not None else None
+        )
     return {
         "papers": papers,
         "repositories": [
             {"repo_url": url, "execution": executions.get(url), "conversations": load_conversations(url)}
             for url in collection_repositories()
+        ],
+    }
+
+
+class PaperConversationRequest(BaseModel):
+    variant: PaperConversationVariant
+    url: HttpUrl
+
+
+@app.get("/api/reproducibility/prompts")
+def get_reproducibility_prompts() -> dict[str, Any]:
+    return {"prompts": reproducibility_prompts()}
+
+
+@app.post("/api/publication-collection/papers/{paper_id}/conversations")
+def add_reproducibility_conversation(
+    paper_id: str,
+    request: PaperConversationRequest,
+) -> dict[str, Any]:
+    publication_paper(paper_id)
+    record = add_paper_conversation(paper_id, request.variant, str(request.url))
+    return {
+        "paper_id": paper_id,
+        "variant": request.variant,
+        "record": record,
+        "conversations": load_paper_conversations(paper_id),
+    }
+
+
+@app.put("/api/publication-collection/papers/{paper_id}/conversations/{record_id}")
+def overwrite_reproducibility_conversation(
+    paper_id: str,
+    record_id: str,
+    request: PaperConversationRequest,
+) -> dict[str, Any]:
+    publication_paper(paper_id)
+    try:
+        record = update_paper_conversation(
+            paper_id,
+            request.variant,
+            record_id,
+            str(request.url),
+        )
+    except KeyError as exc:
+        raise HTTPException(status_code=404, detail="Conversation record not found.") from exc
+    return {
+        "paper_id": paper_id,
+        "variant": request.variant,
+        "record": record,
+        "conversations": load_paper_conversations(paper_id),
+    }
+
+
+@app.get("/api/publication-collection/papers/{paper_id}/research-step-metadata")
+def paper_research_step_metadata(paper_id: str) -> dict[str, Any]:
+    paper = publication_paper(paper_id)
+    result = load_result(paper["github_url"])
+    if result is None:
+        raise HTTPException(
+            status_code=404,
+            detail="No stored heuristic result exists for this repository.",
+        )
+    repository = result.get("repository", {})
+    return {
+        "schema_version": "1",
+        "paper_id": paper_id,
+        "repository": {
+            "url": paper["github_url"],
+            "ref": repository.get("ref"),
+            "tree_sha": repository.get("commit_tree_sha"),
+        },
+        "files": [
+            {
+                "path": item.get("path"),
+                "blob_sha": item.get("blob_sha"),
+                "artifact_kind": item.get("artifact_kind"),
+                "research_process_steps": item.get("steps", []),
+                "evidence": item.get("evidence", []),
+            }
+            for item in result.get("files", [])
         ],
     }
 
