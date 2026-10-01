@@ -19,7 +19,7 @@ from .paper_conversations import (
     load_paper_conversations,
     update_paper_conversation,
 )
-from .reproducibility_prompts import reproducibility_prompts
+from .reproducibility_prompts import reproducibility_prompts, render_reproducibility_prompt
 from .analyzer import DEFAULT_CONTENT_LIMIT
 from .batch import (
     ALLOWED_BATCH_SIZES,
@@ -256,10 +256,24 @@ def publication_collection() -> dict[str, Any]:
             if (paper_directory() / f"{paper['paper_id']}.pdf").is_file() else None
         )
         paper["reproducibility_conversations"] = load_paper_conversations(paper["paper_id"])
+        execution = executions.get(paper["github_url"])
         paper["research_step_metadata_url"] = (
             f"/api/publication-collection/papers/{paper['paper_id']}/research-step-metadata"
-            if paper["github_url"] in executions else None
+            if execution is not None else None
         )
+        commit = execution.get("ref") if execution else None
+        paper["reproducibility_prompts"] = {
+            variant: render_reproducibility_prompt(
+                variant,
+                case_id=paper["paper_id"],
+                title=paper.get("title", ""),
+                doi=paper.get("doi"),
+                paper_url=paper.get("paper_url", ""),
+                repo_url=paper["github_url"],
+                commit=commit,
+            )
+            for variant in ("c0", "c1")
+        }
     return {
         "papers": papers,
         "repositories": [
