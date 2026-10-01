@@ -12,7 +12,7 @@
     }
     * { box-sizing: border-box; }
     body { margin: 0; }
-    .page { max-width: 1220px; margin: 0 auto; padding: 34px 22px 60px; }
+    .page { width: min(98vw, 1780px); max-width: 1780px; margin: 0 auto; padding: 28px 16px 60px; }
     h1 { margin: 0 0 8px; font-size: 30px; }
     h2 { margin: 0 0 10px; font-size: 19px; }
     .subtitle { margin: 0 0 26px; color: #5b6573; max-width: 900px; line-height: 1.5; }
@@ -86,6 +86,31 @@
     .history-wrap { max-height: 390px; }
     table { width: 100%; border-collapse: collapse; min-width: 900px; }
     th, td { text-align: left; vertical-align: top; padding: 11px 12px; border-bottom: 1px solid #edf0f3; }
+    .publication-table { min-width: 0; table-layout: fixed; }
+    .publication-table th,
+    .publication-table td { padding: 9px 8px; overflow-wrap: anywhere; }
+    .publication-table th:nth-child(1) { width: 18%; }
+    .publication-table th:nth-child(2) { width: 9%; }
+    .publication-table th:nth-child(3) { width: 25%; }
+    .publication-table th:nth-child(4) { width: 18%; }
+    .publication-table th:nth-child(5) { width: 15%; }
+    .publication-table th:nth-child(6) { width: 15%; }
+    .publication-table input[type="file"],
+    .publication-table input[type="url"] { width: 100%; min-width: 0 !important; max-width: 100%; }
+    .publication-table button.small { white-space: normal; line-height: 1.15; }
+    .publication-table details { max-width: 100%; }
+    .publication-table .repo-link { overflow-wrap: anywhere; word-break: break-word; }
+    @media (max-width: 1150px) {
+      .publication-table th,
+      .publication-table td { padding: 7px 6px; font-size: 12px; }
+      .publication-table th { font-size: 10px; }
+      .publication-table th:nth-child(1) { width: 17%; }
+      .publication-table th:nth-child(2) { width: 8%; }
+      .publication-table th:nth-child(3) { width: 27%; }
+      .publication-table th:nth-child(4) { width: 16%; }
+      .publication-table th:nth-child(5),
+      .publication-table th:nth-child(6) { width: 16%; }
+    }
     th {
       position: sticky;
       top: 0;
@@ -183,7 +208,7 @@
       <div id="collectionJobStatus" class="status" role="status"></div>
       <details id="analyticsPanel" class="hidden"><summary>Dataset analytics summary</summary><pre id="analyticsSummary" style="white-space:pre-wrap"></pre></details>
       <div id="selectionStatus" class="status">Loading selection…</div>
-      <div class="table-wrap history-wrap"><table>
+      <div class="table-wrap history-wrap"><table class="publication-table">
         <thead><tr><th>Repository</th><th>Heuristics</th><th>Paper</th><th>Uploaded PDF</th><th>C0</th><th>C1</th></tr></thead>
         <tbody id="selectionRows"></tbody>
       </table></div>
