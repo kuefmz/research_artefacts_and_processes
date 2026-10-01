@@ -22,8 +22,8 @@ RESEARCH_PROCESS_STEPS = (
 )
 
 
-# File-type information constrains broad path heuristics. Recognized source
-# files also provide implementation evidence regardless of their location.
+# File-type information is used as a compatibility constraint on broad path
+# heuristics. It is not itself a research-process-step prediction.
 DATA_EXTENSIONS = {
     ".ttl", ".rdf", ".owl", ".nt", ".nq", ".trig",
     ".csv", ".tsv", ".json", ".jsonl", ".ndjson", ".xml",
@@ -142,9 +142,6 @@ RULES = (
        "File contains deterministic indicators of data preparation or transformation."),
 
     # IMPLEMENTATION
-    _r("IMP_SOURCE_CODE_FILE", "implementation", 2, "path",
-       r"[^/]+(" + "|".join(re.escape(ext) for ext in sorted(SOURCE_CODE_EXTENSIONS)) + r")$",
-       "File has a recognized source-code extension, regardless of its directory."),
     _r("IMP_PATH_SOURCE_DIR", "implementation", 3, "path",
        r"(^|/)(src|lib|app|pkg|package|packages)(/|$)",
        "File is part of an implementation source tree."),
