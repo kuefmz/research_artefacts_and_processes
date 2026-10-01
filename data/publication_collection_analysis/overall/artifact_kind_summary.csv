@@ -1,9 +1,0 @@
-artifact_kind,file_count,pct_of_all_files
-other,109220,82.97
-data,18021,13.6898
-source_code,3460,2.6284
-image,585,0.4444
-documentation,238,0.1808
-configuration,69,0.0524
-notebook,32,0.0243
-archive,13,0.0099
