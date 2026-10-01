@@ -459,7 +459,11 @@
       const records = paper.reproducibility_conversations?.[variant] || [];
       const label = variant.toUpperCase();
       const metadataLink = variant === "c1" && paper.research_step_metadata_url
-        ? `<div><a class="repo-link" href="${escapeHtml(paper.research_step_metadata_url)}" target="_blank" rel="noopener">Open research-step metadata</a></div>`
+        ? `<div>
+            <a class="repo-link" href="${escapeHtml(paper.research_step_metadata_url)}" target="_blank" rel="noopener">Open metadata</a>
+            · <a class="repo-link metadata-download" href="${escapeHtml(paper.research_step_metadata_url)}" download="${escapeHtml(paper.paper_id)}_research_step_metadata.json">Download JSON</a>
+            · <a href="#" class="repo-link metadata-copy" data-url="${escapeHtml(paper.research_step_metadata_url)}">Copy JSON</a>
+          </div>`
         : "";
       const promptLink = paper.reproducibility_prompts?.[variant]
         ? `<div><a href="#" class="repo-link paper-copy-prompt" data-paper="${escapeHtml(paper.paper_id)}" data-variant="${variant}">Copy prefilled prompt</a></div>`
@@ -501,6 +505,22 @@
     }
 
     function bindPaperConversationEditors(container) {
+      container.querySelectorAll(".metadata-copy").forEach(link => {
+        link.addEventListener("click", async event => {
+          event.preventDefault();
+          const original = link.textContent;
+          try {
+            const response = await fetch(link.dataset.url);
+            const payload = await response.json();
+            if (!response.ok) throw new Error(payload.detail || "Could not load metadata.");
+            await navigator.clipboard.writeText(JSON.stringify(payload, null, 2));
+            link.textContent = "Copied";
+          } catch (error) {
+            link.textContent = "Copy failed";
+          }
+          setTimeout(() => { link.textContent = original; }, 1400);
+        });
+      });
       container.querySelectorAll(".paper-copy-prompt").forEach(link => {
         link.addEventListener("click", async event => {
           event.preventDefault();
