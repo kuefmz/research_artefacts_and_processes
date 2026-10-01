@@ -46,13 +46,13 @@ def render_reproducibility_prompt(
     }
     rendered = template.format(**values)
     attachment_note = (
-        "\n\nINPUT NOTE: The paper PDF is attached directly to this conversation. "
-        "Treat that attached PDF as the paper input for this assessment."
+        f"\n\nINPUT NOTE: The paper PDF {case_id}.pdf is attached directly to this "
+        "conversation. Treat that attached PDF as the paper input for this assessment."
     )
     if variant == "c1":
         attachment_note += (
-            " The research-process-step metadata JSON is also attached directly "
-            "to this conversation. Treat that JSON as the supplied additional "
+            f" The research-process-step metadata file {case_id}.json is also attached "
+            "directly to this conversation. Treat that JSON as the supplied additional "
             "metadata and verify it against the repository files."
         )
     return rendered + attachment_note
