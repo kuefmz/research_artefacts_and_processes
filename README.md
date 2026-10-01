@@ -734,8 +734,14 @@ The full publication-dataset table has paper-level **C0** and **C1** columns:
 - **C1** — conversation using the same repository URL and paper PDF plus the
   stored file-level research-process-step metadata.
 
-The fixed prompt templates are visible and copyable from the frontend. C0 is
-copied from
+The fixed prompt templates are visible from the frontend, and every full-dataset
+paper row has **Copy prefilled C0 prompt** and **Copy prefilled C1 prompt** buttons.
+The copied prompt automatically fills the case/paper ID, paper title, DOI, paper
+source URL, repository URL, and stored repository ref when available. It also
+states that the paper PDF is attached directly to the conversation, so no local
+PDF URL needs to be pasted manually.
+
+C0 is copied from
 `dev_experiment_analysis/experiments/reproducibility_analysis/assessment_pilot/BASELINE_PROMPT_TEMPLATE.txt`.
 C1 preserves the same static-assessment task while explicitly allowing the
 supplied research-process-step metadata as fallible navigation evidence.
