@@ -228,8 +228,8 @@ Request:
 
 Optional fields are `ref`, `max_content_bytes`, and `force` (default `false`).
 Set `force: true` to rerun heuristics using the current rules and replace the stored
-result. The web interface provides **Rerun heuristics** for stored repositories
-and in the single-repository form. Failed reruns preserve the previous result.
+result. The web interface does not expose forced reruns. Failed reruns preserve the
+previous result.
 
 A file-level response contains evidence such as:
 
@@ -709,14 +709,12 @@ server stops its jobs, while completed heuristic results and reports remain
 on disk. Restart the runner to reuse completed results and attempt remaining
 repositories.
 
-### Rerun all stored repositories
+### Rerun all stored repositories via API
 
-Click **Rerun all heuristics** in Executed repositories to refresh every stored
-repository with the current rules. This runs in the background with progress
-and a completion/error summary. Each successful result replaces its stored
+The frontend does not expose a rerun action. To refresh every stored repository
+with the current rules, use the API. Each successful result replaces its stored
 output; a failed repository keeps its previous result and does not stop the
-remaining reruns. The scope is all stored repositories, regardless of the
-current view or filter. New repositories are handled by the existing run buttons.
+remaining reruns. The scope is all stored repositories.
 
 API: `POST /api/publication-collection/jobs` with `{"action":"rerun_all"}`.
 Poll `GET /api/publication-collection/jobs/{id}` for progress and results.
