@@ -11,6 +11,7 @@ from typing import Any, Callable
 from urllib.parse import urlparse
 
 from .batch import execute_repository_once
+from .heuristics import RESEARCH_PROCESS_STEPS
 from .storage import results_dir
 
 DATASET_PATH = Path(__file__).with_name("datasets") / "software_with_publications_v2.json"
@@ -48,10 +49,22 @@ def run_collection(
                 token=os.getenv("GITHUB_TOKEN"),
                 force=force,
             )
-            item = {"repo_url": url, "executed_now": executed,
-                    "id": result.get("execution", {}).get("id")}
+            repository = result.get("repository", {})
+            summary = result.get("summary", {})
+            files_per_step = summary.get("files_per_step", {})
+            item = {
+                "repo_url": url,
+                "executed_now": executed,
+                "id": result.get("execution", {}).get("id"),
+                "file_count": repository.get("file_count", 0),
+                "files_per_step": {
+                    step: int(files_per_step.get(step, 0))
+                    for step in RESEARCH_PROCESS_STEPS
+                },
+                "unclassified_files": int(summary.get("unclassified_files", 0)),
+            }
             completed.append(item)
-            status = "stored" if executed else "reused"
+            status = "refreshed" if force and executed else ("stored" if executed else "reused")
         except Exception as exc:
             item = {"repo_url": url, "error": str(exc)}
             errors.append(item)
@@ -59,7 +72,19 @@ def run_collection(
         progress = {"index": index, "total": len(repositories), "status": status, **item}
         if on_progress:
             on_progress(progress)
-        print(f"[{index}/{len(repositories)}] {status}: {url}", flush=True)
+        if status == "error":
+            print(f"[{index}/{len(repositories)}] error: {url} | {item['error']}", flush=True)
+        else:
+            step_details = " | ".join(
+                f"{step}={item['files_per_step'][step]}"
+                for step in RESEARCH_PROCESS_STEPS
+            )
+            print(
+                f"[{index}/{len(repositories)}] {status}: {url} | "
+                f"files={item['file_count']} | {step_details} | "
+                f"unclassified={item['unclassified_files']}",
+                flush=True,
+            )
     return {"completed": completed, "errors": errors, "total": len(repositories)}
 
 
