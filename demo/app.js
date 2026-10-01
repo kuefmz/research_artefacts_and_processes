@@ -4,7 +4,7 @@ const DATASET_URL = `${RAW}/src/research_process_steps/datasets/software_with_pu
 const ANALYTICS_URL = `${RAW}/data/publication_collection_analysis/meeting_summary.json`;
 const PAPER_BASE = `${RAW}/data/selected_papers`;
 
-const knownPdfIds = new Set(["C0001","C0002","C0003","C0004"]); // expanded below at load time from committed demo manifest
+const knownPdfIds = new Set(["C0001","C0002","C0003","C0004","C0005","C0006","C0007","C0008","C0009","C0010"]);
 const assessmentIds = ["C0001","C0002","C0003"];
 let papers = [];
 let conversations = {};
