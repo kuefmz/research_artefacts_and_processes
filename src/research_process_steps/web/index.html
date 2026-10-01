@@ -420,6 +420,13 @@
       return Number.isNaN(date.getTime()) ? value : date.toLocaleString();
     }
 
+    async function copyPaperPrompt(paperId, variant) {
+      const paper = selectionPayload?.papers?.find(item => item.paper_id === paperId);
+      const prompt = paper?.reproducibility_prompts?.[variant];
+      if (!prompt) return;
+      await navigator.clipboard.writeText(prompt);
+    }
+
     function paperConversationCell(paper, variant) {
       if (!paper.reproducibility_conversations) {
         return '<td><span class="none">Available in Full publication dataset</span></td>';
@@ -428,6 +435,9 @@
       const label = variant.toUpperCase();
       const metadataLink = variant === "c1" && paper.research_step_metadata_url
         ? `<div><a class="repo-link" href="${escapeHtml(paper.research_step_metadata_url)}" target="_blank" rel="noopener">Open research-step metadata</a></div>`
+        : "";
+      const promptButton = paper.reproducibility_prompts?.[variant]
+        ? `<div><button type="button" class="secondary small paper-copy-prompt" data-paper="${escapeHtml(paper.paper_id)}" data-variant="${variant}">Copy prefilled ${label} prompt</button></div>`
         : "";
       const existing = records.length
         ? records.map(record => {
@@ -448,6 +458,7 @@
           }).join("")
         : '<div class="none">No conversations yet</div>';
       return `<td>
+        ${promptButton}
         ${metadataLink}
         ${existing}
         <details><summary>Add new ${label} conversation</summary>
@@ -465,6 +476,14 @@
     }
 
     function bindPaperConversationEditors(container) {
+      container.querySelectorAll(".paper-copy-prompt").forEach(button => {
+        button.addEventListener("click", async () => {
+          await copyPaperPrompt(button.dataset.paper, button.dataset.variant);
+          const original = button.textContent;
+          button.textContent = "Copied";
+          setTimeout(() => { button.textContent = original; }, 1200);
+        });
+      });
       container.querySelectorAll(".paper-conversation-editor").forEach(form => {
         form.addEventListener("submit", async event => {
           event.preventDefault();
