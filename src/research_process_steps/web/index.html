@@ -461,7 +461,7 @@
       const metadataLink = variant === "c1" && paper.research_step_metadata_url
         ? `<div>
             <a class="repo-link" href="${escapeHtml(paper.research_step_metadata_url)}" target="_blank" rel="noopener">Open metadata</a>
-            · <a class="repo-link metadata-download" href="${escapeHtml(paper.research_step_metadata_url)}" download="${escapeHtml(paper.paper_id)}_research_step_metadata.json">Download JSON</a>
+            · <a href="#" class="repo-link metadata-download" data-url="${escapeHtml(paper.research_step_metadata_url)}" data-paper="${escapeHtml(paper.paper_id)}">Download JSON</a>
             · <a href="#" class="repo-link metadata-copy" data-url="${escapeHtml(paper.research_step_metadata_url)}">Copy JSON</a>
           </div>`
         : "";
@@ -505,6 +505,30 @@
     }
 
     function bindPaperConversationEditors(container) {
+      container.querySelectorAll(".metadata-download").forEach(link => {
+        link.addEventListener("click", async event => {
+          event.preventDefault();
+          const original = link.textContent;
+          try {
+            const response = await fetch(link.dataset.url);
+            const payload = await response.json();
+            if (!response.ok) throw new Error(payload.detail || "Could not load metadata.");
+            const blob = new Blob([JSON.stringify(payload, null, 2) + "\n"], {type: "application/json"});
+            const url = URL.createObjectURL(blob);
+            const anchor = document.createElement("a");
+            anchor.href = url;
+            anchor.download = `${link.dataset.paper}.json`;
+            document.body.appendChild(anchor);
+            anchor.click();
+            anchor.remove();
+            URL.revokeObjectURL(url);
+            link.textContent = "Downloaded";
+          } catch (error) {
+            link.textContent = "Download failed";
+          }
+          setTimeout(() => { link.textContent = original; }, 1400);
+        });
+      });
       container.querySelectorAll(".metadata-copy").forEach(link => {
         link.addEventListener("click", async event => {
           event.preventDefault();
