@@ -752,9 +752,16 @@ record while preserving its original creation timestamp and recording an updated
 timestamp. Records persist under `data/reproducibility_conversations/` by
 default; override with `RPS_REPRO_CONVERSATIONS_DIR`.
 
-When heuristics exist for the repository, the C1 cell also links to a generated
+When heuristics exist for the repository, the C1 cell also exposes the generated
 research-step metadata JSON payload containing file paths, blob identities,
-artifact kinds, research-process-step labels, and heuristic evidence.
+artifact kinds, research-process-step labels, and heuristic evidence. Use
+**Download JSON** to save it with the same case-ID convention as the paper PDF:
+for example, `C0001.pdf` pairs with `C0001.json`. The prefilled C1 prompt
+explicitly names both attachments.
+
+Dataset heuristic runs pause and retry the same repository when GitHub reports
+a rate limit instead of marking every remaining repository as failed. Set
+`GITHUB_TOKEN` for a substantially larger authenticated GitHub API allowance.
 
 Relevant API endpoints:
 
