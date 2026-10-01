@@ -726,17 +726,38 @@ remaining reruns. The scope is all stored repositories.
 API: `POST /api/publication-collection/jobs` with `{"action":"rerun_all"}`.
 Poll `GET /api/publication-collection/jobs/{id}` for progress and results.
 
-### Conversation links
+### Reproducibility conversations: C0 and C1
 
-Repository tables show two manually attached conversation variants: **No metadata**
-and **Research process step metadata**. Use Attach link or Edit link to save a URL,
-and Remove to delete it. Saved links open in a new tab; empty entries show
-Not attached. No conversation content or metadata is fetched.
+The full publication-dataset table has paper-level **C0** and **C1** columns:
 
-Links persist separately in `data/conversation_links/` (override with
-`RPS_CONVERSATIONS_DIR`) and survive heuristic reruns and server restarts.
-The same repository links appear across the publication, selected-paper, and
-executed-repository views.
+- **C0** — conversation using the repository URL and uploaded paper PDF only.
+- **C1** — conversation using the same repository URL and paper PDF plus the
+  stored file-level research-process-step metadata.
 
-API: `PUT /api/conversations` with `repo_url`, `variant` (`no_metadata` or
-`research_process_step_metadata`), and `url` (an HTTP/HTTPS URL, or `null` to remove).
+The fixed prompt templates are visible and copyable from the frontend. C0 is
+copied from
+`dev_experiment_analysis/experiments/reproducibility_analysis/assessment_pilot/BASELINE_PROMPT_TEMPLATE.txt`.
+C1 preserves the same static-assessment task while explicitly allowing the
+supplied research-process-step metadata as fallible navigation evidence.
+
+Each paper can store any number of C0 and C1 conversation URLs. **Add new**
+creates another timestamped record; **Edit / overwrite** updates one existing
+record while preserving its original creation timestamp and recording an updated
+timestamp. Records persist under `data/reproducibility_conversations/` by
+default; override with `RPS_REPRO_CONVERSATIONS_DIR`.
+
+When heuristics exist for the repository, the C1 cell also links to a generated
+research-step metadata JSON payload containing file paths, blob identities,
+artifact kinds, research-process-step labels, and heuristic evidence.
+
+Relevant API endpoints:
+
+```text
+GET  /api/reproducibility/prompts
+POST /api/publication-collection/papers/{paper_id}/conversations
+PUT  /api/publication-collection/papers/{paper_id}/conversations/{record_id}
+GET  /api/publication-collection/papers/{paper_id}/research-step-metadata
+```
+
+The older repository-level conversation-link API remains available for existing
+stored links and the executed-repositories view.
