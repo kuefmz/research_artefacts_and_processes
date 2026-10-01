@@ -144,7 +144,7 @@
   <main class="page">
     <h1>Research Process Steps Explorer</h1>
     <p class="subtitle">
-      Deterministic heuristics only. Repository results are stored and reused. Choose Rerun heuristics to refresh them with the current rules.
+      Deterministic heuristics only. Repository results are stored and reused.
     </p>
 
     <section class="panel">
@@ -180,7 +180,6 @@
         <input id="repo" type="url" placeholder="https://github.com/owner/repository"
                value="https://github.com/KnowledgeCaptureAndDiscovery/somef" />
         <button id="analyze">Analyze repository</button>
-        <button id="rerun" class="secondary">Rerun heuristics</button>
       </div>
       <div class="examples">
         Example:
@@ -213,8 +212,7 @@
           <h2>Executed repositories</h2>
           <p id="historyCount" class="panel-copy">Loading stored results…</p>
         </div>
-        <div><button id="rerunAll" class="secondary">Rerun all heuristics</button>
-        <button id="refreshHistory" class="secondary small">Refresh</button></div>
+        <div><button id="refreshHistory" class="secondary small">Refresh</button></div>
       </div>
       <div class="table-wrap history-wrap">
         <table>
@@ -335,7 +333,7 @@
           return `<tr>
             <td><a class="repo-link" href="${escapeHtml(paper.github_url)}" target="_blank" rel="noopener">${escapeHtml(name)}</a></td>
             <td>${execution
-              ? `<button class="secondary small selected-result" data-id="${escapeHtml(execution.id)}">View output</button> <button class="secondary small selected-analyze" data-url="${escapeHtml(paper.github_url)}" data-force="true">Rerun heuristics</button>`
+              ? `<button class="secondary small selected-result" data-id="${escapeHtml(execution.id)}">View output</button>`
               : `<button class="secondary small selected-analyze" data-url="${escapeHtml(paper.github_url)}">Run heuristics</button>`}</td>
             <td><span class="meta">${escapeHtml(paper.paper_id)}</span><br><a class="repo-link" href="${escapeHtml(paper.paper_url)}" target="_blank" rel="noopener">${escapeHtml(paper.title)}</a></td>
             <td>${paper.pdf_url ? `<a class="repo-link" href="${escapeHtml(paper.pdf_url)}" target="_blank" rel="noopener">Open PDF</a>` : '<span class="none">No PDF uploaded</span>'}
@@ -353,7 +351,7 @@
             button.disabled = true;
             repoInput.value = button.dataset.url;
             selectionStatus.textContent = `Running heuristics for ${button.dataset.url}…`;
-            const succeeded = await analyze(button.dataset.force === "true");
+            const succeeded = await analyze();
             if (succeeded) {
               await loadSelection();
             } else {
@@ -646,13 +644,11 @@
       }
     }
 
-    async function analyze(force = false) {
-      force = force === true;
+    async function analyze() {
       const repoUrl = repoInput.value.trim();
       if (!repoUrl) return;
 
       analyzeButton.disabled = true;
-      document.getElementById("rerun").disabled = true;
       status.className = "status";
       const startedAt = Date.now();
       status.textContent = "Checking stored results / analyzing repository… 0s";
@@ -665,7 +661,7 @@
         const response = await fetch("/api/analyze", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ repo_url: repoUrl, force })
+          body: JSON.stringify({ repo_url: repoUrl })
         });
         const payload = await response.json();
         if (!response.ok) throw new Error(payload.detail || "Analysis failed.");
@@ -680,7 +676,6 @@
       } finally {
         clearInterval(timer);
         analyzeButton.disabled = false;
-        document.getElementById("rerun").disabled = false;
       }
     }
 
@@ -718,12 +713,11 @@
     }
 
     async function runCollectionJob(action) {
-      const buttons = [document.getElementById("runCollection"), document.getElementById("analyzeCollection"), document.getElementById("rerunAll")];
+      const buttons = [document.getElementById("runCollection"), document.getElementById("analyzeCollection")];
       const jobStatus = document.getElementById("collectionJobStatus");
       buttons.forEach(button => button.disabled = true);
       jobStatus.className = "status";
-      jobStatus.textContent = action === "rerun_all" ? "Starting rerun of all stored repositories…" : `Starting dataset ${action}…`;
-      if (action === "rerun_all") jobStatus.scrollIntoView({block: "center"});
+      jobStatus.textContent = `Starting dataset ${action}…`;
       try {
         const response = await fetch("/api/publication-collection/jobs", {
           method: "POST", headers: {"Content-Type":"application/json"}, body: JSON.stringify({action})
@@ -742,7 +736,7 @@
               const coverage = state.result.dataset_scope;
               jobStatus.textContent = `All five analytics completed for ${coverage.completed_count} of ${coverage.repository_count} dataset repositories. Reports saved in data/publication_collection_analysis.`;
             } else {
-              jobStatus.textContent = `Heuristics finished: ${state.result.completed.length} ${action === "rerun_all" ? "rerun" : "stored/reused"}, ${state.result.errors.length} errors.`;
+              jobStatus.textContent = `Heuristics finished: ${state.result.completed.length} stored/reused, ${state.result.errors.length} errors.`;
               if (state.result.errors.length) jobStatus.textContent += " " + state.result.errors.map(item => `${item.repo_url}: ${item.error}`).join("; ");
             }
             await loadSelection(); await loadHistory();
@@ -760,14 +754,12 @@
         buttons.forEach(button => button.disabled = false);
       }
     }
-    document.getElementById("rerunAll").addEventListener("click", () => runCollectionJob("rerun_all"));
     document.getElementById("runCollection").addEventListener("click", () => runCollectionJob("heuristics"));
     document.getElementById("analyzeCollection").addEventListener("click", () => runCollectionJob("analytics"));
     collectionSearch.addEventListener("input", renderSelection);
     collectionFilter.addEventListener("change", renderSelection);
 
     analyzeButton.addEventListener("click", () => analyze());
-    document.getElementById("rerun").addEventListener("click", () => analyze(true));
     repoInput.addEventListener("keydown", event => {
       if (event.key === "Enter") analyze();
     });
