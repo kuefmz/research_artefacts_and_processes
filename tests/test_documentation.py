@@ -124,7 +124,13 @@ def test_documented_shell_invocation_can_score():
 
 
 def test_api_fetches_only_docs_and_preserves_partial_status(monkeypatch):
+    fetched = []
+
     def request(url, token=None):
+        if "/contents/" in url:
+            fetched.append(url)
+            assert token == "test-token"
+            return {"encoding": "base64", "content": "RG93bmxvYWQgdGhlIGRhdGFzZXQu"}
         if "/commits/" in url:
             return {"sha": "a" * 40}
         if "/git/trees/" in url:
@@ -137,16 +143,9 @@ def test_api_fetches_only_docs_and_preserves_partial_status(monkeypatch):
             }
         return {"default_branch": "main"}
 
-    fetched = []
-
-    def text(url, token=None):
-        fetched.append(url)
-        return "Download the dataset."
-
     monkeypatch.setattr(analyzer, "_request_json", request)
-    monkeypatch.setattr(analyzer, "_request_text", text)
     result = analyzer.analyze_documentation_repository(
-        "https://github.com/example/repo", max_content_bytes=200
+        "https://github.com/example/repo", token="test-token", max_content_bytes=200
     )
     assert len(fetched) == 1 and "README.md" in fetched[0] and "a" * 40 in fetched[0]
     assert (
@@ -196,8 +195,44 @@ def test_unreadable_document_does_not_become_zero(monkeypatch):
     def fail(url, token=None):
         raise OSError("unavailable")
 
-    monkeypatch.setattr(analyzer, "_request_text", fail)
+    original_request = analyzer._request_json
+
+    def request(url, token=None):
+        if "/contents/" in url:
+            return fail(url, token)
+        return original_request(url, token)
+
+    monkeypatch.setattr(analyzer, "_request_json", request)
     result = analyzer.analyze_documentation_repository(
         "https://github.com/example/repo"
     )
     assert set(result["scores"].values()) == {"Unverified"}
+
+
+def test_csv_has_ordered_columns_and_quotes_values():
+    import csv
+    import io
+
+    result = {
+        "repository": {"url": "https://github.com/example/repo,quoted"},
+        "scores": dict(zip(CRITERIA, [1, 0, 1, 0, "Unverified", 1])),
+    }
+    rows = list(csv.reader(io.StringIO(analyzer.csv_table([result]))))
+    assert rows[0] == [
+        "Repository",
+        "Collection",
+        "Processing",
+        "Method",
+        "Experimentation",
+        "Evaluation",
+        "Dissemination",
+    ]
+    assert rows[1] == [
+        result["repository"]["url"],
+        "1",
+        "0",
+        "1",
+        "0",
+        "Unverified",
+        "1",
+    ]

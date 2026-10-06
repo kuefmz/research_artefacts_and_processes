@@ -10,10 +10,14 @@ replace the existing artifact classifier or reuse its write-once result cache.
 python -m pip install -e .
 research-documentation-steps https://github.com/liusi2019/ocd
 research-documentation-steps --repos-file annotations/documentation_repositories.txt -o scores.md
+research-documentation-steps --repos-file annotations/documentation_repositories.txt --format csv -o scores.csv
 research-documentation-steps --repos-file annotations/documentation_repositories.txt --format json -o documentation_results.json
 ```
 
 Markdown output has exactly seven columns: GitHub URL and the six criteria above.
+CSV uses the same column order with plain repository URLs.
+All repository metadata, trees and documentation content are fetched through the
+GitHub REST API; documentation uses the Contents API at a pinned commit.
 JSON retains rules, matched passages, reviewed files and commit-pinned line links.
 Use `GITHUB_TOKEN` for authenticated requests. `--ref` selects a revision;
 `--max-content-bytes` changes the per-file size limit (default 250000 bytes).

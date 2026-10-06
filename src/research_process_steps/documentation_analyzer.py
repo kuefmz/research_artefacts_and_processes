@@ -2,6 +2,9 @@
 
 from __future__ import annotations
 import argparse
+import base64
+import csv
+import io
 import json
 import os
 from pathlib import Path
@@ -10,7 +13,6 @@ from concurrent.futures import ThreadPoolExecutor
 from .analyzer import (
     _parse_github_url,
     _request_json,
-    _request_text,
     DEFAULT_CONTENT_LIMIT,
 )
 from .documentation import CRITERIA, VERSION, analyze_document, is_documentation
@@ -46,10 +48,10 @@ def analyze_documentation_repository(
         if item.get("size", 0) > max_content_bytes:
             return {**record, "status": "skipped_size_limit", "evidence": []}
         try:
-            text = _request_text(
-                f"https://raw.githubusercontent.com/{owner}/{repo}/{commit}/{encoded}",
-                token,
-            )
+            payload = _request_json(f"{api}/contents/{encoded}?ref={commit}", token)
+            if payload.get("encoding") != "base64":
+                raise ValueError("GitHub API did not return base64 file content")
+            text = base64.b64decode(payload["content"]).decode("utf-8")
             result = analyze_document(path, text)
             for e in result["evidence"]:
                 e["url"] = f"{file_url}#L{e['line']}"
@@ -99,6 +101,17 @@ def markdown_table(results):
     return "\n".join(rows)
 
 
+def csv_table(results):
+    output = io.StringIO(newline="")
+    writer = csv.writer(output)
+    writer.writerow(["Repository", *(c.title() for c in CRITERIA)])
+    for result in results:
+        writer.writerow(
+            [result["repository"]["url"], *(result["scores"][c] for c in CRITERIA)]
+        )
+    return output.getvalue()
+
+
 def main():
     parser = argparse.ArgumentParser(
         description="Score research lifecycle documentation only; never fetch implementation files."
@@ -107,7 +120,9 @@ def main():
     parser.add_argument(
         "--repos-file", type=Path, help="UTF-8 file with one repository URL per line"
     )
-    parser.add_argument("--format", choices=["markdown", "json"], default="markdown")
+    parser.add_argument(
+        "--format", choices=["markdown", "csv", "json"], default="markdown"
+    )
     parser.add_argument("--ref")
     parser.add_argument("--max-content-bytes", type=int, default=DEFAULT_CONTENT_LIMIT)
     parser.add_argument("--token", default=os.getenv("GITHUB_TOKEN"))
@@ -147,10 +162,12 @@ def main():
     rendered = (
         markdown_table(results)
         if args.format == "markdown"
+        else csv_table(results)
+        if args.format == "csv"
         else json.dumps(results, indent=2, ensure_ascii=False)
     )
     if args.output:
-        args.output.write_text(rendered + "\n", encoding="utf-8")
+        args.output.write_text(rendered.rstrip("\r\n") + "\n", encoding="utf-8")
     else:
         print(rendered)
 
