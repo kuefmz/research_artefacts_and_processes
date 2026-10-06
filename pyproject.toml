@@ -13,6 +13,7 @@ dependencies = [
 ]
 
 [project.scripts]
+research-documentation-steps = "research_process_steps.documentation_analyzer:main"
 research-process-steps = "research_process_steps.analyzer:main"
 research-process-steps-web = "research_process_steps.api:run"
 research-process-steps-precache = "research_process_steps.api:precache_demo"

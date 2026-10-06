@@ -1,5 +1,11 @@
 # Research Process Steps Experiments
 
+For the separate **documentation-only** six-criterion assessment (including
+**Method**, rather than Implementation), see
+[documentation heuristics](docs/documentation_heuristics.md). Run
+`research-documentation-steps --repos-file annotations/documentation_repositories.txt`
+to produce the seven-column score table.
+
 Deterministic, explainable heuristics for identifying which **research process step(s)** individual files in a GitHub repository support.
 
 The implementation uses **no AI**: no LLMs, embeddings, machine-learning models, or probabilistic classifiers. Labels are produced only from explicit, auditable path/filename rules and regular-expression content rules.
