@@ -289,6 +289,8 @@ The single-repository `POST /api/analyze` endpoint uses the same permanent resul
 
 ## Three-mode lifecycle assessment
 
+The complete auditable methodology, including the non-AI guarantee and the exact documentation, code, and combined rules, is in [the three-mode lifecycle heuristic methodology](docs/lifecycle_three_mode_heuristics.md).
+
 The `research-lifecycle-assess` command performs a deterministic, static review using exactly six criteria in this order: Collection, Processing, Method, Experimentation, Evaluation, and Dissemination. It supports documentation-only, code-only, and combined modes. Combined scores are the logical OR of the separately computed documentation and code scores.
 
 The analyzer uses the GitHub REST API. It resolves each repository to one commit SHA, obtains a complete tree (falling back to recursive tree walking when GitHub truncates the recursive response), downloads each eligible file once, and reuses that snapshot for all requested modes. Set `GITHUB_TOKEN` for authenticated API access. Downloaded repository code is never executed.
