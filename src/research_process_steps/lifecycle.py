@@ -1,6 +1,6 @@
 """Deterministic, commit-pinned three-mode research lifecycle assessment."""
 from __future__ import annotations
-import argparse, ast, base64, csv, hashlib, io, json, os, re, time
+import argparse, ast, base64, csv, hashlib, io, json, os, re, time, tokenize
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path, PurePosixPath
 from urllib.error import HTTPError, URLError
