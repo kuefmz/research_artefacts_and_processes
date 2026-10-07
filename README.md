@@ -285,3 +285,41 @@ Example random request:
 ```
 
 The single-repository `POST /api/analyze` endpoint uses the same permanent result store, so a repository analyzed manually cannot later be selected by a random batch and vice versa.
+
+
+## Three-mode lifecycle assessment
+
+The `research-lifecycle-assess` command performs a deterministic, static review using exactly six criteria in this order: Collection, Processing, Method, Experimentation, Evaluation, and Dissemination. It supports documentation-only, code-only, and combined modes. Combined scores are the logical OR of the separately computed documentation and code scores.
+
+The analyzer uses the GitHub REST API. It resolves each repository to one commit SHA, obtains a complete tree (falling back to recursive tree walking when GitHub truncates the recursive response), downloads each eligible file once, and reuses that snapshot for all requested modes. Set `GITHUB_TOKEN` for authenticated API access. Downloaded repository code is never executed.
+
+Supported documentation includes README/manual/guide formats handled by the documentation analyzer plus notebook Markdown cells. Supported executable code extensions are Python, R, Julia, MATLAB, Java, JavaScript/TypeScript, Go, Rust, C/C++, shell, and notebook code cells. Python receives syntax-aware statement/docstring handling; other languages use conservative line-oriented comment exclusion. Vendored/generated directories and irrelevant binaries are excluded. Unsupported relevant formats, unreadable files, size-limit skips, API failures, and analysis failures make review coverage incomplete and prevent score-CSV export; details are written to `review_status.json`.
+
+A score of 1 means a stable heuristic rule found supporting evidence, not that support is complete or high quality. A 0 is emitted only into final CSVs after supported-scope review completes. Heuristics are approximations of human review and are not validation against human assessments.
+
+Install and authenticate:
+
+```bash
+python -m pip install -e .
+export GITHUB_TOKEN="YOUR_GITHUB_TOKEN"
+```
+
+Run the bundled ordered 100-repository corpus and create all three CSVs:
+
+```bash
+research-lifecycle-assess --bundled --out-dir lifecycle_output
+```
+
+Outputs are `lifecycle_output/documentation_scores.csv`, `lifecycle_output/code_scores.csv`, `lifecycle_output/combined_scores.csv`, and `lifecycle_output/review_status.json`. Add `--evidence` for `lifecycle_output/evidence.json`. Evidence records include repository commit SHA, stable rule ID, source kind, path, exact physical line(s), matched operation/passage, commit-pinned GitHub link, and coverage status at repository level.
+
+Individual modes and a custom ordered URL file are supported:
+
+```bash
+research-lifecycle-assess --bundled --mode documentation --out-dir lifecycle_output
+research-lifecycle-assess --bundled --mode code --out-dir lifecycle_output
+research-lifecycle-assess --bundled --mode combined --out-dir lifecycle_output
+research-lifecycle-assess --repos-file repositories.txt --mode all --evidence --out-dir lifecycle_output
+research-lifecycle-assess --repos-file repositories.txt --mode all --markdown --out-dir lifecycle_output
+```
+
+The cache key includes repository URL, resolved commit SHA, heuristic version, and content-size setting. `progress.json` is saved after every successfully analyzed repository so completed work survives later failures; reruns reuse cached completed repository assessments.
