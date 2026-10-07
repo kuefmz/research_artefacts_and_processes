@@ -12,7 +12,8 @@ from .analyzer import _parse_github_url, DEFAULT_CONTENT_LIMIT
 HEURISTIC_VERSION = "2.0.0"
 CSV_COLUMNS = ["GitHub URL", "Collection", "Processing", "Method", "Experimentation", "Evaluation", "Dissemination"]
 CODE_EXTENSIONS = {".py",".r",".jl",".m",".java",".js",".ts",".go",".rs",".c",".cc",".cpp",".h",".hpp",".sh",".bash",".ipynb"}
-EXCLUDED_PARTS = {".git","node_modules","vendor","vendors","third_party","third-party","dist","build","target","__pycache__",".ipynb_checkpoints"}\nUNSUPPORTED_CODE_EXTENSIONS = {".rb",".php",".pl",".pm",".lua",".scala",".sc",".kt",".kts",".swift",".f",".f90",".f95",".fs",".fsx",".groovy",".sas",".do"}
+EXCLUDED_PARTS = {".git","node_modules","vendor","vendors","third_party","third-party","dist","build","target","__pycache__",".ipynb_checkpoints"}
+UNSUPPORTED_CODE_EXTENSIONS = {".rb",".php",".pl",".pm",".lua",".scala",".sc",".kt",".kts",".swift",".f",".f90",".f95",".fs",".fsx",".groovy",".sas",".do"}
 RULES = {
 "collection":[("CODE_COLLECTION_1",r"\b(?:requests?\.(?:get|post)|urlopen|wget|curl|download(?:_file)?|fetch)\s*\("),("CODE_COLLECTION_2",r"\b(?:read_csv|read_table|read_json|read_parquet|loadtxt|genfromtxt|open_dataset|load_dataset)\s*\("),("CODE_COLLECTION_3",r"\b(?:random|randn|simulate|synthetic|generate_samples?)\s*\([^\n]*")],
 "processing":[("CODE_PROCESSING_1",r"\b(?:normalize|standardize|preprocess|tokenize|clean|filter|transform|convert|resample|impute|extract_features?)\s*\("),("CODE_PROCESSING_2",r"\.(?:dropna|fillna|replace|astype|reshape|transpose|groupby|merge|join|pivot|scale|fit_transform)\s*\(")],
