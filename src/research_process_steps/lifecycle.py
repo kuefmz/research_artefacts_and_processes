@@ -52,17 +52,28 @@ def _request_json(url, token=None, retries=2):
             time.sleep(delay)
 
 def _complete_tree(api, commit, token):
-    root=_request_json(f"{api}/git/trees/{commit}?recursive=1",token)
-    if not root.get("truncated"): return root.get("tree",[])
-    out=[]
-    def walk(sha,prefix=""):
+    # Walk non-recursive Git trees instead of GitHub's ?recursive=1 endpoint.
+    # Very large repositories can make the recursive endpoint take minutes before
+    # returning (or return a truncated response), leaving no useful progress.
+    root_commit=_request_json(f"{api}/git/commits/{commit}",token)
+    pending=[(root_commit["tree"]["sha"],"")]
+    out=[]; visited=0
+    started=time.monotonic()
+    while pending:
+        sha,prefix=pending.pop()
         tree=_request_json(f"{api}/git/trees/{sha}",token)
+        visited+=1
         for item in tree.get("tree",[]):
             path=f"{prefix}/{item['path']}" if prefix else item["path"]
-            if item.get("type")=="tree": walk(item["sha"],path)
-            else: out.append({**item,"path":path})
-    root_commit=_request_json(f"{api}/git/commits/{commit}",token)
-    walk(root_commit["tree"]["sha"])
+            if item.get("type")=="tree":
+                # Excluded directories cannot contain eligible lifecycle inputs.
+                parts=PurePosixPath(path.lower()).parts
+                if not any(x in EXCLUDED_PARTS for x in parts):
+                    pending.append((item["sha"],path))
+            else:
+                out.append({**item,"path":path})
+        if visited==1 or visited%25==0 or not pending:
+            print(f"    tree walk: {visited:,} directories, {len(out):,} files found, {len(pending):,} directories queued — elapsed {time.monotonic()-started:.1f}s",flush=True)
     return out
 
 def _eligible_code(path):
