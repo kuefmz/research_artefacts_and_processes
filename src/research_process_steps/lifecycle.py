@@ -126,10 +126,13 @@ def analyze_code(path,text):
 def _fetch_snapshot(repository_url,token,max_content_bytes):
     owner,repo=_parse_github_url(repository_url); url=f"https://github.com/{owner}/{repo}"; api=f"https://api.github.com/repos/{quote(owner)}/{quote(repo)}"
     meta=_request_json(api,token); ref=meta["default_branch"]; commit=_request_json(f"{api}/commits/{quote(ref,safe='')}",token)["sha"]
-    tree=_complete_tree(api,commit,token); candidates=[]
+    tree=_complete_tree(api,commit,token); candidates=[]; unsupported=[]
     for item in tree:
         if item.get("type")!="blob": continue
         path=item["path"]
+        p=PurePosixPath(path.lower())
+        excluded=any(x in EXCLUDED_PARTS for x in p.parts)
+        if not excluded and p.suffix in UNSUPPORTED_CODE_EXTENSIONS: unsupported.append({"path":path,"status":"unsupported_format","size":int(item.get("size") or 0)})
         if is_documentation(path) or _eligible_code(path): candidates.append(item)
     def fetch(item):
         path=item["path"]; status={"path":path,"size":int(item.get("size") or 0),"documentation":is_documentation(path),"code":_eligible_code(path)}
@@ -154,6 +157,7 @@ def assess_snapshot(snapshot):
         if f["code"]:
             try: code_ev.extend(analyze_code(f["path"],f["text"]))
             except Exception as e: statuses.append({"path":f["path"],"status":"analysis_failed","source":"code","error":str(e)})
+    statuses.extend(snapshot.get("unsupported",[]))
     incomplete=any(s["status"]!="reviewed" for s in statuses)
     def scores(ev): return {c:int(any(x["criterion"]==c for x in ev)) for c in CRITERIA}
     ds,cs=scores(doc_ev),scores(code_ev); comb={c:int(ds[c] or cs[c]) for c in CRITERIA}
