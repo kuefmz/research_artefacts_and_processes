@@ -27,5 +27,5 @@ where = ["src"]
 research_process_steps = ["web/*.html", "demo_cache/*.json", "repositories_100.txt"]
 
 [tool.pytest.ini_options]
-pythonpath = ["src"]
+pythonpath = [".", "src"]
 testpaths = ["tests"]
