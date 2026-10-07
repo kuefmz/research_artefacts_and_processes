@@ -43,10 +43,13 @@ def _request_json(url, token=None, retries=2):
                 raise RuntimeError(f"GitHub request failed ({e.code}): {detail}") from e
             reset=e.headers.get("X-RateLimit-Reset")
             delay=max(1,min(60,int(reset)-int(time.time()))) if reset and reset.isdigit() else min(2**attempt,30)
+            print(f"    GitHub retry {attempt+1}/{retries}: HTTP {e.code}; waiting {delay}s",flush=True)
             time.sleep(delay)
         except (URLError,TimeoutError) as e:
             if attempt==retries: raise RuntimeError(f"GitHub request failed: {e}") from e
-            time.sleep(min(2**attempt,30))
+            delay=min(2**attempt,30)
+            print(f"    GitHub retry {attempt+1}/{retries}: {type(e).__name__}: {e}; waiting {delay}s",flush=True)
+            time.sleep(delay)
 
 def _complete_tree(api, commit, token):
     root=_request_json(f"{api}/git/trees/{commit}?recursive=1",token)
@@ -126,8 +129,14 @@ def analyze_code(path,text):
 
 def _fetch_snapshot(repository_url,token,max_content_bytes,blob_cache_dir=None):
     owner,repo=_parse_github_url(repository_url); url=f"https://github.com/{owner}/{repo}"; api=f"https://api.github.com/repos/{quote(owner)}/{quote(repo)}"
-    meta=_request_json(api,token); ref=meta["default_branch"]; commit=_request_json(f"{api}/commits/{quote(ref,safe='')}",token)["sha"]
     started=time.monotonic()
+    print("    resolving repository metadata...",flush=True)
+    meta=_request_json(api,token)
+    ref=meta["default_branch"]
+    print(f"    resolving commit for {ref}...",flush=True)
+    commit=_request_json(f"{api}/commits/{quote(ref,safe='')}",token)["sha"]
+    print(f"    pinned commit: {commit}",flush=True)
+    print("    loading complete Git tree...",flush=True)
     tree=_complete_tree(api,commit,token); candidates=[]; unsupported=[]
     print(f"    tree loaded: {len(tree):,} entries — elapsed {time.monotonic()-started:.1f}s",flush=True)
     for item in tree:
