@@ -139,8 +139,10 @@ def _fetch_snapshot(repository_url,token,max_content_bytes):
         path=item["path"]; status={"path":path,"size":int(item.get("size") or 0),"documentation":is_documentation(path),"code":_eligible_code(path)}
         if status["size"]>max_content_bytes: return status|{"status":"skipped_size_limit","text":None}
         try:
-            enc=quote(path,safe="/"); p=_request_json(f"{api}/contents/{enc}?ref={commit}",token)
-            if p.get("encoding")!="base64": raise ValueError("non-base64 content")
+            sha=item.get("sha")
+            if not sha: raise ValueError("tree entry has no blob SHA")
+            p=_request_json(f"{api}/git/blobs/{sha}",token)
+            if p.get("encoding")!="base64": raise ValueError("non-base64 blob content")
             return status|{"status":"reviewed","text":base64.b64decode(p["content"]).decode("utf-8")}
         except Exception as e: return status|{"status":"failed","error":str(e),"text":None}
     with ThreadPoolExecutor(max_workers=8) as pool: files=list(pool.map(fetch,candidates))
