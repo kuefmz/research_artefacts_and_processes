@@ -35,27 +35,37 @@ def _headers(token=None):
     return h
 
 def _request_json(url, token=None, retries=2):
-    for attempt in range(retries+1):
+    attempt=0
+    while True:
         try:
             with urlopen(Request(url,headers=_headers(token)),timeout=15) as r:
                 return json.loads(r.read().decode("utf-8"))
         except HTTPError as e:
             if e.code==403 and e.headers.get("X-RateLimit-Remaining")=="0":
                 reset=e.headers.get("X-RateLimit-Reset")
-                when=time.strftime("%Y-%m-%d %H:%M:%S",time.localtime(int(reset))) if reset and reset.isdigit() else "unknown"
-                raise GitHubRateLimitError(f"GitHub API rate limit exhausted; reset at {when}") from e
+                if not reset or not reset.isdigit():
+                    detail=e.read().decode("utf-8",errors="replace")
+                    raise RuntimeError(f"GitHub rate limit exhausted but reset time is unavailable: {detail}") from e
+                reset_epoch=int(reset)
+                delay=max(1,reset_epoch-int(time.time())+5)
+                when=time.strftime("%Y-%m-%d %H:%M:%S",time.localtime(reset_epoch))
+                print(f"    GitHub API rate limit exhausted; waiting {delay}s until reset at {when} (+5s safety margin)",flush=True)
+                time.sleep(delay)
+                attempt=0
+                continue
             retry=e.code in {429,500,502,503,504}
-            if not retry or attempt==retries:
+            if not retry or attempt>=retries:
                 detail=e.read().decode("utf-8",errors="replace")
                 raise RuntimeError(f"GitHub request failed ({e.code}): {detail}") from e
-            reset=e.headers.get("X-RateLimit-Reset")
-            delay=max(1,min(60,int(reset)-int(time.time()))) if reset and reset.isdigit() else min(2**attempt,30)
-            print(f"    GitHub retry {attempt+1}/{retries}: HTTP {e.code}; waiting {delay}s",flush=True)
+            attempt+=1
+            delay=min(2**(attempt-1),30)
+            print(f"    GitHub retry {attempt}/{retries}: HTTP {e.code}; waiting {delay}s",flush=True)
             time.sleep(delay)
         except (URLError,TimeoutError) as e:
-            if attempt==retries: raise RuntimeError(f"GitHub request failed: {e}") from e
-            delay=min(2**attempt,30)
-            print(f"    GitHub retry {attempt+1}/{retries}: {type(e).__name__}: {e}; waiting {delay}s",flush=True)
+            if attempt>=retries: raise RuntimeError(f"GitHub request failed: {e}") from e
+            attempt+=1
+            delay=min(2**(attempt-1),30)
+            print(f"    GitHub retry {attempt}/{retries}: {type(e).__name__}: {e}; waiting {delay}s",flush=True)
             time.sleep(delay)
 
 def _complete_tree(api, commit, token, state_file=None):
@@ -302,11 +312,6 @@ def run(urls,out_dir,token=None,max_content_bytes=DEFAULT_CONTENT_LIMIT,mode="al
             results.append(r); completed.add(url)
             progress.write_text(json.dumps(results,indent=2)+"\n")
             print(f"[{index}/{total}] complete: {url}",flush=True)
-        except GitHubRateLimitError as e:
-            failures.append({"url":url,"reason":str(e)})
-            print(f"[{index}/{total}] paused: {url}: {e}",file=sys.stderr,flush=True)
-            progress.write_text(json.dumps(results,indent=2)+"\\n")
-            break
         except Exception as e:
             failures.append({"url":url,"reason":str(e)})
             print(f"[{index}/{total}] failed: {url}: {e}",file=sys.stderr,flush=True)
