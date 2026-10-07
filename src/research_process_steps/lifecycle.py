@@ -1,7 +1,7 @@
 """Deterministic, commit-pinned three-mode research lifecycle assessment."""
 from __future__ import annotations
 import argparse, ast, base64, csv, hashlib, io, json, os, re, time, tokenize
-from concurrent.futures import ThreadPoolExecutor
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path, PurePosixPath
 from urllib.error import HTTPError, URLError
 from urllib.parse import quote
@@ -127,7 +127,9 @@ def analyze_code(path,text):
 def _fetch_snapshot(repository_url,token,max_content_bytes):
     owner,repo=_parse_github_url(repository_url); url=f"https://github.com/{owner}/{repo}"; api=f"https://api.github.com/repos/{quote(owner)}/{quote(repo)}"
     meta=_request_json(api,token); ref=meta["default_branch"]; commit=_request_json(f"{api}/commits/{quote(ref,safe='')}",token)["sha"]
+    started=time.monotonic()
     tree=_complete_tree(api,commit,token); candidates=[]; unsupported=[]
+    print(f"    tree loaded: {len(tree):,} entries — elapsed {time.monotonic()-started:.1f}s",flush=True)
     for item in tree:
         if item.get("type")!="blob": continue
         path=item["path"]
@@ -145,12 +147,26 @@ def _fetch_snapshot(repository_url,token,max_content_bytes):
             if p.get("encoding")!="base64": raise ValueError("non-base64 blob content")
             return status|{"status":"reviewed","text":base64.b64decode(p["content"]).decode("utf-8")}
         except Exception as e: return status|{"status":"failed","error":str(e),"text":None}
-    with ThreadPoolExecutor(max_workers=8) as pool: files=list(pool.map(fetch,candidates))
+    total=len(candidates)
+    print(f"    eligible files: {total:,}",flush=True)
+    files=[None]*total
+    if total:
+        step=max(1,min(100,max(10,total//20)))
+        with ThreadPoolExecutor(max_workers=8) as pool:
+            futures={pool.submit(fetch,item):i for i,item in enumerate(candidates)}
+            for done,future in enumerate(as_completed(futures),1):
+                files[futures[future]]=future.result()
+                if done==1 or done==total or done%step==0:
+                    pct=100.0*done/total
+                    print(f"    fetching: {done:,}/{total:,} ({pct:.1f}%) — elapsed {time.monotonic()-started:.1f}s",flush=True)
     return {"url":url,"owner":owner,"repo":repo,"ref":ref,"commit":commit,"tree_count":len(tree),"files":files,"unsupported":unsupported}
 
 def assess_snapshot(snapshot):
     doc_ev=[]; code_ev=[]; statuses=[]
-    for f in snapshot["files"]:
+    total=len(snapshot["files"]); started=time.monotonic()
+    if total: print(f"    analyzing: 0/{total:,} (0.0%)",flush=True)
+    step=max(1,min(100,max(10,total//20))) if total else 1
+    for index,f in enumerate(snapshot["files"],1):
         statuses.append({k:v for k,v in f.items() if k!="text"})
         if f["status"]!="reviewed": continue
         if f["documentation"]:
@@ -160,6 +176,8 @@ def assess_snapshot(snapshot):
         if f["code"]:
             try: code_ev.extend(analyze_code(f["path"],f["text"]))
             except Exception as e: statuses.append({"path":f["path"],"status":"analysis_failed","source":"code","error":str(e)})
+        if index==total or index%step==0:
+            print(f"    analyzing: {index:,}/{total:,} ({100.0*index/total:.1f}%) — elapsed {time.monotonic()-started:.1f}s",flush=True)
     statuses.extend(snapshot.get("unsupported",[]))
     incomplete=any(s["status"]!="reviewed" for s in statuses)
     def scores(ev): return {c:int(any(x["criterion"]==c for x in ev)) for c in CRITERIA}
