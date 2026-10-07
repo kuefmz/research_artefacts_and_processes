@@ -124,7 +124,7 @@ def analyze_code(path,text):
                     break
     return evidence
 
-def _fetch_snapshot(repository_url,token,max_content_bytes):
+def _fetch_snapshot(repository_url,token,max_content_bytes,blob_cache_dir=None):
     owner,repo=_parse_github_url(repository_url); url=f"https://github.com/{owner}/{repo}"; api=f"https://api.github.com/repos/{quote(owner)}/{quote(repo)}"
     meta=_request_json(api,token); ref=meta["default_branch"]; commit=_request_json(f"{api}/commits/{quote(ref,safe='')}",token)["sha"]
     started=time.monotonic()
@@ -137,15 +137,25 @@ def _fetch_snapshot(repository_url,token,max_content_bytes):
         excluded=any(x in EXCLUDED_PARTS for x in p.parts)
         if not excluded and p.suffix in UNSUPPORTED_CODE_EXTENSIONS: unsupported.append({"path":path,"status":"unsupported_format","size":int(item.get("size") or 0)})
         if is_documentation(path) or _eligible_code(path): candidates.append(item)
+    blob_cache=Path(blob_cache_dir) if blob_cache_dir else None
+    if blob_cache: blob_cache.mkdir(parents=True,exist_ok=True)
     def fetch(item):
         path=item["path"]; status={"path":path,"size":int(item.get("size") or 0),"documentation":is_documentation(path),"code":_eligible_code(path)}
         if status["size"]>max_content_bytes: return status|{"status":"skipped_size_limit","text":None}
         try:
             sha=item.get("sha")
             if not sha: raise ValueError("tree entry has no blob SHA")
-            p=_request_json(f"{api}/git/blobs/{sha}",token)
-            if p.get("encoding")!="base64": raise ValueError("non-base64 blob content")
-            return status|{"status":"reviewed","text":base64.b64decode(p["content"]).decode("utf-8")}
+            cached=blob_cache/f"{sha}.txt" if blob_cache else None
+            if cached and cached.exists():
+                text=cached.read_text(encoding="utf-8")
+            else:
+                p=_request_json(f"{api}/git/blobs/{sha}",token)
+                if p.get("encoding")!="base64": raise ValueError("non-base64 blob content")
+                text=base64.b64decode(p["content"]).decode("utf-8")
+                if cached:
+                    tmp=cached.with_suffix(".tmp")
+                    tmp.write_text(text,encoding="utf-8"); tmp.replace(cached)
+            return status|{"status":"reviewed","text":text}
         except Exception as e: return status|{"status":"failed","error":str(e),"text":None}
     total=len(candidates)
     print(f"    eligible files: {total:,}",flush=True)
@@ -190,12 +200,33 @@ def _cache_key(url,commit,max_bytes):
     return hashlib.sha256(f"{url}\0{commit}\0{HEURISTIC_VERSION}\0{max_bytes}".encode()).hexdigest()
 
 def analyze_repository(url,token=None,max_content_bytes=DEFAULT_CONTENT_LIMIT,cache_dir=None):
-    snapshot=_fetch_snapshot(url,token,max_content_bytes)
-    if cache_dir:
-        p=Path(cache_dir); p.mkdir(parents=True,exist_ok=True); f=p/f"{_cache_key(snapshot['url'],snapshot['commit'],max_content_bytes)}.json"
-        if f.exists(): return json.loads(f.read_text())
+    p=Path(cache_dir) if cache_dir else None
+    if p: p.mkdir(parents=True,exist_ok=True)
+    owner,repo=_parse_github_url(url); canonical=f"https://github.com/{owner}/{repo}"
+    # A completed result is immutable because it records the exact commit SHA and
+    # heuristic version. Reuse it before making any GitHub requests.
+    if p:
+        completed=p/"completed"
+        completed.mkdir(parents=True,exist_ok=True)
+        url_key=hashlib.sha256(f"{canonical}\0{HEURISTIC_VERSION}\0{max_content_bytes}".encode()).hexdigest()
+        pointer=completed/f"{url_key}.json"
+        if pointer.exists():
+            result=json.loads(pointer.read_text())
+            if result.get("coverage",{}).get("complete"):
+                print(f"    cached complete result: {result['repository']['commit']}",flush=True)
+                return result
+    snapshot=_fetch_snapshot(url,token,max_content_bytes,p/"blobs" if p else None)
+    f=p/f"{_cache_key(snapshot['url'],snapshot['commit'],max_content_bytes)}.json" if p else None
+    if f and f.exists():
+        result=json.loads(f.read_text())
+        if result.get("coverage",{}).get("complete"):
+            pointer.write_text(json.dumps(result,indent=2,ensure_ascii=False)+"\n")
+            return result
     result=assess_snapshot(snapshot)
-    if cache_dir: f.write_text(json.dumps(result,indent=2,ensure_ascii=False)+"\n")
+    if f:
+        f.write_text(json.dumps(result,indent=2,ensure_ascii=False)+"\n")
+        if result["coverage"]["complete"]:
+            pointer.write_text(json.dumps(result,indent=2,ensure_ascii=False)+"\n")
     return result
 
 def _write_csv(path,results,mode):
