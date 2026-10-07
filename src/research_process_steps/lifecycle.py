@@ -31,10 +31,10 @@ def _headers(token=None):
     if token: h["Authorization"]=f"Bearer {token}"
     return h
 
-def _request_json(url, token=None, retries=4):
+def _request_json(url, token=None, retries=2):
     for attempt in range(retries+1):
         try:
-            with urlopen(Request(url,headers=_headers(token)),timeout=45) as r:
+            with urlopen(Request(url,headers=_headers(token)),timeout=15) as r:
                 return json.loads(r.read().decode("utf-8"))
         except HTTPError as e:
             retry=e.code in {429,500,502,503,504} or e.code==403 and e.headers.get("X-RateLimit-Remaining")=="0"
@@ -190,14 +190,34 @@ def markdown_table(results,mode):
     return "\n".join(rows)
 
 def run(urls,out_dir,token=None,max_content_bytes=DEFAULT_CONTENT_LIMIT,mode="all",evidence=False,cache_dir=None):
-    out=Path(out_dir); out.mkdir(parents=True,exist_ok=True); results=[]; failures=[]
+    out=Path(out_dir); out.mkdir(parents=True,exist_ok=True); failures=[]
     progress=out/"progress.json"
-    for url in urls:
+    results=[]
+    if progress.exists():
+        try:
+            saved=json.loads(progress.read_text())
+            if isinstance(saved,list): results=[r for r in saved if r.get("repository",{}).get("url") in urls]
+        except (json.JSONDecodeError,OSError):
+            results=[]
+    completed={r["repository"]["url"] for r in results}
+    total=len(urls)
+    for index,url in enumerate(urls,1):
+        if url in completed:
+            print(f"[{index}/{total}] already complete: {url}",flush=True)
+            continue
+        print(f"[{index}/{total}] assessing: {url}",flush=True)
         try:
             r=analyze_repository(url,token,max_content_bytes,cache_dir or out/".cache")
             if not r["coverage"]["complete"]: failures.append({"url":url,"reason":"incomplete review","coverage":r["coverage"]})
-            results.append(r); progress.write_text(json.dumps(results,indent=2)+"\n")
-        except Exception as e: failures.append({"url":url,"reason":str(e)})
+            results.append(r); completed.add(url)
+            progress.write_text(json.dumps(results,indent=2)+"\n")
+            print(f"[{index}/{total}] complete: {url}",flush=True)
+        except Exception as e:
+            failures.append({"url":url,"reason":str(e)})
+            print(f"[{index}/{total}] failed: {url}: {e}",file=sys.stderr,flush=True)
+    order={url:i for i,url in enumerate(urls)}
+    results.sort(key=lambda r: order[r["repository"]["url"]])
+    progress.write_text(json.dumps(results,indent=2)+"\n")
     (out/"review_status.json").write_text(json.dumps({"failures":failures,"repositories":[r["coverage"]|{"url":r["repository"]["url"],"commit":r["repository"]["commit"]} for r in results]},indent=2)+"\n")
     if failures or len(results)!=len(urls): raise RuntimeError(f"Review incomplete for {len(failures)} repositories; score CSV export stopped. See review_status.json")
     modes=["documentation","code","combined"] if mode=="all" else [mode]
