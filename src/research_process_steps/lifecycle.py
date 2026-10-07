@@ -12,7 +12,7 @@ from .analyzer import _parse_github_url, DEFAULT_CONTENT_LIMIT
 HEURISTIC_VERSION = "2.0.0"
 CSV_COLUMNS = ["GitHub URL", "Collection", "Processing", "Method", "Experimentation", "Evaluation", "Dissemination"]
 CODE_EXTENSIONS = {".py",".r",".jl",".m",".java",".js",".ts",".go",".rs",".c",".cc",".cpp",".h",".hpp",".sh",".bash",".ipynb"}
-EXCLUDED_PARTS = {".git","node_modules","vendor","vendors","third_party","third-party","dist","build","target","__pycache__",".ipynb_checkpoints"}
+EXCLUDED_PARTS = {".git","node_modules","vendor","vendors","third_party","third-party","dist","build","target","__pycache__",".ipynb_checkpoints"}\nUNSUPPORTED_CODE_EXTENSIONS = {".rb",".php",".pl",".pm",".lua",".scala",".sc",".kt",".kts",".swift",".f",".f90",".f95",".fs",".fsx",".groovy",".sas",".do"}
 RULES = {
 "collection":[("CODE_COLLECTION_1",r"\b(?:requests?\.(?:get|post)|urlopen|wget|curl|download(?:_file)?|fetch)\s*\("),("CODE_COLLECTION_2",r"\b(?:read_csv|read_table|read_json|read_parquet|loadtxt|genfromtxt|open_dataset|load_dataset)\s*\("),("CODE_COLLECTION_3",r"\b(?:random|randn|simulate|synthetic|generate_samples?)\s*\([^\n]*")],
 "processing":[("CODE_PROCESSING_1",r"\b(?:normalize|standardize|preprocess|tokenize|clean|filter|transform|convert|resample|impute|extract_features?)\s*\("),("CODE_PROCESSING_2",r"\.(?:dropna|fillna|replace|astype|reshape|transpose|groupby|merge|join|pivot|scale|fit_transform)\s*\(")],
@@ -140,7 +140,7 @@ def _fetch_snapshot(repository_url,token,max_content_bytes):
             return status|{"status":"reviewed","text":base64.b64decode(p["content"]).decode("utf-8")}
         except Exception as e: return status|{"status":"failed","error":str(e),"text":None}
     with ThreadPoolExecutor(max_workers=8) as pool: files=list(pool.map(fetch,candidates))
-    return {"url":url,"owner":owner,"repo":repo,"ref":ref,"commit":commit,"tree_count":len(tree),"files":files}
+    return {"url":url,"owner":owner,"repo":repo,"ref":ref,"commit":commit,"tree_count":len(tree),"files":files,"unsupported":unsupported}
 
 def assess_snapshot(snapshot):
     doc_ev=[]; code_ev=[]; statuses=[]
