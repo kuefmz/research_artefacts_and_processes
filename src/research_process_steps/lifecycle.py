@@ -72,7 +72,7 @@ def _python_executable(text):
     doc_ranges=set()
     for node in ast.walk(tree):
         body=getattr(node,"body",None)
-        if body and isinstance(body,list) and isinstance(body[0],ast.Expr) and isinstance(getattr(body[0],"value",None),(ast.Str,ast.Constant)) and isinstance(getattr(body[0].value,"value",getattr(body[0].value,"s",None)),str):
+        if body and isinstance(body,list) and isinstance(body[0],ast.Expr) and isinstance(getattr(body[0],"value",None),ast.Constant) and isinstance(body[0].value.value,str):
             for n in range(body[0].lineno,getattr(body[0],"end_lineno",body[0].lineno)+1): doc_ranges.add(n)
     lines=text.splitlines()
     kept=["" if i+1 in doc_ranges else line for i,line in enumerate(lines)]
