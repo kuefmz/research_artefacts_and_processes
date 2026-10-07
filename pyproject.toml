@@ -13,7 +13,7 @@ dependencies = [
 ]
 
 [project.scripts]
-research-documentation-steps = "research_process_steps.documentation_analyzer:main"
+research-lifecycle-assess = "research_process_steps.lifecycle:main"\nresearch-documentation-steps = "research_process_steps.documentation_analyzer:main"
 research-process-steps = "research_process_steps.analyzer:main"
 research-process-steps-web = "research_process_steps.api:run"
 research-process-steps-precache = "research_process_steps.api:precache_demo"
@@ -23,7 +23,7 @@ research-process-steps-random = "research_process_steps.batch:main"
 where = ["src"]
 
 [tool.setuptools.package-data]
-research_process_steps = ["web/*.html", "demo_cache/*.json"]
+research_process_steps = ["web/*.html", "demo_cache/*.json", "repositories_100.txt"]
 
 [tool.pytest.ini_options]
 pythonpath = ["src"]
