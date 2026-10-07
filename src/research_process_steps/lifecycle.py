@@ -10,6 +10,9 @@ from .documentation import CRITERIA, VERSION as DOC_VERSION, analyze_document, i
 from .analyzer import _parse_github_url, DEFAULT_CONTENT_LIMIT
 
 HEURISTIC_VERSION = "2.0.0"
+
+class GitHubRateLimitError(RuntimeError):
+    pass
 CSV_COLUMNS = ["GitHub URL", "Collection", "Processing", "Method", "Experimentation", "Evaluation", "Dissemination"]
 CODE_EXTENSIONS = {".py",".r",".jl",".m",".java",".js",".ts",".go",".rs",".c",".cc",".cpp",".h",".hpp",".sh",".bash",".ipynb"}
 EXCLUDED_PARTS = {".git","node_modules","vendor","vendors","third_party","third-party","dist","build","target","__pycache__",".ipynb_checkpoints"}
@@ -37,7 +40,11 @@ def _request_json(url, token=None, retries=2):
             with urlopen(Request(url,headers=_headers(token)),timeout=15) as r:
                 return json.loads(r.read().decode("utf-8"))
         except HTTPError as e:
-            retry=e.code in {429,500,502,503,504} or e.code==403 and e.headers.get("X-RateLimit-Remaining")=="0"
+            if e.code==403 and e.headers.get("X-RateLimit-Remaining")=="0":
+                reset=e.headers.get("X-RateLimit-Reset")
+                when=time.strftime("%Y-%m-%d %H:%M:%S",time.localtime(int(reset))) if reset and reset.isdigit() else "unknown"
+                raise GitHubRateLimitError(f"GitHub API rate limit exhausted; reset at {when}") from e
+            retry=e.code in {429,500,502,503,504}
             if not retry or attempt==retries:
                 detail=e.read().decode("utf-8",errors="replace")
                 raise RuntimeError(f"GitHub request failed ({e.code}): {detail}") from e
@@ -51,29 +58,40 @@ def _request_json(url, token=None, retries=2):
             print(f"    GitHub retry {attempt+1}/{retries}: {type(e).__name__}: {e}; waiting {delay}s",flush=True)
             time.sleep(delay)
 
-def _complete_tree(api, commit, token):
-    # Walk non-recursive Git trees instead of GitHub's ?recursive=1 endpoint.
-    # Very large repositories can make the recursive endpoint take minutes before
-    # returning (or return a truncated response), leaving no useful progress.
-    root_commit=_request_json(f"{api}/git/commits/{commit}",token)
-    pending=[(root_commit["tree"]["sha"],"")]
-    out=[]; visited=0
+def _complete_tree(api, commit, token, state_file=None):
+    state_file=Path(state_file) if state_file else None
+    if state_file and state_file.exists():
+        state=json.loads(state_file.read_text())
+        pending=[tuple(x) for x in state["pending"]]; out=state["out"]; visited=state["visited"]
+        print(f"    resuming tree walk: {visited:,} directories already walked, {len(pending):,} queued",flush=True)
+    else:
+        root_commit=_request_json(f"{api}/git/commits/{commit}",token)
+        pending=[(root_commit["tree"]["sha"],"")]; out=[]; visited=0
     started=time.monotonic()
-    while pending:
-        sha,prefix=pending.pop()
-        tree=_request_json(f"{api}/git/trees/{sha}",token)
-        visited+=1
-        for item in tree.get("tree",[]):
-            path=f"{prefix}/{item['path']}" if prefix else item["path"]
-            if item.get("type")=="tree":
-                # Excluded directories cannot contain eligible lifecycle inputs.
-                parts=PurePosixPath(path.lower()).parts
-                if not any(x in EXCLUDED_PARTS for x in parts):
-                    pending.append((item["sha"],path))
-            else:
-                out.append({**item,"path":path})
-        if visited==1 or visited%25==0 or not pending:
-            print(f"    tree walk: {visited:,} directories, {len(out):,} files found, {len(pending):,} directories queued — elapsed {time.monotonic()-started:.1f}s",flush=True)
+    def save():
+        if not state_file: return
+        state_file.parent.mkdir(parents=True,exist_ok=True)
+        tmp=state_file.with_suffix(".tmp")
+        tmp.write_text(json.dumps({"commit":commit,"pending":pending,"out":out,"visited":visited}))
+        tmp.replace(state_file)
+    try:
+        while pending:
+            sha,prefix=pending.pop()
+            tree=_request_json(f"{api}/git/trees/{sha}",token)
+            visited+=1
+            for item in tree.get("tree",[]):
+                path=f"{prefix}/{item['path']}" if prefix else item["path"]
+                if item.get("type")=="tree":
+                    parts=PurePosixPath(path.lower()).parts
+                    if not any(x in EXCLUDED_PARTS for x in parts): pending.append((item["sha"],path))
+                else: out.append({**item,"path":path})
+            if visited%25==0: save()
+            if visited==1 or visited%25==0 or not pending:
+                print(f"    tree walk: {visited:,} directories, {len(out):,} files found, {len(pending):,} directories queued — elapsed {time.monotonic()-started:.1f}s",flush=True)
+    except BaseException:
+        save()
+        raise
+    if state_file and state_file.exists(): state_file.unlink()
     return out
 
 def _eligible_code(path):
@@ -148,7 +166,8 @@ def _fetch_snapshot(repository_url,token,max_content_bytes,blob_cache_dir=None):
     commit=_request_json(f"{api}/commits/{quote(ref,safe='')}",token)["sha"]
     print(f"    pinned commit: {commit}",flush=True)
     print("    loading complete Git tree...",flush=True)
-    tree=_complete_tree(api,commit,token); candidates=[]; unsupported=[]
+    tree_state=Path(blob_cache_dir).parent/"trees"/f"{commit}.json" if blob_cache_dir else None
+    tree=_complete_tree(api,commit,token,tree_state); candidates=[]; unsupported=[]
     print(f"    tree loaded: {len(tree):,} entries — elapsed {time.monotonic()-started:.1f}s",flush=True)
     for item in tree:
         if item.get("type")!="blob": continue
@@ -283,6 +302,11 @@ def run(urls,out_dir,token=None,max_content_bytes=DEFAULT_CONTENT_LIMIT,mode="al
             results.append(r); completed.add(url)
             progress.write_text(json.dumps(results,indent=2)+"\n")
             print(f"[{index}/{total}] complete: {url}",flush=True)
+        except GitHubRateLimitError as e:
+            failures.append({"url":url,"reason":str(e)})
+            print(f"[{index}/{total}] paused: {url}: {e}",file=sys.stderr,flush=True)
+            progress.write_text(json.dumps(results,indent=2)+"\\n")
+            break
         except Exception as e:
             failures.append({"url":url,"reason":str(e)})
             print(f"[{index}/{total}] failed: {url}: {e}",file=sys.stderr,flush=True)
